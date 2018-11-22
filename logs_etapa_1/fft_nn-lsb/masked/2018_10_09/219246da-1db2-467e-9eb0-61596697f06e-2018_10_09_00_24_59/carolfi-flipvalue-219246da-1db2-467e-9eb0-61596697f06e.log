@@ -1,0 +1,57 @@
+[INFO -- 2018-10-09 00:24:38]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-09 00:24:38]
+Initialization strings:
+[INFO -- 2018-10-09 00:24:38]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-09 00:24:38]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-09 00:24:38]
+initSignal:20
+[INFO -- 2018-10-09 00:24:38]
+endSignal:25
+[INFO -- 2018-10-09 00:24:38]
+faultModel:4
+[INFO -- 2018-10-09 00:24:58]
+Backtrace BEGIN:
+#0  0x00007ffff7024e06 in ___printf_fp (fp=fp@entry=0x7fffffffd2a0, info=info@entry=0x7fffffffce10, args=args@entry=0x7fffffffcde0) at printf_fp.c:1175
+#1  0x00007ffff70226d3 in _IO_vfprintf_internal (s=s@entry=0x7fffffffd2a0, format=<optimized out>, format@entry=0x7fffffffd5a0 "%.*g", ap=ap@entry=0x7fffffffd408) at vfprintf.c:1660
+#2  0x00007ffff7046499 in _IO_vsnprintf (string=0x7fffffffd510 "-341.9", maxlen=<optimized out>, format=0x7fffffffd5a0 "%.*g", args=0x7fffffffd408) at vsnprintf.c:119
+#3  0x00007ffff793ee10 in ?? () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007ffff7945264 in std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x00007ffff7945550 in std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#6  0x00007ffff7950af5 in std::ostream& std::ostream::_M_insert<double>(double) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#7  0x0000000000401690 in main ()
+
+1170	printf_fp.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping value of field: overflow_buf
+Fliping array at pos: 29
+Memory content before bitflip:0x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd3ad 
+address max offset: 1
+Memory content after  bitflip:0x10
+frame name: _IO_vsnprintf
+symbol name: sf
+symbol filename: vsnprintf.c
+symbol line: 101
+value: {f = {_sbf = {_f = {_flags = -72515583, _IO_read_ptr = 0x7fffffffd510 "-341.9", _IO_read_end = 0x7fffffffd510 "-341.9", _IO_read_base = 0x7fffffffd510 "-341.9", _IO_write_base = 0x7fffffffd510 "-341.9", _IO_write_ptr = 0x7fffffffd511 "341.9", _IO_write_end = 0x7fffffffd53c "\377\177", _IO_buf_base = 0x7fffffffd510 "-341.9", _IO_buf_end = 0x7fffffffd53c "\377\177", _IO_save_base = 0x0, _IO_backup_base = 0x0, _IO_save_end = 0x0, _markers = 0x0, _chain = 0x0, _fileno = 0, _flags2 = 0, _old_offset = 140737353954024, _cur_column = 0, _vtable_offset = -3 '\375', _shortbuf = <incomplete sequence \367>, _lock = 0x0, _offset = 140737337249224, _codecvt = 0x7ffff78c1720, _wide_data = 0xffffffffffffffff, _freeres_list = 0x0, _freeres_buf = 0x100000000, _freeres_size = 140737488344280, _mode = -1, _unused2 = "\377\177\000\000\350\062\375\367\377\177\000\000\001\000\000\000\000\000\000"}, vtable = 0x7ffff7394fe0 <_IO_strn_jumps>}, _s = {_allocate_buffer = 0x0, _free_buffer = 0x7ffff7de4a31 <_dl_lookup_symbol_x+305>}}, overflow_buf = "\000\000\000\000\000\000\000\000\350\062\375\367\377\177\000\000\001", '\000' <repete 12 vezes>, "\020\000\000\001\000\000\000\377\177\000\000\360d\375\367\377\177\000\000\001\000\000\000\000\000\000\000\360d\375\367\377\177\000"}
+value address: 0x7fffffffd2a0
+Type: The type is a structure.
+Type sizeof: 304
+Field name: f
+Field Type: The type is a structure.
+Field Type sizeof: 240
+Field name: overflow_buf
+Field Type: The type is an array.
+Field Type sizeof: 64
+
+[INFO -- 2018-10-09 00:24:58]
+Fault Injection Successful after 20.388376474380493s
+[INFO -- 2018-10-09 00:24:58]
+event type: exit
+[INFO -- 2018-10-09 00:24:58]
+exit code: 0

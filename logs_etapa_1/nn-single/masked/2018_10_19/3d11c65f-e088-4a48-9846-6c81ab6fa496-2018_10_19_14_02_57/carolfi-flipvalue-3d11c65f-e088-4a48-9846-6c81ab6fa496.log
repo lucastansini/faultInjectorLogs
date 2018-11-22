@@ -1,0 +1,60 @@
+[INFO -- 2018-10-19 14:02:51]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 14:02:51]
+Initialization strings:
+[INFO -- 2018-10-19 14:02:51]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 14:02:51]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 14:02:51]
+initSignal:0
+[INFO -- 2018-10-19 14:02:51]
+endSignal:1
+[INFO -- 2018-10-19 14:02:51]
+faultModel:0
+[INFO -- 2018-10-19 14:02:51]
+Backtrace BEGIN:
+#0  0x00007ffff7df35b7 in open64 () at ../sysdeps/unix/syscall-template.S:81
+#1  0x00007ffff7ddfcf9 in open_verify (name=name@entry=0x7ffff7fee37c "/usr/lib/x86_64-linux-gnu/libgomp.so.1", fbp=fbp@entry=0x7fffffffd048, loader=<optimized out>, whatcode=whatcode@entry=8, found_other_class=found_other_class@entry=0x7fffffffd030, free_name=false) at dl-load.c:1952
+#2  0x00007ffff7de30f6 in _dl_map_object (loader=0x7ffff7ffe1c8, name=0x4005f9 "libgomp.so.1", type=1, trace_mode=0, mode=<optimized out>, nsid=<optimized out>) at dl-load.c:2526
+#3  0x00007ffff7de76a2 in openaux (a=a@entry=0x7fffffffd638) at dl-deps.c:63
+#4  0x00007ffff7dea094 in _dl_catch_error (objname=objname@entry=0x7fffffffd630, errstring=errstring@entry=0x7fffffffd628, mallocedp=mallocedp@entry=0x7fffffffd620, operate=operate@entry=0x7ffff7de7670 <openaux>, args=args@entry=0x7fffffffd638) at dl-error.c:187
+#5  0x00007ffff7de7da5 in _dl_map_object_deps (map=map@entry=0x7ffff7ffe1c8, preloads=<optimized out>, npreloads=npreloads@entry=0, trace_mode=trace_mode@entry=0, open_mode=open_mode@entry=0) at dl-deps.c:254
+#6  0x00007ffff7dddc30 in dl_main (phdr=<optimized out>, phdr@entry=0x400040, phnum=<optimized out>, phnum@entry=9, user_entry=user_entry@entry=0x7fffffffd7c8, auxv=<optimized out>) at rtld.c:1775
+#7  0x00007ffff7df15f5 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffd8b0, dl_main=dl_main@entry=0x7ffff7ddc260 <dl_main>) at ../elf/dl-sysdep.c:249
+#8  0x00007ffff7ddbbb8 in _dl_start_final (arg=0x7fffffffd8b0) at rtld.c:347
+#9  _dl_start (arg=0x7fffffffd8b0) at rtld.c:573
+#10 0x00007ffff7ddb268 in _start () from /lib64/ld-linux-x86-64.so.2
+#11 0x0000000000000006 in ?? ()
+#12 0x00007fffffffdc57 in ?? ()
+#13 0x00007fffffffdca4 in ?? ()
+#14 0x00007fffffffdcf7 in ?? ()
+#15 0x00007fffffffdcfa in ?? ()
+#16 0x00007fffffffdcfd in ?? ()
+#17 0x00007fffffffdd00 in ?? ()
+#18 0x0000000000000000 in ?? ()
+
+76	../sysdeps/unix/syscall-template.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x1a0x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7ffe080 
+address max offset: 8
+Memory content after  bitflip:0x1a0x000x000x000x000x000x400x00
+frame name: open_verify
+symbol name: max_dirnamelen
+symbol filename: dl-load.c
+symbol line: 491
+value: 18014398509482010
+value address: 0x7ffff7ffe080 <max_dirnamelen>
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-10-19 14:02:51]
+Fault Injection Successful after 0.48440122604370117s
+[INFO -- 2018-10-19 14:02:56]
+event type: exit
+[INFO -- 2018-10-19 14:02:56]
+exit code: 0

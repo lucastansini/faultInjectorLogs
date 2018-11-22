@@ -1,0 +1,53 @@
+[INFO -- 2018-10-15 19:15:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-15 19:15:12]
+Initialization strings:
+[INFO -- 2018-10-15 19:15:12]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-15 19:15:12]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-15 19:15:12]
+initSignal:4
+[INFO -- 2018-10-15 19:15:12]
+endSignal:6
+[INFO -- 2018-10-15 19:15:12]
+faultModel:2
+[EXCEPTION -- 2018-10-15 19:15:17]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-10-15 19:15:17]
+Backtrace BEGIN:
+#0  str_to_mpn (str=0x7fffffffccd1 ".13653516769409179688e+01", str@entry=0x7fffffffccd0 "1.13653516769409179688e+01", digcnt=1, digcnt@entry=2, n=n@entry=0x7fffffffcbf0, nsize=nsize@entry=0x7fffffffcbc0, exponent=exponent@entry=0x7fffffffcbd0, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=0x7ffff715614b <dot> ".") at strtod_l.c:373
+#1  0x00007ffff7013c0a in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=0x7fffffffcf00, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1176
+#2  0x00007ffff7011d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#3  0x00007ffff702b948 in _IO_vfscanf_internal (s=s@entry=0x608610, format=<optimized out>, argptr=argptr@entry=0x7fffffffd0d8, errp=errp@entry=0x0) at vfscanf.c:2365
+#4  0x00007ffff7032162 in __isoc99_fscanf (stream=0x608610, format=<optimized out>) at isoc99_fscanf.c:34
+#5  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#6  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#7  0x000000000040199e in inversek2j(float, float, float*, float*) ()
+#8  0x0000000000401631 in main ()
+
+368	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xac0x3d0xbd0xf70xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffcec0
+address max offset: 8
+Memory content after  bitflip:0x150x620x060xc90x0d0xab0x1a0x7d
+frame name: _IO_vfscanf_internal
+symbol name: f
+symbol filename: vfscanf.c
+symbol line: 216
+value: 0x7ffff7bd3dac ") "
+value address: 0x7fffffffcec0
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-15 19:15:17]
+Fault Injection Successful after 5.351242542266846s
+[INFO -- 2018-10-15 19:15:17]
+event type: exit
+[EXCEPTION -- 2018-10-15 19:15:17]
+exit code: no exit code available

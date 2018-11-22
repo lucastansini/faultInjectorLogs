@@ -1,0 +1,48 @@
+[INFO -- 2018-10-09 18:20:56]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-09 18:20:56]
+Initialization strings:
+[INFO -- 2018-10-09 18:20:56]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-09 18:20:56]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-09 18:20:56]
+initSignal:15
+[INFO -- 2018-10-09 18:20:56]
+endSignal:20
+[INFO -- 2018-10-09 18:20:56]
+faultModel:3
+[INFO -- 2018-10-09 18:21:12]
+Backtrace BEGIN:
+#0  0x00007ffff7056b28 in __GI___libc_malloc (bytes=392) at malloc.c:2909
+#1  0x00007ffff7bcd46b in fann_allocate_structure () from /usr/local/lib/libfann.so.2
+#2  0x00007ffff7bce892 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#3  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#4  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#5  0x0000000000401631 in main ()
+
+2904	malloc.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xa00x930x050xf70xff0x7f0x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7ffff7397880 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: __GI___libc_malloc
+symbol name: __morecore
+symbol filename: malloc.c
+symbol line: 404
+value: 0x7ffff70593a0 <__GI___default_morecore>
+value address: 0x7ffff7397880 <__morecore>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-09 18:21:12]
+Fault Injection Successful after 16.813655376434326s
+[INFO -- 2018-10-09 18:21:12]
+event type: exit
+[EXCEPTION -- 2018-10-09 18:21:12]
+exit code: no exit code available

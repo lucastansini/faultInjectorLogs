@@ -1,0 +1,52 @@
+[INFO -- 2018-10-16 11:47:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 11:47:27]
+Initialization strings:
+[INFO -- 2018-10-16 11:47:27]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 11:47:27]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 11:47:27]
+initSignal:0
+[INFO -- 2018-10-16 11:47:27]
+endSignal:2
+[INFO -- 2018-10-16 11:47:27]
+faultModel:0
+[INFO -- 2018-10-16 11:47:27]
+Backtrace BEGIN:
+#0  __GI__dl_debug_state () at dl-debug.c:74
+#1  0x00007ffff7dde483 in dl_main (phdr=<optimized out>, phdr@entry=0x400040, phnum=<optimized out>, phnum@entry=9, user_entry=user_entry@entry=0x7fffffffd768, auxv=<optimized out>) at rtld.c:2338
+#2  0x00007ffff7df15f5 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffd850, dl_main=dl_main@entry=0x7ffff7ddc260 <dl_main>) at ../elf/dl-sysdep.c:249
+#3  0x00007ffff7ddbbb8 in _dl_start_final (arg=0x7fffffffd850) at rtld.c:347
+#4  _dl_start (arg=0x7fffffffd850) at rtld.c:573
+#5  0x00007ffff7ddb268 in _start () from /lib64/ld-linux-x86-64.so.2
+#6  0x0000000000000003 in ?? ()
+#7  0x00007fffffffdbe5 in ?? ()
+#8  0x00007fffffffdc3b in ?? ()
+#9  0x00007fffffffdc8a in ?? ()
+#10 0x0000000000000000 in ?? ()
+
+69	dl-debug.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x780xd80xff0xff0xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd6e0
+address max offset: 8
+Memory content after  bitflip:0x780xd80xff0xfe0xff0x7f0x000x00
+frame name: dl_main
+symbol name: file_size
+symbol filename: rtld.c
+symbol line: 943
+value: 140737471567992
+value address: 0x7fffffffd6e0
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-10-16 11:47:27]
+Fault Injection Successful after 0.30817461013793945s
+[INFO -- 2018-10-16 11:47:37]
+event type: exit
+[INFO -- 2018-10-16 11:47:37]
+exit code: 0

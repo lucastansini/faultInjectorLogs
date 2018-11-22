@@ -1,0 +1,62 @@
+[INFO -- 2018-10-18 21:08:21]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 21:08:21]
+Initialization strings:
+[INFO -- 2018-10-18 21:08:21]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 21:08:21]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 21:08:21]
+initSignal:3
+[INFO -- 2018-10-18 21:08:21]
+endSignal:4
+[INFO -- 2018-10-18 21:08:21]
+faultModel:3
+[EXCEPTION -- 2018-10-18 21:08:25]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 21:08:25]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-18 21:08:25]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 21:08:25]
+pythonException: invalid frame
+[INFO -- 2018-10-18 21:08:25]
+Backtrace BEGIN:
+#0  0x00007ffff78bddf3 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bb6da in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff768f184 in start_thread (arg=0x7ffff60b7700) at pthread_create.c:312
+#3  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+30	    FILE   *flist,*fp;
+31	    int    i=0,j=0, k=0, rec_count=0, done=0;
+32	    char   sandbox[REC_LENGTH * REC_WINDOW], *rec_iter,*rec_iter2, dbname[64];
+33	    struct neighbor *neighbors = NULL;
+34	    float target_lat, target_long, tmp_lat=0, tmp_long=0;
+35	    char * gold_filename;
+36	    long rec_sum = 0;
+37	
+38	    if(argc < 6) {
+39	        fprintf(stderr, "Invalid set of arguments:\n");
+
+Backtrace END
+Memory content before bitflip:0x000x000xc80x41
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd50c
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main
+symbol name: target_long
+symbol filename: nn.c
+symbol line: 34
+value: 0
+value address: 0x7fffffffd50c
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-10-18 21:08:25]
+Fault Injection Successful after 4.465308666229248s
+[INFO -- 2018-10-18 21:08:27]
+event type: exit
+[INFO -- 2018-10-18 21:08:27]
+exit code: 0

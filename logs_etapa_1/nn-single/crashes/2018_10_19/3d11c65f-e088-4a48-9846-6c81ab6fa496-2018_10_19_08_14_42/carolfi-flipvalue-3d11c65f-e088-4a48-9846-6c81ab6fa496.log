@@ -1,0 +1,56 @@
+[INFO -- 2018-10-19 08:14:42]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 08:14:42]
+Initialization strings:
+[INFO -- 2018-10-19 08:14:42]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 08:14:42]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 08:14:42]
+initSignal:0
+[INFO -- 2018-10-19 08:14:42]
+endSignal:1
+[INFO -- 2018-10-19 08:14:42]
+faultModel:0
+[EXCEPTION -- 2018-10-19 08:14:42]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 08:14:42]
+pythonException: invalid frame
+[INFO -- 2018-10-19 08:14:42]
+Backtrace BEGIN:
+#0  clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:81
+#1  0x00007ffff768f0c0 in ?? () at pthread_create.c:174 from /lib/x86_64-linux-gnu/libpthread.so.0
+#2  0x00007ffff60b7700 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+76	../sysdeps/unix/sysv/linux/x86_64/clone.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 2
+Memory content before bitflip:0xd40x020x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7699964 
+address max offset: 4
+Memory content after  bitflip:0xd40x0a0x000x00
+frame name: __pthread_create_2_1
+symbol name: _thread_db_pthread_pid
+symbol filename: ../nptl_db/structs.def
+symbol line: 29
+value: {32, 1, 2772}
+value address: 0x7ffff769995c <_thread_db_pthread_pid>
+Type: The type is an array.
+Type sizeof: 12
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 2)
+
+[INFO -- 2018-10-19 08:14:42]
+Fault Injection Successful after 0.42643189430236816s
+[INFO -- 2018-10-19 08:14:42]
+event type: exit
+[EXCEPTION -- 2018-10-19 08:14:42]
+exit code: no exit code available
+[EXCEPTION -- 2018-10-19 08:14:42]
+pythonException: Thread no longer exists.

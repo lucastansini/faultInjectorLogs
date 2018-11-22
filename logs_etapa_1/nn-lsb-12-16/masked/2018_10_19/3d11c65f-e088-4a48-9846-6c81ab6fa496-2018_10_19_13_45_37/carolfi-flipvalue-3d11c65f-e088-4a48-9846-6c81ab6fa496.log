@@ -1,0 +1,66 @@
+[INFO -- 2018-10-19 13:45:32]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 13:45:32]
+Initialization strings:
+[INFO -- 2018-10-19 13:45:32]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 13:45:32]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 13:45:32]
+initSignal:4
+[INFO -- 2018-10-19 13:45:32]
+endSignal:5
+[INFO -- 2018-10-19 13:45:32]
+faultModel:4
+[EXCEPTION -- 2018-10-19 13:45:36]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 13:45:36]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 13:45:36]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 13:45:36]
+gdbException: A syntax error in expression, near `...'.
+[INFO -- 2018-10-19 13:45:36]
+Backtrace BEGIN:
+#0  0x00007ffff78bddae in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bcaf9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000401198 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+30	    FILE   *flist,*fp;
+31	    int    i=0,j=0, k=0, rec_count=0, done=0;
+32	    char   sandbox[REC_LENGTH * REC_WINDOW], *rec_iter,*rec_iter2, dbname[64];
+33	    struct neighbor *neighbors = NULL;
+34	    float target_lat, target_long, tmp_lat=0, tmp_long=0;
+35	    char * gold_filename;
+36	    long rec_sum = 0;
+37	
+38	    if(argc < 6) {
+39	        fprintf(stderr, "Invalid set of arguments:\n");
+
+Backtrace END
+Fliping array at pos: 328
+Memory content before bitflip:0x31
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd708 
+address max offset: 1
+Memory content after  bitflip:0xb1
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 32
+value: "2000  1 23 12 17 OSCAR      15.3 129.0   81  274\n1964 12 15  0 17 OSCAR      63.6 231.3  129   74\n1967  3 28 18 21 ERNESTO    51.7 258.9  101  813\n1980  4 20 12 27 ERNESTO    25.2 100.5  101  290\n1969"...
+value address: 0x7fffffffd5c0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-10-19 13:45:36]
+Fault Injection Successful after 4.5816192626953125s
+[INFO -- 2018-10-19 13:45:37]
+event type: exit
+[INFO -- 2018-10-19 13:45:37]
+exit code: 0

@@ -1,0 +1,77 @@
+[INFO -- 2018-10-05 16:33:56]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-05 16:33:56]
+Initialization strings:
+[INFO -- 2018-10-05 16:33:56]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-05 16:33:56]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-05 16:33:56]
+initSignal:5
+[INFO -- 2018-10-05 16:33:56]
+endSignal:10
+[INFO -- 2018-10-05 16:33:56]
+faultModel:1
+[EXCEPTION -- 2018-10-05 16:34:02]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-10-05 16:34:03]
+Backtrace BEGIN:
+#0  __lll_lock_wait_private () at ../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S:95
+#1  0x00007ffff70590da in _L_lock_13302 () at malloc.c:5208
+#2  0x00007ffff7056ad5 in __GI___libc_malloc (bytes=4) at malloc.c:2889
+#3  <function called from gdb>
+#4  __lll_lock_wait_private () at ../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S:95
+#5  0x00007ffff70590da in _L_lock_13302 () at malloc.c:5208
+#6  0x00007ffff7056ad5 in __GI___libc_malloc (bytes=4) at malloc.c:2889
+#7  <function called from gdb>
+#8  _int_malloc (av=av@entry=0x7ffff7396760 <main_arena>, bytes=bytes@entry=848) at malloc.c:3777
+#9  0x00007ffff70575fc in __libc_calloc (n=<optimized out>, elem_size=<optimized out>) at malloc.c:3221
+#10 0x00007ffff7bca458 in fann_allocate_connections () from /usr/local/lib/libfann.so.2
+#11 0x00007ffff7bcf11f in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#12 0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#13 0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#14 0x0000000000401631 in main ()
+
+90	../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping value of field: prepare_handler
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x8b
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff7051250 
+address max offset: 1
+Memory content after  bitflip:0x93
+frame name: __libc_calloc
+symbol name: atfork_mem
+symbol filename: arena.c
+symbol line: 142
+value: {next = 0x7ffff7399e88 <fork_handler_pool+8>, prepare_handler = 0x7ffff7051250 <ptmalloc_lock_all>, parent_handler = 0x7ffff7051db0 <ptmalloc_unlock_all>, child_handler = 0x7ffff7051360 <ptmalloc_unlock_all2>, dso_handle = 0x7ffff7393b20 <__dso_handle>, refcntr = 1, need_signal = 0}
+value address: 0x7ffff7398aa0 <atfork_mem>
+Type: The type is a structure.
+Type sizeof: 48
+Field name: next
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: prepare_handler
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: parent_handler
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: child_handler
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: dso_handle
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: refcntr
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: need_signal
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+
+[INFO -- 2018-10-05 16:34:03]
+Fault Injection Successful after 7.105085372924805s

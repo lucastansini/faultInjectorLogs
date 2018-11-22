@@ -1,0 +1,58 @@
+[INFO -- 2018-10-19 08:37:19]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 08:37:19]
+Initialization strings:
+[INFO -- 2018-10-19 08:37:19]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 08:37:19]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 08:37:19]
+initSignal:2
+[INFO -- 2018-10-19 08:37:19]
+endSignal:3
+[INFO -- 2018-10-19 08:37:19]
+faultModel:2
+[EXCEPTION -- 2018-10-19 08:37:22]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 08:37:22]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 08:37:22]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 08:37:22]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-19 08:37:22]
+pythonException: invalid frame
+[INFO -- 2018-10-19 08:37:22]
+Backtrace BEGIN:
+#0  0x00007ffff72f7e43 in __mpn_construct_double (frac_ptr=frac_ptr@entry=0x7ffff70b8a00, expt=<optimized out>, negative=negative@entry=0) at ../sysdeps/ieee754/dbl-64/mpn2dbl.c:46
+#1  0x00007ffff72ff16a in round_and_return (retval=retval@entry=0x7ffff70b8a00, exponent=<optimized out>, negative=negative@entry=0, round_limb=round_limb@entry=5534023222112865484, round_bit=<optimized out>, more_bits=<optimized out>) at strtod_l.c:327
+#2  0x00007ffff72ffc7d in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1613
+#3  0x000000000040150f in main._omp_fn.0 () at nn.c:118
+#4  0x00007ffff78bb6ce in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#5  0x00007ffff768f184 in start_thread (arg=0x7ffff70b9700) at pthread_create.c:312
+#6  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+41	../sysdeps/ieee754/dbl-64/mpn2dbl.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x000xc80x41
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd50c
+address max offset: 4
+Memory content after  bitflip:0x520xbb0x7c0x24
+frame name: main
+symbol name: target_long
+symbol filename: nn.c
+symbol line: 34
+value: 5,4802456e-17
+value address: 0x7fffffffd50c
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-10-19 08:37:22]
+Fault Injection Successful after 3.080155849456787s
+[INFO -- 2018-10-19 08:37:25]
+event type: exit
+[INFO -- 2018-10-19 08:37:25]
+exit code: 0

@@ -1,0 +1,50 @@
+[INFO -- 2018-10-18 18:23:18]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 18:23:18]
+Initialization strings:
+[INFO -- 2018-10-18 18:23:18]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 18:23:18]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 18:23:18]
+initSignal:0
+[INFO -- 2018-10-18 18:23:18]
+endSignal:1
+[INFO -- 2018-10-18 18:23:18]
+faultModel:0
+[EXCEPTION -- 2018-10-18 18:23:19]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 18:23:19]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 18:23:19]
+pythonException: invalid frame
+[INFO -- 2018-10-18 18:23:19]
+Backtrace BEGIN:
+#0  0x00007ffff732c89b in _IO_acquire_lock_fct (p=<synthetic pointer>) at libioP.h:905
+#1  __GI__IO_fread (buf=<optimized out>, size=49, count=10, fp=0x603640) at iofread.c:41
+#2  0x0000000000401027 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:85
+
+900	libioP.h: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x000xc80x41
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd508
+address max offset: 4
+Memory content after  bitflip:0x040x000xc80x41
+frame name: main
+symbol name: target_lat
+symbol filename: nn.c
+symbol line: 34
+value: 25,0000076
+value address: 0x7fffffffd508
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-10-18 18:23:19]
+Fault Injection Successful after 1.189147710800171s
+[INFO -- 2018-10-18 18:23:24]
+event type: exit
+[INFO -- 2018-10-18 18:23:24]
+exit code: 0

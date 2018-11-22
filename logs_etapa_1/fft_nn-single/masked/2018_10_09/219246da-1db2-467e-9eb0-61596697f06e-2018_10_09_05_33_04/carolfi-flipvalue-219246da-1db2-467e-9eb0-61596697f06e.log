@@ -1,0 +1,54 @@
+[INFO -- 2018-10-09 05:32:43]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-09 05:32:43]
+Initialization strings:
+[INFO -- 2018-10-09 05:32:43]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-09 05:32:43]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-09 05:32:43]
+initSignal:0
+[INFO -- 2018-10-09 05:32:43]
+endSignal:5
+[INFO -- 2018-10-09 05:32:43]
+faultModel:0
+[INFO -- 2018-10-09 05:32:43]
+Backtrace BEGIN:
+#0  0x00007ffff70c3170 in __open_nocancel () at ../sysdeps/unix/syscall-template.S:81
+#1  0x00007ffff704ded8 in _IO_file_open (is32not64=4, read_write=4, prot=438, posix_mode=<optimized out>, filename=0x7fffffffd5c0 "H@`", fp=0x604070) at fileops.c:228
+#2  _IO_new_file_fopen (fp=fp@entry=0x604070, filename=filename@entry=0x604048 "/tmp/fft_nn/output_falha.data", mode=<optimized out>, mode@entry=0x7ffff797aa9f "w", is32not64=is32not64@entry=1) at fileops.c:333
+#3  0x00007ffff70423d4 in __fopen_internal (filename=0x604048 "/tmp/fft_nn/output_falha.data", mode=0x7ffff797aa9f "w", is32=1) at iofopen.c:90
+#4  0x00007ffff79369c0 in std::__basic_file<char>::open(char const*, std::_Ios_Openmode, int) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x00007ffff796eeaa in std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#6  0x00007ffff7970b03 in std::basic_ofstream<char, std::char_traits<char> >::open(std::string const&, std::_Ios_Openmode) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#7  0x00000000004014ea in main ()
+
+76	../sysdeps/unix/syscall-template.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 12
+Memory content before bitflip:0x5f
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff715cc9c  
+address max offset: 1
+Memory content after  bitflip:0x4f
+frame name: _IO_new_file_fopen
+symbol name: __PRETTY_FUNCTION__
+symbol filename: fileops.c
+symbol line: 0
+value: "_IO_new_fileOfopen"
+value address: 0x7ffff715cc90 <__PRETTY_FUNCTION__.11488>
+Type: The type is an array.
+Type sizeof: 19
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 18)
+
+[INFO -- 2018-10-09 05:32:43]
+Fault Injection Successful after 0.6311848163604736s
+[INFO -- 2018-10-09 05:33:03]
+event type: exit
+[INFO -- 2018-10-09 05:33:03]
+exit code: 0

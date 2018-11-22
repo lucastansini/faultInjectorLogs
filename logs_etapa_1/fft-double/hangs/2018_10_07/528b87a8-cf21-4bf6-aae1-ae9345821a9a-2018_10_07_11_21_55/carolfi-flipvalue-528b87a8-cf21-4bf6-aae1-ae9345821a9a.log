@@ -1,0 +1,61 @@
+[INFO -- 2018-10-07 11:21:05]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-07 11:21:05]
+Initialization strings:
+[INFO -- 2018-10-07 11:21:05]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-07 11:21:05]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-07 11:21:05]
+initSignal:5
+[INFO -- 2018-10-07 11:21:05]
+endSignal:10
+[INFO -- 2018-10-07 11:21:05]
+faultModel:1
+[EXCEPTION -- 2018-10-07 11:21:10]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-10-07 11:21:10]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-10-07 11:21:12]
+Backtrace BEGIN:
+#0  __lll_lock_wait_private () at ../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S:95
+#1  0x00007ffff70590da in _L_lock_13302 () at malloc.c:5208
+#2  0x00007ffff7056ad5 in __GI___libc_malloc (bytes=4) at malloc.c:2889
+#3  <function called from gdb>
+#4  __lll_lock_wait_private () at ../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S:95
+#5  0x00007ffff70590da in _L_lock_13302 () at malloc.c:5208
+#6  0x00007ffff7056ad5 in __GI___libc_malloc (bytes=4) at malloc.c:2889
+#7  <function called from gdb>
+#8  __lll_lock_wait_private () at ../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S:95
+#9  0x00007ffff70590da in _L_lock_13302 () at malloc.c:5208
+#10 0x00007ffff7056ad5 in __GI___libc_malloc (bytes=4) at malloc.c:2889
+#11 <function called from gdb>
+#12 0x00007ffff7054952 in malloc_printerr (ptr=<optimized out>, str=<optimized out>, action=<optimized out>) at malloc.c:4992
+#13 _int_malloc (av=0x7ffff7396760 <main_arena>, bytes=568) at malloc.c:3449
+#14 0x00007ffff7056ae0 in __GI___libc_malloc (bytes=568) at malloc.c:2893
+#15 0x00007ffff704237d in __fopen_internal (filename=0x4025a3 "./fft.nn", mode=0x7ffff7bd3cd1 "r", is32=1) at iofopen.c:73
+#16 0x00007ffff7bcf5f5 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#17 0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#18 0x0000000000401631 in main ()
+
+90	../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff7398a00 
+address max offset: 8
+Memory content after  bitflip:0x000x120x000x000x000x000x000x00
+frame name: __GI___libc_malloc
+symbol name: __after_morecore_hook
+symbol filename: malloc.c
+symbol line: 1842
+value: 0x0
+value address: 0x7ffff7398a00 <__after_morecore_hook>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-07 11:21:12]
+Fault Injection Successful after 7.214973449707031s

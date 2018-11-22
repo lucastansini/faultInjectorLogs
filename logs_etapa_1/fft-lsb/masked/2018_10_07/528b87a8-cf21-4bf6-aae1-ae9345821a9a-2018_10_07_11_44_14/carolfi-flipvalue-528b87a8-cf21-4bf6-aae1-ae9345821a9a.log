@@ -1,0 +1,58 @@
+[INFO -- 2018-10-07 11:43:54]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-07 11:43:54]
+Initialization strings:
+[INFO -- 2018-10-07 11:43:54]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-07 11:43:54]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-07 11:43:54]
+initSignal:15
+[INFO -- 2018-10-07 11:43:54]
+endSignal:25
+[INFO -- 2018-10-07 11:43:54]
+faultModel:4
+[EXCEPTION -- 2018-10-07 11:44:11]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-10-07 11:44:11]
+Backtrace BEGIN:
+#0  0x00007ffff7012362 in round_away (mode=0, more_bits=true, half_bit=true, last_digit_odd=false, negative=false) at ../include/rounding-mode.h:52
+#1  round_and_return (retval=0x7fffffffd3d0, exponent=-1, negative=negative@entry=0, round_limb=round_limb@entry=14290325138413977599, round_bit=<optimized out>, more_bits=1) at strtod_l.c:296
+#2  0x00007ffff7013332 in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1613
+#3  0x00007ffff7011d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#4  0x00007ffff702b948 in _IO_vfscanf_internal (s=s@entry=0x6062c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffd8c8, errp=errp@entry=0x0) at vfscanf.c:2365
+#5  0x00007ffff7032162 in __isoc99_fscanf (stream=0x6062c0, format=<optimized out>) at isoc99_fscanf.c:34
+#6  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#7  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#8  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#9  0x0000000000401631 in main ()
+
+47	in ../include/rounding-mode.h
+
+Backtrace END
+Fliping array at pos: 4
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd450
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x20
+frame name: __GI_____strtof_l_internal
+symbol name: den
+symbol filename: strtod_l.c
+symbol line: 494
+value: {0, 15625000000000000000, 0, 0, 2305843009213693952, 140737488346072, 140737488344816, 5, 18446744073709551615, 4160570904}
+value address: 0x7fffffffd430
+Type: The type is an array.
+Type sizeof: 80
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 9)
+
+[INFO -- 2018-10-07 11:44:11]
+Fault Injection Successful after 17.550132989883423s
+[INFO -- 2018-10-07 11:44:14]
+event type: exit
+[INFO -- 2018-10-07 11:44:14]
+exit code: 0

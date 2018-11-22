@@ -1,0 +1,55 @@
+[INFO -- 2018-10-18 13:24:40]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 13:24:40]
+Initialization strings:
+[INFO -- 2018-10-18 13:24:40]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 13:24:40]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 13:24:40]
+initSignal:0
+[INFO -- 2018-10-18 13:24:40]
+endSignal:1
+[INFO -- 2018-10-18 13:24:40]
+faultModel:0
+[EXCEPTION -- 2018-10-18 13:24:40]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 13:24:40]
+pythonException: invalid frame
+[INFO -- 2018-10-18 13:24:40]
+Backtrace BEGIN:
+#0  __GI___nptl_create_event () at events.c:25
+#1  0x00007ffff768fa8d in create_thread (stackaddr=<optimized out>, attr=0x7ffff7ad3600, pd=0x7ffff68b8700) at ../nptl/sysdeps/pthread/createthread.c:220
+#2  __pthread_create_2_1 (newthread=<optimized out>, attr=<optimized out>, start_routine=<optimized out>, arg=<optimized out>) at pthread_create.c:611
+#3  0x00007ffff78bbca2 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x0000000000401184 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+20	events.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 0
+Memory content before bitflip:0x400x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff769989c 
+address max offset: 4
+Memory content after  bitflip:0x500x000x000x00
+frame name: create_thread
+symbol name: _thread_db___nptl_last_event
+symbol filename: ../nptl_db/structs.def
+symbol line: 58
+value: {80, 1, 0}
+value address: 0x7ffff769989c <_thread_db___nptl_last_event>
+Type: The type is an array.
+Type sizeof: 12
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 2)
+
+[INFO -- 2018-10-18 13:24:40]
+Fault Injection Successful after 0.9104263782501221s
+[INFO -- 2018-10-18 13:24:46]
+event type: exit
+[INFO -- 2018-10-18 13:24:46]
+exit code: 0

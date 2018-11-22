@@ -1,0 +1,71 @@
+[INFO -- 2018-10-19 00:40:16]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 00:40:16]
+Initialization strings:
+[INFO -- 2018-10-19 00:40:16]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 00:40:16]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 00:40:16]
+initSignal:0
+[INFO -- 2018-10-19 00:40:16]
+endSignal:1
+[INFO -- 2018-10-19 00:40:16]
+faultModel:0
+[EXCEPTION -- 2018-10-19 00:40:17]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-19 00:40:17]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 00:40:17]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 00:40:17]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 00:40:17]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 00:40:17]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 00:40:17]
+pythonException: invalid frame
+[INFO -- 2018-10-19 00:40:17]
+Backtrace BEGIN:
+#0  0x00000000004014b7 in main._omp_fn.0 () at nn.c:115
+#1  0x00007ffff78bb6ce in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff768f184 in start_thread (arg=0x7ffff60b7700) at pthread_create.c:312
+#3  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+110	                exit(0);
+111	            }
+112	        }
+113	
+114	
+115	        #pragma omp parallel for shared (z, target_lat, target_long) private(i,rec_iter)
+116	        for (i = 0; i < rec_count; i++) {
+117	            rec_iter = sandbox+(i * REC_LENGTH + LATITUDE_POS - 1);
+118	            float tmp_lat = atof(rec_iter);
+119	            float tmp_long = atof(rec_iter+5);
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: entry
+Fliping array at pos: 15
+Memory content before bitflip:0x35
+Fault Model: Single bit-flip
+base address to flip value: 0x60327f 
+address max offset: 1
+Memory content after  bitflip:0x75
+frame name: main
+symbol name: neighbors
+symbol filename: nn.c
+symbol line: 33
+value: 0x603270
+value address: 0x7fffffffd540
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-19 00:40:17]
+Fault Injection Successful after 1.2310755252838135s
+[INFO -- 2018-10-19 00:40:22]
+event type: exit
+[INFO -- 2018-10-19 00:40:22]
+exit code: 0

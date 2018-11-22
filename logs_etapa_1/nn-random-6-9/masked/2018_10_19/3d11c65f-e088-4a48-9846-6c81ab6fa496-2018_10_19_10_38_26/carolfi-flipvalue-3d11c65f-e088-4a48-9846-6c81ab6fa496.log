@@ -1,0 +1,51 @@
+[INFO -- 2018-10-19 10:38:20]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 10:38:20]
+Initialization strings:
+[INFO -- 2018-10-19 10:38:20]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 10:38:20]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 10:38:20]
+initSignal:2
+[INFO -- 2018-10-19 10:38:20]
+endSignal:3
+[INFO -- 2018-10-19 10:38:20]
+faultModel:2
+[EXCEPTION -- 2018-10-19 10:38:22]
+pythonException: invalid frame
+[INFO -- 2018-10-19 10:38:22]
+Backtrace BEGIN:
+#0  __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1516
+#1  0x000000000040152c in main._omp_fn.0 () at nn.c:119
+#2  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+1511	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 23
+Memory content before bitflip:0x600x5b0xfd0xf70xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd328
+address max offset: 8
+Memory content after  bitflip:0xe80xd90x860x0c0xe20x6b0x740x09
+frame name: __GI_____strtod_l_internal
+symbol name: den
+symbol filename: strtod_l.c
+symbol line: 494
+value: {11529215046068469760, 140737488343984, 140737344271072, 6303792, 140733193388032, 0, 0, 140737353964384, 140737353961472, 4196009, 140737340304840, 4195440, 21474836480, 4294967975, 140733193388037, 140737488344168, 140737488344128, 140737353964384, 1, 140737354130720, 140737354129864, 140737351928369, 0, 681288062256732648, 140733193388037, 0, 1, 140737354129864, 4294967295, 6306432, 140737340304552, 140737353961472, 0, 140737354130720, 140737488343984, 140737488343968, 2090252933, 6305344, 4096, 140737346519266, 2050, 32, 1, 17179869184, 0, 0, 0, 0, 3, 4, 1032904, 140737488344416, 4199572, 6306432, 0, 4, 4, 6305968, 140737348711264}
+value address: 0x7fffffffd270
+Type: The type is an array.
+Type sizeof: 472
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 58)
+
+[INFO -- 2018-10-19 10:38:22]
+Fault Injection Successful after 2.7461843490600586s
+[INFO -- 2018-10-19 10:38:26]
+event type: exit
+[INFO -- 2018-10-19 10:38:26]
+exit code: 0

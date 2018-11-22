@@ -1,0 +1,72 @@
+[INFO -- 2018-10-18 23:38:38]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 23:38:38]
+Initialization strings:
+[INFO -- 2018-10-18 23:38:38]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 23:38:38]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 23:38:38]
+initSignal:2
+[INFO -- 2018-10-18 23:38:38]
+endSignal:3
+[INFO -- 2018-10-18 23:38:38]
+faultModel:2
+[EXCEPTION -- 2018-10-18 23:38:40]
+pythonException: invalid literal for int() with base 16: '0x7fffffffd5db ...'
+[EXCEPTION -- 2018-10-18 23:38:40]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 23:38:40]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 23:38:40]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 23:38:40]
+pythonException: invalid literal for int() with base 16: '0x7fffffffd5e4 ...'
+[EXCEPTION -- 2018-10-18 23:38:40]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 23:38:40]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 23:38:40]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 23:38:40]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 23:38:40]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 23:38:40]
+pythonException: invalid frame
+[INFO -- 2018-10-18 23:38:40]
+Backtrace BEGIN:
+#0  round_and_return (retval=retval@entry=0x7fffffffd080, exponent=8, negative=negative@entry=0, round_limb=round_limb@entry=1844674407370955161, round_bit=19, more_bits=1) at strtod_l.c:204
+#1  0x00007ffff72ffc7d in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1613
+#2  0x000000000040152c in main._omp_fn.0 () at nn.c:119
+#3  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+199	in strtod_l.c
+
+Backtrace END
+Fliping array at pos: 0
+Memory content before bitflip:0x990x990x990x990x990xb10x120x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd080
+address max offset: 8
+Memory content after  bitflip:0xd80xdb0xe90x590x930x550xc60x1c
+frame name: __GI_____strtod_l_internal
+symbol name: retval
+symbol filename: strtod_l.c
+symbol line: 497
+value: {2073438769807743960}
+value address: 0x7fffffffd080
+Type: The type is an array.
+Type sizeof: 8
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 0)
+
+[INFO -- 2018-10-18 23:38:40]
+Fault Injection Successful after 2.777745008468628s
+[INFO -- 2018-10-18 23:38:44]
+event type: exit
+[INFO -- 2018-10-18 23:38:44]
+exit code: 0

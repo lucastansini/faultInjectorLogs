@@ -1,0 +1,50 @@
+[INFO -- 2018-10-18 20:52:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 20:52:27]
+Initialization strings:
+[INFO -- 2018-10-18 20:52:27]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 20:52:27]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 20:52:27]
+initSignal:0
+[INFO -- 2018-10-18 20:52:27]
+endSignal:1
+[INFO -- 2018-10-18 20:52:27]
+faultModel:0
+[INFO -- 2018-10-18 20:52:27]
+Backtrace BEGIN:
+#0  str_to_mpn (str=0x7fffffffd640 ".4 168.0  146  727\n1986  8 28 12 23 HELENE     30.2 303.8   72  897\n1950  2 26 18 19 ISAAC       9.9 318.0  121  821\n1994  3 20  0 17 GORDON     29.5 208.1   57  604\n1976 11  5 18  1 PATTY       9.4 2"..., str@entry=0x7fffffffd63e "27.4 168.0  146  727\n1986  8 28 12 23 HELENE     30.2 303.8   72  897\n1950  2 26 18 19 ISAAC       9.9 318.0  121  821\n1994  3 20  0 17 GORDON     29.5 208.1   57  604\n1976 11  5 18  1 PATTY       9.4"..., digcnt=<optimized out>, digcnt@entry=2, n=n@entry=0x7fffffffd090, nsize=nsize@entry=0x7fffffffd060, exponent=exponent@entry=0x7fffffffd070, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=0x7ffff744014b <dot> ".") at strtod_l.c:412
+#1  0x00007ffff73001e1 in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=0x0, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1176
+#2  0x000000000040150f in main._omp_fn.0 () at nn.c:118
+#3  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+407	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 304
+Memory content before bitflip:0x20
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd6f0 
+address max offset: 1
+Memory content after  bitflip:0x30
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 32
+value: "1957  1 28  6 18 VALERIE    14.9 300.4  118  376\n1980  7 28 18  7 JOYCE      41.7   7.1   73  844\n1987  6  9 18 23 MICHAEL    27.4 168.0  146  727\n1986  8 28 12 23 HELENE     30.2 303.8   72  897\n1950"...
+value address: 0x7fffffffd5c0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-10-18 20:52:27]
+Fault Injection Successful after 0.41771674156188965s
+[INFO -- 2018-10-18 20:52:32]
+event type: exit
+[INFO -- 2018-10-18 20:52:32]
+exit code: 0

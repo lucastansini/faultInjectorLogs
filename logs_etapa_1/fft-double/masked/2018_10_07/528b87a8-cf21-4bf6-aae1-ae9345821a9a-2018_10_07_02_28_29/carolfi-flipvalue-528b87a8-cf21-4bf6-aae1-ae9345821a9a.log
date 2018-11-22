@@ -1,0 +1,49 @@
+[INFO -- 2018-10-07 02:28:09]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-07 02:28:09]
+Initialization strings:
+[INFO -- 2018-10-07 02:28:09]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-07 02:28:09]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-07 02:28:09]
+initSignal:5
+[INFO -- 2018-10-07 02:28:09]
+endSignal:10
+[INFO -- 2018-10-07 02:28:09]
+faultModel:1
+[INFO -- 2018-10-07 02:28:15]
+Backtrace BEGIN:
+#0  0x00007ffff702987a in _IO_vfscanf_internal (s=s@entry=0x6062c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffd8c8, errp=errp@entry=0x0) at vfscanf.c:2115
+#1  0x00007ffff7032162 in __isoc99_fscanf (stream=0x6062c0, format=<optimized out>) at isoc99_fscanf.c:34
+#2  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#3  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#4  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#5  0x0000000000401631 in main ()
+
+2110	vfscanf.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 0
+Fliping value of field: fp_offset
+Memory content before bitflip:0x300x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd8cc
+address max offset: 4
+Memory content after  bitflip:0x210x000x000x00
+frame name: __isoc99_fscanf
+symbol name: arg
+symbol filename: isoc99_fscanf.c
+symbol line: 27
+value: {{gp_offset = 16, fp_offset = 33, overflow_arg_area = 0x7fffffffd9a0, reg_save_area = 0x7fffffffd8e0}}
+value address: 0x7fffffffd8c8
+Type: The type is an array.
+Type sizeof: 24
+
+[INFO -- 2018-10-07 02:28:15]
+Fault Injection Successful after 6.44388747215271s
+[INFO -- 2018-10-07 02:28:29]
+event type: exit
+[INFO -- 2018-10-07 02:28:29]
+exit code: 0

@@ -1,0 +1,58 @@
+[INFO -- 2018-10-16 20:03:09]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 20:03:09]
+Initialization strings:
+[INFO -- 2018-10-16 20:03:09]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 20:03:09]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 20:03:09]
+initSignal:0
+[INFO -- 2018-10-16 20:03:09]
+endSignal:2
+[INFO -- 2018-10-16 20:03:09]
+faultModel:0
+[INFO -- 2018-10-16 20:03:09]
+Backtrace BEGIN:
+#0  strcmp () at ../sysdeps/x86_64/multiarch/../strcmp.S:135
+#1  0x00007ffff7deb2a4 in _dl_name_match_p (name=name@entry=0x400a70 "libgcc_s.so.1", map=map@entry=0x7ffff7fd64f0) at dl-misc.c:295
+#2  0x00007ffff7deb7a8 in find_needed (map=0x7ffff7ffe1c8, name=0x400a70 "libgcc_s.so.1") at dl-version.c:58
+#3  _dl_check_map_versions (map=map@entry=0x7ffff7ffe1c8, verbose=verbose@entry=1, trace_mode=trace_mode@entry=0) at dl-version.c:220
+#4  0x00007ffff7debb94 in _dl_check_all_versions (map=<optimized out>, verbose=verbose@entry=1, trace_mode=0) at dl-version.c:386
+#5  0x00007ffff7ddb908 in version_check_doit (a=a@entry=0x7fffffffd6f0) at rtld.c:674
+#6  0x00007ffff7dea11e in _dl_receive_error (fct=fct@entry=0x7ffff7ddb3f0 <print_missing_version>, operate=operate@entry=0x7ffff7ddb8f0 <version_check_doit>, args=args@entry=0x7fffffffd6f0) at dl-error.c:217
+#7  0x00007ffff7dde0d3 in dl_main (phdr=<optimized out>, phdr@entry=0x400040, phnum=<optimized out>, phnum@entry=9, user_entry=user_entry@entry=0x7fffffffd768, auxv=<optimized out>) at rtld.c:1838
+#8  0x00007ffff7df15f5 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffd850, dl_main=dl_main@entry=0x7ffff7ddc260 <dl_main>) at ../elf/dl-sysdep.c:249
+#9  0x00007ffff7ddbbb8 in _dl_start_final (arg=0x7fffffffd850) at rtld.c:347
+#10 _dl_start (arg=0x7fffffffd850) at rtld.c:573
+#11 0x00007ffff7ddb268 in _start () from /lib64/ld-linux-x86-64.so.2
+#12 0x0000000000000003 in ?? ()
+#13 0x00007fffffffdbe5 in ?? ()
+#14 0x00007fffffffdc3b in ?? ()
+#15 0x00007fffffffdc8a in ?? ()
+#16 0x0000000000000000 in ?? ()
+
+130	../sysdeps/x86_64/multiarch/../strcmp.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7ffce68 
+address max offset: 4
+Memory content after  bitflip:0x000x000x800x00
+frame name: _dl_sysdep_start
+symbol name: __libc_enable_secure
+symbol filename: ../elf/dl-sysdep.c
+symbol line: 56
+value: 8388608
+value address: 0x7ffff7ffce68 <__libc_enable_secure>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-16 20:03:09]
+Fault Injection Successful after 0.48732566833496094s
+[INFO -- 2018-10-16 20:03:19]
+event type: exit
+[INFO -- 2018-10-16 20:03:19]
+exit code: 0

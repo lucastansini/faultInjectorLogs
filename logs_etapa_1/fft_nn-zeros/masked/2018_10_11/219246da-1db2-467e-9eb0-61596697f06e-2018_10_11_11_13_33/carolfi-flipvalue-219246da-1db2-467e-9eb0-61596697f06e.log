@@ -1,0 +1,49 @@
+[INFO -- 2018-10-11 11:13:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-11 11:13:12]
+Initialization strings:
+[INFO -- 2018-10-11 11:13:12]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-11 11:13:12]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-11 11:13:12]
+initSignal:15
+[INFO -- 2018-10-11 11:13:12]
+endSignal:20
+[INFO -- 2018-10-11 11:13:12]
+faultModel:3
+[INFO -- 2018-10-11 11:13:29]
+Backtrace BEGIN:
+#0  __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1516
+#1  0x00007ffff7011d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#2  0x00007ffff702b948 in _IO_vfscanf_internal (s=s@entry=0x6062c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffd408, errp=errp@entry=0x0) at vfscanf.c:2365
+#3  0x00007ffff7032162 in __isoc99_fscanf (stream=0x6062c0, format=<optimized out>) at isoc99_fscanf.c:34
+#4  0x00007ffff7bcf0eb in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#5  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#6  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#7  0x0000000000401631 in main ()
+
+1511	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x010x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd1e0
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: _IO_vfscanf_internal
+symbol name: wpmax
+symbol filename: vfscanf.c
+symbol line: 273
+value: 0
+value address: 0x7fffffffd1e0
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-10-11 11:13:29]
+Fault Injection Successful after 17.68135714530945s
+[INFO -- 2018-10-11 11:13:32]
+event type: exit
+[INFO -- 2018-10-11 11:13:32]
+exit code: 0

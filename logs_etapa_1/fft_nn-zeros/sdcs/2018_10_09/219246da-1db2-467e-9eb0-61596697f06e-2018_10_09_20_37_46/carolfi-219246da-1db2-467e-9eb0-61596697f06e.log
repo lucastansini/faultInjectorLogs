@@ -1,0 +1,14 @@
+[INFO -- 2018-10-09 20:37:25]
+Starting GDB script
+[INFO -- 2018-10-09 20:37:25]
+initSignal:15.0
+[INFO -- 2018-10-09 20:37:25]
+endSignal:20.0
+[INFO -- 2018-10-09 20:37:41]
+sending 5 signals using command: 'killall -2 fft_nn.out' after 15.8712271241s
+[INFO -- 2018-10-09 20:37:44]
+sending 5 signals using command: 'killall -2 fft_nn.out' after 18.3380790708s
+[INFO -- 2018-10-09 20:37:45]
+sending 5 signals using command: 'killall -2 fft_nn.out' after 19.9029107932s
+[INFO -- 2018-10-09 20:37:46]
+Execution finished before waitTime

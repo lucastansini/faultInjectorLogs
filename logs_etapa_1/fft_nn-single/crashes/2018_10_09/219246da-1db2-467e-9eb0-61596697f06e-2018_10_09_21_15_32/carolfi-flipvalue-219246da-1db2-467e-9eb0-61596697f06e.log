@@ -1,0 +1,53 @@
+[INFO -- 2018-10-09 21:15:29]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-09 21:15:29]
+Initialization strings:
+[INFO -- 2018-10-09 21:15:29]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-09 21:15:29]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-09 21:15:29]
+initSignal:0
+[INFO -- 2018-10-09 21:15:29]
+endSignal:5
+[INFO -- 2018-10-09 21:15:29]
+faultModel:0
+[INFO -- 2018-10-09 21:15:29]
+Backtrace BEGIN:
+#0  0x00007ffff7914776 in std::locale::_Impl::_Impl(unsigned long)@plt () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#1  0x00007ffff792bd15 in ?? () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#2  0x00007ffff6b94a80 in pthread_once () at ../nptl/sysdeps/unix/sysv/linux/x86_64/pthread_once.S:103
+#3  0x00007ffff792bd61 in ?? () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007ffff792bda3 in std::locale::locale() () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x00007ffff7928c8c in std::ios_base::Init::Init() () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#6  0x0000000000401390 in __static_initialization_and_destruction_0(int, int) ()
+#7  0x00000000004013b9 in _GLOBAL__sub_I__Z9fftSinCosfPfS_ ()
+#8  0x0000000000401e3d in __libc_csu_init ()
+#9  0x00007ffff6ff5ed5 in __libc_start_main (main=0x401428 <main>, argc=3, argv=0x7fffffffd998, init=0x401df0 <__libc_csu_init>, fini=<optimized out>, rtld_fini=<optimized out>, stack_end=0x7fffffffd988) at libc-start.c:246
+#10 0x0000000000401039 in _start ()
+
+1	../nptl/sysdeps/unix/sysv/linux/x86_64/pthread_once.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x980xd90xff0xff0xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd8c8
+address max offset: 8
+Memory content after  bitflip:0x980xd90xfd0xff0xff0x7f0x000x00
+frame name: __libc_start_main
+symbol name: argv
+symbol filename: libc-start.c
+symbol line: 126
+value: 0x7fffffffd998
+value address: 0x7fffffffd8c8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-09 21:15:29]
+Fault Injection Successful after 0.7673771381378174s
+[INFO -- 2018-10-09 21:15:29]
+event type: exit
+[EXCEPTION -- 2018-10-09 21:15:29]
+exit code: no exit code available

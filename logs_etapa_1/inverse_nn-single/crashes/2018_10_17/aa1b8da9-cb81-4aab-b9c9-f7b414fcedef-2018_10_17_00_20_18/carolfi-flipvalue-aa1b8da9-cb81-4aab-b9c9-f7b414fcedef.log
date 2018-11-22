@@ -1,0 +1,48 @@
+[INFO -- 2018-10-17 00:20:17]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-17 00:20:17]
+Initialization strings:
+[INFO -- 2018-10-17 00:20:17]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-17 00:20:17]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-17 00:20:17]
+initSignal:0
+[INFO -- 2018-10-17 00:20:17]
+endSignal:2
+[INFO -- 2018-10-17 00:20:17]
+faultModel:0
+[INFO -- 2018-10-17 00:20:18]
+Backtrace BEGIN:
+#0  0x00007ffff7011fba in str_to_mpn (str=0x6085e0 "", str@entry=0x6085d9 ".749384", digcnt=<optimized out>, digcnt@entry=6, n=n@entry=0x7fffffffd120, nsize=nsize@entry=0x7fffffffd0f0, exponent=exponent@entry=0x7fffffffd100, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=<optimized out>) at strtod_l.c:430
+#1  0x00007ffff7012c2b in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1427
+#2  0x00007ffff7936d5e in void std::__convert_to_v<float>(char const*, float&, std::_Ios_Iostate&, __locale_struct* const&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x00007ffff794a706 in std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > >::do_get(std::istreambuf_iterator<char, std::char_traits<char> >, std::istreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, std::_Ios_Iostate&, float&) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007ffff793b0d5 in std::istream& std::istream::_M_extract<float>(float&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x0000000000401470 in main ()
+
+425	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x700xd10xff0xff0xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd098
+address max offset: 8
+Memory content after  bitflip:0x700xd10xff0xff0xff0x7d0x000x00
+frame name: __GI_____strtof_l_internal
+symbol name: start_of_digits
+symbol filename: strtod_l.c
+symbol line: 504
+value: 0x7fffffffd170 "@B\017"
+value address: 0x7fffffffd098
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-17 00:20:18]
+Fault Injection Successful after 1.0387368202209473s
+[INFO -- 2018-10-17 00:20:18]
+event type: exit
+[EXCEPTION -- 2018-10-17 00:20:18]
+exit code: no exit code available

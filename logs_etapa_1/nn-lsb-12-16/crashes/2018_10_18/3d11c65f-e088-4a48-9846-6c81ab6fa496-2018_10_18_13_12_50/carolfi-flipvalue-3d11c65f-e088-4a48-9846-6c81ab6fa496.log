@@ -1,0 +1,51 @@
+[INFO -- 2018-10-18 13:12:46]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 13:12:46]
+Initialization strings:
+[INFO -- 2018-10-18 13:12:46]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 13:12:46]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 13:12:46]
+initSignal:4
+[INFO -- 2018-10-18 13:12:46]
+endSignal:5
+[INFO -- 2018-10-18 13:12:46]
+faultModel:4
+[EXCEPTION -- 2018-10-18 13:12:50]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 13:12:50]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 13:12:50]
+pythonException: invalid frame
+[INFO -- 2018-10-18 13:12:50]
+Backtrace BEGIN:
+#0  __GI__IO_file_xsgetn (fp=0x603640, data=<optimized out>, n=490) at fileops.c:1388
+#1  0x00007ffff732c86f in __GI__IO_fread (buf=<optimized out>, size=49, count=10, fp=0x603640) at iofread.c:42
+#2  0x0000000000401027 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:85
+
+1383	fileops.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x800x380x600x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd538
+address max offset: 8
+Memory content after  bitflip:0x800x380x600x000x000x000x000x02
+frame name: main
+symbol name: z
+symbol filename: nn.c
+symbol line: 80
+value: 0x603880
+value address: 0x7fffffffd538
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 13:12:50]
+Fault Injection Successful after 4.428591966629028s
+[INFO -- 2018-10-18 13:12:50]
+event type: exit
+[EXCEPTION -- 2018-10-18 13:12:50]
+exit code: no exit code available

@@ -1,0 +1,52 @@
+[INFO -- 2018-10-18 14:43:16]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 14:43:16]
+Initialization strings:
+[INFO -- 2018-10-18 14:43:16]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 14:43:16]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 14:43:16]
+initSignal:0
+[INFO -- 2018-10-18 14:43:16]
+endSignal:1
+[INFO -- 2018-10-18 14:43:16]
+faultModel:0
+[EXCEPTION -- 2018-10-18 14:43:17]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-10-18 14:43:17]
+Backtrace BEGIN:
+#0  __lll_lock_wait_private () at ../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S:95
+#1  0x00007ffff76902e1 in _L_lock_3358 () from /lib/x86_64-linux-gnu/libpthread.so.0
+#2  0x00007ffff768f381 in start_thread (arg=0x7ffff70b9700) at pthread_create.c:301
+#3  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+90	../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 0
+Memory content before bitflip:0x400x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff769989c 
+address max offset: 4
+Memory content after  bitflip:0x400x400x000x00
+frame name: do_clone
+symbol name: _thread_db___nptl_last_event
+symbol filename: ../nptl_db/structs.def
+symbol line: 58
+value: {16448, 1, 0}
+value address: 0x7ffff769989c <_thread_db___nptl_last_event>
+Type: The type is an array.
+Type sizeof: 12
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 2)
+
+[INFO -- 2018-10-18 14:43:17]
+Fault Injection Successful after 1.1247785091400146s
+[INFO -- 2018-10-18 14:43:22]
+event type: exit
+[INFO -- 2018-10-18 14:43:22]
+exit code: 0

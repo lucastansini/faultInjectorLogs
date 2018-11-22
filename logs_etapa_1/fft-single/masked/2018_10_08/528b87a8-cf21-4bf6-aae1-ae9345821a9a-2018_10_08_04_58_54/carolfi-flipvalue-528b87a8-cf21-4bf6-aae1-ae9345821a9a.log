@@ -1,0 +1,48 @@
+[INFO -- 2018-10-08 04:58:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-08 04:58:34]
+Initialization strings:
+[INFO -- 2018-10-08 04:58:34]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-08 04:58:34]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-08 04:58:34]
+initSignal:0
+[INFO -- 2018-10-08 04:58:34]
+endSignal:5
+[INFO -- 2018-10-08 04:58:34]
+faultModel:0
+[EXCEPTION -- 2018-10-08 04:58:36]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-10-08 04:58:36]
+Backtrace BEGIN:
+#0  __expf_finite () at ../sysdeps/x86_64/fpu/e_expf.S:97
+#1  0x00007ffff75e8a42 in __GI___expf (x=0,442128837) at ../sysdeps/ieee754/flt-32/w_expf.c:26
+#2  0x00007ffff7bc5284 in fann_run () from /usr/local/lib/libfann.so.2
+#3  0x00000000004019ce in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#4  0x0000000000401631 in main ()
+
+92	../sysdeps/x86_64/fpu/e_expf.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0xb60x5e0xe20x3e
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffda0c
+address max offset: 4
+Memory content after  bitflip:0xb60x7e0xe20x3e
+frame name: __GI___expf
+symbol name: x
+symbol filename: ../sysdeps/ieee754/flt-32/w_expf.c
+symbol line: 24
+value: 0,442372978
+value address: 0x7fffffffda0c
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-10-08 04:58:36]
+Fault Injection Successful after 2.067368507385254s
+[INFO -- 2018-10-08 04:58:54]
+event type: exit
+[INFO -- 2018-10-08 04:58:54]
+exit code: 0

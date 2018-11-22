@@ -1,0 +1,16 @@
+[INFO -- 2018-10-04 15:44:39]
+Starting GDB script
+[INFO -- 2018-10-04 15:44:39]
+initSignal:0.0
+[INFO -- 2018-10-04 15:44:39]
+endSignal:48.0
+[DEBUG -- 2018-10-04 15:44:44]
+Process gdb not running, out:
+[DEBUG -- 2018-10-04 15:44:44]
+check command: ps -e | grep -i gdb
+[INFO -- 2018-10-04 15:44:44]
+Execution finished before waitTime
+[DEBUG -- 2018-10-04 15:44:44]
+now: 1538678679
+[DEBUG -- 2018-10-04 15:44:44]
+timestampStart: 1538678679

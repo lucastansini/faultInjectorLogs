@@ -1,0 +1,53 @@
+[INFO -- 2018-10-06 15:13:59]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-06 15:13:59]
+Initialization strings:
+[INFO -- 2018-10-06 15:13:59]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-06 15:13:59]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-06 15:13:59]
+initSignal:5
+[INFO -- 2018-10-06 15:13:59]
+endSignal:10
+[INFO -- 2018-10-06 15:13:59]
+faultModel:1
+[EXCEPTION -- 2018-10-06 15:14:07]
+gdbException: No symbol "None" in current context.
+[INFO -- 2018-10-06 15:14:07]
+Backtrace BEGIN:
+#0  str_to_mpn (str=0x7fffffffd4c6 "2366104125976562e+00", str@entry=0x7fffffffd4c1 ".80712366104125976562e+00", digcnt=17, digcnt@entry=20, n=n@entry=0x7fffffffd3e0, nsize=nsize@entry=0x7fffffffd3b0, exponent=exponent@entry=0x7fffffffd3c0, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=<optimized out>) at strtod_l.c:399
+#1  0x00007ffff7012c2b in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1427
+#2  0x00007ffff7011d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#3  0x00007ffff702b948 in _IO_vfscanf_internal (s=s@entry=0x6062c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffd8c8, errp=errp@entry=0x0) at vfscanf.c:2365
+#4  0x00007ffff7032162 in __isoc99_fscanf (stream=0x6062c0, format=<optimized out>) at isoc99_fscanf.c:34
+#5  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#6  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#7  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#8  0x0000000000401631 in main ()
+
+394	in strtod_l.c
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x2e
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd4c1 
+address max offset: 1
+Memory content after  bitflip:0x8e
+frame name: __GI_____strtof_l_internal
+symbol name: startp
+symbol filename: strtod_l.c
+symbol line: 504
+value: 0x7fffffffd4c1 "\216\070\060\067\061\062\063\066\066\061\060\064\061\062\065\071\067\066\065\066\062e+00"
+value address: 0x7fffffffd368
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-06 15:14:07]
+Fault Injection Successful after 8.216464519500732s
+[INFO -- 2018-10-06 15:14:19]
+event type: exit
+[INFO -- 2018-10-06 15:14:19]
+exit code: 0

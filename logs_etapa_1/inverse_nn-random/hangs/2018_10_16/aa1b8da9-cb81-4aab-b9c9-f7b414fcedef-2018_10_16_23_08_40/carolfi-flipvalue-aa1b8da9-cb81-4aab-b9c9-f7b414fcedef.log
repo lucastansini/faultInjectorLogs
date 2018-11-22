@@ -1,0 +1,48 @@
+[INFO -- 2018-10-16 23:08:18]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 23:08:18]
+Initialization strings:
+[INFO -- 2018-10-16 23:08:18]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 23:08:18]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 23:08:18]
+initSignal:4
+[INFO -- 2018-10-16 23:08:18]
+endSignal:6
+[INFO -- 2018-10-16 23:08:18]
+faultModel:2
+[EXCEPTION -- 2018-10-16 23:08:22]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-10-16 23:08:22]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-10-16 23:08:22]
+Backtrace BEGIN:
+#0  0x00007ffff7054817 in _int_malloc (av=0x7ffff7396760 <main_arena>, bytes=568) at malloc.c:3384
+#1  0x00007ffff7056ae0 in __GI___libc_malloc (bytes=568) at malloc.c:2893
+#2  0x00007ffff704237d in __fopen_internal (filename=0x401f01 "./inversek2j.nn", mode=0x7ffff7bd3cd1 "r", is32=1) at iofopen.c:73
+#3  0x00007ffff7bcf5f5 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#4  0x000000000040199e in inversek2j(float, float, float*, float*) ()
+#5  0x0000000000401631 in main ()
+
+3379	malloc.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff7398ae0 
+address max offset: 8
+Memory content after  bitflip:0xc00x440x980x380x3e0x6c0x530x12
+frame name: _int_malloc
+symbol name: save_free_hook
+symbol filename: arena.c
+symbol line: 138
+value: 0x0
+value address: 0x7ffff7398ae0 <save_free_hook>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-16 23:08:22]
+Fault Injection Successful after 4.571970701217651s

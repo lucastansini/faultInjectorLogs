@@ -1,0 +1,54 @@
+[INFO -- 2018-10-08 16:02:57]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-08 16:02:57]
+Initialization strings:
+[INFO -- 2018-10-08 16:02:57]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-08 16:02:57]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-08 16:02:57]
+initSignal:20
+[INFO -- 2018-10-08 16:02:57]
+endSignal:25
+[INFO -- 2018-10-08 16:02:57]
+faultModel:4
+[INFO -- 2018-10-08 16:03:17]
+Backtrace BEGIN:
+#0  0x00007ffff7023d57 in ___printf_fp (fp=fp@entry=0x7fffffffd2a0, info=info@entry=0x7fffffffce10, args=args@entry=0x7fffffffcde0) at printf_fp.c:631
+#1  0x00007ffff70226d3 in _IO_vfprintf_internal (s=s@entry=0x7fffffffd2a0, format=<optimized out>, format@entry=0x7fffffffd5a0 "%.*g", ap=ap@entry=0x7fffffffd408) at vfprintf.c:1660
+#2  0x00007ffff7046499 in _IO_vsnprintf (string=0x7fffffffd510 "", maxlen=<optimized out>, format=0x7fffffffd5a0 "%.*g", args=0x7fffffffd408) at vsnprintf.c:119
+#3  0x00007ffff793ee10 in ?? () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007ffff7945264 in std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x00007ffff7945550 in std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#6  0x00007ffff7950af5 in std::ostream& std::ostream::_M_insert<double>(double) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#7  0x00000000004016b3 in main ()
+
+626	printf_fp.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 23
+Memory content before bitflip:0x0f0xd70xff0xff
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff714eadc 
+address max offset: 4
+Memory content after  bitflip:0x0f0xd70xff0xbf
+frame name: _IO_vfprintf_internal
+symbol name: step1_jumps
+symbol filename: vfprintf.c
+symbol line: 1362
+value: {0, 0, 0, 0, 0, 0, 0, 0, 0, -574, -238, 3335, 2510, 3607, -2495, -15046, -727, 1092, 1034, 1620, -14278, -28, 1449, -1073752305, -10405, -15712, 1138, 3510, 3510, 0}
+value address: 0x7ffff714ea80 <step1_jumps>
+Type: The type is an array.
+Type sizeof: 120
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 29)
+
+[INFO -- 2018-10-08 16:03:17]
+Fault Injection Successful after 20.25470805168152s
+[INFO -- 2018-10-08 16:03:17]
+event type: exit
+[INFO -- 2018-10-08 16:03:17]
+exit code: 0

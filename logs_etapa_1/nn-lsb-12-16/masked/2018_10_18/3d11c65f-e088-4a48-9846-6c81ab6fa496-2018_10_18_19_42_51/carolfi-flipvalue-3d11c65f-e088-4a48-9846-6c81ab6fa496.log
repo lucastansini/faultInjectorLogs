@@ -1,0 +1,46 @@
+[INFO -- 2018-10-18 19:42:45]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 19:42:45]
+Initialization strings:
+[INFO -- 2018-10-18 19:42:45]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 19:42:45]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 19:42:45]
+initSignal:4
+[INFO -- 2018-10-18 19:42:45]
+endSignal:5
+[INFO -- 2018-10-18 19:42:45]
+faultModel:4
+[EXCEPTION -- 2018-10-18 19:42:50]
+pythonException: invalid frame
+[INFO -- 2018-10-18 19:42:50]
+Backtrace BEGIN:
+#0  0x00007ffff732c7e2 in __GI__IO_fread (buf=0x7fffffffd5c0, size=49, count=10, fp=0x603640) at iofread.c:35
+#1  0x0000000000401027 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:85
+
+30	iofread.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0xd70xb10x440x42
+Fault Model: LSB bit-flip
+base address to flip value: 0x603880
+address max offset: 4
+Memory content after  bitflip:0xd70xb10x440x46
+frame name: main
+symbol name: z
+symbol filename: nn.c
+symbol line: 80
+value: 0x603880
+value address: 0x7fffffffd538
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 19:42:50]
+Fault Injection Successful after 5.020230770111084s
+[INFO -- 2018-10-18 19:42:51]
+event type: exit
+[INFO -- 2018-10-18 19:42:51]
+exit code: 0

@@ -1,0 +1,133 @@
+[INFO -- 2018-10-19 15:21:38]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 15:21:38]
+Initialization strings:
+[INFO -- 2018-10-19 15:21:38]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 15:21:38]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 15:21:38]
+initSignal:4
+[INFO -- 2018-10-19 15:21:38]
+endSignal:5
+[INFO -- 2018-10-19 15:21:38]
+faultModel:4
+[EXCEPTION -- 2018-10-19 15:21:43]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 15:21:43]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-19 15:21:43]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 15:21:43]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 15:21:43]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 15:21:43]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 15:21:43]
+pythonException: invalid frame
+[INFO -- 2018-10-19 15:21:43]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc06 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bb6a8 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff768f184 in start_thread (arg=0x7ffff70b9700) at pthread_create.c:312
+#3  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+30	    FILE   *flist,*fp;
+31	    int    i=0,j=0, k=0, rec_count=0, done=0;
+32	    char   sandbox[REC_LENGTH * REC_WINDOW], *rec_iter,*rec_iter2, dbname[64];
+33	    struct neighbor *neighbors = NULL;
+34	    float target_lat, target_long, tmp_lat=0, tmp_long=0;
+35	    char * gold_filename;
+36	    long rec_sum = 0;
+37	
+38	    if(argc < 6) {
+39	        fprintf(stderr, "Invalid set of arguments:\n");
+
+Backtrace END
+Fliping value of field: __doallocate
+Fliping a bit of the pointer
+Memory content before bitflip:0xb00xb70x320xf70xff0x7f0x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff767f588 
+address max offset: 8
+Memory content after  bitflip:0xb00xb70x320xf70xff0x7f0x000x20
+frame name: __GI__IO_file_xsgetn
+symbol name: _IO_file_jumps_maybe_mmap
+symbol filename: fileops.c
+symbol line: 1598
+value: {__dummy = 0, __dummy2 = 0, __finish = 0x7ffff7337c80 <_IO_new_file_finish>, __overflow = 0x7ffff73386d0 <_IO_new_file_overflow>, __underflow = 0x7ffff7337770 <_IO_file_underflow_maybe_mmap>, __uflow = 0x7ffff7339530 <__GI__IO_default_uflow>, __pbackfail = 0x7ffff733a6e0 <__GI__IO_default_pbackfail>, __xsputn = 0x7ffff7337500 <_IO_new_file_xsputn>, __xsgetn = 0x7ffff7336d40 <_IO_file_xsgetn_maybe_mmap>, __seekoff = 0x7ffff73366e0 <_IO_file_seekoff_maybe_mmap>, __seekpos = 0x7ffff7339aa0 <_IO_default_seekpos>, __setbuf = 0x7ffff7336810 <_IO_file_setbuf_mmap>, __sync = 0x7ffff7336710 <_IO_new_file_sync>, __doallocate = 0x20007ffff732b7b0, __read = 0x7ffff73374e0 <__GI__IO_file_read>, __write = 0x7ffff7336ed0 <_IO_new_file_write>, __seek = 0x7ffff7336cd0 <__GI__IO_file_seek>, __close = 0x7ffff73367d0 <__GI__IO_file_close>, __stat = 0x7ffff7336ec0 <__GI__IO_file_stat>, __showmanyc = 0x7ffff733a840 <_IO_default_showmanyc>, __imbue = 0x7ffff733a850 <_IO_default_imbue>}
+value address: 0x7ffff767f520 <_IO_file_jumps_maybe_mmap>
+Type: The type is a structure.
+Type sizeof: 168
+Field name: __dummy
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: __dummy2
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: __finish
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __overflow
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __underflow
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __uflow
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __pbackfail
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __xsputn
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __xsgetn
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __seekoff
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __seekpos
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __setbuf
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __sync
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __doallocate
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __read
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __write
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __seek
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __close
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __stat
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __showmanyc
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __imbue
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-10-19 15:21:43]
+Fault Injection Successful after 5.023786783218384s
+[INFO -- 2018-10-19 15:21:43]
+event type: exit
+[INFO -- 2018-10-19 15:21:43]
+exit code: 0

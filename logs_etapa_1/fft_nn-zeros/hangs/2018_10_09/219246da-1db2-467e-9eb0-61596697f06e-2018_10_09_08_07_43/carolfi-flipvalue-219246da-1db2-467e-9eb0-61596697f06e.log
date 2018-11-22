@@ -1,0 +1,46 @@
+[INFO -- 2018-10-09 08:06:51]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-09 08:06:51]
+Initialization strings:
+[INFO -- 2018-10-09 08:06:51]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-09 08:06:51]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-09 08:06:51]
+initSignal:15
+[INFO -- 2018-10-09 08:06:51]
+endSignal:20
+[INFO -- 2018-10-09 08:06:51]
+faultModel:3
+[EXCEPTION -- 2018-10-09 08:07:09]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-10-09 08:07:09]
+Backtrace BEGIN:
+#0  0x00007ffff7056184 in _int_realloc (av=0x7ffff7396760 <main_arena>, oldp=0x2073c970, oldsize=48, nb=48) at malloc.c:4210
+#1  0x00007ffff70572f9 in __GI___libc_realloc (oldmem=0x2073c980, bytes=40) at malloc.c:3031
+#2  0x00007ffff7bced34 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#3  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#4  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#5  0x0000000000401631 in main ()
+
+4205	malloc.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7ffff7398a00 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: __GI___libc_realloc
+symbol name: __after_morecore_hook
+symbol filename: malloc.c
+symbol line: 1842
+value: 0x0
+value address: 0x7ffff7398a00 <__after_morecore_hook>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-09 08:07:09]
+Fault Injection Successful after 18.263090133666992s

@@ -1,0 +1,49 @@
+[INFO -- 2018-10-16 00:21:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 00:21:12]
+Initialization strings:
+[INFO -- 2018-10-16 00:21:12]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 00:21:12]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 00:21:12]
+initSignal:0
+[INFO -- 2018-10-16 00:21:12]
+endSignal:2
+[INFO -- 2018-10-16 00:21:12]
+faultModel:0
+[INFO -- 2018-10-16 00:21:13]
+Backtrace BEGIN:
+#0  0x00007ffff704f2cf in __GI___uflow (fp=0x608610) at genops.c:371
+#1  0x00007ffff70307a7 in _IO_vfscanf_internal (s=s@entry=0x608610, format=<optimized out>, argptr=argptr@entry=0x7fffffffd0d8, errp=errp@entry=0x0) at vfscanf.c:2115
+#2  0x00007ffff7032162 in __isoc99_fscanf (stream=0x608610, format=<optimized out>) at isoc99_fscanf.c:34
+#3  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#4  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x000000000040199e in inversek2j(float, float, float*, float*) ()
+#6  0x0000000000401631 in main ()
+
+366	genops.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x29
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7bd3dac 
+address max offset: 1
+Memory content after  bitflip:0x09
+frame name: _IO_vfscanf_internal
+symbol name: f
+symbol filename: vfscanf.c
+symbol line: 216
+value: 0x7ffff7bd3dac "\t "
+value address: 0x7fffffffcec0
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-16 00:21:13]
+Fault Injection Successful after 1.3086574077606201s
+[INFO -- 2018-10-16 00:21:13]
+event type: exit
+[EXCEPTION -- 2018-10-16 00:21:13]
+exit code: no exit code available

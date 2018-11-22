@@ -1,0 +1,51 @@
+[INFO -- 2018-10-19 06:44:26]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 06:44:26]
+Initialization strings:
+[INFO -- 2018-10-19 06:44:26]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 06:44:26]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 06:44:26]
+initSignal:3
+[INFO -- 2018-10-19 06:44:26]
+endSignal:4
+[INFO -- 2018-10-19 06:44:26]
+faultModel:3
+[EXCEPTION -- 2018-10-19 06:44:29]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 06:44:29]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 06:44:29]
+pythonException: invalid frame
+[INFO -- 2018-10-19 06:44:29]
+Backtrace BEGIN:
+#0  0x00007ffff72fec23 in str_to_mpn (str=str@entry=0x7fffffffd5de ".8 218.6   21   81\n1976  8 16 18 26 DEBBY      37.4 262.3   58  852\n1989  5 14  6  1 WILLIAM    39.8 186.3   64  151\n1950 12  1 18 17 VALERIE    57.5 286.0   56  531\n1993  6 10 12  7 ISAAC      55.2  "..., digcnt=digcnt@entry=1, n=n@entry=0x7fffffffd090, nsize=nsize@entry=0x7fffffffd060, exponent=exponent@entry=0x7fffffffd070, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=<optimized out>) at strtod_l.c:351
+#1  0x00007ffff72ffa8a in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1427
+#2  0x000000000040150f in main._omp_fn.0 () at nn.c:118
+#3  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+346	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x000xc80x41
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd574
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main._omp_fn.0
+symbol name: target_long
+symbol filename: nn.c
+symbol line: 34
+value: 0
+value address: 0x7fffffffd574
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-10-19 06:44:29]
+Fault Injection Successful after 3.4176971912384033s
+[INFO -- 2018-10-19 06:44:31]
+event type: exit
+[INFO -- 2018-10-19 06:44:31]
+exit code: 0

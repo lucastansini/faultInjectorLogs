@@ -1,0 +1,46 @@
+[INFO -- 2018-10-17 13:56:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-17 13:56:34]
+Initialization strings:
+[INFO -- 2018-10-17 13:56:34]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-17 13:56:34]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-17 13:56:34]
+initSignal:8
+[INFO -- 2018-10-17 13:56:34]
+endSignal:10
+[INFO -- 2018-10-17 13:56:34]
+faultModel:4
+[INFO -- 2018-10-17 13:56:43]
+Backtrace BEGIN:
+#0  __GI___libc_realloc (oldmem=0xee10140, bytes=40) at malloc.c:2962
+#1  0x00007ffff7bced34 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#2  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#3  0x000000000040199e in inversek2j(float, float, float*, float*) ()
+#4  0x0000000000401631 in main ()
+
+2957	malloc.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff7398b30 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x10
+frame name: __GI___libc_realloc
+symbol name: perturb_byte
+symbol filename: malloc.c
+symbol line: 1859
+value: 268435456
+value address: 0x7ffff7398b30 <perturb_byte>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-17 13:56:43]
+Fault Injection Successful after 9.35797905921936s
+[INFO -- 2018-10-17 13:56:45]
+event type: exit
+[INFO -- 2018-10-17 13:56:45]
+exit code: 0

@@ -1,0 +1,104 @@
+[INFO -- 2018-10-10 22:32:00]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-10 22:32:00]
+Initialization strings:
+[INFO -- 2018-10-10 22:32:00]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-10 22:32:00]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-10 22:32:00]
+initSignal:0
+[INFO -- 2018-10-10 22:32:00]
+endSignal:5
+[INFO -- 2018-10-10 22:32:00]
+faultModel:0
+[INFO -- 2018-10-10 22:32:01]
+Backtrace BEGIN:
+#0  _dl_sysdep_read_whole_file (file=file@entry=0x7ffff7df6f33 "/etc/ld.so.cache", sizep=sizep@entry=0x7ffff7ffe0f0 <cachesize>, prot=prot@entry=1) at dl-misc.c:52
+#1  0x00007ffff7df0faf in _dl_load_cache_lookup (name=name@entry=0x4006a1 "libfann.so.2") at dl-cache.c:196
+#2  0x00007ffff7de30a6 in _dl_map_object (loader=0x7ffff7ffe1c8, name=0x4006a1 "libfann.so.2", type=1, trace_mode=0, mode=<optimized out>, nsid=<optimized out>) at dl-load.c:2490
+#3  0x00007ffff7de76a2 in openaux (a=a@entry=0x7fffffffd718) at dl-deps.c:63
+#4  0x00007ffff7dea094 in _dl_catch_error (objname=objname@entry=0x7fffffffd710, errstring=errstring@entry=0x7fffffffd708, mallocedp=mallocedp@entry=0x7fffffffd700, operate=operate@entry=0x7ffff7de7670 <openaux>, args=args@entry=0x7fffffffd718) at dl-error.c:187
+#5  0x00007ffff7de7da5 in _dl_map_object_deps (map=map@entry=0x7ffff7ffe1c8, preloads=<optimized out>, npreloads=npreloads@entry=0, trace_mode=trace_mode@entry=0, open_mode=open_mode@entry=0) at dl-deps.c:254
+#6  0x00007ffff7dddc30 in dl_main (phdr=<optimized out>, phdr@entry=0x400040, phnum=<optimized out>, phnum@entry=9, user_entry=user_entry@entry=0x7fffffffd8a8, auxv=<optimized out>) at rtld.c:1775
+#7  0x00007ffff7df15f5 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffd990, dl_main=dl_main@entry=0x7ffff7ddc260 <dl_main>) at ../elf/dl-sysdep.c:249
+#8  0x00007ffff7ddbbb8 in _dl_start_final (arg=0x7fffffffd990) at rtld.c:347
+#9  _dl_start (arg=0x7fffffffd990) at rtld.c:573
+#10 0x00007ffff7ddb268 in _start () from /lib64/ld-linux-x86-64.so.2
+#11 0x0000000000000003 in ?? ()
+#12 0x00007fffffffdd2d in ?? ()
+#13 0x00007fffffffdd44 in ?? ()
+#14 0x00007fffffffdd4a in ?? ()
+#15 0x0000000000000000 in ?? ()
+
+47	dl-misc.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping value of field: st_ctim
+Fliping value of field: tv_nsec
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd030
+address max offset: 8
+Memory content after  bitflip:0x000x000x800x000x000x000x000x00
+frame name: _dl_sysdep_read_whole_file
+symbol name: st
+symbol filename: dl-misc.c
+symbol line: 47
+value: {st_dev = 0, st_ino = 0, st_nlink = 0, st_mode = 0, st_uid = 0, st_gid = 0, __pad0 = 0, st_rdev = 0, st_size = 0, st_blksize = 0, st_blocks = 0, st_atim = {tv_sec = 0, tv_nsec = 0}, st_mtim = {tv_sec = 0, tv_nsec = 0}, st_ctim = {tv_sec = 0, tv_nsec = 8388608}, __glibc_reserved = {0, 0, 0}}
+value address: 0x7fffffffcfc0
+Type: The type is a structure.
+Type sizeof: 144
+Field name: st_dev
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: st_ino
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: st_nlink
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: st_mode
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: st_uid
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: st_gid
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: __pad0
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: st_rdev
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: st_size
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: st_blksize
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: st_blocks
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: st_atim
+Field Type: The type is a structure.
+Field Type sizeof: 16
+Field name: st_mtim
+Field Type: The type is a structure.
+Field Type sizeof: 16
+Field name: st_ctim
+Field Type: The type is a structure.
+Field Type sizeof: 16
+Field name: __glibc_reserved
+Field Type: The type is an array.
+Field Type sizeof: 24
+
+[INFO -- 2018-10-10 22:32:01]
+Fault Injection Successful after 1.0113816261291504s
+[INFO -- 2018-10-10 22:32:20]
+event type: exit
+[INFO -- 2018-10-10 22:32:20]
+exit code: 0

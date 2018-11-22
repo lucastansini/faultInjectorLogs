@@ -1,0 +1,48 @@
+[INFO -- 2018-10-15 18:04:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-15 18:04:12]
+Initialization strings:
+[INFO -- 2018-10-15 18:04:12]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-15 18:04:12]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-15 18:04:12]
+initSignal:0
+[INFO -- 2018-10-15 18:04:12]
+endSignal:2
+[INFO -- 2018-10-15 18:04:12]
+faultModel:0
+[INFO -- 2018-10-15 18:04:13]
+Backtrace BEGIN:
+#0  0x00007ffff7011e2a in str_to_mpn (str=0x6085dd "700", str@entry=0x6085d9 ".118700", digcnt=1, digcnt@entry=4, n=n@entry=0x7fffffffd120, nsize=nsize@entry=0x7fffffffd0f0, exponent=exponent@entry=0x7fffffffd100, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=<optimized out>) at strtod_l.c:385
+#1  0x00007ffff7012c2b in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1427
+#2  0x00007ffff7936d5e in void std::__convert_to_v<float>(char const*, float&, std::_Ios_Iostate&, __locale_struct* const&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x00007ffff794a706 in std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > >::do_get(std::istreambuf_iterator<char, std::char_traits<char> >, std::istreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, std::_Ios_Iostate&, float&) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007ffff793b0d5 in std::istream& std::istream::_M_extract<float>(float&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x0000000000401470 in main ()
+
+380	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd060
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x10
+frame name: str_to_mpn
+symbol name: thousands
+symbol filename: strtod_l.c
+symbol line: 340
+value: 0x0
+value address: 0x7fffffffd060
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-15 18:04:13]
+Fault Injection Successful after 1.2100131511688232s
+[INFO -- 2018-10-15 18:04:23]
+event type: exit
+[INFO -- 2018-10-15 18:04:23]
+exit code: 0

@@ -1,0 +1,50 @@
+[INFO -- 2018-10-19 03:04:28]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 03:04:28]
+Initialization strings:
+[INFO -- 2018-10-19 03:04:28]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 03:04:28]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 03:04:28]
+initSignal:3
+[INFO -- 2018-10-19 03:04:28]
+endSignal:4
+[INFO -- 2018-10-19 03:04:28]
+faultModel:3
+[EXCEPTION -- 2018-10-19 03:04:31]
+pythonException: invalid frame
+[INFO -- 2018-10-19 03:04:31]
+Backtrace BEGIN:
+#0  0x00007ffff732c838 in __GI__IO_fread (buf=0x7fffffffd5c0, size=49, count=10, fp=0x603640) at iofread.c:41
+#1  0x0000000000401027 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:85
+
+36	iofread.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 412
+Memory content before bitflip:0x52
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd75c 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 32
+value: "2003  9  3  6 11 ERNESTO    10.7 142.5   93  459\n1999  2  3  6 25 CHRIS      49.7  90.8   49  185\n1958  2 10  6 15 CHRIS      27.8 344.3   82  416\n1999  3 16 18  8 OSCAR      34.3 203.7   72  108\n1995"...
+value address: 0x7fffffffd5c0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-10-19 03:04:31]
+Fault Injection Successful after 3.7285726070404053s
+[INFO -- 2018-10-19 03:04:33]
+event type: exit
+[INFO -- 2018-10-19 03:04:33]
+exit code: 0

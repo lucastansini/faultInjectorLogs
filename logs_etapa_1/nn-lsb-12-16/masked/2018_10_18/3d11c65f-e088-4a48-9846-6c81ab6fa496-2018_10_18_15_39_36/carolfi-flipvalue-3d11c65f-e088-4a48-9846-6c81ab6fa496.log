@@ -1,0 +1,49 @@
+[INFO -- 2018-10-18 15:39:30]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 15:39:30]
+Initialization strings:
+[INFO -- 2018-10-18 15:39:30]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 15:39:30]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 15:39:30]
+initSignal:4
+[INFO -- 2018-10-18 15:39:30]
+endSignal:5
+[INFO -- 2018-10-18 15:39:30]
+faultModel:4
+[EXCEPTION -- 2018-10-18 15:39:35]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 15:39:35]
+pythonException: invalid frame
+[INFO -- 2018-10-18 15:39:35]
+Backtrace BEGIN:
+#0  0x00007ffff72fec12 in str_to_mpn (str=str@entry=0x7fffffffd60d "28.9 259.9  104  637\n2003 10  8  0 20 MICHAEL    17.4 259.9  107  590\n1953 11  7  6 22 KIRK       56.4 222.1   87  396\n2003  8 28 12 13 NADINE     69.0  83.5  148  866\n1967  5 16  0  6 DEBBY      25.9"..., digcnt=digcnt@entry=2, n=n@entry=0x7fffffffd090, nsize=nsize@entry=0x7fffffffd060, exponent=exponent@entry=0x7fffffffd070, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=0x7ffff744014b <dot> ".") at strtod_l.c:337
+#1  0x00007ffff73001e1 in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=0x0, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1176
+#2  0x000000000040150f in main._omp_fn.0 () at nn.c:118
+#3  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+332	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x330x330x070x43
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd4b4
+address max offset: 4
+Memory content after  bitflip:0x330x330x070x47
+frame name: main._omp_fn.0
+symbol name: tmp_long
+symbol filename: nn.c
+symbol line: 119
+value: 34611,1992
+value address: 0x7fffffffd4b4
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-10-18 15:39:35]
+Fault Injection Successful after 5.052741289138794s
+[INFO -- 2018-10-18 15:39:36]
+event type: exit
+[INFO -- 2018-10-18 15:39:36]
+exit code: 0

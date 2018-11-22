@@ -1,0 +1,47 @@
+[INFO -- 2018-10-08 06:32:47]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-08 06:32:47]
+Initialization strings:
+[INFO -- 2018-10-08 06:32:47]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-08 06:32:47]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-08 06:32:47]
+initSignal:15
+[INFO -- 2018-10-08 06:32:47]
+endSignal:25
+[INFO -- 2018-10-08 06:32:47]
+faultModel:4
+[INFO -- 2018-10-08 06:33:05]
+Backtrace BEGIN:
+#0  _IO_vfscanf_internal (s=s@entry=0x6062c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffd8c8, errp=errp@entry=0x0) at vfscanf.c:2115
+#1  0x00007ffff7032162 in __isoc99_fscanf (stream=0x6062c0, format=<optimized out>) at isoc99_fscanf.c:34
+#2  0x00007ffff7bcecea in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#3  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#4  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#5  0x0000000000401631 in main ()
+
+2110	vfscanf.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x65
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd620 
+address max offset: 1
+Memory content after  bitflip:0x6d
+frame name: _IO_vfscanf_internal
+symbol name: not_in
+symbol filename: vfscanf.c
+symbol line: 234
+value: 109 'm'
+value address: 0x7fffffffd620 "m\333\377\377\377\177"
+Type: The type is an integer type.
+Type sizeof: 1
+
+[INFO -- 2018-10-08 06:33:05]
+Fault Injection Successful after 18.942363023757935s
+[INFO -- 2018-10-08 06:33:06]
+event type: exit
+[EXCEPTION -- 2018-10-08 06:33:06]
+exit code: no exit code available

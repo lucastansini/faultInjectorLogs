@@ -1,0 +1,50 @@
+[INFO -- 2018-10-19 06:07:46]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 06:07:46]
+Initialization strings:
+[INFO -- 2018-10-19 06:07:46]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 06:07:46]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 06:07:46]
+initSignal:0
+[INFO -- 2018-10-19 06:07:46]
+endSignal:1
+[INFO -- 2018-10-19 06:07:46]
+faultModel:0
+[INFO -- 2018-10-19 06:07:46]
+Backtrace BEGIN:
+#0  0x00007ffff72fedcc in str_to_mpn (str=0x7fffffffd642 "  84.7  122  333\n1951  8  9  6  7 HELENE     14.3 135.1   43  427\n2003  6 13 18 26 TONY       55.3 324.7   41  275\n1964  3 13 18 12 DEBBY      41.6 128.8   18  854\n1972  5 22  6 21 OSCAR      32.3  34"..., str@entry=0x7fffffffd640 ".1  84.7  122  333\n1951  8  9  6  7 HELENE     14.3 135.1   43  427\n2003  6 13 18 26 TONY       55.3 324.7   41  275\n1964  3 13 18 12 DEBBY      41.6 128.8   18  854\n1972  5 22  6 21 OSCAR      32.3  "..., digcnt=<optimized out>, digcnt@entry=1, n=n@entry=0x7fffffffd090, nsize=nsize@entry=0x7fffffffd060, exponent=exponent@entry=0x7fffffffd070, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=<optimized out>) at strtod_l.c:430
+#1  0x00007ffff72ffa8a in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1427
+#2  0x000000000040150f in main._omp_fn.0 () at nn.c:118
+#3  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+425	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 13
+Memory content before bitflip:0x5c0x000x000x000x010x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd2d8
+address max offset: 8
+Memory content after  bitflip:0x5c0x000x000x000x010x800x000x00
+frame name: __GI_____strtod_l_internal
+symbol name: den
+symbol filename: strtod_l.c
+symbol line: 494
+value: {10, 140737488343984, 140737340253648, 7491163, 140737488343968, 140737488344088, 0, 140737353964384, 140737353961472, 4195962, 140737340304840, 4195056, 21474836480, 140741783322716, 140733193388037, 140737488344168, 140737488344128, 140737353964384, 1, 140737354130720, 140737354129864, 140737351928369, 0, 140737353964384, 140733193388037, 0, 1, 140737354129864, 4294967295, 6306432, 140737340304552, 140737353961472, 0, 140737354130720, 140737488343984, 140737488343968, 479434442, 4195962, 4294967295, 140737346519266, 140737340253648, 32, 0, 17179869184, 0, 0, 0, 0, 18446744069414584323, 140733193388036, 5, 140737488344416, 4199572, 6306432, 0, 4, 4, 6305968, 140737348711264}
+value address: 0x7fffffffd270
+Type: The type is an array.
+Type sizeof: 472
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 58)
+
+[INFO -- 2018-10-19 06:07:46]
+Fault Injection Successful after 0.6696078777313232s
+[INFO -- 2018-10-19 06:07:51]
+event type: exit
+[INFO -- 2018-10-19 06:07:51]
+exit code: 0

@@ -1,0 +1,49 @@
+[INFO -- 2018-10-16 18:12:57]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 18:12:57]
+Initialization strings:
+[INFO -- 2018-10-16 18:12:57]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 18:12:57]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 18:12:57]
+initSignal:0
+[INFO -- 2018-10-16 18:12:57]
+endSignal:2
+[INFO -- 2018-10-16 18:12:57]
+faultModel:0
+[INFO -- 2018-10-16 18:12:57]
+Backtrace BEGIN:
+#0  __GI___libc_malloc (bytes=140737488343567) at malloc.c:2878
+#1  0x00007ffff7919dad in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#2  0x00007ffff7975249 in std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x00007ffff7975e0b in std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007ffff7975ea4 in std::string::reserve(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x00007ffff794a67b in std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > >::do_get(std::istreambuf_iterator<char, std::char_traits<char> >, std::istreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, std::_Ios_Iostate&, float&) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#6  0x00007ffff793b0d5 in std::istream& std::istream::_M_extract<float>(float&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#7  0x0000000000401470 in main ()
+
+2873	malloc.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7398b20 
+address max offset: 4
+Memory content after  bitflip:0x000x000x800x00
+frame name: __GI___libc_malloc
+symbol name: list_lock
+symbol filename: arena.c
+symbol line: 78
+value: 8388608
+value address: 0x7ffff7398b20 <list_lock>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-16 18:12:57]
+Fault Injection Successful after 0.6564013957977295s
+[INFO -- 2018-10-16 18:13:07]
+event type: exit
+[INFO -- 2018-10-16 18:13:07]
+exit code: 0

@@ -1,0 +1,54 @@
+[INFO -- 2018-10-19 13:52:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 13:52:12]
+Initialization strings:
+[INFO -- 2018-10-19 13:52:12]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 13:52:12]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 13:52:12]
+initSignal:0
+[INFO -- 2018-10-19 13:52:12]
+endSignal:1
+[INFO -- 2018-10-19 13:52:12]
+faultModel:0
+[EXCEPTION -- 2018-10-19 13:52:12]
+pythonException: invalid frame
+[INFO -- 2018-10-19 13:52:12]
+Backtrace BEGIN:
+#0  0x0000000000401295 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:137
+
+132	                    max_dist = neighbors[j].dist;
+133	                    max_idx = j;
+134	                }
+135	            }
+136	            // compare each record with max value to find the nearest neighbor
+137	            if( z[i] < neighbors[max_idx].dist ) {
+138	                sandbox[(i+1)*REC_LENGTH-1] = '\0';
+139	                strcpy(neighbors[max_idx].entry, sandbox +i*REC_LENGTH);
+140	                neighbors[max_idx].dist = z[i];
+141	            }
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000xdd0xff0xff0xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd550
+address max offset: 8
+Memory content after  bitflip:0x000xdd0xff0xff0xdf0x7f0x000x00
+frame name: main
+symbol name: gold_filename
+symbol filename: nn.c
+symbol line: 35
+value: 0x7fffffffdd00 "/home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25"
+value address: 0x7fffffffd550
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-19 13:52:12]
+Fault Injection Successful after 0.7634382247924805s
+[INFO -- 2018-10-19 13:52:17]
+event type: exit
+[EXCEPTION -- 2018-10-19 13:52:17]
+exit code: no exit code available

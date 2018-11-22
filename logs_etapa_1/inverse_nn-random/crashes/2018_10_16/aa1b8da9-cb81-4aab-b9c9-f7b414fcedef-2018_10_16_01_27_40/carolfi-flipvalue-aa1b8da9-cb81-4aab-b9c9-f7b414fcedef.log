@@ -1,0 +1,49 @@
+[INFO -- 2018-10-16 01:27:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 01:27:34]
+Initialization strings:
+[INFO -- 2018-10-16 01:27:34]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 01:27:34]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 01:27:34]
+initSignal:4
+[INFO -- 2018-10-16 01:27:34]
+endSignal:6
+[INFO -- 2018-10-16 01:27:34]
+faultModel:2
+[INFO -- 2018-10-16 01:27:38]
+Backtrace BEGIN:
+#0  0x00007ffff7012813 in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=0x7fffffffcf00, group=<optimized out>, loc=<optimized out>) at strtod_l.c:887
+#1  0x00007ffff7011d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#2  0x00007ffff702b948 in _IO_vfscanf_internal (s=s@entry=0x608610, format=<optimized out>, argptr=argptr@entry=0x7fffffffd0d8, errp=errp@entry=0x0) at vfscanf.c:2365
+#3  0x00007ffff7032162 in __isoc99_fscanf (stream=0x608610, format=<optimized out>) at isoc99_fscanf.c:34
+#4  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#5  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#6  0x000000000040199e in inversek2j(float, float, float*, float*) ()
+#7  0x0000000000401631 in main ()
+
+882	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x65
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff713f094  
+address max offset: 1
+Memory content after  bitflip:0xc5
+frame name: __GI_____strtof_l_internal
+symbol name: lowc
+symbol filename: strtod_l.c
+symbol line: 719
+value: -59 '\305'
+value address: 0x7ffff713f094 <_nl_C_LC_CTYPE_tolower+916> <incomplete sequence \305>
+Type: The type is an integer type.
+Type sizeof: 1
+
+[INFO -- 2018-10-16 01:27:38]
+Fault Injection Successful after 4.964698553085327s
+[INFO -- 2018-10-16 01:27:39]
+event type: exit
+[EXCEPTION -- 2018-10-16 01:27:39]
+exit code: no exit code available

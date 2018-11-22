@@ -1,0 +1,52 @@
+[INFO -- 2018-10-16 05:09:50]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 05:09:50]
+Initialization strings:
+[INFO -- 2018-10-16 05:09:50]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 05:09:50]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 05:09:50]
+initSignal:0
+[INFO -- 2018-10-16 05:09:50]
+endSignal:2
+[INFO -- 2018-10-16 05:09:50]
+faultModel:0
+[INFO -- 2018-10-16 05:09:51]
+Backtrace BEGIN:
+#0  0x00007ffff70120cf in round_and_return (retval=0x7fffffffd110, exponent=0, negative=negative@entry=0, round_limb=round_limb@entry=1340303530907588601, round_bit=40, more_bits=1) at strtod_l.c:201
+#1  0x00007ffff7013332 in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1613
+#2  0x00007ffff7936d5e in void std::__convert_to_v<float>(char const*, float&, std::_Ios_Iostate&, __locale_struct* const&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x00007ffff794a706 in std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > >::do_get(std::istreambuf_iterator<char, std::char_traits<char> >, std::istreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, std::_Ios_Iostate&, float&) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007ffff793b0d5 in std::istream& std::istream::_M_extract<float>(float&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x0000000000401470 in main ()
+
+196	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 1
+Memory content before bitflip:0x090x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd178
+address max offset: 8
+Memory content after  bitflip:0x090x000x400x000x000x000x000x00
+frame name: __GI_____strtof_l_internal
+symbol name: den
+symbol filename: strtod_l.c
+symbol line: 494
+value: {17592186044416000000, 4194313, 140737343357880, 140737488343488, 140737488343567, 140737346903469, 140737488343472, 32, 0, 4294967295}
+value address: 0x7fffffffd170
+Type: The type is an array.
+Type sizeof: 80
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 9)
+
+[INFO -- 2018-10-16 05:09:51]
+Fault Injection Successful after 1.154695749282837s
+[INFO -- 2018-10-16 05:10:01]
+event type: exit
+[INFO -- 2018-10-16 05:10:01]
+exit code: 0

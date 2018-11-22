@@ -1,0 +1,49 @@
+[INFO -- 2018-10-18 17:07:09]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 17:07:09]
+Initialization strings:
+[INFO -- 2018-10-18 17:07:09]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 17:07:09]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 17:07:09]
+initSignal:0
+[INFO -- 2018-10-18 17:07:09]
+endSignal:1
+[INFO -- 2018-10-18 17:07:09]
+faultModel:0
+[EXCEPTION -- 2018-10-18 17:07:10]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 17:07:10]
+pythonException: invalid frame
+[INFO -- 2018-10-18 17:07:10]
+Backtrace BEGIN:
+#0  __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1516
+#1  0x000000000040152c in main._omp_fn.0 () at nn.c:119
+#2  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+1511	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x2f
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffdd00 
+address max offset: 1
+Memory content after  bitflip:0x2e
+frame name: main
+symbol name: gold_filename
+symbol filename: nn.c
+symbol line: 35
+value: 0x7fffffffdd00 ".home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25"
+value address: 0x7fffffffd550
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 17:07:10]
+Fault Injection Successful after 1.0690598487854004s
+[INFO -- 2018-10-18 17:07:15]
+event type: exit
+[EXCEPTION -- 2018-10-18 17:07:15]
+exit code: no exit code available

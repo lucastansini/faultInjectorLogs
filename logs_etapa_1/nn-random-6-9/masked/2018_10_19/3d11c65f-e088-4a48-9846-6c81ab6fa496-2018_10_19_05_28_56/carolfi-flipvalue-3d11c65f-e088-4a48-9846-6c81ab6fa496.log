@@ -1,0 +1,52 @@
+[INFO -- 2018-10-19 05:28:50]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 05:28:50]
+Initialization strings:
+[INFO -- 2018-10-19 05:28:50]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 05:28:50]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 05:28:50]
+initSignal:2
+[INFO -- 2018-10-19 05:28:50]
+endSignal:3
+[INFO -- 2018-10-19 05:28:50]
+faultModel:2
+[EXCEPTION -- 2018-10-19 05:28:53]
+pythonException: invalid frame
+[INFO -- 2018-10-19 05:28:53]
+Backtrace BEGIN:
+#0  __mpn_lshift () at ../sysdeps/x86_64/lshift.S:51
+#1  0x00007ffff72ffab8 in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1450
+#2  0x000000000040152c in main._omp_fn.0 () at nn.c:119
+#3  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+46	../sysdeps/x86_64/lshift.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 18
+Memory content before bitflip:0x6e
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff7446bb2  
+address max offset: 1
+Memory content after  bitflip:0xb7
+frame name: __GI_____strtod_l_internal
+symbol name: __PRETTY_FUNCTION__
+symbol filename: strtod_l.c
+symbol line: 0
+value: "____strtod_l_inter\267al"
+value address: 0x7ffff7446ba0 <__PRETTY_FUNCTION__.11542>
+Type: The type is an array.
+Type sizeof: 22
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 21)
+
+[INFO -- 2018-10-19 05:28:53]
+Fault Injection Successful after 3.0809311866760254s
+[INFO -- 2018-10-19 05:28:56]
+event type: exit
+[INFO -- 2018-10-19 05:28:56]
+exit code: 0

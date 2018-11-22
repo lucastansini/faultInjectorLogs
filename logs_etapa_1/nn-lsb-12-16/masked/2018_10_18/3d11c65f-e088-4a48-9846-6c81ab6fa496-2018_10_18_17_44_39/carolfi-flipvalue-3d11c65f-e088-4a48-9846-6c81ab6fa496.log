@@ -1,0 +1,51 @@
+[INFO -- 2018-10-18 17:44:33]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 17:44:33]
+Initialization strings:
+[INFO -- 2018-10-18 17:44:33]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 17:44:33]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 17:44:33]
+initSignal:4
+[INFO -- 2018-10-18 17:44:33]
+endSignal:5
+[INFO -- 2018-10-18 17:44:33]
+faultModel:4
+[EXCEPTION -- 2018-10-18 17:44:38]
+pythonException: invalid frame
+[INFO -- 2018-10-18 17:44:38]
+Backtrace BEGIN:
+#0  __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1516
+#1  0x000000000040152c in main._omp_fn.0 () at nn.c:119
+#2  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+1511	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 0
+Memory content before bitflip:0x210x010x000x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd080
+address max offset: 8
+Memory content after  bitflip:0x210x010x000x000x000x000x000x08
+frame name: __GI_____strtod_l_internal
+symbol name: retval
+symbol filename: strtod_l.c
+symbol line: 497
+value: {576460752303423777}
+value address: 0x7fffffffd080
+Type: The type is an array.
+Type sizeof: 8
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 0)
+
+[INFO -- 2018-10-18 17:44:38]
+Fault Injection Successful after 5.128157138824463s
+[INFO -- 2018-10-18 17:44:38]
+event type: exit
+[INFO -- 2018-10-18 17:44:38]
+exit code: 0

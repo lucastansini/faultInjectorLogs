@@ -1,0 +1,49 @@
+[INFO -- 2018-10-18 23:47:57]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 23:47:57]
+Initialization strings:
+[INFO -- 2018-10-18 23:47:57]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 23:47:57]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 23:47:57]
+initSignal:3
+[INFO -- 2018-10-18 23:47:57]
+endSignal:4
+[INFO -- 2018-10-18 23:47:57]
+faultModel:3
+[EXCEPTION -- 2018-10-18 23:48:00]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 23:48:00]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 23:48:00]
+pythonException: invalid frame
+[INFO -- 2018-10-18 23:48:00]
+Backtrace BEGIN:
+#0  0x00007ffff732c7e2 in __GI__IO_fread (buf=0x7fffffffd5c0, size=49, count=10, fp=0x603640) at iofread.c:35
+#1  0x0000000000401027 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:85
+
+30	iofread.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x000xc80x41
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd508
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main
+symbol name: target_lat
+symbol filename: nn.c
+symbol line: 34
+value: 0
+value address: 0x7fffffffd508
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-10-18 23:48:00]
+Fault Injection Successful after 3.409245252609253s
+[INFO -- 2018-10-18 23:48:02]
+event type: exit
+[INFO -- 2018-10-18 23:48:02]
+exit code: 0

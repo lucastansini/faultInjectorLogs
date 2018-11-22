@@ -1,0 +1,69 @@
+[INFO -- 2018-10-18 17:12:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 17:12:34]
+Initialization strings:
+[INFO -- 2018-10-18 17:12:34]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 17:12:34]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 17:12:34]
+initSignal:3
+[INFO -- 2018-10-18 17:12:34]
+endSignal:4
+[INFO -- 2018-10-18 17:12:34]
+faultModel:3
+[EXCEPTION -- 2018-10-18 17:12:37]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 17:12:37]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 17:12:37]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 17:12:37]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-18 17:12:37]
+pythonException: invalid frame
+[INFO -- 2018-10-18 17:12:37]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc02 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bb6a8 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff768f184 in start_thread (arg=0x7ffff70b9700) at pthread_create.c:312
+#3  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+30	    FILE   *flist,*fp;
+31	    int    i=0,j=0, k=0, rec_count=0, done=0;
+32	    char   sandbox[REC_LENGTH * REC_WINDOW], *rec_iter,*rec_iter2, dbname[64];
+33	    struct neighbor *neighbors = NULL;
+34	    float target_lat, target_long, tmp_lat=0, tmp_long=0;
+35	    char * gold_filename;
+36	    long rec_sum = 0;
+37	
+38	    if(argc < 6) {
+39	        fprintf(stderr, "Invalid set of arguments:\n");
+
+Backtrace END
+Fliping array at pos: 374
+Memory content before bitflip:0x39
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd736 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 32
+value: "1959 10  6  6  6 JOYCE      54.4  65.7  128  356\n1977  4 24 12 28 WILLIAM    11.6 107.2  136  358\n1965  2  8  6  8 OSCAR      19.7  96.0  101  162\n1959 11 27  0 15 VALERIE    44.4 249.7   83  388\n1964"...
+value address: 0x7fffffffd5c0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-10-18 17:12:37]
+Fault Injection Successful after 3.1217808723449707s
+[INFO -- 2018-10-18 17:12:39]
+event type: exit
+[INFO -- 2018-10-18 17:12:39]
+exit code: 0

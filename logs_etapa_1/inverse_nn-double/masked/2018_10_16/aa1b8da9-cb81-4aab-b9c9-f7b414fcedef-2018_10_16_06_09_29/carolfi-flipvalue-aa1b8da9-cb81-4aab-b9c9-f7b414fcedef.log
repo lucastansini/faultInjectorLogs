@@ -1,0 +1,55 @@
+[INFO -- 2018-10-16 06:09:18]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 06:09:18]
+Initialization strings:
+[INFO -- 2018-10-16 06:09:18]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 06:09:18]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 06:09:18]
+initSignal:2
+[INFO -- 2018-10-16 06:09:18]
+endSignal:4
+[INFO -- 2018-10-16 06:09:18]
+faultModel:1
+[EXCEPTION -- 2018-10-16 06:09:20]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-10-16 06:09:20]
+Backtrace BEGIN:
+#0  __mpn_mul_1 () at ../sysdeps/x86_64/mul_1.S:39
+#1  0x00007ffff7011fef in str_to_mpn (str=0x7fffffffcce6 "e+00", str@entry=0x7fffffffccd1 ".90694975852966308594e+00", digcnt=<optimized out>, digcnt@entry=20, n=n@entry=0x7fffffffcbf0, nsize=nsize@entry=0x7fffffffcbc0, exponent=exponent@entry=0x7fffffffcbd0, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=<optimized out>) at strtod_l.c:420
+#2  0x00007ffff7012c2b in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1427
+#3  0x00007ffff7011d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#4  0x00007ffff702b948 in _IO_vfscanf_internal (s=s@entry=0x608610, format=<optimized out>, argptr=argptr@entry=0x7fffffffd0d8, errp=errp@entry=0x0) at vfscanf.c:2365
+#5  0x00007ffff7032162 in __isoc99_fscanf (stream=0x608610, format=<optimized out>) at isoc99_fscanf.c:34
+#6  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#7  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#8  0x000000000040199e in inversek2j(float, float, float*, float*) ()
+#9  0x0000000000401631 in main ()
+
+34	in ../sysdeps/x86_64/mul_1.S
+
+Backtrace END
+Fliping array at pos: 0
+Fliping value of field: fp_offset
+Memory content before bitflip:0x300x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd0dc
+address max offset: 4
+Memory content after  bitflip:0x300x000x000x88
+frame name: __isoc99_fscanf
+symbol name: arg
+symbol filename: isoc99_fscanf.c
+symbol line: 27
+value: {{gp_offset = 16, fp_offset = 2281701424, overflow_arg_area = 0x7fffffffd1b0, reg_save_area = 0x7fffffffd0f0}}
+value address: 0x7fffffffd0d8
+Type: The type is an array.
+Type sizeof: 24
+
+[INFO -- 2018-10-16 06:09:20]
+Fault Injection Successful after 2.938157796859741s
+[INFO -- 2018-10-16 06:09:28]
+event type: exit
+[INFO -- 2018-10-16 06:09:28]
+exit code: 0

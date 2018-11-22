@@ -1,0 +1,64 @@
+[INFO -- 2018-10-19 05:45:40]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 05:45:40]
+Initialization strings:
+[INFO -- 2018-10-19 05:45:40]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 05:45:40]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 05:45:40]
+initSignal:3
+[INFO -- 2018-10-19 05:45:40]
+endSignal:4
+[INFO -- 2018-10-19 05:45:40]
+faultModel:3
+[EXCEPTION -- 2018-10-19 05:45:43]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 05:45:43]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 05:45:43]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 05:45:43]
+gdbException: A syntax error in expression, near `...'.
+[INFO -- 2018-10-19 05:45:43]
+Backtrace BEGIN:
+#0  0x00007ffff78bddf3 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bb6da in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff768f184 in start_thread (arg=0x7ffff70b9700) at pthread_create.c:312
+#3  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+30	    FILE   *flist,*fp;
+31	    int    i=0,j=0, k=0, rec_count=0, done=0;
+32	    char   sandbox[REC_LENGTH * REC_WINDOW], *rec_iter,*rec_iter2, dbname[64];
+33	    struct neighbor *neighbors = NULL;
+34	    float target_lat, target_long, tmp_lat=0, tmp_long=0;
+35	    char * gold_filename;
+36	    long rec_sum = 0;
+37	
+38	    if(argc < 6) {
+39	        fprintf(stderr, "Invalid set of arguments:\n");
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping a bit of the pointer
+Memory content before bitflip:0x570xdc0xff0xff0xff0x7f0x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd8b8
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: main
+symbol name: argv
+symbol filename: nn.c
+symbol line: 29
+value: 0x7fffffffd8b8
+value address: 0x7fffffffd4e0
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-19 05:45:43]
+Fault Injection Successful after 3.576308488845825s
+[INFO -- 2018-10-19 05:45:45]
+event type: exit
+[INFO -- 2018-10-19 05:45:45]
+exit code: 0

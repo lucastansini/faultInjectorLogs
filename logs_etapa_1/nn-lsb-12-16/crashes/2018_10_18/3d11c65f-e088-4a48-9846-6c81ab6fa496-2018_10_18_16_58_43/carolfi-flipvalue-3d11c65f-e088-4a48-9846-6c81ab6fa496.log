@@ -1,0 +1,58 @@
+[INFO -- 2018-10-18 16:58:38]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 16:58:38]
+Initialization strings:
+[INFO -- 2018-10-18 16:58:38]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 16:58:38]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 16:58:38]
+initSignal:4
+[INFO -- 2018-10-18 16:58:38]
+endSignal:5
+[INFO -- 2018-10-18 16:58:38]
+faultModel:4
+[EXCEPTION -- 2018-10-18 16:58:43]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 16:58:43]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 16:58:43]
+pythonException: invalid frame
+[INFO -- 2018-10-18 16:58:43]
+Backtrace BEGIN:
+#0  0x000000000040137f in main (argc=6, argv=0x7fffffffd8b8) at nn.c:83
+
+78	    }
+79	
+80	    float *z;
+81	    z  = (float *) malloc(REC_WINDOW * sizeof(float));
+82	
+83	    while(!done) {
+84	        //Read in REC_WINDOW number of records
+85	        rec_count = fread(sandbox, REC_LENGTH, REC_WINDOW, fp);
+86	        rec_sum += rec_count;
+87	        if( rec_count != REC_WINDOW ) {
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x300x300x600x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd548
+address max offset: 8
+Memory content after  bitflip:0x300x300x600x000x000x000x000x02
+frame name: main
+symbol name: flist
+symbol filename: nn.c
+symbol line: 30
+value: 0x603030
+value address: 0x7fffffffd548
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 16:58:43]
+Fault Injection Successful after 5.011520624160767s
+[INFO -- 2018-10-18 16:58:43]
+event type: exit
+[EXCEPTION -- 2018-10-18 16:58:43]
+exit code: no exit code available

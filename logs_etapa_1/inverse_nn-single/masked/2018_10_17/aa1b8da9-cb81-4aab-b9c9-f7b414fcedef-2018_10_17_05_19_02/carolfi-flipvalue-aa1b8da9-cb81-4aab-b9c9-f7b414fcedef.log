@@ -1,0 +1,51 @@
+[INFO -- 2018-10-17 05:18:51]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-17 05:18:51]
+Initialization strings:
+[INFO -- 2018-10-17 05:18:51]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-17 05:18:51]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-17 05:18:51]
+initSignal:0
+[INFO -- 2018-10-17 05:18:51]
+endSignal:2
+[INFO -- 2018-10-17 05:18:51]
+faultModel:0
+[INFO -- 2018-10-17 05:18:51]
+Backtrace BEGIN:
+#0  __GI_____strtof_l_internal (nptr=0x6085d8 "0.223983", endptr=0x7fffffffd208, group=<optimized out>, loc=0x7ffff7394400 <_nl_C_locobj>) at strtod_l.c:720
+#1  0x00007ffff7936d5e in void std::__convert_to_v<float>(char const*, float&, std::_Ios_Iostate&, __locale_struct* const&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#2  0x00007ffff794a706 in std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > >::do_get(std::istreambuf_iterator<char, std::char_traits<char> >, std::istreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, std::_Ios_Iostate&, float&) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x00007ffff793b0d5 in std::istream& std::istream::_M_extract<float>(float&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x0000000000401470 in main ()
+
+715	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 1
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd128
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x04
+frame name: __GI_____strtof_l_internal
+symbol name: num
+symbol filename: strtod_l.c
+symbol line: 485
+value: {3334440535044653056, 288230376151711744, 0, 140737347080361, 140737349669024, 0, 51, 140737349669024, 0, 140737347100202}
+value address: 0x7fffffffd120
+Type: The type is an array.
+Type sizeof: 80
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 9)
+
+[INFO -- 2018-10-17 05:18:51]
+Fault Injection Successful after 0.9260170459747314s
+[INFO -- 2018-10-17 05:19:01]
+event type: exit
+[INFO -- 2018-10-17 05:19:01]
+exit code: 0

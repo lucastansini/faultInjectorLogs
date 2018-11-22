@@ -1,0 +1,62 @@
+[INFO -- 2018-10-18 15:16:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 15:16:27]
+Initialization strings:
+[INFO -- 2018-10-18 15:16:27]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 15:16:27]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 15:16:27]
+initSignal:3
+[INFO -- 2018-10-18 15:16:27]
+endSignal:4
+[INFO -- 2018-10-18 15:16:27]
+faultModel:3
+[EXCEPTION -- 2018-10-18 15:16:30]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 15:16:30]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 15:16:30]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-18 15:16:30]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 15:16:30]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 15:16:30]
+pythonException: invalid frame
+[INFO -- 2018-10-18 15:16:30]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc2e in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bb6a8 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff768f184 in start_thread (arg=0x7ffff70b9700) at pthread_create.c:312
+#3  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+76	in ../sysdeps/unix/syscall-template.S
+
+Backtrace END
+Fliping array at pos: 319
+Memory content before bitflip:0x20
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd6ff 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 32
+value: "1975  3  7  6 27 JOYCE       7.9 149.1  118  497\n1963  7 26  6  1 LESLIE     40.5 235.8   95  175\n1992 12  5 18  4 KIRK       39.6 137.4  152   39\n1970  4 28  6  9 TONY       26.0   9.0   11  531\n1976"...
+value address: 0x7fffffffd5c0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-10-18 15:16:30]
+Fault Injection Successful after 3.527008533477783s
+[INFO -- 2018-10-18 15:16:32]
+event type: exit
+[INFO -- 2018-10-18 15:16:32]
+exit code: 0

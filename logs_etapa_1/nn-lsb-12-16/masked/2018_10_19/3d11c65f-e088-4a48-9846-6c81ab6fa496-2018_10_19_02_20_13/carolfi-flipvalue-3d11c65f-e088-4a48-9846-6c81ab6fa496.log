@@ -1,0 +1,50 @@
+[INFO -- 2018-10-19 02:20:07]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 02:20:07]
+Initialization strings:
+[INFO -- 2018-10-19 02:20:07]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 02:20:07]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 02:20:07]
+initSignal:4
+[INFO -- 2018-10-19 02:20:07]
+endSignal:5
+[INFO -- 2018-10-19 02:20:07]
+faultModel:4
+[EXCEPTION -- 2018-10-19 02:20:11]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 02:20:11]
+pythonException: invalid frame
+[INFO -- 2018-10-19 02:20:11]
+Backtrace BEGIN:
+#0  0x00007ffff72fefb8 in round_and_return (retval=retval@entry=0x7fffffffd080, exponent=<optimized out>, negative=negative@entry=0, round_limb=<optimized out>, round_limb@entry=14757395258967641292, round_bit=<optimized out>, more_bits=<optimized out>) at strtod_l.c:328
+#1  0x00007ffff72ffc7d in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1613
+#2  0x000000000040152c in main._omp_fn.0 () at nn.c:119
+#3  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+323	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x460xd60xff0xff0xff0x7f0x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd038
+address max offset: 8
+Memory content after  bitflip:0x460xd60xff0xff0xff0x7f0x000x08
+frame name: __GI_____strtod_l_internal
+symbol name: startp
+symbol filename: strtod_l.c
+symbol line: 504
+value: 0x7fffffffd646 ".8  116  537\n2003  2 10 18 12 TONY       27.6 207.3  161  610\n1952 11 16  6  1 CHRIS      67.2  31.4  146  312\n1963  9  3  6 16 ALBERTO    39.8 230.2   94  605\n1951  5 19 12 18 PATTY       8.1  30.6  "...
+value address: 0x7fffffffd038
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-19 02:20:11]
+Fault Injection Successful after 4.419342994689941s
+[INFO -- 2018-10-19 02:20:13]
+event type: exit
+[INFO -- 2018-10-19 02:20:13]
+exit code: 0

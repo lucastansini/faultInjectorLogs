@@ -1,0 +1,55 @@
+[INFO -- 2018-10-18 18:29:50]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 18:29:50]
+Initialization strings:
+[INFO -- 2018-10-18 18:29:50]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 18:29:50]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 18:29:50]
+initSignal:4
+[INFO -- 2018-10-18 18:29:50]
+endSignal:5
+[INFO -- 2018-10-18 18:29:50]
+faultModel:4
+[EXCEPTION -- 2018-10-18 18:29:54]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 18:29:54]
+pythonException: invalid frame
+[INFO -- 2018-10-18 18:29:54]
+Backtrace BEGIN:
+#0  0x0000000000401226 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:131
+
+126	        for( i = 0 ; i < rec_count ; i++ ) {
+127	            float max_dist = -1;
+128	            int max_idx = 0;
+129	            // find a neighbor with greatest dist and take his spot if allowed!
+130	            for( j = 0 ; j < k ; j++ ) {
+131	                if( neighbors[j].dist > max_dist ) {
+132	                    max_dist = neighbors[j].dist;
+133	                    max_idx = j;
+134	                }
+135	            }
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd524
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x08
+frame name: main
+symbol name: tmp_long
+symbol filename: nn.c
+symbol line: 34
+value: 3,85185989e-34
+value address: 0x7fffffffd524
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-10-18 18:29:54]
+Fault Injection Successful after 4.979100942611694s
+[INFO -- 2018-10-18 18:29:56]
+event type: exit
+[INFO -- 2018-10-18 18:29:56]
+exit code: 0

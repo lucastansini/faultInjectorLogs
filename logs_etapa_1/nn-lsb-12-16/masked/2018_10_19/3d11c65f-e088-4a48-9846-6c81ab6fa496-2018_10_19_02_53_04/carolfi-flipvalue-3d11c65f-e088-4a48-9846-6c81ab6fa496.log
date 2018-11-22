@@ -1,0 +1,51 @@
+[INFO -- 2018-10-19 02:52:57]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 02:52:57]
+Initialization strings:
+[INFO -- 2018-10-19 02:52:57]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 02:52:57]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 02:52:57]
+initSignal:4
+[INFO -- 2018-10-19 02:52:57]
+endSignal:5
+[INFO -- 2018-10-19 02:52:57]
+faultModel:4
+[EXCEPTION -- 2018-10-19 02:53:01]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 02:53:01]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 02:53:01]
+pythonException: invalid frame
+[INFO -- 2018-10-19 02:53:01]
+Backtrace BEGIN:
+#0  strlen () at ../sysdeps/x86_64/strlen.S:108
+#1  0x00007ffff72ff3e9 in __GI_____strtod_l_internal (nptr=0x7fffffffd63d " 17.2 236.4   47  670\n1963 11 15  0 25 NADINE     22.9  70.9  132  475\n1997  2 19 12  1 KIRK       17.8 328.0   89  720\n1969  2  2  0 21 BERYL      19.9 101.0  139  440\n1974  5  8  6 10 JOYCE      23."..., endptr=0x0, group=<optimized out>, loc=0x7ffff7681060 <_nl_global_locale>) at strtod_l.c:572
+#2  0x000000000040150f in main._omp_fn.0 () at nn.c:118
+#3  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+103	../sysdeps/x86_64/strlen.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd524
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x08
+frame name: main
+symbol name: tmp_long
+symbol filename: nn.c
+symbol line: 34
+value: 3,85185989e-34
+value address: 0x7fffffffd524
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-10-19 02:53:01]
+Fault Injection Successful after 4.949276685714722s
+[INFO -- 2018-10-19 02:53:03]
+event type: exit
+[INFO -- 2018-10-19 02:53:03]
+exit code: 0

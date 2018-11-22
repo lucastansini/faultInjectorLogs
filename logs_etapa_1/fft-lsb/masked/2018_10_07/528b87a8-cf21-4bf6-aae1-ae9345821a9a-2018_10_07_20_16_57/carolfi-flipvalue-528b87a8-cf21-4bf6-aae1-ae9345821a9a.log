@@ -1,0 +1,52 @@
+[INFO -- 2018-10-07 20:16:37]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-07 20:16:37]
+Initialization strings:
+[INFO -- 2018-10-07 20:16:37]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-07 20:16:37]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-07 20:16:37]
+initSignal:15
+[INFO -- 2018-10-07 20:16:37]
+endSignal:25
+[INFO -- 2018-10-07 20:16:37]
+faultModel:4
+[EXCEPTION -- 2018-10-07 20:16:57]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-10-07 20:16:57]
+Backtrace BEGIN:
+#0  0x00007ffff7024fa7 in ___printf_fp (fp=fp@entry=0x7fffffffd760, info=info@entry=0x7fffffffd2d0, args=args@entry=0x7fffffffd2a0) at printf_fp.c:1250
+#1  0x00007ffff70226d3 in _IO_vfprintf_internal (s=s@entry=0x7fffffffd760, format=<optimized out>, format@entry=0x7fffffffda60 "%.*g", ap=ap@entry=0x7fffffffd8c8) at vfprintf.c:1660
+#2  0x00007ffff7046499 in _IO_vsnprintf (string=0x7fffffffd9d0 "", maxlen=<optimized out>, format=0x7fffffffda60 "%.*g", args=0x7fffffffd8c8) at vsnprintf.c:119
+#3  0x00007ffff793ee10 in ?? () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007ffff7945264 in std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x00007ffff7945550 in std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#6  0x00007ffff7950af5 in std::ostream& std::ostream::_M_insert<double>(double) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#7  0x00000000004016b3 in main ()
+
+1245	in printf_fp.c
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd228
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x10
+frame name: _IO_vfprintf_internal
+symbol name: thousands_sep
+symbol filename: vfprintf.c
+symbol line: 240
+value: 0x0
+value address: 0x7fffffffd228
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-07 20:16:57]
+Fault Injection Successful after 20.44649314880371s
+[INFO -- 2018-10-07 20:16:57]
+event type: exit
+[INFO -- 2018-10-07 20:16:57]
+exit code: 0

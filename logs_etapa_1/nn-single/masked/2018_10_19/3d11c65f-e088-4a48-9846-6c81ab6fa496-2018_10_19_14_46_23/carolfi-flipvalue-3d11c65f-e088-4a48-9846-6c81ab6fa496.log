@@ -1,0 +1,52 @@
+[INFO -- 2018-10-19 14:46:17]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 14:46:17]
+Initialization strings:
+[INFO -- 2018-10-19 14:46:17]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 14:46:17]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 14:46:17]
+initSignal:0
+[INFO -- 2018-10-19 14:46:17]
+endSignal:1
+[INFO -- 2018-10-19 14:46:17]
+faultModel:0
+[EXCEPTION -- 2018-10-19 14:46:17]
+pythonException: invalid frame
+[INFO -- 2018-10-19 14:46:17]
+Backtrace BEGIN:
+#0  create_thread (stackaddr=<optimized out>, attr=0x7ffff7ad3600, pd=0x7ffff70b9700) at ../nptl/sysdeps/pthread/createthread.c:223
+#1  __pthread_create_2_1 (newthread=<optimized out>, attr=<optimized out>, start_routine=<optimized out>, arg=<optimized out>) at pthread_create.c:611
+#2  0x00007ffff78bbca2 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x0000000000401184 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+218	../nptl/sysdeps/pthread/createthread.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 2
+Memory content before bitflip:0x080x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff769985c 
+address max offset: 4
+Memory content after  bitflip:0x080x200x000x00
+frame name: __pthread_create_2_1
+symbol name: _thread_db_pthread_key_data_data
+symbol filename: ../nptl_db/structs.def
+symbol line: 68
+value: {64, 1, 8200}
+value address: 0x7ffff7699854 <_thread_db_pthread_key_data_data>
+Type: The type is an array.
+Type sizeof: 12
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 2)
+
+[INFO -- 2018-10-19 14:46:17]
+Fault Injection Successful after 0.32874107360839844s
+[INFO -- 2018-10-19 14:46:22]
+event type: exit
+[INFO -- 2018-10-19 14:46:22]
+exit code: 0

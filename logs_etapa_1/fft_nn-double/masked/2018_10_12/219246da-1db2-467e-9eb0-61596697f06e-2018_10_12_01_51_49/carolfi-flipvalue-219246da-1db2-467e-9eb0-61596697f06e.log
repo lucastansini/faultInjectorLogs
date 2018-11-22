@@ -1,0 +1,46 @@
+[INFO -- 2018-10-12 01:51:28]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-12 01:51:28]
+Initialization strings:
+[INFO -- 2018-10-12 01:51:28]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-12 01:51:28]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-12 01:51:28]
+initSignal:5
+[INFO -- 2018-10-12 01:51:28]
+endSignal:10
+[INFO -- 2018-10-12 01:51:28]
+faultModel:1
+[INFO -- 2018-10-12 01:51:34]
+Backtrace BEGIN:
+#0  0x00007ffff7057222 in __GI___libc_realloc (oldmem=0xbaf1b10, bytes=0) at malloc.c:2954
+#1  0x00007ffff7bced34 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#2  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#3  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#4  0x0000000000401631 in main ()
+
+2949	malloc.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x010x000x000x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff7396180 
+address max offset: 8
+Memory content after  bitflip:0x010x000x300x000x000x000x000x00
+frame name: __GI___libc_realloc
+symbol name: narenas
+symbol filename: arena.c
+symbol line: 79
+value: 3145729
+value address: 0x7ffff7396180 <narenas>
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-10-12 01:51:34]
+Fault Injection Successful after 6.806457757949829s
+[INFO -- 2018-10-12 01:51:48]
+event type: exit
+[INFO -- 2018-10-12 01:51:48]
+exit code: 0

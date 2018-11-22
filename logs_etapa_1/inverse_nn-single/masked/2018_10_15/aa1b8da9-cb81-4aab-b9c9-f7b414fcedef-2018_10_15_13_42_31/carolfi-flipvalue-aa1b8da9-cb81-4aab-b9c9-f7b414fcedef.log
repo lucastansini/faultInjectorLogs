@@ -1,0 +1,47 @@
+[INFO -- 2018-10-15 13:42:20]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-15 13:42:20]
+Initialization strings:
+[INFO -- 2018-10-15 13:42:20]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-15 13:42:20]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-15 13:42:20]
+initSignal:0
+[INFO -- 2018-10-15 13:42:20]
+endSignal:2
+[INFO -- 2018-10-15 13:42:20]
+faultModel:0
+[INFO -- 2018-10-15 13:42:20]
+Backtrace BEGIN:
+#0  0x00007ffff700cdc4 in __mpn_mul (prodp=<optimized out>, prodp@entry=0x7fffffffd120, up=<optimized out>, usize=<optimized out>, vp=vp@entry=0x7fffffffd170, vsize=vsize@entry=1) at mul.c:151
+#1  0x00007ffff7012bb9 in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1408
+#2  0x00007ffff7936d5e in void std::__convert_to_v<float>(char const*, float&, std::_Ios_Iostate&, __locale_struct* const&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x00007ffff794a706 in std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > >::do_get(std::istreambuf_iterator<char, std::char_traits<char> >, std::istreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, std::_Ios_Iostate&, float&) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007ffff793b0d5 in std::istream& std::istream::_M_extract<float>(float&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x0000000000401482 in main ()
+
+146	mul.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd080
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x01
+frame name: __GI_____strtof_l_internal
+symbol name: negative
+symbol filename: strtod_l.c
+symbol line: 484
+value: 16777216
+value address: 0x7fffffffd080
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-15 13:42:20]
+Fault Injection Successful after 0.8484370708465576s
+[INFO -- 2018-10-15 13:42:30]
+event type: exit
+[INFO -- 2018-10-15 13:42:30]
+exit code: 0

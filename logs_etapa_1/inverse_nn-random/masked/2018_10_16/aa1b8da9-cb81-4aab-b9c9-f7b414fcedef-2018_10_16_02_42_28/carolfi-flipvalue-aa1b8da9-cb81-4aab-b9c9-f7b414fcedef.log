@@ -1,0 +1,59 @@
+[INFO -- 2018-10-16 02:42:17]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 02:42:17]
+Initialization strings:
+[INFO -- 2018-10-16 02:42:17]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 02:42:17]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 02:42:17]
+initSignal:4
+[INFO -- 2018-10-16 02:42:17]
+endSignal:6
+[INFO -- 2018-10-16 02:42:17]
+faultModel:2
+[EXCEPTION -- 2018-10-16 02:42:21]
+gdbException: No symbol "None" in current context.
+[EXCEPTION -- 2018-10-16 02:42:21]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-10-16 02:42:21]
+Backtrace BEGIN:
+#0  malloc (n=11) at dl-minimal.c:93
+#1  <function called from gdb>
+#2  __mpn_add_1 (s2_limb=4640600244988439627, s1_size=1, s1_ptr=0x7fffffffcbf8, res_ptr=0x7fffffffcbf8) at ../stdlib/gmp.h:448
+#3  str_to_mpn (str=0x7fffffffcce6 "e-01", str@entry=0x7fffffffccd0 "2.81341761350631713867e-01", digcnt=<optimized out>, digcnt@entry=21, n=n@entry=0x7fffffffcbf0, nsize=nsize@entry=0x7fffffffcbc0, exponent=exponent@entry=0x7fffffffcbd0, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=<optimized out>) at strtod_l.c:421
+#4  0x00007ffff7012c2b in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1427
+#5  0x00007ffff7011d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#6  0x00007ffff702b948 in _IO_vfscanf_internal (s=s@entry=0x608610, format=<optimized out>, argptr=argptr@entry=0x7fffffffd0d8, errp=errp@entry=0x0) at vfscanf.c:2365
+#7  0x00007ffff7032162 in __isoc99_fscanf (stream=0x608610, format=<optimized out>) at isoc99_fscanf.c:34
+#8  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#9  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#10 0x000000000040199e in inversek2j(float, float, float*, float*) ()
+#11 0x0000000000401631 in main ()
+
+88	in dl-minimal.c
+
+Backtrace END
+Fliping array at pos: 0
+Fliping value of field: gp_offset
+Memory content before bitflip:0x100x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd0d8
+address max offset: 4
+Memory content after  bitflip:0xa00x560x650x0b
+frame name: __isoc99_fscanf
+symbol name: arg
+symbol filename: isoc99_fscanf.c
+symbol line: 27
+value: {{gp_offset = 191190688, fp_offset = 48, overflow_arg_area = 0x7fffffffd1b0, reg_save_area = 0x7fffffffd0f0}}
+value address: 0x7fffffffd0d8
+Type: The type is an array.
+Type sizeof: 24
+
+[INFO -- 2018-10-16 02:42:21]
+Fault Injection Successful after 4.2914183139801025s
+[INFO -- 2018-10-16 02:42:27]
+event type: exit
+[INFO -- 2018-10-16 02:42:27]
+exit code: 0

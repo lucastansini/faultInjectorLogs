@@ -1,0 +1,68 @@
+[INFO -- 2018-10-18 13:51:13]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 13:51:13]
+Initialization strings:
+[INFO -- 2018-10-18 13:51:13]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 13:51:13]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 13:51:13]
+initSignal:3
+[INFO -- 2018-10-18 13:51:13]
+endSignal:4
+[INFO -- 2018-10-18 13:51:13]
+faultModel:3
+[EXCEPTION -- 2018-10-18 13:51:16]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 13:51:16]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 13:51:16]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-18 13:51:16]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 13:51:16]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 13:51:16]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 13:51:16]
+pythonException: invalid frame
+[INFO -- 2018-10-18 13:51:16]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc06 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bc0e2 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000401184 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+136	            // compare each record with max value to find the nearest neighbor
+137	            if( z[i] < neighbors[max_idx].dist ) {
+138	                sandbox[(i+1)*REC_LENGTH-1] = '\0';
+139	                strcpy(neighbors[max_idx].entry, sandbox +i*REC_LENGTH);
+140	                neighbors[max_idx].dist = z[i];
+141	            }
+142	        }
+143	    }//End while loop
+144	
+145	    FILE *file;
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x2f
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffdd00 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: main
+symbol name: gold_filename
+symbol filename: nn.c
+symbol line: 35
+value: 0x7fffffffdd00 ""
+value address: 0x7fffffffd550
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 13:51:16]
+Fault Injection Successful after 3.8406660556793213s
+[INFO -- 2018-10-18 13:51:20]
+event type: exit
+[EXCEPTION -- 2018-10-18 13:51:20]
+exit code: no exit code available

@@ -1,0 +1,46 @@
+[INFO -- 2018-10-19 06:12:52]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 06:12:52]
+Initialization strings:
+[INFO -- 2018-10-19 06:12:52]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 06:12:52]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 06:12:52]
+initSignal:4
+[INFO -- 2018-10-19 06:12:52]
+endSignal:5
+[INFO -- 2018-10-19 06:12:52]
+faultModel:4
+[INFO -- 2018-10-19 06:12:56]
+Backtrace BEGIN:
+#0  __mpn_lshift () at ../sysdeps/x86_64/lshift.S:59
+#1  0x00007ffff7300b7a in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1516
+#2  0x000000000040150f in main._omp_fn.0 () at nn.c:118
+#3  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+54	../sysdeps/x86_64/lshift.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x0f0xd60xff0xff0xff0x7f0x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd038
+address max offset: 8
+Memory content after  bitflip:0x0f0xd60xff0xff0xff0x7f0x000x40
+frame name: __GI_____strtod_l_internal
+symbol name: startp
+symbol filename: strtod_l.c
+symbol line: 504
+value: 0x7fffffffd60f ".4 180.7  164  859\n1977  6  1 18 12 KIRK       14.4 186.5  100  513\n1987  2  1  6 23 VALERIE    26.9 252.6  102  847\n1994  6  4 18 20 VALERIE    23.0 241.6   27  396\n1957  9 11  6 16 RAFAEL     40.7 1"...
+value address: 0x7fffffffd038
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-19 06:12:56]
+Fault Injection Successful after 4.912784099578857s
+[INFO -- 2018-10-19 06:12:58]
+event type: exit
+[INFO -- 2018-10-19 06:12:58]
+exit code: 0

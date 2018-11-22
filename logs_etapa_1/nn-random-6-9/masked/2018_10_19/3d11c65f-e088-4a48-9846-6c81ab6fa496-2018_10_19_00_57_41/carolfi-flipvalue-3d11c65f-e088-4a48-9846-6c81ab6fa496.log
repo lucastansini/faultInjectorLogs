@@ -1,0 +1,65 @@
+[INFO -- 2018-10-19 00:57:35]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 00:57:35]
+Initialization strings:
+[INFO -- 2018-10-19 00:57:35]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 00:57:35]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 00:57:35]
+initSignal:2
+[INFO -- 2018-10-19 00:57:35]
+endSignal:3
+[INFO -- 2018-10-19 00:57:35]
+faultModel:2
+[EXCEPTION -- 2018-10-19 00:57:37]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-10-19 00:57:37]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 00:57:37]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 00:57:37]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 00:57:37]
+pythonException: invalid frame
+[INFO -- 2018-10-19 00:57:37]
+Backtrace BEGIN:
+#0  0x00000000004014aa in main._omp_fn.0 () at nn.c:115
+#1  0x00007ffff78bb6ce in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff768f184 in start_thread (arg=0x7ffff68b8700) at pthread_create.c:312
+#3  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+110	                exit(0);
+111	            }
+112	        }
+113	
+114	
+115	        #pragma omp parallel for shared (z, target_lat, target_long) private(i,rec_iter)
+116	        for (i = 0; i < rec_count; i++) {
+117	            rec_iter = sandbox+(i * REC_LENGTH + LATITUDE_POS - 1);
+118	            float tmp_lat = atof(rec_iter);
+119	            float tmp_long = atof(rec_iter+5);
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0xf40x340x190x43
+Fault Model: Random bit-flip
+base address to flip value: 0x603880
+address max offset: 4
+Memory content after  bitflip:0xbf0x8e0x7f0x5e
+frame name: main
+symbol name: z
+symbol filename: nn.c
+symbol line: 80
+value: 0x603880
+value address: 0x7fffffffd538
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-19 00:57:37]
+Fault Injection Successful after 2.895277261734009s
+[INFO -- 2018-10-19 00:57:41]
+event type: exit
+[INFO -- 2018-10-19 00:57:41]
+exit code: 0

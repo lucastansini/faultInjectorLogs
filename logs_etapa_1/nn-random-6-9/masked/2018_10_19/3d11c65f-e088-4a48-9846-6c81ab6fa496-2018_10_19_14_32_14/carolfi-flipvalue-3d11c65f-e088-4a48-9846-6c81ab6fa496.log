@@ -1,0 +1,76 @@
+[INFO -- 2018-10-19 14:32:08]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 14:32:08]
+Initialization strings:
+[INFO -- 2018-10-19 14:32:08]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 14:32:08]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 14:32:08]
+initSignal:2
+[INFO -- 2018-10-19 14:32:08]
+endSignal:3
+[INFO -- 2018-10-19 14:32:08]
+faultModel:2
+[EXCEPTION -- 2018-10-19 14:32:10]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 14:32:10]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-19 14:32:10]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 14:32:10]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 14:32:10]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-19 14:32:10]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 14:32:10]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 14:32:10]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 14:32:11]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 14:32:11]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 14:32:11]
+pythonException: invalid frame
+[INFO -- 2018-10-19 14:32:11]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc02 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bc0e2 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000401184 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+40	        fprintf(stderr, "%s <filelist> <num neighbors to find> <target latitude> <target longitude> <out filename>\n",argv[0]);
+41	        exit(-1);
+42	    }
+43	
+44	    flist = fopen(argv[1], "r");
+45	    if(!flist) {
+46	        printf("error opening flist\n");
+47	        exit(1);
+48	    }
+49	
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x800x380x600x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd538
+address max offset: 8
+Memory content after  bitflip:0x2a0x4a0x630xb30x700x5a0xc40xf2
+frame name: main
+symbol name: z
+symbol filename: nn.c
+symbol line: 80
+value: 0x603880
+value address: 0x7fffffffd538
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-19 14:32:11]
+Fault Injection Successful after 3.0079963207244873s
+[INFO -- 2018-10-19 14:32:14]
+event type: exit
+[INFO -- 2018-10-19 14:32:14]
+exit code: 0

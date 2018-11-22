@@ -1,0 +1,69 @@
+[INFO -- 2018-10-18 21:49:48]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 21:49:48]
+Initialization strings:
+[INFO -- 2018-10-18 21:49:48]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 21:49:48]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 21:49:48]
+initSignal:0
+[INFO -- 2018-10-18 21:49:48]
+endSignal:1
+[INFO -- 2018-10-18 21:49:48]
+faultModel:0
+[EXCEPTION -- 2018-10-18 21:49:49]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 21:49:49]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 21:49:49]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-18 21:49:49]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 21:49:49]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 21:49:49]
+pythonException: invalid frame
+[INFO -- 2018-10-18 21:49:49]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc06 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bb6a8 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff768f184 in start_thread (arg=0x7ffff68b8700) at pthread_create.c:312
+#3  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+30	    FILE   *flist,*fp;
+31	    int    i=0,j=0, k=0, rec_count=0, done=0;
+32	    char   sandbox[REC_LENGTH * REC_WINDOW], *rec_iter,*rec_iter2, dbname[64];
+33	    struct neighbor *neighbors = NULL;
+34	    float target_lat, target_long, tmp_lat=0, tmp_long=0;
+35	    char * gold_filename;
+36	    long rec_sum = 0;
+37	
+38	    if(argc < 6) {
+39	        fprintf(stderr, "Invalid set of arguments:\n");
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: _IO_buf_end
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x600xff0xf70xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x603680
+address max offset: 8
+Memory content after  bitflip:0x000x640xff0xf70xff0x7f0x000x00
+frame name: main
+symbol name: fp
+symbol filename: nn.c
+symbol line: 30
+value: 0x603640
+value address: 0x7fffffffd528
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 21:49:49]
+Fault Injection Successful after 1.142120361328125s
+[INFO -- 2018-10-18 21:49:50]
+event type: exit
+[EXCEPTION -- 2018-10-18 21:49:50]
+exit code: no exit code available

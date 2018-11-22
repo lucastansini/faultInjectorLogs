@@ -1,0 +1,46 @@
+[INFO -- 2018-10-18 14:30:17]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 14:30:17]
+Initialization strings:
+[INFO -- 2018-10-18 14:30:17]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 14:30:17]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 14:30:17]
+initSignal:3
+[INFO -- 2018-10-18 14:30:17]
+endSignal:4
+[INFO -- 2018-10-18 14:30:17]
+faultModel:3
+[INFO -- 2018-10-18 14:30:20]
+Backtrace BEGIN:
+#0  0x00007ffff72febfe in str_to_mpn (str=str@entry=0x7fffffffd60d "23.8 243.6  113   66\n1977 10 24  6 17 RAFAEL     48.2  28.5   71  611\n1985 12 26 18 15 VALERIE    56.2 354.7  118  833\n2003 10 15  0 18 ALBERTO    57.4 216.9  123  554\n1959 10  5 12  4 FLORENCE   11.3"..., digcnt=digcnt@entry=2, n=n@entry=0x7fffffffd090, nsize=nsize@entry=0x7fffffffd060, exponent=exponent@entry=0x7fffffffd070, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=0x7ffff744014b <dot> ".") at strtod_l.c:337
+#1  0x00007ffff73001e1 in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=0x0, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1176
+#2  0x000000000040150f in main._omp_fn.0 () at nn.c:118
+#3  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+332	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000xdd0xff0xff0xff0x7f0x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd550
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: main
+symbol name: gold_filename
+symbol filename: nn.c
+symbol line: 35
+value: 0x7fffffffdd00 "/home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25"
+value address: 0x7fffffffd550
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 14:30:20]
+Fault Injection Successful after 3.648618698120117s
+[INFO -- 2018-10-18 14:30:23]
+event type: exit
+[EXCEPTION -- 2018-10-18 14:30:23]
+exit code: no exit code available

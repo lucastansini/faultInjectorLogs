@@ -1,0 +1,80 @@
+[INFO -- 2018-10-18 15:33:15]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 15:33:15]
+Initialization strings:
+[INFO -- 2018-10-18 15:33:15]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 15:33:15]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 15:33:15]
+initSignal:3
+[INFO -- 2018-10-18 15:33:15]
+endSignal:4
+[INFO -- 2018-10-18 15:33:15]
+faultModel:3
+[EXCEPTION -- 2018-10-18 15:33:19]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 15:33:19]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-10-18 15:33:19]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 15:33:19]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 15:33:19]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 15:33:19]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 15:33:19]
+pythonException: invalid literal for int() with base 16: '0x7ffff7ff6000 ...'
+[EXCEPTION -- 2018-10-18 15:33:19]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 15:33:19]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 15:33:19]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 15:33:19]
+pythonException: invalid frame
+[INFO -- 2018-10-18 15:33:19]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc0b in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bc0e2 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000401184 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+40	        fprintf(stderr, "%s <filelist> <num neighbors to find> <target latitude> <target longitude> <out filename>\n",argv[0]);
+41	        exit(-1);
+42	    }
+43	
+44	    flist = fopen(argv[1], "r");
+45	    if(!flist) {
+46	        printf("error opening flist\n");
+47	        exit(1);
+48	    }
+49	
+
+Backtrace END
+Fliping array at pos: 300
+Memory content before bitflip:0x36
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd6ec 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 32
+value: "1975 11 11  0 28 MICHAEL    41.9  69.9  151  868\n1999  1 15 18 21 VALERIE    10.7  73.0   53  856\n1989  4 15  0 27 VALERIE    54.7 171.3  146  700\n2000  1 24  0 13 LESLIE     46.0 350.1   64  242\n1997"...
+value address: 0x7fffffffd5c0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-10-18 15:33:19]
+Fault Injection Successful after 4.353204727172852s
+[INFO -- 2018-10-18 15:33:21]
+event type: exit
+[INFO -- 2018-10-18 15:33:21]
+exit code: 0

@@ -1,0 +1,51 @@
+[INFO -- 2018-10-17 01:11:43]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-17 01:11:43]
+Initialization strings:
+[INFO -- 2018-10-17 01:11:43]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-17 01:11:43]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-17 01:11:43]
+initSignal:8
+[INFO -- 2018-10-17 01:11:43]
+endSignal:10
+[INFO -- 2018-10-17 01:11:43]
+faultModel:4
+[EXCEPTION -- 2018-10-17 01:11:51]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-10-17 01:11:51]
+Backtrace BEGIN:
+#0  _IO_vfscanf_internal (s=s@entry=0x608610, format=<optimized out>, argptr=argptr@entry=0x7fffffffd0d8, errp=errp@entry=0x0) at vfscanf.c:2350
+#1  0x00007ffff7032162 in __isoc99_fscanf (stream=0x608610, format=<optimized out>) at isoc99_fscanf.c:34
+#2  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#3  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#4  0x000000000040199e in inversek2j(float, float, float*, float*) ()
+#5  0x0000000000401631 in main ()
+
+2345	in vfscanf.c
+
+Backtrace END
+Fliping array at pos: 0
+Fliping value of field: fp_offset
+Memory content before bitflip:0x300x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd0dc
+address max offset: 4
+Memory content after  bitflip:0x300x000x000x02
+frame name: __isoc99_fscanf
+symbol name: arg
+symbol filename: isoc99_fscanf.c
+symbol line: 27
+value: {{gp_offset = 16, fp_offset = 33554480, overflow_arg_area = 0x7fffffffd1b0, reg_save_area = 0x7fffffffd0f0}}
+value address: 0x7fffffffd0d8
+Type: The type is an array.
+Type sizeof: 24
+
+[INFO -- 2018-10-17 01:11:51]
+Fault Injection Successful after 8.284849882125854s
+[INFO -- 2018-10-17 01:11:53]
+event type: exit
+[INFO -- 2018-10-17 01:11:53]
+exit code: 0

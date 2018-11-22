@@ -1,0 +1,50 @@
+[INFO -- 2018-10-07 10:09:35]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-07 10:09:35]
+Initialization strings:
+[INFO -- 2018-10-07 10:09:35]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-07 10:09:35]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-07 10:09:35]
+initSignal:5
+[INFO -- 2018-10-07 10:09:35]
+endSignal:10
+[INFO -- 2018-10-07 10:09:35]
+faultModel:1
+[INFO -- 2018-10-07 10:09:42]
+Backtrace BEGIN:
+#0  0x00007ffff70c2d44 in __GI___fxstat (vers=<optimized out>, fd=5, buf=0x7fffffffd870) at ../sysdeps/unix/sysv/linux/wordsize-64/fxstat.c:35
+#1  0x00007ffff70417d5 in __GI__IO_file_doallocate (fp=0x6062c0) at filedoalloc.c:111
+#2  0x00007ffff704f4b5 in __GI__IO_doallocbuf (fp=fp@entry=0x6062c0) at genops.c:418
+#3  0x00007ffff704d3ec in __GI__IO_file_xsgetn (fp=0x6062c0, data=0xd74e030, n=13) at fileops.c:1379
+#4  0x00007ffff704286f in __GI__IO_fread (buf=<optimized out>, size=1, count=13, fp=0x6062c0) at iofread.c:42
+#5  0x00007ffff7bce817 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#6  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#7  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#8  0x0000000000401631 in main ()
+
+30	../sysdeps/unix/sysv/linux/wordsize-64/fxstat.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x580xbc0x020x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff73989b0 
+address max offset: 4
+Memory content after  bitflip:0x580xbc0x020x30
+frame name: __GI__IO_doallocbuf
+symbol name: _IO_list_all_stamp
+symbol filename: genops.c
+symbol line: 42
+value: 805485656
+value address: 0x7ffff73989b0 <_IO_list_all_stamp>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-07 10:09:42]
+Fault Injection Successful after 7.4913647174835205s
+[INFO -- 2018-10-07 10:09:54]
+event type: exit
+[INFO -- 2018-10-07 10:09:54]
+exit code: 0

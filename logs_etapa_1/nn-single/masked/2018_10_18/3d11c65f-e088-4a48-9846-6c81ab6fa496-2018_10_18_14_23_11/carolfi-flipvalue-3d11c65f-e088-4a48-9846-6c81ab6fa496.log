@@ -1,0 +1,53 @@
+[INFO -- 2018-10-18 14:23:05]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 14:23:05]
+Initialization strings:
+[INFO -- 2018-10-18 14:23:05]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 14:23:05]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 14:23:05]
+initSignal:0
+[INFO -- 2018-10-18 14:23:05]
+endSignal:1
+[INFO -- 2018-10-18 14:23:05]
+faultModel:0
+[EXCEPTION -- 2018-10-18 14:23:06]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 14:23:06]
+pythonException: invalid frame
+[INFO -- 2018-10-18 14:23:06]
+Backtrace BEGIN:
+#0  __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1473
+#1  0x000000000040152c in main._omp_fn.0 () at nn.c:119
+#2  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+1468	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 480
+Memory content before bitflip:0x20
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd7a0 
+address max offset: 1
+Memory content after  bitflip:0x24
+frame name: main._omp_fn.0
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 32
+value: "1970  6 23 12  3 ALBERTO     7.4  26.5   24  635\n1993  7  1  0 18 JOYCE      26.1 307.4  155  506\n1987  7  3  6  6 VALERIE    43.0 171.0  152  325\n1981  3  5 12 16 NADINE     66.8 328.2   54  775\n1963"...
+value address: 0x7fffffffd5c0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-10-18 14:23:06]
+Fault Injection Successful after 1.0772454738616943s
+[INFO -- 2018-10-18 14:23:11]
+event type: exit
+[INFO -- 2018-10-18 14:23:11]
+exit code: 0

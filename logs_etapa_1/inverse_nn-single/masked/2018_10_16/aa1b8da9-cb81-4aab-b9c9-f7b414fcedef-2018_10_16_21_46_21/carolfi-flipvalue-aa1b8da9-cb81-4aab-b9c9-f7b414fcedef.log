@@ -1,0 +1,51 @@
+[INFO -- 2018-10-16 21:46:10]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 21:46:10]
+Initialization strings:
+[INFO -- 2018-10-16 21:46:10]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 21:46:10]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 21:46:10]
+initSignal:0
+[INFO -- 2018-10-16 21:46:10]
+endSignal:2
+[INFO -- 2018-10-16 21:46:10]
+faultModel:0
+[INFO -- 2018-10-16 21:46:10]
+Backtrace BEGIN:
+#0  dl_main (phdr=<optimized out>, phdr@entry=0x400040, phnum=<optimized out>, phnum@entry=9, user_entry=user_entry@entry=0x7fffffffd768, auxv=<optimized out>) at rtld.c:1645
+#1  0x00007ffff7df15f5 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffd850, dl_main=dl_main@entry=0x7ffff7ddc260 <dl_main>) at ../elf/dl-sysdep.c:249
+#2  0x00007ffff7ddbbb8 in _dl_start_final (arg=0x7fffffffd850) at rtld.c:347
+#3  _dl_start (arg=0x7fffffffd850) at rtld.c:573
+#4  0x00007ffff7ddb268 in _start () from /lib64/ld-linux-x86-64.so.2
+#5  0x0000000000000003 in ?? ()
+#6  0x00007fffffffdbe5 in ?? ()
+#7  0x00007fffffffdc3b in ?? ()
+#8  0x00007fffffffdc8a in ?? ()
+#9  0x0000000000000000 in ?? ()
+
+1640	rtld.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7ffcdf0 
+address max offset: 8
+Memory content after  bitflip:0x000x020x000x000x000x000x000x00
+frame name: _dl_start_final
+symbol name: __pointer_chk_guard_local
+symbol filename: rtld.c
+symbol line: 97
+value: 512
+value address: 0x7ffff7ffcdf0 <__pointer_chk_guard_local>
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-10-16 21:46:10]
+Fault Injection Successful after 0.46201157569885254s
+[INFO -- 2018-10-16 21:46:20]
+event type: exit
+[INFO -- 2018-10-16 21:46:20]
+exit code: 0

@@ -1,0 +1,14 @@
+[INFO -- 2018-10-15 10:23:30]
+Starting GDB script
+[INFO -- 2018-10-15 10:23:30]
+initSignal:40.0
+[INFO -- 2018-10-15 10:23:30]
+endSignal:50.0
+[INFO -- 2018-10-15 10:24:12]
+sending 5 signals using command: 'killall -2 inversek2j_nn.out' after 41.4133739648s
+[INFO -- 2018-10-15 10:24:15]
+sending 5 signals using command: 'killall -2 inversek2j_nn.out' after 44.5531890015s
+[INFO -- 2018-10-15 10:24:20]
+sending 5 signals using command: 'killall -2 inversek2j_nn.out' after 49.6072326605s
+[INFO -- 2018-10-15 10:25:13]
+Execution finished before waitTime

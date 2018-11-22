@@ -1,0 +1,63 @@
+[INFO -- 2018-10-15 19:25:50]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-15 19:25:50]
+Initialization strings:
+[INFO -- 2018-10-15 19:25:50]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-15 19:25:50]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-15 19:25:50]
+initSignal:8
+[INFO -- 2018-10-15 19:25:50]
+endSignal:10
+[INFO -- 2018-10-15 19:25:50]
+faultModel:4
+[INFO -- 2018-10-15 19:25:58]
+Backtrace BEGIN:
+#0  0x00007ffff7011e2a in str_to_mpn (str=0x7fffffffccd1 ".52782660722732543945e-01", str@entry=0x7fffffffccd0 "4.52782660722732543945e-01", digcnt=20, digcnt@entry=21, n=n@entry=0x7fffffffcbf0, nsize=nsize@entry=0x7fffffffcbc0, exponent=exponent@entry=0x7fffffffcbd0, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=<optimized out>) at strtod_l.c:385
+#1  0x00007ffff7012c2b in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1427
+#2  0x00007ffff7011d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#3  0x00007ffff702b948 in _IO_vfscanf_internal (s=s@entry=0x608610, format=<optimized out>, argptr=argptr@entry=0x7fffffffd0d8, errp=errp@entry=0x0) at vfscanf.c:2365
+#4  0x00007ffff7032162 in __isoc99_fscanf (stream=0x608610, format=<optimized out>) at isoc99_fscanf.c:34
+#5  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#6  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#7  0x000000000040199e in inversek2j(float, float, float*, float*) ()
+#8  0x0000000000401631 in main ()
+
+380	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping value of field: __canceltype
+Memory content before bitflip:0x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffcf60
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x10
+frame name: _IO_vfscanf_internal
+symbol name: _buffer
+symbol filename: vfscanf.c
+symbol line: 358
+value: {__routine = 0x7ffff7031cc0 <__funlockfile>, __arg = 0x608610, __canceltype = 268435456, __prev = 0x0}
+value address: 0x7fffffffcf50
+Type: The type is a structure.
+Type sizeof: 32
+Field name: __routine
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __arg
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __canceltype
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: __prev
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-10-15 19:25:58]
+Fault Injection Successful after 8.774198532104492s
+[INFO -- 2018-10-15 19:26:00]
+event type: exit
+[INFO -- 2018-10-15 19:26:00]
+exit code: 0

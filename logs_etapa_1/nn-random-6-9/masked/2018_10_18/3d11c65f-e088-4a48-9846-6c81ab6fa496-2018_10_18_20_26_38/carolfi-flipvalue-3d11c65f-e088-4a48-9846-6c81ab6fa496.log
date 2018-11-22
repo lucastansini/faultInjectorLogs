@@ -1,0 +1,57 @@
+[INFO -- 2018-10-18 20:26:32]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 20:26:32]
+Initialization strings:
+[INFO -- 2018-10-18 20:26:32]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 20:26:32]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 20:26:32]
+initSignal:2
+[INFO -- 2018-10-18 20:26:32]
+endSignal:3
+[INFO -- 2018-10-18 20:26:32]
+faultModel:2
+[EXCEPTION -- 2018-10-18 20:26:35]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 20:26:35]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 20:26:35]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-18 20:26:35]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 20:26:35]
+pythonException: invalid frame
+[INFO -- 2018-10-18 20:26:35]
+Backtrace BEGIN:
+#0  0x00007ffff73ad37d in read () at ../sysdeps/unix/syscall-template.S:81
+#1  0x00007ffff73385b0 in _IO_new_file_underflow (fp=0x603640) at fileops.c:613
+#2  0x00007ffff73373a8 in __GI__IO_file_xsgetn (fp=0x603640, data=<optimized out>, n=490) at fileops.c:1418
+#3  0x00007ffff732c86f in __GI__IO_fread (buf=<optimized out>, size=49, count=10, fp=0x603640) at iofread.c:42
+#4  0x0000000000401027 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:85
+
+76	in ../sysdeps/unix/syscall-template.S
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xb80xd80xff0xff0xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd4e0
+address max offset: 8
+Memory content after  bitflip:0x230xd90x610x4f0xa70x640xf30x94
+frame name: main
+symbol name: argv
+symbol filename: nn.c
+symbol line: 29
+value: 0x7fffffffd8b8
+value address: 0x7fffffffd4e0
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 20:26:35]
+Fault Injection Successful after 3.1666781902313232s
+[INFO -- 2018-10-18 20:26:38]
+event type: exit
+[INFO -- 2018-10-18 20:26:38]
+exit code: 0

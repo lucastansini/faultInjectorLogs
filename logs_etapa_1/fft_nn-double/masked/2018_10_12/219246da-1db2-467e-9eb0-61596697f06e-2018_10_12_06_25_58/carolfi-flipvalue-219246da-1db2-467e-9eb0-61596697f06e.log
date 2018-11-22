@@ -1,0 +1,49 @@
+[INFO -- 2018-10-12 06:25:38]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-12 06:25:38]
+Initialization strings:
+[INFO -- 2018-10-12 06:25:38]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-12 06:25:38]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-12 06:25:38]
+initSignal:5
+[INFO -- 2018-10-12 06:25:38]
+endSignal:10
+[INFO -- 2018-10-12 06:25:38]
+faultModel:1
+[INFO -- 2018-10-12 06:25:44]
+Backtrace BEGIN:
+#0  0x00007ffff70119a5 in __GI_____strtoul_l_internal (nptr=nptr@entry=0x7fffffffd000 "4", endptr=endptr@entry=0x7fffffffd230, base=<optimized out>, group=group@entry=0, loc=<optimized out>) at ../stdlib/strtol_l.c:379
+#1  0x00007ffff7011410 in __GI___strtoul_internal (nptr=nptr@entry=0x7fffffffd000 "4", endptr=endptr@entry=0x7fffffffd230, base=<optimized out>, group=group@entry=0) at ../stdlib/strtol.c:97
+#2  0x00007ffff7029f02 in _IO_vfscanf_internal (s=s@entry=0x6062c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffd408, errp=errp@entry=0x0) at vfscanf.c:1827
+#3  0x00007ffff7032162 in __isoc99_fscanf (stream=0x6062c0, format=<optimized out>) at isoc99_fscanf.c:34
+#4  0x00007ffff7bce880 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#5  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#6  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#7  0x0000000000401631 in main ()
+
+374	../stdlib/strtol_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd1b0
+address max offset: 8
+Memory content after  bitflip:0x000x000x110x000x000x000x000x00
+frame name: _IO_vfscanf_internal
+symbol name: strsize
+symbol filename: vfscanf.c
+symbol line: 265
+value: 1114112
+value address: 0x7fffffffd1b0
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-10-12 06:25:44]
+Fault Injection Successful after 6.050999164581299s
+[INFO -- 2018-10-12 06:25:57]
+event type: exit
+[INFO -- 2018-10-12 06:25:57]
+exit code: 0

@@ -1,0 +1,62 @@
+[INFO -- 2018-10-11 06:36:22]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-11 06:36:22]
+Initialization strings:
+[INFO -- 2018-10-11 06:36:22]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-11 06:36:22]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-11 06:36:22]
+initSignal:0
+[INFO -- 2018-10-11 06:36:22]
+endSignal:5
+[INFO -- 2018-10-11 06:36:22]
+faultModel:0
+[INFO -- 2018-10-11 06:36:22]
+Backtrace BEGIN:
+#0  _dl_setup_hash (map=map@entry=0x7ffff7fd4618) at dl-lookup.c:867
+#1  0x00007ffff7de1102 in _dl_map_object_from_fd (name=name@entry=0x7ffff6daaae6 "libdl.so.2", fd=-1, fbp=fbp@entry=0x7fffffffcda8, realname=<optimized out>, loader=loader@entry=0x7ffff7fd59d0, l_type=l_type@entry=1, mode=mode@entry=0, stack_endp=stack_endp@entry=0x7fffffffcda0, nsid=nsid@entry=0) at dl-load.c:1580
+#2  0x00007ffff7de2dc9 in _dl_map_object (loader=0x7ffff7fd59d0, name=0x7ffff6daaae6 "libdl.so.2", type=1, trace_mode=0, mode=<optimized out>, nsid=<optimized out>) at dl-load.c:2627
+#3  0x00007ffff7de76a2 in openaux (a=a@entry=0x7fffffffd718) at dl-deps.c:63
+#4  0x00007ffff7dea094 in _dl_catch_error (objname=objname@entry=0x7fffffffd710, errstring=errstring@entry=0x7fffffffd708, mallocedp=mallocedp@entry=0x7fffffffd700, operate=operate@entry=0x7ffff7de7670 <openaux>, args=args@entry=0x7fffffffd718) at dl-error.c:187
+#5  0x00007ffff7de7da5 in _dl_map_object_deps (map=map@entry=0x7ffff7ffe1c8, preloads=<optimized out>, npreloads=npreloads@entry=0, trace_mode=trace_mode@entry=0, open_mode=open_mode@entry=0) at dl-deps.c:254
+#6  0x00007ffff7dddc30 in dl_main (phdr=<optimized out>, phdr@entry=0x400040, phnum=<optimized out>, phnum@entry=9, user_entry=user_entry@entry=0x7fffffffd8a8, auxv=<optimized out>) at rtld.c:1775
+#7  0x00007ffff7df15f5 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffd990, dl_main=dl_main@entry=0x7ffff7ddc260 <dl_main>) at ../elf/dl-sysdep.c:249
+#8  0x00007ffff7ddbbb8 in _dl_start_final (arg=0x7fffffffd990) at rtld.c:347
+#9  _dl_start (arg=0x7fffffffd990) at rtld.c:573
+#10 0x00007ffff7ddb268 in _start () from /lib64/ld-linux-x86-64.so.2
+#11 0x0000000000000003 in ?? ()
+#12 0x00007fffffffdd2d in ?? ()
+#13 0x00007fffffffdd44 in ?? ()
+#14 0x00007fffffffdd4a in ?? ()
+#15 0x0000000000000000 in ?? ()
+
+862	dl-lookup.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 6
+Memory content before bitflip:0x74
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7df6990  
+address max offset: 1
+Memory content after  bitflip:0x75
+frame name: _dl_setup_hash
+symbol name: __PRETTY_FUNCTION__
+symbol filename: dl-lookup.c
+symbol line: 0
+value: "_dl_seuup_hash"
+value address: 0x7ffff7df698a <__PRETTY_FUNCTION__.9718>
+Type: The type is an array.
+Type sizeof: 15
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 14)
+
+[INFO -- 2018-10-11 06:36:22]
+Fault Injection Successful after 0.2501518726348877s
+[INFO -- 2018-10-11 06:36:41]
+event type: exit
+[INFO -- 2018-10-11 06:36:41]
+exit code: 0

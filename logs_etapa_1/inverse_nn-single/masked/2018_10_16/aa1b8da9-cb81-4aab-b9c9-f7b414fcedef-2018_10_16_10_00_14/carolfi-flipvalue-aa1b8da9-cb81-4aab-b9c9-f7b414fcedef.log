@@ -1,0 +1,66 @@
+[INFO -- 2018-10-16 10:00:03]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 10:00:03]
+Initialization strings:
+[INFO -- 2018-10-16 10:00:03]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 10:00:03]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 10:00:03]
+initSignal:0
+[INFO -- 2018-10-16 10:00:03]
+endSignal:2
+[INFO -- 2018-10-16 10:00:03]
+faultModel:0
+[INFO -- 2018-10-16 10:00:03]
+Backtrace BEGIN:
+#0  0x00007ffff708924a in ?? ()
+#1  0x00007ffff7153da8 in ?? ()
+#2  0x0000000103ae75f6 in ?? ()
+#3  0x00007ffff6fd9e00 in ?? ()
+#4  0x00007ffff6fd4000 in ?? ()
+#5  0x00007ffff706107e in ?? ()
+#6  0x00007ffff7de63eb in elf_machine_lazy_rel (skip_ifunc=<optimized out>, reloc=0x7ffff6ff33e8, l_addr=140737337180160, map=0x7ffff7fd54e8) at ../sysdeps/x86_64/dl-machine.h:529
+#7  elf_dynamic_do_Rela (skip_ifunc=<optimized out>, lazy=<optimized out>, nrelative=<optimized out>, relsize=<optimized out>, reladdr=<optimized out>, map=0x7ffff7fd54e8) at do-rel.h:77
+#8  _dl_relocate_object (scope=<optimized out>, reloc_mode=<optimized out>, consider_profiling=<optimized out>, consider_profiling@entry=0) at dl-reloc.c:264
+#9  0x00007ffff7dde3a2 in dl_main (phdr=<optimized out>, phdr@entry=0x400040, phnum=<optimized out>, phnum@entry=9, user_entry=user_entry@entry=0x7fffffffd768, auxv=<optimized out>) at rtld.c:2237
+#10 0x00007ffff7df15f5 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffd850, dl_main=dl_main@entry=0x7ffff7ddc260 <dl_main>) at ../elf/dl-sysdep.c:249
+#11 0x00007ffff7ddbbb8 in _dl_start_final (arg=0x7fffffffd850) at rtld.c:347
+#12 _dl_start (arg=0x7fffffffd850) at rtld.c:573
+#13 0x00007ffff7ddb268 in _start () from /lib64/ld-linux-x86-64.so.2
+#14 0x0000000000000003 in ?? ()
+#15 0x00007fffffffdbe5 in ?? ()
+#16 0x00007fffffffdc3b in ?? ()
+#17 0x00007fffffffdc8a in ?? ()
+#18 0x0000000000000000 in ?? ()
+
+1	dl-debug.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 0
+Fliping value of field: nrelative
+Memory content before bitflip:0xa70x040x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd5d0
+address max offset: 8
+Memory content after  bitflip:0xa70x040x000x000x000x000x000x40
+frame name: elf_machine_lazy_rel
+symbol name: ranges
+symbol filename: dl-reloc.c
+symbol line: 264
+value: {{start = 140737337277320, size = 30624, nrelative = 4611686018427389095, lazy = 0}, {start = 140737337307944, size = 288, nrelative = 0, lazy = 1}}
+value address: 0x7fffffffd5c0
+Type: The type is an array.
+Type sizeof: 64
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 1)
+
+[INFO -- 2018-10-16 10:00:03]
+Fault Injection Successful after 0.24914145469665527s
+[INFO -- 2018-10-16 10:00:13]
+event type: exit
+[INFO -- 2018-10-16 10:00:13]
+exit code: 0

@@ -1,0 +1,45 @@
+[INFO -- 2018-10-19 01:24:56]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 01:24:56]
+Initialization strings:
+[INFO -- 2018-10-19 01:24:56]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 01:24:56]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 01:24:56]
+initSignal:2
+[INFO -- 2018-10-19 01:24:56]
+endSignal:3
+[INFO -- 2018-10-19 01:24:56]
+faultModel:2
+[INFO -- 2018-10-19 01:24:58]
+Backtrace BEGIN:
+#0  __mpn_lshift () at ../sysdeps/x86_64/lshift.S:46
+#1  0x00007ffff72ffab8 in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1450
+#2  0x000000000040152c in main._omp_fn.0 () at nn.c:119
+#3  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+41	../sysdeps/x86_64/lshift.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x660x660xbe0x41
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd4b0
+address max offset: 4
+Memory content after  bitflip:0x980x620xe20x92
+frame name: main._omp_fn.0
+symbol name: tmp_lat
+symbol filename: nn.c
+symbol line: 118
+value: -1,42869104e-27
+value address: 0x7fffffffd4b0
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-10-19 01:24:58]
+Fault Injection Successful after 2.77380633354187s
+[INFO -- 2018-10-19 01:25:02]
+event type: exit
+[INFO -- 2018-10-19 01:25:02]
+exit code: 0

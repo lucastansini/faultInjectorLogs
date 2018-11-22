@@ -1,0 +1,61 @@
+[INFO -- 2018-10-16 12:21:23]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 12:21:23]
+Initialization strings:
+[INFO -- 2018-10-16 12:21:23]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 12:21:23]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 12:21:23]
+initSignal:0
+[INFO -- 2018-10-16 12:21:23]
+endSignal:2
+[INFO -- 2018-10-16 12:21:23]
+faultModel:0
+[INFO -- 2018-10-16 12:21:23]
+Backtrace BEGIN:
+#0  do_lookup_x (new_hash=new_hash@entry=2990309482, old_hash=old_hash@entry=0x7fffffffd450, result=result@entry=0x7fffffffd460, scope=<optimized out>, i=4, i@entry=0, flags=flags@entry=1, skip=skip@entry=0x0, undef_map=undef_map@entry=0x7ffff7fd54e8) at dl-lookup.c:98
+#1  0x00007ffff7de4a31 in _dl_lookup_symbol_x (undef_name=0x7ffff6fe58dd "_rtld_global", undef_map=undef_map@entry=0x7ffff7fd54e8, ref=0x7fffffffd5b0, symbol_scope=0x7ffff7fd5840, version=0x7ffff7fd38a0, type_class=0, flags=flags@entry=1, skip_map=skip_map@entry=0x0) at dl-lookup.c:737
+#2  0x00007ffff7de665d in elf_machine_rela (reloc=0x7ffff6ff2d10, reloc=0x7ffff6ff2d10, skip_ifunc=<optimized out>, reloc_addr_arg=0x7ffff7395de8, version=<optimized out>, sym=0x7ffff6fd7d78, map=0x7ffff7fd54e8) at ../sysdeps/x86_64/dl-machine.h:276
+#3  elf_dynamic_do_Rela (skip_ifunc=<optimized out>, lazy=<optimized out>, nrelative=<optimized out>, relsize=<optimized out>, reladdr=<optimized out>, map=0x7ffff7fd54e8) at do-rel.h:137
+#4  _dl_relocate_object (scope=<optimized out>, reloc_mode=<optimized out>, consider_profiling=<optimized out>, consider_profiling@entry=0) at dl-reloc.c:264
+#5  0x00007ffff7dde3a2 in dl_main (phdr=<optimized out>, phdr@entry=0x400040, phnum=<optimized out>, phnum@entry=9, user_entry=user_entry@entry=0x7fffffffd768, auxv=<optimized out>) at rtld.c:2237
+#6  0x00007ffff7df15f5 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffd850, dl_main=dl_main@entry=0x7ffff7ddc260 <dl_main>) at ../elf/dl-sysdep.c:249
+#7  0x00007ffff7ddbbb8 in _dl_start_final (arg=0x7fffffffd850) at rtld.c:347
+#8  _dl_start (arg=0x7fffffffd850) at rtld.c:573
+#9  0x00007ffff7ddb268 in _start () from /lib64/ld-linux-x86-64.so.2
+#10 0x0000000000000003 in ?? ()
+#11 0x00007fffffffdbe5 in ?? ()
+#12 0x00007fffffffdc3b in ?? ()
+#13 0x00007fffffffdc8a in ?? ()
+#14 0x0000000000000000 in ?? ()
+
+93	dl-lookup.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 14
+Memory content before bitflip:0x62
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7df95de  
+address max offset: 1
+Memory content after  bitflip:0x66
+frame name: _dl_lookup_symbol_x
+symbol name: __PRETTY_FUNCTION__
+symbol filename: dl-lookup.c
+symbol line: 0
+value: "_dl_lookup_symfol_x"
+value address: 0x7ffff7df95d0 <__PRETTY_FUNCTION__.9668>
+Type: The type is an array.
+Type sizeof: 20
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 19)
+
+[INFO -- 2018-10-16 12:21:23]
+Fault Injection Successful after 0.4039628505706787s
+[INFO -- 2018-10-16 12:21:33]
+event type: exit
+[INFO -- 2018-10-16 12:21:33]
+exit code: 0

@@ -1,0 +1,70 @@
+[INFO -- 2018-10-18 22:06:16]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 22:06:16]
+Initialization strings:
+[INFO -- 2018-10-18 22:06:16]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 22:06:16]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 22:06:16]
+initSignal:3
+[INFO -- 2018-10-18 22:06:16]
+endSignal:4
+[INFO -- 2018-10-18 22:06:16]
+faultModel:3
+[EXCEPTION -- 2018-10-18 22:06:19]
+pythonException: invalid literal for int() with base 16: '0x7ffff7ff5000 ...'
+[EXCEPTION -- 2018-10-18 22:06:19]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 22:06:19]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 22:06:19]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 22:06:19]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 22:06:19]
+pythonException: invalid frame
+[INFO -- 2018-10-18 22:06:19]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc06 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bc0e2 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000401184 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+30	    FILE   *flist,*fp;
+31	    int    i=0,j=0, k=0, rec_count=0, done=0;
+32	    char   sandbox[REC_LENGTH * REC_WINDOW], *rec_iter,*rec_iter2, dbname[64];
+33	    struct neighbor *neighbors = NULL;
+34	    float target_lat, target_long, tmp_lat=0, tmp_long=0;
+35	    char * gold_filename;
+36	    long rec_sum = 0;
+37	
+38	    if(argc < 6) {
+39	        fprintf(stderr, "Invalid set of arguments:\n");
+
+Backtrace END
+Fliping array at pos: 423
+Memory content before bitflip:0x30
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd767 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 32
+value: "1952  6 18  6 12 OSCAR       8.3 346.7  123  556\n1965  6 15  6 13 ALBERTO    28.3 118.5   42  875\n1964  8 21 18 14 KIRK       43.0 159.1   58  410\n1974  6 24  0 20 TONY       11.8 134.4   29  342\n2000"...
+value address: 0x7fffffffd5c0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-10-18 22:06:19]
+Fault Injection Successful after 3.5921967029571533s
+[INFO -- 2018-10-18 22:06:21]
+event type: exit
+[INFO -- 2018-10-18 22:06:21]
+exit code: 0

@@ -1,0 +1,67 @@
+[INFO -- 2018-10-19 00:42:52]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 00:42:52]
+Initialization strings:
+[INFO -- 2018-10-19 00:42:52]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 00:42:52]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 00:42:52]
+initSignal:4
+[INFO -- 2018-10-19 00:42:52]
+endSignal:5
+[INFO -- 2018-10-19 00:42:52]
+faultModel:4
+[EXCEPTION -- 2018-10-19 00:42:56]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-10-19 00:42:56]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 00:42:56]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 00:42:56]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 00:42:56]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 00:42:56]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 00:42:56]
+pythonException: invalid literal for int() with base 16: '0x7ffff7ff6000 ...'
+[EXCEPTION -- 2018-10-19 00:42:56]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 00:42:56]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 00:42:56]
+pythonException: invalid frame
+[INFO -- 2018-10-19 00:42:56]
+Backtrace BEGIN:
+#0  0x00007ffff72febf2 in str_to_mpn (str=str@entry=0x7fffffffd66f "17.0 313.2   77  743\n1953  4 26 18  7 KIRK       68.7 197.5   34  468\n1996  6 14 12 26 BERYL      26.8 137.6   15  301\n1999 10 13  0 22 TONY       39.1  22.1   87  322\n1974 12 10 18 16 BERYL      21.4"..., digcnt=digcnt@entry=2, n=n@entry=0x7ffff70b8a10, nsize=nsize@entry=0x7ffff70b89e0, exponent=exponent@entry=0x7ffff70b89f0, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=0x7ffff744014b <dot> ".") at strtod_l.c:337
+#1  0x00007ffff73001e1 in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=0x0, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1176
+#2  0x000000000040150f in main._omp_fn.0 () at nn.c:118
+#3  0x00007ffff78bb6ce in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x00007ffff768f184 in start_thread (arg=0x7ffff70b9700) at pthread_create.c:312
+#5  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+332	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd520
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x80
+frame name: main
+symbol name: tmp_lat
+symbol filename: nn.c
+symbol line: 34
+value: -0
+value address: 0x7fffffffd520
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-10-19 00:42:56]
+Fault Injection Successful after 4.868326663970947s
+[INFO -- 2018-10-19 00:42:58]
+event type: exit
+[INFO -- 2018-10-19 00:42:58]
+exit code: 0

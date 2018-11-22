@@ -1,0 +1,73 @@
+[INFO -- 2018-10-18 14:54:07]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 14:54:07]
+Initialization strings:
+[INFO -- 2018-10-18 14:54:07]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 14:54:07]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 14:54:07]
+initSignal:0
+[INFO -- 2018-10-18 14:54:07]
+endSignal:1
+[INFO -- 2018-10-18 14:54:07]
+faultModel:0
+[EXCEPTION -- 2018-10-18 14:54:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 14:54:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 14:54:08]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-18 14:54:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 14:54:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 14:54:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 14:54:08]
+gdbException: Não é possível acessar a memória no endereço 0x706d6f006b636f6c
+[EXCEPTION -- 2018-10-18 14:54:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 14:54:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 14:54:08]
+pythonException: invalid frame
+[INFO -- 2018-10-18 14:54:08]
+Backtrace BEGIN:
+#0  0x00007ffff78bddae in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bcaf9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000401198 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+40	        fprintf(stderr, "%s <filelist> <num neighbors to find> <target latitude> <target longitude> <out filename>\n",argv[0]);
+41	        exit(-1);
+42	    }
+43	
+44	    flist = fopen(argv[1], "r");
+45	    if(!flist) {
+46	        printf("error opening flist\n");
+47	        exit(1);
+48	    }
+49	
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd504
+address max offset: 4
+Memory content after  bitflip:0x000x200x000x00
+frame name: main
+symbol name: done
+symbol filename: nn.c
+symbol line: 31
+value: 8192
+value address: 0x7fffffffd504
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-18 14:54:08]
+Fault Injection Successful after 1.1683809757232666s
+[INFO -- 2018-10-18 14:54:08]
+event type: exit
+[INFO -- 2018-10-18 14:54:08]
+exit code: 0

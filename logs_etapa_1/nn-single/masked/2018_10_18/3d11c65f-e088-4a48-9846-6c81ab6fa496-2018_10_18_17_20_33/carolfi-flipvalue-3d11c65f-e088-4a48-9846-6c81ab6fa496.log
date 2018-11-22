@@ -1,0 +1,66 @@
+[INFO -- 2018-10-18 17:20:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 17:20:27]
+Initialization strings:
+[INFO -- 2018-10-18 17:20:27]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 17:20:27]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 17:20:27]
+initSignal:0
+[INFO -- 2018-10-18 17:20:27]
+endSignal:1
+[INFO -- 2018-10-18 17:20:27]
+faultModel:0
+[EXCEPTION -- 2018-10-18 17:20:27]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 17:20:27]
+pythonException: invalid literal for int() with base 16: '0x7ffff7ff5000 ...'
+[EXCEPTION -- 2018-10-18 17:20:27]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 17:20:27]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 17:20:27]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 17:20:27]
+pythonException: invalid frame
+[INFO -- 2018-10-18 17:20:27]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc06 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bc0e2 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000401184 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+40	        fprintf(stderr, "%s <filelist> <num neighbors to find> <target latitude> <target longitude> <out filename>\n",argv[0]);
+41	        exit(-1);
+42	    }
+43	
+44	    flist = fopen(argv[1], "r");
+45	    if(!flist) {
+46	        printf("error opening flist\n");
+47	        exit(1);
+48	    }
+49	
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x090x600xbb0x42
+Fault Model: Single bit-flip
+base address to flip value: 0x603880
+address max offset: 4
+Memory content after  bitflip:0x090xe00xbb0x42
+frame name: main
+symbol name: z
+symbol filename: nn.c
+symbol line: 80
+value: 0x603880
+value address: 0x7fffffffd538
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 17:20:27]
+Fault Injection Successful after 0.603257417678833s
+[INFO -- 2018-10-18 17:20:33]
+event type: exit
+[INFO -- 2018-10-18 17:20:33]
+exit code: 0

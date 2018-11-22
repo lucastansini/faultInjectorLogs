@@ -1,0 +1,54 @@
+[INFO -- 2018-10-16 18:42:51]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 18:42:51]
+Initialization strings:
+[INFO -- 2018-10-16 18:42:51]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 18:42:51]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 18:42:51]
+initSignal:0
+[INFO -- 2018-10-16 18:42:51]
+endSignal:2
+[INFO -- 2018-10-16 18:42:51]
+faultModel:0
+[INFO -- 2018-10-16 18:42:51]
+Backtrace BEGIN:
+#0  0x00007ffff7056a81 in __GI___libc_malloc (bytes=140737488343567) at malloc.c:2878
+#1  0x00007ffff7919dad in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#2  0x00007ffff7975249 in std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x00007ffff7975e0b in std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007ffff7975ea4 in std::string::reserve(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x00007ffff794a67b in std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > >::do_get(std::istreambuf_iterator<char, std::char_traits<char> >, std::istreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, std::_Ios_Iostate&, float&) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#6  0x00007ffff793b0d5 in std::istream& std::istream::_M_extract<float>(float&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#7  0x0000000000401470 in main ()
+
+2873	malloc.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 2
+Memory content before bitflip:0x6c
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff715574f  
+address max offset: 1
+Memory content after  bitflip:0x2c
+frame name: __GI___libc_malloc
+symbol name: __func__
+symbol filename: malloc.c
+symbol line: 0
+value: "__,ibc_malloc"
+value address: 0x7ffff715574d <__func__.11400>
+Type: The type is an array.
+Type sizeof: 14
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 13)
+
+[INFO -- 2018-10-16 18:42:51]
+Fault Injection Successful after 0.26259636878967285s
+[INFO -- 2018-10-16 18:43:01]
+event type: exit
+[INFO -- 2018-10-16 18:43:01]
+exit code: 0

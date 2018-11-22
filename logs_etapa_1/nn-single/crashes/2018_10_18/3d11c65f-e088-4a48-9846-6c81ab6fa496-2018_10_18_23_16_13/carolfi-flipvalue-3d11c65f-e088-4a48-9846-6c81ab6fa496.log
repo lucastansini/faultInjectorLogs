@@ -1,0 +1,48 @@
+[INFO -- 2018-10-18 23:16:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 23:16:12]
+Initialization strings:
+[INFO -- 2018-10-18 23:16:12]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 23:16:12]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 23:16:12]
+initSignal:0
+[INFO -- 2018-10-18 23:16:12]
+endSignal:1
+[INFO -- 2018-10-18 23:16:12]
+faultModel:0
+[EXCEPTION -- 2018-10-18 23:16:12]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 23:16:12]
+pythonException: invalid frame
+[INFO -- 2018-10-18 23:16:12]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc2e in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bb69b in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff768f184 in start_thread (arg=0x7ffff70b9700) at pthread_create.c:312
+#3  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+76	in ../sysdeps/unix/sysv/linux/x86_64/clone.S
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: entry
+Fliping array at pos: 13
+Memory content before bitflip:0x00
+Fault Model: Single bit-flip
+base address to flip value: 0x60327d 
+address max offset: 1
+Memory content after  bitflip:0x04
+frame name: main
+symbol name: neighbors
+symbol filename: nn.c
+symbol line: 33
+value: 0x603270
+value address: 0x7fffffffd540
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 23:16:12]
+Fault Injection Successful after 0.8308191299438477s

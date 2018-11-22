@@ -1,0 +1,58 @@
+[INFO -- 2018-10-19 08:02:40]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 08:02:40]
+Initialization strings:
+[INFO -- 2018-10-19 08:02:40]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 08:02:40]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 08:02:40]
+initSignal:0
+[INFO -- 2018-10-19 08:02:40]
+endSignal:1
+[INFO -- 2018-10-19 08:02:40]
+faultModel:0
+[EXCEPTION -- 2018-10-19 08:02:40]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-10-19 08:02:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 08:02:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 08:02:41]
+pythonException: invalid frame
+[INFO -- 2018-10-19 08:02:41]
+Backtrace BEGIN:
+#0  __memcpy_sse2 () at ../sysdeps/x86_64/multiarch/../memcpy.S:108
+#1  0x00007ffff72ff9dc in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1403
+#2  0x000000000040150f in main._omp_fn.0 () at nn.c:118
+#3  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+103	../sysdeps/x86_64/multiarch/../memcpy.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 56
+Memory content before bitflip:0xf80x5a0xfd0xf70xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd250
+address max offset: 8
+Memory content after  bitflip:0xf80x7a0xfd0xf70xff0x7f0x000x00
+frame name: __GI_____strtod_l_internal
+symbol name: num
+symbol filename: strtod_l.c
+symbol line: 485
+value: {29, 0, 395002602728, 0, 0, 511101108334, 0, 140737488343279, 140737348711936, 140737351947767, 124, 0, 140737338120640, 140737340288232, 140737338119936, 0, 140737321332528, 140737344242680, 129872, 288, 6309040, 140737351961975, 140737321334528, 140737353958816, 6309072, 140737321334528, 16, 140737344233882, 140737321335248, 140737348711936, 8388608, 140737488343648, 140737348711936, 140737344240269, 140737488343792, 140737312944128, 140737488343872, 140737346516384, 140737488344152, 1, 8392704, 140737351925564, 4096, 2090266759, 4, 7, 140737353964280, 140737351927990, 6306176, 140737488343632, 140737340251440, 140737351925564, 140737340304552, 479434442, 4, 7, 140737353972472, 140737351927990, 140737353961472}
+value address: 0x7fffffffd090
+Type: The type is an array.
+Type sizeof: 472
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 58)
+
+[INFO -- 2018-10-19 08:02:41]
+Fault Injection Successful after 1.2295351028442383s
+[INFO -- 2018-10-19 08:02:46]
+event type: exit
+[INFO -- 2018-10-19 08:02:46]
+exit code: 0

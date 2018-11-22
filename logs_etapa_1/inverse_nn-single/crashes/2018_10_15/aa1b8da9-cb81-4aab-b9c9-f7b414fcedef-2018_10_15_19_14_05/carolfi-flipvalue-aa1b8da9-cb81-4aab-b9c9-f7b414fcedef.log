@@ -1,0 +1,54 @@
+[INFO -- 2018-10-15 19:14:04]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-15 19:14:04]
+Initialization strings:
+[INFO -- 2018-10-15 19:14:04]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-15 19:14:04]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-15 19:14:04]
+initSignal:0
+[INFO -- 2018-10-15 19:14:04]
+endSignal:2
+[INFO -- 2018-10-15 19:14:04]
+faultModel:0
+[EXCEPTION -- 2018-10-15 19:14:05]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-10-15 19:14:05]
+Backtrace BEGIN:
+#0  __mpn_mul_1 () at ../sysdeps/x86_64/mul_1.S:32
+#1  0x00007ffff700ccd1 in __mpn_mul (prodp=prodp@entry=0x7fffffffcc40, up=0x7ffff714b088 <__tens+72>, usize=1, vp=vp@entry=0x7fffffffcbf0, vsize=vsize@entry=1) at mul.c:90
+#2  0x00007ffff7012bb9 in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1408
+#3  0x00007ffff7011d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#4  0x00007ffff702b948 in _IO_vfscanf_internal (s=s@entry=0x608610, format=<optimized out>, argptr=argptr@entry=0x7fffffffd0d8, errp=errp@entry=0x0) at vfscanf.c:2365
+#5  0x00007ffff7032162 in __isoc99_fscanf (stream=0x608610, format=<optimized out>) at isoc99_fscanf.c:34
+#6  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#7  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#8  0x000000000040199e in inversek2j(float, float, float*, float*) ()
+#9  0x0000000000401631 in main ()
+
+27	in ../sysdeps/x86_64/mul_1.S
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x400xcc0xff0xff0xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffcb68
+address max offset: 8
+Memory content after  bitflip:0x400xcc0xff0xf70xff0x7f0x000x00
+frame name: __GI_____strtof_l_internal
+symbol name: start_of_digits
+symbol filename: strtod_l.c
+symbol line: 504
+value: 0x7fffffffcc40 "\n"
+value address: 0x7fffffffcb68
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-15 19:14:05]
+Fault Injection Successful after 1.0320711135864258s
+[INFO -- 2018-10-15 19:14:05]
+event type: exit
+[EXCEPTION -- 2018-10-15 19:14:05]
+exit code: no exit code available

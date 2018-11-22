@@ -1,0 +1,48 @@
+[INFO -- 2018-10-19 14:32:40]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 14:32:40]
+Initialization strings:
+[INFO -- 2018-10-19 14:32:40]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 14:32:40]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 14:32:40]
+initSignal:3
+[INFO -- 2018-10-19 14:32:40]
+endSignal:4
+[INFO -- 2018-10-19 14:32:40]
+faultModel:3
+[INFO -- 2018-10-19 14:32:44]
+Backtrace BEGIN:
+#0  round_away (mode=0, more_bits=true, half_bit=true, last_digit_odd=true, negative=false) at ../include/rounding-mode.h:52
+#1  round_and_return (retval=retval@entry=0x7fffffffd080, exponent=5, negative=negative@entry=0, round_limb=round_limb@entry=3689348814741910323, round_bit=<optimized out>, more_bits=1) at strtod_l.c:296
+#2  0x00007ffff72ffc7d in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1613
+#3  0x000000000040150f in main._omp_fn.0 () at nn.c:118
+#4  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+47	../include/rounding-mode.h: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x2f
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffdc57 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: main
+symbol name: argv
+symbol filename: nn.c
+symbol line: 29
+value: 0x7fffffffd8b8
+value address: 0x7fffffffd4e0
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-19 14:32:44]
+Fault Injection Successful after 4.6428306102752686s
+[INFO -- 2018-10-19 14:32:46]
+event type: exit
+[INFO -- 2018-10-19 14:32:46]
+exit code: 0

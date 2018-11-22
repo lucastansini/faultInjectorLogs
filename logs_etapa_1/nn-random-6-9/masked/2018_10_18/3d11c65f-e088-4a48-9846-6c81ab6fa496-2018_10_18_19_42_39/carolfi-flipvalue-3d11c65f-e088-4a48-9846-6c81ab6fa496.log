@@ -1,0 +1,44 @@
+[INFO -- 2018-10-18 19:42:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 19:42:34]
+Initialization strings:
+[INFO -- 2018-10-18 19:42:34]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 19:42:34]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 19:42:34]
+initSignal:2
+[INFO -- 2018-10-18 19:42:34]
+endSignal:3
+[INFO -- 2018-10-18 19:42:34]
+faultModel:2
+[INFO -- 2018-10-18 19:42:36]
+Backtrace BEGIN:
+#0  0x00007ffff73002f8 in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1226
+#1  0x000000000040152c in main._omp_fn.0 () at nn.c:119
+#2  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+1221	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x000xc80x41
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd508
+address max offset: 4
+Memory content after  bitflip:0x530x860xf20x37
+frame name: main
+symbol name: target_lat
+symbol filename: nn.c
+symbol line: 34
+value: 2,89111977e-05
+value address: 0x7fffffffd508
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-10-18 19:42:36]
+Fault Injection Successful after 2.2404046058654785s
+[INFO -- 2018-10-18 19:42:39]
+event type: exit
+[INFO -- 2018-10-18 19:42:39]
+exit code: 0

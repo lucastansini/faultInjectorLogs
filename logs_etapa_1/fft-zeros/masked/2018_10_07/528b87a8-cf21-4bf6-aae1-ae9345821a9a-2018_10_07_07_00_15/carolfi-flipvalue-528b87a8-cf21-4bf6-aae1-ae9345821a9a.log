@@ -1,0 +1,49 @@
+[INFO -- 2018-10-07 06:59:55]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-07 06:59:55]
+Initialization strings:
+[INFO -- 2018-10-07 06:59:55]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-07 06:59:55]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-07 06:59:55]
+initSignal:10
+[INFO -- 2018-10-07 06:59:55]
+endSignal:15
+[INFO -- 2018-10-07 06:59:55]
+faultModel:3
+[EXCEPTION -- 2018-10-07 07:00:05]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-10-07 07:00:05]
+Backtrace BEGIN:
+#0  _IO_vfscanf_internal (s=s@entry=0x6062c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffd8c8, errp=errp@entry=0x0) at vfscanf.c:440
+#1  0x00007ffff7032162 in __isoc99_fscanf (stream=0x6062c0, format=<optimized out>) at isoc99_fscanf.c:34
+#2  0x00007ffff7bced15 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#3  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#4  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#5  0x0000000000401631 in main ()
+
+435	in vfscanf.c
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd6a0
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: _IO_vfscanf_internal
+symbol name: wpmax
+symbol filename: vfscanf.c
+symbol line: 273
+value: 0
+value address: 0x7fffffffd6a0
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-10-07 07:00:05]
+Fault Injection Successful after 10.765554428100586s
+[INFO -- 2018-10-07 07:00:15]
+event type: exit
+[INFO -- 2018-10-07 07:00:15]
+exit code: 0

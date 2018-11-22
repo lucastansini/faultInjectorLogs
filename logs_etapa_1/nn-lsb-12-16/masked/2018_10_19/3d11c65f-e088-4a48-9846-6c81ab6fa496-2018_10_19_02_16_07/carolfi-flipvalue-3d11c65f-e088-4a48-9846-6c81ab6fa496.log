@@ -1,0 +1,66 @@
+[INFO -- 2018-10-19 02:16:01]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 02:16:01]
+Initialization strings:
+[INFO -- 2018-10-19 02:16:01]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 02:16:01]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 02:16:01]
+initSignal:4
+[INFO -- 2018-10-19 02:16:01]
+endSignal:5
+[INFO -- 2018-10-19 02:16:01]
+faultModel:4
+[EXCEPTION -- 2018-10-19 02:16:05]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 02:16:05]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 02:16:05]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-19 02:16:05]
+pythonException: invalid frame
+[INFO -- 2018-10-19 02:16:05]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc06 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bc0e2 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000401184 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+137	            if( z[i] < neighbors[max_idx].dist ) {
+138	                sandbox[(i+1)*REC_LENGTH-1] = '\0';
+139	                strcpy(neighbors[max_idx].entry, sandbox +i*REC_LENGTH);
+140	                neighbors[max_idx].dist = z[i];
+141	            }
+142	        }
+143	    }//End while loop
+144	
+145	    FILE *file;
+146	    if( (file = fopen(gold_filename, "wb" )) == 0 )
+
+Backtrace END
+Fliping array at pos: 331
+Memory content before bitflip:0x37
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd70b 
+address max offset: 1
+Memory content after  bitflip:0x35
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 32
+value: "1971  6 13 12 18 VALERIE    55.6  70.9   43  401\n1960  3  2 18  9 OSCAR      14.6 294.2   94  188\n1986  7 17 18  3 HELENE     58.3 134.2  159  297\n1958  5 14 18  6 RAFAEL     39.0 147.7   15  679\n1976"...
+value address: 0x7fffffffd5c0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-10-19 02:16:05]
+Fault Injection Successful after 4.899645805358887s
+[INFO -- 2018-10-19 02:16:07]
+event type: exit
+[INFO -- 2018-10-19 02:16:07]
+exit code: 0

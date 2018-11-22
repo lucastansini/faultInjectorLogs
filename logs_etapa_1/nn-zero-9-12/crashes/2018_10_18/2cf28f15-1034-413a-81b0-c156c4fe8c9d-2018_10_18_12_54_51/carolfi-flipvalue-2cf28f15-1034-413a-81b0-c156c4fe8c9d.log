@@ -1,0 +1,53 @@
+[INFO -- 2018-10-18 12:54:44]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 12:54:44]
+Initialization strings:
+[INFO -- 2018-10-18 12:54:44]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 12:54:44]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 40 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out40_25_25
+[INFO -- 2018-10-18 12:54:44]
+initSignal:5
+[INFO -- 2018-10-18 12:54:44]
+endSignal:6
+[INFO -- 2018-10-18 12:54:44]
+faultModel:3
+[EXCEPTION -- 2018-10-18 12:54:50]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 12:54:50]
+pythonException: invalid frame
+[INFO -- 2018-10-18 12:54:50]
+Backtrace BEGIN:
+#0  0x00007ffff78bddf3 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bb6da in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff768f184 in start_thread (arg=0x7ffff70b9700) at pthread_create.c:312
+#3  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+383	in strtod_l.c
+
+Backtrace END
+Memory content before bitflip:0x0a0x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffda6c
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main
+symbol name: rec_count
+symbol filename: nn.c
+symbol line: 31
+value: 0
+value address: 0x7fffffffda6c
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-18 12:54:50]
+Fault Injection Successful after 6.398351192474365s
+[EXCEPTION -- 2018-10-18 12:54:50]
+pythonException: Thread no longer exists.
+[EXCEPTION -- 2018-10-18 12:54:50]
+pythonException: Thread no longer exists.
+[INFO -- 2018-10-18 12:54:50]
+event type: exit
+[EXCEPTION -- 2018-10-18 12:54:50]
+exit code: no exit code available

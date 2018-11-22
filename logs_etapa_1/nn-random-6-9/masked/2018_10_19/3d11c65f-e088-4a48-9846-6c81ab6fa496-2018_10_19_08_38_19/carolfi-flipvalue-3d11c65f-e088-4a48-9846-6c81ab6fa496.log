@@ -1,0 +1,54 @@
+[INFO -- 2018-10-19 08:38:13]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 08:38:13]
+Initialization strings:
+[INFO -- 2018-10-19 08:38:13]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 08:38:13]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 08:38:13]
+initSignal:2
+[INFO -- 2018-10-19 08:38:13]
+endSignal:3
+[INFO -- 2018-10-19 08:38:13]
+faultModel:2
+[INFO -- 2018-10-19 08:38:15]
+Backtrace BEGIN:
+#0  main (argc=6, argv=0x7fffffffd8b8) at nn.c:130
+
+125	
+126	        for( i = 0 ; i < rec_count ; i++ ) {
+127	            float max_dist = -1;
+128	            int max_idx = 0;
+129	            // find a neighbor with greatest dist and take his spot if allowed!
+130	            for( j = 0 ; j < k ; j++ ) {
+131	                if( neighbors[j].dist > max_dist ) {
+132	                    max_dist = neighbors[j].dist;
+133	                    max_idx = j;
+134	                }
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: entry
+Fliping array at pos: 35
+Memory content before bitflip:0x35
+Fault Model: Random bit-flip
+base address to flip value: 0x603293 
+address max offset: 1
+Memory content after  bitflip:0x18
+frame name: main
+symbol name: neighbors
+symbol filename: nn.c
+symbol line: 33
+value: 0x603270
+value address: 0x7fffffffd540
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-19 08:38:15]
+Fault Injection Successful after 2.935781478881836s
+[INFO -- 2018-10-19 08:38:19]
+event type: exit
+[INFO -- 2018-10-19 08:38:19]
+exit code: 0

@@ -1,0 +1,59 @@
+[INFO -- 2018-10-05 21:46:32]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-05 21:46:32]
+Initialization strings:
+[INFO -- 2018-10-05 21:46:32]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-05 21:46:32]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-05 21:46:32]
+initSignal:0
+[INFO -- 2018-10-05 21:46:32]
+endSignal:5
+[INFO -- 2018-10-05 21:46:32]
+faultModel:0
+[INFO -- 2018-10-05 21:46:32]
+Backtrace BEGIN:
+#0  0x00007ffff7de0f2b in elf_get_dynamic_info (temp=0x0, l=0x7ffff7fd6000) at get-dynamic-info.h:90
+#1  _dl_map_object_from_fd (name=name@entry=0x4006a1 "libfann.so.2", fd=<optimized out>, fbp=fbp@entry=0x7fffffffd618, realname=<optimized out>, loader=loader@entry=0x7ffff7ffe1c8, l_type=l_type@entry=1, mode=mode@entry=0, stack_endp=stack_endp@entry=0x7fffffffd610, nsid=nsid@entry=0) at dl-load.c:1451
+#2  0x00007ffff7de2dc9 in _dl_map_object (loader=0x7ffff7ffe1c8, name=0x4006a1 "libfann.so.2", type=1, trace_mode=0, mode=<optimized out>, nsid=<optimized out>) at dl-load.c:2627
+#3  0x00007ffff7de76a2 in openaux (a=a@entry=0x7fffffffdbd8) at dl-deps.c:63
+#4  0x00007ffff7dea094 in _dl_catch_error (objname=objname@entry=0x7fffffffdbd0, errstring=errstring@entry=0x7fffffffdbc8, mallocedp=mallocedp@entry=0x7fffffffdbc0, operate=operate@entry=0x7ffff7de7670 <openaux>, args=args@entry=0x7fffffffdbd8) at dl-error.c:187
+#5  0x00007ffff7de7da5 in _dl_map_object_deps (map=map@entry=0x7ffff7ffe1c8, preloads=<optimized out>, npreloads=npreloads@entry=0, trace_mode=trace_mode@entry=0, open_mode=open_mode@entry=0) at dl-deps.c:254
+#6  0x00007ffff7dddc30 in dl_main (phdr=<optimized out>, phdr@entry=0x400040, phnum=<optimized out>, phnum@entry=9, user_entry=user_entry@entry=0x7fffffffdd68, auxv=<optimized out>) at rtld.c:1775
+#7  0x00007ffff7df15f5 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffde50, dl_main=dl_main@entry=0x7ffff7ddc260 <dl_main>) at ../elf/dl-sysdep.c:249
+#8  0x00007ffff7ddbbb8 in _dl_start_final (arg=0x7fffffffde50) at rtld.c:347
+#9  _dl_start (arg=0x7fffffffde50) at rtld.c:573
+#10 0x00007ffff7ddb268 in _start () from /lib64/ld-linux-x86-64.so.2
+#11 0x0000000000000003 in ?? ()
+#12 0x00007fffffffe103 in ?? ()
+#13 0x00007fffffffe11a in ?? ()
+#14 0x00007fffffffe120 in ?? ()
+#15 0x0000000000000000 in ?? ()
+
+85	get-dynamic-info.h: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping a bit of the pointer
+Memory content before bitflip:0xf80xd90xff0xff0xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7ffe000 
+address max offset: 8
+Memory content after  bitflip:0xf80xd90xf70xff0xff0x7f0x000x00
+frame name: _dl_catch_error
+symbol name: catchp
+symbol filename: dl-error.c
+symbol line: 180
+value: 0x7ffff7ffe000 <data>
+value address: 0x7fffffffd9b8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-05 21:46:32]
+Fault Injection Successful after 0.27315473556518555s
+[INFO -- 2018-10-05 21:46:51]
+event type: exit
+[INFO -- 2018-10-05 21:46:51]
+exit code: 0

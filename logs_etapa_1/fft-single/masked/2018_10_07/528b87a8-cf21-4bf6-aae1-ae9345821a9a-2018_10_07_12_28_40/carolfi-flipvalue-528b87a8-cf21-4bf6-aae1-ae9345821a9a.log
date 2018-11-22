@@ -1,0 +1,45 @@
+[INFO -- 2018-10-07 12:28:20]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-07 12:28:20]
+Initialization strings:
+[INFO -- 2018-10-07 12:28:20]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-07 12:28:20]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-07 12:28:20]
+initSignal:0
+[INFO -- 2018-10-07 12:28:20]
+endSignal:5
+[INFO -- 2018-10-07 12:28:20]
+faultModel:0
+[INFO -- 2018-10-07 12:28:22]
+Backtrace BEGIN:
+#0  0x00007ffff75e8a58 in __GI___expf (x=-1,0371294) at ../sysdeps/ieee754/flt-32/w_expf.c:27
+#1  0x00007ffff7bc5284 in fann_run () from /usr/local/lib/libfann.so.2
+#2  0x00000000004019ce in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#3  0x0000000000401631 in main ()
+
+22	../sysdeps/ieee754/flt-32/w_expf.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0xa80xc00x840xbf
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffda0c
+address max offset: 4
+Memory content after  bitflip:0xaa0xc00x840xbf
+frame name: __GI___expf
+symbol name: x
+symbol filename: ../sysdeps/ieee754/flt-32/w_expf.c
+symbol line: 24
+value: -1,03712964
+value address: 0x7fffffffda0c
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-10-07 12:28:22]
+Fault Injection Successful after 2.751720666885376s
+[INFO -- 2018-10-07 12:28:40]
+event type: exit
+[INFO -- 2018-10-07 12:28:40]
+exit code: 0

@@ -1,0 +1,44 @@
+[INFO -- 2018-10-07 16:45:46]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-07 16:45:46]
+Initialization strings:
+[INFO -- 2018-10-07 16:45:46]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-07 16:45:46]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-07 16:45:46]
+initSignal:0
+[INFO -- 2018-10-07 16:45:46]
+endSignal:5
+[INFO -- 2018-10-07 16:45:46]
+faultModel:0
+[INFO -- 2018-10-07 16:45:49]
+Backtrace BEGIN:
+#0  0x00007ffff70562e7 in _int_realloc (av=0x7ffff7396760 <main_arena>, oldp=0x64e8da0, oldsize=<optimized out>, nb=<optimized out>) at malloc.c:4358
+#1  0x00007ffff70572f9 in __GI___libc_realloc (oldmem=0x64e8db0, bytes=16) at malloc.c:3031
+#2  0x00007ffff7bceedb in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#3  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#4  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#5  0x0000000000401631 in main ()
+
+4353	malloc.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7398a70 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x100x000x000x00
+frame name: __GI___libc_realloc
+symbol name: aligned_heap_area
+symbol filename: arena.c
+symbol line: 519
+value: 0x0
+value address: 0x7ffff7398a70 <aligned_heap_area>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-07 16:45:49]
+Fault Injection Successful after 3.610330820083618s

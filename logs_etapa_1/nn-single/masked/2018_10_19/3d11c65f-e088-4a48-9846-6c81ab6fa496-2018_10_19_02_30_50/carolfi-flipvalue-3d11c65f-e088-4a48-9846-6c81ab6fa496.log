@@ -1,0 +1,67 @@
+[INFO -- 2018-10-19 02:30:44]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 02:30:44]
+Initialization strings:
+[INFO -- 2018-10-19 02:30:44]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 02:30:44]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 02:30:44]
+initSignal:0
+[INFO -- 2018-10-19 02:30:44]
+endSignal:1
+[INFO -- 2018-10-19 02:30:44]
+faultModel:0
+[EXCEPTION -- 2018-10-19 02:30:45]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 02:30:45]
+gdbException: Não é possível acessar a memória no endereço 0x6572687470006574
+[EXCEPTION -- 2018-10-19 02:30:45]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 02:30:45]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 02:30:45]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 02:30:45]
+pythonException: invalid frame
+[INFO -- 2018-10-19 02:30:45]
+Backtrace BEGIN:
+#0  0x00007ffff78bddf3 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bcaf9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000401198 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+40	        fprintf(stderr, "%s <filelist> <num neighbors to find> <target latitude> <target longitude> <out filename>\n",argv[0]);
+41	        exit(-1);
+42	    }
+43	
+44	    flist = fopen(argv[1], "r");
+45	    if(!flist) {
+46	        printf("error opening flist\n");
+47	        exit(1);
+48	    }
+49	
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: dist
+Memory content before bitflip:0x000x000x000xe00x1c0x1a0xc20x3f
+Fault Model: Single bit-flip
+base address to flip value: 0x6032a8
+address max offset: 8
+Memory content after  bitflip:0x000x000x100xe00x1c0x1a0xc20x3f
+frame name: main
+symbol name: neighbors
+symbol filename: nn.c
+symbol line: 33
+value: 0x603270
+value address: 0x7fffffffd540
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-19 02:30:45]
+Fault Injection Successful after 1.141716718673706s
+[INFO -- 2018-10-19 02:30:50]
+event type: exit
+[INFO -- 2018-10-19 02:30:50]
+exit code: 0

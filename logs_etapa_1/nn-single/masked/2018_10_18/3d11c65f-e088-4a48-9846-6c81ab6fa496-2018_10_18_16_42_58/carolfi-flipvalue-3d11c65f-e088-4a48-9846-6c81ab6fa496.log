@@ -1,0 +1,52 @@
+[INFO -- 2018-10-18 16:42:52]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 16:42:52]
+Initialization strings:
+[INFO -- 2018-10-18 16:42:52]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 16:42:52]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 16:42:52]
+initSignal:0
+[INFO -- 2018-10-18 16:42:52]
+endSignal:1
+[INFO -- 2018-10-18 16:42:52]
+faultModel:0
+[EXCEPTION -- 2018-10-18 16:42:52]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 16:42:52]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 16:42:52]
+pythonException: invalid frame
+[INFO -- 2018-10-18 16:42:52]
+Backtrace BEGIN:
+#0  0x00007ffff72fedc3 in str_to_mpn (str=0x7fffffffd611 " 271.5   97  268\n1974  7 26  6 28 BERYL      37.9 141.3   25  417\n1967  3 10  0 16 DEBBY      64.9  21.3   97  667\n1988  7 18  6 19 JOYCE      10.5 113.1  106  148\n1981 11 20 18 19 OSCAR      66.8 262"..., str@entry=0x7fffffffd60f ".7 271.5   97  268\n1974  7 26  6 28 BERYL      37.9 141.3   25  417\n1967  3 10  0 16 DEBBY      64.9  21.3   97  667\n1988  7 18  6 19 JOYCE      10.5 113.1  106  148\n1981 11 20 18 19 OSCAR      66.8 2"..., digcnt=<optimized out>, digcnt@entry=1, n=n@entry=0x7fffffffd090, nsize=nsize@entry=0x7fffffffd060, exponent=exponent@entry=0x7fffffffd070, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=<optimized out>) at strtod_l.c:430
+#1  0x00007ffff72ffa8a in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1427
+#2  0x000000000040150f in main._omp_fn.0 () at nn.c:118
+#3  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+425	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x0f0xd60xff0xff0xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd038
+address max offset: 8
+Memory content after  bitflip:0x0f0xf60xff0xff0xff0x7f0x000x00
+frame name: __GI_____strtod_l_internal
+symbol name: startp
+symbol filename: strtod_l.c
+symbol line: 504
+value: 0x7fffffffd60f ".7 271.5   97  268\n1974  7 26  6 28 BERYL      37.9 141.3   25  417\n1967  3 10  0 16 DEBBY      64.9  21.3   97  667\n1988  7 18  6 19 JOYCE      10.5 113.1  106  148\n1981 11 20 18 19 OSCAR      66.8 2"...
+value address: 0x7fffffffd038
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 16:42:52]
+Fault Injection Successful after 0.6568925380706787s
+[INFO -- 2018-10-18 16:42:58]
+event type: exit
+[INFO -- 2018-10-18 16:42:58]
+exit code: 0

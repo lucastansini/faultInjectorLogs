@@ -1,0 +1,58 @@
+[INFO -- 2018-10-15 22:54:41]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-15 22:54:41]
+Initialization strings:
+[INFO -- 2018-10-15 22:54:41]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-15 22:54:41]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-15 22:54:41]
+initSignal:0
+[INFO -- 2018-10-15 22:54:41]
+endSignal:2
+[INFO -- 2018-10-15 22:54:41]
+faultModel:0
+[INFO -- 2018-10-15 22:54:41]
+Backtrace BEGIN:
+#0  0x00007ffff7df3787 in mprotect () at ../sysdeps/unix/syscall-template.S:81
+#1  0x00007ffff7de0e49 in _dl_map_object_from_fd (name=name@entry=0x7ffff6daaae6 "libdl.so.2", fd=4, fbp=fbp@entry=0x7fffffffcc68, realname=0x7ffff7fd45f0 "/lib/x86_64-linux-gnu/libdl.so.2", loader=loader@entry=0x7ffff7fd59d0, l_type=l_type@entry=1, mode=mode@entry=0, stack_endp=stack_endp@entry=0x7fffffffcc60, nsid=nsid@entry=0) at dl-load.c:1335
+#2  0x00007ffff7de2dc9 in _dl_map_object (loader=0x7ffff7fd59d0, name=0x7ffff6daaae6 "libdl.so.2", type=1, trace_mode=0, mode=<optimized out>, nsid=<optimized out>) at dl-load.c:2627
+#3  0x00007ffff7de76a2 in openaux (a=a@entry=0x7fffffffd5d8) at dl-deps.c:63
+#4  0x00007ffff7dea094 in _dl_catch_error (objname=objname@entry=0x7fffffffd5d0, errstring=errstring@entry=0x7fffffffd5c8, mallocedp=mallocedp@entry=0x7fffffffd5c0, operate=operate@entry=0x7ffff7de7670 <openaux>, args=args@entry=0x7fffffffd5d8) at dl-error.c:187
+#5  0x00007ffff7de7da5 in _dl_map_object_deps (map=map@entry=0x7ffff7ffe1c8, preloads=<optimized out>, npreloads=npreloads@entry=0, trace_mode=trace_mode@entry=0, open_mode=open_mode@entry=0) at dl-deps.c:254
+#6  0x00007ffff7dddc30 in dl_main (phdr=<optimized out>, phdr@entry=0x400040, phnum=<optimized out>, phnum@entry=9, user_entry=user_entry@entry=0x7fffffffd768, auxv=<optimized out>) at rtld.c:1775
+#7  0x00007ffff7df15f5 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffd850, dl_main=dl_main@entry=0x7ffff7ddc260 <dl_main>) at ../elf/dl-sysdep.c:249
+#8  0x00007ffff7ddbbb8 in _dl_start_final (arg=0x7fffffffd850) at rtld.c:347
+#9  _dl_start (arg=0x7fffffffd850) at rtld.c:573
+#10 0x00007ffff7ddb268 in _start () from /lib64/ld-linux-x86-64.so.2
+#11 0x0000000000000003 in ?? ()
+#12 0x00007fffffffdbe5 in ?? ()
+#13 0x00007fffffffdc3b in ?? ()
+#14 0x00007fffffffdc8a in ?? ()
+#15 0x0000000000000000 in ?? ()
+
+76	../sysdeps/unix/syscall-template.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x53
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7de7670 
+address max offset: 1
+Memory content after  bitflip:0x43
+frame name: _dl_catch_error
+symbol name: operate
+symbol filename: dl-error.c
+symbol line: 162
+value: 0x7ffff7de7670 <openaux>
+value address: 0x7fffffffd030
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-15 22:54:41]
+Fault Injection Successful after 0.6397078037261963s
+[INFO -- 2018-10-15 22:54:41]
+event type: exit
+[EXCEPTION -- 2018-10-15 22:54:41]
+exit code: no exit code available

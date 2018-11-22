@@ -1,0 +1,53 @@
+[INFO -- 2018-10-09 16:16:15]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-09 16:16:15]
+Initialization strings:
+[INFO -- 2018-10-09 16:16:15]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-09 16:16:15]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-09 16:16:15]
+initSignal:20
+[INFO -- 2018-10-09 16:16:15]
+endSignal:25
+[INFO -- 2018-10-09 16:16:15]
+faultModel:4
+[INFO -- 2018-10-09 16:16:35]
+Backtrace BEGIN:
+#0  0x00007ffff701dc41 in _IO_vfprintf_internal (s=s@entry=0x7fffffffd2a0, format=format@entry=0x7fffffffd5a0 "%.*g", ap=ap@entry=0x7fffffffd408) at vfprintf.c:235
+#1  0x00007ffff7046499 in _IO_vsnprintf (string=0x7fffffffd510 "", maxlen=<optimized out>, format=0x7fffffffd5a0 "%.*g", args=0x7fffffffd408) at vsnprintf.c:119
+#2  0x00007ffff793ee10 in ?? () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x00007ffff7945264 in std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007ffff7945550 in std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x00007ffff7950af5 in std::ostream& std::ostream::_M_insert<double>(double) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#6  0x00000000004016b3 in main ()
+
+230	vfprintf.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 90
+Memory content before bitflip:0x0d
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff714ebda  
+address max offset: 1
+Memory content after  bitflip:0x4d
+frame name: _IO_vfprintf_internal
+symbol name: jump_table
+symbol filename: vfprintf.c
+symbol line: 288
+value: "\001\000\000\004\000\016\000\006\000\000\a\002\000\003\t\000\005\b\b\b\b\b\b\b\b\b\000\000\000\000\000\000\000\032\000\031\000\023\023\023\000\035\000\000\f\000\000\000\000\000\000\025\000\000\000\000\022\000\r\000\000\000\000\000\000\032\000\024\017\023\023\023\n\017\034\000\v\030\027\021\026\f\000\025\033\020\000\000\022\000M"
+value address: 0x7ffff714eb80 <jump_table>
+Type: The type is an array.
+Type sizeof: 91
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 90)
+
+[INFO -- 2018-10-09 16:16:35]
+Fault Injection Successful after 20.514482975006104s
+[INFO -- 2018-10-09 16:16:35]
+event type: exit
+[INFO -- 2018-10-09 16:16:35]
+exit code: 0

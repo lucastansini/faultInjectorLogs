@@ -1,0 +1,49 @@
+[INFO -- 2018-10-18 17:01:28]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 17:01:28]
+Initialization strings:
+[INFO -- 2018-10-18 17:01:28]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 17:01:28]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 17:01:28]
+initSignal:3
+[INFO -- 2018-10-18 17:01:28]
+endSignal:4
+[INFO -- 2018-10-18 17:01:28]
+faultModel:3
+[EXCEPTION -- 2018-10-18 17:01:31]
+pythonException: invalid frame
+[INFO -- 2018-10-18 17:01:31]
+Backtrace BEGIN:
+#0  0x00007ffff73ad37d in read () at ../sysdeps/unix/syscall-template.S:81
+#1  0x00007ffff73385b0 in _IO_new_file_underflow (fp=0x603640) at fileops.c:613
+#2  0x00007ffff73373a8 in __GI__IO_file_xsgetn (fp=0x603640, data=<optimized out>, n=490) at fileops.c:1418
+#3  0x00007ffff732c86f in __GI__IO_fread (buf=<optimized out>, size=49, count=10, fp=0x603640) at iofread.c:42
+#4  0x0000000000401027 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:85
+
+76	../sysdeps/unix/syscall-template.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x2f
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffdd00 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: main
+symbol name: gold_filename
+symbol filename: nn.c
+symbol line: 35
+value: 0x7fffffffdd00 ""
+value address: 0x7fffffffd550
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 17:01:31]
+Fault Injection Successful after 3.722625732421875s
+[INFO -- 2018-10-18 17:01:34]
+event type: exit
+[EXCEPTION -- 2018-10-18 17:01:34]
+exit code: no exit code available

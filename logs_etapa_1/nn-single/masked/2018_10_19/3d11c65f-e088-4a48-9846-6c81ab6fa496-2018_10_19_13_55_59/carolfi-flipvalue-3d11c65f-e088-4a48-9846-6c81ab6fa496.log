@@ -1,0 +1,52 @@
+[INFO -- 2018-10-19 13:55:53]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 13:55:53]
+Initialization strings:
+[INFO -- 2018-10-19 13:55:53]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 13:55:53]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 13:55:53]
+initSignal:0
+[INFO -- 2018-10-19 13:55:53]
+endSignal:1
+[INFO -- 2018-10-19 13:55:53]
+faultModel:0
+[EXCEPTION -- 2018-10-19 13:55:53]
+pythonException: invalid frame
+[INFO -- 2018-10-19 13:55:53]
+Backtrace BEGIN:
+#0  create_thread (stackaddr=<optimized out>, attr=0x7ffff7ad3600, pd=0x7ffff70b9700) at ../nptl/sysdeps/pthread/createthread.c:223
+#1  __pthread_create_2_1 (newthread=<optimized out>, attr=<optimized out>, start_routine=<optimized out>, arg=<optimized out>) at pthread_create.c:611
+#2  0x00007ffff78bbca2 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x0000000000401184 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+218	../nptl/sysdeps/pthread/createthread.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 0
+Memory content before bitflip:0x400x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff76998e4 
+address max offset: 4
+Memory content after  bitflip:0x480x000x000x00
+frame name: create_thread
+symbol name: _thread_db_list_t_next
+symbol filename: ../nptl_db/structs.def
+symbol line: 41
+value: {72, 1, 0}
+value address: 0x7ffff76998e4 <_thread_db_list_t_next>
+Type: The type is an array.
+Type sizeof: 12
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 2)
+
+[INFO -- 2018-10-19 13:55:53]
+Fault Injection Successful after 0.9563419818878174s
+[INFO -- 2018-10-19 13:55:59]
+event type: exit
+[INFO -- 2018-10-19 13:55:59]
+exit code: 0

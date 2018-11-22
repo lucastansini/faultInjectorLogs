@@ -1,0 +1,70 @@
+[INFO -- 2018-10-19 03:37:26]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 03:37:26]
+Initialization strings:
+[INFO -- 2018-10-19 03:37:26]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 03:37:26]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 03:37:26]
+initSignal:4
+[INFO -- 2018-10-19 03:37:26]
+endSignal:5
+[INFO -- 2018-10-19 03:37:26]
+faultModel:4
+[EXCEPTION -- 2018-10-19 03:37:30]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 03:37:30]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 03:37:30]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-19 03:37:30]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 03:37:30]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 03:37:30]
+pythonException: invalid frame
+[INFO -- 2018-10-19 03:37:30]
+Backtrace BEGIN:
+#0  0x00007ffff78bddf3 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bcaf9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000401198 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+136	            // compare each record with max value to find the nearest neighbor
+137	            if( z[i] < neighbors[max_idx].dist ) {
+138	                sandbox[(i+1)*REC_LENGTH-1] = '\0';
+139	                strcpy(neighbors[max_idx].entry, sandbox +i*REC_LENGTH);
+140	                neighbors[max_idx].dist = z[i];
+141	            }
+142	        }
+143	    }//End while loop
+144	
+145	    FILE *file;
+
+Backtrace END
+Fliping array at pos: 303
+Memory content before bitflip:0x31
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd6ef 
+address max offset: 1
+Memory content after  bitflip:0x35
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 32
+value: "1979  8  2  0  7 MICHAEL    66.9  63.0   86  409\n1972 12 18  0 11 NADINE     63.5 230.9   65   78\n1950  5 21  6  4 FLORENCE   50.6  62.1   52  274\n1950  9 22  0 19 JOYCE      25.7 184.0  120  510\n1981"...
+value address: 0x7fffffffd5c0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-10-19 03:37:30]
+Fault Injection Successful after 4.500204801559448s
+[INFO -- 2018-10-19 03:37:31]
+event type: exit
+[INFO -- 2018-10-19 03:37:31]
+exit code: 0

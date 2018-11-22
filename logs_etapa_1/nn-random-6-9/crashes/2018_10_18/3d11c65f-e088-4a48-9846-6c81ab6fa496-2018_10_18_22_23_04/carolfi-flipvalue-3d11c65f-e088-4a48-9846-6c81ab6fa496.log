@@ -1,0 +1,72 @@
+[INFO -- 2018-10-18 22:23:00]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 22:23:00]
+Initialization strings:
+[INFO -- 2018-10-18 22:23:00]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 22:23:00]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 22:23:00]
+initSignal:2
+[INFO -- 2018-10-18 22:23:00]
+endSignal:3
+[INFO -- 2018-10-18 22:23:00]
+faultModel:2
+[EXCEPTION -- 2018-10-18 22:23:03]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-10-18 22:23:03]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 22:23:03]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 22:23:03]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 22:23:03]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 22:23:03]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 22:23:03]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 22:23:03]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-18 22:23:03]
+pythonException: invalid frame
+[INFO -- 2018-10-18 22:23:03]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc2e in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bb6a8 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff768f184 in start_thread (arg=0x7ffff70b9700) at pthread_create.c:312
+#3  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+40	        fprintf(stderr, "%s <filelist> <num neighbors to find> <target latitude> <target longitude> <out filename>\n",argv[0]);
+41	        exit(-1);
+42	    }
+43	
+44	    flist = fopen(argv[1], "r");
+45	    if(!flist) {
+46	        printf("error opening flist\n");
+47	        exit(1);
+48	    }
+49	
+
+Backtrace END
+Memory content before bitflip:0x010x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd020
+address max offset: 8
+Memory content after  bitflip:0x2f0xcb0xbf0xde0xa20xf00xc30x97
+frame name: __GI_____strtod_l_internal
+symbol name: decimal_len
+symbol filename: strtod_l.c
+symbol line: 522
+value: 10935848902498175791
+value address: 0x7fffffffd020
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 22:23:03]
+Fault Injection Successful after 3.2971205711364746s
+[INFO -- 2018-10-18 22:23:03]
+event type: exit
+[EXCEPTION -- 2018-10-18 22:23:03]
+exit code: no exit code available

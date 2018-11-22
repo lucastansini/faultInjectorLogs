@@ -1,0 +1,52 @@
+[INFO -- 2018-10-19 12:34:18]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 12:34:18]
+Initialization strings:
+[INFO -- 2018-10-19 12:34:18]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 12:34:18]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 12:34:18]
+initSignal:2
+[INFO -- 2018-10-19 12:34:18]
+endSignal:3
+[INFO -- 2018-10-19 12:34:18]
+faultModel:2
+[EXCEPTION -- 2018-10-19 12:34:20]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 12:34:20]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 12:34:20]
+pythonException: invalid frame
+[INFO -- 2018-10-19 12:34:20]
+Backtrace BEGIN:
+#0  __mpn_lshift () at ../sysdeps/x86_64/lshift.S:59
+#1  0x00007ffff72ffab8 in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1450
+#2  0x000000000040152c in main._omp_fn.0 () at nn.c:119
+#3  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+54	../sysdeps/x86_64/lshift.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0xdd0x710xa60x43
+Fault Model: Random bit-flip
+base address to flip value: 0x603880
+address max offset: 4
+Memory content after  bitflip:0x6d0x1c0xef0xcd
+frame name: main._omp_fn.0
+symbol name: z
+symbol filename: nn.c
+symbol line: 80
+value: 0x603880
+value address: 0x7fffffffd568
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-19 12:34:20]
+Fault Injection Successful after 2.5750200748443604s
+[INFO -- 2018-10-19 12:34:24]
+event type: exit
+[INFO -- 2018-10-19 12:34:24]
+exit code: 0

@@ -1,0 +1,45 @@
+[INFO -- 2018-10-19 03:36:17]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 03:36:17]
+Initialization strings:
+[INFO -- 2018-10-19 03:36:17]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 03:36:17]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 03:36:17]
+initSignal:2
+[INFO -- 2018-10-19 03:36:17]
+endSignal:3
+[INFO -- 2018-10-19 03:36:17]
+faultModel:2
+[INFO -- 2018-10-19 03:36:20]
+Backtrace BEGIN:
+#0  __GI_____strtod_l_internal (nptr=0x7fffffffd642 "  53.5   15  381\n1987  5 16 18 25 PATTY      14.9 345.5   51  814\n2001  6 16  6 25 MICHAEL    13.7 352.9   39  381\n1994  8 14  6 27 GORDON     24.4 335.4  143   13\n1981  3 16  6 10 KIRK       20.7   4"..., endptr=0x0, group=<optimized out>, loc=0x7ffff7681060 <_nl_global_locale>) at strtod_l.c:597
+#1  0x000000000040152c in main._omp_fn.0 () at nn.c:119
+#2  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+592	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x800x380x600x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd538
+address max offset: 8
+Memory content after  bitflip:0xad0xac0xf80x1b0x360x610xf60x9b
+frame name: main
+symbol name: z
+symbol filename: nn.c
+symbol line: 80
+value: 0x603880
+value address: 0x7fffffffd538
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-19 03:36:20]
+Fault Injection Successful after 3.1377625465393066s
+[INFO -- 2018-10-19 03:36:23]
+event type: exit
+[INFO -- 2018-10-19 03:36:23]
+exit code: 0

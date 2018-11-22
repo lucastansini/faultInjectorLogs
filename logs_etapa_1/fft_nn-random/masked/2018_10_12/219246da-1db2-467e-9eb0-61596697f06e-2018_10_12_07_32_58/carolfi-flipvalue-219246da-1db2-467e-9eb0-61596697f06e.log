@@ -1,0 +1,54 @@
+[INFO -- 2018-10-12 07:32:37]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-12 07:32:37]
+Initialization strings:
+[INFO -- 2018-10-12 07:32:37]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-12 07:32:37]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-12 07:32:37]
+initSignal:10
+[INFO -- 2018-10-12 07:32:37]
+endSignal:15
+[INFO -- 2018-10-12 07:32:37]
+faultModel:2
+[INFO -- 2018-10-12 07:32:48]
+Backtrace BEGIN:
+#0  __GI_____strtof_l_internal (nptr=<optimized out>, endptr=0x7fffffffd230, group=<optimized out>, loc=<optimized out>) at strtod_l.c:851
+#1  0x00007ffff7011d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#2  0x00007ffff702b948 in _IO_vfscanf_internal (s=s@entry=0x6062c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffd408, errp=errp@entry=0x0) at vfscanf.c:2365
+#3  0x00007ffff7032162 in __isoc99_fscanf (stream=0x6062c0, format=<optimized out>) at isoc99_fscanf.c:34
+#4  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#5  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#6  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#7  0x0000000000401631 in main ()
+
+846	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 9
+Memory content before bitflip:0xbc0x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffcf68
+address max offset: 8
+Memory content after  bitflip:0x5b0x1d0x940xc40xf40xb90x530xef
+frame name: __GI_____strtof_l_internal
+symbol name: num
+symbol filename: strtod_l.c
+symbol line: 485
+value: {16140901064495857664, 11338266730308532714, 68, 4, 18865251664, 6812, 6812, 6812, 188, 17245331859052961115}
+value address: 0x7fffffffcf20
+Type: The type is an array.
+Type sizeof: 80
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 9)
+
+[INFO -- 2018-10-12 07:32:48]
+Fault Injection Successful after 11.489547967910767s
+[INFO -- 2018-10-12 07:32:57]
+event type: exit
+[INFO -- 2018-10-12 07:32:57]
+exit code: 0

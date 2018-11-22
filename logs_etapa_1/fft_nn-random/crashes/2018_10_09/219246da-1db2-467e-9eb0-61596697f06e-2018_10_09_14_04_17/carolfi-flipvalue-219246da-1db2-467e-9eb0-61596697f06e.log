@@ -1,0 +1,49 @@
+[INFO -- 2018-10-09 14:04:04]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-09 14:04:04]
+Initialization strings:
+[INFO -- 2018-10-09 14:04:04]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-09 14:04:04]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-09 14:04:04]
+initSignal:10
+[INFO -- 2018-10-09 14:04:04]
+endSignal:15
+[INFO -- 2018-10-09 14:04:04]
+faultModel:2
+[INFO -- 2018-10-09 14:04:15]
+Backtrace BEGIN:
+#0  __GI_____strtoul_l_internal (nptr=nptr@entry=0x7fffffffd000 "9", endptr=endptr@entry=0x7fffffffd230, base=<optimized out>, group=group@entry=0, loc=<optimized out>) at ../stdlib/strtol_l.c:379
+#1  0x00007ffff7011410 in __GI___strtoul_internal (nptr=nptr@entry=0x7fffffffd000 "9", endptr=endptr@entry=0x7fffffffd230, base=<optimized out>, group=group@entry=0) at ../stdlib/strtol.c:97
+#2  0x00007ffff7029f02 in _IO_vfscanf_internal (s=s@entry=0x6062c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffd408, errp=errp@entry=0x0) at vfscanf.c:1827
+#3  0x00007ffff7032162 in __isoc99_fscanf (stream=0x6062c0, format=<optimized out>) at isoc99_fscanf.c:34
+#4  0x00007ffff7bcf0eb in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#5  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#6  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#7  0x0000000000401631 in main ()
+
+374	../stdlib/strtol_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd1a8
+address max offset: 1
+Memory content after  bitflip:0x49
+frame name: _IO_vfscanf_internal
+symbol name: use_malloc
+symbol filename: vfscanf.c
+symbol line: 275
+value: 73
+value address: 0x7fffffffd1a8
+Type: A boolean type.
+Type sizeof: 1
+
+[INFO -- 2018-10-09 14:04:15]
+Fault Injection Successful after 11.730241298675537s
+[INFO -- 2018-10-09 14:04:15]
+event type: exit
+[EXCEPTION -- 2018-10-09 14:04:15]
+exit code: no exit code available

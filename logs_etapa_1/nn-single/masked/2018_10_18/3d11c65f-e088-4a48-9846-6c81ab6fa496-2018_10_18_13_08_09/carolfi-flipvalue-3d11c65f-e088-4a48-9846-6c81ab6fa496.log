@@ -1,0 +1,56 @@
+[INFO -- 2018-10-18 13:08:03]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 13:08:03]
+Initialization strings:
+[INFO -- 2018-10-18 13:08:03]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 13:08:03]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 13:08:03]
+initSignal:0
+[INFO -- 2018-10-18 13:08:03]
+endSignal:1
+[INFO -- 2018-10-18 13:08:03]
+faultModel:0
+[EXCEPTION -- 2018-10-18 13:08:03]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-10-18 13:08:04]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 13:08:04]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-10-18 13:08:04]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 13:08:04]
+pythonException: invalid frame
+[INFO -- 2018-10-18 13:08:04]
+Backtrace BEGIN:
+#0  0x00007ffff78bddf3 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bb6da in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff768f184 in start_thread (arg=0x7ffff60b7700) at pthread_create.c:312
+#3  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+69	in dl-debug.c
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0xaa0x300x790x43
+Fault Model: Single bit-flip
+base address to flip value: 0x603880
+address max offset: 4
+Memory content after  bitflip:0xaa0x300x790x03
+frame name: main
+symbol name: z
+symbol filename: nn.c
+symbol line: 80
+value: 0x603880
+value address: 0x7fffffffd538
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 13:08:04]
+Fault Injection Successful after 1.5010106563568115s
+[INFO -- 2018-10-18 13:08:09]
+event type: exit
+[INFO -- 2018-10-18 13:08:09]
+exit code: 0

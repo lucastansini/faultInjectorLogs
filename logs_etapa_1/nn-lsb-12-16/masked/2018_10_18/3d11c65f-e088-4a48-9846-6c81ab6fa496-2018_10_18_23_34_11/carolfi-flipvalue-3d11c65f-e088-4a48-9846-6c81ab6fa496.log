@@ -1,0 +1,70 @@
+[INFO -- 2018-10-18 23:34:06]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 23:34:06]
+Initialization strings:
+[INFO -- 2018-10-18 23:34:06]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 23:34:06]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 23:34:06]
+initSignal:4
+[INFO -- 2018-10-18 23:34:06]
+endSignal:5
+[INFO -- 2018-10-18 23:34:06]
+faultModel:4
+[EXCEPTION -- 2018-10-18 23:34:11]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 23:34:11]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 23:34:11]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 23:34:11]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-18 23:34:11]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 23:34:11]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 23:34:11]
+pythonException: invalid frame
+[INFO -- 2018-10-18 23:34:11]
+Backtrace BEGIN:
+#0  0x00007ffff78bddf3 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bb6da in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff768f184 in start_thread (arg=0x7ffff70b9700) at pthread_create.c:312
+#3  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+30	    FILE   *flist,*fp;
+31	    int    i=0,j=0, k=0, rec_count=0, done=0;
+32	    char   sandbox[REC_LENGTH * REC_WINDOW], *rec_iter,*rec_iter2, dbname[64];
+33	    struct neighbor *neighbors = NULL;
+34	    float target_lat, target_long, tmp_lat=0, tmp_long=0;
+35	    char * gold_filename;
+36	    long rec_sum = 0;
+37	
+38	    if(argc < 6) {
+39	        fprintf(stderr, "Invalid set of arguments:\n");
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: _flags2
+Memory content before bitflip:0x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x6030a4
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x10
+frame name: main
+symbol name: flist
+symbol filename: nn.c
+symbol line: 30
+value: 0x603030
+value address: 0x7fffffffd548
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 23:34:11]
+Fault Injection Successful after 5.117646932601929s
+[INFO -- 2018-10-18 23:34:11]
+event type: exit
+[INFO -- 2018-10-18 23:34:11]
+exit code: 0

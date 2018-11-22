@@ -1,0 +1,52 @@
+[INFO -- 2018-10-19 01:29:55]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 01:29:55]
+Initialization strings:
+[INFO -- 2018-10-19 01:29:55]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 01:29:55]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 01:29:55]
+initSignal:2
+[INFO -- 2018-10-19 01:29:55]
+endSignal:3
+[INFO -- 2018-10-19 01:29:55]
+faultModel:2
+[EXCEPTION -- 2018-10-19 01:29:57]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 01:29:57]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 01:29:57]
+pythonException: invalid frame
+[INFO -- 2018-10-19 01:29:57]
+Backtrace BEGIN:
+#0  0x00007ffff732c89b in _IO_acquire_lock_fct (p=<synthetic pointer>) at libioP.h:905
+#1  __GI__IO_fread (buf=<optimized out>, size=49, count=10, fp=0x603640) at iofread.c:41
+#2  0x0000000000401027 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:85
+
+900	libioP.h: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping a bit of the pointer
+Memory content before bitflip:0x570xdc0xff0xff0xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd8b8
+address max offset: 8
+Memory content after  bitflip:0x730xfb0x0f0x3e0xcc0x130xab0x75
+frame name: main
+symbol name: argv
+symbol filename: nn.c
+symbol line: 29
+value: 0x7fffffffd8b8
+value address: 0x7fffffffd4e0
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-19 01:29:57]
+Fault Injection Successful after 2.354997396469116s
+[INFO -- 2018-10-19 01:30:00]
+event type: exit
+[INFO -- 2018-10-19 01:30:00]
+exit code: 0

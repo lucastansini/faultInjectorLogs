@@ -1,0 +1,58 @@
+[INFO -- 2018-10-15 21:09:29]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-15 21:09:29]
+Initialization strings:
+[INFO -- 2018-10-15 21:09:29]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-15 21:09:29]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-15 21:09:29]
+initSignal:8
+[INFO -- 2018-10-15 21:09:29]
+endSignal:10
+[INFO -- 2018-10-15 21:09:29]
+faultModel:4
+[EXCEPTION -- 2018-10-15 21:09:38]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-10-15 21:09:38]
+Backtrace BEGIN:
+#0  __GI_____strtof_l_internal (nptr=0x7fffffffccd0 "2.63098239898681640625e+00", endptr=0x7fffffffcf00, group=<optimized out>, loc=0x7ffff7397060 <_nl_global_locale>) at strtod_l.c:789
+#1  0x00007ffff7011d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#2  0x00007ffff702b948 in _IO_vfscanf_internal (s=s@entry=0x608610, format=<optimized out>, argptr=argptr@entry=0x7fffffffd0d8, errp=errp@entry=0x0) at vfscanf.c:2365
+#3  0x00007ffff7032162 in __isoc99_fscanf (stream=0x608610, format=<optimized out>) at isoc99_fscanf.c:34
+#4  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#5  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#6  0x000000000040199e in inversek2j(float, float, float*, float*) ()
+#7  0x0000000000401631 in main ()
+
+784	in strtod_l.c
+
+Backtrace END
+Fliping value of field: __count
+Memory content before bitflip:0x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffcef0
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x08
+frame name: _IO_vfscanf_internal
+symbol name: state
+symbol filename: vfscanf.c
+symbol line: 252
+value: {__count = 134217728, __value = {__wch = 0, __wchb = "\000\000\000"}}
+value address: 0x7fffffffcef0
+Type: The type is a structure.
+Type sizeof: 8
+Field name: __count
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: __value
+Field Type: The type is a union.
+Field Type sizeof: 4
+
+[INFO -- 2018-10-15 21:09:38]
+Fault Injection Successful after 9.057273387908936s
+[INFO -- 2018-10-15 21:09:40]
+event type: exit
+[INFO -- 2018-10-15 21:09:40]
+exit code: 0

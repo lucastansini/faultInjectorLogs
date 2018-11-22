@@ -1,0 +1,51 @@
+[INFO -- 2018-10-11 05:32:29]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-11 05:32:29]
+Initialization strings:
+[INFO -- 2018-10-11 05:32:29]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-11 05:32:29]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-11 05:32:29]
+initSignal:10
+[INFO -- 2018-10-11 05:32:29]
+endSignal:15
+[INFO -- 2018-10-11 05:32:29]
+faultModel:2
+[INFO -- 2018-10-11 05:32:39]
+Backtrace BEGIN:
+#0  __GI_____strtof_l_internal (nptr=<optimized out>, endptr=0x7fffffffd230, group=<optimized out>, loc=<optimized out>) at strtod_l.c:869
+#1  0x00007ffff7011d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#2  0x00007ffff702b948 in _IO_vfscanf_internal (s=s@entry=0x6062c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffd408, errp=errp@entry=0x0) at vfscanf.c:2365
+#3  0x00007ffff7032162 in __isoc99_fscanf (stream=0x6062c0, format=<optimized out>) at isoc99_fscanf.c:34
+#4  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#5  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#6  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#7  0x0000000000401631 in main ()
+
+864	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 0
+Fliping value of field: gp_offset
+Memory content before bitflip:0x100x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd408
+address max offset: 4
+Memory content after  bitflip:0x9b0xe10x6a0x10
+frame name: __isoc99_fscanf
+symbol name: arg
+symbol filename: isoc99_fscanf.c
+symbol line: 27
+value: {{gp_offset = 275440027, fp_offset = 48, overflow_arg_area = 0x7fffffffd4e0, reg_save_area = 0x7fffffffd420}}
+value address: 0x7fffffffd408
+Type: The type is an array.
+Type sizeof: 24
+
+[INFO -- 2018-10-11 05:32:39]
+Fault Injection Successful after 10.792794466018677s
+[INFO -- 2018-10-11 05:32:48]
+event type: exit
+[INFO -- 2018-10-11 05:32:48]
+exit code: 0

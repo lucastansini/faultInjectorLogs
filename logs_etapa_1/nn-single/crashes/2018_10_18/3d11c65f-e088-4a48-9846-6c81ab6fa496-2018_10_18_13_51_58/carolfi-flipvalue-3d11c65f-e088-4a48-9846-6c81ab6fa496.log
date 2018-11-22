@@ -1,0 +1,51 @@
+[INFO -- 2018-10-18 13:51:57]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 13:51:57]
+Initialization strings:
+[INFO -- 2018-10-18 13:51:57]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 13:51:57]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 13:51:57]
+initSignal:0
+[INFO -- 2018-10-18 13:51:57]
+endSignal:1
+[INFO -- 2018-10-18 13:51:57]
+faultModel:0
+[EXCEPTION -- 2018-10-18 13:51:57]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 13:51:57]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 13:51:57]
+pythonException: invalid frame
+[INFO -- 2018-10-18 13:51:57]
+Backtrace BEGIN:
+#0  0x00007ffff72fec00 in str_to_mpn (str=str@entry=0x7fffffffd63e "48.8 232.8  164  589\n1970  2 27 18 19 ALBERTO    65.3 209.6  156  430\n1951 11 19  6  5 WILLIAM    37.1 175.0   34  644\n1994  5 19  6 16 RAFAEL     62.1  22.5  107  784\n2003  7 15 18 17 SANDY      49.8"..., digcnt=digcnt@entry=2, n=n@entry=0x7fffffffd090, nsize=nsize@entry=0x7fffffffd060, exponent=exponent@entry=0x7fffffffd070, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=0x7ffff744014b <dot> ".") at strtod_l.c:337
+#1  0x00007ffff73001e1 in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=0x0, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1176
+#2  0x000000000040150f in main._omp_fn.0 () at nn.c:118
+#3  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+332	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x010x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd020
+address max offset: 8
+Memory content after  bitflip:0x010x000x000x000x000x000x000x02
+frame name: __GI_____strtod_l_internal
+symbol name: decimal_len
+symbol filename: strtod_l.c
+symbol line: 522
+value: 144115188075855873
+value address: 0x7fffffffd020
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 13:51:57]
+Fault Injection Successful after 0.9492080211639404s
+[INFO -- 2018-10-18 13:51:58]
+event type: exit
+[EXCEPTION -- 2018-10-18 13:51:58]
+exit code: no exit code available

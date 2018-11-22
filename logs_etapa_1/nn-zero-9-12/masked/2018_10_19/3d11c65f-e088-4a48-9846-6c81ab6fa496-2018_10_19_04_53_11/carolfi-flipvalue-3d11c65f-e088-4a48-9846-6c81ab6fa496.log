@@ -1,0 +1,71 @@
+[INFO -- 2018-10-19 04:53:06]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 04:53:06]
+Initialization strings:
+[INFO -- 2018-10-19 04:53:06]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 04:53:06]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 04:53:06]
+initSignal:3
+[INFO -- 2018-10-19 04:53:06]
+endSignal:4
+[INFO -- 2018-10-19 04:53:06]
+faultModel:3
+[EXCEPTION -- 2018-10-19 04:53:09]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 04:53:09]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 04:53:09]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 04:53:09]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-19 04:53:09]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 04:53:09]
+pythonException: invalid frame
+[INFO -- 2018-10-19 04:53:09]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc0b in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bb6a8 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff768f184 in start_thread (arg=0x7ffff70b9700) at pthread_create.c:312
+#3  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+30	    FILE   *flist,*fp;
+31	    int    i=0,j=0, k=0, rec_count=0, done=0;
+32	    char   sandbox[REC_LENGTH * REC_WINDOW], *rec_iter,*rec_iter2, dbname[64];
+33	    struct neighbor *neighbors = NULL;
+34	    float target_lat, target_long, tmp_lat=0, tmp_long=0;
+35	    char * gold_filename;
+36	    long rec_sum = 0;
+37	
+38	    if(argc < 6) {
+39	        fprintf(stderr, "Invalid set of arguments:\n");
+
+Backtrace END
+Fliping array at pos: 347
+Memory content before bitflip:0x20
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd71b 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 32
+value: "1980  5 23  6 28 RAFAEL     16.5 167.5   83  562\n1964  4  5 12  4 GORDON     15.5 263.8  151  417\n1952  1 27  0  7 ALBERTO    42.4 172.6  152  603\n1975  9  6  0 25 ALBERTO    59.1 295.4  145  716\n1962"...
+value address: 0x7fffffffd5c0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-10-19 04:53:09]
+Fault Injection Successful after 3.813511848449707s
+[INFO -- 2018-10-19 04:53:11]
+event type: exit
+[INFO -- 2018-10-19 04:53:11]
+exit code: 0

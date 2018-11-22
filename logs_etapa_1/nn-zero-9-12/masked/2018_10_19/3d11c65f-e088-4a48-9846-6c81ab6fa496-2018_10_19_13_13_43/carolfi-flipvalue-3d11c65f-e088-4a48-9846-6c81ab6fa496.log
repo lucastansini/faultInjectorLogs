@@ -1,0 +1,52 @@
+[INFO -- 2018-10-19 13:13:37]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 13:13:37]
+Initialization strings:
+[INFO -- 2018-10-19 13:13:37]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 13:13:37]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 13:13:37]
+initSignal:3
+[INFO -- 2018-10-19 13:13:37]
+endSignal:4
+[INFO -- 2018-10-19 13:13:37]
+faultModel:3
+[INFO -- 2018-10-19 13:13:41]
+Backtrace BEGIN:
+#0  0x0000000000401567 in main._omp_fn.0 () at nn.c:120
+#1  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+115	        #pragma omp parallel for shared (z, target_lat, target_long) private(i,rec_iter)
+116	        for (i = 0; i < rec_count; i++) {
+117	            rec_iter = sandbox+(i * REC_LENGTH + LATITUDE_POS - 1);
+118	            float tmp_lat = atof(rec_iter);
+119	            float tmp_long = atof(rec_iter+5);
+120	            z[i] = sqrt(( (tmp_lat-target_lat) * (tmp_lat-target_lat) )+( (tmp_long-target_long) * (tmp_long-target_long) ));
+121	        }
+122	        #pragma omp barrier
+123	        // end of Lingjie Zhang's modification
+124	
+
+Backtrace END
+Memory content before bitflip:0x0f0x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd500
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main
+symbol name: j
+symbol filename: nn.c
+symbol line: 31
+value: 0
+value address: 0x7fffffffd500
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-19 13:13:41]
+Fault Injection Successful after 4.071996212005615s
+[INFO -- 2018-10-19 13:13:43]
+event type: exit
+[INFO -- 2018-10-19 13:13:43]
+exit code: 0

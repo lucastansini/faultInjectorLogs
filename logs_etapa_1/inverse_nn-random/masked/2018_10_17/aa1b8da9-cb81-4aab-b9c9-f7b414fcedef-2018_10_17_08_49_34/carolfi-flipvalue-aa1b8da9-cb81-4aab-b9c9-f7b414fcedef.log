@@ -1,0 +1,51 @@
+[INFO -- 2018-10-17 08:49:23]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-17 08:49:23]
+Initialization strings:
+[INFO -- 2018-10-17 08:49:23]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-17 08:49:23]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-17 08:49:23]
+initSignal:4
+[INFO -- 2018-10-17 08:49:23]
+endSignal:6
+[INFO -- 2018-10-17 08:49:23]
+faultModel:2
+[INFO -- 2018-10-17 08:49:27]
+Backtrace BEGIN:
+#0  __mpn_add_1 (s2_limb=5991806249747398188, s1_size=1, s1_ptr=0x7fffffffcbf8, res_ptr=0x7fffffffcbf8) at ../stdlib/gmp.h:449
+#1  str_to_mpn (str=0x7fffffffcce6 "e-02", str@entry=0x7fffffffccd0 "7.99201801419258117676e-02", digcnt=<optimized out>, digcnt@entry=21, n=n@entry=0x7fffffffcbf0, nsize=nsize@entry=0x7fffffffcbc0, exponent=exponent@entry=0x7fffffffcbd0, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=<optimized out>) at strtod_l.c:421
+#2  0x00007ffff7012c2b in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1427
+#3  0x00007ffff7011d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#4  0x00007ffff702b948 in _IO_vfscanf_internal (s=s@entry=0x608610, format=<optimized out>, argptr=argptr@entry=0x7fffffffd0d8, errp=errp@entry=0x0) at vfscanf.c:2365
+#5  0x00007ffff7032162 in __isoc99_fscanf (stream=0x608610, format=<optimized out>) at isoc99_fscanf.c:34
+#6  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#7  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#8  0x000000000040199e in inversek2j(float, float, float*, float*) ()
+#9  0x0000000000401631 in main ()
+
+444	../stdlib/gmp.h: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0xff0xff0xff0xff0xff0xff0xff0xff
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffcbd0
+address max offset: 8
+Memory content after  bitflip:0xaa0x700x570xea0x4c0x940x590xd8
+frame name: __GI_____strtof_l_internal
+symbol name: exponent
+symbol filename: strtod_l.c
+symbol line: 486
+value: -2857089430519844694
+value address: 0x7fffffffcbd0
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-10-17 08:49:27]
+Fault Injection Successful after 4.55653977394104s
+[INFO -- 2018-10-17 08:49:33]
+event type: exit
+[INFO -- 2018-10-17 08:49:33]
+exit code: 0

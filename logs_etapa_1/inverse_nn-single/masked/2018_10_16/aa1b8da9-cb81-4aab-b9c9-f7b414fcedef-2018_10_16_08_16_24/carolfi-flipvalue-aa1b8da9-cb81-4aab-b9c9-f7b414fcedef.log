@@ -1,0 +1,47 @@
+[INFO -- 2018-10-16 08:16:13]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 08:16:13]
+Initialization strings:
+[INFO -- 2018-10-16 08:16:13]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 08:16:13]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 08:16:13]
+initSignal:0
+[INFO -- 2018-10-16 08:16:13]
+endSignal:2
+[INFO -- 2018-10-16 08:16:13]
+faultModel:0
+[INFO -- 2018-10-16 08:16:13]
+Backtrace BEGIN:
+#0  __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1516
+#1  0x00007ffff7936d5e in void std::__convert_to_v<float>(char const*, float&, std::_Ios_Iostate&, __locale_struct* const&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#2  0x00007ffff794a706 in std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > >::do_get(std::istreambuf_iterator<char, std::char_traits<char> >, std::istreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, std::_Ios_Iostate&, float&) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x00007ffff793b0d5 in std::istream& std::istream::_M_extract<float>(float&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x0000000000401482 in main ()
+
+1511	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd088
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x100x000x000x00
+frame name: __GI_____strtof_l_internal
+symbol name: thousands
+symbol filename: strtod_l.c
+symbol line: 528
+value: 0x0
+value address: 0x7fffffffd088
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-16 08:16:13]
+Fault Injection Successful after 0.8886620998382568s
+[INFO -- 2018-10-16 08:16:23]
+event type: exit
+[INFO -- 2018-10-16 08:16:23]
+exit code: 0

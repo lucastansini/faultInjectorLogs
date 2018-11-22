@@ -1,0 +1,53 @@
+[INFO -- 2018-10-07 20:39:44]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-07 20:39:44]
+Initialization strings:
+[INFO -- 2018-10-07 20:39:44]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-07 20:39:44]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-07 20:39:44]
+initSignal:10
+[INFO -- 2018-10-07 20:39:44]
+endSignal:15
+[INFO -- 2018-10-07 20:39:44]
+faultModel:3
+[EXCEPTION -- 2018-10-07 20:39:56]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-10-07 20:39:56]
+Backtrace BEGIN:
+#0  __mpn_mul_1 () at ../sysdeps/x86_64/mul_1.S:37
+#1  0x00007ffff7011fef in str_to_mpn (str=0x7fffffffd4d6 "e-01", str@entry=0x7fffffffd4c0 "9.55920755863189697266e-01", digcnt=<optimized out>, digcnt@entry=21, n=n@entry=0x7fffffffd3e0, nsize=nsize@entry=0x7fffffffd3b0, exponent=exponent@entry=0x7fffffffd3c0, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=<optimized out>) at strtod_l.c:420
+#2  0x00007ffff7012c2b in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1427
+#3  0x00007ffff7011d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#4  0x00007ffff702b948 in _IO_vfscanf_internal (s=s@entry=0x6062c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffd8c8, errp=errp@entry=0x0) at vfscanf.c:2365
+#5  0x00007ffff7032162 in __isoc99_fscanf (stream=0x6062c0, format=<optimized out>) at isoc99_fscanf.c:34
+#6  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#7  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#8  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#9  0x0000000000401631 in main ()
+
+32	in ../sysdeps/x86_64/mul_1.S
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd690
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: _IO_vfscanf_internal
+symbol name: flags
+symbol filename: vfscanf.c
+symbol line: 222
+value: 0
+value address: 0x7fffffffd690
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-07 20:39:56]
+Fault Injection Successful after 12.39951491355896s
+[INFO -- 2018-10-07 20:40:04]
+event type: exit
+[INFO -- 2018-10-07 20:40:04]
+exit code: 0

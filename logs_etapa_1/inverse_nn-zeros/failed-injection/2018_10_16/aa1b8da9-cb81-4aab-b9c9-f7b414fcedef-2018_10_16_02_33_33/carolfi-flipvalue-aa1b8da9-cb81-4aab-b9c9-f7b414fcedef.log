@@ -1,0 +1,17 @@
+[INFO -- 2018-10-16 02:33:11]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 02:33:11]
+Initialization strings:
+[INFO -- 2018-10-16 02:33:11]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 02:33:11]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 02:33:11]
+initSignal:6
+[INFO -- 2018-10-16 02:33:11]
+endSignal:8
+[INFO -- 2018-10-16 02:33:11]
+faultModel:3
+[EXCEPTION -- 2018-10-16 02:33:18]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.

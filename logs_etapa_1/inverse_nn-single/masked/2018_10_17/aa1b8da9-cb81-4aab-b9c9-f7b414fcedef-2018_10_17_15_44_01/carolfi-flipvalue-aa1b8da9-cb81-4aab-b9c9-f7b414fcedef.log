@@ -1,0 +1,64 @@
+[INFO -- 2018-10-17 15:43:49]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-17 15:43:49]
+Initialization strings:
+[INFO -- 2018-10-17 15:43:49]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-17 15:43:49]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-17 15:43:49]
+initSignal:0
+[INFO -- 2018-10-17 15:43:49]
+endSignal:2
+[INFO -- 2018-10-17 15:43:49]
+faultModel:0
+[INFO -- 2018-10-17 15:43:50]
+Backtrace BEGIN:
+#0  0x00007ffff7df3787 in mprotect () at ../sysdeps/unix/syscall-template.S:81
+#1  0x00007ffff7de0e49 in _dl_map_object_from_fd (name=name@entry=0x400792 "libstdc++.so.6", fd=4, fbp=fbp@entry=0x7fffffffcfe8, realname=0x7ffff7fd64c0 "/usr/lib/x86_64-linux-gnu/libstdc++.so.6", loader=loader@entry=0x7ffff7ffe1c8, l_type=l_type@entry=1, mode=mode@entry=0, stack_endp=stack_endp@entry=0x7fffffffcfe0, nsid=nsid@entry=0) at dl-load.c:1335
+#2  0x00007ffff7de2dc9 in _dl_map_object (loader=0x7ffff7ffe1c8, name=0x400792 "libstdc++.so.6", type=1, trace_mode=0, mode=<optimized out>, nsid=<optimized out>) at dl-load.c:2627
+#3  0x00007ffff7de76a2 in openaux (a=a@entry=0x7fffffffd5d8) at dl-deps.c:63
+#4  0x00007ffff7dea094 in _dl_catch_error (objname=objname@entry=0x7fffffffd5d0, errstring=errstring@entry=0x7fffffffd5c8, mallocedp=mallocedp@entry=0x7fffffffd5c0, operate=operate@entry=0x7ffff7de7670 <openaux>, args=args@entry=0x7fffffffd5d8) at dl-error.c:187
+#5  0x00007ffff7de7da5 in _dl_map_object_deps (map=map@entry=0x7ffff7ffe1c8, preloads=<optimized out>, npreloads=npreloads@entry=0, trace_mode=trace_mode@entry=0, open_mode=open_mode@entry=0) at dl-deps.c:254
+#6  0x00007ffff7dddc30 in dl_main (phdr=<optimized out>, phdr@entry=0x400040, phnum=<optimized out>, phnum@entry=9, user_entry=user_entry@entry=0x7fffffffd768, auxv=<optimized out>) at rtld.c:1775
+#7  0x00007ffff7df15f5 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffd850, dl_main=dl_main@entry=0x7ffff7ddc260 <dl_main>) at ../elf/dl-sysdep.c:249
+#8  0x00007ffff7ddbbb8 in _dl_start_final (arg=0x7fffffffd850) at rtld.c:347
+#9  _dl_start (arg=0x7fffffffd850) at rtld.c:573
+#10 0x00007ffff7ddb268 in _start () from /lib64/ld-linux-x86-64.so.2
+#11 0x0000000000000003 in ?? ()
+#12 0x00007fffffffdbe5 in ?? ()
+#13 0x00007fffffffdc3b in ?? ()
+#14 0x00007fffffffdc8a in ?? ()
+#15 0x0000000000000000 in ?? ()
+
+76	../sysdeps/unix/syscall-template.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping value of field: malloced
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7ffce18 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x04
+frame name: _dl_map_object
+symbol name: rtld_search_dirs
+symbol filename: dl-load.c
+symbol line: 489
+value: {dirs = 0x7ffff7ffec58, malloced = 67108864}
+value address: 0x7ffff7ffce10 <rtld_search_dirs>
+Type: The type is a structure.
+Type sizeof: 16
+Field name: dirs
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: malloced
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+
+[INFO -- 2018-10-17 15:43:50]
+Fault Injection Successful after 1.0292384624481201s
+[INFO -- 2018-10-17 15:44:00]
+event type: exit
+[INFO -- 2018-10-17 15:44:00]
+exit code: 0

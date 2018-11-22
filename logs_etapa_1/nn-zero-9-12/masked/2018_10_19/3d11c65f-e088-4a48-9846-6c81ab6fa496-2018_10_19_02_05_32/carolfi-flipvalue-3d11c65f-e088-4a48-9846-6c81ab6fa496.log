@@ -1,0 +1,50 @@
+[INFO -- 2018-10-19 02:05:26]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 02:05:26]
+Initialization strings:
+[INFO -- 2018-10-19 02:05:26]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 02:05:26]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 02:05:26]
+initSignal:3
+[INFO -- 2018-10-19 02:05:26]
+endSignal:4
+[INFO -- 2018-10-19 02:05:26]
+faultModel:3
+[INFO -- 2018-10-19 02:05:30]
+Backtrace BEGIN:
+#0  __mpn_lshift () at ../sysdeps/x86_64/lshift.S:33
+#1  0x00007ffff72ffacd in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1451
+#2  0x000000000040150f in main._omp_fn.0 () at nn.c:118
+#3  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+28	../sysdeps/x86_64/lshift.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 418
+Memory content before bitflip:0x20
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd762 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: main._omp_fn.0
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 32
+value: "2001 10 25  0 10 SANDY      15.8 308.4  147  474\n1958  7  2  6 19 PATTY      45.5 300.8   54  327\n1972  2 11  0  8 PATTY      69.8  82.6  159  321\n1998  6 27  0 27 VALERIE    65.4 253.6   62  435\n1980"...
+value address: 0x7fffffffd5c0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-10-19 02:05:30]
+Fault Injection Successful after 4.073167085647583s
+[INFO -- 2018-10-19 02:05:32]
+event type: exit
+[INFO -- 2018-10-19 02:05:32]
+exit code: 0

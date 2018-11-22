@@ -1,0 +1,48 @@
+[INFO -- 2018-10-18 21:55:08]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 21:55:08]
+Initialization strings:
+[INFO -- 2018-10-18 21:55:08]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 21:55:08]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 21:55:08]
+initSignal:0
+[INFO -- 2018-10-18 21:55:08]
+endSignal:1
+[INFO -- 2018-10-18 21:55:08]
+faultModel:0
+[EXCEPTION -- 2018-10-18 21:55:08]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-10-18 21:55:08]
+Backtrace BEGIN:
+#0  __GI___nptl_create_event () at events.c:25
+#1  0x00007ffff768fa8d in create_thread (stackaddr=<optimized out>, attr=0x7ffff7ad3600, pd=0x7ffff70b9700) at ../nptl/sysdeps/pthread/createthread.c:220
+#2  __pthread_create_2_1 (newthread=<optimized out>, attr=<optimized out>, start_routine=<optimized out>, arg=<optimized out>) at pthread_create.c:611
+#3  0x00007ffff78bbca2 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x0000000000401184 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+20	events.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x080x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7699810 
+address max offset: 4
+Memory content after  bitflip:0x080x000x000x01
+frame name: __pthread_create_2_1
+symbol name: _thread_db_sizeof_td_thr_events_t
+symbol filename: ../nptl_db/structs.def
+symbol line: 44
+value: 16777224
+value address: 0x7ffff7699810 <_thread_db_sizeof_td_thr_events_t>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-18 21:55:08]
+Fault Injection Successful after 0.8710231781005859s
+[INFO -- 2018-10-18 21:55:14]
+event type: exit
+[INFO -- 2018-10-18 21:55:14]
+exit code: 0

@@ -1,0 +1,55 @@
+[INFO -- 2018-10-16 14:13:03]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 14:13:03]
+Initialization strings:
+[INFO -- 2018-10-16 14:13:03]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 14:13:03]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 14:13:03]
+initSignal:8
+[INFO -- 2018-10-16 14:13:03]
+endSignal:10
+[INFO -- 2018-10-16 14:13:03]
+faultModel:4
+[INFO -- 2018-10-16 14:13:12]
+Backtrace BEGIN:
+#0  str_to_mpn (str=0x7fffffffccd1 ".92840868234634399414e-02", str@entry=0x7fffffffccd0 "7.92840868234634399414e-02", digcnt=digcnt@entry=21, n=n@entry=0x7fffffffcbf0, nsize=nsize@entry=0x7fffffffcbc0, exponent=exponent@entry=0x7fffffffcbd0, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=<optimized out>) at strtod_l.c:399
+#1  0x00007ffff7012c2b in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1427
+#2  0x00007ffff7011d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#3  0x00007ffff702b948 in _IO_vfscanf_internal (s=s@entry=0x608610, format=<optimized out>, argptr=argptr@entry=0x7fffffffd0d8, errp=errp@entry=0x0) at vfscanf.c:2365
+#4  0x00007ffff7032162 in __isoc99_fscanf (stream=0x608610, format=<optimized out>) at isoc99_fscanf.c:34
+#5  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#6  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#7  0x000000000040199e in inversek2j(float, float, float*, float*) ()
+#8  0x0000000000401631 in main ()
+
+394	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 1
+Memory content before bitflip:0x1e0x020x000x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffcc48
+address max offset: 8
+Memory content after  bitflip:0x1e0x020x000x000x000x000x000x04
+frame name: __GI_____strtof_l_internal
+symbol name: den
+symbol filename: strtod_l.c
+symbol line: 494
+value: {1864712049423024128, 288230376151712286, 140737488342016, 140737353958896, 140737488345168, 832, 140737488342784, 5, 18446744073709551615, 3792}
+value address: 0x7fffffffcc40
+Type: The type is an array.
+Type sizeof: 80
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 9)
+
+[INFO -- 2018-10-16 14:13:12]
+Fault Injection Successful after 9.318202257156372s
+[INFO -- 2018-10-16 14:13:13]
+event type: exit
+[INFO -- 2018-10-16 14:13:13]
+exit code: 0

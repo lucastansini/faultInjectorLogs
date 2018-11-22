@@ -1,0 +1,54 @@
+[INFO -- 2018-10-08 09:05:16]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-08 09:05:16]
+Initialization strings:
+[INFO -- 2018-10-08 09:05:16]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-08 09:05:16]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-08 09:05:16]
+initSignal:0
+[INFO -- 2018-10-08 09:05:16]
+endSignal:5
+[INFO -- 2018-10-08 09:05:16]
+faultModel:0
+[INFO -- 2018-10-08 09:05:17]
+Backtrace BEGIN:
+#0  0x00007ffff7012560 in __GI_____strtof_l_internal (nptr=0x7fffffffd4c0 "5.", '0' <repete 20 vezes>, "e-01", endptr=0x7fffffffd6f0, group=0, loc=0x7ffff7397060 <_nl_global_locale>) at strtod_l.c:483
+#1  0x00007ffff7011d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#2  0x00007ffff702b948 in _IO_vfscanf_internal (s=s@entry=0x6062c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffd8c8, errp=errp@entry=0x0) at vfscanf.c:2365
+#3  0x00007ffff7032162 in __isoc99_fscanf (stream=0x6062c0, format=<optimized out>) at isoc99_fscanf.c:34
+#4  0x00007ffff7bcef44 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#5  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#6  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#7  0x0000000000401631 in main ()
+
+478	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 2
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd440
+address max offset: 8
+Memory content after  bitflip:0x020x000x000x000x000x000x000x00
+frame name: __GI_____strtof_l_internal
+symbol name: den
+symbol filename: strtod_l.c
+symbol line: 494
+value: {14411518807585587200, 15625000000000000000, 2, 0, 0, 140737488346072, 140737488344816, 5, 18446744073709551615, 4160570904}
+value address: 0x7fffffffd430
+Type: The type is an array.
+Type sizeof: 80
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 9)
+
+[INFO -- 2018-10-08 09:05:17]
+Fault Injection Successful after 1.175232172012329s
+[INFO -- 2018-10-08 09:05:36]
+event type: exit
+[INFO -- 2018-10-08 09:05:36]
+exit code: 0

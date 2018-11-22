@@ -1,0 +1,67 @@
+[INFO -- 2018-10-18 23:11:16]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 23:11:16]
+Initialization strings:
+[INFO -- 2018-10-18 23:11:16]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 23:11:16]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 23:11:16]
+initSignal:4
+[INFO -- 2018-10-18 23:11:16]
+endSignal:5
+[INFO -- 2018-10-18 23:11:16]
+faultModel:4
+[EXCEPTION -- 2018-10-18 23:11:20]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 23:11:20]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-18 23:11:20]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 23:11:20]
+pythonException: invalid frame
+[INFO -- 2018-10-18 23:11:20]
+Backtrace BEGIN:
+#0  0x00007ffff78bddf3 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bb6da in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff768f184 in start_thread (arg=0x7ffff70b9700) at pthread_create.c:312
+#3  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+30	    FILE   *flist,*fp;
+31	    int    i=0,j=0, k=0, rec_count=0, done=0;
+32	    char   sandbox[REC_LENGTH * REC_WINDOW], *rec_iter,*rec_iter2, dbname[64];
+33	    struct neighbor *neighbors = NULL;
+34	    float target_lat, target_long, tmp_lat=0, tmp_long=0;
+35	    char * gold_filename;
+36	    long rec_sum = 0;
+37	
+38	    if(argc < 6) {
+39	        fprintf(stderr, "Invalid set of arguments:\n");
+
+Backtrace END
+Fliping array at pos: 1
+Memory content before bitflip:0x5f
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff7446ba1  
+address max offset: 1
+Memory content after  bitflip:0x57
+frame name: __GI_____strtod_l_internal
+symbol name: __PRETTY_FUNCTION__
+symbol filename: strtod_l.c
+symbol line: 0
+value: "_W__strtod_l_internal"
+value address: 0x7ffff7446ba0 <__PRETTY_FUNCTION__.11542>
+Type: The type is an array.
+Type sizeof: 22
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 21)
+
+[INFO -- 2018-10-18 23:11:20]
+Fault Injection Successful after 4.330994367599487s
+[INFO -- 2018-10-18 23:11:21]
+event type: exit
+[INFO -- 2018-10-18 23:11:21]
+exit code: 0

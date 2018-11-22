@@ -1,0 +1,65 @@
+[INFO -- 2018-10-19 01:29:24]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 01:29:24]
+Initialization strings:
+[INFO -- 2018-10-19 01:29:24]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 01:29:24]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 01:29:24]
+initSignal:2
+[INFO -- 2018-10-19 01:29:24]
+endSignal:3
+[INFO -- 2018-10-19 01:29:24]
+faultModel:2
+[EXCEPTION -- 2018-10-19 01:29:26]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-19 01:29:26]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 01:29:26]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 01:29:26]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 01:29:26]
+pythonException: invalid frame
+[INFO -- 2018-10-19 01:29:26]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc02 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bc0e2 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000401184 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+136	            // compare each record with max value to find the nearest neighbor
+137	            if( z[i] < neighbors[max_idx].dist ) {
+138	                sandbox[(i+1)*REC_LENGTH-1] = '\0';
+139	                strcpy(neighbors[max_idx].entry, sandbox +i*REC_LENGTH);
+140	                neighbors[max_idx].dist = z[i];
+141	            }
+142	        }
+143	    }//End while loop
+144	
+145	    FILE *file;
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: _fileno
+Memory content before bitflip:0x050x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x6036b0
+address max offset: 4
+Memory content after  bitflip:0x460xe40x5a0xc7
+frame name: main
+symbol name: fp
+symbol filename: nn.c
+symbol line: 30
+value: 0x603640
+value address: 0x7fffffffd528
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-19 01:29:26]
+Fault Injection Successful after 2.461392402648926s
+[INFO -- 2018-10-19 01:29:29]
+event type: exit
+[INFO -- 2018-10-19 01:29:29]
+exit code: 0

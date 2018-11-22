@@ -1,0 +1,69 @@
+[INFO -- 2018-10-19 14:07:15]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 14:07:15]
+Initialization strings:
+[INFO -- 2018-10-19 14:07:15]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 14:07:15]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 14:07:15]
+initSignal:2
+[INFO -- 2018-10-19 14:07:15]
+endSignal:3
+[INFO -- 2018-10-19 14:07:15]
+faultModel:2
+[EXCEPTION -- 2018-10-19 14:07:17]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 14:07:17]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 14:07:17]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 14:07:17]
+pythonException: invalid literal for int() with base 16: '0x7ffff7ff5000 ...'
+[EXCEPTION -- 2018-10-19 14:07:17]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 14:07:17]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 14:07:17]
+pythonException: invalid frame
+[INFO -- 2018-10-19 14:07:17]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc06 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bb6a8 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff768f184 in start_thread (arg=0x7ffff70b9700) at pthread_create.c:312
+#3  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+30	    FILE   *flist,*fp;
+31	    int    i=0,j=0, k=0, rec_count=0, done=0;
+32	    char   sandbox[REC_LENGTH * REC_WINDOW], *rec_iter,*rec_iter2, dbname[64];
+33	    struct neighbor *neighbors = NULL;
+34	    float target_lat, target_long, tmp_lat=0, tmp_long=0;
+35	    char * gold_filename;
+36	    long rec_sum = 0;
+37	
+38	    if(argc < 6) {
+39	        fprintf(stderr, "Invalid set of arguments:\n");
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xdb0xd50xff0xff0xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd4b8
+address max offset: 8
+Memory content after  bitflip:0x020x350x2f0x7c0x730xf60x590xf1
+frame name: main._omp_fn.0
+symbol name: rec_iter
+symbol filename: nn.c
+symbol line: 32
+value: 0x7fffffffd5db " 64.7 327.2   51  452\n1977  2 26  6  5 OSCAR      12.5 212.5  131  512\n1997  3 15  0 17 CHRIS      42.4 184.6   89  173\n1955  2 10 12  6 JOYCE       9.3  73.6  126  314\n1958  4 15 12  1 LESLIE     16."...
+value address: 0x7fffffffd4b8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-19 14:07:17]
+Fault Injection Successful after 2.9097182750701904s
+[INFO -- 2018-10-19 14:07:18]
+event type: exit
+[EXCEPTION -- 2018-10-19 14:07:18]
+exit code: no exit code available

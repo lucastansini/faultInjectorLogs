@@ -1,0 +1,24 @@
+[INFO -- 2018-10-04 15:44:46]
+sending 5 signals using command: 'killall -2 inversek2j_nn.out' after 6.93459080445s
+[INFO -- 2018-10-04 15:44:48]
+sending 5 signals using command: 'killall -2 inversek2j_nn.out' after 8.96125962124s
+[INFO -- 2018-10-04 15:44:50]
+sending 5 signals using command: 'killall -2 inversek2j_nn.out' after 10.9642351796s
+[INFO -- 2018-10-04 15:44:50]
+Starting GDB script
+[INFO -- 2018-10-04 15:44:50]
+initSignal:0.0
+[INFO -- 2018-10-04 15:44:50]
+endSignal:48.0
+[INFO -- 2018-10-04 15:44:53]
+sending 5 signals using command: 'killall -2 inversek2j_nn.out' after 3.23978551622s
+[DEBUG -- 2018-10-04 15:44:55]
+Process gdb not running, out:
+[DEBUG -- 2018-10-04 15:44:55]
+check command: ps -e | grep -i gdb
+[INFO -- 2018-10-04 15:44:55]
+Execution finished before waitTime
+[DEBUG -- 2018-10-04 15:44:55]
+now: 1538678690
+[DEBUG -- 2018-10-04 15:44:55]
+timestampStart: 1538678690

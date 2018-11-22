@@ -1,0 +1,44 @@
+[INFO -- 2018-10-16 17:10:29]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 17:10:29]
+Initialization strings:
+[INFO -- 2018-10-16 17:10:29]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 17:10:29]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 17:10:29]
+initSignal:6
+[INFO -- 2018-10-16 17:10:29]
+endSignal:8
+[INFO -- 2018-10-16 17:10:29]
+faultModel:3
+[INFO -- 2018-10-16 17:10:35]
+Backtrace BEGIN:
+#0  _int_malloc (av=av@entry=0x7ffff7396760 <main_arena>, bytes=bytes@entry=960) at malloc.c:3777
+#1  0x00007ffff70575fc in __libc_calloc (n=<optimized out>, elem_size=<optimized out>) at malloc.c:3221
+#2  0x00007ffff7bca378 in fann_allocate_neurons () from /usr/local/lib/libfann.so.2
+#3  0x00007ffff7bcf086 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#4  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x000000000040199e in inversek2j(float, float, float*, float*) ()
+#6  0x0000000000401631 in main ()
+
+3772	malloc.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x800x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7ffff7398b40 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: __libc_calloc
+symbol name: global_max_fast
+symbol filename: malloc.c
+symbol line: 1768
+value: 0
+value address: 0x7ffff7398b40 <global_max_fast>
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-10-16 17:10:35]
+Fault Injection Successful after 6.898542404174805s

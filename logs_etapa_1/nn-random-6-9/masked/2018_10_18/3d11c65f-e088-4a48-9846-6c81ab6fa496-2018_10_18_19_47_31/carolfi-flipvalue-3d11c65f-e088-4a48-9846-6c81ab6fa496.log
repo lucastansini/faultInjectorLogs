@@ -1,0 +1,58 @@
+[INFO -- 2018-10-18 19:47:26]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 19:47:26]
+Initialization strings:
+[INFO -- 2018-10-18 19:47:26]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 19:47:26]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 19:47:26]
+initSignal:2
+[INFO -- 2018-10-18 19:47:26]
+endSignal:3
+[INFO -- 2018-10-18 19:47:26]
+faultModel:2
+[EXCEPTION -- 2018-10-18 19:47:28]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 19:47:28]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 19:47:28]
+pythonException: invalid frame
+[INFO -- 2018-10-18 19:47:28]
+Backtrace BEGIN:
+#0  main (argc=6, argv=0x7fffffffd8b8) at nn.c:131
+
+126	        for( i = 0 ; i < rec_count ; i++ ) {
+127	            float max_dist = -1;
+128	            int max_idx = 0;
+129	            // find a neighbor with greatest dist and take his spot if allowed!
+130	            for( j = 0 ; j < k ; j++ ) {
+131	                if( neighbors[j].dist > max_dist ) {
+132	                    max_dist = neighbors[j].dist;
+133	                    max_idx = j;
+134	                }
+135	            }
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0xce0x510xa50x40
+Fault Model: Random bit-flip
+base address to flip value: 0x603880
+address max offset: 4
+Memory content after  bitflip:0xa60x620xb40x2a
+frame name: main
+symbol name: z
+symbol filename: nn.c
+symbol line: 80
+value: 0x603880
+value address: 0x7fffffffd538
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 19:47:28]
+Fault Injection Successful after 2.512504816055298s
+[INFO -- 2018-10-18 19:47:31]
+event type: exit
+[INFO -- 2018-10-18 19:47:31]
+exit code: 0

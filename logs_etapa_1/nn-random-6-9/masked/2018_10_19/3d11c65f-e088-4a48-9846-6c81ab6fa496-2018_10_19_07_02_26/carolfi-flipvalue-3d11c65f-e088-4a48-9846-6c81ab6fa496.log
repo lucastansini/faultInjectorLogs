@@ -1,0 +1,69 @@
+[INFO -- 2018-10-19 07:02:21]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 07:02:21]
+Initialization strings:
+[INFO -- 2018-10-19 07:02:21]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 07:02:21]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 07:02:21]
+initSignal:2
+[INFO -- 2018-10-19 07:02:21]
+endSignal:3
+[INFO -- 2018-10-19 07:02:21]
+faultModel:2
+[EXCEPTION -- 2018-10-19 07:02:23]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-19 07:02:23]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 07:02:23]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 07:02:23]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 07:02:23]
+pythonException: invalid frame
+[INFO -- 2018-10-19 07:02:23]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc2e in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bb6a8 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff768f184 in start_thread (arg=0x7ffff60b7700) at pthread_create.c:312
+#3  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+30	    FILE   *flist,*fp;
+31	    int    i=0,j=0, k=0, rec_count=0, done=0;
+32	    char   sandbox[REC_LENGTH * REC_WINDOW], *rec_iter,*rec_iter2, dbname[64];
+33	    struct neighbor *neighbors = NULL;
+34	    float target_lat, target_long, tmp_lat=0, tmp_long=0;
+35	    char * gold_filename;
+36	    long rec_sum = 0;
+37	
+38	    if(argc < 6) {
+39	        fprintf(stderr, "Invalid set of arguments:\n");
+
+Backtrace END
+Fliping array at pos: 52
+Memory content before bitflip:0x940x140x400x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd410
+address max offset: 8
+Memory content after  bitflip:0xb70xb00x5a0x850xe70x750x1e0x94
+frame name: __GI_____strtod_l_internal
+symbol name: den
+symbol filename: strtod_l.c
+symbol line: 494
+value: {11529215046068469760, 140737488343984, 140737344271072, 6303792, 140733193388032, 0, 0, 140737353964384, 140737353961472, 4196009, 140737340304840, 4195440, 21474836480, 4294967975, 140733193388037, 140737488344168, 140737488344128, 140737353964384, 1, 140737354130720, 140737354129864, 140737351928369, 0, 140737353964384, 140733193388037, 0, 1, 140737354129864, 4294967295, 6306432, 140737340304552, 140737353961472, 0, 140737354130720, 140737488343984, 140737488343968, 2090252933, 6305344, 4096, 140737346519266, 2050, 32, 1, 17179869184, 0, 0, 0, 0, 3, 4, 1032904, 140737488344416, 10673097804149862583, 6306432, 0, 4, 4, 6305968, 140737348711264}
+value address: 0x7fffffffd270
+Type: The type is an array.
+Type sizeof: 472
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 58)
+
+[INFO -- 2018-10-19 07:02:23]
+Fault Injection Successful after 2.41984486579895s
+[INFO -- 2018-10-19 07:02:26]
+event type: exit
+[INFO -- 2018-10-19 07:02:26]
+exit code: 0

@@ -1,0 +1,50 @@
+[INFO -- 2018-10-18 14:35:06]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 14:35:06]
+Initialization strings:
+[INFO -- 2018-10-18 14:35:06]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 14:35:06]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 14:35:06]
+initSignal:4
+[INFO -- 2018-10-18 14:35:06]
+endSignal:5
+[INFO -- 2018-10-18 14:35:06]
+faultModel:4
+[EXCEPTION -- 2018-10-18 14:35:10]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 14:35:10]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 14:35:10]
+pythonException: invalid frame
+[INFO -- 2018-10-18 14:35:10]
+Backtrace BEGIN:
+#0  0x00007ffff72fbd9d in __GI_strtod (nptr=0x7fffffffd611 " 333.0  121  219\n1973  9  3 18  1 WILLIAM    37.9 154.2   91   39\n1981  5  1 12 16 BERYL      44.5 356.1   85  112\n1998  3 14  0 24 WILLIAM    66.6 336.2  142  717\n1962  8  1 18 20 OSCAR      26.2 133"..., endptr=0x0) at strtod.c:69
+#1  0x000000000040152c in main._omp_fn.0 () at nn.c:119
+#2  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+64	strtod.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x000xad0x43
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd4b4
+address max offset: 4
+Memory content after  bitflip:0x000x000xad0xc3
+frame name: main._omp_fn.0
+symbol name: tmp_long
+symbol filename: nn.c
+symbol line: 119
+value: -346
+value address: 0x7fffffffd4b4
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-10-18 14:35:10]
+Fault Injection Successful after 4.340829372406006s
+[INFO -- 2018-10-18 14:35:11]
+event type: exit
+[INFO -- 2018-10-18 14:35:11]
+exit code: 0

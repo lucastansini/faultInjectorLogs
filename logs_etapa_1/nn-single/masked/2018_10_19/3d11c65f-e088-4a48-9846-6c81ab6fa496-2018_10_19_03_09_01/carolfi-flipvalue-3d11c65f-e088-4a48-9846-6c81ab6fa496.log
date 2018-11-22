@@ -1,0 +1,53 @@
+[INFO -- 2018-10-19 03:08:55]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 03:08:55]
+Initialization strings:
+[INFO -- 2018-10-19 03:08:55]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 03:08:55]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 03:08:55]
+initSignal:0
+[INFO -- 2018-10-19 03:08:55]
+endSignal:1
+[INFO -- 2018-10-19 03:08:55]
+faultModel:0
+[EXCEPTION -- 2018-10-19 03:08:56]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-10-19 03:08:56]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 03:08:56]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 03:08:56]
+pythonException: invalid frame
+[INFO -- 2018-10-19 03:08:56]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc06 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bb69b in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff768f184 in start_thread (arg=0x7ffff70b9700) at pthread_create.c:312
+#3  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+69	in dl-debug.c
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff78a4360 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x040x000x00
+frame name: create_thread
+symbol name: stack_cache_actsize
+symbol filename: allocatestack.c
+symbol line: 105
+value: 4398046511104
+value address: 0x7ffff78a4360 <stack_cache_actsize>
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-10-19 03:08:56]
+Fault Injection Successful after 1.1609981060028076s
+[INFO -- 2018-10-19 03:09:01]
+event type: exit
+[INFO -- 2018-10-19 03:09:01]
+exit code: 0

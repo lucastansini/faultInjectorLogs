@@ -1,0 +1,52 @@
+[INFO -- 2018-10-16 16:02:10]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 16:02:10]
+Initialization strings:
+[INFO -- 2018-10-16 16:02:10]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 16:02:10]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 16:02:10]
+initSignal:0
+[INFO -- 2018-10-16 16:02:10]
+endSignal:2
+[INFO -- 2018-10-16 16:02:10]
+faultModel:0
+[INFO -- 2018-10-16 16:02:10]
+Backtrace BEGIN:
+#0  0x00007ffff7012195 in round_and_return (retval=0x7fffffffd110, exponent=<optimized out>, negative=negative@entry=0, round_limb=round_limb@entry=8019869559997817241, round_bit=<optimized out>, more_bits=<optimized out>) at strtod_l.c:328
+#1  0x00007ffff7013332 in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1613
+#2  0x00007ffff7936d5e in void std::__convert_to_v<float>(char const*, float&, std::_Ios_Iostate&, __locale_struct* const&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x00007ffff794a706 in std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > >::do_get(std::istreambuf_iterator<char, std::char_traits<char> >, std::istreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, std::_Ios_Iostate&, float&) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007ffff793b0d5 in std::istream& std::istream::_M_extract<float>(float&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x0000000000401482 in main ()
+
+323	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 7
+Memory content before bitflip:0x74
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff715cb87  
+address max offset: 1
+Memory content after  bitflip:0x34
+frame name: __GI_____strtof_l_internal
+symbol name: __PRETTY_FUNCTION__
+symbol filename: strtof_l.c
+symbol line: 0
+value: "____str4of_l_internal"
+value address: 0x7ffff715cb80 <__PRETTY_FUNCTION__.11547>
+Type: The type is an array.
+Type sizeof: 22
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 21)
+
+[INFO -- 2018-10-16 16:02:10]
+Fault Injection Successful after 0.604468584060669s
+[INFO -- 2018-10-16 16:02:20]
+event type: exit
+[INFO -- 2018-10-16 16:02:20]
+exit code: 0

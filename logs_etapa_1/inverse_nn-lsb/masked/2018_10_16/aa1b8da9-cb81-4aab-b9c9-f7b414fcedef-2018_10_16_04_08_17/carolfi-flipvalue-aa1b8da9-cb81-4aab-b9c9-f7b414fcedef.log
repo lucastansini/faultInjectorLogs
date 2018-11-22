@@ -1,0 +1,47 @@
+[INFO -- 2018-10-16 04:08:06]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 04:08:06]
+Initialization strings:
+[INFO -- 2018-10-16 04:08:06]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 04:08:06]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 04:08:06]
+initSignal:8
+[INFO -- 2018-10-16 04:08:06]
+endSignal:10
+[INFO -- 2018-10-16 04:08:06]
+faultModel:4
+[INFO -- 2018-10-16 04:08:14]
+Backtrace BEGIN:
+#0  _IO_vfscanf_internal (s=s@entry=0x608610, format=<optimized out>, argptr=argptr@entry=0x7fffffffd0d8, errp=errp@entry=0x0) at vfscanf.c:2353
+#1  0x00007ffff7032162 in __isoc99_fscanf (stream=0x608610, format=<optimized out>) at isoc99_fscanf.c:34
+#2  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#3  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#4  0x000000000040199e in inversek2j(float, float, float*, float*) ()
+#5  0x0000000000401631 in main ()
+
+2348	vfscanf.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x010x000x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffceb0
+address max offset: 8
+Memory content after  bitflip:0x000x010x000x000x000x000x000x10
+frame name: _IO_vfscanf_internal
+symbol name: wpmax
+symbol filename: vfscanf.c
+symbol line: 273
+value: 1152921504606847232
+value address: 0x7fffffffceb0
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-10-16 04:08:14]
+Fault Injection Successful after 8.695513010025024s
+[INFO -- 2018-10-16 04:08:16]
+event type: exit
+[INFO -- 2018-10-16 04:08:16]
+exit code: 0

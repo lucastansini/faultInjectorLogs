@@ -1,0 +1,67 @@
+[INFO -- 2018-10-18 23:49:44]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 23:49:44]
+Initialization strings:
+[INFO -- 2018-10-18 23:49:44]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 23:49:44]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 23:49:44]
+initSignal:3
+[INFO -- 2018-10-18 23:49:44]
+endSignal:4
+[INFO -- 2018-10-18 23:49:44]
+faultModel:3
+[EXCEPTION -- 2018-10-18 23:49:48]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 23:49:48]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 23:49:48]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 23:49:48]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-18 23:49:48]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 23:49:48]
+pythonException: invalid frame
+[INFO -- 2018-10-18 23:49:48]
+Backtrace BEGIN:
+#0  0x00007ffff78bddaa in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bcaf9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000401198 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+30	    FILE   *flist,*fp;
+31	    int    i=0,j=0, k=0, rec_count=0, done=0;
+32	    char   sandbox[REC_LENGTH * REC_WINDOW], *rec_iter,*rec_iter2, dbname[64];
+33	    struct neighbor *neighbors = NULL;
+34	    float target_lat, target_long, tmp_lat=0, tmp_long=0;
+35	    char * gold_filename;
+36	    long rec_sum = 0;
+37	
+38	    if(argc < 6) {
+39	        fprintf(stderr, "Invalid set of arguments:\n");
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping a bit of the pointer
+Memory content before bitflip:0x570xdc0xff0xff0xff0x7f0x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd8b8
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: main
+symbol name: argv
+symbol filename: nn.c
+symbol line: 29
+value: 0x7fffffffd8b8
+value address: 0x7fffffffd4e0
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 23:49:48]
+Fault Injection Successful after 4.133239269256592s
+[INFO -- 2018-10-18 23:49:50]
+event type: exit
+[INFO -- 2018-10-18 23:49:50]
+exit code: 0

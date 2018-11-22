@@ -1,0 +1,45 @@
+[INFO -- 2018-10-10 20:56:57]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-10 20:56:57]
+Initialization strings:
+[INFO -- 2018-10-10 20:56:57]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-10 20:56:57]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-10 20:56:57]
+initSignal:15
+[INFO -- 2018-10-10 20:56:57]
+endSignal:20
+[INFO -- 2018-10-10 20:56:57]
+faultModel:3
+[INFO -- 2018-10-10 20:57:13]
+Backtrace BEGIN:
+#0  _int_malloc (av=av@entry=0x7ffff7396760 <main_arena>, bytes=bytes@entry=848) at malloc.c:3777
+#1  0x00007ffff70575fc in __libc_calloc (n=<optimized out>, elem_size=<optimized out>) at malloc.c:3221
+#2  0x00007ffff7bca458 in fann_allocate_connections () from /usr/local/lib/libfann.so.2
+#3  0x00007ffff7bcf11f in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#4  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#6  0x0000000000401631 in main ()
+
+3772	malloc.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7ffff7396720 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: _int_malloc
+symbol name: __memalign_hook
+symbol filename: malloc.c
+symbol line: 1839
+value: 0x0
+value address: 0x7ffff7396720 <__memalign_hook>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-10 20:57:13]
+Fault Injection Successful after 16.247263431549072s

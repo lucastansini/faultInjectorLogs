@@ -1,0 +1,62 @@
+[INFO -- 2018-10-18 20:23:00]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 20:23:00]
+Initialization strings:
+[INFO -- 2018-10-18 20:23:00]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 20:23:00]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 20:23:00]
+initSignal:2
+[INFO -- 2018-10-18 20:23:00]
+endSignal:3
+[INFO -- 2018-10-18 20:23:00]
+faultModel:2
+[EXCEPTION -- 2018-10-18 20:23:02]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 20:23:02]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 20:23:02]
+pythonException: invalid frame
+[INFO -- 2018-10-18 20:23:02]
+Backtrace BEGIN:
+#0  0x000000000040121e in main (argc=6, argv=0x7fffffffd8b8) at nn.c:131
+
+126	        for( i = 0 ; i < rec_count ; i++ ) {
+127	            float max_dist = -1;
+128	            int max_idx = 0;
+129	            // find a neighbor with greatest dist and take his spot if allowed!
+130	            for( j = 0 ; j < k ; j++ ) {
+131	                if( neighbors[j].dist > max_dist ) {
+132	                    max_dist = neighbors[j].dist;
+133	                    max_idx = j;
+134	                }
+135	            }
+
+Backtrace END
+Fliping array at pos: 353
+Memory content before bitflip:0x20
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd721 
+address max offset: 1
+Memory content after  bitflip:0x36
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 32
+value: "1989  6 17 12 26 DEBBY      11.0 299.8   14  413\n1994 12  6  0  2 FLORENCE   68.4 155.1   17  221\n1953  6 22 18 19 CHRIS      25.3  59.2   59  690\n1964  1 23  6 12 WILLIAM    11.2  90.4   38  383\n2004"...
+value address: 0x7fffffffd5c0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-10-18 20:23:02]
+Fault Injection Successful after 2.5923256874084473s
+[INFO -- 2018-10-18 20:23:05]
+event type: exit
+[INFO -- 2018-10-18 20:23:05]
+exit code: 0

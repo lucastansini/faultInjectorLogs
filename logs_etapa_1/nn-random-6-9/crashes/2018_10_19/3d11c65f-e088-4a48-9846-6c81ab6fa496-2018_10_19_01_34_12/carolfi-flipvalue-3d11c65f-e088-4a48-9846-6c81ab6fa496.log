@@ -1,0 +1,49 @@
+[INFO -- 2018-10-19 01:34:06]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 01:34:06]
+Initialization strings:
+[INFO -- 2018-10-19 01:34:06]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 01:34:06]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 01:34:06]
+initSignal:2
+[INFO -- 2018-10-19 01:34:06]
+endSignal:3
+[INFO -- 2018-10-19 01:34:06]
+faultModel:2
+[EXCEPTION -- 2018-10-19 01:34:09]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 01:34:09]
+pythonException: invalid frame
+[INFO -- 2018-10-19 01:34:09]
+Backtrace BEGIN:
+#0  0x00007ffff72ff59d in __GI_____strtod_l_internal (nptr=0x7fffffffd642 " 233.1   86  107\n1981  2  4 12  2 BERYL      40.4  51.0   94  379\n1985  6 10 18 17 VALERIE    49.9 114.3   64   67\n1955  8 24  0 22 ISAAC      59.8 294.8  116  377\n1976  8 13 12  4 CHRIS      20.8 211"..., endptr=0x0, group=<optimized out>, loc=<optimized out>) at strtod_l.c:849
+#1  0x000000000040152c in main._omp_fn.0 () at nn.c:119
+#2  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+844	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000xdd0xff0xff0xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd550
+address max offset: 8
+Memory content after  bitflip:0x8b0x610x8a0xe60x4a0xc00xa50xba
+frame name: main
+symbol name: gold_filename
+symbol filename: nn.c
+symbol line: 35
+value: 0x7fffffffdd00 "/home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25"
+value address: 0x7fffffffd550
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-19 01:34:09]
+Fault Injection Successful after 3.090881586074829s
+[INFO -- 2018-10-19 01:34:12]
+event type: exit
+[EXCEPTION -- 2018-10-19 01:34:12]
+exit code: no exit code available

@@ -1,0 +1,54 @@
+[INFO -- 2018-10-09 03:49:03]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-09 03:49:03]
+Initialization strings:
+[INFO -- 2018-10-09 03:49:03]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-09 03:49:03]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-09 03:49:03]
+initSignal:0
+[INFO -- 2018-10-09 03:49:03]
+endSignal:5
+[INFO -- 2018-10-09 03:49:03]
+faultModel:0
+[INFO -- 2018-10-09 03:49:06]
+Backtrace BEGIN:
+#0  __GI__IO_sputbackc (fp=fp@entry=0x6062c0, c=c@entry=10) at genops.c:742
+#1  0x00007ffff702c948 in _IO_vfscanf_internal (s=s@entry=0x6062c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffd408, errp=errp@entry=0x0) at vfscanf.c:2108
+#2  0x00007ffff7032162 in __isoc99_fscanf (stream=0x6062c0, format=<optimized out>) at isoc99_fscanf.c:34
+#3  0x00007ffff7bceae9 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#4  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#6  0x0000000000401631 in main ()
+
+737	genops.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping value of field: lock
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff73989c0 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x80
+frame name: __GI__IO_sputbackc
+symbol name: list_all_lock
+symbol filename: genops.c
+symbol line: 38
+value: {lock = -2147483648, cnt = 0, owner = 0x0}
+value address: 0x7ffff73989c0 <list_all_lock>
+Type: The type is a structure.
+Type sizeof: 16
+Field name: lock
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: cnt
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: owner
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-10-09 03:49:06]
+Fault Injection Successful after 3.117086172103882s

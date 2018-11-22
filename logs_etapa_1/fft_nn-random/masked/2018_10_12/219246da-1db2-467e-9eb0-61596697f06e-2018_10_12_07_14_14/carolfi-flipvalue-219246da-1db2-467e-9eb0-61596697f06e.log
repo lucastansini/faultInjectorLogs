@@ -1,0 +1,49 @@
+[INFO -- 2018-10-12 07:13:53]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-12 07:13:53]
+Initialization strings:
+[INFO -- 2018-10-12 07:13:53]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-12 07:13:53]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-12 07:13:53]
+initSignal:10
+[INFO -- 2018-10-12 07:13:53]
+endSignal:15
+[INFO -- 2018-10-12 07:13:53]
+faultModel:2
+[INFO -- 2018-10-12 07:14:03]
+Backtrace BEGIN:
+#0  _IO_vfscanf_internal (s=s@entry=0x6062c0, format=0x7ffff7bd4148 "neurons (num_inputs, activation_function, activation_steepness)=", argptr=argptr@entry=0x7fffffffd408, errp=errp@entry=0x0) at vfscanf.c:341
+#1  0x00007ffff7032162 in __isoc99_fscanf (stream=0x6062c0, format=<optimized out>) at isoc99_fscanf.c:34
+#2  0x00007ffff7bcf0a9 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#3  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#4  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#5  0x0000000000401631 in main ()
+
+336	vfscanf.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: fp_offset
+Memory content before bitflip:0x300x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd40c
+address max offset: 4
+Memory content after  bitflip:0x760xbf0x430x5b
+frame name: _IO_vfscanf_internal
+symbol name: argptr
+symbol filename: vfscanf.c
+symbol line: 211
+value: 0x7fffffffd408
+value address: 0x7fffffffd190
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-12 07:14:03]
+Fault Injection Successful after 10.980483055114746s
+[INFO -- 2018-10-12 07:14:13]
+event type: exit
+[INFO -- 2018-10-12 07:14:13]
+exit code: 0

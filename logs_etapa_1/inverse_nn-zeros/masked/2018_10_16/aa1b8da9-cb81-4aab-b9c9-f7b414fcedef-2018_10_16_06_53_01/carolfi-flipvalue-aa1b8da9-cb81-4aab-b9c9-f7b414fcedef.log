@@ -1,0 +1,53 @@
+[INFO -- 2018-10-16 06:52:50]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 06:52:50]
+Initialization strings:
+[INFO -- 2018-10-16 06:52:50]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 06:52:50]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 06:52:50]
+initSignal:6
+[INFO -- 2018-10-16 06:52:50]
+endSignal:8
+[INFO -- 2018-10-16 06:52:50]
+faultModel:3
+[INFO -- 2018-10-16 06:52:56]
+Backtrace BEGIN:
+#0  __GI__IO_sputbackc (fp=fp@entry=0x608610, c=c@entry=49) at genops.c:730
+#1  0x00007ffff7028b63 in _IO_vfscanf_internal (s=s@entry=0x608610, format=<optimized out>, argptr=argptr@entry=0x7fffffffd0d8, errp=errp@entry=0x0) at vfscanf.c:625
+#2  0x00007ffff7032162 in __isoc99_fscanf (stream=0x608610, format=<optimized out>) at isoc99_fscanf.c:34
+#3  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#4  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x000000000040199e in inversek2j(float, float, float*, float*) ()
+#6  0x0000000000401631 in main ()
+
+725	genops.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 10
+Memory content before bitflip:0x66
+Fault Model: Zero bit-flip
+base address to flip value: 0x7ffff715cc0a  
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: _IO_vfscanf_internal
+symbol name: __PRETTY_FUNCTION__
+symbol filename: vfscanf.c
+symbol line: 0
+value: "_IO_vfscan\000_internal"
+value address: 0x7ffff715cc00 <__PRETTY_FUNCTION__.11925>
+Type: The type is an array.
+Type sizeof: 21
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 20)
+
+[INFO -- 2018-10-16 06:52:56]
+Fault Injection Successful after 6.586313486099243s
+[INFO -- 2018-10-16 06:53:00]
+event type: exit
+[INFO -- 2018-10-16 06:53:00]
+exit code: 0

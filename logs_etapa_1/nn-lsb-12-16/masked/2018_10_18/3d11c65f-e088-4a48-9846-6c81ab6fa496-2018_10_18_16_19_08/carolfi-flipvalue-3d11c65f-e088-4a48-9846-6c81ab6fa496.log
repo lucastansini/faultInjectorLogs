@@ -1,0 +1,114 @@
+[INFO -- 2018-10-18 16:19:02]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 16:19:02]
+Initialization strings:
+[INFO -- 2018-10-18 16:19:02]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 16:19:02]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 16:19:02]
+initSignal:4
+[INFO -- 2018-10-18 16:19:02]
+endSignal:5
+[INFO -- 2018-10-18 16:19:02]
+faultModel:4
+[EXCEPTION -- 2018-10-18 16:19:06]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 16:19:06]
+pythonException: invalid frame
+[INFO -- 2018-10-18 16:19:06]
+Backtrace BEGIN:
+#0  __mempcpy_sse2 () at ../sysdeps/x86_64/memcpy.S:194
+#1  0x00007ffff733738e in __GI__IO_file_xsgetn (fp=0x603640, data=<optimized out>, n=490) at fileops.c:1396
+#2  0x00007ffff732c86f in __GI__IO_fread (buf=<optimized out>, size=49, count=10, fp=0x603640) at iofread.c:42
+#3  0x0000000000401027 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:85
+
+189	../sysdeps/x86_64/memcpy.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping value of field: __seek
+Fliping a bit of the pointer
+Memory content before bitflip:0xd00x6c0x330xf70xff0x7f0x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff767f5a0 
+address max offset: 8
+Memory content after  bitflip:0xd00x6c0x330xf70xff0x7f0x000x40
+frame name: __GI__IO_file_xsgetn
+symbol name: _IO_file_jumps_maybe_mmap
+symbol filename: fileops.c
+symbol line: 1598
+value: {__dummy = 0, __dummy2 = 0, __finish = 0x7ffff7337c80 <_IO_new_file_finish>, __overflow = 0x7ffff73386d0 <_IO_new_file_overflow>, __underflow = 0x7ffff7337770 <_IO_file_underflow_maybe_mmap>, __uflow = 0x7ffff7339530 <__GI__IO_default_uflow>, __pbackfail = 0x7ffff733a6e0 <__GI__IO_default_pbackfail>, __xsputn = 0x7ffff7337500 <_IO_new_file_xsputn>, __xsgetn = 0x7ffff7336d40 <_IO_file_xsgetn_maybe_mmap>, __seekoff = 0x7ffff73366e0 <_IO_file_seekoff_maybe_mmap>, __seekpos = 0x7ffff7339aa0 <_IO_default_seekpos>, __setbuf = 0x7ffff7336810 <_IO_file_setbuf_mmap>, __sync = 0x7ffff7336710 <_IO_new_file_sync>, __doallocate = 0x7ffff732b7b0 <__GI__IO_file_doallocate>, __read = 0x7ffff73374e0 <__GI__IO_file_read>, __write = 0x7ffff7336ed0 <_IO_new_file_write>, __seek = 0x40007ffff7336cd0, __close = 0x7ffff73367d0 <__GI__IO_file_close>, __stat = 0x7ffff7336ec0 <__GI__IO_file_stat>, __showmanyc = 0x7ffff733a840 <_IO_default_showmanyc>, __imbue = 0x7ffff733a850 <_IO_default_imbue>}
+value address: 0x7ffff767f520 <_IO_file_jumps_maybe_mmap>
+Type: The type is a structure.
+Type sizeof: 168
+Field name: __dummy
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: __dummy2
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: __finish
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __overflow
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __underflow
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __uflow
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __pbackfail
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __xsputn
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __xsgetn
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __seekoff
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __seekpos
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __setbuf
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __sync
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __doallocate
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __read
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __write
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __seek
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __close
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __stat
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __showmanyc
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __imbue
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-10-18 16:19:06]
+Fault Injection Successful after 4.801851511001587s
+[INFO -- 2018-10-18 16:19:07]
+event type: exit
+[INFO -- 2018-10-18 16:19:07]
+exit code: 0

@@ -1,0 +1,50 @@
+[INFO -- 2018-10-16 09:39:06]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 09:39:06]
+Initialization strings:
+[INFO -- 2018-10-16 09:39:06]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 09:39:06]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 09:39:06]
+initSignal:4
+[INFO -- 2018-10-16 09:39:06]
+endSignal:6
+[INFO -- 2018-10-16 09:39:06]
+faultModel:2
+[EXCEPTION -- 2018-10-16 09:39:10]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-10-16 09:39:10]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-10-16 09:39:10]
+Backtrace BEGIN:
+#0  __expf_finite () at ../sysdeps/x86_64/fpu/e_expf.S:92
+#1  0x00007ffff75e8a42 in __GI___expf (x=0,266505837) at ../sysdeps/ieee754/flt-32/w_expf.c:26
+#2  0x00007ffff7bc5284 in fann_run () from /usr/local/lib/libfann.so.2
+#3  0x00000000004019b5 in inversek2j(float, float, float*, float*) ()
+#4  0x0000000000401631 in main ()
+
+87	../sysdeps/x86_64/fpu/e_expf.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x740x730x880x3e
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd21c
+address max offset: 4
+Memory content after  bitflip:0xef0x910x7d0x20
+frame name: __GI___expf
+symbol name: x
+symbol filename: ../sysdeps/ieee754/flt-32/w_expf.c
+symbol line: 24
+value: 2,14782189e-19
+value address: 0x7fffffffd21c
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-10-16 09:39:10]
+Fault Injection Successful after 4.5822741985321045s
+[INFO -- 2018-10-16 09:39:16]
+event type: exit
+[INFO -- 2018-10-16 09:39:16]
+exit code: 0

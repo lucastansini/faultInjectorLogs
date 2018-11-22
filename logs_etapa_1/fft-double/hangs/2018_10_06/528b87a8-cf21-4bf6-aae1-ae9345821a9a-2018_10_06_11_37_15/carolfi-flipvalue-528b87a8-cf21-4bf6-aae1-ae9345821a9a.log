@@ -1,0 +1,44 @@
+[INFO -- 2018-10-06 11:36:24]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-06 11:36:24]
+Initialization strings:
+[INFO -- 2018-10-06 11:36:24]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-06 11:36:24]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-06 11:36:24]
+initSignal:5
+[INFO -- 2018-10-06 11:36:24]
+endSignal:10
+[INFO -- 2018-10-06 11:36:24]
+faultModel:1
+[INFO -- 2018-10-06 11:36:29]
+Backtrace BEGIN:
+#0  _int_malloc (av=0x7ffff7396760 <main_arena>, bytes=392) at malloc.c:3777
+#1  0x00007ffff7056ae0 in __GI___libc_malloc (bytes=392) at malloc.c:2893
+#2  0x00007ffff7bcd46b in fann_allocate_structure () from /usr/local/lib/libfann.so.2
+#3  0x00007ffff7bce892 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#4  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#6  0x0000000000401631 in main ()
+
+3772	malloc.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff7398b20 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x09
+frame name: _int_malloc
+symbol name: list_lock
+symbol filename: arena.c
+symbol line: 78
+value: 150994944
+value address: 0x7ffff7398b20 <list_lock>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-06 11:36:29]
+Fault Injection Successful after 5.814537763595581s

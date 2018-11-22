@@ -1,0 +1,58 @@
+[INFO -- 2018-10-18 14:39:05]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 14:39:05]
+Initialization strings:
+[INFO -- 2018-10-18 14:39:05]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 14:39:05]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 14:39:05]
+initSignal:0
+[INFO -- 2018-10-18 14:39:05]
+endSignal:1
+[INFO -- 2018-10-18 14:39:05]
+faultModel:0
+[INFO -- 2018-10-18 14:39:06]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc0d in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bc0e2 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000401184 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+30	    FILE   *flist,*fp;
+31	    int    i=0,j=0, k=0, rec_count=0, done=0;
+32	    char   sandbox[REC_LENGTH * REC_WINDOW], *rec_iter,*rec_iter2, dbname[64];
+33	    struct neighbor *neighbors = NULL;
+34	    float target_lat, target_long, tmp_lat=0, tmp_long=0;
+35	    char * gold_filename;
+36	    long rec_sum = 0;
+37	
+38	    if(argc < 6) {
+39	        fprintf(stderr, "Invalid set of arguments:\n");
+
+Backtrace END
+Fliping array at pos: 390
+Memory content before bitflip:0x36
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd746 
+address max offset: 1
+Memory content after  bitflip:0x16
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 32
+value: "1986  6  4 12 22 RAFAEL     19.7 116.2   89  120\n1964  6 26  0  1 ERNESTO    44.1 187.0   57  300\n2000  7 15 12 15 NADINE     62.3  38.1   79  605\n1961  8  7 18 16 FLORENCE   65.7 161.4  104   36\n2003"...
+value address: 0x7fffffffd5c0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-10-18 14:39:06]
+Fault Injection Successful after 1.1327462196350098s
+[INFO -- 2018-10-18 14:39:11]
+event type: exit
+[INFO -- 2018-10-18 14:39:11]
+exit code: 0

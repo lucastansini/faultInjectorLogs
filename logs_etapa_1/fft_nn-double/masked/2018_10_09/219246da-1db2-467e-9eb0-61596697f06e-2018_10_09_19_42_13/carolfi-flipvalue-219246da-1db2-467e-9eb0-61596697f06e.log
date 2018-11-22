@@ -1,0 +1,48 @@
+[INFO -- 2018-10-09 19:41:52]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-09 19:41:52]
+Initialization strings:
+[INFO -- 2018-10-09 19:41:52]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-09 19:41:52]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-09 19:41:52]
+initSignal:5
+[INFO -- 2018-10-09 19:41:52]
+endSignal:10
+[INFO -- 2018-10-09 19:41:52]
+faultModel:1
+[INFO -- 2018-10-09 19:41:58]
+Backtrace BEGIN:
+#0  0x00007ffff70cc567 in munmap () at ../sysdeps/unix/syscall-template.S:81
+#1  0x00007ffff704f472 in __GI__IO_setb (f=f@entry=0x6062c0, b=b@entry=0x0, eb=eb@entry=0x0, a=a@entry=0) at genops.c:401
+#2  0x00007ffff704dbb0 in _IO_new_file_close_it (fp=fp@entry=0x6062c0) at fileops.c:185
+#3  0x00007ffff7041a50 in _IO_new_fclose (fp=0x6062c0) at iofclose.c:59
+#4  0x00007ffff7bcf613 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#6  0x0000000000401631 in main ()
+
+76	../sysdeps/unix/syscall-template.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff7398990 
+address max offset: 1
+Memory content after  bitflip:0x84
+frame name: __GI__IO_setb
+symbol name: dealloc_buffers
+symbol filename: genops.c
+symbol line: 943
+value: 132
+value address: 0x7ffff7398990 <dealloc_buffers>
+Type: A boolean type.
+Type sizeof: 1
+
+[INFO -- 2018-10-09 19:41:58]
+Fault Injection Successful after 6.616060256958008s
+[INFO -- 2018-10-09 19:42:12]
+event type: exit
+[INFO -- 2018-10-09 19:42:12]
+exit code: 0

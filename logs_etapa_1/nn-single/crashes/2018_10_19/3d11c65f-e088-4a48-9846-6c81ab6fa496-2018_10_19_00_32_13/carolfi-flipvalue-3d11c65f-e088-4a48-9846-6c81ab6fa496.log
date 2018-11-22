@@ -1,0 +1,63 @@
+[INFO -- 2018-10-19 00:32:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 00:32:12]
+Initialization strings:
+[INFO -- 2018-10-19 00:32:12]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 00:32:12]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 00:32:12]
+initSignal:0
+[INFO -- 2018-10-19 00:32:12]
+endSignal:1
+[INFO -- 2018-10-19 00:32:12]
+faultModel:0
+[EXCEPTION -- 2018-10-19 00:32:12]
+pythonException: invalid frame
+[INFO -- 2018-10-19 00:32:12]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc02 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bb69b in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff768f184 in start_thread (arg=0x7ffff68b8700) at pthread_create.c:312
+#3  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+30	    FILE   *flist,*fp;
+31	    int    i=0,j=0, k=0, rec_count=0, done=0;
+32	    char   sandbox[REC_LENGTH * REC_WINDOW], *rec_iter,*rec_iter2, dbname[64];
+33	    struct neighbor *neighbors = NULL;
+34	    float target_lat, target_long, tmp_lat=0, tmp_long=0;
+35	    char * gold_filename;
+36	    long rec_sum = 0;
+37	
+38	    if(argc < 6) {
+39	        fprintf(stderr, "Invalid set of arguments:\n");
+
+Backtrace END
+Fliping array at pos: 359
+Memory content before bitflip:0x20
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd727 
+address max offset: 1
+Memory content after  bitflip:0x22
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 32
+value: "1962  7 15  0 23 TONY       58.7 261.1  120  100\n1989 12 19  6 17 MICHAEL    30.1 101.3   38  113\n1986  8 26 12  6 VALERIE    68.0 133.5   64  287\n1973 10 16 12  7 BERYL      67.0 302.6  160  384\n1952"...
+value address: 0x7fffffffd5c0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-10-19 00:32:12]
+Fault Injection Successful after 0.899010181427002s
+[INFO -- 2018-10-19 00:32:12]
+event type: exit
+[EXCEPTION -- 2018-10-19 00:32:12]
+exit code: no exit code available
+[EXCEPTION -- 2018-10-19 00:32:12]
+pythonException: Thread no longer exists.

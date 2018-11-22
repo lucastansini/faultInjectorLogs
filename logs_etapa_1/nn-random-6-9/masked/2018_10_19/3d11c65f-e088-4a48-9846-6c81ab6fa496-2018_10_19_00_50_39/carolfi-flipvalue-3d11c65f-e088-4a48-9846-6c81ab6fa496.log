@@ -1,0 +1,45 @@
+[INFO -- 2018-10-19 00:50:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 00:50:34]
+Initialization strings:
+[INFO -- 2018-10-19 00:50:34]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 00:50:34]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 00:50:34]
+initSignal:2
+[INFO -- 2018-10-19 00:50:34]
+endSignal:3
+[INFO -- 2018-10-19 00:50:34]
+faultModel:2
+[INFO -- 2018-10-19 00:50:36]
+Backtrace BEGIN:
+#0  0x00007ffff72feede in round_and_return (retval=retval@entry=0x7fffffffd080, exponent=5, negative=negative@entry=0, round_limb=round_limb@entry=9223372036854775808, round_bit=16, more_bits=0) at strtod_l.c:201
+#1  0x00007ffff72ffc7d in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1613
+#2  0x000000000040150f in main._omp_fn.0 () at nn.c:118
+#3  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+196	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x010x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd060
+address max offset: 8
+Memory content after  bitflip:0x8e0x270xc20x000xd00x240x320xb4
+frame name: __GI_____strtod_l_internal
+symbol name: numsize
+symbol filename: strtod_l.c
+symbol line: 485
+value: -5462262922262468722
+value address: 0x7fffffffd060
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-10-19 00:50:36]
+Fault Injection Successful after 2.291884660720825s
+[INFO -- 2018-10-19 00:50:39]
+event type: exit
+[INFO -- 2018-10-19 00:50:39]
+exit code: 0

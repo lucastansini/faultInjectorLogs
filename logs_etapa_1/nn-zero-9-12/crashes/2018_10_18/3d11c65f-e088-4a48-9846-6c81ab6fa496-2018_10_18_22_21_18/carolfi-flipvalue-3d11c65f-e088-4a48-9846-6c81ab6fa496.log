@@ -1,0 +1,49 @@
+[INFO -- 2018-10-18 22:21:15]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 22:21:15]
+Initialization strings:
+[INFO -- 2018-10-18 22:21:15]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 22:21:15]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 22:21:15]
+initSignal:3
+[INFO -- 2018-10-18 22:21:15]
+endSignal:4
+[INFO -- 2018-10-18 22:21:15]
+faultModel:3
+[EXCEPTION -- 2018-10-18 22:21:18]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 22:21:18]
+pythonException: invalid frame
+[INFO -- 2018-10-18 22:21:18]
+Backtrace BEGIN:
+#0  0x00007ffff72fed88 in str_to_mpn (str=0x7fffffffd60f ".2  34.2  155  399\n1981  9 23  6 12 ISAAC      20.1 207.8   93  366\n1998  4 26 12  1 OSCAR      56.7 167.1  123  814\n1969 11 16  0 16 WILLIAM    46.8 307.9   28  567\n1993 12 17  6 26 WILLIAM    31.3 1"..., str@entry=0x7fffffffd60d "44.2  34.2  155  399\n1981  9 23  6 12 ISAAC      20.1 207.8   93  366\n1998  4 26 12  1 OSCAR      56.7 167.1  123  814\n1969 11 16  0 16 WILLIAM    46.8 307.9   28  567\n1993 12 17  6 26 WILLIAM    31.3"..., digcnt=<optimized out>, digcnt@entry=2, n=n@entry=0x7fffffffd090, nsize=nsize@entry=0x7fffffffd060, exponent=exponent@entry=0x7fffffffd070, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=0x7ffff744014b <dot> ".") at strtod_l.c:403
+#1  0x00007ffff73001e1 in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=0x0, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1176
+#2  0x000000000040150f in main._omp_fn.0 () at nn.c:118
+#3  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+398	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x010x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd020
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: __GI_____strtod_l_internal
+symbol name: decimal_len
+symbol filename: strtod_l.c
+symbol line: 522
+value: 0
+value address: 0x7fffffffd020
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 22:21:18]
+Fault Injection Successful after 3.06229829788208s
+[INFO -- 2018-10-18 22:21:18]
+event type: exit
+[EXCEPTION -- 2018-10-18 22:21:18]
+exit code: no exit code available

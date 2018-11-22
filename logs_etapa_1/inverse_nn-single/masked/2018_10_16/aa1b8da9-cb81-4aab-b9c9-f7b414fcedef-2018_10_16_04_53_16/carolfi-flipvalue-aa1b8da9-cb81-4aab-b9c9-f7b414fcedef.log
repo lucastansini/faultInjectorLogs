@@ -1,0 +1,45 @@
+[INFO -- 2018-10-16 04:53:05]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 04:53:05]
+Initialization strings:
+[INFO -- 2018-10-16 04:53:05]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 04:53:05]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 04:53:05]
+initSignal:0
+[INFO -- 2018-10-16 04:53:05]
+endSignal:2
+[INFO -- 2018-10-16 04:53:05]
+faultModel:0
+[INFO -- 2018-10-16 04:53:05]
+Backtrace BEGIN:
+#0  _int_free (av=0x7ffff7396760 <main_arena>, p=0x6085b0, have_lock=0) at malloc.c:3829
+#1  0x00007ffff794a7ee in std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > >::do_get(std::istreambuf_iterator<char, std::char_traits<char> >, std::istreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, std::_Ios_Iostate&, float&) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#2  0x00007ffff793b0d5 in std::istream& std::istream::_M_extract<float>(float&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x0000000000401470 in main ()
+
+3824	malloc.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x010x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7396190 
+address max offset: 4
+Memory content after  bitflip:0x410x000x000x00
+frame name: _int_free
+symbol name: check_action
+symbol filename: malloc.c
+symbol line: 1854
+value: 65
+value address: 0x7ffff7396190 <check_action>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-16 04:53:05]
+Fault Injection Successful after 0.9673705101013184s
+[INFO -- 2018-10-16 04:53:16]
+event type: exit
+[INFO -- 2018-10-16 04:53:16]
+exit code: 0

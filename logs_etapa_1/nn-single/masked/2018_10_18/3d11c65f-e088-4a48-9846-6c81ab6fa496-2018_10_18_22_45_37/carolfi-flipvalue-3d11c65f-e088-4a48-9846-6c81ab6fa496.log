@@ -1,0 +1,56 @@
+[INFO -- 2018-10-18 22:45:31]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 22:45:31]
+Initialization strings:
+[INFO -- 2018-10-18 22:45:31]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 22:45:31]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 22:45:31]
+initSignal:0
+[INFO -- 2018-10-18 22:45:31]
+endSignal:1
+[INFO -- 2018-10-18 22:45:31]
+faultModel:0
+[EXCEPTION -- 2018-10-18 22:45:31]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 22:45:31]
+pythonException: invalid frame
+[INFO -- 2018-10-18 22:45:31]
+Backtrace BEGIN:
+#0  clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:81
+#1  0x00007ffff768e19a in do_clone (pd=pd@entry=0x7ffff60b7700, attr=attr@entry=0x7ffff7ad3600, stackaddr=<optimized out>, stopped=stopped@entry=1, fct=0x7ffff768f0c0 <start_thread>, clone_flags=4001536) at ../nptl/sysdeps/pthread/createthread.c:75
+#2  0x00007ffff768fa53 in create_thread (stackaddr=<optimized out>, attr=0x7ffff7ad3600, pd=0x7ffff60b7700) at ../nptl/sysdeps/pthread/createthread.c:201
+#3  __pthread_create_2_1 (newthread=<optimized out>, attr=<optimized out>, start_routine=<optimized out>, arg=<optimized out>) at pthread_create.c:611
+#4  0x00007ffff78bbca2 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#5  0x0000000000401184 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+76	../sysdeps/unix/sysv/linux/x86_64/clone.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 0
+Memory content before bitflip:0x400x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff769983c 
+address max offset: 4
+Memory content after  bitflip:0x400x000x010x00
+frame name: create_thread
+symbol name: _thread_db_link_map_l_tls_modid
+symbol filename: ../nptl_db/structs.def
+symbol line: 72
+value: {65600, 1, 1096}
+value address: 0x7ffff769983c <_thread_db_link_map_l_tls_modid>
+Type: The type is an array.
+Type sizeof: 12
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 2)
+
+[INFO -- 2018-10-18 22:45:31]
+Fault Injection Successful after 0.7895798683166504s
+[INFO -- 2018-10-18 22:45:37]
+event type: exit
+[INFO -- 2018-10-18 22:45:37]
+exit code: 0

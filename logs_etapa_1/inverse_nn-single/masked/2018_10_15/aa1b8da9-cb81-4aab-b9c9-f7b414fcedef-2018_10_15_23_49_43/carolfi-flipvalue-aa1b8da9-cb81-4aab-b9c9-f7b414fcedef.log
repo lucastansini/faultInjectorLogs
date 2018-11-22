@@ -1,0 +1,51 @@
+[INFO -- 2018-10-15 23:49:32]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-15 23:49:32]
+Initialization strings:
+[INFO -- 2018-10-15 23:49:32]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-15 23:49:32]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-15 23:49:32]
+initSignal:0
+[INFO -- 2018-10-15 23:49:32]
+endSignal:2
+[INFO -- 2018-10-15 23:49:32]
+faultModel:0
+[INFO -- 2018-10-15 23:49:33]
+Backtrace BEGIN:
+#0  __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1516
+#1  0x00007ffff7936d5e in void std::__convert_to_v<float>(char const*, float&, std::_Ios_Iostate&, __locale_struct* const&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#2  0x00007ffff794a706 in std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > >::do_get(std::istreambuf_iterator<char, std::char_traits<char> >, std::istreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, std::_Ios_Iostate&, float&) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x00007ffff793b0d5 in std::istream& std::istream::_M_extract<float>(float&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x0000000000401482 in main ()
+
+1511	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 12
+Memory content before bitflip:0x5f
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff715cb8c  
+address max offset: 1
+Memory content after  bitflip:0x7f
+frame name: __GI_____strtof_l_internal
+symbol name: __PRETTY_FUNCTION__
+symbol filename: strtof_l.c
+symbol line: 0
+value: "____strtof_l\177internal"
+value address: 0x7ffff715cb80 <__PRETTY_FUNCTION__.11547>
+Type: The type is an array.
+Type sizeof: 22
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 21)
+
+[INFO -- 2018-10-15 23:49:33]
+Fault Injection Successful after 1.0974915027618408s
+[INFO -- 2018-10-15 23:49:43]
+event type: exit
+[INFO -- 2018-10-15 23:49:43]
+exit code: 0

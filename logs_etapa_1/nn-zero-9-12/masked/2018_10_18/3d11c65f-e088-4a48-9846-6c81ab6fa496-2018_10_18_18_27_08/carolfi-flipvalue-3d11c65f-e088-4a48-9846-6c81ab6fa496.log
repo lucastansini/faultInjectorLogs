@@ -1,0 +1,63 @@
+[INFO -- 2018-10-18 18:27:02]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 18:27:02]
+Initialization strings:
+[INFO -- 2018-10-18 18:27:02]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 18:27:02]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 18:27:02]
+initSignal:3
+[INFO -- 2018-10-18 18:27:02]
+endSignal:4
+[INFO -- 2018-10-18 18:27:02]
+faultModel:3
+[EXCEPTION -- 2018-10-18 18:27:06]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 18:27:06]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-18 18:27:06]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 18:27:06]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 18:27:06]
+pythonException: invalid frame
+[INFO -- 2018-10-18 18:27:06]
+Backtrace BEGIN:
+#0  0x00007ffff78bddae in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bcaf9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000401198 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+120	            z[i] = sqrt(( (tmp_lat-target_lat) * (tmp_lat-target_lat) )+( (tmp_long-target_long) * (tmp_long-target_long) ));
+121	        }
+122	        #pragma omp barrier
+123	        // end of Lingjie Zhang's modification
+124	
+125	
+126	        for( i = 0 ; i < rec_count ; i++ ) {
+127	            float max_dist = -1;
+128	            int max_idx = 0;
+129	            // find a neighbor with greatest dist and take his spot if allowed!
+
+Backtrace END
+Memory content before bitflip:0x0f0x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd500
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main
+symbol name: j
+symbol filename: nn.c
+symbol line: 31
+value: 0
+value address: 0x7fffffffd500
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-18 18:27:06]
+Fault Injection Successful after 4.156626462936401s
+[INFO -- 2018-10-18 18:27:08]
+event type: exit
+[INFO -- 2018-10-18 18:27:08]
+exit code: 0

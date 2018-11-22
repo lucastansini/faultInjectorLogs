@@ -1,0 +1,75 @@
+[INFO -- 2018-10-18 19:51:45]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 19:51:45]
+Initialization strings:
+[INFO -- 2018-10-18 19:51:45]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 19:51:45]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 19:51:45]
+initSignal:4
+[INFO -- 2018-10-18 19:51:45]
+endSignal:5
+[INFO -- 2018-10-18 19:51:45]
+faultModel:4
+[EXCEPTION -- 2018-10-18 19:51:49]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 19:51:49]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 19:51:49]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-18 19:51:49]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 19:51:49]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-18 19:51:49]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 19:51:49]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 19:51:49]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 19:51:49]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 19:51:49]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 19:51:49]
+pythonException: invalid frame
+[INFO -- 2018-10-18 19:51:49]
+Backtrace BEGIN:
+#0  0x00007ffff78bddaa in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bcaf9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000401198 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+40	        fprintf(stderr, "%s <filelist> <num neighbors to find> <target latitude> <target longitude> <out filename>\n",argv[0]);
+41	        exit(-1);
+42	    }
+43	
+44	    flist = fopen(argv[1], "r");
+45	    if(!flist) {
+46	        printf("error opening flist\n");
+47	        exit(1);
+48	    }
+49	
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd520
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x20
+frame name: main
+symbol name: tmp_lat
+symbol filename: nn.c
+symbol line: 34
+value: 1,08420217e-19
+value address: 0x7fffffffd520
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-10-18 19:51:49]
+Fault Injection Successful after 4.1565399169921875s
+[INFO -- 2018-10-18 19:51:50]
+event type: exit
+[INFO -- 2018-10-18 19:51:50]
+exit code: 0

@@ -1,0 +1,49 @@
+[INFO -- 2018-10-06 01:06:33]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-06 01:06:33]
+Initialization strings:
+[INFO -- 2018-10-06 01:06:33]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-06 01:06:33]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-06 01:06:33]
+initSignal:0
+[INFO -- 2018-10-06 01:06:33]
+endSignal:5
+[INFO -- 2018-10-06 01:06:33]
+faultModel:0
+[EXCEPTION -- 2018-10-06 01:06:36]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-10-06 01:06:36]
+Backtrace BEGIN:
+#0  0x00007ffff7057127 in __GI___libc_free (mem=0x6062c0) at malloc.c:2919
+#1  0x00007ffff7041a25 in _IO_new_fclose (fp=0x6062c0) at iofclose.c:85
+#2  0x00007ffff7bcf613 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#3  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#4  0x0000000000401631 in main ()
+
+2914	malloc.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7398a10 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x800x00
+frame name: __GI___libc_free
+symbol name: __free_hook
+symbol filename: malloc.c
+symbol line: 1832
+value: 0x0
+value address: 0x7ffff7398a10 <__free_hook>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-06 01:06:36]
+Fault Injection Successful after 3.393974542617798s
+[INFO -- 2018-10-06 01:06:36]
+event type: exit
+[EXCEPTION -- 2018-10-06 01:06:36]
+exit code: no exit code available

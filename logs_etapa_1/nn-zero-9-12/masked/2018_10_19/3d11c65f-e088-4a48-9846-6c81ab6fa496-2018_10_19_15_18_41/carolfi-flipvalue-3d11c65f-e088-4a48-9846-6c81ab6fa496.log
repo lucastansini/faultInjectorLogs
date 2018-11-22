@@ -1,0 +1,63 @@
+[INFO -- 2018-10-19 15:18:35]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 15:18:35]
+Initialization strings:
+[INFO -- 2018-10-19 15:18:35]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 15:18:35]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 15:18:35]
+initSignal:3
+[INFO -- 2018-10-19 15:18:35]
+endSignal:4
+[INFO -- 2018-10-19 15:18:35]
+faultModel:3
+[EXCEPTION -- 2018-10-19 15:18:38]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 15:18:38]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-19 15:18:38]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 15:18:38]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 15:18:38]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-19 15:18:38]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 15:18:38]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 15:18:38]
+pythonException: invalid frame
+[INFO -- 2018-10-19 15:18:38]
+Backtrace BEGIN:
+#0  0x00007ffff72febf2 in str_to_mpn (str=str@entry=0x7fffffffd702 "43.8  67.7  134  213\n1970  6  2  6  3 WILLIAM    52.8  32.2   72  577\n1980 12 10 12 21 RAFAEL     64.9 138.6  143  800\n1967  8  8 12 21 TONY       50.6 108.8   10  234\n", digcnt=digcnt@entry=2, n=n@entry=0x7ffff68b7a10, nsize=nsize@entry=0x7ffff68b79e0, exponent=exponent@entry=0x7ffff68b79f0, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=0x7ffff744014b <dot> ".") at strtod_l.c:337
+#1  0x00007ffff73001e1 in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=0x0, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1176
+#2  0x000000000040150f in main._omp_fn.0 () at nn.c:118
+#3  0x00007ffff78bb6ce in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x00007ffff768f184 in start_thread (arg=0x7ffff68b8700) at pthread_create.c:312
+#5  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+332	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x060x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd4ec
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main
+symbol name: argc
+symbol filename: nn.c
+symbol line: 29
+value: 0
+value address: 0x7fffffffd4ec
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-19 15:18:38]
+Fault Injection Successful after 3.67048978805542s
+[INFO -- 2018-10-19 15:18:41]
+event type: exit
+[INFO -- 2018-10-19 15:18:41]
+exit code: 0

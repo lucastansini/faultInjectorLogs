@@ -1,0 +1,47 @@
+[INFO -- 2018-10-10 01:10:42]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-10 01:10:42]
+Initialization strings:
+[INFO -- 2018-10-10 01:10:42]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-10 01:10:42]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-10 01:10:42]
+initSignal:10
+[INFO -- 2018-10-10 01:10:42]
+endSignal:15
+[INFO -- 2018-10-10 01:10:42]
+faultModel:2
+[INFO -- 2018-10-10 01:10:53]
+Backtrace BEGIN:
+#0  _IO_old_init (fp=fp@entry=0x6062c0, flags=flags@entry=0) at genops.c:631
+#1  0x00007ffff704fc0b in _IO_no_init (fp=fp@entry=0x6062c0, flags=flags@entry=0, orientation=orientation@entry=0, wd=wd@entry=0x6063b0, jmp=0x7ffff73953a0 <_IO_wfile_jumps>) at genops.c:644
+#2  0x00007ffff70423ad in __fopen_internal (filename=0x4025a3 "./fft.nn", mode=0x7ffff7bd3cd1 "r", is32=1) at iofopen.c:81
+#3  0x00007ffff7bcf5f5 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#4  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#5  0x0000000000401631 in main ()
+
+626	genops.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x8d0x350x040x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff73989b0 
+address max offset: 4
+Memory content after  bitflip:0x710xe40x4b0xa2
+frame name: _IO_no_init
+symbol name: _IO_list_all_stamp
+symbol filename: genops.c
+symbol line: 42
+value: -1572084623
+value address: 0x7ffff73989b0 <_IO_list_all_stamp>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-10 01:10:53]
+Fault Injection Successful after 11.678303956985474s
+[INFO -- 2018-10-10 01:11:02]
+event type: exit
+[INFO -- 2018-10-10 01:11:02]
+exit code: 0

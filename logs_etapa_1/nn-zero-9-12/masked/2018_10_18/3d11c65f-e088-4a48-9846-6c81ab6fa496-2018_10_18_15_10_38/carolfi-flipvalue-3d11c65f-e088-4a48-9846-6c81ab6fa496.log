@@ -1,0 +1,51 @@
+[INFO -- 2018-10-18 15:10:32]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 15:10:32]
+Initialization strings:
+[INFO -- 2018-10-18 15:10:32]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 15:10:32]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 15:10:32]
+initSignal:3
+[INFO -- 2018-10-18 15:10:32]
+endSignal:4
+[INFO -- 2018-10-18 15:10:32]
+faultModel:3
+[EXCEPTION -- 2018-10-18 15:10:36]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 15:10:36]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 15:10:36]
+pythonException: invalid frame
+[INFO -- 2018-10-18 15:10:36]
+Backtrace BEGIN:
+#0  __mpn_lshift () at ../sysdeps/x86_64/lshift.S:51
+#1  0x00007ffff72ffacd in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1451
+#2  0x000000000040150f in main._omp_fn.0 () at nn.c:118
+#3  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+46	../sysdeps/x86_64/lshift.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd4b4
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main._omp_fn.0
+symbol name: tmp_long
+symbol filename: nn.c
+symbol line: 119
+value: 0
+value address: 0x7fffffffd4b4
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-10-18 15:10:36]
+Fault Injection Successful after 4.119061470031738s
+[INFO -- 2018-10-18 15:10:37]
+event type: exit
+[INFO -- 2018-10-18 15:10:37]
+exit code: 0

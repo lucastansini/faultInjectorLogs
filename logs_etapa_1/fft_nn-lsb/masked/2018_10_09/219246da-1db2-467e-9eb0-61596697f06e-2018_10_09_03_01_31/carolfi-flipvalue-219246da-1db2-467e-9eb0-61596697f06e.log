@@ -1,0 +1,49 @@
+[INFO -- 2018-10-09 03:01:10]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-09 03:01:10]
+Initialization strings:
+[INFO -- 2018-10-09 03:01:10]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-09 03:01:10]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-09 03:01:10]
+initSignal:20
+[INFO -- 2018-10-09 03:01:10]
+endSignal:25
+[INFO -- 2018-10-09 03:01:10]
+faultModel:4
+[INFO -- 2018-10-09 03:01:30]
+Backtrace BEGIN:
+#0  ___printf_fp (fp=fp@entry=0x7fffffffd2a0, info=info@entry=0x7fffffffce10, args=args@entry=0x7fffffffcde0) at printf_fp.c:1171
+#1  0x00007ffff70226d3 in _IO_vfprintf_internal (s=s@entry=0x7fffffffd2a0, format=<optimized out>, format@entry=0x7fffffffd5a0 "%.*g", ap=ap@entry=0x7fffffffd408) at vfprintf.c:1660
+#2  0x00007ffff7046499 in _IO_vsnprintf (string=0x7fffffffd510 "", maxlen=<optimized out>, format=0x7fffffffd5a0 "%.*g", args=0x7fffffffd408) at vsnprintf.c:119
+#3  0x00007ffff793ee10 in ?? () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007ffff7945264 in std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x00007ffff7945550 in std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#6  0x00007ffff7950af5 in std::ostream& std::ostream::_M_insert<double>(double) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#7  0x0000000000401690 in main ()
+
+1166	printf_fp.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffcd14
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x02
+frame name: _IO_vfprintf_internal
+symbol name: use_outdigits
+symbol filename: vfprintf.c
+symbol line: 1388
+value: 33554432
+value address: 0x7fffffffcd14
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-09 03:01:30]
+Fault Injection Successful after 20.789801359176636s
+[INFO -- 2018-10-09 03:01:30]
+event type: exit
+[INFO -- 2018-10-09 03:01:30]
+exit code: 0

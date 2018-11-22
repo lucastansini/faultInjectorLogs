@@ -1,0 +1,52 @@
+[INFO -- 2018-10-06 11:04:08]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-06 11:04:08]
+Initialization strings:
+[INFO -- 2018-10-06 11:04:08]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-06 11:04:08]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-06 11:04:08]
+initSignal:15
+[INFO -- 2018-10-06 11:04:08]
+endSignal:25
+[INFO -- 2018-10-06 11:04:08]
+faultModel:4
+[INFO -- 2018-10-06 11:04:24]
+Backtrace BEGIN:
+#0  0x00007ffff70298b5 in _IO_vfscanf_internal (s=s@entry=0x6062c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffd8c8, errp=errp@entry=0x0) at vfscanf.c:2119
+#1  0x00007ffff7032162 in __isoc99_fscanf (stream=0x6062c0, format=<optimized out>) at isoc99_fscanf.c:34
+#2  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#3  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#4  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#5  0x0000000000401631 in main ()
+
+2114	vfscanf.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 6
+Memory content before bitflip:0x73
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff715cc06  
+address max offset: 1
+Memory content after  bitflip:0xf3
+frame name: _IO_vfscanf_internal
+symbol name: __PRETTY_FUNCTION__
+symbol filename: vfscanf.c
+symbol line: 0
+value: "_IO_vf\363canf_internal"
+value address: 0x7ffff715cc00 <__PRETTY_FUNCTION__.11925>
+Type: The type is an array.
+Type sizeof: 21
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 20)
+
+[INFO -- 2018-10-06 11:04:24]
+Fault Injection Successful after 16.259942770004272s
+[INFO -- 2018-10-06 11:04:28]
+event type: exit
+[INFO -- 2018-10-06 11:04:28]
+exit code: 0

@@ -1,0 +1,66 @@
+[INFO -- 2018-10-11 22:32:23]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-11 22:32:23]
+Initialization strings:
+[INFO -- 2018-10-11 22:32:23]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-11 22:32:23]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-11 22:32:23]
+initSignal:10
+[INFO -- 2018-10-11 22:32:23]
+endSignal:15
+[INFO -- 2018-10-11 22:32:23]
+faultModel:2
+[INFO -- 2018-10-11 22:32:35]
+Backtrace BEGIN:
+#0  0x00007ffff7054817 in _int_malloc (av=av@entry=0x7ffff7396760 <main_arena>, bytes=bytes@entry=40) at malloc.c:3384
+#1  0x00007ffff70575fc in __libc_calloc (n=<optimized out>, elem_size=<optimized out>) at malloc.c:3221
+#2  0x00007ffff7bcd647 in fann_allocate_structure () from /usr/local/lib/libfann.so.2
+#3  0x00007ffff7bce892 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#4  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#6  0x0000000000401631 in main ()
+
+3379	malloc.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping value of field: need_signal
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff7398acc 
+address max offset: 4
+Memory content after  bitflip:0x6b0x1c0x0a0x51
+frame name: _int_malloc
+symbol name: atfork_mem
+symbol filename: arena.c
+symbol line: 142
+value: {next = 0x7ffff7399e88 <fork_handler_pool+8>, prepare_handler = 0x7ffff7051250 <ptmalloc_lock_all>, parent_handler = 0x7ffff7051db0 <ptmalloc_unlock_all>, child_handler = 0x7ffff7051360 <ptmalloc_unlock_all2>, dso_handle = 0x7ffff7393b20 <__dso_handle>, refcntr = 1, need_signal = 1359617131}
+value address: 0x7ffff7398aa0 <atfork_mem>
+Type: The type is a structure.
+Type sizeof: 48
+Field name: next
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: prepare_handler
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: parent_handler
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: child_handler
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: dso_handle
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: refcntr
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: need_signal
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+
+[INFO -- 2018-10-11 22:32:35]
+Fault Injection Successful after 12.372541666030884s

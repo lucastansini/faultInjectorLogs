@@ -1,0 +1,53 @@
+[INFO -- 2018-10-19 12:24:15]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 12:24:15]
+Initialization strings:
+[INFO -- 2018-10-19 12:24:15]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 12:24:15]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 12:24:15]
+initSignal:0
+[INFO -- 2018-10-19 12:24:15]
+endSignal:1
+[INFO -- 2018-10-19 12:24:15]
+faultModel:0
+[EXCEPTION -- 2018-10-19 12:24:15]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-10-19 12:24:15]
+Backtrace BEGIN:
+#0  __GI___nptl_create_event () at events.c:25
+#1  0x00007ffff768fa8d in create_thread (stackaddr=<optimized out>, attr=0x7ffff7ad3600, pd=0x7ffff68b8700) at ../nptl/sysdeps/pthread/createthread.c:220
+#2  __pthread_create_2_1 (newthread=<optimized out>, attr=<optimized out>, start_routine=<optimized out>, arg=<optimized out>) at pthread_create.c:611
+#3  0x00007ffff78bbca2 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x0000000000401184 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+20	events.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 0
+Memory content before bitflip:0x400x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff76998b4 
+address max offset: 4
+Memory content after  bitflip:0x400x000x040x00
+frame name: __pthread_create_2_1
+symbol name: _thread_db_td_eventbuf_t_eventdata
+symbol filename: ../nptl_db/structs.def
+symbol line: 49
+value: {262208, 1, 16}
+value address: 0x7ffff76998b4 <_thread_db_td_eventbuf_t_eventdata>
+Type: The type is an array.
+Type sizeof: 12
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 2)
+
+[INFO -- 2018-10-19 12:24:15]
+Fault Injection Successful after 0.45077967643737793s
+[INFO -- 2018-10-19 12:24:20]
+event type: exit
+[INFO -- 2018-10-19 12:24:20]
+exit code: 0

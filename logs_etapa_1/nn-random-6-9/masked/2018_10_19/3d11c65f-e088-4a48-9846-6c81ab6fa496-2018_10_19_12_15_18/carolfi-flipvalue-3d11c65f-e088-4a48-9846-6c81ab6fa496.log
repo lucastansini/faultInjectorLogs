@@ -1,0 +1,64 @@
+[INFO -- 2018-10-19 12:15:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 12:15:12]
+Initialization strings:
+[INFO -- 2018-10-19 12:15:12]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 12:15:12]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 12:15:12]
+initSignal:2
+[INFO -- 2018-10-19 12:15:12]
+endSignal:3
+[INFO -- 2018-10-19 12:15:12]
+faultModel:2
+[EXCEPTION -- 2018-10-19 12:15:15]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 12:15:15]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 12:15:15]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 12:15:15]
+gdbException: A syntax error in expression, near `...'.
+[INFO -- 2018-10-19 12:15:15]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc00 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bc0e2 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000401184 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+30	    FILE   *flist,*fp;
+31	    int    i=0,j=0, k=0, rec_count=0, done=0;
+32	    char   sandbox[REC_LENGTH * REC_WINDOW], *rec_iter,*rec_iter2, dbname[64];
+33	    struct neighbor *neighbors = NULL;
+34	    float target_lat, target_long, tmp_lat=0, tmp_long=0;
+35	    char * gold_filename;
+36	    long rec_sum = 0;
+37	
+38	    if(argc < 6) {
+39	        fprintf(stderr, "Invalid set of arguments:\n");
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: entry
+Fliping array at pos: 0
+Memory content before bitflip:0x31
+Fault Model: Random bit-flip
+base address to flip value: 0x603270 
+address max offset: 1
+Memory content after  bitflip:0x14
+frame name: main
+symbol name: neighbors
+symbol filename: nn.c
+symbol line: 33
+value: 0x603270
+value address: 0x7fffffffd540
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-19 12:15:15]
+Fault Injection Successful after 3.2823169231414795s
+[INFO -- 2018-10-19 12:15:18]
+event type: exit
+[INFO -- 2018-10-19 12:15:18]
+exit code: 0

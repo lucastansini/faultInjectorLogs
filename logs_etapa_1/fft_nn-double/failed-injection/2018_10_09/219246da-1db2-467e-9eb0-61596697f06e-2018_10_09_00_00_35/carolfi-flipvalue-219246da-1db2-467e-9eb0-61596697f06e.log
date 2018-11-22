@@ -1,0 +1,19 @@
+[INFO -- 2018-10-08 23:59:43]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-08 23:59:43]
+Initialization strings:
+[INFO -- 2018-10-08 23:59:43]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-08 23:59:43]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-08 23:59:43]
+initSignal:5
+[INFO -- 2018-10-08 23:59:43]
+endSignal:10
+[INFO -- 2018-10-08 23:59:43]
+faultModel:1
+[EXCEPTION -- 2018-10-08 23:59:49]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-10-08 23:59:49]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.

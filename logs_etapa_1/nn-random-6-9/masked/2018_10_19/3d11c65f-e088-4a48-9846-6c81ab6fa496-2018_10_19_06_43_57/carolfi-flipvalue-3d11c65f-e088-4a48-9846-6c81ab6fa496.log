@@ -1,0 +1,59 @@
+[INFO -- 2018-10-19 06:43:51]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 06:43:51]
+Initialization strings:
+[INFO -- 2018-10-19 06:43:51]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 06:43:51]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 06:43:51]
+initSignal:2
+[INFO -- 2018-10-19 06:43:51]
+endSignal:3
+[INFO -- 2018-10-19 06:43:51]
+faultModel:2
+[EXCEPTION -- 2018-10-19 06:43:53]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-19 06:43:53]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 06:43:53]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 06:43:53]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 06:43:53]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 06:43:53]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 06:43:53]
+pythonException: invalid frame
+[INFO -- 2018-10-19 06:43:53]
+Backtrace BEGIN:
+#0  0x00007ffff78bddf3 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bb6da in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff768f184 in start_thread (arg=0x7ffff68b8700) at pthread_create.c:312
+#3  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+596	in strtod_l.c
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd524
+address max offset: 4
+Memory content after  bitflip:0x360x640x1d0xba
+frame name: main
+symbol name: tmp_long
+symbol filename: nn.c
+symbol line: 34
+value: -0,00060040073
+value address: 0x7fffffffd524
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-10-19 06:43:53]
+Fault Injection Successful after 2.508125066757202s
+[INFO -- 2018-10-19 06:43:57]
+event type: exit
+[INFO -- 2018-10-19 06:43:57]
+exit code: 0

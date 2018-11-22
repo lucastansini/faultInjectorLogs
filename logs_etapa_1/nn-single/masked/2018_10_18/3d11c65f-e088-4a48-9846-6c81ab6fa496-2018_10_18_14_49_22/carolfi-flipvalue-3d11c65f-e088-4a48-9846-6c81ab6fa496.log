@@ -1,0 +1,60 @@
+[INFO -- 2018-10-18 14:49:17]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 14:49:17]
+Initialization strings:
+[INFO -- 2018-10-18 14:49:17]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 14:49:17]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 14:49:17]
+initSignal:0
+[INFO -- 2018-10-18 14:49:17]
+endSignal:1
+[INFO -- 2018-10-18 14:49:17]
+faultModel:0
+[INFO -- 2018-10-18 14:49:17]
+Backtrace BEGIN:
+#0  0x00007ffff7deb2c7 in _dl_name_match_p (name=name@entry=0x7ffff768b1cd "libc.so.6", map=map@entry=0x7ffff7ffe760) at dl-misc.c:301
+#1  0x00007ffff7deb7a8 in find_needed (map=0x7ffff7fd69d8, name=0x7ffff768b1cd "libc.so.6") at dl-version.c:58
+#2  _dl_check_map_versions (map=map@entry=0x7ffff7fd69d8, verbose=verbose@entry=1, trace_mode=trace_mode@entry=0) at dl-version.c:220
+#3  0x00007ffff7debb94 in _dl_check_all_versions (map=<optimized out>, verbose=verbose@entry=1, trace_mode=0) at dl-version.c:386
+#4  0x00007ffff7ddb908 in version_check_doit (a=a@entry=0x7fffffffd750) at rtld.c:674
+#5  0x00007ffff7dea11e in _dl_receive_error (fct=fct@entry=0x7ffff7ddb3f0 <print_missing_version>, operate=operate@entry=0x7ffff7ddb8f0 <version_check_doit>, args=args@entry=0x7fffffffd750) at dl-error.c:217
+#6  0x00007ffff7dde0d3 in dl_main (phdr=<optimized out>, phdr@entry=0x400040, phnum=<optimized out>, phnum@entry=9, user_entry=user_entry@entry=0x7fffffffd7c8, auxv=<optimized out>) at rtld.c:1838
+#7  0x00007ffff7df15f5 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffd8b0, dl_main=dl_main@entry=0x7ffff7ddc260 <dl_main>) at ../elf/dl-sysdep.c:249
+#8  0x00007ffff7ddbbb8 in _dl_start_final (arg=0x7fffffffd8b0) at rtld.c:347
+#9  _dl_start (arg=0x7fffffffd8b0) at rtld.c:573
+#10 0x00007ffff7ddb268 in _start () from /lib64/ld-linux-x86-64.so.2
+#11 0x0000000000000006 in ?? ()
+#12 0x00007fffffffdc57 in ?? ()
+#13 0x00007fffffffdca4 in ?? ()
+#14 0x00007fffffffdcf7 in ?? ()
+#15 0x00007fffffffdcfa in ?? ()
+#16 0x00007fffffffdcfd in ?? ()
+#17 0x00007fffffffdd00 in ?? ()
+#18 0x0000000000000000 in ?? ()
+
+296	dl-misc.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7ffe108 
+address max offset: 4
+Memory content after  bitflip:0x000x000x020x00
+frame name: _dl_sysdep_start
+symbol name: __libc_multiple_libcs
+symbol filename: ../elf/dl-sysdep.c
+symbol line: 58
+value: 131072
+value address: 0x7ffff7ffe108 <__libc_multiple_libcs>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-18 14:49:17]
+Fault Injection Successful after 0.24347376823425293s
+[INFO -- 2018-10-18 14:49:22]
+event type: exit
+[INFO -- 2018-10-18 14:49:22]
+exit code: 0

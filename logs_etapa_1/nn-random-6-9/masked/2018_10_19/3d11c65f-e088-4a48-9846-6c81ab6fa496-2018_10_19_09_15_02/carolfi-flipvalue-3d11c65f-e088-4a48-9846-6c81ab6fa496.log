@@ -1,0 +1,67 @@
+[INFO -- 2018-10-19 09:14:56]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 09:14:56]
+Initialization strings:
+[INFO -- 2018-10-19 09:14:56]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 09:14:56]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 09:14:56]
+initSignal:2
+[INFO -- 2018-10-19 09:14:56]
+endSignal:3
+[INFO -- 2018-10-19 09:14:56]
+faultModel:2
+[EXCEPTION -- 2018-10-19 09:14:58]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 09:14:58]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-19 09:14:58]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 09:14:58]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 09:14:58]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 09:14:58]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 09:14:58]
+pythonException: invalid frame
+[INFO -- 2018-10-19 09:14:58]
+Backtrace BEGIN:
+#0  0x00007ffff78bddaa in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bcaf9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000401198 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+136	            // compare each record with max value to find the nearest neighbor
+137	            if( z[i] < neighbors[max_idx].dist ) {
+138	                sandbox[(i+1)*REC_LENGTH-1] = '\0';
+139	                strcpy(neighbors[max_idx].entry, sandbox +i*REC_LENGTH);
+140	                neighbors[max_idx].dist = z[i];
+141	            }
+142	        }
+143	    }//End while loop
+144	
+145	    FILE *file;
+
+Backtrace END
+Memory content before bitflip:0x0f0x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd500
+address max offset: 4
+Memory content after  bitflip:0xa60xf70x520xb7
+frame name: main
+symbol name: j
+symbol filename: nn.c
+symbol line: 31
+value: -1219299418
+value address: 0x7fffffffd500
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-19 09:14:58]
+Fault Injection Successful after 2.6038575172424316s
+[INFO -- 2018-10-19 09:15:02]
+event type: exit
+[INFO -- 2018-10-19 09:15:02]
+exit code: 0

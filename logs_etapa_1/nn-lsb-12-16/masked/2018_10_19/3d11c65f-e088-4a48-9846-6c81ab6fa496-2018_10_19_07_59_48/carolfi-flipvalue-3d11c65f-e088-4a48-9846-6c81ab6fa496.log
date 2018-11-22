@@ -1,0 +1,64 @@
+[INFO -- 2018-10-19 07:59:42]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 07:59:42]
+Initialization strings:
+[INFO -- 2018-10-19 07:59:42]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 07:59:42]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 07:59:42]
+initSignal:4
+[INFO -- 2018-10-19 07:59:42]
+endSignal:5
+[INFO -- 2018-10-19 07:59:42]
+faultModel:4
+[EXCEPTION -- 2018-10-19 07:59:46]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 07:59:46]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 07:59:46]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-19 07:59:46]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 07:59:46]
+pythonException: invalid frame
+[INFO -- 2018-10-19 07:59:46]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc2e in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bb6a8 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff768f184 in start_thread (arg=0x7ffff70b9700) at pthread_create.c:312
+#3  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+30	    FILE   *flist,*fp;
+31	    int    i=0,j=0, k=0, rec_count=0, done=0;
+32	    char   sandbox[REC_LENGTH * REC_WINDOW], *rec_iter,*rec_iter2, dbname[64];
+33	    struct neighbor *neighbors = NULL;
+34	    float target_lat, target_long, tmp_lat=0, tmp_long=0;
+35	    char * gold_filename;
+36	    long rec_sum = 0;
+37	
+38	    if(argc < 6) {
+39	        fprintf(stderr, "Invalid set of arguments:\n");
+
+Backtrace END
+Memory content before bitflip:0x060x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd4ec
+address max offset: 4
+Memory content after  bitflip:0x060x000x000x40
+frame name: main
+symbol name: argc
+symbol filename: nn.c
+symbol line: 29
+value: 1073741830
+value address: 0x7fffffffd4ec
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-19 07:59:46]
+Fault Injection Successful after 4.888312101364136s
+[INFO -- 2018-10-19 07:59:48]
+event type: exit
+[INFO -- 2018-10-19 07:59:48]
+exit code: 0

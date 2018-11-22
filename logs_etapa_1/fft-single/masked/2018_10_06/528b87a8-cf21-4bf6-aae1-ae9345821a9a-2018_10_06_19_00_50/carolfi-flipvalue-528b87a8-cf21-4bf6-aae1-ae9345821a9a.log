@@ -1,0 +1,47 @@
+[INFO -- 2018-10-06 19:00:30]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-06 19:00:30]
+Initialization strings:
+[INFO -- 2018-10-06 19:00:30]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-06 19:00:30]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-06 19:00:30]
+initSignal:0
+[INFO -- 2018-10-06 19:00:30]
+endSignal:5
+[INFO -- 2018-10-06 19:00:30]
+faultModel:0
+[INFO -- 2018-10-06 19:00:34]
+Backtrace BEGIN:
+#0  __GI___libc_realloc (oldmem=0x89bfe10, bytes=0) at malloc.c:2954
+#1  0x00007ffff7bced34 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#2  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#3  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#4  0x0000000000401631 in main ()
+
+2949	malloc.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7398b10 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x400x00
+frame name: __GI___libc_realloc
+symbol name: free_list
+symbol filename: arena.c
+symbol line: 80
+value: 0x0
+value address: 0x7ffff7398b10 <free_list>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-06 19:00:34]
+Fault Injection Successful after 4.724585056304932s
+[INFO -- 2018-10-06 19:00:49]
+event type: exit
+[INFO -- 2018-10-06 19:00:49]
+exit code: 0

@@ -1,0 +1,49 @@
+[INFO -- 2018-10-18 22:12:38]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 22:12:38]
+Initialization strings:
+[INFO -- 2018-10-18 22:12:38]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 22:12:38]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 22:12:38]
+initSignal:2
+[INFO -- 2018-10-18 22:12:38]
+endSignal:3
+[INFO -- 2018-10-18 22:12:38]
+faultModel:2
+[EXCEPTION -- 2018-10-18 22:12:40]
+pythonException: invalid frame
+[INFO -- 2018-10-18 22:12:40]
+Backtrace BEGIN:
+#0  0x00007ffff72ff182 in round_away (mode=0, more_bits=true, half_bit=true, last_digit_odd=false, negative=false) at ../include/rounding-mode.h:52
+#1  round_and_return (retval=retval@entry=0x7fffffffd080, exponent=3, negative=negative@entry=0, round_limb=round_limb@entry=7378697629483820646, round_bit=<optimized out>, more_bits=1) at strtod_l.c:296
+#2  0x00007ffff72ffc7d in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1613
+#3  0x000000000040150f in main._omp_fn.0 () at nn.c:118
+#4  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+47	../include/rounding-mode.h: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x800x380x600x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd568
+address max offset: 8
+Memory content after  bitflip:0xf80xa40x350xc00x3f0x0a0xea0x94
+frame name: main._omp_fn.0
+symbol name: z
+symbol filename: nn.c
+symbol line: 80
+value: 0x603880
+value address: 0x7fffffffd568
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 22:12:40]
+Fault Injection Successful after 2.2229855060577393s
+[INFO -- 2018-10-18 22:12:40]
+event type: exit
+[EXCEPTION -- 2018-10-18 22:12:40]
+exit code: no exit code available

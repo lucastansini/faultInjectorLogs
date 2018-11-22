@@ -1,0 +1,51 @@
+[INFO -- 2018-10-18 16:22:49]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 16:22:49]
+Initialization strings:
+[INFO -- 2018-10-18 16:22:49]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 16:22:49]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 16:22:49]
+initSignal:3
+[INFO -- 2018-10-18 16:22:49]
+endSignal:4
+[INFO -- 2018-10-18 16:22:49]
+faultModel:3
+[EXCEPTION -- 2018-10-18 16:22:52]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 16:22:52]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 16:22:52]
+pythonException: invalid frame
+[INFO -- 2018-10-18 16:22:52]
+Backtrace BEGIN:
+#0  0x00007ffff72fedbf in str_to_mpn (str=0x7fffffffd617 "  110  211\n1956  1 14  0  8 GORDON     25.2  67.1  137  462\n1971 12 11 18 28 CHRIS      61.2 150.5   17  796\n1987 10  2  0 12 LESLIE     15.2 101.6  156  506\n1977  5 12  0 12 BERYL      34.0  64.1   9"..., str@entry=0x7fffffffd615 ".8  110  211\n1956  1 14  0  8 GORDON     25.2  67.1  137  462\n1971 12 11 18 28 CHRIS      61.2 150.5   17  796\n1987 10  2  0 12 LESLIE     15.2 101.6  156  506\n1977  5 12  0 12 BERYL      34.0  64.1  "..., digcnt=<optimized out>, digcnt@entry=1, n=n@entry=0x7fffffffd090, nsize=nsize@entry=0x7fffffffd060, exponent=exponent@entry=0x7fffffffd070, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=<optimized out>) at strtod_l.c:430
+#1  0x00007ffff72ffa8a in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1427
+#2  0x000000000040152c in main._omp_fn.0 () at nn.c:119
+#3  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+425	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x330x330x3b0x42
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd4b0
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main._omp_fn.0
+symbol name: tmp_lat
+symbol filename: nn.c
+symbol line: 118
+value: 0
+value address: 0x7fffffffd4b0
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-10-18 16:22:52]
+Fault Injection Successful after 3.5862059593200684s
+[INFO -- 2018-10-18 16:22:54]
+event type: exit
+[INFO -- 2018-10-18 16:22:54]
+exit code: 0

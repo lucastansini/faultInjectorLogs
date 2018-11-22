@@ -1,0 +1,98 @@
+[INFO -- 2018-10-05 23:42:50]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-05 23:42:50]
+Initialization strings:
+[INFO -- 2018-10-05 23:42:50]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-05 23:42:50]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-05 23:42:50]
+initSignal:0
+[INFO -- 2018-10-05 23:42:50]
+endSignal:5
+[INFO -- 2018-10-05 23:42:50]
+faultModel:0
+[EXCEPTION -- 2018-10-05 23:42:54]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-10-05 23:42:54]
+Backtrace BEGIN:
+#0  0x00007ffff70c2d44 in __GI___fxstat (vers=<optimized out>, fd=5, buf=0x7fffffffd870) at ../sysdeps/unix/sysv/linux/wordsize-64/fxstat.c:35
+#1  0x00007ffff70417d5 in __GI__IO_file_doallocate (fp=0x6062c0) at filedoalloc.c:111
+#2  0x00007ffff704f4b5 in __GI__IO_doallocbuf (fp=fp@entry=0x6062c0) at genops.c:418
+#3  0x00007ffff704d3ec in __GI__IO_file_xsgetn (fp=0x6062c0, data=0x647d470, n=13) at fileops.c:1379
+#4  0x00007ffff704286f in __GI__IO_fread (buf=<optimized out>, size=1, count=13, fp=0x6062c0) at iofread.c:42
+#5  0x00007ffff7bce817 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#6  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#7  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#8  0x0000000000401631 in main ()
+
+30	../sysdeps/unix/sysv/linux/wordsize-64/fxstat.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping value of field: st_mode
+Memory content before bitflip:0xa40x810x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd888
+address max offset: 4
+Memory content after  bitflip:0xa40x810x000x08
+frame name: __GI__IO_file_doallocate
+symbol name: st
+symbol filename: filedoalloc.c
+symbol line: 99
+value: {st_dev = 2050, st_ino = 29500254, st_nlink = 1, st_mode = 134250916, st_uid = 1000, st_gid = 1000, __pad0 = 0, st_rdev = 0, st_size = 5506, st_blksize = 4096, st_blocks = 16, st_atim = {tv_sec = 1538761544, tv_nsec = 846324514}, st_mtim = {tv_sec = 1537838998, tv_nsec = 0}, st_ctim = {tv_sec = 1538578956, tv_nsec = 736770752}, __glibc_reserved = {0, 0, 0}}
+value address: 0x7fffffffd870
+Type: The type is a structure.
+Type sizeof: 144
+Field name: st_dev
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: st_ino
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: st_nlink
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: st_mode
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: st_uid
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: st_gid
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: __pad0
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: st_rdev
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: st_size
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: st_blksize
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: st_blocks
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: st_atim
+Field Type: The type is a structure.
+Field Type sizeof: 16
+Field name: st_mtim
+Field Type: The type is a structure.
+Field Type sizeof: 16
+Field name: st_ctim
+Field Type: The type is a structure.
+Field Type sizeof: 16
+Field name: __glibc_reserved
+Field Type: The type is an array.
+Field Type sizeof: 24
+
+[INFO -- 2018-10-05 23:42:54]
+Fault Injection Successful after 4.2684166431427s
+[INFO -- 2018-10-05 23:43:10]
+event type: exit
+[INFO -- 2018-10-05 23:43:10]
+exit code: 0

@@ -1,0 +1,52 @@
+[INFO -- 2018-10-07 23:37:02]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-07 23:37:02]
+Initialization strings:
+[INFO -- 2018-10-07 23:37:02]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-07 23:37:02]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-07 23:37:02]
+initSignal:10
+[INFO -- 2018-10-07 23:37:02]
+endSignal:15
+[INFO -- 2018-10-07 23:37:02]
+faultModel:3
+[INFO -- 2018-10-07 23:37:13]
+Backtrace BEGIN:
+#0  str_to_mpn (str=0x7fffffffd4d6 "e-01", str@entry=0x7fffffffd4c0 "2.13889956474304199219e-01", digcnt=<optimized out>, digcnt@entry=21, n=n@entry=0x7fffffffd3e0, nsize=nsize@entry=0x7fffffffd3b0, exponent=exponent@entry=0x7fffffffd3c0, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=<optimized out>) at strtod_l.c:412
+#1  0x00007ffff7012c2b in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1427
+#2  0x00007ffff7011d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#3  0x00007ffff702b948 in _IO_vfscanf_internal (s=s@entry=0x6062c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffd8c8, errp=errp@entry=0x0) at vfscanf.c:2365
+#4  0x00007ffff7032162 in __isoc99_fscanf (stream=0x6062c0, format=<optimized out>) at isoc99_fscanf.c:34
+#5  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#6  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#7  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#8  0x0000000000401631 in main ()
+
+407	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 0
+Fliping value of field: fp_offset
+Memory content before bitflip:0x300x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd8cc
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: __isoc99_fscanf
+symbol name: arg
+symbol filename: isoc99_fscanf.c
+symbol line: 27
+value: {{gp_offset = 16, fp_offset = 0, overflow_arg_area = 0x7fffffffd9a0, reg_save_area = 0x7fffffffd8e0}}
+value address: 0x7fffffffd8c8
+Type: The type is an array.
+Type sizeof: 24
+
+[INFO -- 2018-10-07 23:37:13]
+Fault Injection Successful after 11.556602716445923s
+[INFO -- 2018-10-07 23:37:22]
+event type: exit
+[INFO -- 2018-10-07 23:37:22]
+exit code: 0

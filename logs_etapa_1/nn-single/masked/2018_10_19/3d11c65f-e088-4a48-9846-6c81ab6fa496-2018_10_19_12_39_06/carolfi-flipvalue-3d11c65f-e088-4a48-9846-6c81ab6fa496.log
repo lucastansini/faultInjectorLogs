@@ -1,0 +1,54 @@
+[INFO -- 2018-10-19 12:39:01]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 12:39:01]
+Initialization strings:
+[INFO -- 2018-10-19 12:39:01]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 12:39:01]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 12:39:01]
+initSignal:0
+[INFO -- 2018-10-19 12:39:01]
+endSignal:1
+[INFO -- 2018-10-19 12:39:01]
+faultModel:0
+[EXCEPTION -- 2018-10-19 12:39:01]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 12:39:01]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-19 12:39:01]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 12:39:01]
+pythonException: invalid frame
+[INFO -- 2018-10-19 12:39:01]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc00 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bb69b in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff768f184 in start_thread (arg=0x7ffff70b9700) at pthread_create.c:312
+#3  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+218	in ../nptl/sysdeps/pthread/createthread.c
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x603880
+address max offset: 4
+Memory content after  bitflip:0x000x400x000x00
+frame name: main
+symbol name: z
+symbol filename: nn.c
+symbol line: 80
+value: 0x603880
+value address: 0x7fffffffd538
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-19 12:39:01]
+Fault Injection Successful after 0.5447077751159668s
+[INFO -- 2018-10-19 12:39:06]
+event type: exit
+[INFO -- 2018-10-19 12:39:06]
+exit code: 0

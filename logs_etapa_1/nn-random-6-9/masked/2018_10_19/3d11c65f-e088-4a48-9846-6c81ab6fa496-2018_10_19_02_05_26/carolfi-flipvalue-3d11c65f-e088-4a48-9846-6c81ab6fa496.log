@@ -1,0 +1,50 @@
+[INFO -- 2018-10-19 02:05:20]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 02:05:20]
+Initialization strings:
+[INFO -- 2018-10-19 02:05:20]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 02:05:20]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 02:05:20]
+initSignal:2
+[INFO -- 2018-10-19 02:05:20]
+endSignal:3
+[INFO -- 2018-10-19 02:05:20]
+faultModel:2
+[EXCEPTION -- 2018-10-19 02:05:22]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 02:05:22]
+pythonException: invalid frame
+[INFO -- 2018-10-19 02:05:22]
+Backtrace BEGIN:
+#0  0x00007ffff72feef6 in get_rounding_mode () at ../sysdeps/generic/get-rounding-mode.h:94
+#1  round_and_return (retval=retval@entry=0x7fffffffd080, exponent=8, negative=negative@entry=0, round_limb=round_limb@entry=1844674407370955161, round_bit=19, more_bits=1) at strtod_l.c:202
+#2  0x00007ffff72ffc7d in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1613
+#3  0x000000000040152c in main._omp_fn.0 () at nn.c:119
+#4  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+89	../sysdeps/generic/get-rounding-mode.h: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x7f0x03
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffcfa0
+address max offset: 2
+Memory content after  bitflip:0x7e0x27
+frame name: get_rounding_mode
+symbol name: fc
+symbol filename: ../sysdeps/generic/get-rounding-mode.h
+symbol line: 77
+value: 10110
+value address: 0x7fffffffcfa0
+Type: The type is an integer type.
+Type sizeof: 2
+
+[INFO -- 2018-10-19 02:05:22]
+Fault Injection Successful after 2.4337852001190186s
+[INFO -- 2018-10-19 02:05:25]
+event type: exit
+[INFO -- 2018-10-19 02:05:25]
+exit code: 0

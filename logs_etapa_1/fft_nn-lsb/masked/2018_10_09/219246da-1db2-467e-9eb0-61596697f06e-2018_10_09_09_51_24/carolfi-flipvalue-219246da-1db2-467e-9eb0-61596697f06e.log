@@ -1,0 +1,50 @@
+[INFO -- 2018-10-09 09:51:03]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-09 09:51:03]
+Initialization strings:
+[INFO -- 2018-10-09 09:51:03]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-09 09:51:03]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-09 09:51:03]
+initSignal:20
+[INFO -- 2018-10-09 09:51:03]
+endSignal:25
+[INFO -- 2018-10-09 09:51:03]
+faultModel:4
+[INFO -- 2018-10-09 09:51:23]
+Backtrace BEGIN:
+#0  _IO_vfprintf_internal (s=s@entry=0x7fffffffd2a0, format=<optimized out>, format@entry=0x7fffffffd5a0 "%.*g", ap=ap@entry=0x7fffffffd408) at vfprintf.c:2095
+#1  0x00007ffff7046499 in _IO_vsnprintf (string=0x7fffffffd510 "-29191", maxlen=<optimized out>, format=0x7fffffffd5a0 "%.*g", args=0x7fffffffd408) at vsnprintf.c:119
+#2  0x00007ffff793ee10 in ?? () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x00007ffff7945264 in std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007ffff7945550 in std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x00007ffff7950af5 in std::ostream& std::ostream::_M_insert<double>(double) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#6  0x00000000004016b3 in main ()
+
+2090	vfprintf.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 0
+Fliping value of field: gp_offset
+Memory content before bitflip:0x200x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffce30
+address max offset: 4
+Memory content after  bitflip:0x200x000x000x01
+frame name: _IO_vfprintf_internal
+symbol name: ap_save
+symbol filename: vfprintf.c
+symbol line: 264
+value: {{gp_offset = 16777248, fp_offset = 48, overflow_arg_area = 0x7fffffffd500, reg_save_area = 0x7fffffffd420}}
+value address: 0x7fffffffce30
+Type: The type is an array.
+Type sizeof: 24
+
+[INFO -- 2018-10-09 09:51:23]
+Fault Injection Successful after 20.36755609512329s
+[INFO -- 2018-10-09 09:51:23]
+event type: exit
+[INFO -- 2018-10-09 09:51:23]
+exit code: 0

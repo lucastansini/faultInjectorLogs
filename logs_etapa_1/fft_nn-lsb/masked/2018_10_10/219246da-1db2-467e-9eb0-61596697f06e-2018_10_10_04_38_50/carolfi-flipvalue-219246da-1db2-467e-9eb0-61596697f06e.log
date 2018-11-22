@@ -1,0 +1,116 @@
+[INFO -- 2018-10-10 04:38:30]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-10 04:38:30]
+Initialization strings:
+[INFO -- 2018-10-10 04:38:30]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-10 04:38:30]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-10 04:38:30]
+initSignal:20
+[INFO -- 2018-10-10 04:38:30]
+endSignal:25
+[INFO -- 2018-10-10 04:38:30]
+faultModel:4
+[INFO -- 2018-10-10 04:38:50]
+Backtrace BEGIN:
+#0  0x00007ffff700c93f in __mpn_divrem (qp=0x7fffffffcae0, qextra_limbs=qextra_limbs@entry=0, np=0x7fffffffcb20, nsize=<optimized out>, dp=0x7fffffffcaa0, dsize=1) at divrem.c:83
+#1  0x00007ffff70230e5 in hack_digit () at printf_fp.c:247
+#2  0x00007ffff7023f68 in ___printf_fp (fp=fp@entry=0x7fffffffd2a0, info=info@entry=0x7fffffffce10, args=args@entry=0x7fffffffcde0) at printf_fp.c:939
+#3  0x00007ffff70226d3 in _IO_vfprintf_internal (s=s@entry=0x7fffffffd2a0, format=<optimized out>, format@entry=0x7fffffffd5a0 "%.*g", ap=ap@entry=0x7fffffffd408) at vfprintf.c:1660
+#4  0x00007ffff7046499 in _IO_vsnprintf (string=0x7fffffffd510 "", maxlen=<optimized out>, format=0x7fffffffd5a0 "%.*g", args=0x7fffffffd408) at vsnprintf.c:119
+#5  0x00007ffff793ee10 in ?? () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#6  0x00007ffff7945264 in std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#7  0x00007ffff7945550 in std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, double) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#8  0x00007ffff7950af5 in std::ostream& std::ostream::_M_insert<double>(double) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#9  0x0000000000401690 in main ()
+
+78	divrem.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping value of field: __overflow
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x41
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff70463c0 
+address max offset: 1
+Memory content after  bitflip:0x51
+frame name: _IO_vsnprintf
+symbol name: _IO_strn_jumps
+symbol filename: vsnprintf.c
+symbol line: 69
+value: {__dummy = 0, __dummy2 = 0, __finish = 0x7ffff7050f80 <_IO_str_finish>, __overflow = 0x7ffff70463c0 <_IO_strn_overflow>, __underflow = 0x7ffff7050bc0 <__GI__IO_str_underflow>, __uflow = 0x7ffff704f530 <__GI__IO_default_uflow>, __pbackfail = 0x7ffff7050f60 <__GI__IO_str_pbackfail>, __xsputn = 0x7ffff704f560 <__GI__IO_default_xsputn>, __xsgetn = 0x7ffff704f6a0 <__GI__IO_default_xsgetn>, __seekoff = 0x7ffff70510b0 <__GI__IO_str_seekoff>, __seekpos = 0x7ffff704faa0 <_IO_default_seekpos>, __setbuf = 0x7ffff704f980 <_IO_default_setbuf>, __sync = 0x7ffff704fcc0 <_IO_default_sync>, __doallocate = 0x7ffff704fac0 <__GI__IO_default_doallocate>, __read = 0x7ffff7050820 <_IO_default_read>, __write = 0x7ffff7050830 <_IO_default_write>, __seek = 0x7ffff7050800 <_IO_default_seek>, __close = 0x7ffff704fcc0 <_IO_default_sync>, __stat = 0x7ffff7050810 <_IO_default_stat>, __showmanyc = 0x7ffff7050840 <_IO_default_showmanyc>, __imbue = 0x7ffff7050850 <_IO_default_imbue>}
+value address: 0x7ffff7394fe0 <_IO_strn_jumps>
+Type: The type is a structure.
+Type sizeof: 168
+Field name: __dummy
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: __dummy2
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: __finish
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __overflow
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __underflow
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __uflow
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __pbackfail
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __xsputn
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __xsgetn
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __seekoff
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __seekpos
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __setbuf
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __sync
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __doallocate
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __read
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __write
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __seek
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __close
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __stat
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __showmanyc
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __imbue
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-10-10 04:38:50]
+Fault Injection Successful after 20.188396215438843s
+[INFO -- 2018-10-10 04:38:50]
+event type: exit
+[INFO -- 2018-10-10 04:38:50]
+exit code: 0

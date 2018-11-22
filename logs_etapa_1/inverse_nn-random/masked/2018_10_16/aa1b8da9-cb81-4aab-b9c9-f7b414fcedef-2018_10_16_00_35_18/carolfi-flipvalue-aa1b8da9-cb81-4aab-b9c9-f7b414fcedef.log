@@ -1,0 +1,54 @@
+[INFO -- 2018-10-16 00:35:07]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 00:35:07]
+Initialization strings:
+[INFO -- 2018-10-16 00:35:07]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 00:35:07]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 00:35:07]
+initSignal:4
+[INFO -- 2018-10-16 00:35:07]
+endSignal:6
+[INFO -- 2018-10-16 00:35:07]
+faultModel:2
+[INFO -- 2018-10-16 00:35:11]
+Backtrace BEGIN:
+#0  __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1413
+#1  0x00007ffff7011d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#2  0x00007ffff702b948 in _IO_vfscanf_internal (s=s@entry=0x608610, format=<optimized out>, argptr=argptr@entry=0x7fffffffd0d8, errp=errp@entry=0x0) at vfscanf.c:2365
+#3  0x00007ffff7032162 in __isoc99_fscanf (stream=0x608610, format=<optimized out>) at isoc99_fscanf.c:34
+#4  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#5  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#6  0x000000000040199e in inversek2j(float, float, float*, float*) ()
+#7  0x0000000000401631 in main ()
+
+1408	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 18
+Memory content before bitflip:0x6e
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff715cb92  
+address max offset: 1
+Memory content after  bitflip:0xb3
+frame name: __GI_____strtof_l_internal
+symbol name: __PRETTY_FUNCTION__
+symbol filename: strtof_l.c
+symbol line: 0
+value: "____strtof_l_inter\263al"
+value address: 0x7ffff715cb80 <__PRETTY_FUNCTION__.11547>
+Type: The type is an array.
+Type sizeof: 22
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 21)
+
+[INFO -- 2018-10-16 00:35:11]
+Fault Injection Successful after 4.117408037185669s
+[INFO -- 2018-10-16 00:35:17]
+event type: exit
+[INFO -- 2018-10-16 00:35:17]
+exit code: 0

@@ -1,0 +1,54 @@
+[INFO -- 2018-10-15 19:13:08]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-15 19:13:08]
+Initialization strings:
+[INFO -- 2018-10-15 19:13:08]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-15 19:13:08]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-15 19:13:08]
+initSignal:4
+[INFO -- 2018-10-15 19:13:08]
+endSignal:6
+[INFO -- 2018-10-15 19:13:08]
+faultModel:2
+[EXCEPTION -- 2018-10-15 19:13:13]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-10-15 19:13:13]
+Backtrace BEGIN:
+#0  __lll_lock_wait_private () at ../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S:95
+#1  0x00007ffff70590da in _L_lock_13302 () at malloc.c:5208
+#2  0x00007ffff7056ad5 in __GI___libc_malloc (bytes=4) at malloc.c:2889
+#3  <function called from gdb>
+#4  __lll_lock_wait_private () at ../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S:95
+#5  0x00007ffff70590da in _L_lock_13302 () at malloc.c:5208
+#6  0x00007ffff7056ad5 in __GI___libc_malloc (bytes=4) at malloc.c:2889
+#7  <function called from gdb>
+#8  _int_malloc (av=av@entry=0x7ffff7396760 <main_arena>, bytes=bytes@entry=1416) at malloc.c:3777
+#9  0x00007ffff70575fc in __libc_calloc (n=<optimized out>, elem_size=<optimized out>) at malloc.c:3221
+#10 0x00007ffff7bca43b in fann_allocate_connections () from /usr/local/lib/libfann.so.2
+#11 0x00007ffff7bcf11f in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#12 0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#13 0x000000000040199e in inversek2j(float, float, float*, float*) ()
+#14 0x0000000000401631 in main ()
+
+90	../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x010x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff7396180 
+address max offset: 8
+Memory content after  bitflip:0x520x130x920x7c0x0f0x490x800x9d
+frame name: __GI___libc_malloc
+symbol name: narenas
+symbol filename: arena.c
+symbol line: 79
+value: 11349151391836934994
+value address: 0x7ffff7396180 <narenas>
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-10-15 19:13:13]
+Fault Injection Successful after 5.230817794799805s

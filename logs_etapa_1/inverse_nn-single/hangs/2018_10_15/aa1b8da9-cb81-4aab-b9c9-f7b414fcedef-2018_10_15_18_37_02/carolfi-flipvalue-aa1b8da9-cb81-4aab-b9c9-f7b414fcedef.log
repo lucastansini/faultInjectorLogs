@@ -1,0 +1,47 @@
+[INFO -- 2018-10-15 18:36:40]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-15 18:36:40]
+Initialization strings:
+[INFO -- 2018-10-15 18:36:40]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-15 18:36:40]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-15 18:36:40]
+initSignal:0
+[INFO -- 2018-10-15 18:36:40]
+endSignal:2
+[INFO -- 2018-10-15 18:36:40]
+faultModel:0
+[INFO -- 2018-10-15 18:36:40]
+Backtrace BEGIN:
+#0  _int_malloc (av=0x7ffff7396760 <main_arena>, bytes=57) at malloc.c:3346
+#1  0x00007ffff7056ae0 in __GI___libc_malloc (bytes=57) at malloc.c:2893
+#2  0x00007ffff7919dad in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x00007ffff7975249 in std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007ffff7975e0b in std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x00007ffff7975ea4 in std::string::reserve(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#6  0x00007ffff794a67b in std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > >::do_get(std::istreambuf_iterator<char, std::char_traits<char> >, std::istreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, std::_Ios_Iostate&, float&) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#7  0x00007ffff793b0d5 in std::istream& std::istream::_M_extract<float>(float&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#8  0x0000000000401482 in main ()
+
+3341	malloc.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7398ae0 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x800x000x00
+frame name: __GI___libc_malloc
+symbol name: save_free_hook
+symbol filename: arena.c
+symbol line: 138
+value: 0x0
+value address: 0x7ffff7398ae0 <save_free_hook>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-15 18:36:40]
+Fault Injection Successful after 0.3899359703063965s

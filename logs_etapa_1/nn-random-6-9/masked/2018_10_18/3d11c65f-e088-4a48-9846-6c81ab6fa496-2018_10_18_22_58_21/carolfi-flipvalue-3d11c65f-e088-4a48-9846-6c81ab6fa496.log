@@ -1,0 +1,53 @@
+[INFO -- 2018-10-18 22:58:15]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 22:58:15]
+Initialization strings:
+[INFO -- 2018-10-18 22:58:15]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 22:58:15]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 22:58:15]
+initSignal:2
+[INFO -- 2018-10-18 22:58:15]
+endSignal:3
+[INFO -- 2018-10-18 22:58:15]
+faultModel:2
+[EXCEPTION -- 2018-10-18 22:58:18]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 22:58:18]
+pythonException: invalid frame
+[INFO -- 2018-10-18 22:58:18]
+Backtrace BEGIN:
+#0  __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1516
+#1  0x000000000040150f in main._omp_fn.0 () at nn.c:118
+#2  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+1511	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 381
+Memory content before bitflip:0x20
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd73d 
+address max offset: 1
+Memory content after  bitflip:0x6d
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 32
+value: "1974  3  6  6 26 SANDY      48.9  65.9   15  494\n1987  3 27  0 21 DEBBY      23.9  64.0  143  638\n2000  2 26  6  8 NADINE     67.4 111.6   64  798\n1951  7 27  6 19 RAFAEL     20.8  40.3   40  442\n1950"...
+value address: 0x7fffffffd5c0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-10-18 22:58:18]
+Fault Injection Successful after 3.0492331981658936s
+[INFO -- 2018-10-18 22:58:21]
+event type: exit
+[INFO -- 2018-10-18 22:58:21]
+exit code: 0

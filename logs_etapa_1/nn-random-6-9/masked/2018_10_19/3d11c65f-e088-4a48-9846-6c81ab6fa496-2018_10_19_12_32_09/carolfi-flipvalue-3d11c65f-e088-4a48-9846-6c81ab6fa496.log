@@ -1,0 +1,56 @@
+[INFO -- 2018-10-19 12:32:03]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 12:32:03]
+Initialization strings:
+[INFO -- 2018-10-19 12:32:03]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 12:32:03]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 12:32:03]
+initSignal:2
+[INFO -- 2018-10-19 12:32:03]
+endSignal:3
+[INFO -- 2018-10-19 12:32:03]
+faultModel:2
+[EXCEPTION -- 2018-10-19 12:32:05]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 12:32:05]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 12:32:05]
+pythonException: invalid frame
+[INFO -- 2018-10-19 12:32:05]
+Backtrace BEGIN:
+#0  0x00007ffff72febf2 in str_to_mpn (str=str@entry=0x7fffffffd646 ".9  133  583\n1964 11 16  0  3 VALERIE    37.1 293.8   51  623\n1994  9 19 12 24 VALERIE     9.3 256.0  128  573\n1993 12  5  6 24 DEBBY      38.6 285.6   59  537\n1994  1 12 12 21 GORDON     58.7 216.3  "..., digcnt=digcnt@entry=1, n=n@entry=0x7fffffffd090, nsize=nsize@entry=0x7fffffffd060, exponent=exponent@entry=0x7fffffffd070, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=<optimized out>) at strtod_l.c:337
+#1  0x00007ffff72ffa8a in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1427
+#2  0x000000000040152c in main._omp_fn.0 () at nn.c:119
+#3  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+332	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 310
+Memory content before bitflip:0x20
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd6f6 
+address max offset: 1
+Memory content after  bitflip:0xe3
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 32
+value: "1981  8 27  0  6 ALBERTO    19.7 270.9   12  466\n1951  1 22 12  1 ISAAC      34.8 305.5   45  151\n1952  1 11  0 27 MICHAEL    40.7  82.9  133  583\n1964 11 16  0  3 VALERIE    37.1 293.8   51  623\n1994"...
+value address: 0x7fffffffd5c0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-10-19 12:32:05]
+Fault Injection Successful after 2.581444501876831s
+[INFO -- 2018-10-19 12:32:09]
+event type: exit
+[INFO -- 2018-10-19 12:32:09]
+exit code: 0

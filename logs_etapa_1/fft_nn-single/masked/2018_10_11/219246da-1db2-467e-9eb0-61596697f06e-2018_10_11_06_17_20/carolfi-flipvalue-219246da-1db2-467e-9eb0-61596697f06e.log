@@ -1,0 +1,62 @@
+[INFO -- 2018-10-11 06:16:59]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-11 06:16:59]
+Initialization strings:
+[INFO -- 2018-10-11 06:16:59]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-11 06:16:59]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-11 06:16:59]
+initSignal:0
+[INFO -- 2018-10-11 06:16:59]
+endSignal:5
+[INFO -- 2018-10-11 06:16:59]
+faultModel:0
+[INFO -- 2018-10-11 06:16:59]
+Backtrace BEGIN:
+#0  0x00007ffff7de4867 in do_lookup_x (new_hash=new_hash@entry=2493285067, old_hash=old_hash@entry=0x7fffffffd590, result=result@entry=0x7fffffffd5a0, scope=<optimized out>, i=<optimized out>, i@entry=0, flags=flags@entry=1, skip=skip@entry=0x0, undef_map=undef_map@entry=0x7ffff7fd69e0) at dl-lookup.c:246
+#1  0x00007ffff7de4a31 in _dl_lookup_symbol_x (undef_name=0x7ffff75b8fb6 "signgam", undef_map=undef_map@entry=0x7ffff7fd69e0, ref=0x7fffffffd6f0, symbol_scope=0x7ffff7fd6d38, version=0x7ffff7fd3450, type_class=0, flags=flags@entry=1, skip_map=skip_map@entry=0x0) at dl-lookup.c:737
+#2  0x00007ffff7de665d in elf_machine_rela (reloc=0x7ffff75ba0a0, reloc=0x7ffff75ba0a0, skip_ifunc=<optimized out>, reloc_addr_arg=0x7ffff78b9fd0, version=<optimized out>, sym=0x7ffff75b8070, map=0x7ffff7fd69e0) at ../sysdeps/x86_64/dl-machine.h:276
+#3  elf_dynamic_do_Rela (skip_ifunc=<optimized out>, lazy=<optimized out>, nrelative=<optimized out>, relsize=<optimized out>, reladdr=<optimized out>, map=0x7ffff7fd69e0) at do-rel.h:137
+#4  _dl_relocate_object (scope=<optimized out>, reloc_mode=<optimized out>, consider_profiling=<optimized out>, consider_profiling@entry=0) at dl-reloc.c:264
+#5  0x00007ffff7dde3a2 in dl_main (phdr=<optimized out>, phdr@entry=0x400040, phnum=<optimized out>, phnum@entry=9, user_entry=user_entry@entry=0x7fffffffd8a8, auxv=<optimized out>) at rtld.c:2237
+#6  0x00007ffff7df15f5 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffd990, dl_main=dl_main@entry=0x7ffff7ddc260 <dl_main>) at ../elf/dl-sysdep.c:249
+#7  0x00007ffff7ddbbb8 in _dl_start_final (arg=0x7fffffffd990) at rtld.c:347
+#8  _dl_start (arg=0x7fffffffd990) at rtld.c:573
+#9  0x00007ffff7ddb268 in _start () from /lib64/ld-linux-x86-64.so.2
+#10 0x0000000000000003 in ?? ()
+#11 0x00007fffffffdd2d in ?? ()
+#12 0x00007fffffffdd44 in ?? ()
+#13 0x00007fffffffdd4a in ?? ()
+#14 0x0000000000000000 in ?? ()
+
+241	dl-lookup.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 0
+Fliping value of field: start
+Memory content before bitflip:0x100xa00x5b0xf70xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd700
+address max offset: 8
+Memory content after  bitflip:0x100xa00x5b0xf70xff0x7f0x000x20
+frame name: elf_machine_rela
+symbol name: ranges
+symbol filename: dl-reloc.c
+symbol line: 264
+value: {{start = 2305983746557059088, size = 288, nrelative = 3, lazy = 0}, {start = 140737343365424, size = 720, nrelative = 0, lazy = 1}}
+value address: 0x7fffffffd700
+Type: The type is an array.
+Type sizeof: 64
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 1)
+
+[INFO -- 2018-10-11 06:16:59]
+Fault Injection Successful after 0.5656592845916748s
+[INFO -- 2018-10-11 06:17:19]
+event type: exit
+[INFO -- 2018-10-11 06:17:19]
+exit code: 0

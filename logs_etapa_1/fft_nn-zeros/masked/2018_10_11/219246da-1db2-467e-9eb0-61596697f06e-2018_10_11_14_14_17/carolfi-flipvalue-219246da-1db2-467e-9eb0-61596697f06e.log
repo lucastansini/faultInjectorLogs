@@ -1,0 +1,53 @@
+[INFO -- 2018-10-11 14:13:56]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-11 14:13:56]
+Initialization strings:
+[INFO -- 2018-10-11 14:13:56]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-11 14:13:56]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-11 14:13:56]
+initSignal:15
+[INFO -- 2018-10-11 14:13:56]
+endSignal:20
+[INFO -- 2018-10-11 14:13:56]
+faultModel:3
+[INFO -- 2018-10-11 14:14:12]
+Backtrace BEGIN:
+#0  0x00007ffff70c3170 in __open_nocancel () at ../sysdeps/unix/syscall-template.S:81
+#1  0x00007ffff704ded8 in _IO_file_open (is32not64=8, read_write=8, prot=438, posix_mode=<optimized out>, filename=0x7fffffffd560 "\243%@", fp=0x6062c0) at fileops.c:228
+#2  _IO_new_file_fopen (fp=fp@entry=0x6062c0, filename=filename@entry=0x4025a3 "./fft.nn", mode=<optimized out>, mode@entry=0x7ffff7bd3cd1 "r", is32not64=is32not64@entry=1) at fileops.c:333
+#3  0x00007ffff70423d4 in __fopen_internal (filename=0x4025a3 "./fft.nn", mode=0x7ffff7bd3cd1 "r", is32=1) at iofopen.c:90
+#4  0x00007ffff7bcf5f5 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#6  0x0000000000401631 in main ()
+
+76	../sysdeps/unix/syscall-template.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 6
+Memory content before bitflip:0x77
+Fault Model: Zero bit-flip
+base address to flip value: 0x7ffff715cc96  
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: _IO_new_file_fopen
+symbol name: __PRETTY_FUNCTION__
+symbol filename: fileops.c
+symbol line: 0
+value: "_IO_ne\000_file_fopen"
+value address: 0x7ffff715cc90 <__PRETTY_FUNCTION__.11488>
+Type: The type is an array.
+Type sizeof: 19
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 18)
+
+[INFO -- 2018-10-11 14:14:12]
+Fault Injection Successful after 16.910228490829468s
+[INFO -- 2018-10-11 14:14:16]
+event type: exit
+[INFO -- 2018-10-11 14:14:16]
+exit code: 0

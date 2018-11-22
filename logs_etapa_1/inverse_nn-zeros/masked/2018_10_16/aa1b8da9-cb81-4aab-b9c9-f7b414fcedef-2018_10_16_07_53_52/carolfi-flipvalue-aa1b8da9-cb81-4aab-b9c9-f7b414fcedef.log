@@ -1,0 +1,49 @@
+[INFO -- 2018-10-16 07:53:41]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 07:53:41]
+Initialization strings:
+[INFO -- 2018-10-16 07:53:41]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 07:53:41]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 07:53:41]
+initSignal:6
+[INFO -- 2018-10-16 07:53:41]
+endSignal:8
+[INFO -- 2018-10-16 07:53:41]
+faultModel:3
+[INFO -- 2018-10-16 07:53:47]
+Backtrace BEGIN:
+#0  0x00007ffff7014381 in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=0x7fffffffcf00, group=<optimized out>, loc=<optimized out>) at strtod_l.c:851
+#1  0x00007ffff7011d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#2  0x00007ffff702b948 in _IO_vfscanf_internal (s=s@entry=0x608610, format=<optimized out>, argptr=argptr@entry=0x7fffffffd0d8, errp=errp@entry=0x0) at vfscanf.c:2365
+#3  0x00007ffff7032162 in __isoc99_fscanf (stream=0x608610, format=<optimized out>) at isoc99_fscanf.c:34
+#4  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#5  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#6  0x000000000040199e in inversek2j(float, float, float*, float*) ()
+#7  0x0000000000401631 in main ()
+
+846	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x010x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffceb0
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: _IO_vfscanf_internal
+symbol name: wpmax
+symbol filename: vfscanf.c
+symbol line: 273
+value: 0
+value address: 0x7fffffffceb0
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-10-16 07:53:47]
+Fault Injection Successful after 6.5785298347473145s
+[INFO -- 2018-10-16 07:53:51]
+event type: exit
+[INFO -- 2018-10-16 07:53:51]
+exit code: 0

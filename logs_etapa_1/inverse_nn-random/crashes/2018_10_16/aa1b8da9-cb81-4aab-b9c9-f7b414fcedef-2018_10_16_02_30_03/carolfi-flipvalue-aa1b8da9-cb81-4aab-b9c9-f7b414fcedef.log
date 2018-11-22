@@ -1,0 +1,48 @@
+[INFO -- 2018-10-16 02:29:59]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 02:29:59]
+Initialization strings:
+[INFO -- 2018-10-16 02:29:59]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 02:29:59]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 02:29:59]
+initSignal:4
+[INFO -- 2018-10-16 02:29:59]
+endSignal:6
+[INFO -- 2018-10-16 02:29:59]
+faultModel:2
+[INFO -- 2018-10-16 02:30:03]
+Backtrace BEGIN:
+#0  _pthread_cleanup_pop_restore (buffer=0x7fffffffcf50, execute=0) at cleanup_defer_compat.c:71
+#1  0x00007ffff7028dac in _IO_vfscanf_internal (s=s@entry=0x608610, format=<optimized out>, argptr=argptr@entry=0x7fffffffd0d8, errp=errp@entry=0x0) at vfscanf.c:2943
+#2  0x00007ffff7032162 in __isoc99_fscanf (stream=0x608610, format=<optimized out>) at isoc99_fscanf.c:34
+#3  0x00007ffff7bceda6 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#4  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x000000000040199e in inversek2j(float, float, float*, float*) ()
+#6  0x0000000000401631 in main ()
+
+66	cleanup_defer_compat.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x010x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffcebc
+address max offset: 4
+Memory content after  bitflip:0x250x220xb70xe6
+frame name: _IO_vfscanf_internal
+symbol name: done
+symbol filename: vfscanf.c
+symbol line: 218
+value: -424205787
+value address: 0x7fffffffcebc
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-16 02:30:03]
+Fault Injection Successful after 4.432888507843018s
+[INFO -- 2018-10-16 02:30:03]
+event type: exit
+[EXCEPTION -- 2018-10-16 02:30:03]
+exit code: no exit code available

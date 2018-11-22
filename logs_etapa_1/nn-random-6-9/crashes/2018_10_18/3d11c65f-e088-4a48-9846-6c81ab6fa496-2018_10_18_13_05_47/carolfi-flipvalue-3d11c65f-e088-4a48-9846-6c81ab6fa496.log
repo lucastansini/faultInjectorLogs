@@ -1,0 +1,49 @@
+[INFO -- 2018-10-18 13:05:44]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 13:05:44]
+Initialization strings:
+[INFO -- 2018-10-18 13:05:44]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 13:05:44]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 13:05:44]
+initSignal:2
+[INFO -- 2018-10-18 13:05:44]
+endSignal:3
+[INFO -- 2018-10-18 13:05:44]
+faultModel:2
+[EXCEPTION -- 2018-10-18 13:05:46]
+pythonException: invalid frame
+[INFO -- 2018-10-18 13:05:46]
+Backtrace BEGIN:
+#0  0x00007ffff72f7e43 in __mpn_construct_double (frac_ptr=frac_ptr@entry=0x7fffffffd080, expt=<optimized out>, negative=negative@entry=0) at ../sysdeps/ieee754/dbl-64/mpn2dbl.c:46
+#1  0x00007ffff72ff16a in round_and_return (retval=retval@entry=0x7fffffffd080, exponent=<optimized out>, negative=negative@entry=0, round_limb=round_limb@entry=12912720851596686131, round_bit=<optimized out>, more_bits=<optimized out>) at strtod_l.c:327
+#2  0x00007ffff72ffc7d in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1613
+#3  0x000000000040150f in main._omp_fn.0 () at nn.c:118
+#4  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+41	../sysdeps/ieee754/dbl-64/mpn2dbl.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x0c0xd60xff0xff0xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd4b8
+address max offset: 8
+Memory content after  bitflip:0x560x8e0xab0x4d0xfa0xb60xe10x21
+frame name: main._omp_fn.0
+symbol name: rec_iter
+symbol filename: nn.c
+symbol line: 32
+value: 0x7fffffffd60c " 42.7 184.5   55  177\n1958 11 27  6 11 NADINE     26.7 211.8   82  573\n1951  8 27  6  5 HELENE     14.8 229.9  101  422\n1954  3 22  6  8 MICHAEL    25.5 201.4   35  721\n1990  6 24 12 26 BERYL      15."...
+value address: 0x7fffffffd4b8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 13:05:46]
+Fault Injection Successful after 2.6530237197875977s
+[INFO -- 2018-10-18 13:05:46]
+event type: exit
+[EXCEPTION -- 2018-10-18 13:05:46]
+exit code: no exit code available

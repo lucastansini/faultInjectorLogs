@@ -1,0 +1,56 @@
+[INFO -- 2018-10-18 13:45:28]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 13:45:28]
+Initialization strings:
+[INFO -- 2018-10-18 13:45:28]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 13:45:28]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 13:45:28]
+initSignal:0
+[INFO -- 2018-10-18 13:45:28]
+endSignal:1
+[INFO -- 2018-10-18 13:45:28]
+faultModel:0
+[EXCEPTION -- 2018-10-18 13:45:28]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-10-18 13:45:28]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 13:45:28]
+pythonException: invalid frame
+[INFO -- 2018-10-18 13:45:28]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc06 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bb69b in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff768f184 in start_thread (arg=0x7ffff70b9700) at pthread_create.c:312
+#3  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+69	in dl-debug.c
+
+Backtrace END
+Fliping array at pos: 2
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7699838 
+address max offset: 4
+Memory content after  bitflip:0x000x000x100x00
+frame name: create_thread
+symbol name: _thread_db_dtv_dtv
+symbol filename: ../nptl_db/structs.def
+symbol line: 74
+value: {128, 134217727, 1048576}
+value address: 0x7ffff7699830 <_thread_db_dtv_dtv>
+Type: The type is an array.
+Type sizeof: 12
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 2)
+
+[INFO -- 2018-10-18 13:45:28]
+Fault Injection Successful after 0.22385573387145996s
+[INFO -- 2018-10-18 13:45:33]
+event type: exit
+[INFO -- 2018-10-18 13:45:33]
+exit code: 0

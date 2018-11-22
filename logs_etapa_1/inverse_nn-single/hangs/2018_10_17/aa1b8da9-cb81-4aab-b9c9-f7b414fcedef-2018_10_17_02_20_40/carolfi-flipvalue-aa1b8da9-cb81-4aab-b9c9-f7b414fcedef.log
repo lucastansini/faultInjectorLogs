@@ -1,0 +1,43 @@
+[INFO -- 2018-10-17 02:20:17]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-17 02:20:17]
+Initialization strings:
+[INFO -- 2018-10-17 02:20:17]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-17 02:20:17]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-17 02:20:17]
+initSignal:0
+[INFO -- 2018-10-17 02:20:17]
+endSignal:2
+[INFO -- 2018-10-17 02:20:17]
+faultModel:0
+[INFO -- 2018-10-17 02:20:18]
+Backtrace BEGIN:
+#0  0x00007ffff70549b2 in _int_malloc (av=0x7ffff7396760 <main_arena>, bytes=568) at malloc.c:3444
+#1  0x00007ffff7056ae0 in __GI___libc_malloc (bytes=568) at malloc.c:2893
+#2  0x00007ffff704237d in __fopen_internal (filename=0x401f01 "./inversek2j.nn", mode=0x7ffff7bd3cd1 "r", is32=1) at iofopen.c:73
+#3  0x00007ffff7bcf5f5 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#4  0x000000000040199e in inversek2j(float, float, float*, float*) ()
+#5  0x0000000000401631 in main ()
+
+3439	malloc.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x010x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7396180 
+address max offset: 8
+Memory content after  bitflip:0x010x000x400x000x000x000x000x00
+frame name: _int_malloc
+symbol name: narenas
+symbol filename: arena.c
+symbol line: 79
+value: 4194305
+value address: 0x7ffff7396180 <narenas>
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-10-17 02:20:18]
+Fault Injection Successful after 1.246657371520996s

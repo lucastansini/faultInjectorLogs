@@ -1,0 +1,55 @@
+[INFO -- 2018-10-19 01:00:33]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 01:00:33]
+Initialization strings:
+[INFO -- 2018-10-19 01:00:33]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 01:00:33]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 01:00:33]
+initSignal:0
+[INFO -- 2018-10-19 01:00:33]
+endSignal:1
+[INFO -- 2018-10-19 01:00:33]
+faultModel:0
+[EXCEPTION -- 2018-10-19 01:00:33]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-10-19 01:00:33]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 01:00:33]
+pythonException: invalid frame
+[INFO -- 2018-10-19 01:00:33]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc02 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bc0e2 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000401184 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+69	in dl-debug.c
+
+Backtrace END
+Fliping array at pos: 405
+Memory content before bitflip:0x20
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd755 
+address max offset: 1
+Memory content after  bitflip:0x24
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 32
+value: "1970  2 27  6 24 CHRIS      38.3 217.9   47  768\n1980 11  2  0 20 BERYL      26.1  81.7   56  828\n1975 10 26 18 22 JOYCE      20.0 127.4  108  220\n1987  2 25  6 28 SANDY      45.8 344.2   70  367\n1961"...
+value address: 0x7fffffffd5c0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-10-19 01:00:33]
+Fault Injection Successful after 0.38100099563598633s
+[INFO -- 2018-10-19 01:00:38]
+event type: exit
+[INFO -- 2018-10-19 01:00:38]
+exit code: 0

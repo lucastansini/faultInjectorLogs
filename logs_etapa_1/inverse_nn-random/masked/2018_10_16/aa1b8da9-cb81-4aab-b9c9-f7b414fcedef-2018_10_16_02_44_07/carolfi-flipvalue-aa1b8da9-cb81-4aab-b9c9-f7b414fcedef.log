@@ -1,0 +1,45 @@
+[INFO -- 2018-10-16 02:43:56]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-16 02:43:56]
+Initialization strings:
+[INFO -- 2018-10-16 02:43:56]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/inversek2j_nn.out
+[INFO -- 2018-10-16 02:43:56]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/input_250k /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/inverse_nn/output_falha.data
+[INFO -- 2018-10-16 02:43:56]
+initSignal:4
+[INFO -- 2018-10-16 02:43:56]
+endSignal:6
+[INFO -- 2018-10-16 02:43:56]
+faultModel:2
+[INFO -- 2018-10-16 02:44:00]
+Backtrace BEGIN:
+#0  0x00007ffff75e8a7f in __GI___expf (x=-197,92688) at ../sysdeps/ieee754/flt-32/w_expf.c:28
+#1  0x00007ffff7bc5284 in fann_run () from /usr/local/lib/libfann.so.2
+#2  0x00000000004019b5 in inversek2j(float, float, float*, float*) ()
+#3  0x0000000000401631 in main ()
+
+23	../sysdeps/ieee754/flt-32/w_expf.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x480xed0x450xc3
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd21c
+address max offset: 4
+Memory content after  bitflip:0x2c0x0c0x140x15
+frame name: __GI___expf
+symbol name: x
+symbol filename: ../sysdeps/ieee754/flt-32/w_expf.c
+symbol line: 24
+value: 2,98979639e-26
+value address: 0x7fffffffd21c
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-10-16 02:44:00]
+Fault Injection Successful after 4.435354948043823s
+[INFO -- 2018-10-16 02:44:06]
+event type: exit
+[INFO -- 2018-10-16 02:44:06]
+exit code: 0

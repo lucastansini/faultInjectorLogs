@@ -1,0 +1,45 @@
+[INFO -- 2018-10-19 02:16:58]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 02:16:58]
+Initialization strings:
+[INFO -- 2018-10-19 02:16:58]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 02:16:58]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 02:16:58]
+initSignal:4
+[INFO -- 2018-10-19 02:16:58]
+endSignal:5
+[INFO -- 2018-10-19 02:16:58]
+faultModel:4
+[INFO -- 2018-10-19 02:17:02]
+Backtrace BEGIN:
+#0  0x00007ffff72fec56 in str_to_mpn (str=0x7fffffffd645 "8.7  154  519\n1970 12  9  0 13 TONY       18.9 322.9   98  629\n1988  4  3 18 24 HELENE     44.6  38.0  111   16\n2002  1 21 18 19 CHRIS      69.8  63.6  133  374\n1982  8 15  6  7 RAFAEL     69.9 303.4 "..., str@entry=0x7fffffffd643 "108.7  154  519\n1970 12  9  0 13 TONY       18.9 322.9   98  629\n1988  4  3 18 24 HELENE     44.6  38.0  111   16\n2002  1 21 18 19 CHRIS      69.8  63.6  133  374\n1982  8 15  6  7 RAFAEL     69.9 303."..., digcnt=1, digcnt@entry=3, n=n@entry=0x7fffffffd090, nsize=nsize@entry=0x7fffffffd060, exponent=exponent@entry=0x7fffffffd070, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=0x7ffff744014b <dot> ".") at strtod_l.c:398
+#1  0x00007ffff73001e1 in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=0x0, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1176
+#2  0x000000000040152c in main._omp_fn.0 () at nn.c:119
+#3  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+393	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x000xc80x41
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd50c
+address max offset: 4
+Memory content after  bitflip:0x000x000xc80x49
+frame name: main
+symbol name: target_long
+symbol filename: nn.c
+symbol line: 34
+value: 1638400
+value address: 0x7fffffffd50c
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-10-19 02:17:02]
+Fault Injection Successful after 4.160658121109009s
+[INFO -- 2018-10-19 02:17:03]
+event type: exit
+[INFO -- 2018-10-19 02:17:03]
+exit code: 0

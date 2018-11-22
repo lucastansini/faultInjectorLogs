@@ -1,0 +1,67 @@
+[INFO -- 2018-10-18 18:17:53]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 18:17:53]
+Initialization strings:
+[INFO -- 2018-10-18 18:17:53]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 18:17:53]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 18:17:53]
+initSignal:0
+[INFO -- 2018-10-18 18:17:53]
+endSignal:1
+[INFO -- 2018-10-18 18:17:53]
+faultModel:0
+[EXCEPTION -- 2018-10-18 18:17:54]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 18:17:54]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 18:17:54]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-18 18:17:54]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 18:17:54]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 18:17:54]
+pythonException: invalid literal for int() with base 16: '0x7fffffffd60c ...'
+[EXCEPTION -- 2018-10-18 18:17:54]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 18:17:54]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 18:17:54]
+pythonException: invalid frame
+[INFO -- 2018-10-18 18:17:54]
+Backtrace BEGIN:
+#0  0x00007ffff72ff3a5 in __GI_____strtod_l_internal (nptr=0x7fffffffd611 "  44.1  101  418\n1980  4 15  6 25 ERNESTO     7.4  98.1   63  712\n1952  8  9 18 19 BERYL      44.9 269.7   98   71\n2003  9  2 18 26 ERNESTO    46.0  62.1  104  148\n1978  6 18  0 27 WILLIAM     8.8 156"..., endptr=0x0, group=0, loc=0x7ffff7681060 <_nl_global_locale>) at strtod_l.c:483
+#1  0x000000000040152c in main._omp_fn.0 () at nn.c:119
+#2  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+478	in strtod_l.c
+
+Backtrace END
+Fliping array at pos: 0
+Memory content before bitflip:0x000x000x000x000x000x000x000x60
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd090
+address max offset: 8
+Memory content after  bitflip:0x000x000x800x000x000x000x000x60
+frame name: __GI_____strtod_l_internal
+symbol name: num
+symbol filename: strtod_l.c
+symbol line: 485
+value: {6917529027649470464, 0, 395002602728, 0, 0, 511101108334, 0, 140737488343279, 140737348711936, 140737351947767, 124, 0, 140737338120640, 140737340288232, 140737338119936, 0, 140737321332528, 140737344242680, 129872, 288, 6309040, 140737351961975, 140737321334528, 140737353958816, 6309072, 140737321334528, 16, 140737344233882, 140737321335248, 140737348711936, 8388608, 140737488343648, 140737348711936, 140737344240269, 140737488343792, 140737312944128, 140737488343872, 140737346516384, 140737488344152, 1, 8392704, 140737351925564, 4096, 2090266759, 4, 7, 140737353964280, 140737351927990, 6306176, 140737488343632, 140737340251440, 140737351925564, 140737340304552, 479434442, 4, 7, 140737353964280, 140737351927990, 140737353961472}
+value address: 0x7fffffffd090
+Type: The type is an array.
+Type sizeof: 472
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 58)
+
+[INFO -- 2018-10-18 18:17:54]
+Fault Injection Successful after 1.1451985836029053s
+[INFO -- 2018-10-18 18:17:59]
+event type: exit
+[INFO -- 2018-10-18 18:17:59]
+exit code: 0

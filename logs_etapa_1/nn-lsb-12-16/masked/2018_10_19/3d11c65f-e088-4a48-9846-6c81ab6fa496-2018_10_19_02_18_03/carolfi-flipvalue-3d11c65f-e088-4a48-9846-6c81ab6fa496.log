@@ -1,0 +1,53 @@
+[INFO -- 2018-10-19 02:17:57]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 02:17:57]
+Initialization strings:
+[INFO -- 2018-10-19 02:17:57]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 02:17:57]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 02:17:57]
+initSignal:4
+[INFO -- 2018-10-19 02:17:57]
+endSignal:5
+[INFO -- 2018-10-19 02:17:57]
+faultModel:4
+[EXCEPTION -- 2018-10-19 02:18:02]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 02:18:02]
+pythonException: invalid frame
+[INFO -- 2018-10-19 02:18:02]
+Backtrace BEGIN:
+#0  0x00007ffff72ff4a7 in __GI_____strtod_l_internal (nptr=0x7fffffffd5db " 55.5 160.8   46  479\n1952  1 24 12  6 FLORENCE   37.5 267.5   10  711\n1970  9 13 18 15 BERYL      65.0  95.5   95   59\n1968  8 24  0  1 BERYL      19.2 145.1   62  468\n1952 12 23  6 11 CHRIS      63."..., endptr=0x0, group=<optimized out>, loc=0x7ffff7681060 <_nl_global_locale>) at strtod_l.c:695
+#1  0x000000000040150f in main._omp_fn.0 () at nn.c:118
+#2  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+690	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 0
+Memory content before bitflip:0x000x000x000x000x000x000x150x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd080
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x150x01
+frame name: __GI_____strtod_l_internal
+symbol name: retval
+symbol filename: strtod_l.c
+symbol line: 497
+value: {77968568548851712}
+value address: 0x7fffffffd080
+Type: The type is an array.
+Type sizeof: 8
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 0)
+
+[INFO -- 2018-10-19 02:18:02]
+Fault Injection Successful after 5.424759864807129s
+[INFO -- 2018-10-19 02:18:03]
+event type: exit
+[INFO -- 2018-10-19 02:18:03]
+exit code: 0

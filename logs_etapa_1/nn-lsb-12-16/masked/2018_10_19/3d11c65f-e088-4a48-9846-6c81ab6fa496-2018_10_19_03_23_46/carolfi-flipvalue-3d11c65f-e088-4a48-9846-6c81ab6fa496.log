@@ -1,0 +1,55 @@
+[INFO -- 2018-10-19 03:23:41]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 03:23:41]
+Initialization strings:
+[INFO -- 2018-10-19 03:23:41]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 03:23:41]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 03:23:41]
+initSignal:4
+[INFO -- 2018-10-19 03:23:41]
+endSignal:5
+[INFO -- 2018-10-19 03:23:41]
+faultModel:4
+[EXCEPTION -- 2018-10-19 03:23:45]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 03:23:45]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 03:23:45]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 03:23:45]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-19 03:23:45]
+pythonException: invalid frame
+[INFO -- 2018-10-19 03:23:45]
+Backtrace BEGIN:
+#0  __memcpy_sse2 () at ../sysdeps/x86_64/multiarch/../memcpy.S:108
+#1  0x00007ffff72ff9dc in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1403
+#2  0x000000000040150f in main._omp_fn.0 () at nn.c:118
+#3  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+103	in ../sysdeps/x86_64/multiarch/../memcpy.S
+
+Backtrace END
+Memory content before bitflip:0x050x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd030
+address max offset: 4
+Memory content after  bitflip:0x050x000x000x04
+frame name: __GI_____strtod_l_internal
+symbol name: bits
+symbol filename: strtod_l.c
+symbol line: 499
+value: 67108869
+value address: 0x7fffffffd030
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-19 03:23:45]
+Fault Injection Successful after 4.248872995376587s
+[INFO -- 2018-10-19 03:23:46]
+event type: exit
+[INFO -- 2018-10-19 03:23:46]
+exit code: 0

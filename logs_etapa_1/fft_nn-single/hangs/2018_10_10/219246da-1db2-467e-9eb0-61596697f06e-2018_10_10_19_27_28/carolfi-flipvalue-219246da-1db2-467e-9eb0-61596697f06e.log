@@ -1,0 +1,44 @@
+[INFO -- 2018-10-10 19:26:35]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-10 19:26:35]
+Initialization strings:
+[INFO -- 2018-10-10 19:26:35]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-10 19:26:35]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-10 19:26:35]
+initSignal:0
+[INFO -- 2018-10-10 19:26:35]
+endSignal:5
+[INFO -- 2018-10-10 19:26:35]
+faultModel:0
+[INFO -- 2018-10-10 19:26:36]
+Backtrace BEGIN:
+#0  _int_malloc (av=av@entry=0x7ffff7396760 <main_arena>, bytes=bytes@entry=848) at malloc.c:3777
+#1  0x00007ffff70575fc in __libc_calloc (n=<optimized out>, elem_size=<optimized out>) at malloc.c:3221
+#2  0x00007ffff7bca458 in fann_allocate_connections () from /usr/local/lib/libfann.so.2
+#3  0x00007ffff7bcf11f in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#4  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#6  0x0000000000401631 in main ()
+
+3772	malloc.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x010x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7396180 
+address max offset: 8
+Memory content after  bitflip:0x010x000x010x000x000x000x000x00
+frame name: __libc_calloc
+symbol name: narenas
+symbol filename: arena.c
+symbol line: 79
+value: 65537
+value address: 0x7ffff7396180 <narenas>
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-10-10 19:26:36]
+Fault Injection Successful after 1.2469398975372314s

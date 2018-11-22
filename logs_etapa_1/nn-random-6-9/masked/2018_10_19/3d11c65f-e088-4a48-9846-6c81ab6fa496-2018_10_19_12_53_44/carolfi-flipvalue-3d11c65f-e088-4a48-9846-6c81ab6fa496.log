@@ -1,0 +1,68 @@
+[INFO -- 2018-10-19 12:53:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 12:53:39]
+Initialization strings:
+[INFO -- 2018-10-19 12:53:39]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 12:53:39]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 12:53:39]
+initSignal:2
+[INFO -- 2018-10-19 12:53:39]
+endSignal:3
+[INFO -- 2018-10-19 12:53:39]
+faultModel:2
+[EXCEPTION -- 2018-10-19 12:53:41]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-10-19 12:53:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 12:53:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 12:53:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-19 12:53:41]
+pythonException: invalid frame
+[INFO -- 2018-10-19 12:53:41]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc06 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bc0e2 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000401184 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+30	    FILE   *flist,*fp;
+31	    int    i=0,j=0, k=0, rec_count=0, done=0;
+32	    char   sandbox[REC_LENGTH * REC_WINDOW], *rec_iter,*rec_iter2, dbname[64];
+33	    struct neighbor *neighbors = NULL;
+34	    float target_lat, target_long, tmp_lat=0, tmp_long=0;
+35	    char * gold_filename;
+36	    long rec_sum = 0;
+37	
+38	    if(argc < 6) {
+39	        fprintf(stderr, "Invalid set of arguments:\n");
+
+Backtrace END
+Fliping array at pos: 363
+Memory content before bitflip:0x4c
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd72b 
+address max offset: 1
+Memory content after  bitflip:0xe7
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 32
+value: "1986  6 10  0 20 SANDY      62.3  51.5  108  622\n1962  5 23 18 26 MICHAEL    53.6   2.1   53   42\n1994  3  5 18  3 SANDY      40.6 216.4  120   59\n1968 12 22  6 26 HELENE     27.9 268.4   64  699\n1973"...
+value address: 0x7fffffffd5c0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-10-19 12:53:41]
+Fault Injection Successful after 2.3930792808532715s
+[INFO -- 2018-10-19 12:53:44]
+event type: exit
+[INFO -- 2018-10-19 12:53:44]
+exit code: 0

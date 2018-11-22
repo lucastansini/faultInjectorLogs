@@ -1,0 +1,54 @@
+[INFO -- 2018-10-19 07:59:36]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 07:59:36]
+Initialization strings:
+[INFO -- 2018-10-19 07:59:36]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 07:59:36]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 07:59:36]
+initSignal:3
+[INFO -- 2018-10-19 07:59:36]
+endSignal:4
+[INFO -- 2018-10-19 07:59:36]
+faultModel:3
+[EXCEPTION -- 2018-10-19 07:59:39]
+pythonException: invalid frame
+[INFO -- 2018-10-19 07:59:39]
+Backtrace BEGIN:
+#0  0x00000000004014c1 in main._omp_fn.0 () at nn.c:115
+#1  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+110	                exit(0);
+111	            }
+112	        }
+113	
+114	
+115	        #pragma omp parallel for shared (z, target_lat, target_long) private(i,rec_iter)
+116	        for (i = 0; i < rec_count; i++) {
+117	            rec_iter = sandbox+(i * REC_LENGTH + LATITUDE_POS - 1);
+118	            float tmp_lat = atof(rec_iter);
+119	            float tmp_long = atof(rec_iter+5);
+
+Backtrace END
+Memory content before bitflip:0x0a0x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd570
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main._omp_fn.0
+symbol name: rec_count
+symbol filename: nn.c
+symbol line: 31
+value: 0
+value address: 0x7fffffffd570
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-19 07:59:39]
+Fault Injection Successful after 3.811936616897583s
+[INFO -- 2018-10-19 07:59:42]
+event type: exit
+[INFO -- 2018-10-19 07:59:42]
+exit code: 0

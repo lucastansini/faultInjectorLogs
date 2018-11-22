@@ -1,0 +1,51 @@
+[INFO -- 2018-10-19 05:36:32]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 05:36:32]
+Initialization strings:
+[INFO -- 2018-10-19 05:36:32]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 05:36:32]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 05:36:32]
+initSignal:0
+[INFO -- 2018-10-19 05:36:32]
+endSignal:1
+[INFO -- 2018-10-19 05:36:32]
+faultModel:0
+[EXCEPTION -- 2018-10-19 05:36:32]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-10-19 05:36:32]
+Backtrace BEGIN:
+#0  0x00007ffff78bdc06 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78bc0e2 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000401184 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+69	in dl-debug.c
+
+Backtrace END
+Fliping array at pos: 403
+Memory content before bitflip:0x31
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd753 
+address max offset: 1
+Memory content after  bitflip:0x35
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 32
+value: "1980  4 10 12  5 BERYL      21.6  34.7   44  137\n1962  3 27  6 13 GORDON     20.5 222.3   62  733\n1983 10 26  6 20 VALERIE    31.3  38.9  137  428\n1986  8  7  0 24 VALERIE    46.5  67.3  159  513\n1989"...
+value address: 0x7fffffffd5c0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-10-19 05:36:32]
+Fault Injection Successful after 0.3120276927947998s
+[INFO -- 2018-10-19 05:36:37]
+event type: exit
+[INFO -- 2018-10-19 05:36:37]
+exit code: 0

@@ -1,0 +1,55 @@
+[INFO -- 2018-10-18 18:15:40]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 18:15:40]
+Initialization strings:
+[INFO -- 2018-10-18 18:15:40]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 18:15:40]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 18:15:40]
+initSignal:0
+[INFO -- 2018-10-18 18:15:40]
+endSignal:1
+[INFO -- 2018-10-18 18:15:40]
+faultModel:0
+[INFO -- 2018-10-18 18:15:40]
+Backtrace BEGIN:
+#0  __GI__dl_debug_state () at dl-debug.c:74
+#1  0x00007ffff7dde483 in dl_main (phdr=<optimized out>, phdr@entry=0x400040, phnum=<optimized out>, phnum@entry=9, user_entry=user_entry@entry=0x7fffffffd7c8, auxv=<optimized out>) at rtld.c:2338
+#2  0x00007ffff7df15f5 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffd8b0, dl_main=dl_main@entry=0x7ffff7ddc260 <dl_main>) at ../elf/dl-sysdep.c:249
+#3  0x00007ffff7ddbbb8 in _dl_start_final (arg=0x7fffffffd8b0) at rtld.c:347
+#4  _dl_start (arg=0x7fffffffd8b0) at rtld.c:573
+#5  0x00007ffff7ddb268 in _start () from /lib64/ld-linux-x86-64.so.2
+#6  0x0000000000000006 in ?? ()
+#7  0x00007fffffffdc57 in ?? ()
+#8  0x00007fffffffdca4 in ?? ()
+#9  0x00007fffffffdcf7 in ?? ()
+#10 0x00007fffffffdcfa in ?? ()
+#11 0x00007fffffffdcfd in ?? ()
+#12 0x00007fffffffdd00 in ?? ()
+#13 0x0000000000000000 in ?? ()
+
+69	dl-debug.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0xbc0x8c0x090x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7ffcca0 
+address max offset: 8
+Memory content after  bitflip:0xbc0x8c0x090x000x400x000x000x00
+frame name: dl_main
+symbol name: load_time
+symbol filename: rtld.c
+symbol line: 223
+value: 274878532796
+value address: 0x7ffff7ffcca0 <load_time>
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 18:15:40]
+Fault Injection Successful after 0.1638031005859375s
+[INFO -- 2018-10-18 18:15:45]
+event type: exit
+[INFO -- 2018-10-18 18:15:45]
+exit code: 0

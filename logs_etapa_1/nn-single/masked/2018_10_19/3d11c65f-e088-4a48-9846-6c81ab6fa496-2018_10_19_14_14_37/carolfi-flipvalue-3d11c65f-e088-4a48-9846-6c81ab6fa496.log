@@ -1,0 +1,48 @@
+[INFO -- 2018-10-19 14:14:31]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 14:14:31]
+Initialization strings:
+[INFO -- 2018-10-19 14:14:31]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 14:14:31]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 14:14:31]
+initSignal:0
+[INFO -- 2018-10-19 14:14:31]
+endSignal:1
+[INFO -- 2018-10-19 14:14:31]
+faultModel:0
+[EXCEPTION -- 2018-10-19 14:14:31]
+pythonException: invalid frame
+[INFO -- 2018-10-19 14:14:31]
+Backtrace BEGIN:
+#0  create_thread (stackaddr=<optimized out>, attr=0x7ffff7ad3600, pd=0x7ffff70b9700) at ../nptl/sysdeps/pthread/createthread.c:223
+#1  __pthread_create_2_1 (newthread=<optimized out>, attr=<optimized out>, start_routine=<optimized out>, arg=<optimized out>) at pthread_create.c:611
+#2  0x00007ffff78bbca2 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x0000000000401184 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+218	../nptl/sysdeps/pthread/createthread.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xb80xd80xff0xff0xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd4e0
+address max offset: 8
+Memory content after  bitflip:0xb80xd00xff0xff0xff0x7f0x000x00
+frame name: main
+symbol name: argv
+symbol filename: nn.c
+symbol line: 29
+value: 0x7fffffffd8b8
+value address: 0x7fffffffd4e0
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-19 14:14:31]
+Fault Injection Successful after 0.7116246223449707s
+[INFO -- 2018-10-19 14:14:37]
+event type: exit
+[INFO -- 2018-10-19 14:14:37]
+exit code: 0

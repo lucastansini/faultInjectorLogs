@@ -1,0 +1,56 @@
+[INFO -- 2018-10-18 14:25:18]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 14:25:18]
+Initialization strings:
+[INFO -- 2018-10-18 14:25:18]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 14:25:18]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 14:25:18]
+initSignal:0
+[INFO -- 2018-10-18 14:25:18]
+endSignal:1
+[INFO -- 2018-10-18 14:25:18]
+faultModel:0
+[EXCEPTION -- 2018-10-18 14:25:19]
+pythonException: invalid frame
+[INFO -- 2018-10-18 14:25:19]
+Backtrace BEGIN:
+#0  __GI___nptl_create_event () at events.c:25
+#1  0x00007ffff768fa8d in create_thread (stackaddr=<optimized out>, attr=0x7ffff7ad3600, pd=0x7ffff70b9700) at ../nptl/sysdeps/pthread/createthread.c:220
+#2  __pthread_create_2_1 (newthread=<optimized out>, attr=<optimized out>, start_routine=<optimized out>, arg=<optimized out>) at pthread_create.c:611
+#3  0x00007ffff78bbca2 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x0000000000401184 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+20	events.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping value of field: next
+Fliping a bit of the pointer
+Memory content before bitflip:0xc00x990x0b0xf70xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff78a0290 
+address max offset: 8
+Memory content after  bitflip:0xc00x990x0b0xd70xff0x7f0x000x00
+frame name: create_thread
+symbol name: stack_used
+symbol filename: allocatestack.c
+symbol line: 114
+value: {next = 0x7fffd70b99c0, prev = 0x7ffff70b99c0}
+value address: 0x7ffff78a0290 <stack_used>
+Type: The type is a structure.
+Type sizeof: 16
+Field name: next
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: prev
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-10-18 14:25:19]
+Fault Injection Successful after 1.124824047088623s
+[INFO -- 2018-10-18 14:25:19]
+event type: exit
+[EXCEPTION -- 2018-10-18 14:25:19]
+exit code: no exit code available

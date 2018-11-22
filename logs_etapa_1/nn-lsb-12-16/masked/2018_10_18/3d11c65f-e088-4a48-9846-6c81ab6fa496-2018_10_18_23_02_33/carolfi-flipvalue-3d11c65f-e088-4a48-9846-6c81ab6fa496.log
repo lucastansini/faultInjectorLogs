@@ -1,0 +1,56 @@
+[INFO -- 2018-10-18 23:02:26]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 23:02:26]
+Initialization strings:
+[INFO -- 2018-10-18 23:02:26]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 23:02:26]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 23:02:26]
+initSignal:4
+[INFO -- 2018-10-18 23:02:26]
+endSignal:5
+[INFO -- 2018-10-18 23:02:26]
+faultModel:4
+[INFO -- 2018-10-18 23:02:31]
+Backtrace BEGIN:
+#0  0x000000000040119f in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+110	                exit(0);
+111	            }
+112	        }
+113	
+114	
+115	        #pragma omp parallel for shared (z, target_lat, target_long) private(i,rec_iter)
+116	        for (i = 0; i < rec_count; i++) {
+117	            rec_iter = sandbox+(i * REC_LENGTH + LATITUDE_POS - 1);
+118	            float tmp_lat = atof(rec_iter);
+119	            float tmp_long = atof(rec_iter+5);
+
+Backtrace END
+Fliping array at pos: 351
+Memory content before bitflip:0x32
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd71f 
+address max offset: 1
+Memory content after  bitflip:0x3a
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 32
+value: "1979  6  4 12  4 ALBERTO    31.8  51.9   53  381\n1997  1  2 18  6 DEBBY      36.6 329.4   68  369\n1973  2  2  6 19 WILLIAM     8.5 166.9  137  733\n1961  6 18  6 27 WILLIAM    63.0  45.1  143  317\n1982"...
+value address: 0x7fffffffd5c0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-10-18 23:02:31]
+Fault Injection Successful after 5.094859838485718s
+[INFO -- 2018-10-18 23:02:32]
+event type: exit
+[INFO -- 2018-10-18 23:02:32]
+exit code: 0

@@ -1,0 +1,47 @@
+[INFO -- 2018-10-19 12:02:29]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 12:02:29]
+Initialization strings:
+[INFO -- 2018-10-19 12:02:29]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 12:02:29]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 12:02:29]
+initSignal:3
+[INFO -- 2018-10-19 12:02:29]
+endSignal:4
+[INFO -- 2018-10-19 12:02:29]
+faultModel:3
+[EXCEPTION -- 2018-10-19 12:02:32]
+pythonException: invalid frame
+[INFO -- 2018-10-19 12:02:32]
+Backtrace BEGIN:
+#0  __memcpy_sse2 () at ../sysdeps/x86_64/multiarch/../memcpy.S:218
+#1  0x00007ffff7337323 in __GI__IO_file_xsgetn (fp=0x603640, data=<optimized out>, n=490) at fileops.c:1387
+#2  0x00007ffff732c86f in __GI__IO_fread (buf=<optimized out>, size=49, count=10, fp=0x603640) at iofread.c:42
+#3  0x0000000000401027 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:85
+
+213	../sysdeps/x86_64/multiarch/../memcpy.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x060x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd4ec
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main
+symbol name: argc
+symbol filename: nn.c
+symbol line: 29
+value: 0
+value address: 0x7fffffffd4ec
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-19 12:02:32]
+Fault Injection Successful after 3.2214443683624268s
+[INFO -- 2018-10-19 12:02:34]
+event type: exit
+[INFO -- 2018-10-19 12:02:34]
+exit code: 0

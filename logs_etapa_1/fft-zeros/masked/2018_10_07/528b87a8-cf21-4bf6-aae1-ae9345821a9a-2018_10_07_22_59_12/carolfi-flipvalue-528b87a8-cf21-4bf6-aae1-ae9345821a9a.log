@@ -1,0 +1,50 @@
+[INFO -- 2018-10-07 22:58:52]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-07 22:58:52]
+Initialization strings:
+[INFO -- 2018-10-07 22:58:52]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-07 22:58:52]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-07 22:58:52]
+initSignal:10
+[INFO -- 2018-10-07 22:58:52]
+endSignal:15
+[INFO -- 2018-10-07 22:58:52]
+faultModel:3
+[INFO -- 2018-10-07 22:59:04]
+Backtrace BEGIN:
+#0  0x00007ffff7012395 in round_and_return (retval=0x7fffffffd3d0, exponent=-3, negative=negative@entry=0, round_limb=round_limb@entry=3945573287018364928, round_bit=<optimized out>, more_bits=1) at strtod_l.c:315
+#1  0x00007ffff7013332 in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1613
+#2  0x00007ffff7011d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#3  0x00007ffff702b948 in _IO_vfscanf_internal (s=s@entry=0x6062c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffd8c8, errp=errp@entry=0x0) at vfscanf.c:2365
+#4  0x00007ffff7032162 in __isoc99_fscanf (stream=0x6062c0, format=<optimized out>) at isoc99_fscanf.c:34
+#5  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#6  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#7  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#8  0x0000000000401631 in main ()
+
+310	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x020x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd3b0
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: __GI_____strtof_l_internal
+symbol name: numsize
+symbol filename: strtod_l.c
+symbol line: 485
+value: 0
+value address: 0x7fffffffd3b0
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-10-07 22:59:04]
+Fault Injection Successful after 12.330106496810913s
+[INFO -- 2018-10-07 22:59:12]
+event type: exit
+[INFO -- 2018-10-07 22:59:12]
+exit code: 0

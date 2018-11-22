@@ -1,0 +1,50 @@
+[INFO -- 2018-10-08 23:13:02]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-08 23:13:02]
+Initialization strings:
+[INFO -- 2018-10-08 23:13:02]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-08 23:13:02]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-08 23:13:02]
+initSignal:0
+[INFO -- 2018-10-08 23:13:02]
+endSignal:5
+[INFO -- 2018-10-08 23:13:02]
+faultModel:0
+[INFO -- 2018-10-08 23:13:04]
+Backtrace BEGIN:
+#0  0x00007ffff70c3360 in __read_nocancel () at ../sysdeps/unix/syscall-template.S:81
+#1  0x00007ffff704e5b0 in _IO_new_file_underflow (fp=0x6062c0) at fileops.c:613
+#2  0x00007ffff704f53e in __GI__IO_default_uflow (fp=0x6062c0) at genops.c:435
+#3  0x00007ffff702fde9 in _IO_vfscanf_internal (s=s@entry=0x6062c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffd408, errp=errp@entry=0x0) at vfscanf.c:2936
+#4  0x00007ffff7032162 in __isoc99_fscanf (stream=0x6062c0, format=<optimized out>) at isoc99_fscanf.c:34
+#5  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#6  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#7  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#8  0x0000000000401631 in main ()
+
+76	../sysdeps/unix/syscall-template.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7398990 
+address max offset: 1
+Memory content after  bitflip:0x80
+frame name: __GI__IO_default_uflow
+symbol name: dealloc_buffers
+symbol filename: genops.c
+symbol line: 943
+value: 128
+value address: 0x7ffff7398990 <dealloc_buffers>
+Type: A boolean type.
+Type sizeof: 1
+
+[INFO -- 2018-10-08 23:13:04]
+Fault Injection Successful after 2.698504686355591s
+[INFO -- 2018-10-08 23:13:22]
+event type: exit
+[INFO -- 2018-10-08 23:13:22]
+exit code: 0

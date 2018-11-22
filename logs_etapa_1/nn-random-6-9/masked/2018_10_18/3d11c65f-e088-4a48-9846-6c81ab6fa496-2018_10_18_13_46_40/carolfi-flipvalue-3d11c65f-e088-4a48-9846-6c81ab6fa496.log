@@ -1,0 +1,56 @@
+[INFO -- 2018-10-18 13:46:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 13:46:34]
+Initialization strings:
+[INFO -- 2018-10-18 13:46:34]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 13:46:34]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 13:46:34]
+initSignal:2
+[INFO -- 2018-10-18 13:46:34]
+endSignal:3
+[INFO -- 2018-10-18 13:46:34]
+faultModel:2
+[EXCEPTION -- 2018-10-18 13:46:36]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-10-18 13:46:36]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 13:46:36]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 13:46:36]
+pythonException: invalid frame
+[EXCEPTION -- 2018-10-18 13:46:36]
+pythonException: invalid frame
+[INFO -- 2018-10-18 13:46:36]
+Backtrace BEGIN:
+#0  0x00007ffff72ff5a9 in __GI_____strtod_l_internal (nptr=0x7fffffffd799 "  78.1  161  197\n", endptr=0x0, group=<optimized out>, loc=<optimized out>) at strtod_l.c:850
+#1  0x000000000040152c in main._omp_fn.0 () at nn.c:119
+#2  0x00007ffff78bb6ce in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x00007ffff768f184 in start_thread (arg=0x7ffff60b7700) at pthread_create.c:312
+#4  0x00007ffff73bc03d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+845	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x000xc80x41
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd508
+address max offset: 4
+Memory content after  bitflip:0x830xcf0x430xb7
+frame name: main
+symbol name: target_lat
+symbol filename: nn.c
+symbol line: 34
+value: -1,16712208e-05
+value address: 0x7fffffffd508
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-10-18 13:46:36]
+Fault Injection Successful after 2.374154806137085s
+[INFO -- 2018-10-18 13:46:40]
+event type: exit
+[INFO -- 2018-10-18 13:46:40]
+exit code: 0

@@ -1,0 +1,46 @@
+[INFO -- 2018-10-18 20:53:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 20:53:39]
+Initialization strings:
+[INFO -- 2018-10-18 20:53:39]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-18 20:53:39]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-18 20:53:39]
+initSignal:3
+[INFO -- 2018-10-18 20:53:39]
+endSignal:4
+[INFO -- 2018-10-18 20:53:39]
+faultModel:3
+[INFO -- 2018-10-18 20:53:42]
+Backtrace BEGIN:
+#0  0x00007ffff72fedc6 in str_to_mpn (str=0x7fffffffd5e6 "   68  799\n1987  3 26  6  8 WILLIAM    43.0  70.7  159  668\n1952 12 11 12 10 BERYL      44.6 238.2   68  382\n1985  1 14  0 18 ISAAC       7.5  60.8   39  262\n1964 10 25 18 15 VALERIE    40.1 354.6   3"..., str@entry=0x7fffffffd5e4 ".6   68  799\n1987  3 26  6  8 WILLIAM    43.0  70.7  159  668\n1952 12 11 12 10 BERYL      44.6 238.2   68  382\n1985  1 14  0 18 ISAAC       7.5  60.8   39  262\n1964 10 25 18 15 VALERIE    40.1 354.6  "..., digcnt=<optimized out>, digcnt@entry=1, n=n@entry=0x7fffffffd090, nsize=nsize@entry=0x7fffffffd060, exponent=exponent@entry=0x7fffffffd070, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=<optimized out>) at strtod_l.c:430
+#1  0x00007ffff72ffa8a in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1427
+#2  0x000000000040152c in main._omp_fn.0 () at nn.c:119
+#3  0x0000000000401193 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+425	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffcff0
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: str_to_mpn
+symbol name: thousands
+symbol filename: strtod_l.c
+symbol line: 340
+value: 0x0
+value address: 0x7fffffffcff0
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 20:53:42]
+Fault Injection Successful after 3.4259531497955322s
+[INFO -- 2018-10-18 20:53:44]
+event type: exit
+[INFO -- 2018-10-18 20:53:44]
+exit code: 0

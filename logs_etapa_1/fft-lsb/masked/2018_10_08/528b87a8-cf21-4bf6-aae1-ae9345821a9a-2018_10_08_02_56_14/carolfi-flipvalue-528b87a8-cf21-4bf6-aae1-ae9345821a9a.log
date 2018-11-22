@@ -1,0 +1,53 @@
+[INFO -- 2018-10-08 02:55:54]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-08 02:55:54]
+Initialization strings:
+[INFO -- 2018-10-08 02:55:54]
+(1) file /tmp/fft_nn/fft_nn.out
+[INFO -- 2018-10-08 02:55:54]
+(2) set args 32768 /tmp/fft_nn/output_falha.data
+[INFO -- 2018-10-08 02:55:54]
+initSignal:15
+[INFO -- 2018-10-08 02:55:54]
+endSignal:25
+[INFO -- 2018-10-08 02:55:54]
+faultModel:4
+[INFO -- 2018-10-08 02:56:09]
+Backtrace BEGIN:
+#0  0x00007ffff702eb56 in __libc_use_alloca (size=256) at ../nptl/sysdeps/pthread/allocalim.h:28
+#1  _IO_vfscanf_internal (s=s@entry=0x6062c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffd8c8, errp=errp@entry=0x0) at vfscanf.c:1777
+#2  0x00007ffff7032162 in __isoc99_fscanf (stream=0x6062c0, format=<optimized out>) at isoc99_fscanf.c:34
+#3  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#4  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x00000000004019b7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#6  0x0000000000401631 in main ()
+
+23	../nptl/sysdeps/pthread/allocalim.h: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 4
+Memory content before bitflip:0x76
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff715cc04  
+address max offset: 1
+Memory content after  bitflip:0x7e
+frame name: __libc_use_alloca
+symbol name: __PRETTY_FUNCTION__
+symbol filename: vfscanf.c
+symbol line: 0
+value: "_IO_~fscanf_internal"
+value address: 0x7ffff715cc00 <__PRETTY_FUNCTION__.11925>
+Type: The type is an array.
+Type sizeof: 21
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 20)
+
+[INFO -- 2018-10-08 02:56:09]
+Fault Injection Successful after 15.703697443008423s
+[INFO -- 2018-10-08 02:56:14]
+event type: exit
+[INFO -- 2018-10-08 02:56:14]
+exit code: 0

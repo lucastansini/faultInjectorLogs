@@ -1,0 +1,49 @@
+[INFO -- 2018-10-19 03:55:17]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 03:55:17]
+Initialization strings:
+[INFO -- 2018-10-19 03:55:17]
+(1) file /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/nn
+[INFO -- 2018-10-19 03:55:17]
+(2) set args /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/filelist 15 25 25 /home/latansini/Desktop/trabalhoftf/carol-fi/sample-code/knn/nn-knl-files/out15_25_25
+[INFO -- 2018-10-19 03:55:17]
+initSignal:0
+[INFO -- 2018-10-19 03:55:17]
+endSignal:1
+[INFO -- 2018-10-19 03:55:17]
+faultModel:0
+[EXCEPTION -- 2018-10-19 03:55:17]
+pythonException: invalid frame
+[INFO -- 2018-10-19 03:55:17]
+Backtrace BEGIN:
+#0  0x00007ffff73b653a in mmap64 () at ../sysdeps/unix/syscall-template.S:81
+#1  0x00007ffff768fcf9 in allocate_stack (stack=<synthetic pointer>, pdp=<synthetic pointer>, attr=0x7ffff7ad3600) at allocatestack.c:513
+#2  __pthread_create_2_1 (newthread=0x7fffffffd458, attr=<optimized out>, start_routine=0x7ffff78bb5a0, arg=0x7fffffffd340) at pthread_create.c:500
+#3  0x00007ffff78bbca2 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x0000000000401184 in main (argc=6, argv=0x7fffffffd8b8) at nn.c:115
+
+76	../sysdeps/unix/syscall-template.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x010x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7686074 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: __pthread_create_2_1
+symbol name: __libc_multiple_threads_ptr
+symbol filename: ../nptl/sysdeps/pthread/createthread.c
+symbol line: 46
+value: 0x7ffff7686074 <__libc_multiple_threads>
+value address: 0x7ffff78a44a0 <__libc_multiple_threads_ptr>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-19 03:55:17]
+Fault Injection Successful after 0.4925718307495117s
+[INFO -- 2018-10-19 03:55:22]
+event type: exit
+[INFO -- 2018-10-19 03:55:22]
+exit code: 0
