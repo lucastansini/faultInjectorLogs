@@ -1,0 +1,74 @@
+FFT,,,,,
+by PVF,,,,,
+,,,,,
+PVF ,#flips ,#SDCs ,Var name ,file ,line number
+100,1,1,type,printf_fp.c,205
+40,5,2,negative,vfscanf.c,232
+"30,7228915662651",166,51,exponent,strtod_l.c,486
+"23,9130434782609",46,11,bits,strtod_l.c,499
+"22,5",280,63,arg,vfscanf.c,215
+20,25,5,up,mul.c,47
+"17,6470588235294",119,21,startp,strtod_l.c,504
+"15,6626506024096",166,26,decimal_len,strtod_l.c,522
+"12,1513944223108",502,61,tw,vfscanf.c,271
+"11,4285714285714",140,16,start_of_digits,strtod_l.c,504
+"5,55555555555556",72,4,endptr,strtod_l.c,480
+5,20,1,prodp,mul.c,46
+"3,50877192982456",114,4,negative,strtod_l.c,484
+"3,1055900621118",161,5,den,strtod_l.c,494
+"2,94117647058823",170,5,retval,strtod_l.c,497
+"2,38095238095238",42,1,negative,../stdlib/strtol_l.c,233
+"1,6304347826087",368,6,flags,vfscanf.c,222
+"1,21951219512195",82,1,exponent,strtod_l.c,338
+"1,12359550561798",178,2,numsize,strtod_l.c,485
+"0,574712643678161",174,1,num,strtod_l.c,485
+"0,111028867505551",2702,3,arg,isoc99_fscanf.c,27
+,,,,,
+by Faults,,,,,
+,,,,,
+PVF ,#flips ,#SDCs ,Var name ,file ,line number
+"0,111028867505551",2702,3,arg,isoc99_fscanf.c,27
+"12,1513944223108",502,61,tw,vfscanf.c,271
+"1,6304347826087",368,6,flags,vfscanf.c,222
+"22,5",280,63,arg,vfscanf.c,215
+"1,12359550561798",178,2,numsize,strtod_l.c,485
+"0,574712643678161",174,1,num,strtod_l.c,485
+"2,94117647058823",170,5,retval,strtod_l.c,497
+"30,7228915662651",166,51,exponent,strtod_l.c,486
+"15,6626506024096",166,26,decimal_len,strtod_l.c,522
+"3,1055900621118",161,5,den,strtod_l.c,494
+"11,4285714285714",140,16,start_of_digits,strtod_l.c,504
+"17,6470588235294",119,21,startp,strtod_l.c,504
+"3,50877192982456",114,4,negative,strtod_l.c,484
+"1,21951219512195",82,1,exponent,strtod_l.c,338
+"5,55555555555556",72,4,endptr,strtod_l.c,480
+"23,9130434782609",46,11,bits,strtod_l.c,499
+"2,38095238095238",42,1,negative,../stdlib/strtol_l.c,233
+20,25,5,up,mul.c,47
+5,20,1,prodp,mul.c,46
+40,5,2,negative,vfscanf.c,232
+100,1,1,type,printf_fp.c,205
+,,,,,
+PVF ,#flips ,#SDCs ,Var name ,file ,line number
+"22,5",280,63,arg,vfscanf.c,215
+"12,1513944223108",502,61,tw,vfscanf.c,271
+"30,7228915662651",166,51,exponent,strtod_l.c,486
+"15,6626506024096",166,26,decimal_len,strtod_l.c,522
+"17,6470588235294",119,21,startp,strtod_l.c,504
+"11,4285714285714",140,16,start_of_digits,strtod_l.c,504
+"23,9130434782609",46,11,bits,strtod_l.c,499
+"1,6304347826087",368,6,flags,vfscanf.c,222
+20,25,5,up,mul.c,47
+"3,1055900621118",161,5,den,strtod_l.c,494
+"2,94117647058823",170,5,retval,strtod_l.c,497
+"5,55555555555556",72,4,endptr,strtod_l.c,480
+"3,50877192982456",114,4,negative,strtod_l.c,484
+"0,111028867505551",2702,3,arg,isoc99_fscanf.c,27
+40,5,2,negative,vfscanf.c,232
+"1,12359550561798",178,2,numsize,strtod_l.c,485
+100,1,1,type,printf_fp.c,205
+5,20,1,prodp,mul.c,46
+"2,38095238095238",42,1,negative,../stdlib/strtol_l.c,233
+"1,21951219512195",82,1,exponent,strtod_l.c,338
+"0,574712643678161",174,1,num,strtod_l.c,485
+by SDCs,,,,,

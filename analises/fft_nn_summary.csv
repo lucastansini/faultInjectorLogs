@@ -1,0 +1,153 @@
+Faults Injected:;14087
+
+Fault Effect;#Effect;PVF
+Masked;11503;0.8165684673812735
+SDCs;335;0.023780790800028394
+Crashes;1942;0.13785759920494073
+Hangs;307;0.021793142613757366
+
+FaultModels SDCs:
+FaultModel ;#SDCs;percentage
+Random bit-flip;114;34.02985074626866
+Double bit-flip;92;27.46268656716418
+Single bit-flip;70;20.8955223880597
+Zero bit-flip;56;16.716417910447763
+LSB bit-flip;3;0.8955223880597015
+
+FaultModels Crashes:
+FaultModel ;#Crashes;percentage
+Random bit-flip;558;28.733264675592174
+Double bit-flip;541;27.85787847579815
+Single bit-flip;483;24.871266735324408
+Zero bit-flip;343;17.662203913491243
+LSB bit-flip;17;0.8753861997940269
+
+FaultModels Hangs:
+FaultModel ;#Hangs;percentage
+Double bit-flip;103;33.55048859934853
+Random bit-flip;72;23.452768729641694
+Single bit-flip;66;21.49837133550489
+Zero bit-flip;65;21.172638436482085
+LSB bit-flip;1;0.32573289902280134
+
+Variables that caused SDCs:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+22.336769759450174;291;65;arg;vfscanf.c;215
+10.333333333333334;600;62;tw;vfscanf.c;271
+24.043715846994534;183;44;exponent;strtod_l.c;486
+15.69767441860465;172;27;start_of_digits;strtod_l.c;504
+11.052631578947368;190;21;negative;strtod_l.c;484
+14.492753623188406;138;20;startp;strtod_l.c;504
+10.179640718562874;167;17;decimal_len;strtod_l.c;522
+3.361344537815126;476;16;flags;vfscanf.c;222
+23.076923076923077;65;15;bits;strtod_l.c;499
+6.282722513089005;191;12;retval;strtod_l.c;497
+0.2769230769230769;3250;9;arg;isoc99_fscanf.c;27
+31.818181818181817;22;7;up;mul.c;47
+7.142857142857142;70;5;endptr;strtod_l.c;480
+1.9417475728155338;206;4;numsize;strtod_l.c;485
+1.0869565217391304;184;2;den;strtod_l.c;494
+40.0;5;2;negative;vfscanf.c;232
+10.526315789473683;19;2;prodp;mul.c;46
+50.0;2;1;jump_table;vfprintf.c;288
+2.631578947368421;38;1;negative;../stdlib/strtol_l.c;233
+0.546448087431694;183;1;width;vfscanf.c;221
+0.8928571428571428;112;1;exponent;strtod_l.c;338
+16.666666666666664;6;1;exp_negative;strtod_l.c;871
+
+Variables that caused Crash:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+98.89135254988913;451;446;f;vfscanf.c;216
+72.76507276507277;481;350;use_malloc;vfscanf.c;275
+42.90030211480362;331;142;__GI__IO_file_jumps;fileops.c;1549
+39.87341772151899;316;126;_IO_file_jumps;fileops.c;1572
+74.0;150;111;strptr;vfscanf.c;264
+85.45454545454545;110;94;not_in;vfscanf.c;234
+35.714285714285715;182;65;thousands;strtod_l.c;528
+61.61616161616161;99;61;got_e;vfscanf.c;232
+13.31521739130435;368;49;_IO_file_jumps_maybe_mmap;fileops.c;1598
+27.54491017964072;167;46;decimal_len;strtod_l.c;522
+34.82142857142857;112;39;exponent;strtod_l.c;338
+13.402061855670103;291;39;arg;vfscanf.c;215
+17.475728155339805;206;36;numsize;strtod_l.c;485
+19.12568306010929;183;35;width;vfscanf.c;221
+5.6722689075630255;476;27;flags;vfscanf.c;222
+7.780979827089338;347;27;_IO_file_jumps_mmap;fileops.c;1574
+35.714285714285715;70;25;endptr;strtod_l.c;480
+6.3711911357340725;361;23;wpmax;vfscanf.c;273
+12.209302325581394;172;21;start_of_digits;strtod_l.c;504
+10.869565217391305;138;15;startp;strtod_l.c;504
+23.809523809523807;63;15;endptr;../stdlib/strtol_l.c;228
+92.85714285714286;14;13;done;vfscanf.c;218
+91.66666666666666;12;11;decimal;vfscanf.c;242
+100.0;11;11;_dl_skip_args;rtld.c;85
+100.0;10;10;user_entry;../elf/dl-sysdep.c;89
+81.81818181818183;11;9;errp;vfscanf.c;212
+57.14285714285714;14;8;current;../stdlib/strtol_l.c;246
+4.861111111111112;144;7;thousands;strtod_l.c;340
+100.0;7;7;grouping;strtod_l.c;532
+0.21538461538461537;3250;7;arg;isoc99_fscanf.c;27
+83.33333333333334;6;5;cmpp;vfscanf.c;2043
+55.55555555555556;9;5;loc;vfscanf.c;225
+21.052631578947366;19;4;prodp;mul.c;46
+18.181818181818183;22;4;up;mul.c;47
+5.263157894736842;76;4;_r_debug;dl-debug.c;37
+75.0;4;3;thousands;vfscanf.c;248
+75.0;4;3;loc;strtod_l.c;482
+23.076923076923077;13;3;global_max_fast;malloc.c;1768
+23.076923076923077;13;3;_dl_rtld_libname;rtld.c;211
+1.639344262295082;183;3;exponent;strtod_l.c;486
+100.0;2;2;done;vfprintf.c;247
+100.0;2;2;curnumeric;vfscanf.c;327
+15.384615384615385;13;2;__realloc_hook;malloc.c;1836
+10.526315789473683;19;2;__morecore;malloc.c;404
+100.0;2;2;__res;vfscanf.c;2020
+66.66666666666666;3;2;wpsize;vfscanf.c;274
+16.666666666666664;12;2;preloadlist;rtld.c;894
+22.22222222222222;9;2;_dl_argv_internal;rtld.c;87
+13.333333333333334;15;2;_rtld_global;rtld.c;141
+10.0;10;1;_IO_strn_jumps;vsnprintf.c;69
+100.0;1;1;scalesize;printf_fp.c;199
+0.5434782608695652;184;1;den;strtod_l.c;494
+1.098901098901099;91;1;got_digit;vfscanf.c;232
+7.142857142857142;14;1;__malloc_hook;malloc.c;1834
+9.090909090909092;11;1;_rtld_local;rtld.c;163
+50.0;2;1;ranges;dl-reloc.c;264
+0.16666666666666669;600;1;tw;vfscanf.c;271
+11.11111111111111;9;1;__after_morecore_hook;malloc.c;1842
+100.0;1;1;argv;libc-start.c;126
+5.0;20;1;_dl_argv;rtld.c;84
+100.0;1;1;cmp2p;vfscanf.c;2075
+
+Variables that caused Hang:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+39.130434782608695;46;18;list_all_lock;genops.c;38
+90.0;20;18;__memalign_hook;malloc.c;1839
+84.21052631578947;19;16;__morecore;malloc.c;404
+100.0;15;15;aligned_heap_area;arena.c;519
+100.0;15;15;free_list;arena.c;80
+100.0;15;15;__func__;malloc.c;0
+83.33333333333334;18;15;narenas;arena.c;79
+100.0;13;13;atfork_recursive_cntr;arena.c;212
+92.85714285714286;14;13;__malloc_hook;malloc.c;1834
+100.0;12;12;__free_hook;malloc.c;1832
+100.0;12;12;__malloc_initialize_hook;malloc.c;1831
+84.61538461538461;13;11;save_malloc_hook;arena.c;137
+84.61538461538461;13;11;atfork_mem;arena.c;142
+84.61538461538461;13;11;__realloc_hook;malloc.c;1836
+78.57142857142857;14;11;check_action;malloc.c;1854
+73.33333333333333;15;11;using_malloc_checking;hooks.c;53
+91.66666666666666;12;11;main_arena;malloc.c;1743
+84.61538461538461;13;11;perturb_byte;malloc.c;1859
+100.0;10;10;save_free_hook;arena.c;138
+69.23076923076923;13;9;global_max_fast;malloc.c;1768
+88.88888888888889;9;8;__after_morecore_hook;malloc.c;1842
+100.0;7;7;__libc_malloc_initialized;arena.c;93
+87.5;8;7;list_lock;arena.c;78
+87.5;8;7;disallow_malloc_check;hooks.c;68
+87.5;8;7;mp_;malloc.c;1751
+45.45454545454545;11;5;arena_mem;arena.c;90
+100.0;4;4;bytes;malloc.c;3303
+1.7857142857142856;112;2;exponent;strtod_l.c;338
+9.090909090909092;11;1;_rtld_local;rtld.c;163
+1.5384615384615385;65;1;bits;strtod_l.c;499
