@@ -1,0 +1,4 @@
+Variable Name;Variable File;Variable Line;Fault Injection Time(s);Injection Time Interval;Fault Model
+list_all_lock;genops.c;38;0.9574801921844482;0-25;Random bit-flip
+startp;strtod_l.c;504;8.442092180252075;0-25;Zero bit-flip
+list_all_lock;genops.c;38;2.642971992492676;0-25;LSB bit-flip

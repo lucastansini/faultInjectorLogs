@@ -1,0 +1,58 @@
+[INFO -- 2018-11-30 20:23:08]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 20:23:08]
+Initialization strings:
+[INFO -- 2018-11-30 20:23:08]
+(1) file /home/lignati/carol-fi/codes/inversefulldup/inversek2j.nn.out
+[INFO -- 2018-11-30 20:23:08]
+(2) set args /home/lignati/carol-fi/codes/inversefulldup/input_250k /home/lignati/carol-fi/codes/inversefulldup/output_falha.data
+[INFO -- 2018-11-30 20:23:08]
+initSignal:0
+[INFO -- 2018-11-30 20:23:08]
+endSignal:25
+[INFO -- 2018-11-30 20:23:08]
+faultModel:2
+[INFO -- 2018-11-30 20:23:11]
+Backtrace BEGIN:
+#0  __GI__IO_sputbackc (fp=fp@entry=0x6085c0, c=c@entry=41) at genops.c:732
+#1  0x00007ffff702d948 in _IO_vfscanf_internal (s=s@entry=0x6085c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffcf38, errp=errp@entry=0x0) at vfscanf.c:2108
+#2  0x00007ffff7033162 in __isoc99_fscanf (stream=0x6085c0, format=<optimized out>) at isoc99_fscanf.c:34
+#3  0x00007ffff7bcac42 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#4  0x00007ffff7bc8073 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x0000000000402061 in inversek2j(float, float, float*, float*) ()
+#6  0x000000000040179a in main ()
+
+727	genops.c: No such file or directory.
+
+Backtrace END
+Fliping value of field: cnt
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff73999c4 
+address max offset: 4
+Memory content after  bitflip:0x150xeb0x460x3a
+frame name: __GI__IO_sputbackc
+symbol name: list_all_lock
+symbol filename: genops.c
+symbol line: 38
+value: {lock = 0, cnt = 977726229, owner = 0x0}
+value address: 0x7ffff73999c0 <list_all_lock>
+Type: The type is a structure.
+Type sizeof: 16
+Field name: lock
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: cnt
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: owner
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-11-30 20:23:11]
+Fault Injection Successful after 3.6588070392608643s
+[INFO -- 2018-11-30 20:23:33]
+event type: exit
+[INFO -- 2018-11-30 20:23:33]
+exit code: 0

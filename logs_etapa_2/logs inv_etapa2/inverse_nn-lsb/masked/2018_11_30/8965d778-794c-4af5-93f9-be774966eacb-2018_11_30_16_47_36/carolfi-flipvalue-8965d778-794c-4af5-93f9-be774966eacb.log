@@ -1,0 +1,47 @@
+[INFO -- 2018-11-30 16:47:08]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 16:47:08]
+Initialization strings:
+[INFO -- 2018-11-30 16:47:08]
+(1) file /home/lignati/carol-fi/codes/inversefulldup/inversek2j.nn.out
+[INFO -- 2018-11-30 16:47:08]
+(2) set args /home/lignati/carol-fi/codes/inversefulldup/input_250k /home/lignati/carol-fi/codes/inversefulldup/output_falha.data
+[INFO -- 2018-11-30 16:47:08]
+initSignal:0
+[INFO -- 2018-11-30 16:47:08]
+endSignal:25
+[INFO -- 2018-11-30 16:47:08]
+faultModel:4
+[INFO -- 2018-11-30 16:47:12]
+Backtrace BEGIN:
+#0  0x00007ffff704fe1e in __GI__IO_link_in (fp=fp@entry=0x6085c0) at genops.c:113
+#1  0x00007ffff704eaf2 in _IO_new_file_init (fp=fp@entry=0x6085c0) at fileops.c:150
+#2  0x00007ffff70433c3 in __fopen_internal (filename=0x402621 "./inversek2j.nn", mode=0x7ffff7bd4c23 "r", is32=1) at iofopen.c:86
+#3  0x00007ffff7bc8033 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#4  0x0000000000402061 in inversek2j(float, float, float*, float*) ()
+#5  0x000000000040179a in main ()
+
+108	genops.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0xc70x660x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff73999b0 
+address max offset: 4
+Memory content after  bitflip:0xc70x660x000x08
+frame name: __GI__IO_link_in
+symbol name: _IO_list_all_stamp
+symbol filename: genops.c
+symbol line: 42
+value: 134244039
+value address: 0x7ffff73999b0 <_IO_list_all_stamp>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-11-30 16:47:12]
+Fault Injection Successful after 4.378907680511475s
+[INFO -- 2018-11-30 16:47:34]
+event type: exit
+[INFO -- 2018-11-30 16:47:34]
+exit code: 0

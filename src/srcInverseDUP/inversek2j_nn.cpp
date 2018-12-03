@@ -13,6 +13,7 @@ extern ParrotObserver parroto;
 #include <cstdlib>
 #include "kinematics.hpp"
 #include <fstream>
+#include <stdio.h>
 
 #include <time.h>
 #include <iomanip>
@@ -29,7 +30,9 @@ int main(int argc, const char* argv[])
 	int n;
 	std::string inputFilename	= argv[1];
 	std::string outputFilename 	= argv[2];
+	FILE * detector;
 
+	detector = fopen ("detectionINV.log","w");
 	// prepare the output file for writting the theta values
 	std::ofstream outputFileHandler;
 	outputFileHandler.open(outputFilename);
@@ -43,6 +46,7 @@ int main(int argc, const char* argv[])
 
 
 	float* t1t2xy = (float*)malloc(n * 2 * 2 * sizeof(float));
+	float* t1t2xyDUP = (float*)malloc(n * 2 * 2 * sizeof(float));//duplicado
 
 	if(t1t2xy == NULL)
 	{
@@ -69,10 +73,38 @@ int main(int argc, const char* argv[])
 		inversek2j(t1t2xy[i + 2], t1t2xy[i + 3], t1t2xy + (i + 0), t1t2xy + (i + 1));
 	}
 
-	for(int i = 0 ; i < n * 2 * 2 ; i += 2 * 2)
+
+
+	//loops duplciados
+
+	int curr_index1DUP = 0;
+	for(int iDUP = 0 ; iDUP < n * 2 * 2 ; iDUP += 2 * 2)
 	{
-		outputFileHandler <<  t1t2xy[i+0] << "\t" << t1t2xy[i+1] << "\n";
+		float theta1DUP, theta2DUP;
+		inputFileHandler >> theta1 >> theta2;
+
+		t1t2xyDUP[i] = theta1DUP;
+		t1t2xyDUP[i + 1] = theta2DUP;
+
+		forwardk2j(t1t2xyDUP[i + 0], t1t2xyDUP[i + 1], t1t2xyDUP + (i + 2), t1t2xyDUP + (i + 3));
 	}
+
+	for(int iDUP = 0 ; iDUP < n * 2 * 2 ; iDUP += 2 * 2)
+	{
+		inversek2j(t1t2xyDUP[i + 2], t1t2xyDUP[i + 3], t1t2xyDUP + (i + 0), t1t2xyDUP + (i + 1));
+	}
+	///fim loops duplicados
+
+
+	for(int i = 0 ; i < n * 2 * 2 ; i += 2 * 2)
+	{	
+		if(t1t2xy[i+0] == t1t2xyDUP[i+0] && t1t2xy[i+1] == t1t2xyDUP[i+1])
+			outputFileHandler <<  t1t2xy[i+0] << "\t" << t1t2xy[i+1] << "\n";
+		else
+			outputFileHandler <<  t1t2xy[i+0] << "\t" << t1t2xy[i+1] << "\n";
+			fprintf(detector,"|%f ,%f| |%f, %f|",t1t2xy[i+0],t1t2xyDUP[i+0],t1t2xy[i+1],t1t2xyDUP[i+1]);
+			
+	}	
 
 	inputFileHandler.close();
 	outputFileHandler.close();

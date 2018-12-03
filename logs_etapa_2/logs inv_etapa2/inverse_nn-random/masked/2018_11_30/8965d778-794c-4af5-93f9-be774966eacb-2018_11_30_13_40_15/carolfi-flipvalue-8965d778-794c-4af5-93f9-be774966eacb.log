@@ -1,0 +1,47 @@
+[INFO -- 2018-11-30 13:39:50]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 13:39:50]
+Initialization strings:
+[INFO -- 2018-11-30 13:39:50]
+(1) file /home/lignati/carol-fi/codes/inversefulldup/inversek2j.nn.out
+[INFO -- 2018-11-30 13:39:50]
+(2) set args /home/lignati/carol-fi/codes/inversefulldup/input_250k /home/lignati/carol-fi/codes/inversefulldup/output_falha.data
+[INFO -- 2018-11-30 13:39:50]
+initSignal:0
+[INFO -- 2018-11-30 13:39:50]
+endSignal:25
+[INFO -- 2018-11-30 13:39:50]
+faultModel:2
+[INFO -- 2018-11-30 13:40:01]
+Backtrace BEGIN:
+#0  _IO_vfscanf_internal (s=s@entry=0x6085c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffcf38, errp=errp@entry=0x0) at vfscanf.c:2119
+#1  0x00007ffff7033162 in __isoc99_fscanf (stream=0x6085c0, format=<optimized out>) at isoc99_fscanf.c:34
+#2  0x00007ffff7bcaadf in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#3  0x00007ffff7bc8073 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#4  0x0000000000402061 in inversek2j(float, float, float*, float*) ()
+#5  0x000000000040179a in main ()
+
+2114	vfscanf.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x180x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffcd30
+address max offset: 8
+Memory content after  bitflip:0xba0x610x360x280x8d0xa00x9c0x45
+frame name: _IO_vfscanf_internal
+symbol name: read_in
+symbol filename: vfscanf.c
+symbol line: 219
+value: 5016060613109375418
+value address: 0x7fffffffcd30
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-11-30 13:40:01]
+Fault Injection Successful after 11.405725479125977s
+[INFO -- 2018-11-30 13:40:15]
+event type: exit
+[INFO -- 2018-11-30 13:40:15]
+exit code: 0

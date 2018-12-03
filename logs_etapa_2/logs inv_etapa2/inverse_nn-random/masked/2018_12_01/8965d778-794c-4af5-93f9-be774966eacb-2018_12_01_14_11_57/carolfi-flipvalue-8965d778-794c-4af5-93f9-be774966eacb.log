@@ -1,0 +1,53 @@
+[INFO -- 2018-12-01 14:11:29]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 14:11:29]
+Initialization strings:
+[INFO -- 2018-12-01 14:11:29]
+(1) file /home/lignati/carol-fi/codes/inversefulldup/inversek2j.nn.out
+[INFO -- 2018-12-01 14:11:29]
+(2) set args /home/lignati/carol-fi/codes/inversefulldup/input_250k /home/lignati/carol-fi/codes/inversefulldup/output_falha.data
+[INFO -- 2018-12-01 14:11:29]
+initSignal:0
+[INFO -- 2018-12-01 14:11:29]
+endSignal:25
+[INFO -- 2018-12-01 14:11:29]
+faultModel:2
+[INFO -- 2018-12-01 14:11:39]
+Backtrace BEGIN:
+#0  0x00007ffff70c4170 in __open_nocancel () at ../sysdeps/unix/syscall-template.S:81
+#1  0x00007ffff704eed8 in _IO_file_open (is32not64=8, read_write=8, prot=438, posix_mode=<optimized out>, filename=0x7fffffffd050 "!&@", fp=0x6085c0) at fileops.c:228
+#2  _IO_new_file_fopen (fp=fp@entry=0x6085c0, filename=filename@entry=0x402621 "./inversek2j.nn", mode=<optimized out>, mode@entry=0x7ffff7bd4c23 "r", is32not64=is32not64@entry=1) at fileops.c:333
+#3  0x00007ffff70433d4 in __fopen_internal (filename=0x402621 "./inversek2j.nn", mode=0x7ffff7bd4c23 "r", is32=1) at iofopen.c:90
+#4  0x00007ffff7bc8033 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x0000000000402061 in inversek2j(float, float, float*, float*) ()
+#6  0x000000000040179a in main ()
+
+76	../sysdeps/unix/syscall-template.S: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 15
+Memory content before bitflip:0x70
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff715dc9f  
+address max offset: 1
+Memory content after  bitflip:0x67
+frame name: _IO_new_file_fopen
+symbol name: __PRETTY_FUNCTION__
+symbol filename: fileops.c
+symbol line: 0
+value: "_IO_new_file_fogen"
+value address: 0x7ffff715dc90 <__PRETTY_FUNCTION__.11488>
+Type: The type is an array.
+Type sizeof: 19
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 18)
+
+[INFO -- 2018-12-01 14:11:39]
+Fault Injection Successful after 10.524212121963501s
+[INFO -- 2018-12-01 14:11:54]
+event type: exit
+[INFO -- 2018-12-01 14:11:54]
+exit code: 0

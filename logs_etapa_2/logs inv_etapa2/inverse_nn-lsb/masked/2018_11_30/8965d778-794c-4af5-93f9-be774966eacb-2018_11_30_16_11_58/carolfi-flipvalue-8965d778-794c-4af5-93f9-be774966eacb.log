@@ -1,0 +1,56 @@
+[INFO -- 2018-11-30 16:11:33]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 16:11:33]
+Initialization strings:
+[INFO -- 2018-11-30 16:11:33]
+(1) file /home/lignati/carol-fi/codes/inversefulldup/inversek2j.nn.out
+[INFO -- 2018-11-30 16:11:33]
+(2) set args /home/lignati/carol-fi/codes/inversefulldup/input_250k /home/lignati/carol-fi/codes/inversefulldup/output_falha.data
+[INFO -- 2018-11-30 16:11:33]
+initSignal:0
+[INFO -- 2018-11-30 16:11:33]
+endSignal:25
+[INFO -- 2018-11-30 16:11:33]
+faultModel:4
+[EXCEPTION -- 2018-11-30 16:11:36]
+gdbException: Attempt to dereference a generic pointer.
+[EXCEPTION -- 2018-11-30 16:11:36]
+gdbException: Attempt to dereference a generic pointer.
+[INFO -- 2018-11-30 16:11:36]
+Backtrace BEGIN:
+#0  str_to_mpn (str=str@entry=0x7fffffffcb31 ".83260488510131835938e+00", digcnt=digcnt@entry=20, n=n@entry=0x7fffffffca50, nsize=nsize@entry=0x7fffffffca20, exponent=exponent@entry=0x7fffffffca30, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=<optimized out>) at strtod_l.c:395
+#1  0x00007ffff7013c2b in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1427
+#2  0x00007ffff7012d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#3  0x00007ffff702c948 in _IO_vfscanf_internal (s=s@entry=0x6085c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffcf38, errp=errp@entry=0x0) at vfscanf.c:2365
+#4  0x00007ffff7033162 in __isoc99_fscanf (stream=0x6085c0, format=<optimized out>) at isoc99_fscanf.c:34
+#5  0x00007ffff7bcac42 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#6  0x00007ffff7bc8073 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#7  0x0000000000402061 in inversek2j(float, float, float*, float*) ()
+#8  0x000000000040179a in main ()
+
+390	strtod_l.c: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 0
+Fliping value of field: fp_offset
+Memory content before bitflip:0x300x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffcf3c
+address max offset: 4
+Memory content after  bitflip:0x300x000x000x08
+frame name: __isoc99_fscanf
+symbol name: arg
+symbol filename: isoc99_fscanf.c
+symbol line: 27
+value: {{gp_offset = 16, fp_offset = 134217776, overflow_arg_area = 0x7fffffffd010, reg_save_area = 0x7fffffffcf50}}
+value address: 0x7fffffffcf38
+Type: The type is an array.
+Type sizeof: 24
+
+[INFO -- 2018-11-30 16:11:36]
+Fault Injection Successful after 3.2613165378570557s
+[INFO -- 2018-11-30 16:11:58]
+event type: exit
+[INFO -- 2018-11-30 16:11:58]
+exit code: 0

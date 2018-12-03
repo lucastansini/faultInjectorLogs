@@ -1,0 +1,50 @@
+[INFO -- 2018-12-01 01:44:52]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 01:44:52]
+Initialization strings:
+[INFO -- 2018-12-01 01:44:52]
+(1) file /home/lignati/carol-fi/codes/inversefulldup/inversek2j.nn.out
+[INFO -- 2018-12-01 01:44:52]
+(2) set args /home/lignati/carol-fi/codes/inversefulldup/input_250k /home/lignati/carol-fi/codes/inversefulldup/output_falha.data
+[INFO -- 2018-12-01 01:44:52]
+initSignal:0
+[INFO -- 2018-12-01 01:44:52]
+endSignal:25
+[INFO -- 2018-12-01 01:44:52]
+faultModel:1
+[EXCEPTION -- 2018-12-01 01:44:58]
+gdbException: Attempt to dereference a generic pointer.
+[INFO -- 2018-12-01 01:44:58]
+Backtrace BEGIN:
+#0  0x00007ffff702a84d in _IO_vfscanf_internal (s=s@entry=0x6085c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffcf38, errp=errp@entry=0x0) at vfscanf.c:2006
+#1  0x00007ffff7033162 in __isoc99_fscanf (stream=0x6085c0, format=<optimized out>) at isoc99_fscanf.c:34
+#2  0x00007ffff7bcac42 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#3  0x00007ffff7bc8073 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#4  0x0000000000402061 in inversek2j(float, float, float*, float*) ()
+#5  0x000000000040179a in main ()
+
+2001	in vfscanf.c
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffcb31 
+address max offset: 1
+Memory content after  bitflip:0x18
+frame name: _IO_vfscanf_internal
+symbol name: tw
+symbol filename: vfscanf.c
+symbol line: 271
+value: 0x7fffffffcb31 "\030\060\062\065\070\070\063\067\063\064\062\062\066\062\062\066\070\060\066\066\064e-01"
+value address: 0x7fffffffcd60
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 01:44:58]
+Fault Injection Successful after 6.1328065395355225s
+[INFO -- 2018-12-01 01:45:17]
+event type: exit
+[INFO -- 2018-12-01 01:45:17]
+exit code: 0

@@ -1,0 +1,25 @@
+[INFO -- 2018-12-01 12:34:51]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 12:34:51]
+Initialization strings:
+[INFO -- 2018-12-01 12:34:51]
+(1) file /home/lignati/carol-fi/codes/inversefulldup/inversek2j.nn.out
+[INFO -- 2018-12-01 12:34:51]
+(2) set args /home/lignati/carol-fi/codes/inversefulldup/input_250k /home/lignati/carol-fi/codes/inversefulldup/output_falha.data
+[INFO -- 2018-12-01 12:34:51]
+initSignal:0
+[INFO -- 2018-12-01 12:34:51]
+endSignal:25
+[INFO -- 2018-12-01 12:34:51]
+faultModel:2
+[EXCEPTION -- 2018-12-01 12:34:56]
+gdbException: Attempt to dereference a generic pointer.
+[EXCEPTION -- 2018-12-01 12:34:57]
+gdbException: Attempt to dereference a generic pointer.
+[EXCEPTION -- 2018-12-01 12:34:57]
+gdbException: Attempt to dereference a generic pointer.
+[EXCEPTION -- 2018-12-01 12:35:03]
+gdbException: Attempt to dereference a generic pointer.
+[EXCEPTION -- 2018-12-01 12:35:03]
+gdbException: Attempt to dereference a generic pointer.

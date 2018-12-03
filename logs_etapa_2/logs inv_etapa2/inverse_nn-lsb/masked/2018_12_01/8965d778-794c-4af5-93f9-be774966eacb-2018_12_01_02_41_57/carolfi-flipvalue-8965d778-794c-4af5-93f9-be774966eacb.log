@@ -1,0 +1,48 @@
+[INFO -- 2018-12-01 02:41:29]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 02:41:29]
+Initialization strings:
+[INFO -- 2018-12-01 02:41:29]
+(1) file /home/lignati/carol-fi/codes/inversefulldup/inversek2j.nn.out
+[INFO -- 2018-12-01 02:41:29]
+(2) set args /home/lignati/carol-fi/codes/inversefulldup/input_250k /home/lignati/carol-fi/codes/inversefulldup/output_falha.data
+[INFO -- 2018-12-01 02:41:29]
+initSignal:0
+[INFO -- 2018-12-01 02:41:29]
+endSignal:25
+[INFO -- 2018-12-01 02:41:29]
+faultModel:4
+[INFO -- 2018-12-01 02:41:39]
+Backtrace BEGIN:
+#0  __isoc99_fscanf (stream=0x6085c0, format=<optimized out>) at isoc99_fscanf.c:30
+#1  0x00007ffff7bcac42 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#2  0x00007ffff7bc8073 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#3  0x0000000000402061 in inversek2j(float, float, float*, float*) ()
+#4  0x000000000040179a in main ()
+
+25	isoc99_fscanf.c: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 0
+Fliping value of field: fp_offset
+Memory content before bitflip:0x300x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffcf3c
+address max offset: 4
+Memory content after  bitflip:0x300x000x000x08
+frame name: __isoc99_fscanf
+symbol name: arg
+symbol filename: isoc99_fscanf.c
+symbol line: 27
+value: {{gp_offset = 16, fp_offset = 134217776, overflow_arg_area = 0x7fffffffd010, reg_save_area = 0x7fffffffcf50}}
+value address: 0x7fffffffcf38
+Type: The type is an array.
+Type sizeof: 24
+
+[INFO -- 2018-12-01 02:41:39]
+Fault Injection Successful after 10.352010488510132s
+[INFO -- 2018-12-01 02:41:55]
+event type: exit
+[INFO -- 2018-12-01 02:41:55]
+exit code: 0

@@ -1,0 +1,113 @@
+[INFO -- 2018-12-01 06:37:42]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 06:37:42]
+Initialization strings:
+[INFO -- 2018-12-01 06:37:42]
+(1) file /home/lignati/carol-fi/codes/inversefulldup/inversek2j.nn.out
+[INFO -- 2018-12-01 06:37:42]
+(2) set args /home/lignati/carol-fi/codes/inversefulldup/input_250k /home/lignati/carol-fi/codes/inversefulldup/output_falha.data
+[INFO -- 2018-12-01 06:37:42]
+initSignal:0
+[INFO -- 2018-12-01 06:37:42]
+endSignal:25
+[INFO -- 2018-12-01 06:37:42]
+faultModel:2
+[INFO -- 2018-12-01 06:37:48]
+Backtrace BEGIN:
+#0  0x00007ffff70c4170 in __open_nocancel () at ../sysdeps/unix/syscall-template.S:81
+#1  0x00007ffff704eed8 in _IO_file_open (is32not64=8, read_write=8, prot=438, posix_mode=<optimized out>, filename=0x7fffffffd050 "!&@", fp=0x6085c0) at fileops.c:228
+#2  _IO_new_file_fopen (fp=fp@entry=0x6085c0, filename=filename@entry=0x402621 "./inversek2j.nn", mode=<optimized out>, mode@entry=0x7ffff7bd4c23 "r", is32not64=is32not64@entry=1) at fileops.c:333
+#3  0x00007ffff70433d4 in __fopen_internal (filename=0x402621 "./inversek2j.nn", mode=0x7ffff7bd4c23 "r", is32=1) at iofopen.c:90
+#4  0x00007ffff7bc8033 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x0000000000402061 in inversek2j(float, float, float*, float*) ()
+#6  0x000000000040179a in main ()
+
+76	../sysdeps/unix/syscall-template.S: No such file or directory.
+
+Backtrace END
+Fliping value of field: __seekpos
+Fliping a bit of the pointer
+Memory content before bitflip:0xa00x0a0x050xf70xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff73966f0 
+address max offset: 8
+Memory content after  bitflip:0x5e0xcd0x4f0xd50xf80x8b0xa30x6e
+frame name: _IO_file_open
+symbol name: _IO_file_jumps
+symbol filename: fileops.c
+symbol line: 1572
+value: {__dummy = 0, __dummy2 = 0, __finish = 0x7ffff704ec80 <_IO_new_file_finish>, __overflow = 0x7ffff704f6d0 <_IO_new_file_overflow>, __underflow = 0x7ffff704f480 <_IO_new_file_underflow>, __uflow = 0x7ffff7050530 <__GI__IO_default_uflow>, __pbackfail = 0x7ffff70516e0 <__GI__IO_default_pbackfail>, __xsputn = 0x7ffff704e500 <_IO_new_file_xsputn>, __xsgetn = 0x7ffff704e210 <__GI__IO_file_xsgetn>, __seekoff = 0x7ffff704d870 <_IO_new_file_seekoff>, __seekpos = 0x6ea38bf8d54fcd5e, __setbuf = 0x7ffff704d7e0 <_IO_new_file_setbuf>, __sync = 0x7ffff704d710 <_IO_new_file_sync>, __doallocate = 0x7ffff70427b0 <__GI__IO_file_doallocate>, __read = 0x7ffff704e4e0 <__GI__IO_file_read>, __write = 0x7ffff704ded0 <_IO_new_file_write>, __seek = 0x7ffff704dcd0 <__GI__IO_file_seek>, __close = 0x7ffff704d7d0 <__GI__IO_file_close>, __stat = 0x7ffff704dec0 <__GI__IO_file_stat>, __showmanyc = 0x7ffff7051840 <_IO_default_showmanyc>, __imbue = 0x7ffff7051850 <_IO_default_imbue>}
+value address: 0x7ffff73966a0 <_IO_file_jumps>
+Type: The type is a structure.
+Type sizeof: 168
+Field name: __dummy
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: __dummy2
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: __finish
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __overflow
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __underflow
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __uflow
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __pbackfail
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __xsputn
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __xsgetn
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __seekoff
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __seekpos
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __setbuf
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __sync
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __doallocate
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __read
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __write
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __seek
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __close
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __stat
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __showmanyc
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __imbue
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-01 06:37:48]
+Fault Injection Successful after 6.21600341796875s
+[INFO -- 2018-12-01 06:38:07]
+event type: exit
+[INFO -- 2018-12-01 06:38:07]
+exit code: 0

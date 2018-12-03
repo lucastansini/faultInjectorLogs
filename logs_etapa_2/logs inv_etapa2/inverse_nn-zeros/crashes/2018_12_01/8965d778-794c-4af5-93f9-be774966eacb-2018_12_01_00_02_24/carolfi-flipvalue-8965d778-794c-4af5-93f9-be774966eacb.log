@@ -1,0 +1,54 @@
+[INFO -- 2018-12-01 00:02:13]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 00:02:13]
+Initialization strings:
+[INFO -- 2018-12-01 00:02:13]
+(1) file /home/lignati/carol-fi/codes/inversefulldup/inversek2j.nn.out
+[INFO -- 2018-12-01 00:02:13]
+(2) set args /home/lignati/carol-fi/codes/inversefulldup/input_250k /home/lignati/carol-fi/codes/inversefulldup/output_falha.data
+[INFO -- 2018-12-01 00:02:13]
+initSignal:0
+[INFO -- 2018-12-01 00:02:13]
+endSignal:25
+[INFO -- 2018-12-01 00:02:13]
+faultModel:3
+[EXCEPTION -- 2018-12-01 00:02:21]
+gdbException: Attempt to dereference a generic pointer.
+[EXCEPTION -- 2018-12-01 00:02:21]
+gdbException: Attempt to dereference a generic pointer.
+[INFO -- 2018-12-01 00:02:21]
+Backtrace BEGIN:
+#0  0x00007ffff701385a in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=0x7fffffffcd60, group=<optimized out>, loc=<optimized out>) at strtod_l.c:925
+#1  0x00007ffff7012d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#2  0x00007ffff702c948 in _IO_vfscanf_internal (s=s@entry=0x6085c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffcf38, errp=errp@entry=0x0) at vfscanf.c:2365
+#3  0x00007ffff7033162 in __isoc99_fscanf (stream=0x6085c0, format=<optimized out>) at isoc99_fscanf.c:34
+#4  0x00007ffff7bcac42 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#5  0x00007ffff7bc8073 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#6  0x0000000000402061 in inversek2j(float, float, float*, float*) ()
+#7  0x000000000040179a in main ()
+
+920	strtod_l.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x29
+Fault Model: Zero bit-flip
+base address to flip value: 0x7ffff7bd55b3 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: _IO_vfscanf_internal
+symbol name: f
+symbol filename: vfscanf.c
+symbol line: 216
+value: 0x7ffff7bd55b3 ""
+value address: 0x7fffffffcd20
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 00:02:21]
+Fault Injection Successful after 8.911559104919434s
+[INFO -- 2018-12-01 00:02:22]
+event type: exit
+[EXCEPTION -- 2018-12-01 00:02:22]
+exit code: no exit code available

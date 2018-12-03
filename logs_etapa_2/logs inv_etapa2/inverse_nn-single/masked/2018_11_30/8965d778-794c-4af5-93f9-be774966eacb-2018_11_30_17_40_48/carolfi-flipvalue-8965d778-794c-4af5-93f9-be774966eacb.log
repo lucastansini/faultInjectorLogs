@@ -1,0 +1,46 @@
+[INFO -- 2018-11-30 17:40:23]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 17:40:23]
+Initialization strings:
+[INFO -- 2018-11-30 17:40:23]
+(1) file /home/lignati/carol-fi/codes/inversefulldup/inversek2j.nn.out
+[INFO -- 2018-11-30 17:40:23]
+(2) set args /home/lignati/carol-fi/codes/inversefulldup/input_250k /home/lignati/carol-fi/codes/inversefulldup/output_falha.data
+[INFO -- 2018-11-30 17:40:23]
+initSignal:0
+[INFO -- 2018-11-30 17:40:23]
+endSignal:25
+[INFO -- 2018-11-30 17:40:23]
+faultModel:0
+[INFO -- 2018-11-30 17:40:34]
+Backtrace BEGIN:
+#0  0x00007ffff75c42e6 in __ieee754_exp_sse2 (x=2,0663528442382812) at ../sysdeps/ieee754/dbl-64/e_exp.c:88
+#1  0x00007ffff75d9f63 in __GI___exp (x=2,0663528442382812) at ../sysdeps/ieee754/dbl-64/w_exp.c:26
+#2  0x00007ffff7bc4986 in fann_run () from /usr/local/lib/libfann.so.2
+#3  0x0000000000402078 in inversek2j(float, float, float*, float*) ()
+#4  0x000000000040179a in main ()
+
+83	../sysdeps/ieee754/dbl-64/e_exp.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x000xe40x870x000x40
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd008
+address max offset: 8
+Memory content after  bitflip:0x010x000x000x000xe40x870x000x40
+frame name: __GI___exp
+symbol name: x
+symbol filename: ../sysdeps/ieee754/dbl-64/w_exp.c
+symbol line: 24
+value: 2,0663528442382817
+value address: 0x7fffffffd008
+Type: A floating point type.
+Type sizeof: 8
+
+[INFO -- 2018-11-30 17:40:34]
+Fault Injection Successful after 11.215946912765503s
+[INFO -- 2018-11-30 17:40:48]
+event type: exit
+[INFO -- 2018-11-30 17:40:48]
+exit code: 0

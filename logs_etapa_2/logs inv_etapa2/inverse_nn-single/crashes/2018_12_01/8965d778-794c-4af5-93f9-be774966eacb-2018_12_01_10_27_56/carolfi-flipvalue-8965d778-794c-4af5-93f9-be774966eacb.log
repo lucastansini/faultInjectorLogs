@@ -1,0 +1,53 @@
+[INFO -- 2018-12-01 10:27:48]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 10:27:48]
+Initialization strings:
+[INFO -- 2018-12-01 10:27:48]
+(1) file /home/lignati/carol-fi/codes/inversefulldup/inversek2j.nn.out
+[INFO -- 2018-12-01 10:27:48]
+(2) set args /home/lignati/carol-fi/codes/inversefulldup/input_250k /home/lignati/carol-fi/codes/inversefulldup/output_falha.data
+[INFO -- 2018-12-01 10:27:48]
+initSignal:0
+[INFO -- 2018-12-01 10:27:48]
+endSignal:25
+[INFO -- 2018-12-01 10:27:48]
+faultModel:0
+[EXCEPTION -- 2018-12-01 10:27:54]
+gdbException: Attempt to dereference a generic pointer.
+[INFO -- 2018-12-01 10:27:54]
+Backtrace BEGIN:
+#0  strlen () at ../sysdeps/x86_64/strlen.S:106
+#1  0x00007ffff701359b in __GI_____strtof_l_internal (nptr=0x7fffffffcb30 "5.72134733200073242188e-01", endptr=0x7fffffffcd60, group=<optimized out>, loc=0x7ffff7398060 <_nl_global_locale>) at strtod_l.c:572
+#2  0x00007ffff7012d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#3  0x00007ffff702c948 in _IO_vfscanf_internal (s=s@entry=0x6085c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffcf38, errp=errp@entry=0x0) at vfscanf.c:2365
+#4  0x00007ffff7033162 in __isoc99_fscanf (stream=0x6085c0, format=<optimized out>) at isoc99_fscanf.c:34
+#5  0x00007ffff7bcac42 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#6  0x00007ffff7bc8073 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#7  0x0000000000402061 in inversek2j(float, float, float*, float*) ()
+#8  0x000000000040179a in main ()
+
+101	in ../sysdeps/x86_64/strlen.S
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x600x800x390xf70xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffc9b0
+address max offset: 8
+Memory content after  bitflip:0x600x800x390xf70xff0x7b0x000x00
+frame name: __GI_____strtof_l_internal
+symbol name: loc
+symbol filename: strtod_l.c
+symbol line: 482
+value: 0x7ffff7398060 <_nl_global_locale>
+value address: 0x7fffffffc9b0
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 10:27:54]
+Fault Injection Successful after 6.346149444580078s
+[INFO -- 2018-12-01 10:27:54]
+event type: exit
+[EXCEPTION -- 2018-12-01 10:27:54]
+exit code: no exit code available

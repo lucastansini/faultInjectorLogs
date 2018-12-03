@@ -1,0 +1,132 @@
+Faults Injected:;3791
+
+Fault Effect;#Effect;PVF
+Masked;3083;0.8132418886837246
+SDCs;110;0.02901609074122923
+Crashes;595;0.15695067264573992
+Hangs;3;0.0007913479293062516
+
+
+Detected SDCs:;97
+SDC Coverage (%):;88.18181818181819
+
+FaultModels SDCs:
+FaultModel ;#SDCs;percentage
+Zero bit-flip;25;22.727272727272727
+Random bit-flip;25;22.727272727272727
+Double bit-flip;23;20.909090909090907
+Single bit-flip;20;18.181818181818183
+LSB bit-flip;17;15.454545454545453
+
+FaultModels Detected SDCs:
+FaultModel ;#SDCs Detected; percentage
+Zero bit-flip;24;21.818181818181817
+Random bit-flip;22;20.0
+Double bit-flip;19;17.272727272727273
+Single bit-flip;16;14.545454545454545
+LSB bit-flip;16;14.545454545454545
+
+FaultModels Crashes:
+FaultModel ;#Crashes;percentage
+Double bit-flip;140;23.52941176470588
+Single bit-flip;132;22.18487394957983
+Random bit-flip;126;21.176470588235293
+LSB bit-flip;125;21.008403361344538
+Zero bit-flip;72;12.100840336134453
+
+FaultModels Hangs:
+FaultModel ;#Hangs;percentage
+Zero bit-flip;1;33.33333333333333
+LSB bit-flip;1;33.33333333333333
+Random bit-flip;1;33.33333333333333
+
+Variables that caused SDCs:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+15.675675675675677;185;29;tw;vfscanf.c;271
+28.57142857142857;70;20;exponent;strtod_l.c;486
+15.873015873015872;63;10;decimal_len;strtod_l.c;522
+19.565217391304348;46;9;startp;strtod_l.c;504
+12.727272727272727;55;7;start_of_digits;strtod_l.c;504
+11.666666666666666;60;7;negative;strtod_l.c;484
+27.77777777777778;18;5;bits;strtod_l.c;499
+2.631578947368421;152;4;flags;vfscanf.c;222
+15.384615384615385;26;4;endptr;strtod_l.c;480
+0.4314994606256742;927;4;arg;isoc99_fscanf.c;27
+50.0;4;2;p2;../sysdeps/ieee754/dbl-64/uexp.h;61
+2.5;80;2;num;strtod_l.c;485
+0.9345794392523363;107;1;wpmax;vfscanf.c;273
+1.6666666666666667;60;1;retval;strtod_l.c;497
+100.0;1;1;negative;vfscanf.c;232
+1.7543859649122806;57;1;den;strtod_l.c;494
+0.9900990099009901;101;1;_buffer;vfscanf.c;358
+1.4492753623188406;69;1;numsize;strtod_l.c;485
+33.33333333333333;3;1;library_path;rtld.c;892
+
+Variables that caused Detected SDCs:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+14.594594594594595;185;27;tw;vfscanf.c;271
+28.57142857142857;70;20;exponent;strtod_l.c;486
+15.873015873015872;63;10;decimal_len;strtod_l.c;522
+17.391304347826086;46;8;startp;strtod_l.c;504
+12.727272727272727;55;7;start_of_digits;strtod_l.c;504
+11.666666666666666;60;7;negative;strtod_l.c;484
+27.77777777777778;18;5;bits;strtod_l.c;499
+15.384615384615385;26;4;endptr;strtod_l.c;480
+1.9736842105263157;152;3;flags;vfscanf.c;222
+50.0;4;2;p2;../sysdeps/ieee754/dbl-64/uexp.h;61
+1.6666666666666667;60;1;retval;strtod_l.c;497
+100.0;1;1;negative;vfscanf.c;232
+1.7543859649122806;57;1;den;strtod_l.c;494
+1.4492753623188406;69;1;numsize;strtod_l.c;485
+
+Variables that caused Crash:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+80.81395348837209;172;139;use_malloc;vfscanf.c;275
+97.88732394366197;142;139;f;vfscanf.c;216
+48.10126582278481;79;38;arg;vfscanf.c;215
+73.68421052631578;38;28;strptr;vfscanf.c;264
+71.05263157894737;38;27;not_in;vfscanf.c;234
+65.85365853658537;41;27;got_e;vfscanf.c;232
+39.682539682539684;63;25;decimal_len;strtod_l.c;522
+42.10526315789473;57;24;thousands;strtod_l.c;528
+25.454545454545453;55;14;start_of_digits;strtod_l.c;504
+35.13513513513514;37;13;exponent;strtod_l.c;338
+18.84057971014493;69;13;numsize;strtod_l.c;485
+30.303030303030305;33;10;__GI__IO_file_jumps;fileops.c;1549
+5.921052631578947;152;9;flags;vfscanf.c;222
+34.61538461538461;26;9;endptr;strtod_l.c;480
+13.114754098360656;61;8;width;vfscanf.c;221
+32.0;25;8;_IO_file_jumps;fileops.c;1572
+20.689655172413794;29;6;_IO_file_jumps_mmap;fileops.c;1574
+8.695652173913043;46;4;startp;strtod_l.c;504
+5.714285714285714;70;4;exponent;strtod_l.c;486
+3.7383177570093453;107;4;wpmax;vfscanf.c;273
+13.793103448275861;29;4;_IO_file_jumps_maybe_mmap;fileops.c;1598
+44.44444444444444;9;4;up;mul.c;47
+100.0;3;3;decimal;vfscanf.c;242
+100.0;3;3;ln_two1;../sysdeps/ieee754/dbl-64/uexp.h;57
+13.043478260869565;23;3;endptr;../stdlib/strtol_l.c;228
+60.0;5;3;current;../stdlib/strtol_l.c;246
+66.66666666666666;3;2;loc;strtod_l.c;482
+100.0;2;2;done;vfscanf.c;218
+0.2157497303128371;927;2;arg;isoc99_fscanf.c;27
+100.0;2;2;user_entry;../elf/dl-sysdep.c;89
+4.3478260869565215;46;2;thousands;strtod_l.c;340
+66.66666666666666;3;2;_dl_skip_args;rtld.c;85
+50.0;4;2;_dl_argv_internal;rtld.c;87
+100.0;2;2;cmpp;vfscanf.c;2043
+50.0;2;1;__res;strtod_l.c;867
+100.0;1;1;three51;../sysdeps/ieee754/dbl-64/uexp.h;65
+100.0;1;1;three33;../sysdeps/ieee754/dbl-64/uexp.h;64
+0.5405405405405406;185;1;tw;vfscanf.c;271
+100.0;1;1;lowc;strtod_l.c;719
+100.0;1;1;thousands;vfscanf.c;248
+100.0;1;1;log2e;../sysdeps/ieee754/dbl-64/uexp.h;59
+100.0;1;1;wpsize;vfscanf.c;274
+1.7543859649122806;57;1;den;strtod_l.c;494
+33.33333333333333;3;1;prodp;mul.c;46
+
+Variables that caused Hang:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+20.0;10;2;list_all_lock;genops.c;38
+2.1739130434782608;46;1;startp;strtod_l.c;504

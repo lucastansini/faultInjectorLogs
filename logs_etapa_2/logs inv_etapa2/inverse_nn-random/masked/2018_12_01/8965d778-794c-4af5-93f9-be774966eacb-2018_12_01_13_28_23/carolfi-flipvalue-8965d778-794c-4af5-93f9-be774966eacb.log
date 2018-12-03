@@ -1,0 +1,49 @@
+[INFO -- 2018-12-01 13:27:55]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 13:27:55]
+Initialization strings:
+[INFO -- 2018-12-01 13:27:55]
+(1) file /home/lignati/carol-fi/codes/inversefulldup/inversek2j.nn.out
+[INFO -- 2018-12-01 13:27:55]
+(2) set args /home/lignati/carol-fi/codes/inversefulldup/input_250k /home/lignati/carol-fi/codes/inversefulldup/output_falha.data
+[INFO -- 2018-12-01 13:27:55]
+initSignal:0
+[INFO -- 2018-12-01 13:27:55]
+endSignal:25
+[INFO -- 2018-12-01 13:27:55]
+faultModel:2
+[INFO -- 2018-12-01 13:28:07]
+Backtrace BEGIN:
+#0  __GI__IO_sputbackc (fp=fp@entry=0x6085c0, c=c@entry=44) at genops.c:739
+#1  0x00007ffff702a27b in _IO_vfscanf_internal (s=s@entry=0x6085c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffcf38, errp=errp@entry=0x0) at vfscanf.c:1811
+#2  0x00007ffff7033162 in __isoc99_fscanf (stream=0x6085c0, format=<optimized out>) at isoc99_fscanf.c:34
+#3  0x00007ffff7bcac42 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#4  0x00007ffff7bc8073 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x0000000000402061 in inversek2j(float, float, float*, float*) ()
+#6  0x000000000040179a in main ()
+
+734	genops.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff7399980 
+address max offset: 8
+Memory content after  bitflip:0x170xf60x990xc40x570x1a0xff0x30
+frame name: __GI__IO_sputbackc
+symbol name: freeres_list
+symbol filename: genops.c
+symbol line: 944
+value: 0x0
+value address: 0x7ffff7399980 <freeres_list>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 13:28:07]
+Fault Injection Successful after 12.861228942871094s
+[INFO -- 2018-12-01 13:28:21]
+event type: exit
+[INFO -- 2018-12-01 13:28:21]
+exit code: 0

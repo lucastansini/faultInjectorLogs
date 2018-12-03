@@ -1,0 +1,47 @@
+[INFO -- 2018-11-30 15:47:43]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 15:47:43]
+Initialization strings:
+[INFO -- 2018-11-30 15:47:43]
+(1) file /home/lignati/carol-fi/codes/inversefulldup/inversek2j.nn.out
+[INFO -- 2018-11-30 15:47:43]
+(2) set args /home/lignati/carol-fi/codes/inversefulldup/input_250k /home/lignati/carol-fi/codes/inversefulldup/output_falha.data
+[INFO -- 2018-11-30 15:47:43]
+initSignal:0
+[INFO -- 2018-11-30 15:47:43]
+endSignal:25
+[INFO -- 2018-11-30 15:47:43]
+faultModel:1
+[INFO -- 2018-11-30 15:47:43]
+Backtrace BEGIN:
+#0  __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1516
+#1  0x00007ffff7935d5e in void std::__convert_to_v<float>(char const*, float&, std::_Ios_Iostate&, __locale_struct* const&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#2  0x00007ffff7949706 in std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > >::do_get(std::istreambuf_iterator<char, std::char_traits<char> >, std::istreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, std::_Ios_Iostate&, float&) const () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x00007ffff793a0d5 in std::istream& std::istream::_M_extract<float>(float&) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00000000004015d9 in main ()
+
+1511	strtod_l.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x890x850x600x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffced8
+address max offset: 8
+Memory content after  bitflip:0x890x850x600x000x000x0c0x000x00
+frame name: __GI_____strtof_l_internal
+symbol name: startp
+symbol filename: strtod_l.c
+symbol line: 504
+value: 0x608589 ".260829"
+value address: 0x7fffffffced8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-11-30 15:47:43]
+Fault Injection Successful after 0.7256615161895752s
+[INFO -- 2018-11-30 15:48:08]
+event type: exit
+[INFO -- 2018-11-30 15:48:08]
+exit code: 0

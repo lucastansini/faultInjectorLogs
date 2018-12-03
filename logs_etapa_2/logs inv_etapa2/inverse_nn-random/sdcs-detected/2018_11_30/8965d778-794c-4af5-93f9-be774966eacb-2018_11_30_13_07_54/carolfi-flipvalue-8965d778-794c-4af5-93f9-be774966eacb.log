@@ -1,0 +1,50 @@
+[INFO -- 2018-11-30 13:07:28]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 13:07:28]
+Initialization strings:
+[INFO -- 2018-11-30 13:07:28]
+(1) file /home/lignati/carol-fi/codes/inversefulldup/inversek2j.nn.out
+[INFO -- 2018-11-30 13:07:28]
+(2) set args /home/lignati/carol-fi/codes/inversefulldup/input_250k /home/lignati/carol-fi/codes/inversefulldup/output_falha.data
+[INFO -- 2018-11-30 13:07:28]
+initSignal:0
+[INFO -- 2018-11-30 13:07:28]
+endSignal:25
+[INFO -- 2018-11-30 13:07:28]
+faultModel:2
+[INFO -- 2018-11-30 13:07:41]
+Backtrace BEGIN:
+#0  __GI_____strtof_l_internal (nptr=<optimized out>, endptr=0x7fffffffcd60, group=<optimized out>, loc=<optimized out>) at strtod_l.c:861
+#1  0x00007ffff7012d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#2  0x00007ffff702c948 in _IO_vfscanf_internal (s=s@entry=0x11c818b0, format=<optimized out>, argptr=argptr@entry=0x7fffffffcf38, errp=errp@entry=0x0) at vfscanf.c:2365
+#3  0x00007ffff7033162 in __isoc99_fscanf (stream=0x11c818b0, format=<optimized out>) at isoc99_fscanf.c:34
+#4  0x00007ffff7bcac42 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#5  0x00007ffff7bc8073 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#6  0x0000000000402061 in inversek2j(float, float, float*, float*) ()
+#7  0x00000000004019dd in main ()
+
+856	strtod_l.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x31
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffcb30 
+address max offset: 1
+Memory content after  bitflip:0x07
+frame name: __GI_____strtof_l_internal
+symbol name: start_of_digits
+symbol filename: strtod_l.c
+symbol line: 504
+value: 0x7fffffffcb30 "\a.64536267518997192383e-01"
+value address: 0x7fffffffc9c8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-11-30 13:07:41]
+Fault Injection Successful after 13.682353973388672s
+[INFO -- 2018-11-30 13:07:53]
+event type: exit
+[INFO -- 2018-11-30 13:07:53]
+exit code: 0

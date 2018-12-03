@@ -1,0 +1,65 @@
+[INFO -- 2018-11-30 18:28:28]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 18:28:28]
+Initialization strings:
+[INFO -- 2018-11-30 18:28:28]
+(1) file /home/lignati/carol-fi/codes/inversefulldup/inversek2j.nn.out
+[INFO -- 2018-11-30 18:28:28]
+(2) set args /home/lignati/carol-fi/codes/inversefulldup/input_250k /home/lignati/carol-fi/codes/inversefulldup/output_falha.data
+[INFO -- 2018-11-30 18:28:28]
+initSignal:0
+[INFO -- 2018-11-30 18:28:28]
+endSignal:25
+[INFO -- 2018-11-30 18:28:28]
+faultModel:4
+[EXCEPTION -- 2018-11-30 18:28:31]
+gdbException: Attempt to dereference a generic pointer.
+[INFO -- 2018-11-30 18:28:31]
+Backtrace BEGIN:
+#0  __memcpy_sse2 () at ../sysdeps/x86_64/multiarch/../memcpy.S:104
+#1  0x00007ffff7013b7b in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1403
+#2  0x00007ffff7012d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#3  0x00007ffff702c948 in _IO_vfscanf_internal (s=s@entry=0x6085c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffcf38, errp=errp@entry=0x0) at vfscanf.c:2365
+#4  0x00007ffff7033162 in __isoc99_fscanf (stream=0x6085c0, format=<optimized out>) at isoc99_fscanf.c:34
+#5  0x00007ffff7bcac42 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#6  0x00007ffff7bc8073 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#7  0x0000000000402061 in inversek2j(float, float, float*, float*) ()
+#8  0x000000000040179a in main ()
+
+99	../sysdeps/x86_64/multiarch/../memcpy.S: No such file or directory.
+
+Backtrace END
+Fliping value of field: __canceltype
+Memory content before bitflip:0xb80x610x5b0xf7
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffcdc0
+address max offset: 4
+Memory content after  bitflip:0xb80x610x5b0xb7
+frame name: _IO_vfscanf_internal
+symbol name: _buffer
+symbol filename: vfscanf.c
+symbol line: 358
+value: {__routine = 0x7ffff7032cc0 <__funlockfile>, __arg = 0x6085c0, __canceltype = -1218747976, __prev = 0x2e21c1}
+value address: 0x7fffffffcdb0
+Type: The type is a structure.
+Type sizeof: 32
+Field name: __routine
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __arg
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __canceltype
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: __prev
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-11-30 18:28:31]
+Fault Injection Successful after 3.926091432571411s
+[INFO -- 2018-11-30 18:28:53]
+event type: exit
+[INFO -- 2018-11-30 18:28:53]
+exit code: 0

@@ -1,0 +1,50 @@
+[INFO -- 2018-11-30 18:00:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 18:00:34]
+Initialization strings:
+[INFO -- 2018-11-30 18:00:34]
+(1) file /home/lignati/carol-fi/codes/inversefulldup/inversek2j.nn.out
+[INFO -- 2018-11-30 18:00:34]
+(2) set args /home/lignati/carol-fi/codes/inversefulldup/input_250k /home/lignati/carol-fi/codes/inversefulldup/output_falha.data
+[INFO -- 2018-11-30 18:00:34]
+initSignal:0
+[INFO -- 2018-11-30 18:00:34]
+endSignal:25
+[INFO -- 2018-11-30 18:00:34]
+faultModel:2
+[INFO -- 2018-11-30 18:00:45]
+Backtrace BEGIN:
+#0  0x00007ffff70cd53a in mmap64 () at ../sysdeps/unix/syscall-template.S:81
+#1  0x00007ffff704282c in __GI__IO_file_doallocate (fp=0x6085c0) at filedoalloc.c:128
+#2  0x00007ffff70504b5 in __GI__IO_doallocbuf (fp=fp@entry=0x6085c0) at genops.c:418
+#3  0x00007ffff704e3ec in __GI__IO_file_xsgetn (fp=0x6085c0, data=0xe7d1a70, n=13) at fileops.c:1379
+#4  0x00007ffff704386f in __GI__IO_fread (buf=<optimized out>, size=1, count=13, fp=0x6085c0) at iofread.c:42
+#5  0x00007ffff7bc92b0 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#6  0x00007ffff7bc8073 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#7  0x0000000000402061 in inversek2j(float, float, float*, float*) ()
+#8  0x000000000040179a in main ()
+
+76	../sysdeps/unix/syscall-template.S: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0xbb0x3c0x010x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff73999b0 
+address max offset: 4
+Memory content after  bitflip:0x790xd00x9d0xdf
+frame name: __GI__IO_doallocbuf
+symbol name: _IO_list_all_stamp
+symbol filename: genops.c
+symbol line: 42
+value: -543305607
+value address: 0x7ffff73999b0 <_IO_list_all_stamp>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-11-30 18:00:45]
+Fault Injection Successful after 11.454185962677002s
+[INFO -- 2018-11-30 18:01:00]
+event type: exit
+[INFO -- 2018-11-30 18:01:00]
+exit code: 0

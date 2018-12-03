@@ -1,0 +1,56 @@
+[INFO -- 2018-11-30 15:42:03]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 15:42:03]
+Initialization strings:
+[INFO -- 2018-11-30 15:42:03]
+(1) file /home/lignati/carol-fi/codes/inversefulldup/inversek2j.nn.out
+[INFO -- 2018-11-30 15:42:03]
+(2) set args /home/lignati/carol-fi/codes/inversefulldup/input_250k /home/lignati/carol-fi/codes/inversefulldup/output_falha.data
+[INFO -- 2018-11-30 15:42:03]
+initSignal:0
+[INFO -- 2018-11-30 15:42:03]
+endSignal:25
+[INFO -- 2018-11-30 15:42:03]
+faultModel:3
+[EXCEPTION -- 2018-11-30 15:42:07]
+gdbException: Attempt to dereference a generic pointer.
+[INFO -- 2018-11-30 15:42:07]
+Backtrace BEGIN:
+#0  0x00007ffff70148db in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1588
+#1  0x00007ffff7012d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#2  0x00007ffff702c948 in _IO_vfscanf_internal (s=s@entry=0x6085c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffcf38, errp=errp@entry=0x0) at vfscanf.c:2365
+#3  0x00007ffff7033162 in __isoc99_fscanf (stream=0x6085c0, format=<optimized out>) at isoc99_fscanf.c:34
+#4  0x00007ffff7bcac42 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#5  0x00007ffff7bc8073 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#6  0x0000000000402061 in inversek2j(float, float, float*, float*) ()
+#7  0x000000000040179a in main ()
+
+1583	strtod_l.c: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 5
+Memory content before bitflip:0xe50x0f0x4d0x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffca78
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: __GI_____strtof_l_internal
+symbol name: num
+symbol filename: strtod_l.c
+symbol line: 485
+value: {17005592192950992896, 2184264361858367919, 1376723, 12670142, 11173888, 0, 9608170, 11003965, 2816043, 0}
+value address: 0x7fffffffca50
+Type: The type is an array.
+Type sizeof: 80
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 9)
+
+[INFO -- 2018-11-30 15:42:07]
+Fault Injection Successful after 4.076818227767944s
+[INFO -- 2018-11-30 15:42:28]
+event type: exit
+[INFO -- 2018-11-30 15:42:28]
+exit code: 0

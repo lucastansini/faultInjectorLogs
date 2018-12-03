@@ -1,0 +1,49 @@
+[INFO -- 2018-11-30 21:39:44]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 21:39:44]
+Initialization strings:
+[INFO -- 2018-11-30 21:39:44]
+(1) file /home/lignati/carol-fi/codes/inversefulldup/inversek2j.nn.out
+[INFO -- 2018-11-30 21:39:44]
+(2) set args /home/lignati/carol-fi/codes/inversefulldup/input_250k /home/lignati/carol-fi/codes/inversefulldup/output_falha.data
+[INFO -- 2018-11-30 21:39:44]
+initSignal:0
+[INFO -- 2018-11-30 21:39:44]
+endSignal:25
+[INFO -- 2018-11-30 21:39:44]
+faultModel:0
+[INFO -- 2018-11-30 21:39:46]
+Backtrace BEGIN:
+#0  0x00007ffff70cd567 in munmap () at ../sysdeps/unix/syscall-template.S:81
+#1  0x00007ffff7050472 in __GI__IO_setb (f=f@entry=0x6085c0, b=b@entry=0x0, eb=eb@entry=0x0, a=a@entry=0) at genops.c:401
+#2  0x00007ffff704ebb0 in _IO_new_file_close_it (fp=fp@entry=0x6085c0) at fileops.c:185
+#3  0x00007ffff7042a50 in _IO_new_fclose (fp=0x6085c0) at iofclose.c:59
+#4  0x00007ffff7bc8083 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x0000000000402061 in inversek2j(float, float, float*, float*) ()
+#6  0x000000000040179a in main ()
+
+76	../sysdeps/unix/syscall-template.S: No such file or directory.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7399980 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x800x000x00
+frame name: __GI__IO_setb
+symbol name: freeres_list
+symbol filename: genops.c
+symbol line: 944
+value: 0x0
+value address: 0x7ffff7399980 <freeres_list>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-11-30 21:39:46]
+Fault Injection Successful after 2.114839553833008s
+[INFO -- 2018-11-30 21:40:10]
+event type: exit
+[INFO -- 2018-11-30 21:40:10]
+exit code: 0

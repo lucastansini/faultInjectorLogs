@@ -1,0 +1,50 @@
+[INFO -- 2018-11-30 19:53:46]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 19:53:46]
+Initialization strings:
+[INFO -- 2018-11-30 19:53:46]
+(1) file /home/lignati/carol-fi/codes/inversefulldup/inversek2j.nn.out
+[INFO -- 2018-11-30 19:53:46]
+(2) set args /home/lignati/carol-fi/codes/inversefulldup/input_250k /home/lignati/carol-fi/codes/inversefulldup/output_falha.data
+[INFO -- 2018-11-30 19:53:46]
+initSignal:0
+[INFO -- 2018-11-30 19:53:46]
+endSignal:25
+[INFO -- 2018-11-30 19:53:46]
+faultModel:2
+[EXCEPTION -- 2018-11-30 19:53:50]
+gdbException: Attempt to dereference a generic pointer.
+[INFO -- 2018-11-30 19:53:50]
+Backtrace BEGIN:
+#0  __GI__IO_sputbackc (fp=fp@entry=0x6085c0, c=c@entry=44) at genops.c:726
+#1  0x00007ffff702a27b in _IO_vfscanf_internal (s=s@entry=0x6085c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffcf38, errp=errp@entry=0x0) at vfscanf.c:1811
+#2  0x00007ffff7033162 in __isoc99_fscanf (stream=0x6085c0, format=<optimized out>) at isoc99_fscanf.c:34
+#3  0x00007ffff7bcac42 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#4  0x00007ffff7bc8073 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x0000000000402061 in inversek2j(float, float, float*, float*) ()
+#6  0x000000000040179a in main ()
+
+721	in genops.c
+
+Backtrace END
+Memory content before bitflip:0x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff7399990 
+address max offset: 1
+Memory content after  bitflip:0x6c
+frame name: __GI__IO_sputbackc
+symbol name: dealloc_buffers
+symbol filename: genops.c
+symbol line: 943
+value: 108
+value address: 0x7ffff7399990 <dealloc_buffers>
+Type: A boolean type.
+Type sizeof: 1
+
+[INFO -- 2018-11-30 19:53:50]
+Fault Injection Successful after 4.505695819854736s
+[INFO -- 2018-11-30 19:54:11]
+event type: exit
+[INFO -- 2018-11-30 19:54:11]
+exit code: 0

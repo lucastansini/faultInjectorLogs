@@ -1,0 +1,49 @@
+[INFO -- 2018-12-01 15:04:28]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 15:04:28]
+Initialization strings:
+[INFO -- 2018-12-01 15:04:28]
+(1) file /home/lignati/carol-fi/codes/inversefulldup/inversek2j.nn.out
+[INFO -- 2018-12-01 15:04:28]
+(2) set args /home/lignati/carol-fi/codes/inversefulldup/input_250k /home/lignati/carol-fi/codes/inversefulldup/output_falha.data
+[INFO -- 2018-12-01 15:04:28]
+initSignal:0
+[INFO -- 2018-12-01 15:04:28]
+endSignal:25
+[INFO -- 2018-12-01 15:04:28]
+faultModel:2
+[INFO -- 2018-12-01 15:04:38]
+Backtrace BEGIN:
+#0  0x00007ffff702fb56 in __libc_use_alloca (size=256) at ../nptl/sysdeps/pthread/allocalim.h:28
+#1  _IO_vfscanf_internal (s=s@entry=0x6085c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffcf38, errp=errp@entry=0x0) at vfscanf.c:1777
+#2  0x00007ffff7033162 in __isoc99_fscanf (stream=0x6085c0, format=<optimized out>) at isoc99_fscanf.c:34
+#3  0x00007ffff7bcac42 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#4  0x00007ffff7bc8073 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x0000000000402061 in inversek2j(float, float, float*, float*) ()
+#6  0x000000000040179a in main ()
+
+23	../nptl/sysdeps/pthread/allocalim.h: No such file or directory.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffcd48
+address max offset: 8
+Memory content after  bitflip:0x980x420x040x390xa30x7d0xf80xa4
+frame name: __libc_use_alloca
+symbol name: wstr
+symbol filename: vfscanf.c
+symbol line: 263
+value: 0x0
+value address: 0x7fffffffcd48
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 15:04:38]
+Fault Injection Successful after 10.54207181930542s
+[INFO -- 2018-12-01 15:04:53]
+event type: exit
+[INFO -- 2018-12-01 15:04:53]
+exit code: 0

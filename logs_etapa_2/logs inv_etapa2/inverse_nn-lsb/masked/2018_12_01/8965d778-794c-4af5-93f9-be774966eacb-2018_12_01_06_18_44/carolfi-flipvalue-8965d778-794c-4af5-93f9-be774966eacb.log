@@ -1,0 +1,49 @@
+[INFO -- 2018-12-01 06:18:16]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 06:18:16]
+Initialization strings:
+[INFO -- 2018-12-01 06:18:16]
+(1) file /home/lignati/carol-fi/codes/inversefulldup/inversek2j.nn.out
+[INFO -- 2018-12-01 06:18:16]
+(2) set args /home/lignati/carol-fi/codes/inversefulldup/input_250k /home/lignati/carol-fi/codes/inversefulldup/output_falha.data
+[INFO -- 2018-12-01 06:18:16]
+initSignal:0
+[INFO -- 2018-12-01 06:18:16]
+endSignal:25
+[INFO -- 2018-12-01 06:18:16]
+faultModel:4
+[INFO -- 2018-12-01 06:18:18]
+Backtrace BEGIN:
+#0  0x00007ffff7012ac7 in __GI_____strtoul_l_internal (nptr=nptr@entry=0x7fffffffcb30 "27", endptr=endptr@entry=0x7fffffffcd60, base=<optimized out>, group=group@entry=0, loc=<optimized out>) at ../stdlib/strtol_l.c:531
+#1  0x00007ffff7012410 in __GI___strtoul_internal (nptr=nptr@entry=0x7fffffffcb30 "27", endptr=endptr@entry=0x7fffffffcd60, base=<optimized out>, group=group@entry=0) at ../stdlib/strtol.c:97
+#2  0x00007ffff702af02 in _IO_vfscanf_internal (s=s@entry=0x6085c0, format=<optimized out>, argptr=argptr@entry=0x7fffffffcf38, errp=errp@entry=0x0) at vfscanf.c:1827
+#3  0x00007ffff7033162 in __isoc99_fscanf (stream=0x6085c0, format=<optimized out>) at isoc99_fscanf.c:34
+#4  0x00007ffff7bcac42 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#5  0x00007ffff7bc8073 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#6  0x0000000000402061 in inversek2j(float, float, float*, float*) ()
+#7  0x000000000040179a in main ()
+
+526	../stdlib/strtol_l.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffcaec
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x08
+frame name: __GI_____strtoul_l_internal
+symbol name: negative
+symbol filename: ../stdlib/strtol_l.c
+symbol line: 233
+value: 134217728
+value address: 0x7fffffffcaec
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 06:18:18]
+Fault Injection Successful after 2.726029634475708s
+[INFO -- 2018-12-01 06:18:42]
+event type: exit
+[INFO -- 2018-12-01 06:18:42]
+exit code: 0
