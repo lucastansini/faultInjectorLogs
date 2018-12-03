@@ -1,0 +1,114 @@
+[INFO -- 2018-12-02 06:23:50]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 06:23:50]
+Initialization strings:
+[INFO -- 2018-12-02 06:23:50]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/fft_nn.out
+[INFO -- 2018-12-02 06:23:50]
+(2) set args 32768 /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/output.data
+[INFO -- 2018-12-02 06:23:50]
+initSignal:0
+[INFO -- 2018-12-02 06:23:50]
+endSignal:40
+[INFO -- 2018-12-02 06:23:50]
+faultModel:2
+[INFO -- 2018-12-02 06:24:00]
+Backtrace BEGIN:
+#0  0x00007ffff7046360 in __read_nocancel () at ../sysdeps/unix/syscall-template.S:81
+#1  0x00007ffff6fd15b0 in _IO_new_file_underflow (fp=0x618f00) at fileops.c:613
+#2  0x00007ffff6fd03a8 in __GI__IO_file_xsgetn (fp=0x618f00, data=<optimized out>, n=13) at fileops.c:1418
+#3  0x00007ffff6fc586f in __GI__IO_fread (buf=<optimized out>, size=1, count=13, fp=0x618f00) at iofread.c:42
+#4  0x00007ffff7bce817 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#5  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#6  0x0000000000401de7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#7  0x0000000000401857 in main ()
+
+76	../sysdeps/unix/syscall-template.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping value of field: __sync
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x53
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff6fcf710 
+address max offset: 1
+Memory content after  bitflip:0xde
+frame name: _IO_new_file_underflow
+symbol name: _IO_file_jumps
+symbol filename: fileops.c
+symbol line: 1572
+value: {__dummy = 0, __dummy2 = 0, __finish = 0x7ffff6fd0c80 <_IO_new_file_finish>, __overflow = 0x7ffff6fd16d0 <_IO_new_file_overflow>, __underflow = 0x7ffff6fd1480 <_IO_new_file_underflow>, __uflow = 0x7ffff6fd2530 <__GI__IO_default_uflow>, __pbackfail = 0x7ffff6fd36e0 <__GI__IO_default_pbackfail>, __xsputn = 0x7ffff6fd0500 <_IO_new_file_xsputn>, __xsgetn = 0x7ffff6fd0210 <__GI__IO_file_xsgetn>, __seekoff = 0x7ffff6fcf870 <_IO_new_file_seekoff>, __seekpos = 0x7ffff6fd2aa0 <_IO_default_seekpos>, __setbuf = 0x7ffff6fcf7e0 <_IO_new_file_setbuf>, __sync = 0x7ffff6fcf710 <_IO_new_file_sync>, __doallocate = 0x7ffff6fc47b0 <__GI__IO_file_doallocate>, __read = 0x7ffff6fd04e0 <__GI__IO_file_read>, __write = 0x7ffff6fcfed0 <_IO_new_file_write>, __seek = 0x7ffff6fcfcd0 <__GI__IO_file_seek>, __close = 0x7ffff6fcf7d0 <__GI__IO_file_close>, __stat = 0x7ffff6fcfec0 <__GI__IO_file_stat>, __showmanyc = 0x7ffff6fd3840 <_IO_default_showmanyc>, __imbue = 0x7ffff6fd3850 <_IO_default_imbue>}
+value address: 0x7ffff73186a0 <_IO_file_jumps>
+Type: The type is a structure.
+Type sizeof: 168
+Field name: __dummy
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: __dummy2
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: __finish
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __overflow
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __underflow
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __uflow
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __pbackfail
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __xsputn
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __xsgetn
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __seekoff
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __seekpos
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __setbuf
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __sync
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __doallocate
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __read
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __write
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __seek
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __close
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __stat
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __showmanyc
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: __imbue
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-02 06:24:00]
+Fault Injection Successful after 10.537705183029175s
+[INFO -- 2018-12-02 06:24:29]
+event type: exit
+[EXCEPTION -- 2018-12-02 06:24:29]
+exit code: no exit code available

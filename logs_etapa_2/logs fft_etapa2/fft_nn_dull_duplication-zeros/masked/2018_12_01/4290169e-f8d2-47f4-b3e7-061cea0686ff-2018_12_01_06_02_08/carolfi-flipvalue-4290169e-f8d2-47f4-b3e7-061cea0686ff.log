@@ -1,0 +1,48 @@
+[INFO -- 2018-12-01 06:01:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 06:01:27]
+Initialization strings:
+[INFO -- 2018-12-01 06:01:27]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/fft_nn.out
+[INFO -- 2018-12-01 06:01:27]
+(2) set args 32768 /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/output.data
+[INFO -- 2018-12-01 06:01:27]
+initSignal:0
+[INFO -- 2018-12-01 06:01:27]
+endSignal:40
+[INFO -- 2018-12-01 06:01:27]
+faultModel:3
+[INFO -- 2018-12-01 06:01:33]
+Backtrace BEGIN:
+#0  0x00007ffff6fabb54 in _IO_vfscanf_internal (s=s@entry=0x618f00, format=<optimized out>, argptr=argptr@entry=0x7fffffffd2a8, errp=errp@entry=0x0) at vfscanf.c:625
+#1  0x00007ffff6fb5162 in __isoc99_fscanf (stream=0x618f00, format=<optimized out>) at isoc99_fscanf.c:34
+#2  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#3  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#4  0x0000000000401de7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#5  0x0000000000401857 in main ()
+
+620	vfscanf.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffceba 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: _IO_vfscanf_internal
+symbol name: tw
+symbol filename: vfscanf.c
+symbol line: 271
+value: 0x7fffffffceba ""
+value address: 0x7fffffffd0d0
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 06:01:33]
+Fault Injection Successful after 6.939242124557495s
+[INFO -- 2018-12-01 06:02:06]
+event type: exit
+[INFO -- 2018-12-01 06:02:06]
+exit code: 0

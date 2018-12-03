@@ -1,0 +1,79 @@
+[INFO -- 2018-12-01 00:22:05]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 00:22:05]
+Initialization strings:
+[INFO -- 2018-12-01 00:22:05]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/fft_nn.out
+[INFO -- 2018-12-01 00:22:05]
+(2) set args 32768 /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/output.data
+[INFO -- 2018-12-01 00:22:05]
+initSignal:0
+[INFO -- 2018-12-01 00:22:05]
+endSignal:40
+[INFO -- 2018-12-01 00:22:05]
+faultModel:4
+[INFO -- 2018-12-01 00:22:19]
+Backtrace BEGIN:
+#0  _int_malloc (av=av@entry=0x7ffff7319760 <main_arena>, bytes=bytes@entry=552) at malloc.c:3777
+#1  0x00007ffff6fda5fc in __libc_calloc (n=<optimized out>, elem_size=<optimized out>) at malloc.c:3221
+#2  0x00007ffff7bca378 in fann_allocate_neurons () from /usr/local/lib/libfann.so.2
+#3  0x00007ffff7bcf086 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#4  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x0000000000401de7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#6  0x0000000000401857 in main ()
+
+3772	malloc.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping value of field: top
+Fliping a bit of the pointer
+Memory content before bitflip:0xb00x900x930x190x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff73197b8 
+address max offset: 8
+Memory content after  bitflip:0xb00x900x930x190x000x000x000x80
+frame name: __libc_calloc
+symbol name: main_arena
+symbol filename: malloc.c
+symbol line: 1743
+value: {mutex = 2, flags = 0, fastbinsY = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, top = 0x80000000199390b0, last_remainder = 0x0, bins = {0x7ffff73197b8 <main_arena+88>, 0x7ffff73197b8 <main_arena+88>, 0x7ffff73197c8 <main_arena+104>, 0x7ffff73197c8 <main_arena+104>, 0x7ffff73197d8 <main_arena+120>, 0x7ffff73197d8 <main_arena+120>, 0x7ffff73197e8 <main_arena+136>, 0x7ffff73197e8 <main_arena+136>, 0x7ffff73197f8 <main_arena+152>, 0x7ffff73197f8 <main_arena+152>, 0x7ffff7319808 <main_arena+168>, 0x7ffff7319808 <main_arena+168>, 0x7ffff7319818 <main_arena+184>, 0x7ffff7319818 <main_arena+184>, 0x7ffff7319828 <main_arena+200>, 0x7ffff7319828 <main_arena+200>, 0x7ffff7319838 <main_arena+216>, 0x7ffff7319838 <main_arena+216>, 0x7ffff7319848 <main_arena+232>, 0x7ffff7319848 <main_arena+232>, 0x7ffff7319858 <main_arena+248>, 0x7ffff7319858 <main_arena+248>, 0x7ffff7319868 <main_arena+264>, 0x7ffff7319868 <main_arena+264>, 0x7ffff7319878 <main_arena+280>, 0x7ffff7319878 <main_arena+280>, 0x7ffff7319888 <main_arena+296>, 0x7ffff7319888 <main_arena+296>, 0x7ffff7319898 <main_arena+312>, 0x7ffff7319898 <main_arena+312>, 0x7ffff73198a8 <main_arena+328>, 0x7ffff73198a8 <main_arena+328>, 0x7ffff73198b8 <main_arena+344>, 0x7ffff73198b8 <main_arena+344>, 0x7ffff73198c8 <main_arena+360>, 0x7ffff73198c8 <main_arena+360>, 0x7ffff73198d8 <main_arena+376>, 0x7ffff73198d8 <main_arena+376>, 0x7ffff73198e8 <main_arena+392>, 0x7ffff73198e8 <main_arena+392>, 0x7ffff73198f8 <main_arena+408>, 0x7ffff73198f8 <main_arena+408>, 0x7ffff7319908 <main_arena+424>, 0x7ffff7319908 <main_arena+424>, 0x7ffff7319918 <main_arena+440>, 0x7ffff7319918 <main_arena+440>, 0x7ffff7319928 <main_arena+456>, 0x7ffff7319928 <main_arena+456>, 0x7ffff7319938 <main_arena+472>, 0x7ffff7319938 <main_arena+472>, 0x7ffff7319948 <main_arena+488>, 0x7ffff7319948 <main_arena+488>, 0x7ffff7319958 <main_arena+504>, 0x7ffff7319958 <main_arena+504>, 0x7ffff7319968 <main_arena+520>, 0x7ffff7319968 <main_arena+520>, 0x7ffff7319978 <main_arena+536>, 0x7ffff7319978 <main_arena+536>, 0x7ffff7319988 <main_arena+552>, 0x7ffff7319988 <main_arena+552>, 0x7ffff7319998 <main_arena+568>, 0x7ffff7319998 <main_arena+568>, 0x7ffff73199a8 <main_arena+584>, 0x7ffff73199a8 <main_arena+584>, 0x7ffff73199b8 <main_arena+600>, 0x7ffff73199b8 <main_arena+600>, 0x7ffff73199c8 <main_arena+616>, 0x7ffff73199c8 <main_arena+616>, 0x7ffff73199d8 <main_arena+632>, 0x7ffff73199d8 <main_arena+632>, 0x7ffff73199e8 <main_arena+648>, 0x7ffff73199e8 <main_arena+648>, 0x7ffff73199f8 <main_arena+664>, 0x7ffff73199f8 <main_arena+664>, 0x7ffff7319a08 <main_arena+680>, 0x7ffff7319a08 <main_arena+680>, 0x7ffff7319a18 <main_arena+696>, 0x7ffff7319a18 <main_arena+696>, 0x7ffff7319a28 <main_arena+712>, 0x7ffff7319a28 <main_arena+712>, 0x7ffff7319a38 <main_arena+728>, 0x7ffff7319a38 <main_arena+728>, 0x7ffff7319a48 <main_arena+744>, 0x7ffff7319a48 <main_arena+744>, 0x7ffff7319a58 <main_arena+760>, 0x7ffff7319a58 <main_arena+760>, 0x7ffff7319a68 <main_arena+776>, 0x7ffff7319a68 <main_arena+776>, 0x7ffff7319a78 <main_arena+792>, 0x7ffff7319a78 <main_arena+792>, 0x7ffff7319a88 <main_arena+808>, 0x7ffff7319a88 <main_arena+808>, 0x7ffff7319a98 <main_arena+824>, 0x7ffff7319a98 <main_arena+824>, 0x7ffff7319aa8 <main_arena+840>, 0x7ffff7319aa8 <main_arena+840>, 0x7ffff7319ab8 <main_arena+856>, 0x7ffff7319ab8 <main_arena+856>, 0x7ffff7319ac8 <main_arena+872>, 0x7ffff7319ac8 <main_arena+872>, 0x7ffff7319ad8 <main_arena+888>, 0x7ffff7319ad8 <main_arena+888>, 0x7ffff7319ae8 <main_arena+904>, 0x7ffff7319ae8 <main_arena+904>, 0x7ffff7319af8 <main_arena+920>, 0x7ffff7319af8 <main_arena+920>, 0x7ffff7319b08 <main_arena+936>, 0x7ffff7319b08 <main_arena+936>, 0x7ffff7319b18 <main_arena+952>, 0x7ffff7319b18 <main_arena+952>, 0x7ffff7319b28 <main_arena+968>, 0x7ffff7319b28 <main_arena+968>, 0x7ffff7319b38 <main_arena+984>, 0x7ffff7319b38 <main_arena+984>, 0x7ffff7319b48 <main_arena+1000>, 0x7ffff7319b48 <main_arena+1000>, 0x7ffff7319b58 <main_arena+1016>, 0x7ffff7319b58 <main_arena+1016>, 0x7ffff7319b68 <main_arena+1032>, 0x7ffff7319b68 <main_arena+1032>, 0x7ffff7319b78 <main_arena+1048>, 0x7ffff7319b78 <main_arena+1048>, 0x7ffff7319b88 <main_arena+1064>, 0x7ffff7319b88 <main_arena+1064>, 0x7ffff7319b98 <main_arena+1080>, 0x7ffff7319b98 <main_arena+1080>, 0x7ffff7319ba8 <main_arena+1096>, 0x7ffff7319ba8 <main_arena+1096>, 0x7ffff7319bb8 <main_arena+1112>, 0x7ffff7319bb8 <main_arena+1112>, 0x7ffff7319bc8 <main_arena+1128>, 0x7ffff7319bc8 <main_arena+1128>, 0x7ffff7319bd8 <main_arena+1144>, 0x7ffff7319bd8 <main_arena+1144>, 0x7ffff7319be8 <main_arena+1160>, 0x7ffff7319be8 <main_arena+1160>, 0x7ffff7319bf8 <main_arena+1176>, 0x7ffff7319bf8 <main_arena+1176>, 0x7ffff7319c08 <main_arena+1192>, 0x7ffff7319c08 <main_arena+1192>, 0x7ffff7319c18 <main_arena+1208>, 0x7ffff7319c18 <main_arena+1208>, 0x7ffff7319c28 <main_arena+1224>, 0x7ffff7319c28 <main_arena+1224>, 0x7ffff7319c38 <main_arena+1240>, 0x7ffff7319c38 <main_arena+1240>, 0x7ffff7319c48 <main_arena+1256>, 0x7ffff7319c48 <main_arena+1256>, 0x7ffff7319c58 <main_arena+1272>, 0x7ffff7319c58 <main_arena+1272>, 0x7ffff7319c68 <main_arena+1288>, 0x7ffff7319c68 <main_arena+1288>, 0x7ffff7319c78 <main_arena+1304>, 0x7ffff7319c78 <main_arena+1304>, 0x7ffff7319c88 <main_arena+1320>, 0x7ffff7319c88 <main_arena+1320>, 0x7ffff7319c98 <main_arena+1336>, 0x7ffff7319c98 <main_arena+1336>, 0x7ffff7319ca8 <main_arena+1352>, 0x7ffff7319ca8 <main_arena+1352>, 0x7ffff7319cb8 <main_arena+1368>, 0x7ffff7319cb8 <main_arena+1368>, 0x7ffff7319cc8 <main_arena+1384>, 0x7ffff7319cc8 <main_arena+1384>, 0x7ffff7319cd8 <main_arena+1400>, 0x7ffff7319cd8 <main_arena+1400>, 0x7ffff7319ce8 <main_arena+1416>, 0x7ffff7319ce8 <main_arena+1416>, 0x7ffff7319cf8 <main_arena+1432>, 0x7ffff7319cf8 <main_arena+1432>, 0x7ffff7319d08 <main_arena+1448>, 0x7ffff7319d08 <main_arena+1448>, 0x7ffff7319d18 <main_arena+1464>, 0x7ffff7319d18 <main_arena+1464>, 0x7ffff7319d28 <main_arena+1480>, 0x7ffff7319d28 <main_arena+1480>, 0x7ffff7319d38 <main_arena+1496>, 0x7ffff7319d38 <main_arena+1496>, 0x7ffff7319d48 <main_arena+1512>, 0x7ffff7319d48 <main_arena+1512>, 0x7ffff7319d58 <main_arena+1528>, 0x7ffff7319d58 <main_arena+1528>, 0x7ffff7319d68 <main_arena+1544>, 0x7ffff7319d68 <main_arena+1544>, 0x7ffff7319d78 <main_arena+1560>, 0x7ffff7319d78 <main_arena+1560>, 0x7ffff7319d88 <main_arena+1576>, 0x7ffff7319d88 <main_arena+1576>, 0x7ffff7319d98 <main_arena+1592>, 0x7ffff7319d98 <main_arena+1592>, 0x7ffff7319da8 <main_arena+1608>, 0x7ffff7319da8 <main_arena+1608>, 0x7ffff7319db8 <main_arena+1624>, 0x7ffff7319db8 <main_arena+1624>, 0x7ffff7319dc8 <main_arena+1640>, 0x7ffff7319dc8 <main_arena+1640>, 0x7ffff7319dd8 <main_arena+1656>, 0x7ffff7319dd8 <main_arena+1656>, 0x7ffff7319de8 <main_arena+1672>, 0x7ffff7319de8 <main_arena+1672>...}, binmap = {4, 0, 0, 0}, next = 0x7ffff7319760 <main_arena>, next_free = 0x0, system_mem = 422805504, max_system_mem = 422805504}
+value address: 0x7ffff7319760 <main_arena>
+Type: The type is a structure.
+Type sizeof: 2184
+Field name: mutex
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: flags
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: fastbinsY
+Field Type: The type is an array.
+Field Type sizeof: 80
+Field name: top
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: last_remainder
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: bins
+Field Type: The type is an array.
+Field Type sizeof: 2032
+Field name: binmap
+Field Type: The type is an array.
+Field Type sizeof: 16
+Field name: next
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: next_free
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: system_mem
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: max_system_mem
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-01 00:22:19]
+Fault Injection Successful after 14.489274501800537s

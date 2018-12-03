@@ -1,0 +1,48 @@
+[INFO -- 2018-12-02 08:27:29]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 08:27:29]
+Initialization strings:
+[INFO -- 2018-12-02 08:27:29]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/fft_nn.out
+[INFO -- 2018-12-02 08:27:29]
+(2) set args 32768 /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/output.data
+[INFO -- 2018-12-02 08:27:29]
+initSignal:0
+[INFO -- 2018-12-02 08:27:29]
+endSignal:40
+[INFO -- 2018-12-02 08:27:29]
+faultModel:1
+[INFO -- 2018-12-02 08:27:30]
+Backtrace BEGIN:
+#0  __isoc99_fscanf (stream=0x618f00, format=0x7ffff7bd3da5 "(%u, %f) ") at isoc99_fscanf.c:33
+#1  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#2  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#3  0x0000000000401de7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#4  0x0000000000401857 in main ()
+
+28	isoc99_fscanf.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 0
+Fliping value of field: fp_offset
+Memory content before bitflip:0x300x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd2ac
+address max offset: 4
+Memory content after  bitflip:0x300x000x420x00
+frame name: __isoc99_fscanf
+symbol name: arg
+symbol filename: isoc99_fscanf.c
+symbol line: 27
+value: {{gp_offset = 16, fp_offset = 4325424, overflow_arg_area = 0x7fffffffd380, reg_save_area = 0x7fffffffd2c0}}
+value address: 0x7fffffffd2a8
+Type: The type is an array.
+Type sizeof: 24
+
+[INFO -- 2018-12-02 08:27:30]
+Fault Injection Successful after 1.5165505409240723s
+[INFO -- 2018-12-02 08:28:09]
+event type: exit
+[INFO -- 2018-12-02 08:28:09]
+exit code: 0

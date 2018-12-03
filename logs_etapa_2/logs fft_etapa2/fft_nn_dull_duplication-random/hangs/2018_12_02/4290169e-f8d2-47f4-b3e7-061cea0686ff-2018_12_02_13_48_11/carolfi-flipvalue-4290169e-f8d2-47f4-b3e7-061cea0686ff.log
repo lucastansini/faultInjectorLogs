@@ -1,0 +1,44 @@
+[INFO -- 2018-12-02 13:46:48]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 13:46:48]
+Initialization strings:
+[INFO -- 2018-12-02 13:46:48]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/fft_nn.out
+[INFO -- 2018-12-02 13:46:48]
+(2) set args 32768 /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/output.data
+[INFO -- 2018-12-02 13:46:48]
+initSignal:0
+[INFO -- 2018-12-02 13:46:48]
+endSignal:40
+[INFO -- 2018-12-02 13:46:48]
+faultModel:2
+[INFO -- 2018-12-02 13:46:56]
+Backtrace BEGIN:
+#0  _int_malloc (av=av@entry=0x7ffff7319760 <main_arena>, bytes=bytes@entry=424) at malloc.c:3777
+#1  0x00007ffff6fda5fc in __libc_calloc (n=<optimized out>, elem_size=<optimized out>) at malloc.c:3221
+#2  0x00007ffff7bca43b in fann_allocate_connections () from /usr/local/lib/libfann.so.2
+#3  0x00007ffff7bcf11f in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#4  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x0000000000401de7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#6  0x0000000000401857 in main ()
+
+3772	malloc.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x010x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff7319170 
+address max offset: 4
+Memory content after  bitflip:0xa00xc20x740x2d
+frame name: __libc_calloc
+symbol name: __libc_malloc_initialized
+symbol filename: arena.c
+symbol line: 93
+value: 762626720
+value address: 0x7ffff7319170 <__libc_malloc_initialized>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-02 13:46:56]
+Fault Injection Successful after 8.83539342880249s

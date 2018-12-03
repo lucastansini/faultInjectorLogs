@@ -1,0 +1,52 @@
+[INFO -- 2018-12-01 14:29:13]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 14:29:13]
+Initialization strings:
+[INFO -- 2018-12-01 14:29:13]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/fft_nn.out
+[INFO -- 2018-12-01 14:29:13]
+(2) set args 32768 /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/output.data
+[INFO -- 2018-12-01 14:29:13]
+initSignal:0
+[INFO -- 2018-12-01 14:29:13]
+endSignal:40
+[INFO -- 2018-12-01 14:29:13]
+faultModel:4
+[INFO -- 2018-12-01 14:29:13]
+Backtrace BEGIN:
+#0  dl_main (phdr=<optimized out>, phdr@entry=0x400040, phnum=<optimized out>, phnum@entry=9, user_entry=user_entry@entry=0x7fffffffd768, auxv=<optimized out>) at rtld.c:1645
+#1  0x00007ffff7df15f5 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffd850, dl_main=dl_main@entry=0x7ffff7ddc260 <dl_main>) at ../elf/dl-sysdep.c:249
+#2  0x00007ffff7ddbbb8 in _dl_start_final (arg=0x7fffffffd850) at rtld.c:347
+#3  _dl_start (arg=0x7fffffffd850) at rtld.c:573
+#4  0x00007ffff7ddb268 in _start () from /lib64/ld-linux-x86-64.so.2
+#5  0x0000000000000003 in ?? ()
+#6  0x00007fffffffdbf2 in ?? ()
+#7  0x00007fffffffdc3f in ?? ()
+#8  0x00007fffffffdc45 in ?? ()
+#9  0x0000000000000000 in ?? ()
+
+1640	rtld.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x580xd80xff0xff0xff0x7f0x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff7ffce00 
+address max offset: 8
+Memory content after  bitflip:0x580xd80xff0xff0xff0x7f0x000x01
+frame name: _dl_start
+symbol name: _dl_argv
+symbol filename: rtld.c
+symbol line: 84
+value: 0x7fffffffd858
+value address: 0x7ffff7ffce00 <_dl_argv>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 14:29:13]
+Fault Injection Successful after 0.9948263168334961s
+[INFO -- 2018-12-01 14:29:14]
+event type: exit
+[EXCEPTION -- 2018-12-01 14:29:14]
+exit code: no exit code available

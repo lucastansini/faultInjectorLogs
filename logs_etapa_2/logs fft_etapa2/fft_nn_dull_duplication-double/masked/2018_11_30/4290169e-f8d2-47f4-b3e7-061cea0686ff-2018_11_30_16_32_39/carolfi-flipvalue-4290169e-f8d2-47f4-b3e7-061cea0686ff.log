@@ -1,0 +1,52 @@
+[INFO -- 2018-11-30 16:31:58]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 16:31:58]
+Initialization strings:
+[INFO -- 2018-11-30 16:31:58]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/fft_nn.out
+[INFO -- 2018-11-30 16:31:58]
+(2) set args 32768 /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/output.data
+[INFO -- 2018-11-30 16:31:58]
+initSignal:0
+[INFO -- 2018-11-30 16:31:58]
+endSignal:40
+[INFO -- 2018-11-30 16:31:58]
+faultModel:1
+[INFO -- 2018-11-30 16:31:59]
+Backtrace BEGIN:
+#0  _IO_vfscanf_internal (s=s@entry=0x618f00, format=<optimized out>, argptr=argptr@entry=0x7fffffffd2a8, errp=errp@entry=0x0) at vfscanf.c:2006
+#1  0x00007ffff6fb5162 in __isoc99_fscanf (stream=0x618f00, format=<optimized out>) at isoc99_fscanf.c:34
+#2  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#3  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#4  0x0000000000401de7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#5  0x0000000000401857 in main ()
+
+2001	vfscanf.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 4
+Memory content before bitflip:0x76
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff70dfc04  
+address max offset: 1
+Memory content after  bitflip:0x3e
+frame name: _IO_vfscanf_internal
+symbol name: __PRETTY_FUNCTION__
+symbol filename: vfscanf.c
+symbol line: 0
+value: "_IO_>fscanf_internal"
+value address: 0x7ffff70dfc00 <__PRETTY_FUNCTION__.11925>
+Type: The type is an array.
+Type sizeof: 21
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 20)
+
+[INFO -- 2018-11-30 16:31:59]
+Fault Injection Successful after 1.0675790309906006s
+[INFO -- 2018-11-30 16:32:37]
+event type: exit
+[INFO -- 2018-11-30 16:32:37]
+exit code: 0

@@ -1,0 +1,49 @@
+[INFO -- 2018-12-02 05:24:57]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 05:24:57]
+Initialization strings:
+[INFO -- 2018-12-02 05:24:57]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/fft_nn.out
+[INFO -- 2018-12-02 05:24:57]
+(2) set args 32768 /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/output.data
+[INFO -- 2018-12-02 05:24:57]
+initSignal:0
+[INFO -- 2018-12-02 05:24:57]
+endSignal:40
+[INFO -- 2018-12-02 05:24:57]
+faultModel:1
+[INFO -- 2018-12-02 05:24:58]
+Backtrace BEGIN:
+#0  __GI__IO_sputbackc (fp=fp@entry=0x618f00, c=40) at genops.c:726
+#1  0x00007ffff6fab926 in _IO_vfscanf_internal (s=s@entry=0x618f00, format=<optimized out>, argptr=argptr@entry=0x7fffffffd2a8, errp=errp@entry=0x0) at vfscanf.c:2938
+#2  0x00007ffff6fb5162 in __isoc99_fscanf (stream=0x618f00, format=<optimized out>) at isoc99_fscanf.c:34
+#3  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#4  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x0000000000401de7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#6  0x0000000000401857 in main ()
+
+721	genops.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff731b9a0 
+address max offset: 8
+Memory content after  bitflip:0x000x000x600x000x000x000x000x00
+frame name: __GI__IO_sputbackc
+symbol name: run_fp
+symbol filename: genops.c
+symbol line: 45
+value: 0x0
+value address: 0x7ffff731b9a0 <run_fp>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-02 05:24:58]
+Fault Injection Successful after 1.18953537940979s
+[INFO -- 2018-12-02 05:25:36]
+event type: exit
+[INFO -- 2018-12-02 05:25:36]
+exit code: 0

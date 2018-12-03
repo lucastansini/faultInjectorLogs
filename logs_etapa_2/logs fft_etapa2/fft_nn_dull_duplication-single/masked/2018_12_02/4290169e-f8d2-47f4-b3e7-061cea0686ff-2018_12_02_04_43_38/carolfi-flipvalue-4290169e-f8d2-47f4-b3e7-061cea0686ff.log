@@ -1,0 +1,60 @@
+[INFO -- 2018-12-02 04:42:57]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 04:42:57]
+Initialization strings:
+[INFO -- 2018-12-02 04:42:57]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/fft_nn.out
+[INFO -- 2018-12-02 04:42:57]
+(2) set args 32768 /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/output.data
+[INFO -- 2018-12-02 04:42:57]
+initSignal:0
+[INFO -- 2018-12-02 04:42:57]
+endSignal:40
+[INFO -- 2018-12-02 04:42:57]
+faultModel:0
+[EXCEPTION -- 2018-12-02 04:43:12]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-12-02 04:43:12]
+Backtrace BEGIN:
+#0  __GI_____strtoul_l_internal (nptr=nptr@entry=0x7fffffffcea0 "0", endptr=endptr@entry=0x7fffffffd0d0, base=10, group=group@entry=0, loc=0x7ffff731a060 <_nl_global_locale>) at ../stdlib/strtol_l.c:310
+#1  0x00007ffff6f94410 in __GI___strtoul_internal (nptr=nptr@entry=0x7fffffffcea0 "0", endptr=endptr@entry=0x7fffffffd0d0, base=<optimized out>, group=group@entry=0) at ../stdlib/strtol.c:97
+#2  0x00007ffff6facf02 in _IO_vfscanf_internal (s=s@entry=0x618f00, format=<optimized out>, argptr=argptr@entry=0x7fffffffd2a8, errp=errp@entry=0x0) at vfscanf.c:1827
+#3  0x00007ffff6fb5162 in __isoc99_fscanf (stream=0x618f00, format=<optimized out>) at isoc99_fscanf.c:34
+#4  0x00007ffff7bcf0eb in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#5  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#6  0x0000000000401de7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#7  0x0000000000401857 in main ()
+
+305	../stdlib/strtol_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping value of field: __value
+Fliping value of field name: __wchb
+Fliping array at pos: 0
+Memory content before bitflip:0x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd0c4 
+address max offset: 1
+Memory content after  bitflip:0x10
+frame name: _IO_vfscanf_internal
+symbol name: state
+symbol filename: vfscanf.c
+symbol line: 252
+value: {__count = 0, __value = {__wch = 16, __wchb = "\020\000\000"}}
+value address: 0x7fffffffd0c0
+Type: The type is a structure.
+Type sizeof: 8
+Field name: __count
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: __value
+Field Type: The type is a union.
+Field Type sizeof: 4
+
+[INFO -- 2018-12-02 04:43:12]
+Fault Injection Successful after 15.058980703353882s
+[INFO -- 2018-12-02 04:43:36]
+event type: exit
+[INFO -- 2018-12-02 04:43:36]
+exit code: 0

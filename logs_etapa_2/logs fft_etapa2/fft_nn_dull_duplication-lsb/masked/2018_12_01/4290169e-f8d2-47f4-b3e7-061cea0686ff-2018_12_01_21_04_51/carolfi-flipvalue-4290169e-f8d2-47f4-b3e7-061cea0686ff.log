@@ -1,0 +1,56 @@
+[INFO -- 2018-12-01 21:04:10]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 21:04:10]
+Initialization strings:
+[INFO -- 2018-12-01 21:04:10]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/fft_nn.out
+[INFO -- 2018-12-01 21:04:10]
+(2) set args 32768 /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/output.data
+[INFO -- 2018-12-01 21:04:10]
+initSignal:0
+[INFO -- 2018-12-01 21:04:10]
+endSignal:40
+[INFO -- 2018-12-01 21:04:10]
+faultModel:4
+[EXCEPTION -- 2018-12-01 21:04:11]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-12-01 21:04:11]
+Backtrace BEGIN:
+#0  __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1516
+#1  0x00007ffff6f94d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#2  0x00007ffff6fae948 in _IO_vfscanf_internal (s=s@entry=0x618f00, format=<optimized out>, argptr=argptr@entry=0x7fffffffd2a8, errp=errp@entry=0x0) at vfscanf.c:2365
+#3  0x00007ffff6fb5162 in __isoc99_fscanf (stream=0x618f00, format=<optimized out>) at isoc99_fscanf.c:34
+#4  0x00007ffff7bce9e7 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#5  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#6  0x0000000000401de7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#7  0x0000000000401857 in main ()
+
+1511	in strtod_l.c
+
+Backtrace END
+Fliping array at pos: 8
+Memory content before bitflip:0xff0xff0xff0xff0xff0xff0xff0xff
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffce50
+address max offset: 8
+Memory content after  bitflip:0xff0xff0xff0xff0xff0xff0xff0xdf
+frame name: __GI_____strtof_l_internal
+symbol name: den
+symbol filename: strtod_l.c
+symbol line: 494
+value: {14411518807585587200, 15625000000000000000, 188, 188, 4, 27455186257, 140737488343248, 5, 16140901064495857663, 4294956504}
+value address: 0x7fffffffce10
+Type: The type is an array.
+Type sizeof: 80
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 9)
+
+[INFO -- 2018-12-01 21:04:11]
+Fault Injection Successful after 1.5378367900848389s
+[INFO -- 2018-12-01 21:04:49]
+event type: exit
+[INFO -- 2018-12-01 21:04:49]
+exit code: 0

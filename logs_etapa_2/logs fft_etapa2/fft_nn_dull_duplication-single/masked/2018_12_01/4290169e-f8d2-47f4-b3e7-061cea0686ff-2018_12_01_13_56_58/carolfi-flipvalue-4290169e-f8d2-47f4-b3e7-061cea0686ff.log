@@ -1,0 +1,49 @@
+[INFO -- 2018-12-01 13:56:17]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 13:56:17]
+Initialization strings:
+[INFO -- 2018-12-01 13:56:17]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/fft_nn.out
+[INFO -- 2018-12-01 13:56:17]
+(2) set args 32768 /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/output.data
+[INFO -- 2018-12-01 13:56:17]
+initSignal:0
+[INFO -- 2018-12-01 13:56:17]
+endSignal:40
+[INFO -- 2018-12-01 13:56:17]
+faultModel:0
+[INFO -- 2018-12-01 13:56:24]
+Backtrace BEGIN:
+#0  0x00007ffff704f567 in munmap () at ../sysdeps/unix/syscall-template.S:81
+#1  0x00007ffff6fd2472 in __GI__IO_setb (f=f@entry=0x618f00, b=b@entry=0x0, eb=eb@entry=0x0, a=a@entry=0) at genops.c:401
+#2  0x00007ffff6fd0bb0 in _IO_new_file_close_it (fp=fp@entry=0x618f00) at fileops.c:185
+#3  0x00007ffff6fc4a50 in _IO_new_fclose (fp=0x618f00) at iofclose.c:59
+#4  0x00007ffff7bcf613 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x0000000000401de7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#6  0x0000000000401857 in main ()
+
+76	../sysdeps/unix/syscall-template.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd3d0
+address max offset: 8
+Memory content after  bitflip:0x040x000x000x000x000x000x000x00
+frame name: __GI__IO_setb
+symbol name: eb
+symbol filename: genops.c
+symbol line: 397
+value: 0x0
+value address: 0x7fffffffd3d0
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 13:56:24]
+Fault Injection Successful after 7.870544195175171s
+[INFO -- 2018-12-01 13:56:56]
+event type: exit
+[INFO -- 2018-12-01 13:56:56]
+exit code: 0

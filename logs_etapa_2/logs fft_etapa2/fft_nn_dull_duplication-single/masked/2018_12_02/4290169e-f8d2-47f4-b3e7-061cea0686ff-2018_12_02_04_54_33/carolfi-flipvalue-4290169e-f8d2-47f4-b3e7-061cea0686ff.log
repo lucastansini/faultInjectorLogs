@@ -1,0 +1,63 @@
+[INFO -- 2018-12-02 04:53:52]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 04:53:52]
+Initialization strings:
+[INFO -- 2018-12-02 04:53:52]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/fft_nn.out
+[INFO -- 2018-12-02 04:53:52]
+(2) set args 32768 /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/output.data
+[INFO -- 2018-12-02 04:53:52]
+initSignal:0
+[INFO -- 2018-12-02 04:53:52]
+endSignal:40
+[INFO -- 2018-12-02 04:53:52]
+faultModel:0
+[INFO -- 2018-12-02 04:53:52]
+Backtrace BEGIN:
+#0  0x00007ffff7de3f2a in check_match (sym=<optimized out>) at dl-lookup.c:222
+#1  0x00007ffff7de4718 in do_lookup_x (new_hash=new_hash@entry=199759650, old_hash=old_hash@entry=0x7fffffffd450, result=result@entry=0x7fffffffd460, scope=<optimized out>, i=<optimized out>, i@entry=0, flags=flags@entry=1, skip=skip@entry=0x0, undef_map=undef_map@entry=0x7ffff7fd64f0) at dl-lookup.c:271
+#2  0x00007ffff7de4a31 in _dl_lookup_symbol_x (undef_name=0x7ffff787226f "_ZTISt7codecvtIDic11__mbstate_tE", undef_map=undef_map@entry=0x7ffff7fd64f0, ref=0x7fffffffd5b0, symbol_scope=0x7ffff7fd6848, version=0x7ffff7fd3228, type_class=0, flags=flags@entry=1, skip_map=skip_map@entry=0x0) at dl-lookup.c:737
+#3  0x00007ffff7de665d in elf_machine_rela (reloc=0x7ffff78b5248, reloc=0x7ffff78b5248, skip_ifunc=<optimized out>, reloc_addr_arg=0x7ffff7bb2310, version=<optimized out>, sym=0x7ffff7850ef0, map=0x7ffff7fd64f0) at ../sysdeps/x86_64/dl-machine.h:276
+#4  elf_dynamic_do_Rela (skip_ifunc=<optimized out>, lazy=<optimized out>, nrelative=<optimized out>, relsize=<optimized out>, reladdr=<optimized out>, map=0x7ffff7fd64f0) at do-rel.h:137
+#5  _dl_relocate_object (scope=<optimized out>, reloc_mode=<optimized out>, consider_profiling=<optimized out>, consider_profiling@entry=0) at dl-reloc.c:264
+#6  0x00007ffff7dde3a2 in dl_main (phdr=<optimized out>, phdr@entry=0x400040, phnum=<optimized out>, phnum@entry=9, user_entry=user_entry@entry=0x7fffffffd768, auxv=<optimized out>) at rtld.c:2237
+#7  0x00007ffff7df15f5 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffd850, dl_main=dl_main@entry=0x7ffff7ddc260 <dl_main>) at ../elf/dl-sysdep.c:249
+#8  0x00007ffff7ddbbb8 in _dl_start_final (arg=0x7fffffffd850) at rtld.c:347
+#9  _dl_start (arg=0x7fffffffd850) at rtld.c:573
+#10 0x00007ffff7ddb268 in _start () from /lib64/ld-linux-x86-64.so.2
+#11 0x0000000000000003 in ?? ()
+#12 0x00007fffffffdbf2 in ?? ()
+#13 0x00007fffffffdc3f in ?? ()
+#14 0x00007fffffffdc45 in ?? ()
+#15 0x0000000000000000 in ?? ()
+
+217	dl-lookup.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 1
+Fliping value of field: lazy
+Memory content before bitflip:0x010x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd5f8
+address max offset: 4
+Memory content after  bitflip:0x810x000x000x00
+frame name: elf_dynamic_do_Rela
+symbol name: ranges
+symbol filename: dl-reloc.c
+symbol line: 264
+value: {{start = 140737346444896, size = 92832, nrelative = 755, lazy = 0}, {start = 140737346537728, size = 20232, nrelative = 0, lazy = 129}}
+value address: 0x7fffffffd5c0
+Type: The type is an array.
+Type sizeof: 64
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 1)
+
+[INFO -- 2018-12-02 04:53:52]
+Fault Injection Successful after 0.4094083309173584s
+[INFO -- 2018-12-02 04:54:31]
+event type: exit
+[INFO -- 2018-12-02 04:54:31]
+exit code: 0

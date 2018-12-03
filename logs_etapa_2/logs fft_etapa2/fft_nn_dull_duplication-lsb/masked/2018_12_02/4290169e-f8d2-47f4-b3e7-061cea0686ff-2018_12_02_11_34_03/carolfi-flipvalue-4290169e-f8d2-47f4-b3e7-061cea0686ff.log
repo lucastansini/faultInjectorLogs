@@ -1,0 +1,53 @@
+[INFO -- 2018-12-02 11:33:22]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 11:33:22]
+Initialization strings:
+[INFO -- 2018-12-02 11:33:22]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/fft_nn.out
+[INFO -- 2018-12-02 11:33:22]
+(2) set args 32768 /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/output.data
+[INFO -- 2018-12-02 11:33:22]
+initSignal:0
+[INFO -- 2018-12-02 11:33:22]
+endSignal:40
+[INFO -- 2018-12-02 11:33:22]
+faultModel:4
+[INFO -- 2018-12-02 11:33:24]
+Backtrace BEGIN:
+#0  0x00007ffff7046170 in __open_nocancel () at ../sysdeps/unix/syscall-template.S:81
+#1  0x00007ffff6fd0ed8 in _IO_file_open (is32not64=8, read_write=8, prot=438, posix_mode=<optimized out>, filename=0x7fffffffd400 "C*@", fp=0x618f00) at fileops.c:228
+#2  _IO_new_file_fopen (fp=fp@entry=0x618f00, filename=filename@entry=0x402a43 "./fft.nn", mode=<optimized out>, mode@entry=0x7ffff7bd3cd1 "r", is32not64=is32not64@entry=1) at fileops.c:333
+#3  0x00007ffff6fc53d4 in __fopen_internal (filename=0x402a43 "./fft.nn", mode=0x7ffff7bd3cd1 "r", is32=1) at iofopen.c:90
+#4  0x00007ffff7bcf5f5 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x0000000000401de7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#6  0x0000000000401857 in main ()
+
+76	../sysdeps/unix/syscall-template.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 13
+Memory content before bitflip:0x66
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff70dfc9d  
+address max offset: 1
+Memory content after  bitflip:0x46
+frame name: _IO_new_file_fopen
+symbol name: __PRETTY_FUNCTION__
+symbol filename: fileops.c
+symbol line: 0
+value: "_IO_new_file_Fopen"
+value address: 0x7ffff70dfc90 <__PRETTY_FUNCTION__.11488>
+Type: The type is an array.
+Type sizeof: 19
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 18)
+
+[INFO -- 2018-12-02 11:33:24]
+Fault Injection Successful after 2.238264799118042s
+[INFO -- 2018-12-02 11:34:01]
+event type: exit
+[INFO -- 2018-12-02 11:34:01]
+exit code: 0

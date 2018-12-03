@@ -1,0 +1,46 @@
+[INFO -- 2018-11-30 16:33:20]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 16:33:20]
+Initialization strings:
+[INFO -- 2018-11-30 16:33:20]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/fft_nn.out
+[INFO -- 2018-11-30 16:33:20]
+(2) set args 32768 /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/output.data
+[INFO -- 2018-11-30 16:33:20]
+initSignal:0
+[INFO -- 2018-11-30 16:33:20]
+endSignal:40
+[INFO -- 2018-11-30 16:33:20]
+faultModel:3
+[INFO -- 2018-11-30 16:33:20]
+Backtrace BEGIN:
+#0  __expf_finite () at ../sysdeps/x86_64/fpu/e_expf.S:97
+#1  0x00007ffff756ba42 in __GI___expf (x=-1,51151741) at ../sysdeps/ieee754/flt-32/w_expf.c:26
+#2  0x00007ffff7bc5284 in fann_run () from /usr/local/lib/libfann.so.2
+#3  0x0000000000401dfe in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#4  0x0000000000401857 in main ()
+
+92	../sysdeps/x86_64/fpu/e_expf.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x670x790xc10xbf
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd3ec
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: __GI___expf
+symbol name: x
+symbol filename: ../sysdeps/ieee754/flt-32/w_expf.c
+symbol line: 24
+value: 0
+value address: 0x7fffffffd3ec
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-11-30 16:33:20]
+Fault Injection Successful after 0.8056108951568604s
+[INFO -- 2018-11-30 16:33:59]
+event type: exit
+[INFO -- 2018-11-30 16:33:59]
+exit code: 0

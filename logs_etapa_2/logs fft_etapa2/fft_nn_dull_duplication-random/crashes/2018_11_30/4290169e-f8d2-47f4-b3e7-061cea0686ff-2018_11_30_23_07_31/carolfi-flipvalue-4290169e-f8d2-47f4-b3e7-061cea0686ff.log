@@ -1,0 +1,53 @@
+[INFO -- 2018-11-30 23:07:02]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 23:07:02]
+Initialization strings:
+[INFO -- 2018-11-30 23:07:02]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/fft_nn.out
+[INFO -- 2018-11-30 23:07:02]
+(2) set args 32768 /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/output.data
+[INFO -- 2018-11-30 23:07:02]
+initSignal:0
+[INFO -- 2018-11-30 23:07:02]
+endSignal:40
+[INFO -- 2018-11-30 23:07:02]
+faultModel:2
+[EXCEPTION -- 2018-11-30 23:07:27]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-11-30 23:07:27]
+Backtrace BEGIN:
+#0  strlen () at ../sysdeps/x86_64/strlen.S:107
+#1  0x00007ffff6f9559b in __GI_____strtof_l_internal (nptr=0x7fffffffcea0 "3.32349872589111328125e+00", endptr=0x7fffffffd0d0, group=<optimized out>, loc=0x7ffff731a060 <_nl_global_locale>) at strtod_l.c:572
+#2  0x00007ffff6f94d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#3  0x00007ffff6fae948 in _IO_vfscanf_internal (s=s@entry=0x618f00, format=<optimized out>, argptr=argptr@entry=0x7fffffffd2a8, errp=errp@entry=0x0) at vfscanf.c:2365
+#4  0x00007ffff6fb5162 in __isoc99_fscanf (stream=0x618f00, format=<optimized out>) at isoc99_fscanf.c:34
+#5  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#6  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#7  0x0000000000401de7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#8  0x0000000000401879 in main ()
+
+102	in ../sysdeps/x86_64/strlen.S
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffcd28
+address max offset: 8
+Memory content after  bitflip:0x8b0x1d0x1a0x110x1d0x5b0x9b0x08
+frame name: __GI_____strtof_l_internal
+symbol name: thousands
+symbol filename: strtod_l.c
+symbol line: 528
+value: 0x0
+value address: 0x7fffffffcd28
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-11-30 23:07:27]
+Fault Injection Successful after 25.200726985931396s
+[INFO -- 2018-11-30 23:07:27]
+event type: exit
+[EXCEPTION -- 2018-11-30 23:07:27]
+exit code: no exit code available

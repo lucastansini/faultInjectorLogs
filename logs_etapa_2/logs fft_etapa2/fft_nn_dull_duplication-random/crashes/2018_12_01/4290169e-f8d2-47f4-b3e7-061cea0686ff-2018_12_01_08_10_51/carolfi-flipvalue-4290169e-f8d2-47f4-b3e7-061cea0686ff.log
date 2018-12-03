@@ -1,0 +1,50 @@
+[INFO -- 2018-12-01 08:10:47]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 08:10:47]
+Initialization strings:
+[INFO -- 2018-12-01 08:10:47]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/fft_nn.out
+[INFO -- 2018-12-01 08:10:47]
+(2) set args 32768 /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/output.data
+[INFO -- 2018-12-01 08:10:47]
+initSignal:0
+[INFO -- 2018-12-01 08:10:47]
+endSignal:40
+[INFO -- 2018-12-01 08:10:47]
+faultModel:2
+[EXCEPTION -- 2018-12-01 08:10:51]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-12-01 08:10:51]
+Backtrace BEGIN:
+#0  __GI__IO_sputbackc (fp=fp@entry=0x618f00, c=c@entry=44) at genops.c:732
+#1  0x00007ffff6fac27b in _IO_vfscanf_internal (s=s@entry=0x618f00, format=<optimized out>, argptr=argptr@entry=0x7fffffffd2a8, errp=errp@entry=0x0) at vfscanf.c:1811
+#2  0x00007ffff6fb5162 in __isoc99_fscanf (stream=0x618f00, format=<optimized out>) at isoc99_fscanf.c:34
+#3  0x00007ffff7bcf0eb in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#4  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x0000000000401de7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#6  0x0000000000401857 in main ()
+
+727	genops.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x010x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd0a0
+address max offset: 8
+Memory content after  bitflip:0xac0x040x900xff0x740xb50x580x29
+frame name: _IO_vfscanf_internal
+symbol name: wpsize
+symbol filename: vfscanf.c
+symbol line: 274
+value: 2979330667614045356
+value address: 0x7fffffffd0a0
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 08:10:51]
+Fault Injection Successful after 4.581408262252808s
+[INFO -- 2018-12-01 08:10:51]
+event type: exit
+[EXCEPTION -- 2018-12-01 08:10:51]
+exit code: no exit code available

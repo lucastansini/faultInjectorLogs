@@ -1,0 +1,50 @@
+[INFO -- 2018-12-01 02:06:59]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 02:06:59]
+Initialization strings:
+[INFO -- 2018-12-01 02:06:59]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/fft_nn.out
+[INFO -- 2018-12-01 02:06:59]
+(2) set args 32768 /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/output.data
+[INFO -- 2018-12-01 02:06:59]
+initSignal:0
+[INFO -- 2018-12-01 02:06:59]
+endSignal:40
+[INFO -- 2018-12-01 02:06:59]
+faultModel:1
+[EXCEPTION -- 2018-12-01 02:07:09]
+pythonException: 'bool' object is not iterable
+[INFO -- 2018-12-01 02:07:09]
+Backtrace BEGIN:
+#0  __GI__IO_sputbackc (fp=fp@entry=0x618f00, c=c@entry=55) at genops.c:730
+#1  0x00007ffff6fabb63 in _IO_vfscanf_internal (s=s@entry=0x618f00, format=<optimized out>, argptr=argptr@entry=0x7fffffffd2a8, errp=errp@entry=0x0) at vfscanf.c:625
+#2  0x00007ffff6fb5162 in __isoc99_fscanf (stream=0x618f00, format=<optimized out>) at isoc99_fscanf.c:34
+#3  0x00007ffff7bcef44 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#4  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x0000000000401de7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#6  0x0000000000401857 in main ()
+
+725	genops.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0xae0xbc0x030x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff731b9b0 
+address max offset: 4
+Memory content after  bitflip:0xae0xbc0x030x44
+frame name: __GI__IO_sputbackc
+symbol name: _IO_list_all_stamp
+symbol filename: genops.c
+symbol line: 42
+value: 1141095598
+value address: 0x7ffff731b9b0 <_IO_list_all_stamp>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 02:07:09]
+Fault Injection Successful after 10.288189172744751s
+[INFO -- 2018-12-01 02:07:38]
+event type: exit
+[INFO -- 2018-12-01 02:07:38]
+exit code: 0

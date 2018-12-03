@@ -1,0 +1,51 @@
+[INFO -- 2018-12-01 11:44:40]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 11:44:40]
+Initialization strings:
+[INFO -- 2018-12-01 11:44:40]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/fft_nn.out
+[INFO -- 2018-12-01 11:44:40]
+(2) set args 32768 /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/output.data
+[INFO -- 2018-12-01 11:44:40]
+initSignal:0
+[INFO -- 2018-12-01 11:44:40]
+endSignal:40
+[INFO -- 2018-12-01 11:44:40]
+faultModel:3
+[INFO -- 2018-12-01 11:44:59]
+Backtrace BEGIN:
+#0  0x00007ffff6f94f75 in str_to_mpn (str=0x7fffffffcea3 "00000", str@entry=0x7fffffffcea1 ".100000", digcnt=<optimized out>, digcnt@entry=1, n=n@entry=0x7fffffffcdc0, nsize=nsize@entry=0x7fffffffcd90, exponent=exponent@entry=0x7fffffffcda0, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=<optimized out>) at strtod_l.c:403
+#1  0x00007ffff6f95c2b in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1427
+#2  0x00007ffff6f94d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#3  0x00007ffff6fae948 in _IO_vfscanf_internal (s=s@entry=0x618f00, format=<optimized out>, argptr=argptr@entry=0x7fffffffd2a8, errp=errp@entry=0x0) at vfscanf.c:2365
+#4  0x00007ffff6fb5162 in __isoc99_fscanf (stream=0x618f00, format=<optimized out>) at isoc99_fscanf.c:34
+#5  0x00007ffff7bce8b3 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#6  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#7  0x0000000000401de7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#8  0x0000000000401857 in main ()
+
+398	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffcd00
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: str_to_mpn
+symbol name: thousands
+symbol filename: strtod_l.c
+symbol line: 340
+value: 0x0
+value address: 0x7fffffffcd00
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 11:44:59]
+Fault Injection Successful after 19.63483762741089s
+[INFO -- 2018-12-01 11:45:20]
+event type: exit
+[INFO -- 2018-12-01 11:45:20]
+exit code: 0

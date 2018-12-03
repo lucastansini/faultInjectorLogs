@@ -1,0 +1,54 @@
+[INFO -- 2018-12-01 06:15:56]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 06:15:56]
+Initialization strings:
+[INFO -- 2018-12-01 06:15:56]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/fft_nn.out
+[INFO -- 2018-12-01 06:15:56]
+(2) set args 32768 /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/output.data
+[INFO -- 2018-12-01 06:15:56]
+initSignal:0
+[INFO -- 2018-12-01 06:15:56]
+endSignal:40
+[INFO -- 2018-12-01 06:15:56]
+faultModel:1
+[EXCEPTION -- 2018-12-01 06:15:57]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-12-01 06:16:32]
+Backtrace BEGIN:
+#0  __lll_lock_wait_private () at ../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S:95
+#1  0x00007ffff6fdc0da in _L_lock_13302 () at malloc.c:5208
+#2  0x00007ffff6fd9ad5 in __GI___libc_malloc (bytes=4) at malloc.c:2889
+#3  <function called from gdb>
+#4  __lll_lock_wait_private () at ../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S:95
+#5  0x00007ffff6fdc0da in _L_lock_13302 () at malloc.c:5208
+#6  0x00007ffff6fd9ad5 in __GI___libc_malloc (bytes=4) at malloc.c:2889
+#7  <function called from gdb>
+#8  0x00007ffff6fd7875 in _int_malloc (av=<optimized out>, bytes=568) at malloc.c:3808
+#9  0x00007ffff6fd9ae0 in __GI___libc_malloc (bytes=568) at malloc.c:2893
+#10 0x00007ffff6fc537d in __fopen_internal (filename=0x402a43 "./fft.nn", mode=0x7ffff7bd3cd1 "r", is32=1) at iofopen.c:73
+#11 0x00007ffff7bcf5f5 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#12 0x0000000000401de7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#13 0x0000000000401857 in main ()
+
+90	../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff731ba00 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x840x00
+frame name: __GI___libc_malloc
+symbol name: __after_morecore_hook
+symbol filename: malloc.c
+symbol line: 1842
+value: 0x0
+value address: 0x7ffff731ba00 <__after_morecore_hook>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 06:16:32]
+Fault Injection Successful after 36.71067404747009s

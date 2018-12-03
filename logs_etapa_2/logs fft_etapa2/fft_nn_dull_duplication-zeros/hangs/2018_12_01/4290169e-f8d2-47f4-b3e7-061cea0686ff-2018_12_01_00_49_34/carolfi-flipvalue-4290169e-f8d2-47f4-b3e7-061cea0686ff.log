@@ -1,0 +1,70 @@
+[INFO -- 2018-12-01 00:48:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 00:48:12]
+Initialization strings:
+[INFO -- 2018-12-01 00:48:12]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/fft_nn.out
+[INFO -- 2018-12-01 00:48:12]
+(2) set args 32768 /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/output.data
+[INFO -- 2018-12-01 00:48:12]
+initSignal:0
+[INFO -- 2018-12-01 00:48:12]
+endSignal:40
+[INFO -- 2018-12-01 00:48:12]
+faultModel:3
+[EXCEPTION -- 2018-12-01 00:48:13]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-12-01 00:48:13]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-12-01 00:48:13]
+Backtrace BEGIN:
+#0  _int_malloc (av=0x7ffff7319760 <main_arena>, bytes=392) at malloc.c:3777
+#1  0x00007ffff6fd9ae0 in __GI___libc_malloc (bytes=392) at malloc.c:2893
+#2  0x00007ffff7bcd46b in fann_allocate_structure () from /usr/local/lib/libfann.so.2
+#3  0x00007ffff7bce892 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#4  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#5  0x0000000000401de7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#6  0x0000000000401857 in main ()
+
+3772	malloc.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping value of field: refcntr
+Memory content before bitflip:0x010x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7ffff731bac8 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: _int_malloc
+symbol name: atfork_mem
+symbol filename: arena.c
+symbol line: 142
+value: {next = 0x7ffff731ce88 <fork_handler_pool+8>, prepare_handler = 0x7ffff6fd4250 <ptmalloc_lock_all>, parent_handler = 0x7ffff6fd4db0 <ptmalloc_unlock_all>, child_handler = 0x7ffff6fd4360 <ptmalloc_unlock_all2>, dso_handle = 0x7ffff7316b20 <__dso_handle>, refcntr = 0, need_signal = 0}
+value address: 0x7ffff731baa0 <atfork_mem>
+Type: The type is a structure.
+Type sizeof: 48
+Field name: next
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: prepare_handler
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: parent_handler
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: child_handler
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: dso_handle
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: refcntr
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: need_signal
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+
+[INFO -- 2018-12-01 00:48:13]
+Fault Injection Successful after 1.3798482418060303s

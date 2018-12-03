@@ -1,0 +1,58 @@
+[INFO -- 2018-12-01 11:47:22]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 11:47:22]
+Initialization strings:
+[INFO -- 2018-12-01 11:47:22]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/fft_nn.out
+[INFO -- 2018-12-01 11:47:22]
+(2) set args 32768 /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/output.data
+[INFO -- 2018-12-01 11:47:22]
+initSignal:0
+[INFO -- 2018-12-01 11:47:22]
+endSignal:40
+[INFO -- 2018-12-01 11:47:22]
+faultModel:2
+[EXCEPTION -- 2018-12-01 11:47:38]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-12-01 11:47:38]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-12-01 11:47:38]
+Backtrace BEGIN:
+#0  0x00007ffff6f97381 in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=0x7fffffffd0d0, group=<optimized out>, loc=<optimized out>) at strtod_l.c:851
+#1  0x00007ffff6f94d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#2  0x00007ffff6fae948 in _IO_vfscanf_internal (s=s@entry=0x618f00, format=<optimized out>, argptr=argptr@entry=0x7fffffffd2a8, errp=errp@entry=0x0) at vfscanf.c:2365
+#3  0x00007ffff6fb5162 in __isoc99_fscanf (stream=0x618f00, format=<optimized out>) at isoc99_fscanf.c:34
+#4  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#5  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#6  0x0000000000401de7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#7  0x0000000000401857 in main ()
+
+846	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 7
+Memory content before bitflip:0x74
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff70dfb87  
+address max offset: 1
+Memory content after  bitflip:0x93
+frame name: __GI_____strtof_l_internal
+symbol name: __PRETTY_FUNCTION__
+symbol filename: strtof_l.c
+symbol line: 0
+value: "____str\223of_l_internal"
+value address: 0x7ffff70dfb80 <__PRETTY_FUNCTION__.11547>
+Type: The type is an array.
+Type sizeof: 22
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 21)
+
+[INFO -- 2018-12-01 11:47:38]
+Fault Injection Successful after 16.219549655914307s
+[INFO -- 2018-12-01 11:48:01]
+event type: exit
+[INFO -- 2018-12-01 11:48:01]
+exit code: 0

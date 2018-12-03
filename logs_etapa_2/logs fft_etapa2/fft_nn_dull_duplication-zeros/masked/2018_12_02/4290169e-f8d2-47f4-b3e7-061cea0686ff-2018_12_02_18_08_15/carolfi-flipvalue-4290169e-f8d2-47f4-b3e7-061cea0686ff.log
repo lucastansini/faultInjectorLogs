@@ -1,0 +1,57 @@
+[INFO -- 2018-12-02 18:07:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 18:07:34]
+Initialization strings:
+[INFO -- 2018-12-02 18:07:34]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/fft_nn.out
+[INFO -- 2018-12-02 18:07:34]
+(2) set args 32768 /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/output.data
+[INFO -- 2018-12-02 18:07:34]
+initSignal:0
+[INFO -- 2018-12-02 18:07:34]
+endSignal:40
+[INFO -- 2018-12-02 18:07:34]
+faultModel:3
+[EXCEPTION -- 2018-12-02 18:07:40]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-12-02 18:07:40]
+Backtrace BEGIN:
+#0  0x00007ffff6f95397 in round_and_return (retval=0x7fffffffcdb0, exponent=-3, negative=negative@entry=0, round_limb=round_limb@entry=2661118855648116736, round_bit=<optimized out>, more_bits=1) at strtod_l.c:315
+#1  0x00007ffff6f96332 in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1613
+#2  0x00007ffff6f94d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#3  0x00007ffff6fae948 in _IO_vfscanf_internal (s=s@entry=0x618f00, format=<optimized out>, argptr=argptr@entry=0x7fffffffd2a8, errp=errp@entry=0x0) at vfscanf.c:2365
+#4  0x00007ffff6fb5162 in __isoc99_fscanf (stream=0x618f00, format=<optimized out>) at isoc99_fscanf.c:34
+#5  0x00007ffff7bcf187 in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#6  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#7  0x0000000000401de7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#8  0x0000000000401857 in main ()
+
+310	in strtod_l.c
+
+Backtrace END
+Fliping array at pos: 19
+Memory content before bitflip:0x61
+Fault Model: Zero bit-flip
+base address to flip value: 0x7ffff70dfb93  
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: __GI_____strtof_l_internal
+symbol name: __PRETTY_FUNCTION__
+symbol filename: strtof_l.c
+symbol line: 0
+value: "____strtof_l_intern\000l"
+value address: 0x7ffff70dfb80 <__PRETTY_FUNCTION__.11547>
+Type: The type is an array.
+Type sizeof: 22
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 21)
+
+[INFO -- 2018-12-02 18:07:40]
+Fault Injection Successful after 6.73095440864563s
+[INFO -- 2018-12-02 18:08:13]
+event type: exit
+[INFO -- 2018-12-02 18:08:13]
+exit code: 0

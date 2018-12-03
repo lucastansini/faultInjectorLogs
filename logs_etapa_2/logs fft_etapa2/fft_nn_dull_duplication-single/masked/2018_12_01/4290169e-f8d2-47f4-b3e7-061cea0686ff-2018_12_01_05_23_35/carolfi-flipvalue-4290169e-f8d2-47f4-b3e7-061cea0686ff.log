@@ -1,0 +1,55 @@
+[INFO -- 2018-12-01 05:22:54]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 05:22:54]
+Initialization strings:
+[INFO -- 2018-12-01 05:22:54]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/fft_nn.out
+[INFO -- 2018-12-01 05:22:54]
+(2) set args 32768 /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/output.data
+[INFO -- 2018-12-01 05:22:54]
+initSignal:0
+[INFO -- 2018-12-01 05:22:54]
+endSignal:40
+[INFO -- 2018-12-01 05:22:54]
+faultModel:0
+[INFO -- 2018-12-01 05:22:55]
+Backtrace BEGIN:
+#0  0x00007ffff6f94deb in str_to_mpn (str=str@entry=0x7fffffffcea0 "1.750000", digcnt=digcnt@entry=1, n=n@entry=0x7fffffffcdc0, nsize=nsize@entry=0x7fffffffcd90, exponent=exponent@entry=0x7fffffffcda0, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=0x7ffff70d914b <dot> ".") at strtod_l.c:337
+#1  0x00007ffff6f96c0a in __GI_____strtof_l_internal (nptr=<optimized out>, endptr=0x7fffffffd0d0, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1176
+#2  0x00007ffff6f94d60 in __GI___strtof_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>) at strtod.c:54
+#3  0x00007ffff6fae948 in _IO_vfscanf_internal (s=s@entry=0x618f00, format=<optimized out>, argptr=argptr@entry=0x7fffffffd2a8, errp=errp@entry=0x0) at vfscanf.c:2365
+#4  0x00007ffff6fb5162 in __isoc99_fscanf (stream=0x618f00, format=<optimized out>) at isoc99_fscanf.c:34
+#5  0x00007ffff7bcea3d in fann_create_from_fd () from /usr/local/lib/libfann.so.2
+#6  0x00007ffff7bcf608 in fann_create_from_file () from /usr/local/lib/libfann.so.2
+#7  0x0000000000401de7 in radix2DitCooleyTykeyFft(int, int*, Complex*, Complex*) ()
+#8  0x0000000000401857 in main ()
+
+332	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 0
+Memory content before bitflip:0x170xb70xd10x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffcdb0
+address max offset: 8
+Memory content after  bitflip:0x170xb70xd10x000x000x000x000x20
+frame name: __GI_____strtof_l_internal
+symbol name: retval
+symbol filename: strtod_l.c
+symbol line: 497
+value: {2305843009227437847}
+value address: 0x7fffffffcdb0
+Type: The type is an array.
+Type sizeof: 8
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 0)
+
+[INFO -- 2018-12-01 05:22:55]
+Fault Injection Successful after 1.1212258338928223s
+[INFO -- 2018-12-01 05:23:33]
+event type: exit
+[INFO -- 2018-12-01 05:23:33]
+exit code: 0

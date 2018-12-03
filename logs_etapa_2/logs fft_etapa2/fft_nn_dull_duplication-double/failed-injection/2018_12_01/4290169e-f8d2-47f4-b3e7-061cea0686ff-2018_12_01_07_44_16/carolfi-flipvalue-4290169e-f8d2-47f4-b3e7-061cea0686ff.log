@@ -1,0 +1,19 @@
+[INFO -- 2018-12-01 07:42:53]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 07:42:53]
+Initialization strings:
+[INFO -- 2018-12-01 07:42:53]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/fft_nn.out
+[INFO -- 2018-12-01 07:42:53]
+(2) set args 32768 /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/fftfulldup/output.data
+[INFO -- 2018-12-01 07:42:53]
+initSignal:0
+[INFO -- 2018-12-01 07:42:53]
+endSignal:40
+[INFO -- 2018-12-01 07:42:53]
+faultModel:1
+[EXCEPTION -- 2018-12-01 07:43:00]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-12-01 07:43:13]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
