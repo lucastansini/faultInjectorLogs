@@ -1,0 +1,51 @@
+[INFO -- 2018-12-03 06:10:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 06:10:39]
+Initialization strings:
+[INFO -- 2018-12-03 06:10:39]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 06:10:39]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 06:10:39]
+initSignal:0
+[INFO -- 2018-12-03 06:10:39]
+endSignal:2
+[INFO -- 2018-12-03 06:10:39]
+faultModel:3
+[EXCEPTION -- 2018-12-03 06:10:40]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 06:10:40]
+pythonException: invalid frame
+[INFO -- 2018-12-03 06:10:40]
+Backtrace BEGIN:
+#0  0x00007ffff78d4c9e in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d26f0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff4af7700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+4072	in malloc.c
+
+Backtrace END
+Memory content before bitflip:0x000x000xa00x40
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffe17c
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: nn_wrapper
+symbol name: target_long
+symbol filename: nn.c
+symbol line: 28
+value: 0
+value address: 0x7fffffffe17c
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-12-03 06:10:40]
+Fault Injection Successful after 1.44570994377s
+[EXCEPTION -- 2018-12-03 06:10:40]
+pythonException: Thread no longer exists.
+[INFO -- 2018-12-03 06:10:40]
+event type: exit
+[EXCEPTION -- 2018-12-03 06:10:40]
+exit code: no exit code available

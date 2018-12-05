@@ -1,0 +1,66 @@
+[INFO -- 2018-12-04 00:46:00]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-04 00:46:00]
+Initialization strings:
+[INFO -- 2018-12-04 00:46:00]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-04 00:46:00]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-04 00:46:00]
+initSignal:0
+[INFO -- 2018-12-04 00:46:00]
+endSignal:2
+[INFO -- 2018-12-04 00:46:00]
+faultModel:3
+[INFO -- 2018-12-04 00:46:00]
+Backtrace BEGIN:
+#0  strcmp () at ../sysdeps/x86_64/multiarch/../strcmp.S:131
+#1  0x00007ffff7debc54 in _dl_name_match_p (name=0x7ffff7adfb57 "libc.so.6", map=<optimized out>) at dl-misc.c:295
+#2  0x00007ffff7de5017 in do_lookup_x (new_hash=new_hash@entry=2667912136, old_hash=old_hash@entry=0x7fffffffd0f0, result=result@entry=0x7fffffffd100, scope=<optimized out>, i=<optimized out>, flags=flags@entry=1, skip=skip@entry=0x0, undef_map=undef_map@entry=0x7ffff7ff74c0) at dl-lookup.c:462
+#3  0x00007ffff7de596d in _dl_lookup_symbol_x (undef_name=0x7ffff7adf052 "__get_cpu_features", undef_map=0x7ffff7ff74c0, ref=ref@entry=0x7fffffffd1b8, symbol_scope=0x7ffff7ff7818, version=0x7ffff7fdac80, type_class=type_class@entry=1, flags=1, skip_map=skip_map@entry=0x0) at dl-lookup.c:737
+#4  0x00007ffff7de9ff7 in _dl_fixup (l=<optimized out>, reloc_arg=<optimized out>) at ../elf/dl-runtime.c:111
+#5  0x00007ffff7df0515 in _dl_runtime_resolve () at ../sysdeps/x86_64/dl-trampoline.S:45
+#6  0x00007ffff7aeb3d9 in ?? ()
+#7  0x00007fffffffd370 in ?? ()
+#8  0x00007ffff7de7271 in elf_machine_lazy_rel (skip_ifunc=<optimized out>, reloc=0x7ffff7ae0240, l_addr=140737348743168, map=0x7ffff7ff74c0) at ../sysdeps/x86_64/dl-machine.h:529
+#9  elf_dynamic_do_Rela (skip_ifunc=<optimized out>, lazy=<optimized out>, nrelative=<optimized out>, relsize=<optimized out>, reladdr=<optimized out>, map=0x7ffff7ff74c0) at do-rel.h:77
+#10 _dl_relocate_object (scope=<optimized out>, reloc_mode=<optimized out>, consider_profiling=<optimized out>, consider_profiling@entry=0) at dl-reloc.c:264
+#11 0x00007ffff7ddff52 in dl_main (phdr=<optimized out>, phdr@entry=0x400040, phnum=<optimized out>, phnum@entry=8, user_entry=user_entry@entry=0x7fffffffe4a8, auxv=<optimized out>) at rtld.c:2320
+#12 0x00007ffff7df14a5 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffe560, dl_main=dl_main@entry=0x7ffff7ddde20 <dl_main>) at ../elf/dl-sysdep.c:249
+#13 0x00007ffff7ddd976 in _dl_start_final (arg=0x7fffffffe560) at rtld.c:424
+#14 _dl_start (arg=0x7fffffffe560) at rtld.c:650
+#15 0x00007ffff7ddd138 in _start () from /lib64/ld-linux-x86-64.so.2
+#16 0x0000000000000006 in ?? ()
+#17 0x00007fffffffe795 in ?? ()
+#18 0x00007fffffffe7d7 in ?? ()
+#19 0x00007fffffffe81f in ?? ()
+#20 0x00007fffffffe822 in ?? ()
+#21 0x00007fffffffe824 in ?? ()
+#22 0x00007fffffffe826 in ?? ()
+#23 0x0000000000000000 in ?? ()
+
+126	../sysdeps/x86_64/multiarch/../strcmp.S: No such file or directory.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xa80x790xff0xf70xff0x7f0x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd000
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: do_lookup_x
+symbol name: map
+symbol filename: dl-lookup.c
+symbol line: 98
+value: 0x7ffff7ff79a8
+value address: 0x7fffffffd000
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-04 00:46:00]
+Fault Injection Successful after 0.827955961227s
+[INFO -- 2018-12-04 00:46:03]
+event type: exit
+[INFO -- 2018-12-04 00:46:03]
+exit code: 0

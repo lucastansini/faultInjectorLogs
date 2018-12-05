@@ -1,0 +1,75 @@
+[INFO -- 2018-12-04 02:56:15]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-04 02:56:15]
+Initialization strings:
+[INFO -- 2018-12-04 02:56:15]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-04 02:56:15]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-04 02:56:15]
+initSignal:0
+[INFO -- 2018-12-04 02:56:15]
+endSignal:2
+[INFO -- 2018-12-04 02:56:15]
+faultModel:4
+[EXCEPTION -- 2018-12-04 02:56:16]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-12-04 02:56:16]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 02:56:16]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 02:56:16]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 02:56:16]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 02:56:16]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 02:56:16]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 02:56:16]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 02:56:16]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 02:56:16]
+pythonException: invalid frame
+[INFO -- 2018-12-04 02:56:16]
+Backtrace BEGIN:
+#0  0x00007ffff78d4c79 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d26f0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff42f6700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+178	    float target_lat, target_long;
+179	    char * gold_filename, * filename;
+180	    struct neighbor *data1 = NULL;
+181	    struct neighbor *data2 = NULL;
+182	
+183	    if(argc < 6) {
+184	        fprintf(stderr, "Invalid set of arguments:\n");
+185	        fprintf(stderr, "%s <filelist> <num neighbors to find> <target latitude> <target longitude> <out filename>\n",argv[0]);
+186	        exit(-1);
+187	    }
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xc00x290x600x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffe408
+address max offset: 8
+Memory content after  bitflip:0xc00x290x600x000x000x000x000x80
+frame name: nn_wrapper
+symbol name: z
+symbol filename: nn.c
+symbol line: 64
+value: 0x6029c0
+value address: 0x7fffffffe408
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-04 02:56:16]
+Fault Injection Successful after 1.22434711456s
+[INFO -- 2018-12-04 02:56:18]
+event type: exit
+[INFO -- 2018-12-04 02:56:18]
+exit code: 0

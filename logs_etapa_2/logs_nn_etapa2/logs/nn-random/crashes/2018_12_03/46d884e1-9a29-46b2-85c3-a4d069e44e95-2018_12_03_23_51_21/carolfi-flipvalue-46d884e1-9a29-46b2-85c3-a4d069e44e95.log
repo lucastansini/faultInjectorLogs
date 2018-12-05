@@ -1,0 +1,46 @@
+[INFO -- 2018-12-03 23:51:21]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 23:51:21]
+Initialization strings:
+[INFO -- 2018-12-03 23:51:21]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 23:51:21]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 23:51:21]
+initSignal:0
+[INFO -- 2018-12-03 23:51:21]
+endSignal:2
+[INFO -- 2018-12-03 23:51:21]
+faultModel:2
+[INFO -- 2018-12-03 23:51:21]
+Backtrace BEGIN:
+#0  0x00007ffff78d4c81 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d26e3 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff6afb700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+88	dl-minimal.c: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 0
+Memory content before bitflip:0x400x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff76b9a44 
+address max offset: 4
+Memory content after  bitflip:0x8c0xf00x2c0x79
+frame name: __pthread_create_2_1
+symbol name: _thread_db_dtv_t_pointer_val
+symbol filename: ../nptl_db/structs.def
+symbol line: 76
+value: {2032988300, 1, 0}
+value address: 0x7ffff76b9a44 <_thread_db_dtv_t_pointer_val>
+Type: The type is an array.
+Type sizeof: 12
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 2L)
+
+[INFO -- 2018-12-03 23:51:21]
+Fault Injection Successful after 0.767827033997s

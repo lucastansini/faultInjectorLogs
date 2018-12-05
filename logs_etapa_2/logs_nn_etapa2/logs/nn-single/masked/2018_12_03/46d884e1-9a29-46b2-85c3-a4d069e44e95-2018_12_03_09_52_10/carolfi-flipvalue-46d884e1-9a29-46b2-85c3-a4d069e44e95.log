@@ -1,0 +1,73 @@
+[INFO -- 2018-12-03 09:52:07]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 09:52:07]
+Initialization strings:
+[INFO -- 2018-12-03 09:52:07]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 09:52:07]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 09:52:07]
+initSignal:0
+[INFO -- 2018-12-03 09:52:07]
+endSignal:2
+[INFO -- 2018-12-03 09:52:07]
+faultModel:1
+[EXCEPTION -- 2018-12-03 09:52:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 09:52:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 09:52:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 09:52:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 09:52:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 09:52:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 09:52:08]
+pythonException: invalid frame
+[INFO -- 2018-12-03 09:52:08]
+Backtrace BEGIN:
+#0  0x00007ffff78d4e49 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d3ae9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#3  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+178	    float target_lat, target_long;
+179	    char * gold_filename, * filename;
+180	    struct neighbor *data1 = NULL;
+181	    struct neighbor *data2 = NULL;
+182	
+183	    if(argc < 6) {
+184	        fprintf(stderr, "Invalid set of arguments:\n");
+185	        fprintf(stderr, "%s <filelist> <num neighbors to find> <target latitude> <target longitude> <out filename>\n",argv[0]);
+186	        exit(-1);
+187	    }
+
+Backtrace END
+Fliping array at pos: 436
+Memory content before bitflip:0x20
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffe384 
+address max offset: 1
+Memory content after  bitflip:0x80
+frame name: nn_wrapper
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 30
+value: "1988  3  1 18 26 HELENE     52.6  59.5   89  673\n1964  9  3  6 21 NADINE     17.4  57.4   90  375\n1959  8 19 12 23 KIRK       43.1 204.1  151  449\n1981 12 17 12 17 TONY       61.2  28.1   53  105\n1992"...
+value address: 0x7fffffffe1d0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 489L)
+
+[INFO -- 2018-12-03 09:52:08]
+Fault Injection Successful after 1.68498897552s
+[INFO -- 2018-12-03 09:52:10]
+event type: exit
+[INFO -- 2018-12-03 09:52:10]
+exit code: 0

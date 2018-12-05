@@ -1,0 +1,50 @@
+[INFO -- 2018-12-03 16:27:48]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 16:27:48]
+Initialization strings:
+[INFO -- 2018-12-03 16:27:48]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 16:27:48]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 16:27:48]
+initSignal:0
+[INFO -- 2018-12-03 16:27:48]
+endSignal:2
+[INFO -- 2018-12-03 16:27:48]
+faultModel:4
+[EXCEPTION -- 2018-12-03 16:27:48]
+pythonException: invalid frame
+[INFO -- 2018-12-03 16:27:48]
+Backtrace BEGIN:
+#0  clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:81
+#1  0x00007ffff76affa0 in ?? () at pthread_create.c:219 from /lib/x86_64-linux-gnu/libpthread.so.0
+#2  0x00007ffff42f6700 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+76	../sysdeps/unix/sysv/linux/x86_64/clone.S: No such file or directory.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: entry
+Fliping array at pos: 21
+Memory content before bitflip:0x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x602285 
+address max offset: 1
+Memory content after  bitflip:0x20
+frame name: nn_wrapper
+symbol name: neighbors
+symbol filename: nn.c
+symbol line: 34
+value: 0x602270
+value address: 0x7fffffffe3e8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 16:27:48]
+Fault Injection Successful after 0.30218911171s
+[INFO -- 2018-12-03 16:27:50]
+event type: exit
+[INFO -- 2018-12-03 16:27:50]
+exit code: 0

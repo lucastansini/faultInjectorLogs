@@ -1,0 +1,54 @@
+[INFO -- 2018-12-03 05:28:47]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 05:28:47]
+Initialization strings:
+[INFO -- 2018-12-03 05:28:47]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 05:28:47]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 05:28:47]
+initSignal:0
+[INFO -- 2018-12-03 05:28:47]
+endSignal:2
+[INFO -- 2018-12-03 05:28:47]
+faultModel:1
+[EXCEPTION -- 2018-12-03 05:28:47]
+gdbException: Attempt to dereference a generic pointer.
+[EXCEPTION -- 2018-12-03 05:28:47]
+gdbException: Attempt to dereference a generic pointer.
+[INFO -- 2018-12-03 05:28:47]
+Backtrace BEGIN:
+#0  __lll_lock_wait_private () at ../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S:95
+#1  0x00007ffff76b1119 in _L_lock_3133 () from /lib/x86_64-linux-gnu/libpthread.so.0
+#2  0x00007ffff76b0241 in start_thread (arg=0x7ffff72fc700) at pthread_create.c:298
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+90	../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 2
+Memory content before bitflip:0x110x060x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff76b9b9c 
+address max offset: 4
+Memory content after  bitflip:0x110x060x000x14
+frame name: __pthread_create_2_1
+symbol name: _thread_db_pthread_report_events
+symbol filename: ../nptl_db/structs.def
+symbol line: 27
+value: {8, 1, 335545873}
+value address: 0x7ffff76b9b94 <_thread_db_pthread_report_events>
+Type: The type is an array.
+Type sizeof: 12
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 2L)
+
+[INFO -- 2018-12-03 05:28:47]
+Fault Injection Successful after 0.938101053238s
+[INFO -- 2018-12-03 05:28:50]
+event type: exit
+[INFO -- 2018-12-03 05:28:50]
+exit code: 0

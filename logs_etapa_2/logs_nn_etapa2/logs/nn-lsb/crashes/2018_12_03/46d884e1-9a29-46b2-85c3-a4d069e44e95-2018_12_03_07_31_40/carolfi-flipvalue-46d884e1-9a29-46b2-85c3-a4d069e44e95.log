@@ -1,0 +1,51 @@
+[INFO -- 2018-12-03 07:31:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 07:31:39]
+Initialization strings:
+[INFO -- 2018-12-03 07:31:39]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 07:31:39]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 07:31:39]
+initSignal:0
+[INFO -- 2018-12-03 07:31:39]
+endSignal:2
+[INFO -- 2018-12-03 07:31:39]
+faultModel:4
+[EXCEPTION -- 2018-12-03 07:31:39]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 07:31:39]
+pythonException: invalid frame
+[INFO -- 2018-12-03 07:31:39]
+Backtrace BEGIN:
+#0  0x00007ffff73674dc in __GI__IO_fread (buf=0x7fffffffe1d0, size=49, count=10, fp=0x602780) at iofread.c:41
+#1  0x0000000000400e6f in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:69
+#2  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+36	iofread.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: _markers
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x602090
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x01
+frame name: nn_wrapper
+symbol name: flist
+symbol filename: nn.c
+symbol line: 32
+value: 0x602030
+value address: 0x7fffffffe3e0
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 07:31:39]
+Fault Injection Successful after 0.832947015762s
+[INFO -- 2018-12-03 07:31:40]
+event type: exit
+[EXCEPTION -- 2018-12-03 07:31:40]
+exit code: no exit code available

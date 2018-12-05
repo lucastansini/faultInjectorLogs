@@ -1,0 +1,54 @@
+[INFO -- 2018-12-03 10:57:49]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 10:57:49]
+Initialization strings:
+[INFO -- 2018-12-03 10:57:49]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 10:57:49]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 10:57:49]
+initSignal:0
+[INFO -- 2018-12-03 10:57:49]
+endSignal:2
+[INFO -- 2018-12-03 10:57:49]
+faultModel:4
+[EXCEPTION -- 2018-12-03 10:57:50]
+pythonException: invalid frame
+[INFO -- 2018-12-03 10:57:50]
+Backtrace BEGIN:
+#0  0x00007ffff73d897d in open64 () at ../sysdeps/unix/syscall-template.S:81
+#1  0x00007ffff7371ca2 in __GI__IO_file_open (fp=fp@entry=0x602780, filename=<optimized out>, posix_mode=<optimized out>, prot=prot@entry=438, read_write=8, is32not64=is32not64@entry=1) at fileops.c:227
+#2  0x00007ffff7371e1a in _IO_new_file_fopen (fp=fp@entry=0x602780, filename=filename@entry=0x7fffffffe190 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/cane4_1.db", mode=<optimized out>, mode@entry=0x4016c8 "r", is32not64=is32not64@entry=1) at fileops.c:332
+#3  0x00007ffff7367064 in __fopen_internal (filename=0x7fffffffe190 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/cane4_1.db", mode=0x4016c8 "r", is32=1) at iofopen.c:90
+#4  0x0000000000400f1f in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:83
+#5  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+76	../sysdeps/unix/syscall-template.S: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 0
+Memory content before bitflip:0x5f
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff7468b70  
+address max offset: 1
+Memory content after  bitflip:0x57
+frame name: _IO_new_file_fopen
+symbol name: __PRETTY_FUNCTION__
+symbol filename: fileops.c
+symbol line: 0
+value: "WIO_new_file_fopen"
+value address: 0x7ffff7468b70 <__PRETTY_FUNCTION__.11452>
+Type: The type is an array.
+Type sizeof: 19
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 18L)
+
+[INFO -- 2018-12-03 10:57:50]
+Fault Injection Successful after 1.4790289402s
+[INFO -- 2018-12-03 10:57:52]
+event type: exit
+[INFO -- 2018-12-03 10:57:52]
+exit code: 0

@@ -1,0 +1,99 @@
+[INFO -- 2018-12-03 04:51:40]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 04:51:40]
+Initialization strings:
+[INFO -- 2018-12-03 04:51:40]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 04:51:40]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 04:51:40]
+initSignal:0
+[INFO -- 2018-12-03 04:51:40]
+endSignal:2
+[INFO -- 2018-12-03 04:51:40]
+faultModel:3
+[EXCEPTION -- 2018-12-03 04:51:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:51:41]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-12-03 04:51:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:51:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:51:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:51:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:51:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:51:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:51:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:51:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:51:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:51:41]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-12-03 04:51:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:51:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:51:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:51:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:51:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:51:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:51:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:51:41]
+pythonException: invalid frame
+[INFO -- 2018-12-03 04:51:41]
+Backtrace BEGIN:
+#0  0x00007ffff78d4e84 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d2722 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff42f6700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+188	
+189	    filename = argv[1];
+190	    k = atoi(argv[2]);
+191	    target_lat = atof(argv[3]);
+192	    target_long = atof(argv[4]);
+193	    gold_filename = argv[5];
+194	
+195	    data1 = nn_wrapper(filename, k, target_lat, target_long);
+196	    data2 = nn_wrapper(filename, k, target_lat, target_long);
+197	
+
+Backtrace END
+Fliping array at pos: 292
+Memory content before bitflip:0x37
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffe2f4 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: nn_wrapper
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 30
+value: "1956  2  9 12 28 KIRK       58.3 278.7   91  738\n2003  5 16 18 27 TONY       33.7 245.4  123  164\n1990  3  4  0  8 WILLIAM     8.0 169.9  129  617\n1977  6 15  6 16 RAFAEL     35.4 108.0   89  574\n1977"...
+value address: 0x7fffffffe1d0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 489L)
+
+[INFO -- 2018-12-03 04:51:41]
+Fault Injection Successful after 1.2790350914s
+[INFO -- 2018-12-03 04:51:43]
+event type: exit
+[INFO -- 2018-12-03 04:51:43]
+exit code: 0

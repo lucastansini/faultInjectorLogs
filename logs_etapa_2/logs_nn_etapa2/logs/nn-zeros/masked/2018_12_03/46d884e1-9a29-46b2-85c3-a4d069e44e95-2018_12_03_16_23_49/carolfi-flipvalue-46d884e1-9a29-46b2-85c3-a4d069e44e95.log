@@ -1,0 +1,66 @@
+[INFO -- 2018-12-03 16:23:46]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 16:23:46]
+Initialization strings:
+[INFO -- 2018-12-03 16:23:46]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 16:23:46]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 16:23:46]
+initSignal:0
+[INFO -- 2018-12-03 16:23:46]
+endSignal:2
+[INFO -- 2018-12-03 16:23:46]
+faultModel:3
+[EXCEPTION -- 2018-12-03 16:23:47]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 16:23:47]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 16:23:47]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 16:23:47]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 16:23:47]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 16:23:47]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 16:23:47]
+pythonException: invalid frame
+[INFO -- 2018-12-03 16:23:47]
+Backtrace BEGIN:
+#0  0x00007ffff737eccf in strlen () at ../sysdeps/x86_64/strlen.S:137
+#1  0x00007ffff7339884 in __GI_____strtod_l_internal (nptr=0x7fffffffe21c " 60.0 156.6   81  449\n1979  8 14 12 28 TONY       12.0  88.9   23  749\n1992  5 18  0 25 GORDON      8.0  94.2   27  121\n1975  2 24  6 13 KIRK       42.5  76.1  126  759\n1991  4 15  0 28 ALBERTO    10."..., endptr=0x0, group=<optimized out>, loc=0x7ffff76a2f20 <_nl_global_locale>) at strtod_l.c:586
+#2  0x000000000040156a in nn_wrapper._omp_fn.0 () at nn.c:100
+#3  0x00007ffff78ce7df in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#5  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+132	../sysdeps/x86_64/strlen.S: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 361
+Memory content before bitflip:0x45
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffe339 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: nn_wrapper
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 30
+value: "1987  5 14  0 15 FLORENCE   66.8 324.8   41  626\n1957  2  5  6 14 OSCAR      60.0 156.6   81  449\n1979  8 14 12 28 TONY       12.0  88.9   23  749\n1992  5 18  0 25 GORDON      8.0  94.2   27  121\n1975"...
+value address: 0x7fffffffe1d0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 489L)
+
+[INFO -- 2018-12-03 16:23:47]
+Fault Injection Successful after 1.35950803757s
+[INFO -- 2018-12-03 16:23:49]
+event type: exit
+[INFO -- 2018-12-03 16:23:49]
+exit code: 0

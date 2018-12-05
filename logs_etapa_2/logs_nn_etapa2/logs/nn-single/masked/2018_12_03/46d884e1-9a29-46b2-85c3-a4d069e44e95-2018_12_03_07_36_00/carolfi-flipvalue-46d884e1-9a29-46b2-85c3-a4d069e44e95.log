@@ -1,0 +1,65 @@
+[INFO -- 2018-12-03 07:35:57]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 07:35:57]
+Initialization strings:
+[INFO -- 2018-12-03 07:35:57]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 07:35:57]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 07:35:57]
+initSignal:0
+[INFO -- 2018-12-03 07:35:57]
+endSignal:2
+[INFO -- 2018-12-03 07:35:57]
+faultModel:1
+[EXCEPTION -- 2018-12-03 07:35:57]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 07:35:57]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 07:35:57]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 07:35:57]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 07:35:57]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 07:35:57]
+pythonException: invalid frame
+[INFO -- 2018-12-03 07:35:57]
+Backtrace BEGIN:
+#0  __GI___nptl_create_event () at events.c:25
+#1  0x00007ffff76b08ec in create_thread (stackaddr=<optimized out>, attr=0x7ffff7ada6e0, pd=0x7ffff4af7700) at ../nptl/sysdeps/pthread/createthread.c:220
+#2  __pthread_create_2_1 (newthread=<optimized out>, attr=<optimized out>, start_routine=<optimized out>, arg=<optimized out>) at pthread_create.c:606
+#3  0x00007ffff78d2c57 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x00007ffff78ce7da in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#5  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#6  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+20	events.c: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 1
+Memory content before bitflip:0x010x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff76b9ba4 
+address max offset: 4
+Memory content after  bitflip:0x010x000x000x12
+frame name: __pthread_create_2_1
+symbol name: _thread_db_pthread_list
+symbol filename: ../nptl_db/structs.def
+symbol line: 26
+value: {128, 301989889, 704}
+value address: 0x7ffff76b9ba0 <_thread_db_pthread_list>
+Type: The type is an array.
+Type sizeof: 12
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 2L)
+
+[INFO -- 2018-12-03 07:35:57]
+Fault Injection Successful after 0.483165979385s
+[INFO -- 2018-12-03 07:36:00]
+event type: exit
+[INFO -- 2018-12-03 07:36:00]
+exit code: 0

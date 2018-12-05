@@ -1,0 +1,50 @@
+[INFO -- 2018-12-03 09:34:08]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 09:34:08]
+Initialization strings:
+[INFO -- 2018-12-03 09:34:08]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 09:34:08]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 09:34:08]
+initSignal:0
+[INFO -- 2018-12-03 09:34:08]
+endSignal:2
+[INFO -- 2018-12-03 09:34:08]
+faultModel:3
+[EXCEPTION -- 2018-12-03 09:34:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 09:34:08]
+pythonException: invalid frame
+[INFO -- 2018-12-03 09:34:08]
+Backtrace BEGIN:
+#0  0x00007ffff73398c1 in __GI_____strtod_l_internal (nptr=0x7fffffffe21c " 15.0 109.9  106  282\n1992  5 28  6 13 CHRIS      21.0 309.9  124  456\n1984  2  7 12  4 MICHAEL    63.2 144.1   45  661\n1970 10 23 12  6 KIRK       17.0 326.8  158   38\n1982 11 19  0 11 RAFAEL     34."..., endptr=0x0, group=<optimized out>, loc=0x7ffff76a2f20 <_nl_global_locale>) at strtod_l.c:601
+#1  0x000000000040156a in nn_wrapper._omp_fn.0 () at nn.c:100
+#2  0x00007ffff78ce7df in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#4  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+596	strtod_l.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x000x000x460x43
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffe108
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: nn_wrapper._omp_fn.0
+symbol name: tmp_long
+symbol filename: nn.c
+symbol line: 101
+value: 0
+value address: 0x7fffffffe108
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-12-03 09:34:08]
+Fault Injection Successful after 0.57221198082s
+[INFO -- 2018-12-03 09:34:10]
+event type: exit
+[INFO -- 2018-12-03 09:34:10]
+exit code: 0

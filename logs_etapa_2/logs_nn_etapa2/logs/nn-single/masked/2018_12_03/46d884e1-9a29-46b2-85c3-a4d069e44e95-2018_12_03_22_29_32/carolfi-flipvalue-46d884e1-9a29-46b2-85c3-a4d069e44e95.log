@@ -1,0 +1,89 @@
+[INFO -- 2018-12-03 22:29:29]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 22:29:29]
+Initialization strings:
+[INFO -- 2018-12-03 22:29:29]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 22:29:29]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 22:29:29]
+initSignal:0
+[INFO -- 2018-12-03 22:29:29]
+endSignal:2
+[INFO -- 2018-12-03 22:29:29]
+faultModel:1
+[EXCEPTION -- 2018-12-03 22:29:29]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 22:29:29]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 22:29:29]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 22:29:29]
+gdbException: Attempt to dereference a generic pointer.
+[EXCEPTION -- 2018-12-03 22:29:29]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 22:29:29]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 22:29:29]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 22:29:29]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 22:29:29]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 22:29:29]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 22:29:29]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 22:29:29]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 22:29:29]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 22:29:29]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 22:29:29]
+pythonException: invalid frame
+[INFO -- 2018-12-03 22:29:29]
+Backtrace BEGIN:
+#0  0x00007ffff78d4c9e in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d26f0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff42f6700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+117	            }
+118	            // compare each record with max value to find the nearest neighbor
+119	            if( z[i] < neighbors[max_idx].dist ) {
+120	                sandbox[(i+1)*REC_LENGTH-1] = '\0';
+121	                strcpy(neighbors[max_idx].entry, sandbox +i*REC_LENGTH);
+122	                neighbors[max_idx].dist = z[i];
+123	            }
+124	        }
+125	    }//End while loop
+126	    fclose(flist);
+
+Backtrace END
+Fliping array at pos: 9
+Memory content before bitflip:0x5b0x4e0x720x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffdf18
+address max offset: 8
+Memory content after  bitflip:0x5b0xcc0x720x000x000x000x000x00
+frame name: __GI_____strtod_l_internal
+symbol name: den
+symbol filename: strtod_l.c
+symbol line: 509
+value: {11529215046068469760, 6, 140737353984672, 140737351931838, 140737340562808, 140737488346928, 140737340509480, 140737340511688, 140737488347200, 7523419, 140737488347184, 140737354104064, 0, 140737353984768, 140737353983208, 4195858, 140737340562808, 4195000, 21474836480, 4294967388, 1, 140737353984768, 140737488347344, 140737354130696, 140737488347384, 140737354129840, 1, 140737351932269, 0, 140737353984768, 5, 0, 1, 140737354129840, 140737340562520, 140737353983208, 6304744, 6305024, 0, 140737354130696, 6302192, 140737346612537, 64, 0, 38654705663, 0, 34359738368, 0, 0, 8, 56, 140737290135184, 6305024, 140737488348096, 4199663, 6302448, 0, 8, 8}
+value address: 0x7fffffffded0
+Type: The type is an array.
+Type sizeof: 472
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 58L)
+
+[INFO -- 2018-12-03 22:29:29]
+Fault Injection Successful after 0.701996088028s
+[INFO -- 2018-12-03 22:29:32]
+event type: exit
+[INFO -- 2018-12-03 22:29:32]
+exit code: 0

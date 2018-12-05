@@ -1,0 +1,61 @@
+[INFO -- 2018-12-03 12:00:14]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 12:00:14]
+Initialization strings:
+[INFO -- 2018-12-03 12:00:14]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 12:00:14]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 12:00:14]
+initSignal:0
+[INFO -- 2018-12-03 12:00:14]
+endSignal:2
+[INFO -- 2018-12-03 12:00:14]
+faultModel:1
+[EXCEPTION -- 2018-12-03 12:00:15]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 12:00:15]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 12:00:15]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 12:00:15]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 12:00:15]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 12:00:15]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-12-03 12:00:15]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 12:00:15]
+pythonException: invalid frame
+[INFO -- 2018-12-03 12:00:15]
+Backtrace BEGIN:
+#0  __lll_lock_wait_private () at ../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S:95
+#1  0x00007ffff76b1119 in _L_lock_3133 () from /lib/x86_64-linux-gnu/libpthread.so.0
+#2  0x00007ffff76b0241 in start_thread (arg=0x7ffff42f6700) at pthread_create.c:298
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+90	../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x000x000xa00x40
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffe17c
+address max offset: 4
+Memory content after  bitflip:0x000x300xa00x40
+frame name: nn_wrapper
+symbol name: target_long
+symbol filename: nn.c
+symbol line: 28
+value: 5.00585938
+value address: 0x7fffffffe17c
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-12-03 12:00:15]
+Fault Injection Successful after 1.27091097832s
+[INFO -- 2018-12-03 12:00:17]
+event type: exit
+[INFO -- 2018-12-03 12:00:17]
+exit code: 0

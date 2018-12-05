@@ -1,0 +1,69 @@
+[INFO -- 2018-12-03 10:03:24]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 10:03:24]
+Initialization strings:
+[INFO -- 2018-12-03 10:03:24]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 10:03:24]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 10:03:24]
+initSignal:0
+[INFO -- 2018-12-03 10:03:24]
+endSignal:2
+[INFO -- 2018-12-03 10:03:24]
+faultModel:4
+[EXCEPTION -- 2018-12-03 10:03:24]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:03:24]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:03:24]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:03:24]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:03:24]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:03:24]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:03:24]
+pythonException: invalid frame
+[INFO -- 2018-12-03 10:03:24]
+Backtrace BEGIN:
+#0  0x00007ffff78d4e84 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d3ae9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#3  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+168			fclose(logfile);
+169		}
+170	
+171		if(file!= NULL){
+172	    		fclose(file);
+173		}
+174	}
+175	
+176	int main(int argc, char* argv[]) {
+177	    int    k=0;
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x2f
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffe826 
+address max offset: 1
+Memory content after  bitflip:0x2d
+frame name: main
+symbol name: gold_filename
+symbol filename: nn.c
+symbol line: 179
+value: 0x7fffffffe826 "-home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5"
+value address: 0x7fffffffe450
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 10:03:24]
+Fault Injection Successful after 0.648412942886s
+[INFO -- 2018-12-03 10:03:26]
+event type: exit
+[EXCEPTION -- 2018-12-03 10:03:26]
+exit code: no exit code available

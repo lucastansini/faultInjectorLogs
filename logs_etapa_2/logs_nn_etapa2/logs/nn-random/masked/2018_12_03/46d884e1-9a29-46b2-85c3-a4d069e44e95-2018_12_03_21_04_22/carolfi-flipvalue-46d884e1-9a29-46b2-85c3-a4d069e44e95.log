@@ -1,0 +1,93 @@
+[INFO -- 2018-12-03 21:04:19]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 21:04:19]
+Initialization strings:
+[INFO -- 2018-12-03 21:04:19]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 21:04:19]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 21:04:19]
+initSignal:0
+[INFO -- 2018-12-03 21:04:19]
+endSignal:2
+[INFO -- 2018-12-03 21:04:19]
+faultModel:2
+[EXCEPTION -- 2018-12-03 21:04:20]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 21:04:20]
+gdbException: Attempt to dereference a generic pointer.
+[EXCEPTION -- 2018-12-03 21:04:20]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 21:04:20]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 21:04:20]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 21:04:20]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 21:04:20]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 21:04:20]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 21:04:20]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 21:04:20]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 21:04:20]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 21:04:20]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 21:04:20]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 21:04:20]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 21:04:20]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-12-03 21:04:20]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 21:04:20]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 21:04:20]
+pythonException: invalid frame
+[INFO -- 2018-12-03 21:04:20]
+Backtrace BEGIN:
+#0  0x00007ffff78d4c81 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d26f0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff4af7700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+188	
+189	    filename = argv[1];
+190	    k = atoi(argv[2]);
+191	    target_lat = atof(argv[3]);
+192	    target_long = atof(argv[4]);
+193	    gold_filename = argv[5];
+194	
+195	    data1 = nn_wrapper(filename, k, target_lat, target_long);
+196	    data2 = nn_wrapper(filename, k, target_lat, target_long);
+197	
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: entry
+Fliping array at pos: 4
+Memory content before bitflip:0x20
+Fault Model: Random bit-flip
+base address to flip value: 0x602274 
+address max offset: 1
+Memory content after  bitflip:0x3b
+frame name: nn_wrapper
+symbol name: neighbors
+symbol filename: nn.c
+symbol line: 34
+value: 0x602270
+value address: 0x7fffffffe3e8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 21:04:20]
+Fault Injection Successful after 1.31569910049s
+[INFO -- 2018-12-03 21:04:22]
+event type: exit
+[INFO -- 2018-12-03 21:04:22]
+exit code: 0

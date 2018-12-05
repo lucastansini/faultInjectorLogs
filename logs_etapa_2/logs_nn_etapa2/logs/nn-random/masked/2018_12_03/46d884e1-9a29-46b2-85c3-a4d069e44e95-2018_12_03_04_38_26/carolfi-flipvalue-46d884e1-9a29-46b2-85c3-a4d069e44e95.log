@@ -1,0 +1,60 @@
+[INFO -- 2018-12-03 04:38:23]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 04:38:23]
+Initialization strings:
+[INFO -- 2018-12-03 04:38:23]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 04:38:23]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 04:38:23]
+initSignal:0
+[INFO -- 2018-12-03 04:38:23]
+endSignal:2
+[INFO -- 2018-12-03 04:38:23]
+faultModel:2
+[EXCEPTION -- 2018-12-03 04:38:23]
+pythonException: 'bool' object is not iterable
+[EXCEPTION -- 2018-12-03 04:38:23]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:38:23]
+gdbException: Attempt to dereference a generic pointer.
+[EXCEPTION -- 2018-12-03 04:38:23]
+pythonException: invalid frame
+[INFO -- 2018-12-03 04:38:23]
+Backtrace BEGIN:
+#0  allocate_stack (stack=<synthetic pointer>, pdp=<synthetic pointer>, attr=0x7ffff7ada6e0) at allocatestack.c:557
+#1  __pthread_create_2_1 (newthread=0x7fffffffe0b8, attr=<optimized out>, start_routine=0x7ffff78d25c0, arg=0x7fffffffdd98) at pthread_create.c:495
+#2  0x00007ffff78d2c57 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x00007ffff78ce7da in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#5  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+552	allocatestack.c: No such file or directory.
+
+Backtrace END
+Fliping value of field: event_bits
+Fliping array at pos: 0
+Memory content before bitflip:0x800x010x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff78c4320 
+address max offset: 4
+Memory content after  bitflip:0x990xd00x0e0x84
+frame name: allocate_stack
+symbol name: __nptl_threads_events
+symbol filename: pthread_create.c
+symbol line: 46
+value: {event_bits = {2215563417, 0}}
+value address: 0x7ffff78c4320 <__nptl_threads_events>
+Type: The type is a structure.
+Type sizeof: 8
+Field name: event_bits
+Field Type: The type is an array.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-03 04:38:23]
+Fault Injection Successful after 0.73826789856s
+[INFO -- 2018-12-03 04:38:26]
+event type: exit
+[INFO -- 2018-12-03 04:38:26]
+exit code: 0

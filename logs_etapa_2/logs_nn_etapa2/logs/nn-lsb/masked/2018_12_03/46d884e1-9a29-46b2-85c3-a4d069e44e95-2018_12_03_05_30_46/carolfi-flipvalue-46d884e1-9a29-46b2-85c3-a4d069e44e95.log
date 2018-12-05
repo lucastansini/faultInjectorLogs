@@ -1,0 +1,73 @@
+[INFO -- 2018-12-03 05:30:43]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 05:30:43]
+Initialization strings:
+[INFO -- 2018-12-03 05:30:43]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 05:30:43]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 05:30:43]
+initSignal:0
+[INFO -- 2018-12-03 05:30:43]
+endSignal:2
+[INFO -- 2018-12-03 05:30:43]
+faultModel:4
+[EXCEPTION -- 2018-12-03 05:30:43]
+gdbException: Attempt to dereference a generic pointer.
+[EXCEPTION -- 2018-12-03 05:30:43]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 05:30:43]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 05:30:43]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 05:30:43]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 05:30:43]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 05:30:43]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 05:30:43]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 05:30:43]
+gdbException: A syntax error in expression, near `...'.
+[INFO -- 2018-12-03 05:30:43]
+Backtrace BEGIN:
+#0  0x00007ffff78d4c9e in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d26f0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff42f6700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+118	            // compare each record with max value to find the nearest neighbor
+119	            if( z[i] < neighbors[max_idx].dist ) {
+120	                sandbox[(i+1)*REC_LENGTH-1] = '\0';
+121	                strcpy(neighbors[max_idx].entry, sandbox +i*REC_LENGTH);
+122	                neighbors[max_idx].dist = z[i];
+123	            }
+124	        }
+125	    }//End while loop
+126	    fclose(flist);
+127	    
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffe468
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x10
+frame name: main
+symbol name: data2
+symbol filename: nn.c
+symbol line: 181
+value: 0x0
+value address: 0x7fffffffe468
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 05:30:43]
+Fault Injection Successful after 0.84556388855s
+[INFO -- 2018-12-03 05:30:46]
+event type: exit
+[INFO -- 2018-12-03 05:30:46]
+exit code: 0

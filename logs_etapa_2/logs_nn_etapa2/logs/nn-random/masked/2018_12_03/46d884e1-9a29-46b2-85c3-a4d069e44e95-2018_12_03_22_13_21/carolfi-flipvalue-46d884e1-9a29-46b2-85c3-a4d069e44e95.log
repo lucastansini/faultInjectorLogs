@@ -1,0 +1,61 @@
+[INFO -- 2018-12-03 22:13:18]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 22:13:18]
+Initialization strings:
+[INFO -- 2018-12-03 22:13:18]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 22:13:18]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 22:13:18]
+initSignal:0
+[INFO -- 2018-12-03 22:13:18]
+endSignal:2
+[INFO -- 2018-12-03 22:13:18]
+faultModel:2
+[EXCEPTION -- 2018-12-03 22:13:18]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 22:13:18]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 22:13:18]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 22:13:18]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 22:13:18]
+pythonException: invalid frame
+[INFO -- 2018-12-03 22:13:18]
+Backtrace BEGIN:
+#0  __GI_____strtod_l_internal (nptr=0x7fffffffe1eb " 41.0 181.0   24  407\n1967  2 17  0  3 FLORENCE   28.6 171.3  106  136\n1984  5  7  0 27 MICHAEL    12.1  51.2  128  881\n2000  9  4  0 12 OSCAR      66.0  30.3   38   14\n1997  5 18  0 20 KIRK       16."..., endptr=0x0, group=<optimized out>, loc=0x7ffff76a2f20 <_nl_global_locale>) at strtod_l.c:811
+#1  0x000000000040156a in nn_wrapper._omp_fn.0 () at nn.c:100
+#2  0x00007ffff78ce7df in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#4  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+806	strtod_l.c: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 21
+Memory content before bitflip:0x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff7468a95  
+address max offset: 1
+Memory content after  bitflip:0xeb
+frame name: __GI_____strtod_l_internal
+symbol name: __PRETTY_FUNCTION__
+symbol filename: strtod_l.c
+symbol line: 0
+value: "____strtod_l_interna", <incomplete sequence \353>
+value address: 0x7ffff7468a80 <__PRETTY_FUNCTION__.11567>
+Type: The type is an array.
+Type sizeof: 22
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 21L)
+
+[INFO -- 2018-12-03 22:13:18]
+Fault Injection Successful after 0.822707891464s
+[INFO -- 2018-12-03 22:13:20]
+event type: exit
+[INFO -- 2018-12-03 22:13:20]
+exit code: 0

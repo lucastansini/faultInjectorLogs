@@ -1,0 +1,83 @@
+[INFO -- 2018-12-03 15:48:38]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 15:48:38]
+Initialization strings:
+[INFO -- 2018-12-03 15:48:38]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 15:48:38]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 15:48:38]
+initSignal:0
+[INFO -- 2018-12-03 15:48:38]
+endSignal:2
+[INFO -- 2018-12-03 15:48:38]
+faultModel:2
+[INFO -- 2018-12-03 15:48:39]
+Backtrace BEGIN:
+#0  0x00007ffff78d4c9e in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d26f0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff42f6700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+3657	in malloc.c
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xd70xe70xff0xff0xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffe460
+address max offset: 8
+Memory content after  bitflip:0xb70x050xc80xd50x2f0x260x460x57
+frame name: main
+symbol name: filename
+symbol filename: nn.c
+symbol line: 179
+value: 0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist"
+value address: 0x7fffffffe460
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 15:48:39]
+Fault Injection Successful after 1.55091905594s
+[EXCEPTION -- 2018-12-03 15:48:40]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 15:48:40]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 15:48:40]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 15:48:40]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 15:48:40]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 15:48:40]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 15:48:40]
+pythonException: invalid frame
+[INFO -- 2018-12-03 15:48:40]
+Backtrace BEGIN:
+#0  0x00007ffff78d4c9e in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d26f0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff42f6700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+3657	in malloc.c
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff76a47c8 
+address max offset: 8
+Memory content after  bitflip:0x3c0x020x9a0xe90x1a0x520x730x84
+frame name: __GI___libc_malloc
+symbol name: __free_hook
+symbol filename: malloc.c
+symbol line: 1830
+value: 0x0
+value address: 0x7ffff76a47c8 <__free_hook>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 15:48:40]
+Fault Injection Successful after 2.28906393051s

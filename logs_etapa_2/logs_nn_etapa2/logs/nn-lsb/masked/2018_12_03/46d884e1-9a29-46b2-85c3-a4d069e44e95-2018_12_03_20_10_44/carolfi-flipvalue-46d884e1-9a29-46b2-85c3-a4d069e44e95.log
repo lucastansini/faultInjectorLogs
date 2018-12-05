@@ -1,0 +1,49 @@
+[INFO -- 2018-12-03 20:10:40]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 20:10:40]
+Initialization strings:
+[INFO -- 2018-12-03 20:10:40]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 20:10:40]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 20:10:40]
+initSignal:0
+[INFO -- 2018-12-03 20:10:40]
+endSignal:2
+[INFO -- 2018-12-03 20:10:40]
+faultModel:4
+[EXCEPTION -- 2018-12-03 20:10:41]
+pythonException: invalid frame
+[INFO -- 2018-12-03 20:10:41]
+Backtrace BEGIN:
+#0  __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1538
+#1  0x0000000000401583 in nn_wrapper._omp_fn.0 () at nn.c:101
+#2  0x00007ffff78ce7df in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#4  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+1533	strtod_l.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xd70xe70xff0xff0xff0x7f0x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffe188
+address max offset: 8
+Memory content after  bitflip:0xd70xe70xff0xff0xff0x7f0x000x04
+frame name: nn_wrapper
+symbol name: filename
+symbol filename: nn.c
+symbol line: 28
+value: 0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist"
+value address: 0x7fffffffe188
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 20:10:41]
+Fault Injection Successful after 1.24942493439s
+[INFO -- 2018-12-03 20:10:43]
+event type: exit
+[INFO -- 2018-12-03 20:10:43]
+exit code: 0

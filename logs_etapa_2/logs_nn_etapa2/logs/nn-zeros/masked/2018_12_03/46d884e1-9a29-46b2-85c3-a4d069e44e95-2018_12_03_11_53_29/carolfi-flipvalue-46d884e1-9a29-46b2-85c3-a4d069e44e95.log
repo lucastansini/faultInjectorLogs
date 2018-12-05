@@ -1,0 +1,73 @@
+[INFO -- 2018-12-03 11:53:26]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 11:53:26]
+Initialization strings:
+[INFO -- 2018-12-03 11:53:26]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 11:53:26]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 11:53:26]
+initSignal:0
+[INFO -- 2018-12-03 11:53:26]
+endSignal:2
+[INFO -- 2018-12-03 11:53:26]
+faultModel:3
+[INFO -- 2018-12-03 11:53:26]
+Backtrace BEGIN:
+#0  0x00007ffff7382dc0 in ?? ()
+#1  0x00007ffff7de7271 in elf_machine_lazy_rel (skip_ifunc=<optimized out>, reloc=0x7ffff731c358, l_addr=140737340493824, map=0x7ffff7fda4e8) at ../sysdeps/x86_64/dl-machine.h:529
+#2  elf_dynamic_do_Rela (skip_ifunc=<optimized out>, lazy=<optimized out>, nrelative=<optimized out>, relsize=<optimized out>, reladdr=<optimized out>, map=0x7ffff7fda4e8) at do-rel.h:77
+#3  _dl_relocate_object (scope=<optimized out>, reloc_mode=<optimized out>, consider_profiling=<optimized out>, consider_profiling@entry=0) at dl-reloc.c:264
+#4  0x00007ffff7ddff52 in dl_main (phdr=<optimized out>, phdr@entry=0x400040, phnum=<optimized out>, phnum@entry=8, user_entry=user_entry@entry=0x7fffffffe4a8, auxv=<optimized out>) at rtld.c:2320
+#5  0x00007ffff7df14a5 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffe560, dl_main=dl_main@entry=0x7ffff7ddde20 <dl_main>) at ../elf/dl-sysdep.c:249
+#6  0x00007ffff7ddd976 in _dl_start_final (arg=0x7fffffffe560) at rtld.c:424
+#7  _dl_start (arg=0x7fffffffe560) at rtld.c:650
+#8  0x00007ffff7ddd138 in _start () from /lib64/ld-linux-x86-64.so.2
+#9  0x0000000000000006 in ?? ()
+#10 0x00007fffffffe795 in ?? ()
+#11 0x00007fffffffe7d7 in ?? ()
+#12 0x00007fffffffe81f in ?? ()
+#13 0x00007fffffffe822 in ?? ()
+#14 0x00007fffffffe824 in ?? ()
+#15 0x00007fffffffe826 in ?? ()
+#16 0x0000000000000000 in ?? ()
+
+168			fclose(logfile);
+169		}
+170	
+171		if(file!= NULL){
+172	    		fclose(file);
+173		}
+174	}
+175	
+176	int main(int argc, char* argv[]) {
+177	    int    k=0;
+
+Backtrace END
+Fliping array at pos: 0
+Fliping value of field: lazy
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd318
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: elf_dynamic_do_Rela
+symbol name: ranges
+symbol filename: dl-reloc.c
+symbol line: 264
+value: {{start = 140737340590864, size = 30624, nrelative = 1191, lazy = 0}, {start = 140737340621488, size = 288, nrelative = 0, lazy = 1}}
+value address: 0x7fffffffd300
+Type: The type is an array.
+Type sizeof: 64
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 1L)
+
+[INFO -- 2018-12-03 11:53:26]
+Fault Injection Successful after 0.671750068665s
+[INFO -- 2018-12-03 11:53:29]
+event type: exit
+[INFO -- 2018-12-03 11:53:29]
+exit code: 0

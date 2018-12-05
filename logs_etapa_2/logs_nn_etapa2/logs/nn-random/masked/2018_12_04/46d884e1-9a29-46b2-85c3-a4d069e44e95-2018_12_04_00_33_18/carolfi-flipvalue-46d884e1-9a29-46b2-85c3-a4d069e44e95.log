@@ -1,0 +1,59 @@
+[INFO -- 2018-12-04 00:33:15]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-04 00:33:15]
+Initialization strings:
+[INFO -- 2018-12-04 00:33:15]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-04 00:33:15]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-04 00:33:15]
+initSignal:0
+[INFO -- 2018-12-04 00:33:15]
+endSignal:2
+[INFO -- 2018-12-04 00:33:15]
+faultModel:2
+[EXCEPTION -- 2018-12-04 00:33:16]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 00:33:16]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 00:33:16]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 00:33:16]
+pythonException: invalid frame
+[INFO -- 2018-12-04 00:33:16]
+Backtrace BEGIN:
+#0  __memcpy_sse2 () at ../sysdeps/x86_64/multiarch/../memcpy.S:220
+#1  0x00007ffff7371683 in __GI__IO_file_xsgetn (fp=0x602780, data=<optimized out>, n=490) at fileops.c:1379
+#2  0x00007ffff73674ef in __GI__IO_fread (buf=<optimized out>, size=49, count=10, fp=0x602780) at iofread.c:42
+#3  0x0000000000400e6f in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:69
+#4  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+215	../sysdeps/x86_64/multiarch/../memcpy.S: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 370
+Memory content before bitflip:0x20
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffe342 
+address max offset: 1
+Memory content after  bitflip:0x30
+frame name: nn_wrapper
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 30
+value: "1956 11  8  0 24 OSCAR      10.7 148.1   77  524\n1988 11  2  6  6 TONY       65.8 285.7   89  155\n1969  1 25 18 16 MICHAEL    59.9 149.3  144  746\n1959 12 21 18  2 CHRIS      45.8 103.1  155  593\n1963"...
+value address: 0x7fffffffe1d0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 489L)
+
+[INFO -- 2018-12-04 00:33:16]
+Fault Injection Successful after 1.28573107719s
+[INFO -- 2018-12-04 00:33:18]
+event type: exit
+[INFO -- 2018-12-04 00:33:18]
+exit code: 0

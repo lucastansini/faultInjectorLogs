@@ -1,0 +1,77 @@
+[INFO -- 2018-12-04 02:38:04]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-04 02:38:04]
+Initialization strings:
+[INFO -- 2018-12-04 02:38:04]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-04 02:38:04]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-04 02:38:04]
+initSignal:0
+[INFO -- 2018-12-04 02:38:04]
+endSignal:2
+[INFO -- 2018-12-04 02:38:04]
+faultModel:2
+[EXCEPTION -- 2018-12-04 02:38:05]
+gdbException: Attempt to dereference a generic pointer.
+[EXCEPTION -- 2018-12-04 02:38:05]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 02:38:05]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 02:38:05]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 02:38:05]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 02:38:05]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 02:38:05]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 02:38:06]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 02:38:06]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 02:38:06]
+pythonException: invalid frame
+[INFO -- 2018-12-04 02:38:06]
+Backtrace BEGIN:
+#0  0x00007ffff78d4e84 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d2722 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff42f6700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+188	
+189	    filename = argv[1];
+190	    k = atoi(argv[2]);
+191	    target_lat = atof(argv[3]);
+192	    target_long = atof(argv[4]);
+193	    gold_filename = argv[5];
+194	
+195	    data1 = nn_wrapper(filename, k, target_lat, target_long);
+196	    data2 = nn_wrapper(filename, k, target_lat, target_long);
+197	
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xa00xb70x370xf70xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff76a3720 
+address max offset: 8
+Memory content after  bitflip:0x9d0x2f0x5a0x670xbc0x5f0x190x72
+frame name: __GI___libc_free
+symbol name: __morecore
+symbol filename: malloc.c
+symbol line: 404
+value: 0x7ffff737b7a0 <__GI___default_morecore>
+value address: 0x7ffff76a3720 <__morecore>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-04 02:38:06]
+Fault Injection Successful after 2.09176397324s
+[EXCEPTION -- 2018-12-04 02:38:06]
+pythonException: Thread no longer exists.
+[INFO -- 2018-12-04 02:38:06]
+event type: exit
+[EXCEPTION -- 2018-12-04 02:38:06]
+exit code: no exit code available

@@ -1,0 +1,49 @@
+[INFO -- 2018-12-03 13:58:48]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 13:58:48]
+Initialization strings:
+[INFO -- 2018-12-03 13:58:48]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 13:58:48]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 13:58:48]
+initSignal:0
+[INFO -- 2018-12-03 13:58:48]
+endSignal:2
+[INFO -- 2018-12-03 13:58:48]
+faultModel:4
+[EXCEPTION -- 2018-12-03 13:58:49]
+pythonException: invalid frame
+[INFO -- 2018-12-03 13:58:49]
+Backtrace BEGIN:
+#0  0x00007ffff737ecca in strlen () at ../sysdeps/x86_64/strlen.S:137
+#1  0x00007ffff7339884 in __GI_____strtod_l_internal (nptr=0x7fffffffe1eb " 11.1 287.2   10   70\n1988  7 24  6  4 CHRIS      24.7 318.4  143  443\n1953  3 10 18 19 KIRK       68.7  90.7  161  560\n1958  3 16  0  9 RAFAEL     56.9 231.9   79  316\n1966  2 24 18  4 GORDON     25."..., endptr=0x0, group=<optimized out>, loc=0x7ffff76a2f20 <_nl_global_locale>) at strtod_l.c:586
+#2  0x000000000040156a in nn_wrapper._omp_fn.0 () at nn.c:100
+#3  0x00007ffff78ce7df in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#5  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+132	../sysdeps/x86_64/strlen.S: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x060x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffe44c
+address max offset: 4
+Memory content after  bitflip:0x060x000x000x02
+frame name: main
+symbol name: argc
+symbol filename: nn.c
+symbol line: 176
+value: 33554438
+value address: 0x7fffffffe44c
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-03 13:58:49]
+Fault Injection Successful after 1.27257800102s
+[INFO -- 2018-12-03 13:58:51]
+event type: exit
+[INFO -- 2018-12-03 13:58:51]
+exit code: 0

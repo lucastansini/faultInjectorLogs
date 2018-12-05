@@ -1,0 +1,61 @@
+[INFO -- 2018-12-03 09:20:13]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 09:20:13]
+Initialization strings:
+[INFO -- 2018-12-03 09:20:13]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 09:20:13]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 09:20:13]
+initSignal:0
+[INFO -- 2018-12-03 09:20:13]
+endSignal:2
+[INFO -- 2018-12-03 09:20:13]
+faultModel:1
+[EXCEPTION -- 2018-12-03 09:20:13]
+pythonException: invalid frame
+[INFO -- 2018-12-03 09:20:13]
+Backtrace BEGIN:
+#0  0x00007ffff78d4e84 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d3ae9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#3  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+168			fclose(logfile);
+169		}
+170	
+171		if(file!= NULL){
+172	    		fclose(file);
+173		}
+174	}
+175	
+176	int main(int argc, char* argv[]) {
+177	    int    k=0;
+
+Backtrace END
+Fliping array at pos: 315
+Memory content before bitflip:0x4e
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffe30b 
+address max offset: 1
+Memory content after  bitflip:0x4d
+frame name: nn_wrapper
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 30
+value: "1974  8 25 18 15 KIRK       17.4 303.8  129   70\n1981  9 20 12 28 BERYL      59.8 188.5  158  149\n1951  4 23 18 18 WILLIAM    46.1 114.4   90  164\n1970  9 18  0  2 VALERIE    53.6 331.1   33  154\n1995"...
+value address: 0x7fffffffe1d0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 489L)
+
+[INFO -- 2018-12-03 09:20:13]
+Fault Injection Successful after 0.807913064957s
+[INFO -- 2018-12-03 09:20:15]
+event type: exit
+[INFO -- 2018-12-03 09:20:15]
+exit code: 0

@@ -1,0 +1,56 @@
+[INFO -- 2018-12-03 10:16:08]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 10:16:08]
+Initialization strings:
+[INFO -- 2018-12-03 10:16:08]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 10:16:08]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 10:16:08]
+initSignal:0
+[INFO -- 2018-12-03 10:16:08]
+endSignal:2
+[INFO -- 2018-12-03 10:16:08]
+faultModel:3
+[EXCEPTION -- 2018-12-03 10:16:09]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:16:09]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:16:09]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:16:09]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:16:09]
+pythonException: invalid frame
+[INFO -- 2018-12-03 10:16:09]
+Backtrace BEGIN:
+#0  0x00007ffff73398f3 in __GI_____strtod_l_internal (nptr=0x7fffffffe1f0 " 225.3  123  134\n1973  4 17  0  9 ERNESTO    14.3   0.7  158  773\n2001 12 13  0 27 JOYCE      14.2 344.6  135  700\n1979  1  6  6 21 FLORENCE   44.6 193.1   59  840\n1977 12 27 12 27 JOYCE      32.2 317"..., endptr=0x0, group=<optimized out>, loc=0x7ffff76a2f20 <_nl_global_locale>) at strtod_l.c:623
+#1  0x0000000000401583 in nn_wrapper._omp_fn.0 () at nn.c:101
+#2  0x00007ffff78ce7df in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#4  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+618	strtod_l.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x0a0x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffe3f4
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: nn_wrapper
+symbol name: rec_count
+symbol filename: nn.c
+symbol line: 31
+value: 0
+value address: 0x7fffffffe3f4
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-03 10:16:09]
+Fault Injection Successful after 1.41476893425s
+[INFO -- 2018-12-03 10:16:11]
+event type: exit
+[INFO -- 2018-12-03 10:16:11]
+exit code: 0

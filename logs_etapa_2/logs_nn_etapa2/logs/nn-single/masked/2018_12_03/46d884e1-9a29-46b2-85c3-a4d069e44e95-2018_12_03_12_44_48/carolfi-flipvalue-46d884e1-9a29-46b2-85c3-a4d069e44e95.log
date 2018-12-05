@@ -1,0 +1,58 @@
+[INFO -- 2018-12-03 12:44:45]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 12:44:45]
+Initialization strings:
+[INFO -- 2018-12-03 12:44:45]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 12:44:45]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 12:44:45]
+initSignal:0
+[INFO -- 2018-12-03 12:44:45]
+endSignal:2
+[INFO -- 2018-12-03 12:44:45]
+faultModel:1
+[EXCEPTION -- 2018-12-03 12:44:45]
+gdbException: Attempt to dereference a generic pointer.
+[EXCEPTION -- 2018-12-03 12:44:45]
+gdbException: Attempt to dereference a generic pointer.
+[EXCEPTION -- 2018-12-03 12:44:45]
+pythonException: invalid frame
+[INFO -- 2018-12-03 12:44:45]
+Backtrace BEGIN:
+#0  create_thread (stackaddr=<optimized out>, attr=0x7ffff7ada6e0, pd=0x7ffff72fc700) at ../nptl/sysdeps/pthread/createthread.c:223
+#1  __pthread_create_2_1 (newthread=<optimized out>, attr=<optimized out>, start_routine=<optimized out>, arg=<optimized out>) at pthread_create.c:606
+#2  0x00007ffff78d2c57 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x00007ffff78ce7da in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#5  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+218	../nptl/sysdeps/pthread/createthread.c: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 0
+Memory content before bitflip:0x400x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff76b9a98 
+address max offset: 4
+Memory content after  bitflip:0x400x000x000x14
+frame name: __pthread_create_2_1
+symbol name: _thread_db_pthread_key_struct_seq
+symbol filename: ../nptl_db/structs.def
+symbol line: 63
+value: {335544384, 1, 0}
+value address: 0x7ffff76b9a98 <_thread_db_pthread_key_struct_seq>
+Type: The type is an array.
+Type sizeof: 12
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 2L)
+
+[INFO -- 2018-12-03 12:44:45]
+Fault Injection Successful after 0.485980033875s
+[INFO -- 2018-12-03 12:44:48]
+event type: exit
+[INFO -- 2018-12-03 12:44:48]
+exit code: 0

@@ -1,0 +1,52 @@
+[INFO -- 2018-12-03 20:36:46]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 20:36:46]
+Initialization strings:
+[INFO -- 2018-12-03 20:36:46]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 20:36:46]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 20:36:46]
+initSignal:0
+[INFO -- 2018-12-03 20:36:46]
+endSignal:2
+[INFO -- 2018-12-03 20:36:46]
+faultModel:3
+[EXCEPTION -- 2018-12-03 20:36:46]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 20:36:46]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 20:36:46]
+pythonException: invalid frame
+[INFO -- 2018-12-03 20:36:46]
+Backtrace BEGIN:
+#0  __lll_lock_wait_private () at ../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S:95
+#1  0x00007ffff76b1119 in _L_lock_3133 () from /lib/x86_64-linux-gnu/libpthread.so.0
+#2  0x00007ffff76b0241 in start_thread (arg=0x7ffff42f6700) at pthread_create.c:298
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+90	../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S: No such file or directory.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffe470
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: main
+symbol name: data1
+symbol filename: nn.c
+symbol line: 180
+value: 0x0
+value address: 0x7fffffffe470
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 20:36:46]
+Fault Injection Successful after 0.618292093277s
+[INFO -- 2018-12-03 20:36:49]
+event type: exit
+[INFO -- 2018-12-03 20:36:49]
+exit code: 0

@@ -1,0 +1,56 @@
+[INFO -- 2018-12-03 11:39:00]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 11:39:00]
+Initialization strings:
+[INFO -- 2018-12-03 11:39:00]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 11:39:00]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 11:39:00]
+initSignal:0
+[INFO -- 2018-12-03 11:39:00]
+endSignal:2
+[INFO -- 2018-12-03 11:39:00]
+faultModel:1
+[EXCEPTION -- 2018-12-03 11:39:01]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 11:39:01]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 11:39:01]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 11:39:01]
+pythonException: invalid frame
+[INFO -- 2018-12-03 11:39:01]
+Backtrace BEGIN:
+#0  strlen () at ../sysdeps/x86_64/strlen.S:66
+#1  0x00007ffff7339884 in __GI_____strtod_l_internal (nptr=0x7fffffffe1eb " 39.0  71.3   11  775\n2001 11  1  6 19 JOYCE      35.4  78.5   12  831\n1988  8  8  6 24 WILLIAM    47.1 328.0  154  379\n1980  6 24  6  9 LESLIE     15.7  94.4   50  120\n1968  4 24 12 10 PATTY      30."..., endptr=0x0, group=<optimized out>, loc=0x7ffff76a2f20 <_nl_global_locale>) at strtod_l.c:586
+#2  0x000000000040156a in nn_wrapper._omp_fn.0 () at nn.c:100
+#3  0x00007ffff78ce7df in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#5  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+61	../sysdeps/x86_64/strlen.S: No such file or directory.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xd70xe70xff0xff0xff0x7f0x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffe460
+address max offset: 8
+Memory content after  bitflip:0xd70xe70xff0xff0xff0x7f0x000x60
+frame name: main
+symbol name: filename
+symbol filename: nn.c
+symbol line: 179
+value: 0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist"
+value address: 0x7fffffffe460
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 11:39:01]
+Fault Injection Successful after 1.2832300663s
+[INFO -- 2018-12-03 11:39:02]
+event type: exit
+[INFO -- 2018-12-03 11:39:02]
+exit code: 1

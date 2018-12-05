@@ -1,0 +1,59 @@
+[INFO -- 2018-12-03 13:03:07]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 13:03:07]
+Initialization strings:
+[INFO -- 2018-12-03 13:03:07]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 13:03:07]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 13:03:07]
+initSignal:0
+[INFO -- 2018-12-03 13:03:07]
+endSignal:2
+[INFO -- 2018-12-03 13:03:07]
+faultModel:2
+[EXCEPTION -- 2018-12-03 13:03:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 13:03:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 13:03:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 13:03:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 13:03:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 13:03:08]
+pythonException: invalid frame
+[INFO -- 2018-12-03 13:03:08]
+Backtrace BEGIN:
+#0  strlen () at ../sysdeps/x86_64/strlen.S:138
+#1  0x00007ffff7339884 in __GI_____strtod_l_internal (nptr=0x7fffffffe221 " 171.9  120  133\n1973  3 26  0 15 CHRIS      64.7 355.6   67  727\n1984  7 15 18 17 SANDY      48.0 113.9  120  777\n1988 12  2 12 19 FLORENCE    9.7 157.1   23   75\n2001  6 12 18 23 CHRIS      66.5  74"..., endptr=0x0, group=<optimized out>, loc=0x7ffff76a2f20 <_nl_global_locale>) at strtod_l.c:586
+#2  0x0000000000401583 in nn_wrapper._omp_fn.0 () at nn.c:101
+#3  0x00007ffff78ce7df in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#5  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+133	../sysdeps/x86_64/strlen.S: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x000x000xa00x40
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffe180
+address max offset: 4
+Memory content after  bitflip:0x3b0x460x0e0x35
+frame name: nn_wrapper
+symbol name: target_lat
+symbol filename: nn.c
+symbol line: 28
+value: 5.3001321e-07
+value address: 0x7fffffffe180
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-12-03 13:03:08]
+Fault Injection Successful after 1.11843490601s
+[INFO -- 2018-12-03 13:03:10]
+event type: exit
+[INFO -- 2018-12-03 13:03:10]
+exit code: 0

@@ -1,0 +1,71 @@
+[INFO -- 2018-12-03 16:56:21]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 16:56:21]
+Initialization strings:
+[INFO -- 2018-12-03 16:56:21]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 16:56:21]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 16:56:21]
+initSignal:0
+[INFO -- 2018-12-03 16:56:21]
+endSignal:2
+[INFO -- 2018-12-03 16:56:21]
+faultModel:3
+[EXCEPTION -- 2018-12-03 16:56:22]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 16:56:22]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 16:56:22]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 16:56:22]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 16:56:22]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 16:56:22]
+pythonException: invalid frame
+[INFO -- 2018-12-03 16:56:22]
+Backtrace BEGIN:
+#0  0x00007ffff78d4e49 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d3ae9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#3  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+168			fclose(logfile);
+169		}
+170	
+171		if(file!= NULL){
+172	    		fclose(file);
+173		}
+174	}
+175	
+176	int main(int argc, char* argv[]) {
+177	    int    k=0;
+
+Backtrace END
+Fliping array at pos: 425
+Memory content before bitflip:0x31
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffe379 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: nn_wrapper
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 30
+value: "1971  1  6  0  7 NADINE     21.3 234.9  148   79\n1970  4 10 18 28 MICHAEL    32.6 173.8   27  854\n1979  7 16  0 13 MICHAEL    30.3  69.5  100  499\n1971 11  5  0 15 ERNESTO    49.3  83.9   40  470\n1963"...
+value address: 0x7fffffffe1d0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 489L)
+
+[INFO -- 2018-12-03 16:56:22]
+Fault Injection Successful after 1.44072198868s
+[INFO -- 2018-12-03 16:56:24]
+event type: exit
+[INFO -- 2018-12-03 16:56:24]
+exit code: 0

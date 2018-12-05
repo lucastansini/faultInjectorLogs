@@ -1,0 +1,45 @@
+[INFO -- 2018-12-03 15:22:21]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 15:22:21]
+Initialization strings:
+[INFO -- 2018-12-03 15:22:21]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 15:22:21]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 15:22:21]
+initSignal:0
+[INFO -- 2018-12-03 15:22:21]
+endSignal:2
+[INFO -- 2018-12-03 15:22:21]
+faultModel:4
+[INFO -- 2018-12-03 15:22:21]
+Backtrace BEGIN:
+#0  clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:81
+#1  0x00007ffff76affa0 in ?? () at pthread_create.c:219 from /lib/x86_64-linux-gnu/libpthread.so.0
+#2  0x00007ffff72fc700 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+76	../sysdeps/unix/sysv/linux/x86_64/clone.S: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x000x000xa00x40
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffe458
+address max offset: 4
+Memory content after  bitflip:0x000x000xa00x60
+frame name: main
+symbol name: target_long
+symbol filename: nn.c
+symbol line: 178
+value: 9.22337204e+19
+value address: 0x7fffffffe458
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-12-03 15:22:21]
+Fault Injection Successful after 0.763617992401s
+[INFO -- 2018-12-03 15:22:24]
+event type: exit
+[INFO -- 2018-12-03 15:22:24]
+exit code: 0

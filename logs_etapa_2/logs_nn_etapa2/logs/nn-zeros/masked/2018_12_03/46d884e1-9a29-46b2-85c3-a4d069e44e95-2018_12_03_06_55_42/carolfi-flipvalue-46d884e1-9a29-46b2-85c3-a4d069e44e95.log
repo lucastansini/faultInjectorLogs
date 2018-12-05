@@ -1,0 +1,85 @@
+[INFO -- 2018-12-03 06:55:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 06:55:39]
+Initialization strings:
+[INFO -- 2018-12-03 06:55:39]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 06:55:39]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 06:55:39]
+initSignal:0
+[INFO -- 2018-12-03 06:55:39]
+endSignal:2
+[INFO -- 2018-12-03 06:55:39]
+faultModel:3
+[EXCEPTION -- 2018-12-03 06:55:39]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 06:55:39]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 06:55:39]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 06:55:39]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 06:55:39]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-12-03 06:55:39]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 06:55:39]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 06:55:39]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 06:55:39]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 06:55:39]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 06:55:39]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 06:55:39]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 06:55:39]
+pythonException: invalid frame
+[INFO -- 2018-12-03 06:55:39]
+Backtrace BEGIN:
+#0  0x00007ffff78d4e49 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d2722 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff42f6700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+178	    float target_lat, target_long;
+179	    char * gold_filename, * filename;
+180	    struct neighbor *data1 = NULL;
+181	    struct neighbor *data2 = NULL;
+182	
+183	    if(argc < 6) {
+184	        fprintf(stderr, "Invalid set of arguments:\n");
+185	        fprintf(stderr, "%s <filelist> <num neighbors to find> <target latitude> <target longitude> <out filename>\n",argv[0]);
+186	        exit(-1);
+187	    }
+
+Backtrace END
+Fliping array at pos: 9
+Memory content before bitflip:0xc00xe30xff0xff0xff0x7f0x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffdd38
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: __GI_____strtod_l_internal
+symbol name: num
+symbol filename: strtod_l.c
+symbol line: 500
+value: {3458764513820540928, 7, 18446744073709551504, 140737488347144, 6302192, 140737488347040, 6302192, 140737346612537, 4199663, 0, 6302192, 6302448, 0, 4294967297, 1, 0, 0, 0, 6303688, 6305024, 139637976727552, 4199663, 140737488348096, 6302192, 6302448, 0, 4294967298, 1, 0, 0, 0, 6303864, 6305024, 139637976727552, 4199663, 140737488348096, 6302192, 6302448, 0, 4294967299, 1, 140737351929420, 0, 2090733295, 1, 140737351929420, 140737353984672, 2090266759, 4, 6, 140737353984672, 140737351931838, 140737488347072, 140737488346832, 140737340509480, 140737340562520, 140737488347104, 140737351929420, 140737488347088}
+value address: 0x7fffffffdcf0
+Type: The type is an array.
+Type sizeof: 472
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 58L)
+
+[INFO -- 2018-12-03 06:55:39]
+Fault Injection Successful after 0.926116943359s
+[INFO -- 2018-12-03 06:55:42]
+event type: exit
+[INFO -- 2018-12-03 06:55:42]
+exit code: 0

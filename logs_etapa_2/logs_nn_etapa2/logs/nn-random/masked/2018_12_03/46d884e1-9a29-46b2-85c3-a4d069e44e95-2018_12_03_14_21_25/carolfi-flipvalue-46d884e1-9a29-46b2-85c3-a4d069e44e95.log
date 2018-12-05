@@ -1,0 +1,55 @@
+[INFO -- 2018-12-03 14:21:22]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 14:21:22]
+Initialization strings:
+[INFO -- 2018-12-03 14:21:22]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 14:21:22]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 14:21:22]
+initSignal:0
+[INFO -- 2018-12-03 14:21:22]
+endSignal:2
+[INFO -- 2018-12-03 14:21:22]
+faultModel:2
+[EXCEPTION -- 2018-12-03 14:21:22]
+gdbException: Attempt to dereference a generic pointer.
+[INFO -- 2018-12-03 14:21:22]
+Backtrace BEGIN:
+#0  0x00007ffff73e1787 in mprotect () at ../sysdeps/unix/syscall-template.S:81
+#1  0x00007ffff76b0d43 in allocate_stack (stack=<synthetic pointer>, pdp=<synthetic pointer>, attr=0x7ffff7ada6e0) at allocatestack.c:650
+#2  __pthread_create_2_1 (newthread=0x7fffffffe0b8, attr=<optimized out>, start_routine=0x7ffff78d25c0, arg=0x7fffffffdd30) at pthread_create.c:495
+#3  0x00007ffff78d2c57 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x00007ffff78ce7da in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#5  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#6  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+76	../sysdeps/unix/syscall-template.S: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 0
+Memory content before bitflip:0x400x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff76b9a38 
+address max offset: 4
+Memory content after  bitflip:0xc30x8b0xeb0x7e
+frame name: allocate_stack
+symbol name: _thread_db_pthread_dtvp
+symbol filename: ../nptl_db/structs.def
+symbol line: 78
+value: {2129365955, 1, 8}
+value address: 0x7ffff76b9a38 <_thread_db_pthread_dtvp>
+Type: The type is an array.
+Type sizeof: 12
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 2L)
+
+[INFO -- 2018-12-03 14:21:22]
+Fault Injection Successful after 0.88512802124s
+[INFO -- 2018-12-03 14:21:25]
+event type: exit
+[INFO -- 2018-12-03 14:21:25]
+exit code: 0

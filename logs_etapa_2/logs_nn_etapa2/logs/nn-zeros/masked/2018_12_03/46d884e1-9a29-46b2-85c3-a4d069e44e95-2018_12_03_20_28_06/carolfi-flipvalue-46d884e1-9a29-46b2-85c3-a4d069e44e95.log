@@ -1,0 +1,69 @@
+[INFO -- 2018-12-03 20:28:03]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 20:28:03]
+Initialization strings:
+[INFO -- 2018-12-03 20:28:03]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 20:28:03]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 20:28:03]
+initSignal:0
+[INFO -- 2018-12-03 20:28:03]
+endSignal:2
+[INFO -- 2018-12-03 20:28:03]
+faultModel:3
+[EXCEPTION -- 2018-12-03 20:28:04]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 20:28:04]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 20:28:04]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 20:28:04]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 20:28:04]
+pythonException: invalid frame
+[INFO -- 2018-12-03 20:28:04]
+Backtrace BEGIN:
+#0  0x00007ffff78d4e84 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d3ae9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#3  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+178	    float target_lat, target_long;
+179	    char * gold_filename, * filename;
+180	    struct neighbor *data1 = NULL;
+181	    struct neighbor *data2 = NULL;
+182	
+183	    if(argc < 6) {
+184	        fprintf(stderr, "Invalid set of arguments:\n");
+185	        fprintf(stderr, "%s <filelist> <num neighbors to find> <target latitude> <target longitude> <out filename>\n",argv[0]);
+186	        exit(-1);
+187	    }
+
+Backtrace END
+Fliping array at pos: 375
+Memory content before bitflip:0x20
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffe347 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: nn_wrapper
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 30
+value: "1957  7 10 18  2 NADINE     19.9 274.8  118  851\n1982 12  8 18  4 PATTY      26.2 356.9   53  756\n1958  3 19 12 24 DEBBY      23.6  68.1  115  613\n1981  9 19 18 16 CHRIS      12.7 100.9   37  611\n1956"...
+value address: 0x7fffffffe1d0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 489L)
+
+[INFO -- 2018-12-03 20:28:04]
+Fault Injection Successful after 1.70935893059s
+[INFO -- 2018-12-03 20:28:06]
+event type: exit
+[INFO -- 2018-12-03 20:28:06]
+exit code: 0

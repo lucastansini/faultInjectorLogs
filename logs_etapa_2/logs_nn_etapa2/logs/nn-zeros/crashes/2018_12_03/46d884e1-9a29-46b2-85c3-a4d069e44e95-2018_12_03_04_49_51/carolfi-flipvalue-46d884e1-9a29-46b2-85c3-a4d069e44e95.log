@@ -1,0 +1,62 @@
+[INFO -- 2018-12-03 04:49:51]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 04:49:51]
+Initialization strings:
+[INFO -- 2018-12-03 04:49:51]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 04:49:51]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 04:49:51]
+initSignal:0
+[INFO -- 2018-12-03 04:49:51]
+endSignal:2
+[INFO -- 2018-12-03 04:49:51]
+faultModel:3
+[EXCEPTION -- 2018-12-03 04:49:51]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:49:51]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:49:51]
+pythonException: invalid frame
+[INFO -- 2018-12-03 04:49:51]
+Backtrace BEGIN:
+#0  __lll_lock_wait_private () at ../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S:95
+#1  0x00007ffff76b1119 in _L_lock_3133 () from /lib/x86_64-linux-gnu/libpthread.so.0
+#2  0x00007ffff76b0241 in start_thread (arg=0x7ffff5af9700) at pthread_create.c:298
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+90	in ../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S
+
+Backtrace END
+Fliping array at pos: 2
+Memory content before bitflip:0xd40x020x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7ffff76b9b84 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: do_clone
+symbol name: _thread_db_pthread_pid
+symbol filename: ../nptl_db/structs.def
+symbol line: 29
+value: {32, 1, 0}
+value address: 0x7ffff76b9b7c <_thread_db_pthread_pid>
+Type: The type is an array.
+Type sizeof: 12
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 2L)
+
+[INFO -- 2018-12-03 04:49:51]
+Fault Injection Successful after 0.521498918533s
+[INFO -- 2018-12-03 04:49:51]
+event type: exit
+[EXCEPTION -- 2018-12-03 04:49:51]
+exit code: no exit code available
+[EXCEPTION -- 2018-12-03 04:49:51]
+pythonException: Thread no longer exists.
+[EXCEPTION -- 2018-12-03 04:49:51]
+pythonException: Thread no longer exists.
+[EXCEPTION -- 2018-12-03 04:49:51]
+pythonException: Thread no longer exists.

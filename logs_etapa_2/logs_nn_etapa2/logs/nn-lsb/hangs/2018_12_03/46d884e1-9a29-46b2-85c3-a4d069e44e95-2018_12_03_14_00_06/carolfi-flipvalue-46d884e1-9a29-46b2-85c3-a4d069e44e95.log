@@ -1,0 +1,108 @@
+[INFO -- 2018-12-03 14:00:00]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 14:00:00]
+Initialization strings:
+[INFO -- 2018-12-03 14:00:00]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 14:00:00]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 14:00:00]
+initSignal:0
+[INFO -- 2018-12-03 14:00:00]
+endSignal:2
+[INFO -- 2018-12-03 14:00:00]
+faultModel:4
+[EXCEPTION -- 2018-12-03 14:00:01]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 14:00:01]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 14:00:01]
+pythonException: invalid frame
+[INFO -- 2018-12-03 14:00:01]
+Backtrace BEGIN:
+#0  0x00007ffff78d4c9e in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d26f0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff42f6700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+3571	in malloc.c
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff76a47f8 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x40
+frame name: __GI___libc_malloc
+symbol name: atfork_recursive_cntr
+symbol filename: arena.c
+symbol line: 212
+value: 1073741824
+value address: 0x7ffff76a47f8 <atfork_recursive_cntr>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-03 14:00:01]
+Fault Injection Successful after 1.77725505829s
+[INFO -- 2018-12-03 14:00:02]
+Backtrace BEGIN:
+#0  0x00007ffff78d4c9e in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d26f0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff42f6700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+3571	in malloc.c
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x680xe50xff0xff0xff0x7f0x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffe440
+address max offset: 8
+Memory content after  bitflip:0x680xe50xff0xff0xff0x7f0x000x08
+frame name: main
+symbol name: argv
+symbol filename: nn.c
+symbol line: 176
+value: 0x7fffffffe568
+value address: 0x7fffffffe440
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 14:00:02]
+Fault Injection Successful after 2.38026499748s
+[EXCEPTION -- 2018-12-03 14:00:02]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 14:00:02]
+pythonException: invalid frame
+[INFO -- 2018-12-03 14:00:02]
+Backtrace BEGIN:
+#0  0x00007ffff737720e in _int_malloc (av=0x7ffff76a2620 <main_arena>, bytes=2816) at malloc.c:3576
+#1  0x00007ffff7379020 in __GI___libc_malloc (bytes=2816) at malloc.c:2891
+#2  0x00007ffff78cb629 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x00007ffff78d275a in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x00007ffff78ce7c6 in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#5  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#6  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+3571	malloc.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x2f
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffe826 
+address max offset: 1
+Memory content after  bitflip:0xaf
+frame name: main
+symbol name: gold_filename
+symbol filename: nn.c
+symbol line: 179
+value: 0x7fffffffe826 "\257home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5"
+value address: 0x7fffffffe450
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 14:00:02]
+Fault Injection Successful after 2.41965198517s

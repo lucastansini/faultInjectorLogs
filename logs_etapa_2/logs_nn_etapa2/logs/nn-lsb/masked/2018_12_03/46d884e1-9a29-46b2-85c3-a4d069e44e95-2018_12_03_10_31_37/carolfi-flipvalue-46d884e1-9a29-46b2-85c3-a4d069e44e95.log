@@ -1,0 +1,84 @@
+[INFO -- 2018-12-03 10:31:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 10:31:34]
+Initialization strings:
+[INFO -- 2018-12-03 10:31:34]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 10:31:34]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 10:31:34]
+initSignal:0
+[INFO -- 2018-12-03 10:31:34]
+endSignal:2
+[INFO -- 2018-12-03 10:31:34]
+faultModel:4
+[EXCEPTION -- 2018-12-03 10:31:34]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:31:34]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:31:34]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:31:34]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:31:34]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:31:34]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-12-03 10:31:34]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:31:34]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:31:34]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:31:34]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:31:34]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:31:34]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:31:34]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:31:34]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:31:34]
+pythonException: invalid frame
+[INFO -- 2018-12-03 10:31:34]
+Backtrace BEGIN:
+#0  0x00007ffff78d4c81 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d26f0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff42f6700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+178	    float target_lat, target_long;
+179	    char * gold_filename, * filename;
+180	    struct neighbor *data1 = NULL;
+181	    struct neighbor *data2 = NULL;
+182	
+183	    if(argc < 6) {
+184	        fprintf(stderr, "Invalid set of arguments:\n");
+185	        fprintf(stderr, "%s <filelist> <num neighbors to find> <target latitude> <target longitude> <out filename>\n",argv[0]);
+186	        exit(-1);
+187	    }
+
+Backtrace END
+Memory content before bitflip:0x0a0x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffe42c
+address max offset: 4
+Memory content after  bitflip:0x0a0x000x000x01
+frame name: nn_wrapper
+symbol name: i
+symbol filename: nn.c
+symbol line: 31
+value: 16777226
+value address: 0x7fffffffe42c
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-03 10:31:34]
+Fault Injection Successful after 0.872848987579s
+[INFO -- 2018-12-03 10:31:37]
+event type: exit
+[INFO -- 2018-12-03 10:31:37]
+exit code: 0

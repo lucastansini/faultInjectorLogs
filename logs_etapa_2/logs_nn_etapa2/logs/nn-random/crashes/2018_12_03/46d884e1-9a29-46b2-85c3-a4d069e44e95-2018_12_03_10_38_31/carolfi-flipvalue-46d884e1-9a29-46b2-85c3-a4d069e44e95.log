@@ -1,0 +1,58 @@
+[INFO -- 2018-12-03 10:38:30]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 10:38:30]
+Initialization strings:
+[INFO -- 2018-12-03 10:38:30]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 10:38:30]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 10:38:30]
+initSignal:0
+[INFO -- 2018-12-03 10:38:30]
+endSignal:2
+[INFO -- 2018-12-03 10:38:30]
+faultModel:2
+[EXCEPTION -- 2018-12-03 10:38:31]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:38:31]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:38:31]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:38:31]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:38:31]
+pythonException: invalid frame
+[INFO -- 2018-12-03 10:38:31]
+Backtrace BEGIN:
+#0  0x00007ffff78d4c9e in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d26f0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff4af7700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+3840	in malloc.c
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x390x010x1c0x43
+Fault Model: Random bit-flip
+base address to flip value: 0x6029c0
+address max offset: 4
+Memory content after  bitflip:0x5a0xa90x0d0xb8
+frame name: nn_wrapper
+symbol name: z
+symbol filename: nn.c
+symbol line: 64
+value: 0x6029c0
+value address: 0x7fffffffe408
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 10:38:31]
+Fault Injection Successful after 1.48470497131s
+[INFO -- 2018-12-03 10:38:31]
+event type: exit
+[EXCEPTION -- 2018-12-03 10:38:31]
+exit code: no exit code available
+[EXCEPTION -- 2018-12-03 10:38:31]
+pythonException: Thread no longer exists.

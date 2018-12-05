@@ -1,0 +1,53 @@
+[INFO -- 2018-12-04 02:09:03]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-04 02:09:03]
+Initialization strings:
+[INFO -- 2018-12-04 02:09:03]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-04 02:09:03]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-04 02:09:03]
+initSignal:0
+[INFO -- 2018-12-04 02:09:03]
+endSignal:2
+[INFO -- 2018-12-04 02:09:03]
+faultModel:1
+[INFO -- 2018-12-04 02:09:04]
+Backtrace BEGIN:
+#0  __lll_lock_wait_private () at ../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S:95
+#1  0x00007ffff76b1119 in _L_lock_3133 () from /lib/x86_64-linux-gnu/libpthread.so.0
+#2  0x00007ffff76b0241 in start_thread (arg=0x7ffff72fc700) at pthread_create.c:298
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+90	../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S: No such file or directory.
+
+Backtrace END
+Fliping value of field: next
+Fliping a bit of the pointer
+Memory content before bitflip:0x900x020x8c0xf70xff0x7f0x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff78c0290 
+address max offset: 8
+Memory content after  bitflip:0x900x020x8c0xf70xf50x7f0x000x00
+frame name: allocate_stack
+symbol name: stack_cache
+symbol filename: allocatestack.c
+symbol line: 111
+value: {next = 0x7ff5f78c0290, prev = 0x7ffff78c0290 <stack_cache>}
+value address: 0x7ffff78c0290 <stack_cache>
+Type: The type is a structure.
+Type sizeof: 16
+Field name: next
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: prev
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-04 02:09:04]
+Fault Injection Successful after 1.15974092484s
+[INFO -- 2018-12-04 02:09:04]
+event type: exit
+[EXCEPTION -- 2018-12-04 02:09:04]
+exit code: no exit code available

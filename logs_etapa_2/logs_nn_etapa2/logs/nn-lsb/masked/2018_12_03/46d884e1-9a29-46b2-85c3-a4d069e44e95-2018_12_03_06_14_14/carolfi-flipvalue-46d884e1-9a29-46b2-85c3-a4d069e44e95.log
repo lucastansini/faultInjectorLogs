@@ -1,0 +1,71 @@
+[INFO -- 2018-12-03 06:14:11]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 06:14:11]
+Initialization strings:
+[INFO -- 2018-12-03 06:14:11]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 06:14:11]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 06:14:11]
+initSignal:0
+[INFO -- 2018-12-03 06:14:11]
+endSignal:2
+[INFO -- 2018-12-03 06:14:11]
+faultModel:4
+[EXCEPTION -- 2018-12-03 06:14:12]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 06:14:12]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 06:14:12]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 06:14:12]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 06:14:12]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 06:14:12]
+pythonException: invalid frame
+[INFO -- 2018-12-03 06:14:12]
+Backtrace BEGIN:
+#0  0x00007ffff78d4e84 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d3ae9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#3  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+168			fclose(logfile);
+169		}
+170	
+171		if(file!= NULL){
+172	    		fclose(file);
+173		}
+174	}
+175	
+176	int main(int argc, char* argv[]) {
+177	    int    k=0;
+
+Backtrace END
+Fliping array at pos: 328
+Memory content before bitflip:0x34
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffe318 
+address max offset: 1
+Memory content after  bitflip:0xb4
+frame name: nn_wrapper
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 30
+value: "1960 12 21  6 27 RAFAEL      9.4 195.0   42  895\n1968 12 10 12 25 ISAAC      33.7 102.6  143  199\n1974 12  1 18 22 CHRIS      51.7 237.8   13  243\n1985  4 21  0  7 SANDY      48.3 239.3  116  867\n1987"...
+value address: 0x7fffffffe1d0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 489L)
+
+[INFO -- 2018-12-03 06:14:12]
+Fault Injection Successful after 1.48330903053s
+[INFO -- 2018-12-03 06:14:14]
+event type: exit
+[INFO -- 2018-12-03 06:14:14]
+exit code: 0

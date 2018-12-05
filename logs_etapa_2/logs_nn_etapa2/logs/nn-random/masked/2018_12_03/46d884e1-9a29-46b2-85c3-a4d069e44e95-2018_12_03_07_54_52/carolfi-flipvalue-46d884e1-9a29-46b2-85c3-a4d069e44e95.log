@@ -1,0 +1,54 @@
+[INFO -- 2018-12-03 07:54:50]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 07:54:50]
+Initialization strings:
+[INFO -- 2018-12-03 07:54:50]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 07:54:50]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 07:54:50]
+initSignal:0
+[INFO -- 2018-12-03 07:54:50]
+endSignal:2
+[INFO -- 2018-12-03 07:54:50]
+faultModel:2
+[INFO -- 2018-12-03 07:54:50]
+Backtrace BEGIN:
+#0  0x00007ffff78d4e84 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d3ae9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#3  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+168			fclose(logfile);
+169		}
+170	
+171		if(file!= NULL){
+172	    		fclose(file);
+173		}
+174	}
+175	
+176	int main(int argc, char* argv[]) {
+177	    int    k=0;
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffe3fc
+address max offset: 4
+Memory content after  bitflip:0x970xa40xf40x83
+frame name: nn_wrapper
+symbol name: tmp_lat
+symbol filename: nn.c
+symbol line: 29
+value: -1.43788191e-36
+value address: 0x7fffffffe3fc
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-12-03 07:54:50]
+Fault Injection Successful after 0.913886070251s
+[INFO -- 2018-12-03 07:54:52]
+event type: exit
+[INFO -- 2018-12-03 07:54:52]
+exit code: 0

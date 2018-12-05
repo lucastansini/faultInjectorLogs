@@ -1,0 +1,54 @@
+[INFO -- 2018-12-03 10:06:38]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 10:06:38]
+Initialization strings:
+[INFO -- 2018-12-03 10:06:38]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 10:06:38]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 10:06:38]
+initSignal:0
+[INFO -- 2018-12-03 10:06:38]
+endSignal:2
+[INFO -- 2018-12-03 10:06:38]
+faultModel:1
+[EXCEPTION -- 2018-12-03 10:06:39]
+gdbException: Attempt to dereference a generic pointer.
+[EXCEPTION -- 2018-12-03 10:06:39]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:06:39]
+pythonException: invalid frame
+[INFO -- 2018-12-03 10:06:39]
+Backtrace BEGIN:
+#0  __GI___nptl_create_event () at events.c:25
+#1  0x00007ffff76b08ec in create_thread (stackaddr=<optimized out>, attr=0x7ffff7ada6e0, pd=0x7ffff6afb700) at ../nptl/sysdeps/pthread/createthread.c:220
+#2  __pthread_create_2_1 (newthread=<optimized out>, attr=<optimized out>, start_routine=<optimized out>, arg=<optimized out>) at pthread_create.c:606
+#3  0x00007ffff78d2c57 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x00007ffff78ce7da in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#5  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#6  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+20	events.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffe424
+address max offset: 4
+Memory content after  bitflip:0x140x000x000x00
+frame name: nn_wrapper
+symbol name: done
+symbol filename: nn.c
+symbol line: 31
+value: 20
+value address: 0x7fffffffe424
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-03 10:06:39]
+Fault Injection Successful after 1.05957794189s
+[INFO -- 2018-12-03 10:06:40]
+event type: exit
+[INFO -- 2018-12-03 10:06:40]
+exit code: 0

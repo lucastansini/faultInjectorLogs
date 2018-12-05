@@ -1,0 +1,67 @@
+[INFO -- 2018-12-04 00:30:31]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-04 00:30:31]
+Initialization strings:
+[INFO -- 2018-12-04 00:30:31]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-04 00:30:31]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-04 00:30:31]
+initSignal:0
+[INFO -- 2018-12-04 00:30:31]
+endSignal:2
+[INFO -- 2018-12-04 00:30:31]
+faultModel:3
+[EXCEPTION -- 2018-12-04 00:30:31]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 00:30:31]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 00:30:31]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 00:30:31]
+pythonException: invalid frame
+[INFO -- 2018-12-04 00:30:31]
+Backtrace BEGIN:
+#0  0x00007ffff78d4e84 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d3ae9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#3  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+168			fclose(logfile);
+169		}
+170	
+171		if(file!= NULL){
+172	    		fclose(file);
+173		}
+174	}
+175	
+176	int main(int argc, char* argv[]) {
+177	    int    k=0;
+
+Backtrace END
+Fliping array at pos: 396
+Memory content before bitflip:0x20
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffe35c 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: nn_wrapper
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 30
+value: "1985 11 11  6 15 FLORENCE   53.9 301.4   28  674\n1978 10 24  0  1 WILLIAM     9.9 130.9   29  624\n1985  8 28  0 20 SANDY      15.8 280.7   17  233\n2002  2  2  0 15 WILLIAM    52.0  96.1  127   82\n1973"...
+value address: 0x7fffffffe1d0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 489L)
+
+[INFO -- 2018-12-04 00:30:31]
+Fault Injection Successful after 0.949462890625s
+[INFO -- 2018-12-04 00:30:34]
+event type: exit
+[INFO -- 2018-12-04 00:30:34]
+exit code: 0

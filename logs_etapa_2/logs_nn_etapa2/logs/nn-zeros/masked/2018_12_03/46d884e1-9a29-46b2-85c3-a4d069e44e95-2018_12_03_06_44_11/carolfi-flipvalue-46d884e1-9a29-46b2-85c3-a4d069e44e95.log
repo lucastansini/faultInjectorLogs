@@ -1,0 +1,74 @@
+[INFO -- 2018-12-03 06:44:08]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 06:44:08]
+Initialization strings:
+[INFO -- 2018-12-03 06:44:08]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 06:44:08]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 06:44:08]
+initSignal:0
+[INFO -- 2018-12-03 06:44:08]
+endSignal:2
+[INFO -- 2018-12-03 06:44:08]
+faultModel:3
+[EXCEPTION -- 2018-12-03 06:44:09]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 06:44:09]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 06:44:09]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 06:44:09]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 06:44:09]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 06:44:09]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 06:44:09]
+pythonException: invalid frame
+[INFO -- 2018-12-03 06:44:09]
+Backtrace BEGIN:
+#0  0x00007ffff78d4c9e in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d2d39 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff78ce7da in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#4  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+168			fclose(logfile);
+169		}
+170	
+171		if(file!= NULL){
+172	    		fclose(file);
+173		}
+174	}
+175	
+176	int main(int argc, char* argv[]) {
+177	    int    k=0;
+
+Backtrace END
+Fliping array at pos: 459
+Memory content before bitflip:0x41
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffe39b 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: nn_wrapper
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 30
+value: "1955  5 12  6  5 TONY       46.3 156.9  120  224\n1956  8  3 18 19 VALERIE    49.8 208.6  160  301\n1954  9  2  6 15 MICHAEL    45.4 184.4  160  851\n1962  7  2  0  3 VALERIE    69.1 289.1   63  627\n1979"...
+value address: 0x7fffffffe1d0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 489L)
+
+[INFO -- 2018-12-03 06:44:09]
+Fault Injection Successful after 1.99939107895s
+[INFO -- 2018-12-03 06:44:11]
+event type: exit
+[INFO -- 2018-12-03 06:44:11]
+exit code: 0

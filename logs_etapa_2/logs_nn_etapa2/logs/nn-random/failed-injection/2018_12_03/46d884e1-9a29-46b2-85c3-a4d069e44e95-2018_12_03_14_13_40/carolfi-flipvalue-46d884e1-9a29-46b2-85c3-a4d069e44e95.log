@@ -1,0 +1,17 @@
+[INFO -- 2018-12-03 14:13:38]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 14:13:38]
+Initialization strings:
+[INFO -- 2018-12-03 14:13:38]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 14:13:38]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 14:13:38]
+initSignal:0
+[INFO -- 2018-12-03 14:13:38]
+endSignal:2
+[INFO -- 2018-12-03 14:13:38]
+faultModel:2
+[EXCEPTION -- 2018-12-03 14:13:39]
+pythonException: Line number 205 out of range; nn.c has 204 lines.

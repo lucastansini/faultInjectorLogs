@@ -1,0 +1,47 @@
+[INFO -- 2018-12-04 00:20:06]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-04 00:20:06]
+Initialization strings:
+[INFO -- 2018-12-04 00:20:06]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-04 00:20:06]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-04 00:20:06]
+initSignal:0
+[INFO -- 2018-12-04 00:20:06]
+endSignal:2
+[INFO -- 2018-12-04 00:20:06]
+faultModel:2
+[EXCEPTION -- 2018-12-04 00:20:06]
+pythonException: invalid frame
+[INFO -- 2018-12-04 00:20:06]
+Backtrace BEGIN:
+#0  __lll_lock_wait_private () at ../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S:95
+#1  0x00007ffff76b1119 in _L_lock_3133 () from /lib/x86_64-linux-gnu/libpthread.so.0
+#2  0x00007ffff76b0241 in start_thread (arg=0x7ffff72fc700) at pthread_create.c:298
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+90	../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x140x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffe428
+address max offset: 4
+Memory content after  bitflip:0x6d0x290x5e0xb1
+frame name: nn_wrapper
+symbol name: j
+symbol filename: nn.c
+symbol line: 31
+value: -1319229075
+value address: 0x7fffffffe428
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-04 00:20:06]
+Fault Injection Successful after 0.836081027985s
+[INFO -- 2018-12-04 00:20:09]
+event type: exit
+[INFO -- 2018-12-04 00:20:09]
+exit code: 0

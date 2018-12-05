@@ -1,0 +1,61 @@
+[INFO -- 2018-12-03 15:38:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 15:38:27]
+Initialization strings:
+[INFO -- 2018-12-03 15:38:27]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 15:38:27]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 15:38:27]
+initSignal:0
+[INFO -- 2018-12-03 15:38:27]
+endSignal:2
+[INFO -- 2018-12-03 15:38:27]
+faultModel:3
+[EXCEPTION -- 2018-12-03 15:38:29]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 15:38:29]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 15:38:29]
+pythonException: invalid frame
+[INFO -- 2018-12-03 15:38:29]
+Backtrace BEGIN:
+#0  0x00007ffff78d4c7b in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d2d39 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff78ce7da in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#4  0x00000000004014b8 in main (argc=6, argv=0x7fffffffe568) at nn.c:196
+
+178	    float target_lat, target_long;
+179	    char * gold_filename, * filename;
+180	    struct neighbor *data1 = NULL;
+181	    struct neighbor *data2 = NULL;
+182	
+183	    if(argc < 6) {
+184	        fprintf(stderr, "Invalid set of arguments:\n");
+185	        fprintf(stderr, "%s <filelist> <num neighbors to find> <target latitude> <target longitude> <out filename>\n",argv[0]);
+186	        exit(-1);
+187	    }
+
+Backtrace END
+Memory content before bitflip:0x000x000xa00x40
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffe45c
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main
+symbol name: target_lat
+symbol filename: nn.c
+symbol line: 178
+value: 0
+value address: 0x7fffffffe45c
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-12-03 15:38:29]
+Fault Injection Successful after 2.10493898392s
+[INFO -- 2018-12-03 15:38:30]
+event type: exit
+[INFO -- 2018-12-03 15:38:30]
+exit code: 0

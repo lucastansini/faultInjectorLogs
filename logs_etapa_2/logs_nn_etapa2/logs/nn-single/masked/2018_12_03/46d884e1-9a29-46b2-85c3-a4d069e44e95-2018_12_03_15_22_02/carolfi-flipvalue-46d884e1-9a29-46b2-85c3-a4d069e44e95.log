@@ -1,0 +1,59 @@
+[INFO -- 2018-12-03 15:21:59]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 15:21:59]
+Initialization strings:
+[INFO -- 2018-12-03 15:21:59]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 15:21:59]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 15:21:59]
+initSignal:0
+[INFO -- 2018-12-03 15:21:59]
+endSignal:2
+[INFO -- 2018-12-03 15:21:59]
+faultModel:1
+[EXCEPTION -- 2018-12-03 15:21:59]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 15:21:59]
+pythonException: invalid frame
+[INFO -- 2018-12-03 15:21:59]
+Backtrace BEGIN:
+#0  0x000000000040160c in nn_wrapper._omp_fn.0 () at nn.c:102
+#1  0x00007ffff78ce7df in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#3  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+97	        #pragma omp parallel for shared (z, target_lat, target_long) private(i,rec_iter)
+98	        for (i = 0; i < rec_count; i++) {
+99	            rec_iter = sandbox+(i * REC_LENGTH + LATITUDE_POS - 1);
+100	            float tmp_lat = atof(rec_iter);
+101	            float tmp_long = atof(rec_iter+5);
+102	            z[i] = sqrt(( (tmp_lat-target_lat) * (tmp_lat-target_lat) )+( (tmp_long-target_long) * (tmp_long-target_long) ));
+103	        }
+104	        #pragma omp barrier
+105	        // end of Lingjie Zhang's modification
+106	
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffe470
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000xc00x000x00
+frame name: main
+symbol name: data1
+symbol filename: nn.c
+symbol line: 180
+value: 0x0
+value address: 0x7fffffffe470
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 15:21:59]
+Fault Injection Successful after 0.417793989182s
+[INFO -- 2018-12-03 15:22:01]
+event type: exit
+[INFO -- 2018-12-03 15:22:01]
+exit code: 0

@@ -1,0 +1,79 @@
+[INFO -- 2018-12-03 15:46:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 15:46:27]
+Initialization strings:
+[INFO -- 2018-12-03 15:46:27]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 15:46:27]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 15:46:27]
+initSignal:0
+[INFO -- 2018-12-03 15:46:27]
+endSignal:2
+[INFO -- 2018-12-03 15:46:27]
+faultModel:4
+[EXCEPTION -- 2018-12-03 15:46:27]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 15:46:27]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 15:46:27]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 15:46:27]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 15:46:27]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 15:46:27]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-12-03 15:46:27]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 15:46:27]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 15:46:27]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 15:46:27]
+pythonException: invalid frame
+[INFO -- 2018-12-03 15:46:27]
+Backtrace BEGIN:
+#0  0x00007ffff78d4c7e in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d26f0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff42f6700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+188	
+189	    filename = argv[1];
+190	    k = atoi(argv[2]);
+191	    target_lat = atof(argv[3]);
+192	    target_long = atof(argv[4]);
+193	    gold_filename = argv[5];
+194	
+195	    data1 = nn_wrapper(filename, k, target_lat, target_long);
+196	    data2 = nn_wrapper(filename, k, target_lat, target_long);
+197	
+
+Backtrace END
+Fliping array at pos: 417
+Memory content before bitflip:0x20
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffe371 
+address max offset: 1
+Memory content after  bitflip:0x21
+frame name: nn_wrapper
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 30
+value: "2001  1 26  6 12 KIRK       18.6  90.0   50  630\n1953 10 16 12 24 GORDON      7.1 286.8  132   86\n1981  7  8  0 27 NADINE     53.2 241.8   54  634\n1976  9  9  6 20 JOYCE      19.4 206.8   57  131\n1972"...
+value address: 0x7fffffffe1d0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 489L)
+
+[INFO -- 2018-12-03 15:46:27]
+Fault Injection Successful after 0.614509105682s
+[INFO -- 2018-12-03 15:46:29]
+event type: exit
+[INFO -- 2018-12-03 15:46:29]
+exit code: 0

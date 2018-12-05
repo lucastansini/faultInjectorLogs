@@ -1,0 +1,65 @@
+[INFO -- 2018-12-03 19:46:18]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 19:46:18]
+Initialization strings:
+[INFO -- 2018-12-03 19:46:18]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 19:46:18]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 19:46:18]
+initSignal:0
+[INFO -- 2018-12-03 19:46:18]
+endSignal:2
+[INFO -- 2018-12-03 19:46:18]
+faultModel:1
+[EXCEPTION -- 2018-12-03 19:46:19]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 19:46:19]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 19:46:19]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 19:46:19]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 19:46:19]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 19:46:19]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 19:46:19]
+pythonException: invalid frame
+[INFO -- 2018-12-03 19:46:19]
+Backtrace BEGIN:
+#0  0x00007ffff73398c1 in __GI_____strtod_l_internal (nptr=0x7fffffffe21c " 17.4  96.0  121   78\n1967  1 25  6 11 WILLIAM    13.1  32.6   35  247\n1996 12 23 18 11 OSCAR      19.8 202.2   22  579\n1994  7  3 12 25 PATTY      63.1 187.9   12   16\n1979 11 26 12  9 OSCAR      57."..., endptr=0x0, group=<optimized out>, loc=0x7ffff76a2f20 <_nl_global_locale>) at strtod_l.c:601
+#1  0x000000000040156a in nn_wrapper._omp_fn.0 () at nn.c:100
+#2  0x00007ffff78ce7df in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#4  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+596	strtod_l.c: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 16
+Memory content before bitflip:0x780xdd0x300xf70xff0x7f0x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffdf50
+address max offset: 8
+Memory content after  bitflip:0x780xdd0x300xf70xff0x7f0x090x00
+frame name: __GI_____strtod_l_internal
+symbol name: den
+symbol filename: strtod_l.c
+symbol line: 509
+value: {11529215046068469760, 6, 140737353984672, 140737351931838, 140737340562808, 140737488346928, 140737340509480, 140737340511688, 140737488347200, 7491163, 140737488347184, 140737354104064, 0, 140737353984768, 140737353983208, 4195858, 2674012130958712, 4195000, 21474836480, 4294967388, 1, 140737353984768, 140737488347344, 140737354130696, 140737488347384, 140737354129840, 1, 140737351932269, 0, 140737353984768, 5, 0, 1, 140737354129840, 140737340562520, 140737353983208, 6304744, 6305024, 0, 140737354130696, 6302192, 140737346612537, 64, 0, 38654705663, 0, 34359738368, 0, 0, 8, 56, 140737290135184, 6305024, 140737488348096, 4199663, 6302448, 0, 8, 8}
+value address: 0x7fffffffded0
+Type: The type is an array.
+Type sizeof: 472
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 58L)
+
+[INFO -- 2018-12-03 19:46:19]
+Fault Injection Successful after 1.47819209099s
+[INFO -- 2018-12-03 19:46:21]
+event type: exit
+[INFO -- 2018-12-03 19:46:21]
+exit code: 0

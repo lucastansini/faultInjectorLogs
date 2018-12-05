@@ -1,0 +1,50 @@
+[INFO -- 2018-12-04 00:01:47]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-04 00:01:47]
+Initialization strings:
+[INFO -- 2018-12-04 00:01:47]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-04 00:01:47]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-04 00:01:47]
+initSignal:0
+[INFO -- 2018-12-04 00:01:47]
+endSignal:2
+[INFO -- 2018-12-04 00:01:47]
+faultModel:1
+[INFO -- 2018-12-04 00:01:47]
+Backtrace BEGIN:
+#0  _dl_lookup_symbol_x (undef_name=0x7ffff74618a5 "__vdso_time", undef_map=0x7ffff7ffe748, ref=0x7fffffffd1d8, symbol_scope=0x7ffff7ffead0, version=0x7fffffffd210, type_class=0, flags=0, skip_map=0x0) at dl-lookup.c:715
+#1  0x00007ffff741b20d in ?? ()
+#2  0x00007fff00000000 in ?? ()
+#3  0x0000000000000000 in ?? ()
+
+710	dl-lookup.c: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 0
+Memory content before bitflip:0x75
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff7df93b0  
+address max offset: 1
+Memory content after  bitflip:0x5d
+frame name: _dl_lookup_symbol_x
+symbol name: undefined_msg
+symbol filename: dl-lookup.c
+symbol line: 37
+value: "]ndefined symbol: "
+value address: 0x7ffff7df93b0 <undefined_msg>
+Type: The type is an array.
+Type sizeof: 19
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 18L)
+
+[INFO -- 2018-12-04 00:01:47]
+Fault Injection Successful after 0.162672996521s
+[INFO -- 2018-12-04 00:01:49]
+event type: exit
+[INFO -- 2018-12-04 00:01:49]
+exit code: 0

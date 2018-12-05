@@ -1,0 +1,75 @@
+[INFO -- 2018-12-03 17:29:05]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 17:29:05]
+Initialization strings:
+[INFO -- 2018-12-03 17:29:05]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 17:29:05]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 17:29:05]
+initSignal:0
+[INFO -- 2018-12-03 17:29:05]
+endSignal:2
+[INFO -- 2018-12-03 17:29:05]
+faultModel:1
+[EXCEPTION -- 2018-12-03 17:29:05]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 17:29:05]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 17:29:05]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 17:29:05]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 17:29:05]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-12-03 17:29:05]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 17:29:05]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 17:29:05]
+pythonException: invalid frame
+[INFO -- 2018-12-03 17:29:05]
+Backtrace BEGIN:
+#0  0x00007ffff78d4c7e in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d26f0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff42f6700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+178	    float target_lat, target_long;
+179	    char * gold_filename, * filename;
+180	    struct neighbor *data1 = NULL;
+181	    struct neighbor *data2 = NULL;
+182	
+183	    if(argc < 6) {
+184	        fprintf(stderr, "Invalid set of arguments:\n");
+185	        fprintf(stderr, "%s <filelist> <num neighbors to find> <target latitude> <target longitude> <out filename>\n",argv[0]);
+186	        exit(-1);
+187	    }
+
+Backtrace END
+Fliping array at pos: 334
+Memory content before bitflip:0x20
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffe31e 
+address max offset: 1
+Memory content after  bitflip:0x2c
+frame name: nn_wrapper
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 30
+value: "1980 10 17  0 18 GORDON     67.4 347.5   17   90\n2004 12 14 18  3 ERNESTO    29.9  26.9  112  364\n1976  6  2 18  8 HELENE      7.8 305.7   21  427\n1994  1  8 12 21 RAFAEL     45.0   9.9   88  489\n1963"...
+value address: 0x7fffffffe1d0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 489L)
+
+[INFO -- 2018-12-03 17:29:05]
+Fault Injection Successful after 0.976691007614s
+[INFO -- 2018-12-03 17:29:08]
+event type: exit
+[INFO -- 2018-12-03 17:29:08]
+exit code: 0

@@ -1,0 +1,60 @@
+[INFO -- 2018-12-03 13:12:48]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 13:12:48]
+Initialization strings:
+[INFO -- 2018-12-03 13:12:48]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 13:12:48]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 13:12:48]
+initSignal:0
+[INFO -- 2018-12-03 13:12:48]
+endSignal:2
+[INFO -- 2018-12-03 13:12:48]
+faultModel:2
+[INFO -- 2018-12-03 13:12:48]
+Backtrace BEGIN:
+#0  0x00007ffff78d4c9e in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d26f0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff42f6700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+4072	in malloc.c
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff76a2608 
+address max offset: 8
+Memory content after  bitflip:0xbc0x980x930x6f0xf40x240xfb0x0b
+frame name: _int_free
+symbol name: __realloc_hook
+symbol filename: malloc.c
+symbol line: 1834
+value: 0x0
+value address: 0x7ffff76a2608 <__realloc_hook>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 13:12:48]
+Fault Injection Successful after 0.920053005219s
+[EXCEPTION -- 2018-12-03 13:12:48]
+pythonException: Invalid selected thread.
+[EXCEPTION -- 2018-12-03 13:12:48]
+pythonException: Invalid selected thread.
+[EXCEPTION -- 2018-12-03 13:12:48]
+pythonException: Invalid selected thread.
+[EXCEPTION -- 2018-12-03 13:12:48]
+pythonException: Invalid selected thread.
+[EXCEPTION -- 2018-12-03 13:12:48]
+pythonException: Invalid selected thread.
+[EXCEPTION -- 2018-12-03 13:12:48]
+pythonException: Invalid selected thread.
+[EXCEPTION -- 2018-12-03 13:12:48]
+pythonException: Invalid selected thread.
+[INFO -- 2018-12-03 13:12:48]
+event type: exit
+[EXCEPTION -- 2018-12-03 13:12:48]
+exit code: no exit code available

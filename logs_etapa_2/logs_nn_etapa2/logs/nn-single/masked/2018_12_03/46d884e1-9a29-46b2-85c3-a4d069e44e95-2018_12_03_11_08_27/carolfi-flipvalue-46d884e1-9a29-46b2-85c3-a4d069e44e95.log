@@ -1,0 +1,74 @@
+[INFO -- 2018-12-03 11:08:24]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 11:08:24]
+Initialization strings:
+[INFO -- 2018-12-03 11:08:24]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 11:08:24]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 11:08:24]
+initSignal:0
+[INFO -- 2018-12-03 11:08:24]
+endSignal:2
+[INFO -- 2018-12-03 11:08:24]
+faultModel:1
+[EXCEPTION -- 2018-12-03 11:08:25]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 11:08:25]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 11:08:25]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-12-03 11:08:25]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 11:08:25]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 11:08:25]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 11:08:25]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 11:08:25]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 11:08:25]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 11:08:25]
+pythonException: invalid frame
+[INFO -- 2018-12-03 11:08:25]
+Backtrace BEGIN:
+#0  0x00007ffff78d4e84 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d2722 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff4af7700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+178	    float target_lat, target_long;
+179	    char * gold_filename, * filename;
+180	    struct neighbor *data1 = NULL;
+181	    struct neighbor *data2 = NULL;
+182	
+183	    if(argc < 6) {
+184	        fprintf(stderr, "Invalid set of arguments:\n");
+185	        fprintf(stderr, "%s <filelist> <num neighbors to find> <target latitude> <target longitude> <out filename>\n",argv[0]);
+186	        exit(-1);
+187	    }
+
+Backtrace END
+Memory content before bitflip:0x180x480x040x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffe410
+address max offset: 8
+Memory content after  bitflip:0x180x480x040x000x000x000x000x12
+frame name: nn_wrapper
+symbol name: rec_sum
+symbol filename: nn.c
+symbol line: 33
+value: 1297036692682983448
+value address: 0x7fffffffe410
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 11:08:25]
+Fault Injection Successful after 1.53671789169s
+[INFO -- 2018-12-03 11:08:27]
+event type: exit
+[INFO -- 2018-12-03 11:08:27]
+exit code: 0

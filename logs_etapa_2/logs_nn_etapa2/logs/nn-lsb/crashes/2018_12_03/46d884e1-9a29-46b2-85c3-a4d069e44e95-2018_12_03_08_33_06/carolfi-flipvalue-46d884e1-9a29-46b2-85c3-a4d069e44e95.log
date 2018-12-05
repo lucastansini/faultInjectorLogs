@@ -1,0 +1,59 @@
+[INFO -- 2018-12-03 08:33:05]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 08:33:05]
+Initialization strings:
+[INFO -- 2018-12-03 08:33:05]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 08:33:05]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 08:33:05]
+initSignal:0
+[INFO -- 2018-12-03 08:33:05]
+endSignal:2
+[INFO -- 2018-12-03 08:33:05]
+faultModel:4
+[EXCEPTION -- 2018-12-03 08:33:06]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 08:33:06]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 08:33:06]
+pythonException: invalid frame
+[INFO -- 2018-12-03 08:33:06]
+Backtrace BEGIN:
+#0  0x000000000040106f in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:119
+#1  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+114	                    max_dist = neighbors[j].dist;
+115	                    max_idx = j;
+116	                }
+117	            }
+118	            // compare each record with max value to find the nearest neighbor
+119	            if( z[i] < neighbors[max_idx].dist ) {
+120	                sandbox[(i+1)*REC_LENGTH-1] = '\0';
+121	                strcpy(neighbors[max_idx].entry, sandbox +i*REC_LENGTH);
+122	                neighbors[max_idx].dist = z[i];
+123	            }
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x800x270x600x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffe418
+address max offset: 8
+Memory content after  bitflip:0x800x270x600x000x000x000x000x10
+frame name: nn_wrapper
+symbol name: fp
+symbol filename: nn.c
+symbol line: 32
+value: 0x602780
+value address: 0x7fffffffe418
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 08:33:06]
+Fault Injection Successful after 1.4203350544s
+[INFO -- 2018-12-03 08:33:06]
+event type: exit
+[EXCEPTION -- 2018-12-03 08:33:06]
+exit code: no exit code available

@@ -1,0 +1,60 @@
+[INFO -- 2018-12-03 18:04:04]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 18:04:04]
+Initialization strings:
+[INFO -- 2018-12-03 18:04:04]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 18:04:04]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 18:04:04]
+initSignal:0
+[INFO -- 2018-12-03 18:04:04]
+endSignal:2
+[INFO -- 2018-12-03 18:04:04]
+faultModel:4
+[EXCEPTION -- 2018-12-03 18:04:04]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 18:04:04]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 18:04:04]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 18:04:04]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 18:04:04]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 18:04:04]
+pythonException: invalid frame
+[INFO -- 2018-12-03 18:04:04]
+Backtrace BEGIN:
+#0  0x00007ffff78d4e84 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d2722 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff42f6700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+364	in strtod_l.c
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xe80xdc0xff0xff0xff0x7f0x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffdc38
+address max offset: 8
+Memory content after  bitflip:0xe80xdc0xff0xff0xff0x7f0x000x80
+frame name: str_to_mpn
+symbol name: exponent
+symbol filename: strtod_l.c
+symbol line: 353
+value: 0x7fffffffdce8
+value address: 0x7fffffffdc38
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 18:04:04]
+Fault Injection Successful after 0.823093891144s
+[INFO -- 2018-12-03 18:04:04]
+event type: exit
+[EXCEPTION -- 2018-12-03 18:04:04]
+exit code: no exit code available
+[EXCEPTION -- 2018-12-03 18:04:04]
+pythonException: Thread no longer exists.

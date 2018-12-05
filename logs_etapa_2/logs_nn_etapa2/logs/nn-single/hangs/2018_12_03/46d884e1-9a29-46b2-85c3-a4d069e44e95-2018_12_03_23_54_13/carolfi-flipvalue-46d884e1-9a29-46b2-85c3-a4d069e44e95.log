@@ -1,0 +1,115 @@
+[INFO -- 2018-12-03 23:54:07]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 23:54:07]
+Initialization strings:
+[INFO -- 2018-12-03 23:54:07]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 23:54:07]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 23:54:07]
+initSignal:0
+[INFO -- 2018-12-03 23:54:07]
+endSignal:2
+[INFO -- 2018-12-03 23:54:07]
+faultModel:1
+[INFO -- 2018-12-03 23:54:08]
+Backtrace BEGIN:
+#0  0x00007ffff78d4c79 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d26f0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff42f6700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+3955	in malloc.c
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x700x220x600x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffe3e8
+address max offset: 8
+Memory content after  bitflip:0x700x220x600x000x000x000x000x12
+frame name: nn_wrapper
+symbol name: neighbors
+symbol filename: nn.c
+symbol line: 34
+value: 0x602270
+value address: 0x7fffffffe3e8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 23:54:08]
+Fault Injection Successful after 1.51025891304s
+[EXCEPTION -- 2018-12-03 23:54:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 23:54:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 23:54:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 23:54:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 23:54:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 23:54:08]
+pythonException: invalid frame
+[INFO -- 2018-12-03 23:54:08]
+Backtrace BEGIN:
+#0  0x00007ffff78d4c79 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d26f0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff42f6700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+3955	in malloc.c
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xd70xe70xff0xff0xff0x7f0x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffe460
+address max offset: 8
+Memory content after  bitflip:0xd70xc30xff0xff0xff0x7f0x000x00
+frame name: main
+symbol name: filename
+symbol filename: nn.c
+symbol line: 179
+value: 0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist"
+value address: 0x7fffffffe460
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 23:54:08]
+Fault Injection Successful after 1.55287408829s
+[EXCEPTION -- 2018-12-03 23:54:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 23:54:08]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 23:54:08]
+pythonException: invalid frame
+[INFO -- 2018-12-03 23:54:08]
+Backtrace BEGIN:
+#0  0x00007ffff7376a52 in _int_free (av=0x7ffff76a2620 <main_arena>, p=0x603e60, have_lock=0) at malloc.c:3960
+#1  0x00007ffff78d3b7a in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#3  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+3955	malloc.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping a bit of the pointer
+Memory content before bitflip:0x950xe70xff0xff0xff0x7f0x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffe568
+address max offset: 8
+Memory content after  bitflip:0x950xe70xff0xbe0xff0x7f0x000x00
+frame name: main
+symbol name: argv
+symbol filename: nn.c
+symbol line: 176
+value: 0x7fffffffe568
+value address: 0x7fffffffe440
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 23:54:08]
+Fault Injection Successful after 1.83259510994s

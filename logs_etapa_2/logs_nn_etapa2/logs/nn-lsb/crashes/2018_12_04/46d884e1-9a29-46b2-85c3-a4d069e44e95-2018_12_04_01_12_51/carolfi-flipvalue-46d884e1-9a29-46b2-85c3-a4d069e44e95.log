@@ -1,0 +1,55 @@
+[INFO -- 2018-12-04 01:12:50]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-04 01:12:50]
+Initialization strings:
+[INFO -- 2018-12-04 01:12:50]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-04 01:12:50]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-04 01:12:50]
+initSignal:0
+[INFO -- 2018-12-04 01:12:50]
+endSignal:2
+[INFO -- 2018-12-04 01:12:50]
+faultModel:4
+[EXCEPTION -- 2018-12-04 01:12:51]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 01:12:51]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 01:12:51]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 01:12:51]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 01:12:51]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 01:12:51]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 01:12:51]
+pythonException: invalid frame
+[INFO -- 2018-12-04 01:12:51]
+Backtrace BEGIN:
+#0  0x00007ffff78d4e4f in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d2722 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff42f6700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+88	dl-minimal.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x000x000xa00x40
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffe458
+address max offset: 4
+Memory content after  bitflip:0x000x000xa00x50
+frame name: main
+symbol name: target_long
+symbol filename: nn.c
+symbol line: 178
+value: 2.14748365e+10
+value address: 0x7fffffffe458
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-12-04 01:12:51]
+Fault Injection Successful after 1.10469794273s

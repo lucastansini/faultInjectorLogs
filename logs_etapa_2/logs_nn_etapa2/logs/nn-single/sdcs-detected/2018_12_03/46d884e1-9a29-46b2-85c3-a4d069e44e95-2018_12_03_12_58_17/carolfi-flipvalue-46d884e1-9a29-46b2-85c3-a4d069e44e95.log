@@ -1,0 +1,64 @@
+[INFO -- 2018-12-03 12:58:14]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 12:58:14]
+Initialization strings:
+[INFO -- 2018-12-03 12:58:14]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 12:58:14]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 12:58:14]
+initSignal:0
+[INFO -- 2018-12-03 12:58:14]
+endSignal:2
+[INFO -- 2018-12-03 12:58:14]
+faultModel:1
+[EXCEPTION -- 2018-12-03 12:58:14]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 12:58:14]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 12:58:14]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 12:58:14]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 12:58:14]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 12:58:14]
+pythonException: invalid frame
+[INFO -- 2018-12-03 12:58:14]
+Backtrace BEGIN:
+#0  0x000000000040104c in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:119
+#1  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+114	                    max_dist = neighbors[j].dist;
+115	                    max_idx = j;
+116	                }
+117	            }
+118	            // compare each record with max value to find the nearest neighbor
+119	            if( z[i] < neighbors[max_idx].dist ) {
+120	                sandbox[(i+1)*REC_LENGTH-1] = '\0';
+121	                strcpy(neighbors[max_idx].entry, sandbox +i*REC_LENGTH);
+122	                neighbors[max_idx].dist = z[i];
+123	            }
+
+Backtrace END
+Memory content before bitflip:0x000x000xa00x40
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffe458
+address max offset: 4
+Memory content after  bitflip:0x000x000xa00x20
+frame name: main
+symbol name: target_long
+symbol filename: nn.c
+symbol line: 178
+value: 2.71050543e-19
+value address: 0x7fffffffe458
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-12-03 12:58:14]
+Fault Injection Successful after 0.787904024124s
+[INFO -- 2018-12-03 12:58:17]
+event type: exit
+[INFO -- 2018-12-03 12:58:17]
+exit code: 0

@@ -1,0 +1,58 @@
+[INFO -- 2018-12-03 17:44:13]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 17:44:13]
+Initialization strings:
+[INFO -- 2018-12-03 17:44:13]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 17:44:13]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 17:44:13]
+initSignal:0
+[INFO -- 2018-12-03 17:44:13]
+endSignal:2
+[INFO -- 2018-12-03 17:44:13]
+faultModel:4
+[EXCEPTION -- 2018-12-03 17:44:14]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 17:44:14]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 17:44:14]
+pythonException: invalid frame
+[INFO -- 2018-12-03 17:44:14]
+Backtrace BEGIN:
+#0  round_and_return (retval=retval@entry=0x7fffffffdcd0, exponent=4, negative=negative@entry=0, round_limb=round_limb@entry=9223372036854775808, round_bit=15, more_bits=0) at strtod_l.c:212
+#1  0x00007ffff733a0dd in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1635
+#2  0x000000000040156a in nn_wrapper._omp_fn.0 () at nn.c:100
+#3  0x00007ffff78ce7df in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#5  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+207	strtod_l.c: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 8
+Memory content before bitflip:0x6f
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff7468a88  
+address max offset: 1
+Memory content after  bitflip:0x6d
+frame name: __GI_____strtod_l_internal
+symbol name: __PRETTY_FUNCTION__
+symbol filename: strtod_l.c
+symbol line: 0
+value: "____strtmd_l_internal"
+value address: 0x7ffff7468a80 <__PRETTY_FUNCTION__.11567>
+Type: The type is an array.
+Type sizeof: 22
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 21L)
+
+[INFO -- 2018-12-03 17:44:14]
+Fault Injection Successful after 1.35197710991s
+[INFO -- 2018-12-03 17:44:16]
+event type: exit
+[INFO -- 2018-12-03 17:44:16]
+exit code: 0

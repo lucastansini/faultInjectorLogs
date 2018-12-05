@@ -1,0 +1,58 @@
+[INFO -- 2018-12-03 22:39:43]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 22:39:43]
+Initialization strings:
+[INFO -- 2018-12-03 22:39:43]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 22:39:43]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 22:39:43]
+initSignal:0
+[INFO -- 2018-12-03 22:39:43]
+endSignal:2
+[INFO -- 2018-12-03 22:39:43]
+faultModel:1
+[INFO -- 2018-12-03 22:39:45]
+Backtrace BEGIN:
+#0  0x00007ffff78d4c79 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d26f0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff42f6700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+188	
+189	    filename = argv[1];
+190	    k = atoi(argv[2]);
+191	    target_lat = atof(argv[3]);
+192	    target_long = atof(argv[4]);
+193	    gold_filename = argv[5];
+194	
+195	    data1 = nn_wrapper(filename, k, target_lat, target_long);
+196	    data2 = nn_wrapper(filename, k, target_lat, target_long);
+197	
+
+Backtrace END
+Memory content before bitflip:0x340xb60x010x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffe410
+address max offset: 8
+Memory content after  bitflip:0x340xb60x010x440x000x000x000x00
+frame name: nn_wrapper
+symbol name: rec_sum
+symbol filename: nn.c
+symbol line: 33
+value: 1140962868
+value address: 0x7fffffffe410
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 22:39:45]
+Fault Injection Successful after 2.62804889679s
+[INFO -- 2018-12-03 22:39:45]
+event type: exit
+[EXCEPTION -- 2018-12-03 22:39:45]
+exit code: no exit code available
+[EXCEPTION -- 2018-12-03 22:39:45]
+pythonException: Thread no longer exists.
+[EXCEPTION -- 2018-12-03 22:39:45]
+pythonException: Thread no longer exists.

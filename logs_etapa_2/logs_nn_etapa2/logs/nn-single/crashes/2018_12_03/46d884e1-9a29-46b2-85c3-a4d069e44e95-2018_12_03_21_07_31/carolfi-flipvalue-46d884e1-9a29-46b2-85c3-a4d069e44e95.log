@@ -1,0 +1,49 @@
+[INFO -- 2018-12-03 21:07:28]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 21:07:28]
+Initialization strings:
+[INFO -- 2018-12-03 21:07:28]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 21:07:28]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 21:07:28]
+initSignal:0
+[INFO -- 2018-12-03 21:07:28]
+endSignal:2
+[INFO -- 2018-12-03 21:07:28]
+faultModel:1
+[EXCEPTION -- 2018-12-03 21:07:28]
+pythonException: invalid frame
+[INFO -- 2018-12-03 21:07:28]
+Backtrace BEGIN:
+#0  __memcpy_sse2 () at ../sysdeps/x86_64/multiarch/../memcpy.S:220
+#1  0x00007ffff7371683 in __GI__IO_file_xsgetn (fp=0x602780, data=<optimized out>, n=490) at fileops.c:1379
+#2  0x00007ffff73674ef in __GI__IO_fread (buf=<optimized out>, size=49, count=10, fp=0x602780) at iofread.c:42
+#3  0x0000000000400e6f in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:69
+#4  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+215	../sysdeps/x86_64/multiarch/../memcpy.S: No such file or directory.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x2f
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffe826 
+address max offset: 1
+Memory content after  bitflip:0x8f
+frame name: main
+symbol name: gold_filename
+symbol filename: nn.c
+symbol line: 179
+value: 0x7fffffffe826 "\217home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5"
+value address: 0x7fffffffe450
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 21:07:28]
+Fault Injection Successful after 0.645484924316s
+[INFO -- 2018-12-03 21:07:31]
+event type: exit
+[EXCEPTION -- 2018-12-03 21:07:31]
+exit code: no exit code available

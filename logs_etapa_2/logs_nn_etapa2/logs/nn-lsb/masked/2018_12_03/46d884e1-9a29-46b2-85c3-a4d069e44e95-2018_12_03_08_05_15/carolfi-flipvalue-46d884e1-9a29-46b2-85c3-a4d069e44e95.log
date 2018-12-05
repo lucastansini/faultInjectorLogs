@@ -1,0 +1,94 @@
+[INFO -- 2018-12-03 08:05:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 08:05:12]
+Initialization strings:
+[INFO -- 2018-12-03 08:05:12]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 08:05:12]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 08:05:12]
+initSignal:0
+[INFO -- 2018-12-03 08:05:12]
+endSignal:2
+[INFO -- 2018-12-03 08:05:12]
+faultModel:4
+[INFO -- 2018-12-03 08:05:12]
+Backtrace BEGIN:
+#0  0x00007ffff73d8514 in __GI___fxstat (vers=<optimized out>, fd=6, buf=0x7fffffffe050) at ../sysdeps/unix/sysv/linux/wordsize-64/fxstat.c:35
+#1  0x00007ffff73664e5 in __GI__IO_file_doallocate (fp=0x602780) at filedoalloc.c:111
+#2  0x00007ffff737318c in __GI__IO_doallocbuf (fp=fp@entry=0x602780) at genops.c:418
+#3  0x00007ffff737174c in __GI__IO_file_xsgetn (fp=0x602780, data=0x7fffffffe1d0, n=490) at fileops.c:1371
+#4  0x00007ffff73674ef in __GI__IO_fread (buf=<optimized out>, size=49, count=10, fp=0x602780) at iofread.c:42
+#5  0x0000000000400e6f in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:69
+#6  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+30	../sysdeps/unix/sysv/linux/wordsize-64/fxstat.c: No such file or directory.
+
+Backtrace END
+Fliping value of field: st_blksize
+Memory content before bitflip:0x000x000x080x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffe088
+address max offset: 8
+Memory content after  bitflip:0x000x000x080x000x000x000x000x02
+frame name: __GI__IO_file_doallocate
+symbol name: st
+symbol filename: filedoalloc.c
+symbol line: 99
+value: {st_dev = 38, st_ino = 38883167, st_nlink = 1, st_mode = 33188, st_uid = 1030, st_gid = 500, __pad0 = 0, st_rdev = 0, st_size = 16761969, st_blksize = 144115188076380160, st_blocks = 32780, st_atim = {tv_sec = 1543840111, tv_nsec = 181290092}, st_mtim = {tv_sec = 1543840101, tv_nsec = 965223739}, st_ctim = {tv_sec = 1543840109, tv_nsec = 885280760}, __glibc_reserved = {0, 0, 0}}
+value address: 0x7fffffffe050
+Type: The type is a structure.
+Type sizeof: 144
+Field name: st_dev
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: st_ino
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: st_nlink
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: st_mode
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: st_uid
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: st_gid
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: __pad0
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: st_rdev
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: st_size
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: st_blksize
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: st_blocks
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: st_atim
+Field Type: The type is a structure.
+Field Type sizeof: 16
+Field name: st_mtim
+Field Type: The type is a structure.
+Field Type sizeof: 16
+Field name: st_ctim
+Field Type: The type is a structure.
+Field Type sizeof: 16
+Field name: __glibc_reserved
+Field Type: The type is an array.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-03 08:05:12]
+Fault Injection Successful after 0.670934915543s
+[INFO -- 2018-12-03 08:05:15]
+event type: exit
+[INFO -- 2018-12-03 08:05:15]
+exit code: 0

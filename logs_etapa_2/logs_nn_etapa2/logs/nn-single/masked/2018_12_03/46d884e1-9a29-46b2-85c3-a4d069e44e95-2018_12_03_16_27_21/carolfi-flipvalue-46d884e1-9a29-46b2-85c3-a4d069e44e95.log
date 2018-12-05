@@ -1,0 +1,59 @@
+[INFO -- 2018-12-03 16:27:18]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 16:27:18]
+Initialization strings:
+[INFO -- 2018-12-03 16:27:18]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 16:27:18]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 16:27:18]
+initSignal:0
+[INFO -- 2018-12-03 16:27:18]
+endSignal:2
+[INFO -- 2018-12-03 16:27:18]
+faultModel:1
+[INFO -- 2018-12-03 16:27:19]
+Backtrace BEGIN:
+#0  0x00007ffff78d4e84 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d3ae9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#3  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+168			fclose(logfile);
+169		}
+170	
+171		if(file!= NULL){
+172	    		fclose(file);
+173		}
+174	}
+175	
+176	int main(int argc, char* argv[]) {
+177	    int    k=0;
+
+Backtrace END
+Fliping array at pos: 334
+Memory content before bitflip:0x20
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffe31e 
+address max offset: 1
+Memory content after  bitflip:0x32
+frame name: nn_wrapper
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 30
+value: "1987  2 16 18  7 SANDY      23.3 177.0   74  179\n1972  3  7  6  4 GORDON     41.3  37.1   29  586\n2002 10 25 12  5 WILLIAM    46.2 246.0   29  769\n1972 11 17 12 13 SANDY      34.0 104.5   23  253\n1962"...
+value address: 0x7fffffffe1d0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 489L)
+
+[INFO -- 2018-12-03 16:27:19]
+Fault Injection Successful after 1.52350306511s
+[INFO -- 2018-12-03 16:27:21]
+event type: exit
+[INFO -- 2018-12-03 16:27:21]
+exit code: 0

@@ -1,0 +1,49 @@
+[INFO -- 2018-12-03 06:09:14]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 06:09:14]
+Initialization strings:
+[INFO -- 2018-12-03 06:09:14]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 06:09:14]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 06:09:14]
+initSignal:0
+[INFO -- 2018-12-03 06:09:14]
+endSignal:2
+[INFO -- 2018-12-03 06:09:14]
+faultModel:4
+[INFO -- 2018-12-03 06:09:15]
+Backtrace BEGIN:
+#0  __GI___nptl_create_event () at events.c:25
+#1  0x00007ffff76b08ec in create_thread (stackaddr=<optimized out>, attr=0x7ffff7ada6e0, pd=0x7ffff72fc700) at ../nptl/sysdeps/pthread/createthread.c:220
+#2  __pthread_create_2_1 (newthread=<optimized out>, attr=<optimized out>, start_routine=<optimized out>, arg=<optimized out>) at pthread_create.c:606
+#3  0x00007ffff78d2c57 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x00007ffff78ce7da in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#5  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#6  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+20	events.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xd70xe70xff0xff0xff0x7f0x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffe460
+address max offset: 8
+Memory content after  bitflip:0xd70xe70xff0xff0xff0x7f0x000x01
+frame name: main
+symbol name: filename
+symbol filename: nn.c
+symbol line: 179
+value: 0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist"
+value address: 0x7fffffffe460
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 06:09:15]
+Fault Injection Successful after 1.23920989037s
+[INFO -- 2018-12-03 06:09:16]
+event type: exit
+[INFO -- 2018-12-03 06:09:16]
+exit code: 1

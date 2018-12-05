@@ -1,0 +1,73 @@
+[INFO -- 2018-12-03 17:00:41]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 17:00:41]
+Initialization strings:
+[INFO -- 2018-12-03 17:00:41]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 17:00:41]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 17:00:41]
+initSignal:0
+[INFO -- 2018-12-03 17:00:41]
+endSignal:2
+[INFO -- 2018-12-03 17:00:41]
+faultModel:2
+[EXCEPTION -- 2018-12-03 17:00:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 17:00:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 17:00:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 17:00:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 17:00:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 17:00:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 17:00:41]
+pythonException: invalid frame
+[INFO -- 2018-12-03 17:00:41]
+Backtrace BEGIN:
+#0  0x00007ffff78d4e4f in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d3ae9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#3  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+168			fclose(logfile);
+169		}
+170	
+171		if(file!= NULL){
+172	    		fclose(file);
+173		}
+174	}
+175	
+176	int main(int argc, char* argv[]) {
+177	    int    k=0;
+
+Backtrace END
+Fliping array at pos: 382
+Memory content before bitflip:0x20
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffe34e 
+address max offset: 1
+Memory content after  bitflip:0x16
+frame name: nn_wrapper
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 30
+value: "1987  6 12  0 10 KIRK       35.6 276.8   31   79\n1977  4 11 12 25 LESLIE     58.4 237.5   43  359\n1960  2  5 18  7 BERYL      55.9 351.5  116  764\n1956  5 10 18  5 TONY       25.1 344.4   87  877\n1954"...
+value address: 0x7fffffffe1d0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 489L)
+
+[INFO -- 2018-12-03 17:00:41]
+Fault Injection Successful after 0.905515909195s
+[INFO -- 2018-12-03 17:00:43]
+event type: exit
+[INFO -- 2018-12-03 17:00:43]
+exit code: 0

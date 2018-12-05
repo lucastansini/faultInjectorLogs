@@ -1,0 +1,77 @@
+[INFO -- 2018-12-03 04:54:21]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 04:54:21]
+Initialization strings:
+[INFO -- 2018-12-03 04:54:21]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 04:54:21]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 04:54:21]
+initSignal:0
+[INFO -- 2018-12-03 04:54:21]
+endSignal:2
+[INFO -- 2018-12-03 04:54:21]
+faultModel:2
+[EXCEPTION -- 2018-12-03 04:54:22]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:54:22]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:54:22]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:54:22]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:54:22]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:54:22]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:54:22]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:54:22]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-12-03 04:54:22]
+pythonException: invalid frame
+[INFO -- 2018-12-03 04:54:22]
+Backtrace BEGIN:
+#0  0x00007ffff78d4e84 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d2722 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff42f6700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+107	
+108	        for( i = 0 ; i < rec_count ; i++ ) {
+109	            float max_dist = -1;
+110	            int max_idx = 0;
+111	            // find a neighbor with greatest dist and take his spot if allowed!
+112	            for( j = 0 ; j < k ; j++ ) {
+113	                if( neighbors[j].dist > max_dist ) {
+114	                    max_dist = neighbors[j].dist;
+115	                    max_idx = j;
+116	                }
+
+Backtrace END
+Fliping array at pos: 381
+Memory content before bitflip:0x20
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffe34d 
+address max offset: 1
+Memory content after  bitflip:0xe6
+frame name: nn_wrapper
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 30
+value: "1973  2 12 12 21 PATTY      42.4  65.8   68  194\n1962  9 21  0 24 TONY       18.1 309.3   91  734\n1963  1 14 12  7 GORDON      8.6 278.0   90  840\n1997  6  8 12 19 LESLIE     26.2 357.1  102  781\n1952"...
+value address: 0x7fffffffe1d0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 489L)
+
+[INFO -- 2018-12-03 04:54:22]
+Fault Injection Successful after 1.20324993134s
+[INFO -- 2018-12-03 04:54:24]
+event type: exit
+[INFO -- 2018-12-03 04:54:24]
+exit code: 0

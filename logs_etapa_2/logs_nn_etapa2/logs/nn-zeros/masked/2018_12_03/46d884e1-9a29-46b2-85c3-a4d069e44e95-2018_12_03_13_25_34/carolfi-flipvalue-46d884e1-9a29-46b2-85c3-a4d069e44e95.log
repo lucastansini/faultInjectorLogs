@@ -1,0 +1,62 @@
+[INFO -- 2018-12-03 13:25:31]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 13:25:31]
+Initialization strings:
+[INFO -- 2018-12-03 13:25:31]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 13:25:31]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 13:25:31]
+initSignal:0
+[INFO -- 2018-12-03 13:25:31]
+endSignal:2
+[INFO -- 2018-12-03 13:25:31]
+faultModel:3
+[INFO -- 2018-12-03 13:25:31]
+Backtrace BEGIN:
+#0  0x00007ffff7336466 in __GI_____strtoul_l_internal (nptr=nptr@entry=0x602086 "0", endptr=endptr@entry=0x7fffffffe3a8, base=base@entry=10, group=group@entry=0, loc=0x7ffff76a2f20 <_nl_global_locale>) at ../stdlib/strtol_l.c:298
+#1  0x00007ffff7335f52 in __GI_strtoul (nptr=nptr@entry=0x602086 "0", endptr=endptr@entry=0x7fffffffe3a8, base=base@entry=10) at ../stdlib/strtol.c:108
+#2  0x00007ffff73e422b in __get_nprocs_conf () at ../sysdeps/unix/sysv/linux/getsysstats.c:254
+#3  0x00007ffff73b9060 in posix_sysconf (name=83) at ../sysdeps/posix/sysconf.c:626
+#4  linux_sysconf (name=83) at ../sysdeps/unix/sysv/linux/x86_64/../sysconf.c:145
+#5  __GI___sysconf (name=83) at ../sysdeps/unix/sysv/linux/x86_64/sysconf.c:36
+#6  0x00007ffff78d47b0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#7  0x00007ffff78c9d2d in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#8  0x00007ffff7deabea in call_init (l=<optimized out>, argc=argc@entry=6, argv=argv@entry=0x7fffffffe568, env=env@entry=0x7fffffffe5a0) at dl-init.c:78
+#9  0x00007ffff7deacd3 in call_init (env=0x7fffffffe5a0, argv=0x7fffffffe568, argc=6, l=<optimized out>) at dl-init.c:36
+#10 _dl_init (main_map=0x7ffff7ffe1b0, argc=6, argv=0x7fffffffe568, env=0x7fffffffe5a0) at dl-init.c:126
+#11 0x00007ffff7ddd16a in _dl_start_user () from /lib64/ld-linux-x86-64.so.2
+#12 0x0000000000000006 in ?? ()
+#13 0x00007fffffffe795 in ?? ()
+#14 0x00007fffffffe7d7 in ?? ()
+#15 0x00007fffffffe81f in ?? ()
+#16 0x00007fffffffe822 in ?? ()
+#17 0x00007fffffffe824 in ?? ()
+#18 0x00007fffffffe826 in ?? ()
+#19 0x0000000000000000 in ?? ()
+
+293	../stdlib/strtol_l.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffe3a8
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: __get_nprocs_conf
+symbol name: endp
+symbol filename: ../sysdeps/unix/sysv/linux/getsysstats.c
+symbol line: 253
+value: 0x0
+value address: 0x7fffffffe3a8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 13:25:31]
+Fault Injection Successful after 0.870198965073s
+[INFO -- 2018-12-03 13:25:34]
+event type: exit
+[INFO -- 2018-12-03 13:25:34]
+exit code: 0

@@ -1,0 +1,60 @@
+[INFO -- 2018-12-03 09:36:18]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 09:36:18]
+Initialization strings:
+[INFO -- 2018-12-03 09:36:18]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 09:36:18]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 09:36:18]
+initSignal:0
+[INFO -- 2018-12-03 09:36:18]
+endSignal:2
+[INFO -- 2018-12-03 09:36:18]
+faultModel:3
+[INFO -- 2018-12-03 09:36:18]
+Backtrace BEGIN:
+#0  sysmalloc (av=0x7ffff76a2620 <main_arena>, nb=32832) at malloc.c:2655
+#1  _int_malloc (av=0x7ffff76a2620 <main_arena>, bytes=32816) at malloc.c:3800
+#2  0x00007ffff7379020 in __GI___libc_malloc (bytes=32816) at malloc.c:2891
+#3  0x00007ffff73b2e31 in __alloc_dir (fd=5, close_fd=<optimized out>, flags=<optimized out>, statp=<optimized out>) at ../sysdeps/posix/opendir.c:207
+#4  0x00007ffff73e41d6 in __get_nprocs_conf () at ../sysdeps/unix/sysv/linux/getsysstats.c:243
+#5  0x00007ffff73b9060 in posix_sysconf (name=83) at ../sysdeps/posix/sysconf.c:626
+#6  linux_sysconf (name=83) at ../sysdeps/unix/sysv/linux/x86_64/../sysconf.c:145
+#7  __GI___sysconf (name=83) at ../sysdeps/unix/sysv/linux/x86_64/sysconf.c:36
+#8  0x00007ffff78d47b0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#9  0x00007ffff78c9d2d in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#10 0x00007ffff7deabea in call_init (l=<optimized out>, argc=argc@entry=6, argv=argv@entry=0x7fffffffe568, env=env@entry=0x7fffffffe5a0) at dl-init.c:78
+#11 0x00007ffff7deacd3 in call_init (env=0x7fffffffe5a0, argv=0x7fffffffe568, argc=6, l=<optimized out>) at dl-init.c:36
+#12 _dl_init (main_map=0x7ffff7ffe1b0, argc=6, argv=0x7fffffffe568, env=0x7fffffffe5a0) at dl-init.c:126
+#13 0x00007ffff7ddd16a in _dl_start_user () from /lib64/ld-linux-x86-64.so.2
+#14 0x0000000000000006 in ?? ()
+#15 0x00007fffffffe795 in ?? ()
+#16 0x00007fffffffe7d7 in ?? ()
+#17 0x00007fffffffe81f in ?? ()
+#18 0x00007fffffffe822 in ?? ()
+#19 0x00007fffffffe824 in ?? ()
+#20 0x00007fffffffe826 in ?? ()
+#21 0x0000000000000000 in ?? ()
+
+2650	malloc.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xa00xb70x370xf70xff0x7f0x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7ffff76a3720 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: sysmalloc
+symbol name: __morecore
+symbol filename: malloc.c
+symbol line: 404
+value: 0x7ffff737b7a0 <__GI___default_morecore>
+value address: 0x7ffff76a3720 <__morecore>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 09:36:18]
+Fault Injection Successful after 0.809732913971s

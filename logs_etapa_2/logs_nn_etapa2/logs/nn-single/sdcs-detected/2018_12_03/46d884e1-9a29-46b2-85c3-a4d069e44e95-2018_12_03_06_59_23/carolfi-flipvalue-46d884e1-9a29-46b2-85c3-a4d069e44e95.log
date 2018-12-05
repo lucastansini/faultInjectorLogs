@@ -1,0 +1,48 @@
+[INFO -- 2018-12-03 06:59:20]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 06:59:20]
+Initialization strings:
+[INFO -- 2018-12-03 06:59:20]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 06:59:20]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 06:59:20]
+initSignal:0
+[INFO -- 2018-12-03 06:59:20]
+endSignal:2
+[INFO -- 2018-12-03 06:59:20]
+faultModel:1
+[INFO -- 2018-12-03 06:59:21]
+Backtrace BEGIN:
+#0  __GI___nptl_create_event () at events.c:25
+#1  0x00007ffff76b08ec in create_thread (stackaddr=<optimized out>, attr=0x7ffff7ada6e0, pd=0x7ffff72fc700) at ../nptl/sysdeps/pthread/createthread.c:220
+#2  __pthread_create_2_1 (newthread=<optimized out>, attr=<optimized out>, start_routine=<optimized out>, arg=<optimized out>) at pthread_create.c:606
+#3  0x00007ffff78d2c57 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x00007ffff78ce7da in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#5  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#6  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+20	events.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x000x000xa00x40
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffe45c
+address max offset: 4
+Memory content after  bitflip:0x120x000xa00x40
+frame name: main
+symbol name: target_lat
+symbol filename: nn.c
+symbol line: 178
+value: 5.00000858
+value address: 0x7fffffffe45c
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-12-03 06:59:21]
+Fault Injection Successful after 1.04468798637s
+[INFO -- 2018-12-03 06:59:23]
+event type: exit
+[INFO -- 2018-12-03 06:59:23]
+exit code: 0

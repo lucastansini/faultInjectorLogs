@@ -1,0 +1,65 @@
+[INFO -- 2018-12-03 11:20:32]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 11:20:32]
+Initialization strings:
+[INFO -- 2018-12-03 11:20:32]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 11:20:32]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 11:20:32]
+initSignal:0
+[INFO -- 2018-12-03 11:20:32]
+endSignal:2
+[INFO -- 2018-12-03 11:20:32]
+faultModel:4
+[EXCEPTION -- 2018-12-03 11:20:32]
+gdbException: Attempt to dereference a generic pointer.
+[INFO -- 2018-12-03 11:20:33]
+Backtrace BEGIN:
+#0  0x00007ffff73de0ac in __brk (addr=0x62b000) at ../sysdeps/unix/sysv/linux/x86_64/brk.c:31
+#1  0x00007ffff73de146 in __GI___sbrk (increment=167936) at sbrk.c:53
+#2  0x00007ffff737b7a9 in __GI___default_morecore (increment=<optimized out>) at morecore.c:47
+#3  0x00007ffff7377954 in sysmalloc (av=0x7ffff76a2620 <main_arena>, nb=32832) at malloc.c:2462
+#4  _int_malloc (av=0x7ffff76a2620 <main_arena>, bytes=32816) at malloc.c:3800
+#5  0x00007ffff7379020 in __GI___libc_malloc (bytes=32816) at malloc.c:2891
+#6  0x00007ffff73b2e31 in __alloc_dir (fd=5, close_fd=<optimized out>, flags=<optimized out>, statp=<optimized out>) at ../sysdeps/posix/opendir.c:207
+#7  0x00007ffff73e41d6 in __get_nprocs_conf () at ../sysdeps/unix/sysv/linux/getsysstats.c:243
+#8  0x00007ffff73b9060 in posix_sysconf (name=83) at ../sysdeps/posix/sysconf.c:626
+#9  linux_sysconf (name=83) at ../sysdeps/unix/sysv/linux/x86_64/../sysconf.c:145
+#10 __GI___sysconf (name=83) at ../sysdeps/unix/sysv/linux/x86_64/sysconf.c:36
+#11 0x00007ffff78d47b0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#12 0x00007ffff78c9d2d in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#13 0x00007ffff7deabea in call_init (l=<optimized out>, argc=argc@entry=6, argv=argv@entry=0x7fffffffe568, env=env@entry=0x7fffffffe5a0) at dl-init.c:78
+#14 0x00007ffff7deacd3 in call_init (env=0x7fffffffe5a0, argv=0x7fffffffe568, argc=6, l=<optimized out>) at dl-init.c:36
+#15 _dl_init (main_map=0x7ffff7ffe1b0, argc=6, argv=0x7fffffffe568, env=0x7fffffffe5a0) at dl-init.c:126
+#16 0x00007ffff7ddd16a in _dl_start_user () from /lib64/ld-linux-x86-64.so.2
+#17 0x0000000000000006 in ?? ()
+#18 0x00007fffffffe795 in ?? ()
+#19 0x00007fffffffe7d7 in ?? ()
+#20 0x00007fffffffe81f in ?? ()
+#21 0x00007fffffffe822 in ?? ()
+#22 0x00007fffffffe824 in ?? ()
+#23 0x00007fffffffe826 in ?? ()
+#24 0x0000000000000000 in ?? ()
+
+26	../sysdeps/unix/sysv/linux/x86_64/brk.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x48
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff737b7a0 
+address max offset: 1
+Memory content after  bitflip:0xc8
+frame name: __GI___libc_malloc
+symbol name: __morecore
+symbol filename: malloc.c
+symbol line: 404
+value: 0x7ffff737b7a0 <__GI___default_morecore>
+value address: 0x7ffff76a3720 <__morecore>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 11:20:33]
+Fault Injection Successful after 1.88251304626s

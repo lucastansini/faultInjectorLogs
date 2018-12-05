@@ -1,0 +1,64 @@
+[INFO -- 2018-12-03 10:04:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 10:04:27]
+Initialization strings:
+[INFO -- 2018-12-03 10:04:27]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 10:04:27]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 10:04:27]
+initSignal:0
+[INFO -- 2018-12-03 10:04:27]
+endSignal:2
+[INFO -- 2018-12-03 10:04:27]
+faultModel:2
+[INFO -- 2018-12-03 10:04:28]
+Backtrace BEGIN:
+#0  0x00007ffff73ddc67 in getrlimit64 () at ../sysdeps/unix/syscall-template.S:81
+#1  0x00007ffff76aecc1 in __pthread_initialize_minimal_internal () at nptl-init.c:407
+#2  0x00007ffff76ad4f1 in _init () at ../sysdeps/x86_64/crti.S:72
+#3  0x0000000000000001 in ?? ()
+#4  0x00007ffff7deabad in call_init (l=0x7ffff7fda000, argc=argc@entry=6, argv=argv@entry=0x7fffffffe568, env=env@entry=0x7fffffffe5a0) at dl-init.c:64
+#5  0x00007ffff7deacf5 in call_init (env=0x7fffffffe5a0, argv=0x7fffffffe568, argc=6, l=<optimized out>) at dl-init.c:36
+#6  _dl_init (main_map=0x7ffff7ffe1b0, argc=6, argv=0x7fffffffe568, env=0x7fffffffe5a0) at dl-init.c:93
+#7  0x00007ffff7ddd16a in _dl_start_user () from /lib64/ld-linux-x86-64.so.2
+#8  0x0000000000000006 in ?? ()
+#9  0x00007fffffffe795 in ?? ()
+#10 0x00007fffffffe7d7 in ?? ()
+#11 0x00007fffffffe81f in ?? ()
+#12 0x00007fffffffe822 in ?? ()
+#13 0x00007fffffffe824 in ?? ()
+#14 0x00007fffffffe826 in ?? ()
+#15 0x0000000000000000 in ?? ()
+
+76	../sysdeps/unix/syscall-template.S: No such file or directory.
+
+Backtrace END
+Fliping value of field: rlim_max
+Memory content before bitflip:0xff0xff0xff0xff0xff0xff0xff0xff
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffe418
+address max offset: 8
+Memory content after  bitflip:0x150xb20xbb0x150x870x2d0x680x34
+frame name: __pthread_initialize_minimal_internal
+symbol name: limit
+symbol filename: nptl-init.c
+symbol line: 406
+value: {rlim_cur = 8388608, rlim_max = 3776318345758618133}
+value address: 0x7fffffffe410
+Type: The type is a structure.
+Type sizeof: 16
+Field name: rlim_cur
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: rlim_max
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-03 10:04:28]
+Fault Injection Successful after 1.20865297318s
+[INFO -- 2018-12-03 10:04:30]
+event type: exit
+[INFO -- 2018-12-03 10:04:30]
+exit code: 0

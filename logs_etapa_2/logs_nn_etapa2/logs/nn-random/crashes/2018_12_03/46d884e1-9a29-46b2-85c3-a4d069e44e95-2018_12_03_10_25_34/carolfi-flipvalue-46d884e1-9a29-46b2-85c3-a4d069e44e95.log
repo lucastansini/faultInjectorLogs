@@ -1,0 +1,56 @@
+[INFO -- 2018-12-03 10:25:33]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 10:25:33]
+Initialization strings:
+[INFO -- 2018-12-03 10:25:33]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 10:25:33]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 10:25:33]
+initSignal:0
+[INFO -- 2018-12-03 10:25:33]
+endSignal:2
+[INFO -- 2018-12-03 10:25:33]
+faultModel:2
+[EXCEPTION -- 2018-12-03 10:25:33]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 10:25:33]
+pythonException: invalid frame
+[INFO -- 2018-12-03 10:25:33]
+Backtrace BEGIN:
+#0  0x00007ffff78d4c79 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d26e3 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff62fa700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+90	in ../nptl/sysdeps/unix/sysv/linux/x86_64/lowlevellock.S
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x800x270x600x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffe418
+address max offset: 8
+Memory content after  bitflip:0xd00x6f0x370x2a0x560x230xc30x39
+frame name: nn_wrapper
+symbol name: fp
+symbol filename: nn.c
+symbol line: 32
+value: 0x602780
+value address: 0x7fffffffe418
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 10:25:33]
+Fault Injection Successful after 0.895456075668s
+[INFO -- 2018-12-03 10:25:33]
+event type: exit
+[EXCEPTION -- 2018-12-03 10:25:33]
+exit code: no exit code available
+[EXCEPTION -- 2018-12-03 10:25:33]
+pythonException: Thread no longer exists.
+[EXCEPTION -- 2018-12-03 10:25:33]
+pythonException: Thread no longer exists.
+[EXCEPTION -- 2018-12-03 10:25:33]
+pythonException: Thread no longer exists.

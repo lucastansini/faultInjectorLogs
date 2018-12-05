@@ -1,0 +1,59 @@
+[INFO -- 2018-12-03 13:38:55]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 13:38:55]
+Initialization strings:
+[INFO -- 2018-12-03 13:38:55]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 13:38:55]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 13:38:55]
+initSignal:0
+[INFO -- 2018-12-03 13:38:55]
+endSignal:2
+[INFO -- 2018-12-03 13:38:55]
+faultModel:2
+[EXCEPTION -- 2018-12-03 13:38:55]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 13:38:55]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 13:38:55]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 13:38:55]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 13:38:55]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 13:38:55]
+pythonException: invalid frame
+[INFO -- 2018-12-03 13:38:55]
+Backtrace BEGIN:
+#0  0x00007ffff73398c1 in __GI_____strtod_l_internal (nptr=0x7fffffffe21c " 62.9 218.5  152  471\n1963  9  7  6 18 KIRK       68.2  26.0   39  602\n1982  7  9 18 24 PATTY      48.9  80.2   24  367\n1997  7 10 18  3 JOYCE      10.8 205.2   61  182\n2000 11  9 18  1 MICHAEL    27."..., endptr=0x0, group=<optimized out>, loc=0x7ffff76a2f20 <_nl_global_locale>) at strtod_l.c:601
+#1  0x000000000040156a in nn_wrapper._omp_fn.0 () at nn.c:100
+#2  0x00007ffff78ce7df in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#4  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+596	strtod_l.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x2f
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffe826 
+address max offset: 1
+Memory content after  bitflip:0xeb
+frame name: main
+symbol name: gold_filename
+symbol filename: nn.c
+symbol line: 179
+value: 0x7fffffffe826 "\353home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5"
+value address: 0x7fffffffe450
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-03 13:38:55]
+Fault Injection Successful after 0.792759895325s
+[INFO -- 2018-12-03 13:38:58]
+event type: exit
+[EXCEPTION -- 2018-12-03 13:38:58]
+exit code: no exit code available

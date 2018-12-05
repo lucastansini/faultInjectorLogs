@@ -1,0 +1,82 @@
+[INFO -- 2018-12-04 01:14:36]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-04 01:14:36]
+Initialization strings:
+[INFO -- 2018-12-04 01:14:36]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-04 01:14:36]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-04 01:14:36]
+initSignal:0
+[INFO -- 2018-12-04 01:14:36]
+endSignal:2
+[INFO -- 2018-12-04 01:14:36]
+faultModel:1
+[EXCEPTION -- 2018-12-04 01:14:36]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 01:14:36]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 01:14:36]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-12-04 01:14:36]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 01:14:36]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 01:14:36]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 01:14:36]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 01:14:36]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 01:14:36]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 01:14:36]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 01:14:36]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 01:14:36]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 01:14:36]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-04 01:14:36]
+pythonException: invalid frame
+[INFO -- 2018-12-04 01:14:36]
+Backtrace BEGIN:
+#0  0x00007ffff78d4c9e in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d26f0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff42f6700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+117	            }
+118	            // compare each record with max value to find the nearest neighbor
+119	            if( z[i] < neighbors[max_idx].dist ) {
+120	                sandbox[(i+1)*REC_LENGTH-1] = '\0';
+121	                strcpy(neighbors[max_idx].entry, sandbox +i*REC_LENGTH);
+122	                neighbors[max_idx].dist = z[i];
+123	            }
+124	        }
+125	    }//End while loop
+126	    fclose(flist);
+
+Backtrace END
+Memory content before bitflip:0x8a0x010x010x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffe410
+address max offset: 8
+Memory content after  bitflip:0x8a0x010x010x000x000x000x280x00
+frame name: nn_wrapper
+symbol name: rec_sum
+symbol filename: nn.c
+symbol line: 33
+value: 11258999068492170
+value address: 0x7fffffffe410
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-12-04 01:14:36]
+Fault Injection Successful after 0.943933963776s
+[INFO -- 2018-12-04 01:14:39]
+event type: exit
+[INFO -- 2018-12-04 01:14:39]
+exit code: 0

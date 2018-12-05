@@ -1,0 +1,73 @@
+[INFO -- 2018-12-03 11:08:58]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 11:08:58]
+Initialization strings:
+[INFO -- 2018-12-03 11:08:58]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 11:08:58]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 11:08:58]
+initSignal:0
+[INFO -- 2018-12-03 11:08:58]
+endSignal:2
+[INFO -- 2018-12-03 11:08:58]
+faultModel:4
+[EXCEPTION -- 2018-12-03 11:08:59]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 11:08:59]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 11:08:59]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 11:08:59]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 11:08:59]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 11:08:59]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 11:08:59]
+pythonException: invalid frame
+[INFO -- 2018-12-03 11:08:59]
+Backtrace BEGIN:
+#0  0x00007ffff78d4e4f in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d3ae9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#3  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+168			fclose(logfile);
+169		}
+170	
+171		if(file!= NULL){
+172	    		fclose(file);
+173		}
+174	}
+175	
+176	int main(int argc, char* argv[]) {
+177	    int    k=0;
+
+Backtrace END
+Fliping array at pos: 407
+Memory content before bitflip:0x39
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffe367 
+address max offset: 1
+Memory content after  bitflip:0x31
+frame name: nn_wrapper
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 30
+value: "1967 11 25 12 24 FLORENCE   54.4  46.3   19    9\n1958  5 11 12  8 DEBBY      14.8 322.6  162  147\n1977 11 12  0  6 ALBERTO    59.3 263.0   80  769\n1971  6 10 18 18 FLORENCE   13.1 230.2   63  760\n1968"...
+value address: 0x7fffffffe1d0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 489L)
+
+[INFO -- 2018-12-03 11:08:59]
+Fault Injection Successful after 1.35333108902s
+[INFO -- 2018-12-03 11:09:01]
+event type: exit
+[INFO -- 2018-12-03 11:09:01]
+exit code: 0

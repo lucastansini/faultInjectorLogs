@@ -1,0 +1,52 @@
+[INFO -- 2018-12-03 19:26:51]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 19:26:51]
+Initialization strings:
+[INFO -- 2018-12-03 19:26:51]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 19:26:51]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 19:26:51]
+initSignal:0
+[INFO -- 2018-12-03 19:26:51]
+endSignal:2
+[INFO -- 2018-12-03 19:26:51]
+faultModel:3
+[INFO -- 2018-12-03 19:26:51]
+Backtrace BEGIN:
+#0  nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:115
+#1  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+110	            int max_idx = 0;
+111	            // find a neighbor with greatest dist and take his spot if allowed!
+112	            for( j = 0 ; j < k ; j++ ) {
+113	                if( neighbors[j].dist > max_dist ) {
+114	                    max_dist = neighbors[j].dist;
+115	                    max_idx = j;
+116	                }
+117	            }
+118	            // compare each record with max value to find the nearest neighbor
+119	            if( z[i] < neighbors[max_idx].dist ) {
+
+Backtrace END
+Memory content before bitflip:0x000x000xa00x40
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffe45c
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main
+symbol name: target_lat
+symbol filename: nn.c
+symbol line: 178
+value: 0
+value address: 0x7fffffffe45c
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-12-03 19:26:51]
+Fault Injection Successful after 0.877093076706s
+[INFO -- 2018-12-03 19:26:54]
+event type: exit
+[INFO -- 2018-12-03 19:26:54]
+exit code: 0

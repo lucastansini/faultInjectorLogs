@@ -1,0 +1,53 @@
+[INFO -- 2018-12-03 19:50:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 19:50:39]
+Initialization strings:
+[INFO -- 2018-12-03 19:50:39]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 19:50:39]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 19:50:39]
+initSignal:0
+[INFO -- 2018-12-03 19:50:39]
+endSignal:2
+[INFO -- 2018-12-03 19:50:39]
+faultModel:2
+[INFO -- 2018-12-03 19:50:40]
+Backtrace BEGIN:
+#0  __GI___nptl_create_event () at events.c:25
+#1  0x00007ffff76b08ec in create_thread (stackaddr=<optimized out>, attr=0x7ffff7ada6e0, pd=0x7ffff72fc700) at ../nptl/sysdeps/pthread/createthread.c:220
+#2  __pthread_create_2_1 (newthread=<optimized out>, attr=<optimized out>, start_routine=<optimized out>, arg=<optimized out>) at pthread_create.c:606
+#3  0x00007ffff78d2c57 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x00007ffff78ce7da in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#5  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#6  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+20	events.c: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 0
+Memory content before bitflip:0x080x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff76b9b94 
+address max offset: 4
+Memory content after  bitflip:0x910x850x290xc2
+frame name: __pthread_create_2_1
+symbol name: _thread_db_pthread_report_events
+symbol filename: ../nptl_db/structs.def
+symbol line: 27
+value: {3257501073, 1, 1553}
+value address: 0x7ffff76b9b94 <_thread_db_pthread_report_events>
+Type: The type is an array.
+Type sizeof: 12
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 2L)
+
+[INFO -- 2018-12-03 19:50:40]
+Fault Injection Successful after 1.05641102791s
+[INFO -- 2018-12-03 19:50:42]
+event type: exit
+[INFO -- 2018-12-03 19:50:42]
+exit code: 0

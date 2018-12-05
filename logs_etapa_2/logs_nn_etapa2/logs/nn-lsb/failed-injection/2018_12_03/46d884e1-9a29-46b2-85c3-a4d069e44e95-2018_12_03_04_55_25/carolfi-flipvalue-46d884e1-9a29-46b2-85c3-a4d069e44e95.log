@@ -1,0 +1,37 @@
+[INFO -- 2018-12-03 04:55:24]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 04:55:24]
+Initialization strings:
+[INFO -- 2018-12-03 04:55:24]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 04:55:24]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 04:55:24]
+initSignal:0
+[INFO -- 2018-12-03 04:55:24]
+endSignal:2
+[INFO -- 2018-12-03 04:55:24]
+faultModel:4
+[EXCEPTION -- 2018-12-03 04:55:25]
+gdbException: Attempt to dereference a generic pointer.
+[EXCEPTION -- 2018-12-03 04:55:25]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:55:25]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:55:25]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:55:25]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 04:55:25]
+pythonException: invalid frame
+[INFO -- 2018-12-03 04:55:25]
+event type: exit
+[EXCEPTION -- 2018-12-03 04:55:25]
+exit code: no exit code available
+[EXCEPTION -- 2018-12-03 04:55:25]
+pythonException: Thread no longer exists.
+[EXCEPTION -- 2018-12-03 04:55:25]
+pythonException: Thread no longer exists.
+[EXCEPTION -- 2018-12-03 04:55:25]
+pythonException: Thread no longer exists.

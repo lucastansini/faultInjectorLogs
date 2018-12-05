@@ -1,0 +1,54 @@
+[INFO -- 2018-12-04 03:16:49]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-04 03:16:49]
+Initialization strings:
+[INFO -- 2018-12-04 03:16:49]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-04 03:16:49]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-04 03:16:49]
+initSignal:0
+[INFO -- 2018-12-04 03:16:49]
+endSignal:2
+[INFO -- 2018-12-04 03:16:49]
+faultModel:2
+[EXCEPTION -- 2018-12-04 03:16:50]
+pythonException: invalid frame
+[INFO -- 2018-12-04 03:16:50]
+Backtrace BEGIN:
+#0  nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:112
+#1  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+107	
+108	        for( i = 0 ; i < rec_count ; i++ ) {
+109	            float max_dist = -1;
+110	            int max_idx = 0;
+111	            // find a neighbor with greatest dist and take his spot if allowed!
+112	            for( j = 0 ; j < k ; j++ ) {
+113	                if( neighbors[j].dist > max_dist ) {
+114	                    max_dist = neighbors[j].dist;
+115	                    max_idx = j;
+116	                }
+
+Backtrace END
+Memory content before bitflip:0x000x000xa00x40
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffe458
+address max offset: 4
+Memory content after  bitflip:0x1a0x690xeb0x11
+frame name: main
+symbol name: target_long
+symbol filename: nn.c
+symbol line: 178
+value: 3.71412364e-28
+value address: 0x7fffffffe458
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-12-04 03:16:50]
+Fault Injection Successful after 1.29836988449s
+[INFO -- 2018-12-04 03:16:52]
+event type: exit
+[INFO -- 2018-12-04 03:16:52]
+exit code: 0

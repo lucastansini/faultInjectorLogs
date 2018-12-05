@@ -1,0 +1,68 @@
+[INFO -- 2018-12-03 18:21:48]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 18:21:48]
+Initialization strings:
+[INFO -- 2018-12-03 18:21:48]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 18:21:48]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 18:21:48]
+initSignal:0
+[INFO -- 2018-12-03 18:21:48]
+endSignal:2
+[INFO -- 2018-12-03 18:21:48]
+faultModel:3
+[EXCEPTION -- 2018-12-03 18:21:49]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 18:21:49]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 18:21:49]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 18:21:49]
+pythonException: invalid frame
+[INFO -- 2018-12-03 18:21:49]
+Backtrace BEGIN:
+#0  0x00007ffff78d4c81 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d2d39 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff78ce7da in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x0000000000400f98 in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:97
+#4  0x000000000040148d in main (argc=6, argv=0x7fffffffe568) at nn.c:195
+
+168			fclose(logfile);
+169		}
+170	
+171		if(file!= NULL){
+172	    		fclose(file);
+173		}
+174	}
+175	
+176	int main(int argc, char* argv[]) {
+177	    int    k=0;
+
+Backtrace END
+Fliping array at pos: 447
+Memory content before bitflip:0x32
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffe38f 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: nn_wrapper
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 30
+value: "1994 10 27  6 28 LESLIE     12.0 118.2  161  235\n1965 12  7 12 20 BERYL      26.4 172.3  148  153\n1953 10 14 12 19 ISAAC      12.1 218.4   26  847\n1952 11  4 18 26 OSCAR      20.1 239.4  113  430\n1994"...
+value address: 0x7fffffffe1d0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 489L)
+
+[INFO -- 2018-12-03 18:21:49]
+Fault Injection Successful after 1.46502804756s
+[INFO -- 2018-12-03 18:21:51]
+event type: exit
+[INFO -- 2018-12-03 18:21:51]
+exit code: 0

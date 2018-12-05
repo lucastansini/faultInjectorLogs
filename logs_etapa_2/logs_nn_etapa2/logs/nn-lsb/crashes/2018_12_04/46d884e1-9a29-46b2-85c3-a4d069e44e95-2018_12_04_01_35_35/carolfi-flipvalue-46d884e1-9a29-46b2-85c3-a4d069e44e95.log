@@ -1,0 +1,63 @@
+[INFO -- 2018-12-04 01:35:35]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-04 01:35:35]
+Initialization strings:
+[INFO -- 2018-12-04 01:35:35]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-04 01:35:35]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-04 01:35:35]
+initSignal:0
+[INFO -- 2018-12-04 01:35:35]
+endSignal:2
+[INFO -- 2018-12-04 01:35:35]
+faultModel:4
+[INFO -- 2018-12-04 01:35:35]
+Backtrace BEGIN:
+#0  0x00007ffff7de7518 in elf_machine_rela (reloc=0x7ffff7ddca10, reloc=0x7ffff7ddca10, skip_ifunc=0, reloc_addr_arg=<optimized out>, version=<optimized out>, sym=0x7ffff7ddc5b8, map=0x7ffff7ffd9f8 <_rtld_global+2456>) at ../sysdeps/x86_64/dl-machine.h:278
+#1  elf_dynamic_do_Rela (skip_ifunc=0, lazy=0, nrelative=<optimized out>, relsize=<optimized out>, reladdr=<optimized out>, map=0x7ffff7ffd9f8 <_rtld_global+2456>) at do-rel.h:137
+#2  _dl_relocate_object (scope=<optimized out>, reloc_mode=reloc_mode@entry=0, consider_profiling=<optimized out>, consider_profiling@entry=0) at dl-reloc.c:264
+#3  0x00007ffff7de011e in dl_main (phdr=<optimized out>, phdr@entry=0x400040, phnum=<optimized out>, phnum@entry=8, user_entry=user_entry@entry=0x7fffffffe4a8, auxv=<optimized out>) at rtld.c:2384
+#4  0x00007ffff7df14a5 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffe560, dl_main=dl_main@entry=0x7ffff7ddde20 <dl_main>) at ../elf/dl-sysdep.c:249
+#5  0x00007ffff7ddd976 in _dl_start_final (arg=0x7fffffffe560) at rtld.c:424
+#6  _dl_start (arg=0x7fffffffe560) at rtld.c:650
+#7  0x00007ffff7ddd138 in _start () from /lib64/ld-linux-x86-64.so.2
+#8  0x0000000000000006 in ?? ()
+#9  0x00007fffffffe795 in ?? ()
+#10 0x00007fffffffe7d7 in ?? ()
+#11 0x00007fffffffe81f in ?? ()
+#12 0x00007fffffffe822 in ?? ()
+#13 0x00007fffffffe824 in ?? ()
+#14 0x00007fffffffe826 in ?? ()
+#15 0x0000000000000000 in ?? ()
+
+273	../sysdeps/x86_64/dl-machine.h: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 1
+Fliping value of field: size
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd328
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x40
+frame name: elf_dynamic_do_Rela
+symbol name: ranges
+symbol filename: dl-reloc.c
+symbol line: 264
+value: {{start = 140737351895208, size = 480, nrelative = 10, lazy = 0}, {start = 0, size = 4611686018427387904, nrelative = 0, lazy = 0}}
+value address: 0x7fffffffd300
+Type: The type is an array.
+Type sizeof: 64
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 1L)
+
+[INFO -- 2018-12-04 01:35:35]
+Fault Injection Successful after 0.421741962433s
+[INFO -- 2018-12-04 01:35:35]
+event type: exit
+[EXCEPTION -- 2018-12-04 01:35:35]
+exit code: no exit code available

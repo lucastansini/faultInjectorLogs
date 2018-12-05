@@ -1,0 +1,52 @@
+[INFO -- 2018-12-03 07:09:15]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 07:09:15]
+Initialization strings:
+[INFO -- 2018-12-03 07:09:15]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 07:09:15]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 07:09:15]
+initSignal:0
+[INFO -- 2018-12-03 07:09:15]
+endSignal:2
+[INFO -- 2018-12-03 07:09:15]
+faultModel:2
+[INFO -- 2018-12-03 07:09:17]
+Backtrace BEGIN:
+#0  0x00007ffff73d8bbd in read () at ../sysdeps/unix/syscall-template.S:81
+#1  0x00007ffff73723a0 in _IO_new_file_underflow (fp=0x602030) at fileops.c:605
+#2  0x00007ffff7371708 in __GI__IO_file_xsgetn (fp=0x602030, data=<optimized out>, n=490) at fileops.c:1410
+#3  0x00007ffff73674ef in __GI__IO_fread (buf=<optimized out>, size=49, count=10, fp=0x602030) at iofread.c:42
+#4  0x0000000000400e6f in nn_wrapper (filename=0x7fffffffe7d7 "/home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist", k=20, target_lat=5, target_long=5) at nn.c:69
+#5  0x00000000004014b8 in main (argc=6, argv=0x7fffffffe568) at nn.c:196
+
+76	../sysdeps/unix/syscall-template.S: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 3
+Memory content before bitflip:0x6d
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffe193 
+address max offset: 1
+Memory content after  bitflip:0x0e
+frame name: nn_wrapper
+symbol name: dbname
+symbol filename: nn.c
+symbol line: 30
+value: "/ho\016e/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/c"
+value address: 0x7fffffffe190
+Type: The type is an array.
+Type sizeof: 64
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0L, 63L)
+
+[INFO -- 2018-12-03 07:09:17]
+Fault Injection Successful after 2.04174208641s
+[INFO -- 2018-12-03 07:09:18]
+event type: exit
+[INFO -- 2018-12-03 07:09:18]
+exit code: 0

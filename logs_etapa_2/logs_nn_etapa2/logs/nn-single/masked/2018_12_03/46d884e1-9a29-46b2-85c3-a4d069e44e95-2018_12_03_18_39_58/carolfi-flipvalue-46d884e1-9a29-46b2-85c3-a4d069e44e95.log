@@ -1,0 +1,71 @@
+[INFO -- 2018-12-03 18:39:54]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-03 18:39:54]
+Initialization strings:
+[INFO -- 2018-12-03 18:39:55]
+(1) file /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/nn
+[INFO -- 2018-12-03 18:39:55]
+(2) set args /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/filelist 20 5 5 /home/latansini/carol-fi/carol-fi/codes/nnfulldup/nn-knl-files/out20_5_5
+[INFO -- 2018-12-03 18:39:55]
+initSignal:0
+[INFO -- 2018-12-03 18:39:55]
+endSignal:2
+[INFO -- 2018-12-03 18:39:55]
+faultModel:1
+[EXCEPTION -- 2018-12-03 18:39:55]
+gdbException: Attempt to dereference a generic pointer.
+[EXCEPTION -- 2018-12-03 18:39:56]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 18:39:56]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 18:39:56]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 18:39:56]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 18:39:56]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 18:39:56]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 18:39:56]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 18:39:56]
+pythonException: invalid literal for int() with base 16: '0x7ffff7f57000 ...'
+[EXCEPTION -- 2018-12-03 18:39:56]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 18:39:56]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 18:39:56]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-03 18:39:56]
+pythonException: invalid frame
+[INFO -- 2018-12-03 18:39:56]
+Backtrace BEGIN:
+#0  0x00007ffff78d4c79 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff78d26f0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff76b0064 in start_thread (arg=0x7ffff4af7700) at pthread_create.c:309
+#3  0x00007ffff73e562d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+
+69	in dl-debug.c
+
+Backtrace END
+Memory content before bitflip:0x000x000xa00x40
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffe17c
+address max offset: 4
+Memory content after  bitflip:0x000x000xa00xc2
+frame name: nn_wrapper
+symbol name: target_long
+symbol filename: nn.c
+symbol line: 28
+value: -80
+value address: 0x7fffffffe17c
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-12-03 18:39:56]
+Fault Injection Successful after 1.16834306717s
+[INFO -- 2018-12-03 18:39:57]
+event type: exit
+[INFO -- 2018-12-03 18:39:57]
+exit code: 0
