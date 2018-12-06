@@ -1,0 +1,110 @@
+Faults Injected:;19857
+
+Fault Effect;#Effect;PVF
+Masked;10929;0.5503852545701767
+SDCs;3254;0.16387168253009016
+Crashes;5493;0.27662788940927635
+Hangs;181;0.009115173490456766
+
+FaultModels SDCs:
+FaultModel ;#SDCs;percentage
+Zero bit-flip;1273;39.12108174554395
+Double bit-flip;666;20.467117393976643
+LSB bit-flip;658;20.221266133988934
+Random bit-flip;657;20.190534726490473
+
+FaultModels Crashes:
+FaultModel ;#Crashes;percentage
+LSB bit-flip;1989;36.20972146368105
+Double bit-flip;1684;30.65720007281995
+Random bit-flip;1081;19.679592208265063
+Zero bit-flip;739;13.453486255233935
+
+FaultModels Hangs:
+FaultModel ;#Hangs;percentage
+Double bit-flip;85;46.96132596685083
+LSB bit-flip;68;37.569060773480665
+Random bit-flip;28;15.469613259668508
+
+Variables that caused SDCs:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+48.394004282655246;467;226;pt2;kmeans_clustering.c;102
+44.68937875751503;499;223;pt1;kmeans_clustering.c;101
+32.97872340425532;658;217;nclusters;kmeans_clustering.c;119
+30.061349693251532;652;196;nfeatures;kmeans_clustering.c;117
+96.51741293532339;201;194;loop;kmeans_clustering.c;124
+45.18072289156627;332;150;pt;kmeans_clustering.c;78
+32.07964601769911;452;145;ans;kmeans_clustering.c;106
+38.08139534883721;344;131;min_dist;kmeans_clustering.c;84
+27.718550106609808;469;130;i;kmeans_clustering.c;105
+27.23404255319149;470;128;attributes;cluster.c;80
+28.764044943820227;445;128;clusters;kmeans_clustering.c;127
+27.074235807860266;458;124;numdims;kmeans_clustering.c;103
+26.71081677704194;453;121;partial_new_centers_len;kmeans_clustering.c;133
+26.190476190476193;420;110;feature;kmeans_clustering.c;116
+31.502890173410403;346;109;nfeatures;kmeans_clustering.c;79
+16.666666666666664;648;108;npoints;kmeans_clustering.c;118
+47.11111111111111;225;106;nclusters;kmeans.c;107
+55.49132947976878;173;96;numAttributes;kmeans.c;115
+18.526785714285715;448;83;i;kmeans_clustering.c;124
+34.80392156862745;204;71;new_centers_len;kmeans_clustering.c;125
+33.49514563106796;206;69;nthreads;kmeans_clustering.c;132
+14.37908496732026;459;66;partial_new_centers;kmeans_clustering.c;134
+19.798657718120804;298;59;pts;kmeans_clustering.c;80
+14.666666666666666;300;44;npts;kmeans_clustering.c;81
+14.052287581699346;306;43;i;kmeans_clustering.c;83
+6.373292867981791;659;42;delta;kmeans_clustering.c;128
+23.668639053254438;169;40;attributes;kmeans.c;111
+7.975460122699387;326;26;index;kmeans_clustering.c;83
+5.386416861826698;427;23;j;kmeans_clustering.c;124
+9.787234042553191;235;23;threshold;kmeans_clustering.c;120
+5.627705627705628;231;13;index;kmeans_clustering.c;124
+1.6891891891891893;296;5;dist;kmeans_clustering.c;88
+2.336448598130841;214;5;new_centers;kmeans_clustering.c;126
+
+Variables that caused Crash:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+84.80492813141683;487;413;cluster_centres;cluster.c;83
+60.78431372549019;459;279;partial_new_centers;kmeans_clustering.c;134
+37.08206686930091;658;244;nclusters;kmeans_clustering.c;119
+33.895705521472394;652;221;nfeatures;kmeans_clustering.c;117
+44.08817635270541;499;220;pt1;kmeans_clustering.c;101
+47.640449438202246;445;212;clusters;kmeans_clustering.c;127
+45.916114790286976;453;208;partial_new_centers_len;kmeans_clustering.c;133
+69.12751677852349;298;206;pts;kmeans_clustering.c;80
+47.85714285714286;420;201;feature;kmeans_clustering.c;116
+42.82655246252677;467;200;pt2;kmeans_clustering.c;102
+42.5764192139738;458;195;numdims;kmeans_clustering.c;103
+61.33333333333333;300;184;npts;kmeans_clustering.c;81
+100.0;180;180;out_filename;kmeans.c;109
+38.37953091684435;469;180;i;kmeans_clustering.c;105
+34.274193548387096;496;170;membership;cluster.c;87
+71.61016949152543;236;169;tid;kmeans_clustering.c;186
+71.96261682242991;214;154;new_centers;kmeans_clustering.c;126
+66.50485436893204;206;137;nthreads;kmeans_clustering.c;132
+29.017857142857146;448;130;i;kmeans_clustering.c;124
+36.99421965317919;346;128;nfeatures;kmeans_clustering.c;79
+38.25301204819277;332;127;pt;kmeans_clustering.c;78
+66.30434782608695;184;122;cluster_centres;kmeans.c;112
+52.888888888888886;225;119;nclusters;kmeans.c;107
+38.23529411764706;306;117;i;kmeans_clustering.c;83
+16.666666666666664;648;108;npoints;kmeans_clustering.c;118
+24.429223744292237;438;107;membership;kmeans_clustering.c;121
+51.9607843137255;204;106;new_centers_len;kmeans_clustering.c;125
+62.1301775147929;169;105;attributes;kmeans.c;111
+21.48936170212766;470;101;attributes;cluster.c;80
+29.447852760736197;326;96;index;kmeans_clustering.c;83
+44.50867052023121;173;77;numAttributes;kmeans.c;115
+40.88397790055249;181;74;num_omp_threads;kmeans.c;86
+38.21989528795812;191;73;buf;kmeans.c;110
+28.13852813852814;231;65;index;kmeans_clustering.c;124
+7.728337236533958;427;33;j;kmeans_clustering.c;124
+20.915032679738562;153;32;file;kmeans.c;252
+
+Variables that caused Hang:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+52.84974093264248;193;102;nloops;kmeans.c;119
+20.441988950276244;181;37;num_omp_threads;kmeans.c;86
+14.499999999999998;200;29;i;kmeans.c;113
+1.8404907975460123;652;12;nfeatures;kmeans_clustering.c;117
+0.22075055187637968;453;1;partial_new_centers_len;kmeans_clustering.c;133
