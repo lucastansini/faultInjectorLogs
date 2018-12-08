@@ -1,0 +1,52 @@
+[INFO -- 2018-12-05 17:31:53]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-05 17:31:53]
+Initialization strings:
+[INFO -- 2018-12-05 17:31:53]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/kmeans
+[INFO -- 2018-12-05 17:31:53]
+(2) set args -i /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt -o /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/saida_falha.txt
+[INFO -- 2018-12-05 17:31:53]
+initSignal:0
+[INFO -- 2018-12-05 17:31:53]
+endSignal:55
+[INFO -- 2018-12-05 17:31:53]
+faultModel:4
+[INFO -- 2018-12-05 17:31:53]
+Backtrace BEGIN:
+#0  kmeans_wrapper (isBinaryFile=0, filename=0x7fffffffe135 "/home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt", threshold=0,00100000005, nclusters=5) at kmeans.c:167
+#1  0x00000000004025d4 in main (argc=5, argv=0x7fffffffde18) at kmeans.c:304
+
+162	        rewind(infile);
+163	        i = 0;
+164	        while (fgets(line, 1024, infile) != NULL) {
+165	            if (strtok(line, " \t\n") == NULL) continue;
+166	            for (j=0; j<numAttributes; j++) {
+167	                buf[i] = atof(strtok(NULL, " ,\t\n"));
+168	                i++;
+169	            }
+170	        }
+171	        fclose(infile);
+
+Backtrace END
+Memory content before bitflip:0x010x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x603110 
+address max offset: 4
+Memory content after  bitflip:0x010x000x000x80
+frame name: main
+symbol name: num_omp_threads
+symbol filename: kmeans.c
+symbol line: 86
+value: -2147483647
+value address: 0x603110 <num_omp_threads>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-05 17:31:53]
+Fault Injection Successful after 0.3978893756866455s
+[INFO -- 2018-12-05 17:31:53]
+event type: exit
+[EXCEPTION -- 2018-12-05 17:31:53]
+exit code: no exit code available

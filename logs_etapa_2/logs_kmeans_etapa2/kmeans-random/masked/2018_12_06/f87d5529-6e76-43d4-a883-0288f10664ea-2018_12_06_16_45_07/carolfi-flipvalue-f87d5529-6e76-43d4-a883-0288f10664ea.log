@@ -1,0 +1,56 @@
+[INFO -- 2018-12-06 16:44:11]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-06 16:44:11]
+Initialization strings:
+[INFO -- 2018-12-06 16:44:11]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/kmeans
+[INFO -- 2018-12-06 16:44:11]
+(2) set args -i /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt -o /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/saida_falha.txt
+[INFO -- 2018-12-06 16:44:11]
+initSignal:0
+[INFO -- 2018-12-06 16:44:11]
+endSignal:55
+[INFO -- 2018-12-06 16:44:11]
+faultModel:2
+[INFO -- 2018-12-06 16:44:15]
+Backtrace BEGIN:
+#0  0x000000000040193a in kmeans_clustering._omp_fn.0 () at kmeans_clustering.c:194
+#1  0x00007ffff7bb8d3f in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00000000004014c3 in kmeans_clustering (feature=0x7ffff7f55010, nfeatures=34, npoints=62500, nclusters=5, threshold=0,00100000005, membership=0x7ffff7f17010) at kmeans_clustering.c:183
+#3  0x0000000000401b42 in cluster (numObjects=62500, numAttributes=34, attributes=0x7ffff7f55010, nclusters=5, threshold=0,00100000005, cluster_centres=0x7fffffffd880) at cluster.c:94
+#4  0x000000000040211b in kmeans_wrapper (isBinaryFile=0, filename=0x7fffffffe135 "/home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt", threshold=0,00100000005, nclusters=5) at kmeans.c:180
+#5  0x00000000004025d4 in main (argc=5, argv=0x7fffffffde18) at kmeans.c:304
+
+189	                        firstprivate(npoints,nclusters,nfeatures) \
+190	                        schedule(static) \
+191	                        reduction(+:delta)
+192	            for (i=0; i<npoints; i++) {
+193		        /* find the index of nestest cluster centers */					
+194		        index = find_nearest_point(feature[i],
+195			             nfeatures,
+196			             clusters,
+197			             nclusters);				
+198		        /* if membership changes, increase delta by 1 */
+
+Backtrace END
+Memory content before bitflip:0x6f0x120x830x3a
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffdd00
+address max offset: 4
+Memory content after  bitflip:0x3a0xc00x350xcb
+frame name: main
+symbol name: threshold
+symbol filename: kmeans.c
+symbol line: 266
+value: -11911226
+value address: 0x7fffffffdd00
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-12-06 16:44:15]
+Fault Injection Successful after 4.711676597595215s
+[INFO -- 2018-12-06 16:45:07]
+event type: exit
+[INFO -- 2018-12-06 16:45:07]
+exit code: 0

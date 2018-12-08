@@ -1,0 +1,63 @@
+[INFO -- 2018-12-05 20:11:56]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-05 20:11:56]
+Initialization strings:
+[INFO -- 2018-12-05 20:11:56]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/kmeans
+[INFO -- 2018-12-05 20:11:56]
+(2) set args -i /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt -o /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/saida_falha.txt
+[INFO -- 2018-12-05 20:11:56]
+initSignal:0
+[INFO -- 2018-12-05 20:11:56]
+endSignal:55
+[INFO -- 2018-12-05 20:11:56]
+faultModel:2
+[INFO -- 2018-12-05 20:11:59]
+Backtrace BEGIN:
+#0  0x0000000000400f86 in euclid_dist_2 (pt1=0x7ffff655a688, pt2=0x6041f8, numdims=34) at kmeans_clustering.c:109
+#1  0x0000000000400efb in find_nearest_point (pt=0x7ffff655a688, nfeatures=34, pts=0x604030, npts=5) at kmeans_clustering.c:89
+#2  0x0000000000401952 in kmeans_clustering._omp_fn.0 () at kmeans_clustering.c:194
+#3  0x00007ffff7bb8d3f in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x00000000004014c3 in kmeans_clustering (feature=0x7ffff7f55010, nfeatures=34, npoints=62500, nclusters=5, threshold=0,00100000005, membership=0x7ffff7f17010) at kmeans_clustering.c:183
+#5  0x0000000000401b42 in cluster (numObjects=62500, numAttributes=34, attributes=0x7ffff7f55010, nclusters=5, threshold=0,00100000005, cluster_centres=0x7fffffffd880) at cluster.c:94
+#6  0x000000000040211b in kmeans_wrapper (isBinaryFile=0, filename=0x7fffffffe135 "/home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt", threshold=0,00100000005, nclusters=5) at kmeans.c:180
+#7  0x00000000004025d4 in main (argc=5, argv=0x7fffffffde18) at kmeans.c:304
+
+104	{
+105	    int i;
+106	    float ans=0.0;
+107	
+108	    for (i=0; i<numdims; i++)
+109	        ans += (pt1[i]-pt2[i]) * (pt1[i]-pt2[i]);
+110	
+111	    return(ans);
+112	}
+113	
+
+Backtrace END
+Fliping array at pos: 762
+Memory content before bitflip:0x69
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffdb9a 
+address max offset: 1
+Memory content after  bitflip:0x23
+frame name: kmeans_wrapper
+symbol name: line
+symbol filename: kmeans.c
+symbol line: 109
+value: "62499\000\070\070\000\071\063\000\061\066\064\000\065\063\000\061\065\065\000\062\061\060\000\062\060\060\000\061\065\064\000\062\070\000\062\060\063\000\061\060\066\000\061\067\063\000\061\067\064\000\062\062\061\000\062\062\064\000\070\062\000\062\060\070\000\063\061\000\061\066\066\000\061\060\071\000\062\061\070\000\062\062\071\000\063\061\000\061\063\063\000\061\063\060\000\071\062\000\063\000\071\067\000\062\062\060\000\061\063\064\000\061\062\064\000\065\062\000\062\062\070\000\063\062\000\n\000\n\000\062\000\n\000\000\000\000\000\000\000\000\310M]\367\377\177\000\000\270\332\377\377\377\177\000\000\220\332\377\377\377\177\000\000\b>\375\367\377\177\000\000\001\000\000\000\000\000\000\000\060M\375\367\377\177\000\000\330I\375\367\377\177\000\000"...
+value address: 0x7fffffffd8a0
+Type: The type is an array.
+Type sizeof: 1024
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 1023)
+
+[INFO -- 2018-12-05 20:11:59]
+Fault Injection Successful after 3.0386171340942383s
+[INFO -- 2018-12-05 20:12:52]
+event type: exit
+[INFO -- 2018-12-05 20:12:52]
+exit code: 0

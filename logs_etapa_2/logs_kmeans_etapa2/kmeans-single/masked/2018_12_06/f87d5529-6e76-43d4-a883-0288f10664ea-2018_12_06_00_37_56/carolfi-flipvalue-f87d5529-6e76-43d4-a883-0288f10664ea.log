@@ -1,0 +1,56 @@
+[INFO -- 2018-12-06 00:37:00]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-06 00:37:00]
+Initialization strings:
+[INFO -- 2018-12-06 00:37:00]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/kmeans
+[INFO -- 2018-12-06 00:37:00]
+(2) set args -i /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt -o /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/saida_falha.txt
+[INFO -- 2018-12-06 00:37:00]
+initSignal:0
+[INFO -- 2018-12-06 00:37:00]
+endSignal:55
+[INFO -- 2018-12-06 00:37:00]
+faultModel:1
+[INFO -- 2018-12-06 00:37:02]
+Backtrace BEGIN:
+#0  0x0000000000401a73 in kmeans_clustering._omp_fn.0 () at kmeans_clustering.c:208
+#1  0x00007ffff7bb8d3f in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00000000004014c3 in kmeans_clustering (feature=0x7ffff7f55010, nfeatures=34, npoints=62500, nclusters=5, threshold=0,00100000005, membership=0x7ffff7f17010) at kmeans_clustering.c:183
+#3  0x0000000000401b42 in cluster (numObjects=62500, numAttributes=34, attributes=0x7ffff7f55010, nclusters=5, threshold=0,00100000005, cluster_centres=0x7fffffffd880) at cluster.c:94
+#4  0x000000000040211b in kmeans_wrapper (isBinaryFile=0, filename=0x7fffffffe135 "/home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt", threshold=0,00100000005, nclusters=5) at kmeans.c:180
+#5  0x00000000004025d4 in main (argc=5, argv=0x7fffffffde18) at kmeans.c:304
+
+203					
+204		        /* update new cluster centers : sum of all objects located
+205			       within */
+206		        partial_new_centers_len[tid][index]++;				
+207		        for (j=0; j<nfeatures; j++)
+208			       partial_new_centers[tid][index][j] += feature[i][j];
+209	            }
+210	        } /* end of #pragma omp parallel */
+211	
+212	        /* let the main thread perform the array reduction */
+
+Backtrace END
+Memory content before bitflip:0x240xf40x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd68c
+address max offset: 4
+Memory content after  bitflip:0x000xf40x000x00
+frame name: kmeans_clustering._omp_fn.0
+symbol name: npoints
+symbol filename: kmeans_clustering.c
+symbol line: 118
+value: 62464
+value address: 0x7fffffffd68c
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-06 00:37:02]
+Fault Injection Successful after 2.080801486968994s
+[INFO -- 2018-12-06 00:37:56]
+event type: exit
+[INFO -- 2018-12-06 00:37:56]
+exit code: 0

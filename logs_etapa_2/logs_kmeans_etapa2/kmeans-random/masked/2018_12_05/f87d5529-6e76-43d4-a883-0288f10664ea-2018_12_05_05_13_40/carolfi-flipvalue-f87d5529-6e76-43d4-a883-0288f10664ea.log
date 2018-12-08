@@ -1,0 +1,46 @@
+[INFO -- 2018-12-05 05:12:44]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-05 05:12:44]
+Initialization strings:
+[INFO -- 2018-12-05 05:12:44]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/kmeans
+[INFO -- 2018-12-05 05:12:44]
+(2) set args -i /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt -o /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/saida_falha.txt
+[INFO -- 2018-12-05 05:12:44]
+initSignal:0
+[INFO -- 2018-12-05 05:12:44]
+endSignal:55
+[INFO -- 2018-12-05 05:12:44]
+faultModel:2
+[INFO -- 2018-12-05 05:12:45]
+Backtrace BEGIN:
+#0  str_to_mpn (str=str@entry=0x7fffffffd8b3 "114", digcnt=digcnt@entry=3, n=n@entry=0x7fffffffd440, nsize=nsize@entry=0x7fffffffd410, exponent=exponent@entry=0x7fffffffd420, decimal_len=decimal_len@entry=1, thousands=thousands@entry=0x0, decimal=0x7ffff774614b <dot> ".") at strtod_l.c:337
+#1  0x00007ffff76061e1 in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=0x0, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1176
+#2  0x0000000000402033 in kmeans_wrapper (isBinaryFile=0, filename=0x7fffffffe135 "/home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt", threshold=0,00100000005, nclusters=5) at kmeans.c:167
+#3  0x00000000004025d4 in main (argc=5, argv=0x7fffffffde18) at kmeans.c:304
+
+332	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd3a0
+address max offset: 8
+Memory content after  bitflip:0xb80x110xe40x740x440x330x6c0xa5
+frame name: str_to_mpn
+symbol name: thousands
+symbol filename: strtod_l.c
+symbol line: 340
+value: 0x0
+value address: 0x7fffffffd3a0
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-05 05:12:45]
+Fault Injection Successful after 1.1213319301605225s
+[INFO -- 2018-12-05 05:13:40]
+event type: exit
+[INFO -- 2018-12-05 05:13:40]
+exit code: 0

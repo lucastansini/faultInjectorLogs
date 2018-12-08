@@ -1,0 +1,44 @@
+[INFO -- 2018-12-06 15:22:29]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-06 15:22:29]
+Initialization strings:
+[INFO -- 2018-12-06 15:22:29]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/kmeans
+[INFO -- 2018-12-06 15:22:29]
+(2) set args -i /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt -o /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/saida_falha.txt
+[INFO -- 2018-12-06 15:22:29]
+initSignal:0
+[INFO -- 2018-12-06 15:22:29]
+endSignal:55
+[INFO -- 2018-12-06 15:22:29]
+faultModel:1
+[INFO -- 2018-12-06 15:22:57]
+Backtrace BEGIN:
+#0  strtok () at ../sysdeps/x86_64/strtok.S:73
+#1  0x000000000040202b in kmeans_wrapper (isBinaryFile=0, filename=0x7fffffffe135 "/home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt", threshold=0,00100000005, nclusters=5) at kmeans.c:167
+#2  0x00000000004025f7 in main (argc=5, argv=0x7fffffffde18) at kmeans.c:305
+
+68	../sysdeps/x86_64/strtok.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x010x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x603110 
+address max offset: 4
+Memory content after  bitflip:0x490x000x000x00
+frame name: kmeans_wrapper
+symbol name: num_omp_threads
+symbol filename: kmeans.c
+symbol line: 86
+value: 73
+value address: 0x603110 <num_omp_threads>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-06 15:22:57]
+Fault Injection Successful after 28.33952760696411s
+[INFO -- 2018-12-06 15:23:05]
+event type: exit
+[INFO -- 2018-12-06 15:23:05]
+exit code: 0

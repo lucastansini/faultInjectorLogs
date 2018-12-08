@@ -1,0 +1,49 @@
+[INFO -- 2018-12-05 14:55:59]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-05 14:55:59]
+Initialization strings:
+[INFO -- 2018-12-05 14:55:59]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/kmeans
+[INFO -- 2018-12-05 14:55:59]
+(2) set args -i /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt -o /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/saida_falha.txt
+[INFO -- 2018-12-05 14:55:59]
+initSignal:0
+[INFO -- 2018-12-05 14:55:59]
+endSignal:55
+[INFO -- 2018-12-05 14:55:59]
+faultModel:1
+[INFO -- 2018-12-05 14:56:27]
+Backtrace BEGIN:
+#0  __GI_____strtod_l_internal (nptr=<optimized out>, endptr=0x0, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1068
+#1  0x0000000000402033 in kmeans_wrapper (isBinaryFile=0, filename=0x7fffffffe135 "/home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt", threshold=0,00100000005, nclusters=5) at kmeans.c:167
+#2  0x00000000004025f7 in main (argc=5, argv=0x7fffffffde18) at kmeans.c:305
+
+1063	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 12
+Memory content before bitflip:0x5f
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff774cbac  
+address max offset: 1
+Memory content after  bitflip:0x3f
+frame name: __GI_____strtod_l_internal
+symbol name: __PRETTY_FUNCTION__
+symbol filename: strtod_l.c
+symbol line: 0
+value: "____strtod_l?internal"
+value address: 0x7ffff774cba0 <__PRETTY_FUNCTION__.11542>
+Type: The type is an array.
+Type sizeof: 22
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 21)
+
+[INFO -- 2018-12-05 14:56:27]
+Fault Injection Successful after 28.748595714569092s
+[INFO -- 2018-12-05 14:56:54]
+event type: exit
+[INFO -- 2018-12-05 14:56:54]
+exit code: 0

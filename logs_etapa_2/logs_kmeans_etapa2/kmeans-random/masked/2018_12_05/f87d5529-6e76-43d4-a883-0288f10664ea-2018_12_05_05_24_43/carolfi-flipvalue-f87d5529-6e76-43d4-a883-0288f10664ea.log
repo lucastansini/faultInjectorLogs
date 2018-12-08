@@ -1,0 +1,49 @@
+[INFO -- 2018-12-05 05:23:47]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-05 05:23:47]
+Initialization strings:
+[INFO -- 2018-12-05 05:23:47]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/kmeans
+[INFO -- 2018-12-05 05:23:47]
+(2) set args -i /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt -o /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/saida_falha.txt
+[INFO -- 2018-12-05 05:23:47]
+initSignal:0
+[INFO -- 2018-12-05 05:23:47]
+endSignal:55
+[INFO -- 2018-12-05 05:23:47]
+faultModel:2
+[INFO -- 2018-12-05 05:23:47]
+Backtrace BEGIN:
+#0  0x00007ffff76063a1 in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1303
+#1  0x0000000000402033 in kmeans_wrapper (isBinaryFile=0, filename=0x7fffffffe135 "/home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt", threshold=0,00100000005, nclusters=5) at kmeans.c:167
+#2  0x00000000004025d4 in main (argc=5, argv=0x7fffffffde18) at kmeans.c:304
+
+1298	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 929
+Memory content before bitflip:0xdc
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffdc41 
+address max offset: 1
+Memory content after  bitflip:0xd1
+frame name: kmeans_wrapper
+symbol name: line
+symbol filename: kmeans.c
+symbol line: 109
+value: "51918\000\061\064\062\000\065\064\000\061\067\065\000\063\000\061\063\061\000\065\064\000\063\070\000\071\066\000\061\062\066\000\064\070\000\062\062\000\062\066\000\061\065\061 93 59 190 223 161 56 37 169 99 14 141 105 122 237 72 60 182 106 202 236 26 \n\000\061\062\064\000\062\061\067\000\n\000\000\000\000\000\000\000\000\000\310M]\367\377\177\000\000\270\332\377\377\377\177\000\000\220\332\377\377\377\177\000\000\b>\375\367\377\177\000\000\001\000\000\000\000\000\000\000\060M\375\367\377\177\000\000\330I\375\367\377\177\000\000"...
+value address: 0x7fffffffd8a0
+Type: The type is an array.
+Type sizeof: 1024
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 1023)
+
+[INFO -- 2018-12-05 05:23:47]
+Fault Injection Successful after 0.9610195159912109s
+[INFO -- 2018-12-05 05:24:43]
+event type: exit
+[INFO -- 2018-12-05 05:24:43]
+exit code: 0

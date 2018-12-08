@@ -1,0 +1,49 @@
+[INFO -- 2018-12-07 00:54:28]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-07 00:54:28]
+Initialization strings:
+[INFO -- 2018-12-07 00:54:28]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/kmeans
+[INFO -- 2018-12-07 00:54:28]
+(2) set args -i /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt -o /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/saida_falha.txt
+[INFO -- 2018-12-07 00:54:28]
+initSignal:0
+[INFO -- 2018-12-07 00:54:28]
+endSignal:55
+[INFO -- 2018-12-07 00:54:28]
+faultModel:4
+[INFO -- 2018-12-07 00:54:28]
+Backtrace BEGIN:
+#0  __GI_____strtod_l_internal (nptr=<optimized out>, endptr=0x0, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1032
+#1  0x0000000000402033 in kmeans_wrapper (isBinaryFile=0, filename=0x7fffffffe135 "/home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt", threshold=0,00100000005, nclusters=5) at kmeans.c:167
+#2  0x00000000004025d4 in main (argc=5, argv=0x7fffffffde18) at kmeans.c:304
+
+1027	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping array at pos: 40
+Memory content before bitflip:0x000x000x000x000x2c0x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd760
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x2c0x000x000x10
+frame name: __GI_____strtod_l_internal
+symbol name: den
+symbol filename: strtod_l.c
+symbol line: 494
+value: {140737343475144, 4195104, 4294967296, 4294968931, 0, 140737488345032, 140737488344992, 140737353954880, 1, 140737354130720, 140737354129864, 140737351928369, 0, 140737353954880, 140733193388033, 0, 18446744069414584321, 140737354129864, 4096, 140737343854662, 2050, 4877817, 0, 140737354130720, 140737488344848, 140737488344832, 2090089583, 4196184, 4294967295, 1544124778, 140737343460984, 140737353959896, 989028988, 140737343935433, 989028988, 0, 657664, 0, 0, 32, 1152921693585408000, 0 <repeats 18 times>}
+value address: 0x7fffffffd620
+Type: The type is an array.
+Type sizeof: 472
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 58)
+
+[INFO -- 2018-12-07 00:54:28]
+Fault Injection Successful after 0.4868004322052002s
+[INFO -- 2018-12-07 00:55:23]
+event type: exit
+[INFO -- 2018-12-07 00:55:23]
+exit code: 0

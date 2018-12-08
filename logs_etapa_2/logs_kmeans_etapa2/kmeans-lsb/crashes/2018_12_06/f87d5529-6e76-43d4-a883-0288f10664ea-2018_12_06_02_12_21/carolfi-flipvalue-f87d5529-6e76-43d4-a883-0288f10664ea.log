@@ -1,0 +1,48 @@
+[INFO -- 2018-12-06 02:12:15]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-06 02:12:15]
+Initialization strings:
+[INFO -- 2018-12-06 02:12:15]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/kmeans
+[INFO -- 2018-12-06 02:12:15]
+(2) set args -i /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt -o /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/saida_falha.txt
+[INFO -- 2018-12-06 02:12:15]
+initSignal:0
+[INFO -- 2018-12-06 02:12:15]
+endSignal:55
+[INFO -- 2018-12-06 02:12:15]
+faultModel:4
+[INFO -- 2018-12-06 02:12:15]
+Backtrace BEGIN:
+#0  __memcpy_sse2 () at ../sysdeps/x86_64/multiarch/../memcpy.S:98
+#1  0x00007ffff76332e4 in __GI__IO_getline_info (fp=fp@entry=0x604030, buf=buf@entry=0x7fffffffd8a0 "60352 97 202 17 187 89 66 0 41 43 70 22 88 231 120 51 238 238 143 46 79 200 225 185 238 59 49 165 205  120 183 146 143 76 26 \n", n=1023, delim=delim@entry=10, extract_delim=extract_delim@entry=1, eof=eof@entry=0x0) at iogetline.c:105
+#2  0x00007ffff7633368 in __GI__IO_getline (fp=fp@entry=0x604030, buf=buf@entry=0x7fffffffd8a0 "60352 97 202 17 187 89 66 0 41 43 70 22 88 231 120 51 238 238 143 46 79 200 225 185 238 59 49 165 205  120 183 146 143 76 26 \n", n=<optimized out>, delim=delim@entry=10, extract_delim=extract_delim@entry=1) at iogetline.c:38
+#3  0x00007ffff7632206 in _IO_fgets (buf=0x7fffffffd8a0 "60352 97 202 17 187 89 66 0 41 43 70 22 88 231 120 51 238 238 143 46 79 200 225 185 238 59 49 165 205  120 183 146 143 76 26 \n", n=<optimized out>, fp=0x604030) at iofgets.c:56
+#4  0x0000000000401e74 in kmeans_wrapper (isBinaryFile=0, filename=0x7fffffffe135 "/home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt", threshold=0,00100000005, nclusters=5) at kmeans.c:143
+#5  0x00000000004025d4 in main (argc=5, argv=0x7fffffffde18) at kmeans.c:304
+
+93	../sysdeps/x86_64/multiarch/../memcpy.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x940x650xff0xf70xff0x7f0x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd7c8
+address max offset: 8
+Memory content after  bitflip:0x940x650xff0xf70xff0x7f0x000x01
+frame name: __GI__IO_getline_info
+symbol name: t
+symbol filename: iogetline.c
+symbol line: 91
+value: 0x7ffff7ff6594 "60353 221 21 59 221 63 102 36 85 190 11 206 241 249 188 128 39 11 72 8 196 54 67 245 219 17 182 205 248 215 137 241 180 158 44 \n60354 146 221 146 182 51 80 193 1 65 186 189 193 226 201 10 234 141 64 4"...
+value address: 0x7fffffffd7c8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-06 02:12:15]
+Fault Injection Successful after 0.7454879283905029s
+[INFO -- 2018-12-06 02:12:16]
+event type: exit
+[EXCEPTION -- 2018-12-06 02:12:16]
+exit code: no exit code available

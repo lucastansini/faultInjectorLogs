@@ -1,0 +1,45 @@
+[INFO -- 2018-12-04 23:36:26]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-04 23:36:26]
+Initialization strings:
+[INFO -- 2018-12-04 23:36:26]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/kmeans
+[INFO -- 2018-12-04 23:36:26]
+(2) set args -i /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt -o /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/saida_falha.txt
+[INFO -- 2018-12-04 23:36:26]
+initSignal:0
+[INFO -- 2018-12-04 23:36:26]
+endSignal:55
+[INFO -- 2018-12-04 23:36:26]
+faultModel:4
+[INFO -- 2018-12-04 23:36:26]
+Backtrace BEGIN:
+#0  strtok () at ../sysdeps/x86_64/strtok.S:93
+#1  0x000000000040202b in kmeans_wrapper (isBinaryFile=0, filename=0x7fffffffe135 "/home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt", threshold=0,00100000005, nclusters=5) at kmeans.c:167
+#2  0x00000000004025d4 in main (argc=5, argv=0x7fffffffde18) at kmeans.c:304
+
+88	../sysdeps/x86_64/strtok.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x2f
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffe135 
+address max offset: 1
+Memory content after  bitflip:0x2e
+frame name: kmeans_wrapper
+symbol name: filename
+symbol filename: kmeans.c
+symbol line: 103
+value: 0x7fffffffe135 ".home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt"
+value address: 0x7fffffffd850
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-04 23:36:26]
+Fault Injection Successful after 0.8826148509979248s
+[INFO -- 2018-12-04 23:36:55]
+event type: exit
+[INFO -- 2018-12-04 23:36:55]
+exit code: 1

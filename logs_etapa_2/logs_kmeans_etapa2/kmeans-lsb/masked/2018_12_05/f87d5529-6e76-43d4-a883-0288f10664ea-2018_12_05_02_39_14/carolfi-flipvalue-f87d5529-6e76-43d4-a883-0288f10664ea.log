@@ -1,0 +1,47 @@
+[INFO -- 2018-12-05 02:38:13]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-05 02:38:13]
+Initialization strings:
+[INFO -- 2018-12-05 02:38:13]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/kmeans
+[INFO -- 2018-12-05 02:38:13]
+(2) set args -i /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt -o /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/saida_falha.txt
+[INFO -- 2018-12-05 02:38:13]
+initSignal:0
+[INFO -- 2018-12-05 02:38:13]
+endSignal:55
+[INFO -- 2018-12-05 02:38:13]
+faultModel:4
+[INFO -- 2018-12-05 02:38:13]
+Backtrace BEGIN:
+#0  __memcpy_sse2 () at ../sysdeps/x86_64/multiarch/../memcpy.S:188
+#1  0x00007ffff76332e4 in __GI__IO_getline_info (fp=fp@entry=0x604030, buf=buf@entry=0x7fffffffd8a0 "58501", n=1023, delim=delim@entry=10, extract_delim=extract_delim@entry=1, eof=eof@entry=0x0) at iogetline.c:105
+#2  0x00007ffff7633368 in __GI__IO_getline (fp=fp@entry=0x604030, buf=buf@entry=0x7fffffffd8a0 "58501", n=<optimized out>, delim=delim@entry=10, extract_delim=extract_delim@entry=1) at iogetline.c:38
+#3  0x00007ffff7632206 in _IO_fgets (buf=0x7fffffffd8a0 "58501", n=<optimized out>, fp=0x604030) at iofgets.c:56
+#4  0x0000000000402072 in kmeans_wrapper (isBinaryFile=0, filename=0x7fffffffe135 "/home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt", threshold=0,00100000005, nclusters=5) at kmeans.c:164
+#5  0x00000000004025d4 in main (argc=5, argv=0x7fffffffde18) at kmeans.c:304
+
+183	../sysdeps/x86_64/multiarch/../memcpy.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x6f0x120x830x3a
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffdd00
+address max offset: 4
+Memory content after  bitflip:0x6f0x120x830x3e
+frame name: main
+symbol name: threshold
+symbol filename: kmeans.c
+symbol line: 266
+value: 0,256000012
+value address: 0x7fffffffdd00
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-12-05 02:38:13]
+Fault Injection Successful after 0.4339902400970459s
+[INFO -- 2018-12-05 02:39:09]
+event type: exit
+[INFO -- 2018-12-05 02:39:09]
+exit code: 0

@@ -1,0 +1,46 @@
+[INFO -- 2018-12-07 02:00:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-07 02:00:27]
+Initialization strings:
+[INFO -- 2018-12-07 02:00:27]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/kmeans
+[INFO -- 2018-12-07 02:00:27]
+(2) set args -i /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt -o /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/saida_falha.txt
+[INFO -- 2018-12-07 02:00:27]
+initSignal:0
+[INFO -- 2018-12-07 02:00:27]
+endSignal:55
+[INFO -- 2018-12-07 02:00:27]
+faultModel:3
+[INFO -- 2018-12-07 02:00:27]
+Backtrace BEGIN:
+#0  get_rounding_mode () at ../sysdeps/generic/get-rounding-mode.h:94
+#1  round_and_return (retval=retval@entry=0x7fffffffd430, exponent=exponent@entry=7, negative=negative@entry=0, round_limb=round_limb@entry=0, round_bit=round_bit@entry=0, more_bits=more_bits@entry=0) at strtod_l.c:202
+#2  0x00007ffff76063b1 in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1303
+#3  0x0000000000402033 in kmeans_wrapper (isBinaryFile=0, filename=0x7fffffffe135 "/home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt", threshold=0,00100000005, nclusters=5) at kmeans.c:167
+#4  0x00000000004025d4 in main (argc=5, argv=0x7fffffffde18) at kmeans.c:304
+
+89	../sysdeps/generic/get-rounding-mode.h: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x4b0xc10x1d0x530xd90x6d0x0b0x41
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffdd18
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: main
+symbol name: timing
+symbol filename: kmeans.c
+symbol line: 267
+value: 0
+value address: 0x7fffffffdd18
+Type: A floating point type.
+Type sizeof: 8
+
+[INFO -- 2018-12-07 02:00:27]
+Fault Injection Successful after 0.5318093299865723s
+[INFO -- 2018-12-07 02:01:22]
+event type: exit
+[INFO -- 2018-12-07 02:01:22]
+exit code: 0

@@ -1,0 +1,57 @@
+[INFO -- 2018-12-05 23:32:11]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-05 23:32:11]
+Initialization strings:
+[INFO -- 2018-12-05 23:32:11]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/kmeans
+[INFO -- 2018-12-05 23:32:11]
+(2) set args -i /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt -o /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/saida_falha.txt
+[INFO -- 2018-12-05 23:32:11]
+initSignal:0
+[INFO -- 2018-12-05 23:32:11]
+endSignal:55
+[INFO -- 2018-12-05 23:32:11]
+faultModel:2
+[INFO -- 2018-12-05 23:32:47]
+Backtrace BEGIN:
+#0  find_nearest_point (pt=0x7ffff5a46c78, nfeatures=34, pts=0x604310, npts=5) at kmeans_clustering.c:91
+#1  0x0000000000401952 in kmeans_clustering._omp_fn.0 () at kmeans_clustering.c:194
+#2  0x00007ffff7bb8d3f in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x00000000004014c3 in kmeans_clustering (feature=0x7ffff7eda010, nfeatures=34, npoints=62500, nclusters=5, threshold=0,00100000005, membership=0x604b20) at kmeans_clustering.c:183
+#4  0x0000000000401b42 in cluster (numObjects=62500, numAttributes=34, attributes=0x7ffff7eda010, nclusters=5, threshold=0,00100000005, cluster_centres=0x7fffffffd880) at cluster.c:94
+#5  0x000000000040211b in kmeans_wrapper (isBinaryFile=0, filename=0x7fffffffe135 "/home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt", threshold=0,00100000005, nclusters=5) at kmeans.c:180
+#6  0x00000000004025f7 in main (argc=5, argv=0x7fffffffde18) at kmeans.c:305
+
+86	    /* find the cluster center id with min distance to pt */
+87	    for (i=0; i<npts; i++) {
+88	        float dist;
+89	        dist = euclid_dist_2(pt, pts[i], nfeatures);  /* no need square root */
+90	        if (dist < min_dist) {
+91	            min_dist = dist;
+92	            index    = i;
+93	        }
+94	    }
+95	    return(index);
+
+Backtrace END
+Memory content before bitflip:0x220x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd698
+address max offset: 4
+Memory content after  bitflip:0x970x7a0x480x93
+frame name: kmeans_clustering._omp_fn.0
+symbol name: nfeatures
+symbol filename: kmeans_clustering.c
+symbol line: 117
+value: -1823966569
+value address: 0x7fffffffd698
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-05 23:32:47]
+Fault Injection Successful after 36.64230418205261s
+[INFO -- 2018-12-05 23:33:00]
+event type: exit
+[INFO -- 2018-12-05 23:33:00]
+exit code: 0

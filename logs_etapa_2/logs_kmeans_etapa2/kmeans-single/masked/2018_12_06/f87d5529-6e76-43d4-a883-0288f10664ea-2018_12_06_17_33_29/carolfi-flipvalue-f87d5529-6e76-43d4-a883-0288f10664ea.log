@@ -1,0 +1,49 @@
+[INFO -- 2018-12-06 17:32:08]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-06 17:32:08]
+Initialization strings:
+[INFO -- 2018-12-06 17:32:08]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/kmeans
+[INFO -- 2018-12-06 17:32:08]
+(2) set args -i /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt -o /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/saida_falha.txt
+[INFO -- 2018-12-06 17:32:08]
+initSignal:0
+[INFO -- 2018-12-06 17:32:08]
+endSignal:55
+[INFO -- 2018-12-06 17:32:08]
+faultModel:1
+[INFO -- 2018-12-06 17:32:21]
+Backtrace BEGIN:
+#0  0x00007ffff76b3360 in __read_nocancel () at ../sysdeps/unix/syscall-template.S:81
+#1  0x00007ffff763e5b0 in _IO_new_file_underflow (fp=0x604030) at fileops.c:613
+#2  0x00007ffff763f53e in __GI__IO_default_uflow (fp=0x604030) at genops.c:435
+#3  0x00007ffff7633274 in __GI__IO_getline_info (fp=fp@entry=0x604030, buf=buf@entry=0x7fffffffd8a0 "\340\065\375\367\377\177", n=1023, delim=delim@entry=10, extract_delim=extract_delim@entry=1, eof=eof@entry=0x0) at iogetline.c:69
+#4  0x00007ffff7633368 in __GI__IO_getline (fp=fp@entry=0x604030, buf=buf@entry=0x7fffffffd8a0 "\340\065\375\367\377\177", n=<optimized out>, delim=delim@entry=10, extract_delim=extract_delim@entry=1) at iogetline.c:38
+#5  0x00007ffff7632206 in _IO_fgets (buf=0x7fffffffd8a0 "\340\065\375\367\377\177", n=<optimized out>, fp=0x604030) at iofgets.c:56
+#6  0x0000000000401e74 in kmeans_wrapper (isBinaryFile=0, filename=0x7fffffffe135 "/home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt", threshold=0,00100000005, nclusters=5) at kmeans.c:143
+#7  0x00000000004025d4 in main (argc=5, argv=0x7fffffffde18) at kmeans.c:304
+
+76	../sysdeps/unix/syscall-template.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd85c
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x48
+frame name: kmeans_wrapper
+symbol name: isBinaryFile
+symbol filename: kmeans.c
+symbol line: 103
+value: 1207959552
+value address: 0x7fffffffd85c
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-06 17:32:21]
+Fault Injection Successful after 13.701343297958374s
+[INFO -- 2018-12-06 17:33:26]
+event type: exit
+[INFO -- 2018-12-06 17:33:26]
+exit code: 0

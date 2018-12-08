@@ -1,0 +1,45 @@
+[INFO -- 2018-12-05 20:46:05]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-05 20:46:05]
+Initialization strings:
+[INFO -- 2018-12-05 20:46:05]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/kmeans
+[INFO -- 2018-12-05 20:46:05]
+(2) set args -i /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt -o /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/saida_falha.txt
+[INFO -- 2018-12-05 20:46:05]
+initSignal:0
+[INFO -- 2018-12-05 20:46:05]
+endSignal:55
+[INFO -- 2018-12-05 20:46:05]
+faultModel:3
+[INFO -- 2018-12-05 20:46:05]
+Backtrace BEGIN:
+#0  0x00007ffff7605127 in round_and_return (retval=retval@entry=0x7fffffffd430, exponent=exponent@entry=6, negative=negative@entry=0, round_limb=round_limb@entry=0, round_bit=<optimized out>, round_bit@entry=0, more_bits=more_bits@entry=0) at strtod_l.c:300
+#1  0x00007ffff76063b1 in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1303
+#2  0x0000000000402033 in kmeans_wrapper (isBinaryFile=0, filename=0x7fffffffe135 "/home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt", threshold=0,00100000005, nclusters=5) at kmeans.c:167
+#3  0x00000000004025d4 in main (argc=5, argv=0x7fffffffde18) at kmeans.c:304
+
+295	strtod_l.c: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x010x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd878
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: kmeans_wrapper
+symbol name: nloops
+symbol filename: kmeans.c
+symbol line: 110
+value: 0
+value address: 0x7fffffffd878
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-05 20:46:05]
+Fault Injection Successful after 0.8365881443023682s
+[INFO -- 2018-12-05 20:46:33]
+event type: exit
+[EXCEPTION -- 2018-12-05 20:46:33]
+exit code: no exit code available

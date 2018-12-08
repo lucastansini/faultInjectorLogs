@@ -1,0 +1,46 @@
+[INFO -- 2018-12-05 23:17:50]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-05 23:17:50]
+Initialization strings:
+[INFO -- 2018-12-05 23:17:50]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/kmeans
+[INFO -- 2018-12-05 23:17:50]
+(2) set args -i /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt -o /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/saida_falha.txt
+[INFO -- 2018-12-05 23:17:50]
+initSignal:0
+[INFO -- 2018-12-05 23:17:50]
+endSignal:55
+[INFO -- 2018-12-05 23:17:50]
+faultModel:1
+[INFO -- 2018-12-05 23:18:18]
+Backtrace BEGIN:
+#0  strlen () at ../sysdeps/x86_64/strlen.S:108
+#1  0x00007ffff76053e9 in __GI_____strtod_l_internal (nptr=0x7fffffffd904 "57", endptr=0x0, group=<optimized out>, loc=0x7ffff7987060 <_nl_global_locale>) at strtod_l.c:572
+#2  0x0000000000402033 in kmeans_wrapper (isBinaryFile=0, filename=0x7fffffffe135 "/home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt", threshold=0,00100000005, nclusters=5) at kmeans.c:167
+#3  0x00000000004025f7 in main (argc=5, argv=0x7fffffffde18) at kmeans.c:305
+
+103	../sysdeps/x86_64/strlen.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd3c0
+address max offset: 8
+Memory content after  bitflip:0x000x000x820x000x000x000x000x00
+frame name: __GI_____strtod_l_internal
+symbol name: grouping
+symbol filename: strtod_l.c
+symbol line: 532
+value: 0x0
+value address: 0x7fffffffd3c0
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-05 23:18:18]
+Fault Injection Successful after 28.683409214019775s
+[INFO -- 2018-12-05 23:18:18]
+event type: exit
+[EXCEPTION -- 2018-12-05 23:18:18]
+exit code: no exit code available

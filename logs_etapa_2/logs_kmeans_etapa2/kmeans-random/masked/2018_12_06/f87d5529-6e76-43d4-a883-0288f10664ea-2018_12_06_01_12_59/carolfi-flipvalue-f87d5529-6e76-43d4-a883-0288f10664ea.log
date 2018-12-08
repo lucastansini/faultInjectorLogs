@@ -1,0 +1,52 @@
+[INFO -- 2018-12-06 01:12:03]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-06 01:12:03]
+Initialization strings:
+[INFO -- 2018-12-06 01:12:03]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/kmeans
+[INFO -- 2018-12-06 01:12:03]
+(2) set args -i /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt -o /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/saida_falha.txt
+[INFO -- 2018-12-06 01:12:03]
+initSignal:0
+[INFO -- 2018-12-06 01:12:03]
+endSignal:55
+[INFO -- 2018-12-06 01:12:03]
+faultModel:2
+[EXCEPTION -- 2018-12-06 01:12:31]
+pythonException: invalid literal for int() with base 16: '0x7ffff7ff5000 ...'
+[INFO -- 2018-12-06 01:12:31]
+Backtrace BEGIN:
+#0  0x00007ffff7604ed4 in round_and_return (retval=retval@entry=0x7fffffffd430, exponent=exponent@entry=7, negative=negative@entry=0, round_limb=round_limb@entry=0, round_bit=round_bit@entry=0, more_bits=more_bits@entry=0) at strtod_l.c:201
+#1  0x00007ffff76063b1 in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1303
+#2  0x0000000000402033 in kmeans_wrapper (isBinaryFile=0, filename=0x7fffffffe135 "/home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt", threshold=0,00100000005, nclusters=5) at kmeans.c:167
+#3  0x00000000004025f7 in main (argc=5, argv=0x7fffffffde18) at kmeans.c:305
+
+196	in strtod_l.c
+
+Backtrace END
+Fliping array at pos: 20
+Memory content before bitflip:0x6c
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff774cbb4  
+address max offset: 1
+Memory content after  bitflip:0x22
+frame name: __GI_____strtod_l_internal
+symbol name: __PRETTY_FUNCTION__
+symbol filename: strtod_l.c
+symbol line: 0
+value: "____strtod_l_interna\""
+value address: 0x7ffff774cba0 <__PRETTY_FUNCTION__.11542>
+Type: The type is an array.
+Type sizeof: 22
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 21)
+
+[INFO -- 2018-12-06 01:12:31]
+Fault Injection Successful after 28.92325520515442s
+[INFO -- 2018-12-06 01:12:59]
+event type: exit
+[INFO -- 2018-12-06 01:12:59]
+exit code: 0

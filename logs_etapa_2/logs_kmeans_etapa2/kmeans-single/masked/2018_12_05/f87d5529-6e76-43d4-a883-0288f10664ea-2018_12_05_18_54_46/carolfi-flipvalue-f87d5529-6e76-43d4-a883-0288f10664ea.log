@@ -1,0 +1,58 @@
+[INFO -- 2018-12-05 18:53:50]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-05 18:53:50]
+Initialization strings:
+[INFO -- 2018-12-05 18:53:50]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/kmeans
+[INFO -- 2018-12-05 18:53:50]
+(2) set args -i /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt -o /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/saida_falha.txt
+[INFO -- 2018-12-05 18:53:50]
+initSignal:0
+[INFO -- 2018-12-05 18:53:50]
+endSignal:55
+[INFO -- 2018-12-05 18:53:50]
+faultModel:1
+[INFO -- 2018-12-05 18:53:50]
+Backtrace BEGIN:
+#0  0x00007ffff7df373a in mmap64 () at ../sysdeps/unix/syscall-template.S:81
+#1  0x00007ffff7df1bf4 in __libc_memalign (align=align@entry=8, n=1056) at dl-minimal.c:77
+#2  0x00007ffff7df1c8d in malloc (n=<optimized out>) at dl-minimal.c:94
+#3  0x00007ffff7df1cac in calloc (nmemb=nmemb@entry=1056, size=size@entry=1) at dl-minimal.c:113
+#4  0x00007ffff7ddae8f in init_tls () at rtld.c:748
+#5  0x00007ffff7dde0ef in dl_main (phdr=<optimized out>, phdr@entry=0x400040, phnum=<optimized out>, phnum@entry=9, user_entry=user_entry@entry=0x7fffffffdd28, auxv=<optimized out>) at rtld.c:1850
+#6  0x00007ffff7df15f5 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffde10, dl_main=dl_main@entry=0x7ffff7ddc260 <dl_main>) at ../elf/dl-sysdep.c:249
+#7  0x00007ffff7ddbbb8 in _dl_start_final (arg=0x7fffffffde10) at rtld.c:347
+#8  _dl_start (arg=0x7fffffffde10) at rtld.c:573
+#9  0x00007ffff7ddb268 in _start () from /lib64/ld-linux-x86-64.so.2
+#10 0x0000000000000005 in ?? ()
+#11 0x00007fffffffe0dc in ?? ()
+#12 0x00007fffffffe132 in ?? ()
+#13 0x00007fffffffe135 in ?? ()
+#14 0x00007fffffffe193 in ?? ()
+#15 0x00007fffffffe196 in ?? ()
+#16 0x0000000000000000 in ?? ()
+
+76	../sysdeps/unix/syscall-template.S: Arquivo ou diretório não encontrado.
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff7ffcdf0 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x480x000x000x00
+frame name: _dl_start_final
+symbol name: __pointer_chk_guard_local
+symbol filename: rtld.c
+symbol line: 97
+value: 309237645312
+value address: 0x7ffff7ffcdf0 <__pointer_chk_guard_local>
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-12-05 18:53:50]
+Fault Injection Successful after 0.7457923889160156s
+[INFO -- 2018-12-05 18:54:46]
+event type: exit
+[INFO -- 2018-12-05 18:54:46]
+exit code: 0

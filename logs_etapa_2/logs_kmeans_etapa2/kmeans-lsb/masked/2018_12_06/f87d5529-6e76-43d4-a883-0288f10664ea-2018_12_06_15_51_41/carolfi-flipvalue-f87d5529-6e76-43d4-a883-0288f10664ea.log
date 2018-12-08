@@ -1,0 +1,58 @@
+[INFO -- 2018-12-06 15:50:45]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-06 15:50:45]
+Initialization strings:
+[INFO -- 2018-12-06 15:50:45]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/kmeans
+[INFO -- 2018-12-06 15:50:45]
+(2) set args -i /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt -o /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/saida_falha.txt
+[INFO -- 2018-12-06 15:50:45]
+initSignal:0
+[INFO -- 2018-12-06 15:50:45]
+endSignal:55
+[INFO -- 2018-12-06 15:50:45]
+faultModel:4
+[INFO -- 2018-12-06 15:50:53]
+Backtrace BEGIN:
+#0  0x0000000000400fb2 in euclid_dist_2 (pt1=0x7ffff6850808, pt2=0x6040e8, numdims=34) at kmeans_clustering.c:109
+#1  0x0000000000400efb in find_nearest_point (pt=0x7ffff6850808, nfeatures=34, pts=0x604030, npts=5) at kmeans_clustering.c:89
+#2  0x0000000000401952 in kmeans_clustering._omp_fn.0 () at kmeans_clustering.c:194
+#3  0x00007ffff7bb8d3f in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x00000000004014c3 in kmeans_clustering (feature=0x7ffff7f55010, nfeatures=34, npoints=62500, nclusters=5, threshold=0,00100000005, membership=0x7ffff7f17010) at kmeans_clustering.c:183
+#5  0x0000000000401b42 in cluster (numObjects=62500, numAttributes=34, attributes=0x7ffff7f55010, nclusters=5, threshold=0,00100000005, cluster_centres=0x7fffffffd880) at cluster.c:94
+#6  0x000000000040211b in kmeans_wrapper (isBinaryFile=0, filename=0x7fffffffe135 "/home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt", threshold=0,00100000005, nclusters=5) at kmeans.c:180
+#7  0x00000000004025d4 in main (argc=5, argv=0x7fffffffde18) at kmeans.c:304
+
+104	{
+105	    int i;
+106	    float ans=0.0;
+107	
+108	    for (i=0; i<numdims; i++)
+109	        ans += (pt1[i]-pt2[i]) * (pt1[i]-pt2[i]);
+110	
+111	    return(ans);
+112	}
+113	
+
+Backtrace END
+Memory content before bitflip:0x240xf40x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd81c
+address max offset: 4
+Memory content after  bitflip:0x240xf40x000x02
+frame name: cluster
+symbol name: numObjects
+symbol filename: cluster.c
+symbol line: 78
+value: 33616932
+value address: 0x7fffffffd81c
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-06 15:50:53]
+Fault Injection Successful after 8.836822271347046s
+[INFO -- 2018-12-06 15:51:40]
+event type: exit
+[INFO -- 2018-12-06 15:51:40]
+exit code: 0

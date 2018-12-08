@@ -1,0 +1,59 @@
+[INFO -- 2018-12-05 20:54:56]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-05 20:54:56]
+Initialization strings:
+[INFO -- 2018-12-05 20:54:56]
+(1) file /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/kmeans
+[INFO -- 2018-12-05 20:54:56]
+(2) set args -i /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt -o /home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/saida_falha.txt
+[INFO -- 2018-12-05 20:54:56]
+initSignal:0
+[INFO -- 2018-12-05 20:54:56]
+endSignal:55
+[INFO -- 2018-12-05 20:54:56]
+faultModel:2
+[INFO -- 2018-12-05 20:55:30]
+Backtrace BEGIN:
+#0  0x0000000000400fc1 in euclid_dist_2 (pt1=0x7ffff53e8df0, pt2=0x6043c8, numdims=34) at kmeans_clustering.c:109
+#1  0x0000000000400efb in find_nearest_point (pt=0x7ffff53e8df0, nfeatures=34, pts=0x604310, npts=5) at kmeans_clustering.c:89
+#2  0x0000000000401952 in kmeans_clustering._omp_fn.0 () at kmeans_clustering.c:194
+#3  0x00007ffff7bb8d3f in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x00000000004014c3 in kmeans_clustering (feature=0x7ffff7eda010, nfeatures=34, npoints=62500, nclusters=5, threshold=0,00100000005, membership=0x604b20) at kmeans_clustering.c:183
+#5  0x0000000000401b42 in cluster (numObjects=62500, numAttributes=34, attributes=0x7ffff7eda010, nclusters=5, threshold=0,00100000005, cluster_centres=0x7fffffffd880) at cluster.c:94
+#6  0x000000000040211b in kmeans_wrapper (isBinaryFile=0, filename=0x7fffffffe135 "/home/latansini/Desktop/CAROL-FI/etapa2/carol-fi/codes/kmeans/kmeans-knl-files/input62500.txt", threshold=0,00100000005, nclusters=5) at kmeans.c:180
+#7  0x00000000004025f7 in main (argc=5, argv=0x7fffffffde18) at kmeans.c:305
+
+104	{
+105	    int i;
+106	    float ans=0.0;
+107	
+108	    for (i=0; i<numdims; i++)
+109	        ans += (pt1[i]-pt2[i]) * (pt1[i]-pt2[i]);
+110	
+111	    return(ans);
+112	}
+113	
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x100x430x600x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd628
+address max offset: 8
+Memory content after  bitflip:0x900xe60x470x0e0x620xad0x780x4b
+frame name: find_nearest_point
+symbol name: pts
+symbol filename: kmeans_clustering.c
+symbol line: 80
+value: 0x604310
+value address: 0x7fffffffd628
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-05 20:55:30]
+Fault Injection Successful after 34.970649003982544s
+[INFO -- 2018-12-05 20:55:31]
+event type: exit
+[EXCEPTION -- 2018-12-05 20:55:31]
+exit code: no exit code available
