@@ -1,0 +1,51 @@
+[INFO -- 2018-12-09 17:12:31]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 17:12:31]
+Initialization strings:
+[INFO -- 2018-12-09 17:12:31]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 17:12:31]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 17:12:31]
+initSignal:0
+[INFO -- 2018-12-09 17:12:31]
+endSignal:1
+[INFO -- 2018-12-09 17:12:31]
+faultModel:4
+[INFO -- 2018-12-09 17:12:31]
+Backtrace BEGIN:
+#0  0x0000555555555651 in main (argc=6, argv=0x7fffffffded8) at nn.c:215
+
+210	        for( i = 0 ; i < rec_count ; i++ ) {
+211	            float max_dist = -1;
+212	            int max_idx = 0;
+213	            // find a neighbor with greatest dist and take his spot if allowed!
+214	            for( j = 0 ; j < k ; j++ ) {
+215	                if( neighbors[j].dist > max_dist ) {
+216	                    max_dist = neighbors[j].dist;
+217	                    max_idx = j;
+218	                }
+219	            }
+
+Backtrace END
+Memory content before bitflip:0xde0x820x200x40
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffdb14
+address max offset: 4
+Memory content after  bitflip:0xde0x820x200x00
+frame name: main
+symbol name: max_dist
+symbol filename: nn.c
+symbol line: 211
+value: 2.98568218e-39
+value address: 0x7fffffffdb14
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 17:12:31]
+Fault Injection Successful after 0.5941166877746582s
+[INFO -- 2018-12-09 17:12:32]
+event type: exit
+[INFO -- 2018-12-09 17:12:32]
+exit code: 0

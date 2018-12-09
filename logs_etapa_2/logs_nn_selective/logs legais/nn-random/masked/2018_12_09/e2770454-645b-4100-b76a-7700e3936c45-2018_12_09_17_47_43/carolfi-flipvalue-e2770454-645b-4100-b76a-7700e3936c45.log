@@ -1,0 +1,53 @@
+[INFO -- 2018-12-09 17:47:41]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 17:47:41]
+Initialization strings:
+[INFO -- 2018-12-09 17:47:41]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 17:47:41]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 17:47:41]
+initSignal:0
+[INFO -- 2018-12-09 17:47:41]
+endSignal:1
+[INFO -- 2018-12-09 17:47:41]
+faultModel:2
+[INFO -- 2018-12-09 17:47:41]
+Backtrace BEGIN:
+#0  0x0000555555555793 in main (argc=6, argv=0x7fffffffded8) at nn.c:231
+
+226				
+227				
+228				
+229				// OBS: duplicando...k_dup, z_dup e neighbors_dup   :)
+230			    for( j = 0 ; j < k_dup ; j++ ) {
+231	                if( neighbors_dup[j].dist > max_dist ) {
+232	                    max_dist = neighbors_dup[j].dist;
+233	                    max_idx = j;
+234	                }
+235	            }
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: __pad5
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555759f98
+address max offset: 8
+Memory content after  bitflip:0xc30xb50x620x7a0x5d0x890x950xcf
+frame name: main
+symbol name: fp
+symbol filename: nn.c
+symbol line: 83
+value: 0x555555759ee0
+value address: 0x7fffffffdb40
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 17:47:41]
+Fault Injection Successful after 0.6547117233276367s
+[INFO -- 2018-12-09 17:47:43]
+event type: exit
+[INFO -- 2018-12-09 17:47:43]
+exit code: 0

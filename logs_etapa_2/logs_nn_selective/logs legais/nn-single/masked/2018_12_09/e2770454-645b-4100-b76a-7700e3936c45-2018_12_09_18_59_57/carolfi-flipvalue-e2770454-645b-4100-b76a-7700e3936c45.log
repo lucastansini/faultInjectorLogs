@@ -1,0 +1,52 @@
+[INFO -- 2018-12-09 18:59:55]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 18:59:55]
+Initialization strings:
+[INFO -- 2018-12-09 18:59:55]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 18:59:55]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 18:59:55]
+initSignal:0
+[INFO -- 2018-12-09 18:59:55]
+endSignal:1
+[INFO -- 2018-12-09 18:59:55]
+faultModel:1
+[EXCEPTION -- 2018-12-09 18:59:55]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 18:59:55]
+pythonException: invalid frame
+[INFO -- 2018-12-09 18:59:55]
+Backtrace BEGIN:
+#0  malloc (n=11) at dl-minimal.c:50
+#1  <function called from gdb>
+#2  0x00007ffff74602e2 in str_to_mpn (str=str@entry=0x7fffffffdc11 "296.0   29  864\n1999  6 23 18 17 FLORENCE   37.3  65.5   57  184\n1997 10 13  0 10 PATTY      28.6   7.9  109  124\n1979  7 14 12 14 WILLIAM    53.9  24.9   89  793\n1969  2 10  0  5 DEBBY      20.6 305."..., digcnt=digcnt@entry=3, n=n@entry=0x7fffffffd650, nsize=nsize@entry=0x7fffffffd640, exponent=exponent@entry=0x7fffffffd638, decimal_len=decimal_len@entry=1, thousands=0x0, decimal=0x7ffff75cc7d8 <dot> ".") at strtod_l.c:457
+#3  0x00007ffff7461b38 in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1197
+#4  0x0000555555555a8a in main._omp_fn.0 () at nn.c:200
+#5  0x00007ffff7815ecf in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#6  0x00005555555555ed in main (argc=6, argv=0x7fffffffded8) at nn.c:196
+
+45	dl-minimal.c: Arquivo ou diretório inexistente.
+
+Backtrace END
+Memory content before bitflip:0x000x000xa00x40
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffda68
+address max offset: 4
+Memory content after  bitflip:0x000x090xa00x40
+frame name: main._omp_fn.0
+symbol name: target_long
+symbol filename: nn.c
+symbol line: 87
+value: 5.00109863
+value address: 0x7fffffffda68
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 18:59:55]
+Fault Injection Successful after 0.3854236602783203s
+[INFO -- 2018-12-09 18:59:56]
+event type: exit
+[INFO -- 2018-12-09 18:59:56]
+exit code: 0

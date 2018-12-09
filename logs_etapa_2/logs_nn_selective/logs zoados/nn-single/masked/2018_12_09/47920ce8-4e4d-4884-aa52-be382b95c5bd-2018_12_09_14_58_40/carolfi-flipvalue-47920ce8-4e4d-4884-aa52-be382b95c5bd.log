@@ -1,0 +1,67 @@
+[INFO -- 2018-12-09 14:58:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 14:58:39]
+Initialization strings:
+[INFO -- 2018-12-09 14:58:39]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 14:58:39]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 14:58:39]
+initSignal:0
+[INFO -- 2018-12-09 14:58:39]
+endSignal:1
+[INFO -- 2018-12-09 14:58:39]
+faultModel:1
+[EXCEPTION -- 2018-12-09 14:58:39]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-12-09 14:58:39]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 14:58:39]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 14:58:39]
+pythonException: invalid frame
+[INFO -- 2018-12-09 14:58:39]
+Backtrace BEGIN:
+#0  0x00007ffff7820f0e in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff781e958 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff6ffb6db in start_thread (arg=0x7ffff6ff3700) at pthread_create.c:463
+#3  0x00007ffff753888f in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+78	
+79	// onde tem OBS é onde mudei algo pra duplicação
+80	
+81	
+82	int main(int argc, char* argv[]) {
+83	    FILE   *flist,*fp;
+84	    int    i=0,j=0, k=0, rec_count=0, done=0;
+85	    char   sandbox[REC_LENGTH * REC_WINDOW], *rec_iter,*rec_iter2, dbname[64];
+86	    struct neighbor *neighbors = NULL;
+87	    float target_lat, target_long, tmp_lat=0, tmp_long=0;
+
+Backtrace END
+Fliping array at pos: 17
+Memory content before bitflip:0x41
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffdbf1 
+address max offset: 1
+Memory content after  bitflip:0xc5
+frame name: main
+symbol name: dbname
+symbol filename: nn.c
+symbol line: 85
+value: "/home/melkor/ETAP\305\062/dup_nn/nn-knl-files/cane4_0.db", '\000' <repete 13 vezes>
+value address: 0x7fffffffdbe0
+Type: The type is an array.
+Type sizeof: 64
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 63)
+
+[INFO -- 2018-12-09 14:58:39]
+Fault Injection Successful after 0.4869685173034668s
+[INFO -- 2018-12-09 14:58:39]
+event type: exit
+[INFO -- 2018-12-09 14:58:40]
+exit code: 0

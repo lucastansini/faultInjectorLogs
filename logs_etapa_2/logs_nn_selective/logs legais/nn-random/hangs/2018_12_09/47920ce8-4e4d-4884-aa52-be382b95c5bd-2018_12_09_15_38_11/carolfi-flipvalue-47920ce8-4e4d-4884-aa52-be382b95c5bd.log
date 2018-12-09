@@ -1,0 +1,41 @@
+[INFO -- 2018-12-09 15:38:07]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 15:38:07]
+Initialization strings:
+[INFO -- 2018-12-09 15:38:07]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 15:38:07]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 15:38:07]
+initSignal:0
+[INFO -- 2018-12-09 15:38:07]
+endSignal:1
+[INFO -- 2018-12-09 15:38:07]
+faultModel:2
+[INFO -- 2018-12-09 15:38:07]
+Backtrace BEGIN:
+#0  __GI___libc_free (mem=0x0) at malloc.c:3098
+#1  0x00007ffff781fdc1 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00005555555555ed in main (argc=6, argv=0x7fffffffdf08) at nn.c:196
+
+3093	malloc.c: Arquivo ou diretório inexistente.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x400x2c0x800xf70xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff7fe0188
+address max offset: 8
+Memory content after  bitflip:0x670xb30x820xe60x2c0x170x6d0x9b
+frame name: __GI___libc_free
+symbol name: thread_arena
+symbol filename: arena.c
+symbol line: 74
+value: 0x7ffff7802c40 <main_arena>
+value address: 0x7ffff7fe0188
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 15:38:07]
+Fault Injection Successful after 0.9867868423461914s

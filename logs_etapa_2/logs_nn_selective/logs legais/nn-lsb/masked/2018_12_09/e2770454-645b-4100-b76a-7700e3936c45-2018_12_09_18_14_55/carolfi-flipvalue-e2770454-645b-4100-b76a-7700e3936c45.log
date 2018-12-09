@@ -1,0 +1,67 @@
+[INFO -- 2018-12-09 18:14:53]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 18:14:53]
+Initialization strings:
+[INFO -- 2018-12-09 18:14:53]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 18:14:53]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 18:14:53]
+initSignal:0
+[INFO -- 2018-12-09 18:14:53]
+endSignal:1
+[INFO -- 2018-12-09 18:14:53]
+faultModel:4
+[INFO -- 2018-12-09 18:14:53]
+Backtrace BEGIN:
+#0  do_lookup_x (undef_name=undef_name@entry=0x7ffff74290e3 "__morecore", new_hash=new_hash@entry=4187461823, old_hash=old_hash@entry=0x7fffffffda10, ref=0x7ffff7427710, result=result@entry=0x7fffffffda20, scope=<optimized out>, i=1, version=0x7ffff7fdf030, flags=1, skip=0x0, type_class=4, undef_map=0x7ffff7fe19e0) at dl-lookup.c:390
+#1  0x00007ffff7de01ef in _dl_lookup_symbol_x (undef_name=0x7ffff74290e3 "__morecore", undef_map=undef_map@entry=0x7ffff7fe19e0, ref=ref@entry=0x7fffffffdb40, symbol_scope=symbol_scope@entry=0x7ffff7fe1d38, version=0x7ffff7fdf030, type_class=4, flags=1, skip_map=<optimized out>) at dl-lookup.c:813
+#2  0x00007ffff7de1af9 in elf_machine_rela (skip_ifunc=<optimized out>, reloc_addr_arg=0x7ffff7801dc0, version=<optimized out>, sym=<optimized out>, reloc=0x7ffff7437500, map=0x7ffff7fe19e0) at ../sysdeps/x86_64/dl-machine.h:308
+#3  elf_dynamic_do_Rela (skip_ifunc=<optimized out>, lazy=<optimized out>, nrelative=<optimized out>, relsize=<optimized out>, reladdr=<optimized out>, map=0x7ffff7fe19e0) at do-rel.h:137
+#4  _dl_relocate_object (scope=<optimized out>, reloc_mode=<optimized out>, consider_profiling=<optimized out>, consider_profiling@entry=0) at dl-reloc.c:258
+#5  0x00007ffff7dd9307 in dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:2190
+#6  0x00007ffff7defdd0 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffded0, dl_main=dl_main@entry=0x7ffff7dd7660 <dl_main>) at ../elf/dl-sysdep.c:253
+#7  0x00007ffff7dd7128 in _dl_start_final (arg=0x7fffffffded0) at rtld.c:414
+#8  _dl_start (arg=0x7fffffffded0) at rtld.c:521
+#9  0x00007ffff7dd6098 in _start () from /lib64/ld-linux-x86-64.so.2
+#10 0x0000000000000006 in ?? ()
+#11 0x00007fffffffe251 in ?? ()
+#12 0x00007fffffffe27c in ?? ()
+#13 0x00007fffffffe2ad in ?? ()
+#14 0x00007fffffffe2b0 in ?? ()
+#15 0x00007fffffffe2b2 in ?? ()
+#16 0x00007fffffffe2b4 in ?? ()
+#17 0x0000000000000000 in ?? ()
+
+385	dl-lookup.c: Arquivo ou diretório inexistente.
+
+Backtrace END
+Fliping value of field: m
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffda28
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x02
+frame name: _dl_lookup_symbol_x
+symbol name: current_value
+symbol filename: dl-lookup.c
+symbol line: 793
+value: {s = 0x0, m = 0x200000000000000}
+value address: 0x7fffffffda20
+Type: The type is a structure.
+Type sizeof: 16
+Field name: s
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: m
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-09 18:14:53]
+Fault Injection Successful after 0.38619542121887207s
+[INFO -- 2018-12-09 18:14:54]
+event type: exit
+[INFO -- 2018-12-09 18:14:54]
+exit code: 0

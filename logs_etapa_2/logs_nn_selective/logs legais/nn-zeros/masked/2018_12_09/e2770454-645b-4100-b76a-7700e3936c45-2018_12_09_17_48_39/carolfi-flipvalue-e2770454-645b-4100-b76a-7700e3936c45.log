@@ -1,0 +1,51 @@
+[INFO -- 2018-12-09 17:48:37]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 17:48:37]
+Initialization strings:
+[INFO -- 2018-12-09 17:48:37]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 17:48:37]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 17:48:37]
+initSignal:0
+[INFO -- 2018-12-09 17:48:37]
+endSignal:1
+[INFO -- 2018-12-09 17:48:37]
+faultModel:3
+[EXCEPTION -- 2018-12-09 17:48:38]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 17:48:38]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 17:48:38]
+pythonException: invalid frame
+[INFO -- 2018-12-09 17:48:38]
+Backtrace BEGIN:
+#0  __sqrt (x=54243.84765625) at w_sqrt_compat.c:30
+#1  0x0000555555555ad6 in main._omp_fn.0 () at nn.c:201
+#2  0x00007ffff7815ecf in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x00005555555555ed in main (argc=6, argv=0x7fffffffded8) at nn.c:196
+
+25	w_sqrt_compat.c: Arquivo ou diretório inexistente.
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffdb24
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main
+symbol name: tmp_lat
+symbol filename: nn.c
+symbol line: 87
+value: 0
+value address: 0x7fffffffdb24
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 17:48:38]
+Fault Injection Successful after 1.3317666053771973s
+[INFO -- 2018-12-09 17:48:39]
+event type: exit
+[INFO -- 2018-12-09 17:48:39]
+exit code: 0

@@ -1,0 +1,46 @@
+[INFO -- 2018-12-09 17:55:36]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 17:55:36]
+Initialization strings:
+[INFO -- 2018-12-09 17:55:36]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 17:55:36]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 17:55:36]
+initSignal:0
+[INFO -- 2018-12-09 17:55:36]
+endSignal:1
+[INFO -- 2018-12-09 17:55:36]
+faultModel:1
+[EXCEPTION -- 2018-12-09 17:55:36]
+pythonException: invalid frame
+[INFO -- 2018-12-09 17:55:36]
+Backtrace BEGIN:
+#0  clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:78
+#1  0x00007ffff6ffb600 in __free_stacks (limit=41943040) at allocatestack.c:282
+#2  queue_stack (stack=<optimized out>) at allocatestack.c:305
+#3  __deallocate_stack (pd=<optimized out>) at allocatestack.c:806
+#4  __free_tcb (pd=<optimized out>) at pthread_create.c:367
+#5  0x0000000000000000 in ?? ()
+
+73	../sysdeps/unix/sysv/linux/x86_64/clone.S: Arquivo ou diretório inexistente.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x2f
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffe2b4 
+address max offset: 1
+Memory content after  bitflip:0x4f
+frame name: main
+symbol name: gold_filename
+symbol filename: nn.c
+symbol line: 88
+value: 0x7fffffffe2b4 "Ohome/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5"
+value address: 0x7fffffffdb68
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 17:55:36]
+Fault Injection Successful after 0.32702088356018066s

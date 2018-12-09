@@ -1,0 +1,58 @@
+[INFO -- 2018-12-09 15:22:37]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 15:22:37]
+Initialization strings:
+[INFO -- 2018-12-09 15:22:37]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 15:22:37]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 15:22:37]
+initSignal:0
+[INFO -- 2018-12-09 15:22:37]
+endSignal:1
+[INFO -- 2018-12-09 15:22:37]
+faultModel:3
+[INFO -- 2018-12-09 15:22:37]
+Backtrace BEGIN:
+#0  _dl_lookup_symbol_x (undef_name=0x7ffff7429905 "mallwatch", undef_map=undef_map@entry=0x7ffff7fe19e0, ref=ref@entry=0x7fffffffdb70, symbol_scope=symbol_scope@entry=0x7ffff7fe1d38, version=0x7ffff7fdf030, type_class=4, flags=1, skip_map=0x0) at dl-lookup.c:790
+#1  0x00007ffff7de1af9 in elf_machine_rela (skip_ifunc=<optimized out>, reloc_addr_arg=0x7ffff7801e08, version=<optimized out>, sym=<optimized out>, reloc=0x7ffff74375a8, map=0x7ffff7fe19e0) at ../sysdeps/x86_64/dl-machine.h:308
+#2  elf_dynamic_do_Rela (skip_ifunc=<optimized out>, lazy=<optimized out>, nrelative=<optimized out>, relsize=<optimized out>, reladdr=<optimized out>, map=0x7ffff7fe19e0) at do-rel.h:137
+#3  _dl_relocate_object (scope=<optimized out>, reloc_mode=<optimized out>, consider_profiling=<optimized out>, consider_profiling@entry=0) at dl-reloc.c:258
+#4  0x00007ffff7dd9307 in dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:2190
+#5  0x00007ffff7defdd0 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffdf00, dl_main=dl_main@entry=0x7ffff7dd7660 <dl_main>) at ../elf/dl-sysdep.c:253
+#6  0x00007ffff7dd7128 in _dl_start_final (arg=0x7fffffffdf00) at rtld.c:414
+#7  _dl_start (arg=0x7fffffffdf00) at rtld.c:521
+#8  0x00007ffff7dd6098 in _start () from /lib64/ld-linux-x86-64.so.2
+#9  0x0000000000000006 in ?? ()
+#10 0x00007fffffffe274 in ?? ()
+#11 0x00007fffffffe29f in ?? ()
+#12 0x00007fffffffe2d0 in ?? ()
+#13 0x00007fffffffe2d3 in ?? ()
+#14 0x00007fffffffe2d5 in ?? ()
+#15 0x00007fffffffe2d7 in ?? ()
+#16 0x0000000000000000 in ?? ()
+
+785	dl-lookup.c: Arquivo ou diretório inexistente.
+
+Backtrace END
+Memory content before bitflip:0x01
+Fault Model: Zero bit-flip
+base address to flip value: 0x7ffff7ffdff8 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: dl_main
+symbol name: tls_init_tp_called
+symbol filename: rtld.c
+symbol line: 677
+value: false
+value address: 0x7ffff7ffdff8 <tls_init_tp_called>
+Type: A boolean type.
+Type sizeof: 1
+
+[INFO -- 2018-12-09 15:22:37]
+Fault Injection Successful after 0.5326735973358154s
+[INFO -- 2018-12-09 15:22:37]
+event type: exit
+[INFO -- 2018-12-09 15:22:37]
+exit code: 127

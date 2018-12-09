@@ -1,0 +1,58 @@
+[INFO -- 2018-12-09 17:55:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 17:55:12]
+Initialization strings:
+[INFO -- 2018-12-09 17:55:12]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 17:55:12]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 17:55:12]
+initSignal:0
+[INFO -- 2018-12-09 17:55:12]
+endSignal:1
+[INFO -- 2018-12-09 17:55:12]
+faultModel:3
+[INFO -- 2018-12-09 17:55:12]
+Backtrace BEGIN:
+#0  0x00007ffff782108a in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff781fda9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00005555555555ed in main (argc=6, argv=0x7fffffffded8) at nn.c:196
+
+88	    char * gold_filename;
+89	    long rec_sum = 0;
+90		
+91		//OBS: variaveis duplicadas
+92		float target_lat_dup, target_long_dup; 
+93		int done_dup=0, k_dup=0;
+94		struct neighbor *neighbors_dup = NULL;
+95	
+96	    if(argc < 6) {
+97	        fprintf(stderr, "Invalid set of arguments:\n");
+
+Backtrace END
+Fliping array at pos: 301
+Memory content before bitflip:0x20
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffdd1d 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 85
+value: "1998  4 19  0 14 BERYL      29.7 192.3   58  703\n1981  2 28 18 23 JOYCE      54.7 300.2  146  446\n1968  5  2  0 13 MICHAEL    22.6  94.2  114  111\n1986  4 23  6 11 JOYCE      55.6 218.7   51  532\n1978"...
+value address: 0x7fffffffdbf0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-12-09 17:55:12]
+Fault Injection Successful after 0.5945770740509033s
+[INFO -- 2018-12-09 17:55:14]
+event type: exit
+[INFO -- 2018-12-09 17:55:14]
+exit code: 0

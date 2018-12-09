@@ -1,0 +1,62 @@
+[INFO -- 2018-12-09 19:02:58]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 19:02:58]
+Initialization strings:
+[INFO -- 2018-12-09 19:02:58]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 19:02:58]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 19:02:58]
+initSignal:0
+[INFO -- 2018-12-09 19:02:58]
+endSignal:1
+[INFO -- 2018-12-09 19:02:58]
+faultModel:1
+[INFO -- 2018-12-09 19:02:58]
+Backtrace BEGIN:
+#0  0x00007ffff7df1ff7 in mprotect () at ../sysdeps/unix/syscall-template.S:78
+#1  0x00007ffff7de1c09 in _dl_protect_relro (l=0x7ffff7fe14f0) at dl-reloc.c:321
+#2  _dl_relocate_object (scope=<optimized out>, reloc_mode=<optimized out>, consider_profiling=<optimized out>, consider_profiling@entry=0) at dl-reloc.c:306
+#3  0x00007ffff7dd9307 in dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:2190
+#4  0x00007ffff7defdd0 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffded0, dl_main=dl_main@entry=0x7ffff7dd7660 <dl_main>) at ../elf/dl-sysdep.c:253
+#5  0x00007ffff7dd7128 in _dl_start_final (arg=0x7fffffffded0) at rtld.c:414
+#6  _dl_start (arg=0x7fffffffded0) at rtld.c:521
+#7  0x00007ffff7dd6098 in _start () from /lib64/ld-linux-x86-64.so.2
+#8  0x0000000000000006 in ?? ()
+#9  0x00007fffffffe251 in ?? ()
+#10 0x00007fffffffe27c in ?? ()
+#11 0x00007fffffffe2ad in ?? ()
+#12 0x00007fffffffe2b0 in ?? ()
+#13 0x00007fffffffe2b2 in ?? ()
+#14 0x00007fffffffe2b4 in ?? ()
+#15 0x0000000000000000 in ?? ()
+
+73	../sysdeps/unix/syscall-template.S: Arquivo ou diretório inexistente.
+
+Backtrace END
+Fliping array at pos: 41
+Memory content before bitflip:0x20
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff7df9129  
+address max offset: 1
+Memory content after  bitflip:0x08
+frame name: _dl_protect_relro
+symbol name: errstring
+symbol filename: dl-reloc.c
+symbol line: 323
+value: "cannot apply additional memory protection\bafter relocation"
+value address: 0x7ffff7df9100 <errstring>
+Type: The type is an array.
+Type sizeof: 59
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 58)
+
+[INFO -- 2018-12-09 19:02:58]
+Fault Injection Successful after 0.11475467681884766s
+[INFO -- 2018-12-09 19:03:00]
+event type: exit
+[INFO -- 2018-12-09 19:03:00]
+exit code: 0

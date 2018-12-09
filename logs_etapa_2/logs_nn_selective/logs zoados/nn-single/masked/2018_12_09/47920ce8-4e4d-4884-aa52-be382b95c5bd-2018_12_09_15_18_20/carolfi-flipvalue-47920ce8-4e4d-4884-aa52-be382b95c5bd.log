@@ -1,0 +1,58 @@
+[INFO -- 2018-12-09 15:18:19]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 15:18:19]
+Initialization strings:
+[INFO -- 2018-12-09 15:18:19]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 15:18:19]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 15:18:19]
+initSignal:0
+[INFO -- 2018-12-09 15:18:19]
+endSignal:1
+[INFO -- 2018-12-09 15:18:19]
+faultModel:1
+[EXCEPTION -- 2018-12-09 15:18:19]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-12-09 15:18:19]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 15:18:19]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 15:18:19]
+pythonException: invalid frame
+[INFO -- 2018-12-09 15:18:19]
+Backtrace BEGIN:
+#0  0x00007ffff7820ee0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff781f392 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff7815eca in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x00005555555555ed in main (argc=6, argv=0x7fffffffdf08) at nn.c:196
+
+2284	in rtld.c
+
+Backtrace END
+Fliping array at pos: 33
+Memory content before bitflip:0x2d
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffdc01 
+address max offset: 1
+Memory content after  bitflip:0x4d
+frame name: main
+symbol name: dbname
+symbol filename: nn.c
+symbol line: 85
+value: "/home/melkor/ETAPA2/dup_nn/nn-knlMfiles/cane4_2.db", '\000' <repete 13 vezes>
+value address: 0x7fffffffdbe0
+Type: The type is an array.
+Type sizeof: 64
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 63)
+
+[INFO -- 2018-12-09 15:18:19]
+Fault Injection Successful after 0.48850560188293457s
+[INFO -- 2018-12-09 15:18:19]
+event type: exit
+[INFO -- 2018-12-09 15:18:19]
+exit code: 0

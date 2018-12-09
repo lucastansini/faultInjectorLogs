@@ -1,0 +1,55 @@
+[INFO -- 2018-12-09 14:54:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 14:54:27]
+Initialization strings:
+[INFO -- 2018-12-09 14:54:27]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 14:54:27]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 14:54:27]
+initSignal:0
+[INFO -- 2018-12-09 14:54:27]
+endSignal:1
+[INFO -- 2018-12-09 14:54:27]
+faultModel:4
+[INFO -- 2018-12-09 14:54:27]
+Backtrace BEGIN:
+#0  dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:2289
+#1  0x00007ffff7defdd0 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffdf00, dl_main=dl_main@entry=0x7ffff7dd7660 <dl_main>) at ../elf/dl-sysdep.c:253
+#2  0x00007ffff7dd7128 in _dl_start_final (arg=0x7fffffffdf00) at rtld.c:414
+#3  _dl_start (arg=0x7fffffffdf00) at rtld.c:521
+#4  0x00007ffff7dd6098 in _start () from /lib64/ld-linux-x86-64.so.2
+#5  0x0000000000000006 in ?? ()
+#6  0x00007fffffffe274 in ?? ()
+#7  0x00007fffffffe29f in ?? ()
+#8  0x00007fffffffe2d0 in ?? ()
+#9  0x00007fffffffe2d3 in ?? ()
+#10 0x00007fffffffe2d5 in ?? ()
+#11 0x00007fffffffe2d7 in ?? ()
+#12 0x0000000000000000 in ?? ()
+
+2284	rtld.c: Arquivo ou diretório inexistente.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff7ffe168 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x08
+frame name: _dl_start
+symbol name: audit_list_string
+symbol filename: rtld.c
+symbol line: 134
+value: 0x0
+value address: 0x7ffff7ffe168 <audit_list_string>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 14:54:27]
+Fault Injection Successful after 0.709918737411499s
+[INFO -- 2018-12-09 14:54:28]
+event type: exit
+[INFO -- 2018-12-09 14:54:28]
+exit code: 0

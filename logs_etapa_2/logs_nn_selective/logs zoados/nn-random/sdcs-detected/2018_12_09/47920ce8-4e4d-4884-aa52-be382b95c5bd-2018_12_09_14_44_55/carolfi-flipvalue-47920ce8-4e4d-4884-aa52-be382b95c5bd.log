@@ -1,0 +1,51 @@
+[INFO -- 2018-12-09 14:44:54]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 14:44:54]
+Initialization strings:
+[INFO -- 2018-12-09 14:44:54]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 14:44:54]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 14:44:54]
+initSignal:0
+[INFO -- 2018-12-09 14:44:54]
+endSignal:1
+[INFO -- 2018-12-09 14:44:54]
+faultModel:2
+[EXCEPTION -- 2018-12-09 14:44:54]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-12-09 14:44:54]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 14:44:54]
+pythonException: invalid frame
+[INFO -- 2018-12-09 14:44:54]
+Backtrace BEGIN:
+#0  0x00007ffff7820ee6 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff781e94b in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff6ffb6db in start_thread (arg=0x7ffff6ff3700) at pthread_create.c:463
+#3  0x00007ffff753888f in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+2284	in rtld.c
+
+Backtrace END
+Memory content before bitflip:0x000x000xa00x40
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffdb6c
+address max offset: 4
+Memory content after  bitflip:0x420x3e0x170x75
+frame name: main
+symbol name: target_long_dup
+symbol filename: nn.c
+symbol line: 92
+value: 1.91723526e+32
+value address: 0x7fffffffdb6c
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 14:44:54]
+Fault Injection Successful after 0.5556495189666748s
+[INFO -- 2018-12-09 14:44:55]
+event type: exit
+[INFO -- 2018-12-09 14:44:55]
+exit code: 0

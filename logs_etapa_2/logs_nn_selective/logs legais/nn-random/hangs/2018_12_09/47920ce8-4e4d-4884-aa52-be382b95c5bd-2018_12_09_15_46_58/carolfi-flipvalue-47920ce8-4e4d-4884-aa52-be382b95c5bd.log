@@ -1,0 +1,50 @@
+[INFO -- 2018-12-09 15:46:54]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 15:46:54]
+Initialization strings:
+[INFO -- 2018-12-09 15:46:54]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 15:46:54]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 15:46:54]
+initSignal:0
+[INFO -- 2018-12-09 15:46:54]
+endSignal:1
+[INFO -- 2018-12-09 15:46:54]
+faultModel:2
+[INFO -- 2018-12-09 15:46:55]
+Backtrace BEGIN:
+#0  0x00007ffff782108e in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff781fda9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00005555555555ed in main (argc=6, argv=0x7fffffffdf08) at nn.c:196
+
+68	      fclose(logfile);
+69	    }
+70		
+71		
+72		if(file != NULL){	// isso aqui tava dando segfault
+73			fclose(file);
+74		}
+75		
+76	}
+77	
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xe00x9e0x750x550x550x550x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffdb70
+address max offset: 8
+Memory content after  bitflip:0xe40x370x970x840x3d0x960x7b0x66
+frame name: main
+symbol name: fp
+symbol filename: nn.c
+symbol line: 83
+value: 0x555555759ee0
+value address: 0x7fffffffdb70
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 15:46:55]
+Fault Injection Successful after 1.0975141525268555s

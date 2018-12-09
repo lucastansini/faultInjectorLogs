@@ -1,0 +1,61 @@
+[INFO -- 2018-12-09 16:34:48]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 16:34:48]
+Initialization strings:
+[INFO -- 2018-12-09 16:34:48]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 16:34:48]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 16:34:48]
+initSignal:0
+[INFO -- 2018-12-09 16:34:48]
+endSignal:1
+[INFO -- 2018-12-09 16:34:48]
+faultModel:2
+[INFO -- 2018-12-09 16:34:49]
+Backtrace BEGIN:
+#0  elf_get_dynamic_info (temp=0x0, l=0x7ffff7fe14f0) at get-dynamic-info.h:48
+#1  _dl_map_object_from_fd (name=name@entry=0x5555555545e5 "libgomp.so.1", origname=origname@entry=0x0, fd=<optimized out>, fbp=fbp@entry=0x7fffffffd5d0, realname=<optimized out>, loader=loader@entry=0x7ffff7ffe170, l_type=<optimized out>, mode=<optimized out>, stack_endp=<optimized out>, nsid=<optimized out>) at dl-load.c:1143
+#2  0x00007ffff7dddffc in _dl_map_object (loader=0x7ffff7ffe170, name=0x5555555545e5 "libgomp.so.1", type=1, trace_mode=0, mode=<optimized out>, nsid=<optimized out>) at dl-load.c:2389
+#3  0x00007ffff7de3312 in openaux (a=a@entry=0x7fffffffdb90) at dl-deps.c:63
+#4  0x00007ffff7df0c6b in _dl_catch_exception (exception=exception@entry=0x7fffffffdb70, operate=operate@entry=0x7ffff7de32e0 <openaux>, args=args@entry=0x7fffffffdb90) at dl-error-skeleton.c:196
+#5  0x00007ffff7de3618 in _dl_map_object_deps (map=map@entry=0x7ffff7ffe170, preloads=<optimized out>, npreloads=npreloads@entry=0, trace_mode=trace_mode@entry=0, open_mode=open_mode@entry=0) at dl-deps.c:249
+#6  0x00007ffff7dd8ea6 in dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:1726
+#7  0x00007ffff7defdd0 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffdf00, dl_main=dl_main@entry=0x7ffff7dd7660 <dl_main>) at ../elf/dl-sysdep.c:253
+#8  0x00007ffff7dd7128 in _dl_start_final (arg=0x7fffffffdf00) at rtld.c:414
+#9  _dl_start (arg=0x7fffffffdf00) at rtld.c:521
+#10 0x00007ffff7dd6098 in _start () from /lib64/ld-linux-x86-64.so.2
+#11 0x0000000000000006 in ?? ()
+#12 0x00007fffffffe274 in ?? ()
+#13 0x00007fffffffe29f in ?? ()
+#14 0x00007fffffffe2d0 in ?? ()
+#15 0x00007fffffffe2d3 in ?? ()
+#16 0x00007fffffffe2d5 in ?? ()
+#17 0x00007fffffffe2d7 in ?? ()
+#18 0x0000000000000000 in ?? ()
+
+43	get-dynamic-info.h: Arquivo ou diretório inexistente.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff7ffe048 
+address max offset: 8
+Memory content after  bitflip:0x930x610xce0x650xa80x350xf40x13
+frame name: dl_main
+symbol name: audit_list
+symbol filename: rtld.c
+symbol line: 142
+value: 0x0
+value address: 0x7ffff7ffe048 <audit_list>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 16:34:49]
+Fault Injection Successful after 1.0154612064361572s
+[INFO -- 2018-12-09 16:34:49]
+event type: exit
+[INFO -- 2018-12-09 16:34:49]
+exit code: 1

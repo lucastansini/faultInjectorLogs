@@ -1,0 +1,55 @@
+[INFO -- 2018-12-09 14:42:45]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 14:42:45]
+Initialization strings:
+[INFO -- 2018-12-09 14:42:45]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 14:42:45]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 14:42:45]
+initSignal:0
+[INFO -- 2018-12-09 14:42:45]
+endSignal:1
+[INFO -- 2018-12-09 14:42:45]
+faultModel:4
+[EXCEPTION -- 2018-12-09 14:42:46]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-12-09 14:42:46]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 14:42:46]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 14:42:46]
+pythonException: invalid frame
+[INFO -- 2018-12-09 14:42:46]
+Backtrace BEGIN:
+#0  0x00007ffff7820ee2 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff781f392 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff7815eca in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x00005555555555ed in main (argc=6, argv=0x7fffffffdf08) at nn.c:196
+
+2284	in rtld.c
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x2f
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffe274 
+address max offset: 1
+Memory content after  bitflip:0x3f
+frame name: main
+symbol name: argv
+symbol filename: nn.c
+symbol line: 82
+value: 0x7fffffffdf08
+value address: 0x7fffffffdb20
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 14:42:46]
+Fault Injection Successful after 1.4556169509887695s
+[INFO -- 2018-12-09 14:42:46]
+event type: exit
+[INFO -- 2018-12-09 14:42:46]
+exit code: 0

@@ -1,0 +1,56 @@
+[INFO -- 2018-12-09 18:26:32]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 18:26:32]
+Initialization strings:
+[INFO -- 2018-12-09 18:26:32]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 18:26:32]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 18:26:32]
+initSignal:0
+[INFO -- 2018-12-09 18:26:32]
+endSignal:1
+[INFO -- 2018-12-09 18:26:32]
+faultModel:4
+[EXCEPTION -- 2018-12-09 18:26:33]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 18:26:33]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 18:26:33]
+pythonException: invalid frame
+[INFO -- 2018-12-09 18:26:33]
+Backtrace BEGIN:
+#0  0x0000555555555aae in main._omp_fn.0 () at nn.c:201
+#1  0x00007ffff7815ecf in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00005555555555ed in main (argc=6, argv=0x7fffffffded8) at nn.c:196
+
+196	        #pragma omp parallel for shared (z, target_lat, target_long) private(i,rec_iter)
+197	        for (i = 0; i < rec_count; i++) {
+198	            rec_iter = sandbox+(i * REC_LENGTH + LATITUDE_POS - 1);
+199	            float tmp_lat = atof(rec_iter);
+200	            float tmp_long = atof(rec_iter+5);
+201	            z[i] = sqrt(( (tmp_lat-target_lat) * (tmp_lat-target_lat) )+( (tmp_long-target_long) * (tmp_long-target_long) ));
+202				
+203				//OBS: duplicando...
+204				z_dup[i] = sqrt(( (tmp_lat-target_lat_dup) * (tmp_lat-target_lat_dup) )+( (tmp_long-target_long_dup) * (tmp_long-target_long_dup) ));
+205	        }
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xc00x890x750x550x550x550x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffdb58
+address max offset: 8
+Memory content after  bitflip:0xc00x890x750x550x550x550x000x10
+frame name: main
+symbol name: neighbors_dup
+symbol filename: nn.c
+symbol line: 94
+value: 0x5555557589c0
+value address: 0x7fffffffdb58
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 18:26:33]
+Fault Injection Successful after 1.0423333644866943s

@@ -1,0 +1,52 @@
+[INFO -- 2018-12-09 15:46:51]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 15:46:51]
+Initialization strings:
+[INFO -- 2018-12-09 15:46:51]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 15:46:51]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 15:46:51]
+initSignal:0
+[INFO -- 2018-12-09 15:46:51]
+endSignal:1
+[INFO -- 2018-12-09 15:46:51]
+faultModel:3
+[EXCEPTION -- 2018-12-09 15:46:51]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-12-09 15:46:51]
+Backtrace BEGIN:
+#0  0x00007ffff7820ee0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff781e94b in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff6ffb6db in start_thread (arg=0x7ffff6ff3700) at pthread_create.c:463
+#3  0x00007ffff753888f in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+2284	in rtld.c
+
+Backtrace END
+Fliping array at pos: 1
+Memory content before bitflip:0x010x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7ffff70084f4 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: __pthread_create_2_1
+symbol name: _thread_db_td_eventbuf_t_eventdata
+symbol filename: ../nptl_db/structs.def
+symbol line: 70
+value: {64, 0, 16}
+value address: 0x7ffff70084f0 <_thread_db_td_eventbuf_t_eventdata>
+Type: The type is an array.
+Type sizeof: 12
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 2)
+
+[INFO -- 2018-12-09 15:46:51]
+Fault Injection Successful after 0.47687792778015137s
+[INFO -- 2018-12-09 15:46:51]
+event type: exit
+[INFO -- 2018-12-09 15:46:51]
+exit code: 0

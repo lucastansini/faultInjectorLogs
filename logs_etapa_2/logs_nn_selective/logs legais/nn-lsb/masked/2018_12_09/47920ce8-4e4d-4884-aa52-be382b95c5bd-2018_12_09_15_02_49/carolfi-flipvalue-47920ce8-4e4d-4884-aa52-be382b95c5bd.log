@@ -1,0 +1,55 @@
+[INFO -- 2018-12-09 15:02:48]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 15:02:48]
+Initialization strings:
+[INFO -- 2018-12-09 15:02:48]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 15:02:48]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 15:02:48]
+initSignal:0
+[INFO -- 2018-12-09 15:02:48]
+endSignal:1
+[INFO -- 2018-12-09 15:02:48]
+faultModel:4
+[INFO -- 2018-12-09 15:02:48]
+Backtrace BEGIN:
+#0  0x00007ffff7dedcec in get_next_env (prev_envp=<synthetic pointer>, val=<synthetic pointer>, namelen=<synthetic pointer>, name=<synthetic pointer>, envp=0x7fffffffdfd8) at dl-tunables.c:74
+#1  __GI___tunables_init (envp=<optimized out>) at dl-tunables.c:297
+#2  0x00007ffff7defc6a in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffdf00, dl_main=dl_main@entry=0x7ffff7dd7660 <dl_main>) at ../elf/dl-sysdep.c:224
+#3  0x00007ffff7dd7128 in _dl_start_final (arg=0x7fffffffdf00) at rtld.c:414
+#4  _dl_start (arg=0x7fffffffdf00) at rtld.c:521
+#5  0x00007ffff7dd6098 in _start () from /lib64/ld-linux-x86-64.so.2
+#6  0x0000000000000006 in ?? ()
+#7  0x00007fffffffe274 in ?? ()
+#8  0x00007fffffffe29f in ?? ()
+#9  0x00007fffffffe2d0 in ?? ()
+#10 0x00007fffffffe2d3 in ?? ()
+#11 0x00007fffffffe2d5 in ?? ()
+#12 0x00007fffffffe2d7 in ?? ()
+#13 0x0000000000000000 in ?? ()
+
+69	dl-tunables.c: Arquivo ou diretório inexistente.
+
+Backtrace END
+Memory content before bitflip:0x970xd50x1b0x240xd20x0c0x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff7ffc720 
+address max offset: 8
+Memory content after  bitflip:0x970xd50x1b0x240xd20x0c0x000x20
+frame name: _dl_start_final
+symbol name: start_time
+symbol filename: rtld.c
+symbol line: 308
+value: 2305857105902163351
+value address: 0x7ffff7ffc720 <start_time>
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 15:02:48]
+Fault Injection Successful after 0.35166358947753906s
+[INFO -- 2018-12-09 15:02:49]
+event type: exit
+[INFO -- 2018-12-09 15:02:49]
+exit code: 0

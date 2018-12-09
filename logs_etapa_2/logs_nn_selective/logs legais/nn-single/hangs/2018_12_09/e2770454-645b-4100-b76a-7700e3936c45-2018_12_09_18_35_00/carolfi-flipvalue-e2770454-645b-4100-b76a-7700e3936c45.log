@@ -1,0 +1,58 @@
+[INFO -- 2018-12-09 18:34:56]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 18:34:56]
+Initialization strings:
+[INFO -- 2018-12-09 18:34:56]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 18:34:56]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 18:34:56]
+initSignal:0
+[INFO -- 2018-12-09 18:34:56]
+endSignal:1
+[INFO -- 2018-12-09 18:34:56]
+faultModel:1
+[EXCEPTION -- 2018-12-09 18:34:57]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-12-09 18:34:57]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 18:34:57]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 18:34:57]
+pythonException: invalid frame
+[INFO -- 2018-12-09 18:34:57]
+Backtrace BEGIN:
+#0  malloc (n=14) at dl-minimal.c:50
+#1  <function called from gdb>
+#2  malloc (n=14) at dl-minimal.c:50
+#3  <function called from gdb>
+#4  malloc (n=14) at dl-minimal.c:50
+#5  <function called from gdb>
+#6  clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:78
+#7  0x00007ffff6ffbec5 in create_thread (thread_ran=<synthetic pointer>, stackaddr=0x7ffff5ff0f40, stopped_start=<synthetic pointer>, attr=0x7ffff7a36600, pd=0x7ffff5ff1700) at ../sysdeps/unix/sysv/linux/createthread.c:100
+#8  __pthread_create_2_1 (newthread=<optimized out>, attr=<optimized out>, start_routine=<optimized out>, arg=0x7fffffffd920) at pthread_create.c:797
+#9  0x00007ffff781ef52 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#10 0x00007ffff7815eca in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#11 0x00005555555555ed in main (argc=6, argv=0x7fffffffded8) at nn.c:196
+
+45	in dl-minimal.c
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x2f
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffe2b4 
+address max offset: 1
+Memory content after  bitflip:0x0d
+frame name: main
+symbol name: gold_filename
+symbol filename: nn.c
+symbol line: 88
+value: 0x7fffffffe2b4 "\rhome/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5"
+value address: 0x7fffffffdb68
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 18:34:57]
+Fault Injection Successful after 1.0434596538543701s

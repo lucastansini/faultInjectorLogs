@@ -1,0 +1,59 @@
+[INFO -- 2018-12-09 18:11:49]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 18:11:49]
+Initialization strings:
+[INFO -- 2018-12-09 18:11:49]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 18:11:49]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 18:11:49]
+initSignal:0
+[INFO -- 2018-12-09 18:11:49]
+endSignal:1
+[INFO -- 2018-12-09 18:11:49]
+faultModel:1
+[INFO -- 2018-12-09 18:11:49]
+Backtrace BEGIN:
+#0  0x00007ffff7820f0e in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff781f392 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff7815eca in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x00005555555555ed in main (argc=6, argv=0x7fffffffded8) at nn.c:196
+
+68	      fclose(logfile);
+69	    }
+70		
+71		
+72		if(file != NULL){	// isso aqui tava dando segfault
+73			fclose(file);
+74		}
+75		
+76	}
+77	
+
+Backtrace END
+Fliping array at pos: 21
+Memory content before bitflip:0x75
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffdbc5 
+address max offset: 1
+Memory content after  bitflip:0x51
+frame name: main
+symbol name: dbname
+symbol filename: nn.c
+symbol line: 85
+value: "/home/melkor/ETAPA2/dQp_nn/nn-knl-files/cane4_0.db\000\367\377\177\000\000\200]\243\367\377\177\000"
+value address: 0x7fffffffdbb0
+Type: The type is an array.
+Type sizeof: 64
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 63)
+
+[INFO -- 2018-12-09 18:11:49]
+Fault Injection Successful after 0.858328104019165s
+[INFO -- 2018-12-09 18:11:51]
+event type: exit
+[INFO -- 2018-12-09 18:11:51]
+exit code: 0

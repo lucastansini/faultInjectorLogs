@@ -1,0 +1,57 @@
+[INFO -- 2018-12-09 15:01:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 15:01:12]
+Initialization strings:
+[INFO -- 2018-12-09 15:01:12]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 15:01:12]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 15:01:12]
+initSignal:0
+[INFO -- 2018-12-09 15:01:12]
+endSignal:1
+[INFO -- 2018-12-09 15:01:12]
+faultModel:3
+[EXCEPTION -- 2018-12-09 15:01:12]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 15:01:12]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 15:01:12]
+pythonException: invalid frame
+[INFO -- 2018-12-09 15:01:12]
+Backtrace BEGIN:
+#0  0x00005555555557ad in main (argc=6, argv=0x7fffffffdf08) at nn.c:231
+
+226				
+227				
+228				
+229				// OBS: duplicando...k_dup, z_dup e neighbors_dup   :)
+230			    for( j = 0 ; j < k_dup ; j++ ) {
+231	                if( neighbors_dup[j].dist > max_dist ) {
+232	                    max_dist = neighbors_dup[j].dist;
+233	                    max_idx = j;
+234	                }
+235	            }
+
+Backtrace END
+Memory content before bitflip:0x070x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffdb48
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main
+symbol name: max_idx
+symbol filename: nn.c
+symbol line: 212
+value: 0
+value address: 0x7fffffffdb48
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 15:01:12]
+Fault Injection Successful after 0.8942267894744873s
+[INFO -- 2018-12-09 15:01:13]
+event type: exit
+[INFO -- 2018-12-09 15:01:13]
+exit code: 0

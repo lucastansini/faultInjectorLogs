@@ -1,0 +1,57 @@
+[INFO -- 2018-12-09 18:25:13]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 18:25:13]
+Initialization strings:
+[INFO -- 2018-12-09 18:25:13]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 18:25:13]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 18:25:13]
+initSignal:0
+[INFO -- 2018-12-09 18:25:13]
+endSignal:1
+[INFO -- 2018-12-09 18:25:13]
+faultModel:3
+[INFO -- 2018-12-09 18:25:13]
+Backtrace BEGIN:
+#0  elf_machine_runtime_setup (profile=0, lazy=1, l=0x7ffff7fe19e0) at ../sysdeps/x86_64/dl-machine.h:92
+#1  _dl_relocate_object (scope=0x7ffff7fe1d38, reloc_mode=<optimized out>, consider_profiling=consider_profiling@entry=0) at dl-reloc.c:258
+#2  0x00007ffff7dd9307 in dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:2190
+#3  0x00007ffff7defdd0 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffded0, dl_main=dl_main@entry=0x7ffff7dd7660 <dl_main>) at ../elf/dl-sysdep.c:253
+#4  0x00007ffff7dd7128 in _dl_start_final (arg=0x7fffffffded0) at rtld.c:414
+#5  _dl_start (arg=0x7fffffffded0) at rtld.c:521
+#6  0x00007ffff7dd6098 in _start () from /lib64/ld-linux-x86-64.so.2
+#7  0x0000000000000006 in ?? ()
+#8  0x00007fffffffe251 in ?? ()
+#9  0x00007fffffffe27c in ?? ()
+#10 0x00007fffffffe2ad in ?? ()
+#11 0x00007fffffffe2b0 in ?? ()
+#12 0x00007fffffffe2b2 in ?? ()
+#13 0x00007fffffffe2b4 in ?? ()
+#14 0x0000000000000000 in ?? ()
+
+87	../sysdeps/x86_64/dl-machine.h: Arquivo ou diretório inexistente.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7ffff7ffc690 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: _dl_start
+symbol name: library_path
+symbol filename: rtld.c
+symbol line: 823
+value: 0x0
+value address: 0x7ffff7ffc690 <library_path>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 18:25:13]
+Fault Injection Successful after 0.2349238395690918s
+[INFO -- 2018-12-09 18:25:15]
+event type: exit
+[INFO -- 2018-12-09 18:25:15]
+exit code: 0

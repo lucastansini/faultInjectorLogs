@@ -1,0 +1,61 @@
+[INFO -- 2018-12-09 14:46:52]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 14:46:52]
+Initialization strings:
+[INFO -- 2018-12-09 14:46:52]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 14:46:52]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 14:46:52]
+initSignal:0
+[INFO -- 2018-12-09 14:46:52]
+endSignal:1
+[INFO -- 2018-12-09 14:46:52]
+faultModel:4
+[EXCEPTION -- 2018-12-09 14:46:53]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 14:46:53]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 14:46:53]
+pythonException: invalid frame
+[INFO -- 2018-12-09 14:46:53]
+Backtrace BEGIN:
+#0  0x00007ffff7820f0e in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff781f392 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff7815eca in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x00005555555555ed in main (argc=6, argv=0x7fffffffdf08) at nn.c:196
+
+68	      fclose(logfile);
+69	    }
+70		
+71		
+72		if(file != NULL){	// isso aqui tava dando segfault
+73			fclose(file);
+74		}
+75		
+76	}
+77	
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x080xdf0xff0xff0xff0x7f0x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffdb20
+address max offset: 8
+Memory content after  bitflip:0x080xdf0xff0xff0xff0x7f0x000x10
+frame name: main
+symbol name: argv
+symbol filename: nn.c
+symbol line: 82
+value: 0x7fffffffdf08
+value address: 0x7fffffffdb20
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 14:46:53]
+Fault Injection Successful after 1.3044512271881104s
+[INFO -- 2018-12-09 14:46:53]
+event type: exit
+[INFO -- 2018-12-09 14:46:53]
+exit code: 0

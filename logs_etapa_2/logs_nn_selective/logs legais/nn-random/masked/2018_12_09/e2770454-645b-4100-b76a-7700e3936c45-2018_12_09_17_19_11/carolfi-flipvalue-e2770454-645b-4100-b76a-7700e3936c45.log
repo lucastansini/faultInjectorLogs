@@ -1,0 +1,61 @@
+[INFO -- 2018-12-09 17:19:09]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 17:19:09]
+Initialization strings:
+[INFO -- 2018-12-09 17:19:09]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 17:19:09]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 17:19:09]
+initSignal:0
+[INFO -- 2018-12-09 17:19:09]
+endSignal:1
+[INFO -- 2018-12-09 17:19:09]
+faultModel:2
+[EXCEPTION -- 2018-12-09 17:19:09]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 17:19:09]
+pythonException: invalid frame
+[INFO -- 2018-12-09 17:19:09]
+Backtrace BEGIN:
+#0  0x00007ffff7820f0e in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff781f392 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff7815eca in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x00005555555555ed in main (argc=6, argv=0x7fffffffded8) at nn.c:196
+
+78	
+79	// onde tem OBS é onde mudei algo pra duplicação
+80	
+81	
+82	int main(int argc, char* argv[]) {
+83	    FILE   *flist,*fp;
+84	    int    i=0,j=0, k=0, rec_count=0, done=0;
+85	    char   sandbox[REC_LENGTH * REC_WINDOW], *rec_iter,*rec_iter2, dbname[64];
+86	    struct neighbor *neighbors = NULL;
+87	    float target_lat, target_long, tmp_lat=0, tmp_long=0;
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: entry
+Fliping array at pos: 31
+Memory content before bitflip:0x34
+Fault Model: Random bit-flip
+base address to flip value: 0x5555557589df 
+address max offset: 1
+Memory content after  bitflip:0xaa
+frame name: main
+symbol name: neighbors_dup
+symbol filename: nn.c
+symbol line: 94
+value: 0x5555557589c0
+value address: 0x7fffffffdb58
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 17:19:09]
+Fault Injection Successful after 0.7017862796783447s
+[INFO -- 2018-12-09 17:19:11]
+event type: exit
+[INFO -- 2018-12-09 17:19:11]
+exit code: 0

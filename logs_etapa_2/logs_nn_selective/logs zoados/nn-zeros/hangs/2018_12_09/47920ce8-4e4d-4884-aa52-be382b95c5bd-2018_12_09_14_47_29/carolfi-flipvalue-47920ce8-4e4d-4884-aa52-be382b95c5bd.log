@@ -1,0 +1,58 @@
+[INFO -- 2018-12-09 14:47:25]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 14:47:25]
+Initialization strings:
+[INFO -- 2018-12-09 14:47:25]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 14:47:25]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 14:47:25]
+initSignal:0
+[INFO -- 2018-12-09 14:47:25]
+endSignal:1
+[INFO -- 2018-12-09 14:47:25]
+faultModel:3
+[EXCEPTION -- 2018-12-09 14:47:26]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 14:47:26]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 14:47:26]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 14:47:26]
+gdbException: A syntax error in expression, near `...'.
+[INFO -- 2018-12-09 14:47:26]
+Backtrace BEGIN:
+#0  0x00007ffff78210d3 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff781fda9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00005555555555ed in main (argc=6, argv=0x7fffffffdf08) at nn.c:196
+
+78	
+79	// onde tem OBS é onde mudei algo pra duplicação
+80	
+81	
+82	int main(int argc, char* argv[]) {
+83	    FILE   *flist,*fp;
+84	    int    i=0,j=0, k=0, rec_count=0, done=0;
+85	    char   sandbox[REC_LENGTH * REC_WINDOW], *rec_iter,*rec_iter2, dbname[64];
+86	    struct neighbor *neighbors = NULL;
+87	    float target_lat, target_long, tmp_lat=0, tmp_long=0;
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x400xa10x750x550x550x550x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffdba8
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: main
+symbol name: z_dup
+symbol filename: nn.c
+symbol line: 157
+value: 0x55555575a140
+value address: 0x7fffffffdba8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 14:47:26]
+Fault Injection Successful after 1.6474969387054443s

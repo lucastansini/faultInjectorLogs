@@ -1,0 +1,47 @@
+[INFO -- 2018-12-09 15:15:46]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 15:15:46]
+Initialization strings:
+[INFO -- 2018-12-09 15:15:46]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 15:15:46]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 15:15:46]
+initSignal:0
+[INFO -- 2018-12-09 15:15:46]
+endSignal:1
+[INFO -- 2018-12-09 15:15:46]
+faultModel:2
+[INFO -- 2018-12-09 15:15:46]
+Backtrace BEGIN:
+#0  clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:78
+#1  0x00007ffff6ffbec5 in create_thread (thread_ran=<synthetic pointer>, stackaddr=0x7ffff6ff2f40, stopped_start=<synthetic pointer>, attr=0x7ffff7a36600, pd=0x7ffff6ff3700) at ../sysdeps/unix/sysv/linux/createthread.c:100
+#2  __pthread_create_2_1 (newthread=<optimized out>, attr=<optimized out>, start_routine=<optimized out>, arg=0x7fffffffd880) at pthread_create.c:797
+#3  0x00007ffff781ef52 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x00007ffff7815eca in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#5  0x00005555555555ed in main (argc=6, argv=0x7fffffffdf08) at nn.c:196
+
+73	../sysdeps/unix/sysv/linux/x86_64/clone.S: Arquivo ou diretório inexistente.
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff7212340 
+address max offset: 8
+Memory content after  bitflip:0xc50x170x220x6c0xb00xb60x720x8a
+frame name: __pthread_create_2_1
+symbol name: in_flight_stack
+symbol filename: allocatestack.c
+symbol line: 121
+value: 9976236993423742917
+value address: 0x7ffff7212340 <in_flight_stack>
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 15:15:46]
+Fault Injection Successful after 0.7725920677185059s
+[INFO -- 2018-12-09 15:15:47]
+event type: exit
+[INFO -- 2018-12-09 15:15:47]
+exit code: 0

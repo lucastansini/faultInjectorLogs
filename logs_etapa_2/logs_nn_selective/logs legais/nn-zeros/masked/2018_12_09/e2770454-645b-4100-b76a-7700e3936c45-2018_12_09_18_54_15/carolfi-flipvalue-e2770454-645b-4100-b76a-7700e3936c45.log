@@ -1,0 +1,62 @@
+[INFO -- 2018-12-09 18:54:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 18:54:12]
+Initialization strings:
+[INFO -- 2018-12-09 18:54:12]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 18:54:12]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 18:54:12]
+initSignal:0
+[INFO -- 2018-12-09 18:54:12]
+endSignal:1
+[INFO -- 2018-12-09 18:54:12]
+faultModel:3
+[EXCEPTION -- 2018-12-09 18:54:13]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 18:54:13]
+pythonException: invalid frame
+[INFO -- 2018-12-09 18:54:13]
+Backtrace BEGIN:
+#0  0x00007ffff7821096 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff781fda9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00005555555555ed in main (argc=6, argv=0x7fffffffded8) at nn.c:196
+
+78	
+79	// onde tem OBS é onde mudei algo pra duplicação
+80	
+81	
+82	int main(int argc, char* argv[]) {
+83	    FILE   *flist,*fp;
+84	    int    i=0,j=0, k=0, rec_count=0, done=0;
+85	    char   sandbox[REC_LENGTH * REC_WINDOW], *rec_iter,*rec_iter2, dbname[64];
+86	    struct neighbor *neighbors = NULL;
+87	    float target_lat, target_long, tmp_lat=0, tmp_long=0;
+
+Backtrace END
+Fliping array at pos: 439
+Memory content before bitflip:0x35
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffdda7 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 85
+value: "1980  9  2  6 27 MICHAEL    46.2 140.2  114   51\n1975 11  7  6 24 GORDON     62.0 102.5   59   70\n2003  3  8 12 12 VALERIE    36.4  24.6  121  730\n1955  1 24  6 28 LESLIE     66.5 203.4  126  206\n1962"...
+value address: 0x7fffffffdbf0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-12-09 18:54:13]
+Fault Injection Successful after 1.0874454975128174s
+[INFO -- 2018-12-09 18:54:15]
+event type: exit
+[INFO -- 2018-12-09 18:54:15]
+exit code: 0

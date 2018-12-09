@@ -1,0 +1,65 @@
+[INFO -- 2018-12-09 14:45:05]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 14:45:05]
+Initialization strings:
+[INFO -- 2018-12-09 14:45:05]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 14:45:05]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 14:45:05]
+initSignal:0
+[INFO -- 2018-12-09 14:45:05]
+endSignal:1
+[INFO -- 2018-12-09 14:45:05]
+faultModel:1
+[EXCEPTION -- 2018-12-09 14:45:05]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 14:45:05]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 14:45:05]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 14:45:05]
+pythonException: invalid literal for int() with base 16: '0x55555575a9dc ...'
+[EXCEPTION -- 2018-12-09 14:45:05]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 14:45:05]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 14:45:05]
+pythonException: invalid frame
+[INFO -- 2018-12-09 14:45:05]
+Backtrace BEGIN:
+#0  0x00007ffff7820f0e in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff781e958 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff6ffb6db in start_thread (arg=0x7ffff67f2700) at pthread_create.c:463
+#3  0x00007ffff753888f in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+88	    char * gold_filename;
+89	    long rec_sum = 0;
+90		
+91		//OBS: variaveis duplicadas
+92		float target_lat_dup, target_long_dup; 
+93		int done_dup=0, k_dup=0;
+94		struct neighbor *neighbors_dup = NULL;
+95	
+96	    if(argc < 6) {
+97	        fprintf(stderr, "Invalid set of arguments:\n");
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xb00x840x750x550x550x550x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffdb80
+address max offset: 8
+Memory content after  bitflip:0xb00x840x750x550x550x550x000x12
+frame name: main
+symbol name: neighbors
+symbol filename: nn.c
+symbol line: 86
+value: 0x5555557584b0
+value address: 0x7fffffffdb80
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 14:45:05]
+Fault Injection Successful after 0.7001571655273438s

@@ -1,0 +1,68 @@
+[INFO -- 2018-12-09 16:35:32]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 16:35:32]
+Initialization strings:
+[INFO -- 2018-12-09 16:35:32]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 16:35:32]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 16:35:32]
+initSignal:0
+[INFO -- 2018-12-09 16:35:32]
+endSignal:1
+[INFO -- 2018-12-09 16:35:32]
+faultModel:4
+[INFO -- 2018-12-09 16:35:32]
+Backtrace BEGIN:
+#0  0x00007ffff74b60f4 in ?? ()
+#1  0x00007ffff7de1b73 in elf_machine_lazy_rel (skip_ifunc=<optimized out>, reloc=0x7ffff7437de8, l_addr=140737341648896, map=0x7ffff7fe19e0) at ../sysdeps/x86_64/dl-machine.h:577
+#2  elf_dynamic_do_Rela (skip_ifunc=<optimized out>, lazy=<optimized out>, nrelative=<optimized out>, relsize=<optimized out>, reladdr=<optimized out>, map=0x7ffff7fe19e0) at do-rel.h:77
+#3  _dl_relocate_object (scope=<optimized out>, reloc_mode=<optimized out>, consider_profiling=<optimized out>, consider_profiling@entry=0) at dl-reloc.c:258
+#4  0x00007ffff7dd9307 in dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:2190
+#5  0x00007ffff7defdd0 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffdf00, dl_main=dl_main@entry=0x7ffff7dd7660 <dl_main>) at ../elf/dl-sysdep.c:253
+#6  0x00007ffff7dd7128 in _dl_start_final (arg=0x7fffffffdf00) at rtld.c:414
+#7  _dl_start (arg=0x7fffffffdf00) at rtld.c:521
+#8  0x00007ffff7dd6098 in _start () from /lib64/ld-linux-x86-64.so.2
+#9  0x0000000000000006 in ?? ()
+#10 0x00007fffffffe274 in ?? ()
+#11 0x00007fffffffe29f in ?? ()
+#12 0x00007fffffffe2d0 in ?? ()
+#13 0x00007fffffffe2d3 in ?? ()
+#14 0x00007fffffffe2d5 in ?? ()
+#15 0x00007fffffffe2d7 in ?? ()
+#16 0x0000000000000000 in ?? ()
+
+88	    char * gold_filename;
+89	    long rec_sum = 0;
+90		
+91		//OBS: variaveis duplicadas
+92		float target_lat_dup, target_long_dup; 
+93		int done_dup=0, k_dup=0;
+94		struct neighbor *neighbors_dup = NULL;
+95	
+96	    if(argc < 6) {
+97	        fprintf(stderr, "Invalid set of arguments:\n");
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff7ffc690 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x10
+frame name: dl_main
+symbol name: library_path
+symbol filename: rtld.c
+symbol line: 823
+value: 0x0
+value address: 0x7ffff7ffc690 <library_path>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 16:35:32]
+Fault Injection Successful after 0.46829986572265625s
+[INFO -- 2018-12-09 16:35:32]
+event type: exit
+[INFO -- 2018-12-09 16:35:32]
+exit code: 1

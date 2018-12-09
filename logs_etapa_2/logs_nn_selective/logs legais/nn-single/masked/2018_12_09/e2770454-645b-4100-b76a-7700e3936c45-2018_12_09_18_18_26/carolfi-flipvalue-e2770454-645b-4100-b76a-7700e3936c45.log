@@ -1,0 +1,62 @@
+[INFO -- 2018-12-09 18:18:23]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 18:18:23]
+Initialization strings:
+[INFO -- 2018-12-09 18:18:23]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 18:18:23]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 18:18:23]
+initSignal:0
+[INFO -- 2018-12-09 18:18:23]
+endSignal:1
+[INFO -- 2018-12-09 18:18:23]
+faultModel:1
+[EXCEPTION -- 2018-12-09 18:18:24]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-12-09 18:18:24]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 18:18:24]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 18:18:24]
+pythonException: invalid frame
+[INFO -- 2018-12-09 18:18:24]
+Backtrace BEGIN:
+#0  malloc (n=14) at dl-minimal.c:50
+#1  <function called from gdb>
+#2  clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:78
+#3  0x00007ffff6ffbec5 in create_thread (thread_ran=<synthetic pointer>, stackaddr=0x7ffff5ff0f40, stopped_start=<synthetic pointer>, attr=0x7ffff7a36600, pd=0x7ffff5ff1700) at ../sysdeps/unix/sysv/linux/createthread.c:100
+#4  __pthread_create_2_1 (newthread=<optimized out>, attr=<optimized out>, start_routine=<optimized out>, arg=0x7fffffffd920) at pthread_create.c:797
+#5  0x00007ffff781ef52 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#6  0x00007ffff7815eca in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#7  0x00005555555555ed in main (argc=6, argv=0x7fffffffded8) at nn.c:196
+
+45	dl-minimal.c: Arquivo ou diretório inexistente.
+
+Backtrace END
+Fliping array at pos: 0
+Memory content before bitflip:0xc00x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff7008570 
+address max offset: 4
+Memory content after  bitflip:0xc00x060x000x00
+frame name: __pthread_create_2_1
+symbol name: _thread_db_pthread_eventbuf
+symbol filename: ../nptl_db/structs.def
+symbol line: 56
+value: {1728, 1, 1616}
+value address: 0x7ffff7008570 <_thread_db_pthread_eventbuf>
+Type: The type is an array.
+Type sizeof: 12
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 2)
+
+[INFO -- 2018-12-09 18:18:24]
+Fault Injection Successful after 1.0586702823638916s
+[INFO -- 2018-12-09 18:18:25]
+event type: exit
+[INFO -- 2018-12-09 18:18:25]
+exit code: 0

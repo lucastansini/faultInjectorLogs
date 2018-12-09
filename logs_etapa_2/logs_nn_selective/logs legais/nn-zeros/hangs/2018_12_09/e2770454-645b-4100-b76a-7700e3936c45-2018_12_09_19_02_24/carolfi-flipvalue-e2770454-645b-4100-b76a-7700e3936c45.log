@@ -1,0 +1,55 @@
+[INFO -- 2018-12-09 19:02:20]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 19:02:20]
+Initialization strings:
+[INFO -- 2018-12-09 19:02:20]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 19:02:20]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 19:02:20]
+initSignal:0
+[INFO -- 2018-12-09 19:02:20]
+endSignal:1
+[INFO -- 2018-12-09 19:02:20]
+faultModel:3
+[EXCEPTION -- 2018-12-09 19:02:21]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 19:02:21]
+pythonException: invalid frame
+[INFO -- 2018-12-09 19:02:21]
+Backtrace BEGIN:
+#0  0x00007ffff7462389 in underflow_value (negative=<optimized out>) at strtod_l.c:204
+#1  __GI_____strtod_l_internal (nptr=0x7fffffffdc41 "  94.8   50  106\n1968  1 25  0 26 HELENE     60.4  63.9   24  425\n1994  3 28  0  4 SANDY      12.2 329.3   33  360\n1992  5 11  0  9 FLORENCE   11.2 241.1   10  346\n1979  6 18  6 20 BERYL      56.3 130"..., endptr=0x0, group=<optimized out>, loc=<optimized out>) at strtod_l.c:985
+#2  0x0000555555555a8a in main._omp_fn.0 () at nn.c:200
+#3  0x00007ffff7815ecf in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x00005555555555ed in main (argc=6, argv=0x7fffffffded8) at nn.c:196
+
+199	strtod_l.c: Arquivo ou diretório inexistente.
+
+Backtrace END
+Fliping array at pos: 0
+Memory content before bitflip:0x000x000x000x000x000x000x110x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd648
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: __GI_____strtod_l_internal
+symbol name: retval
+symbol filename: strtod_l.c
+symbol line: 521
+value: {0}
+value address: 0x7fffffffd648
+Type: The type is an array.
+Type sizeof: 8
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 0)
+
+[INFO -- 2018-12-09 19:02:21]
+Fault Injection Successful after 1.0792980194091797s
+[INFO -- 2018-12-09 19:02:23]
+event type: exit
+[INFO -- 2018-12-09 19:02:23]
+exit code: 0

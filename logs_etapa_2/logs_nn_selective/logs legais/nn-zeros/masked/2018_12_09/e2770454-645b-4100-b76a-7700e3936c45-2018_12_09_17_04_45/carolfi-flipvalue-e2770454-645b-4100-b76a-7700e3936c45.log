@@ -1,0 +1,58 @@
+[INFO -- 2018-12-09 17:04:43]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 17:04:43]
+Initialization strings:
+[INFO -- 2018-12-09 17:04:43]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 17:04:43]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 17:04:43]
+initSignal:0
+[INFO -- 2018-12-09 17:04:43]
+endSignal:1
+[INFO -- 2018-12-09 17:04:43]
+faultModel:3
+[INFO -- 2018-12-09 17:04:44]
+Backtrace BEGIN:
+#0  0x00007ffff782108a in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff781fda9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00005555555555ed in main (argc=6, argv=0x7fffffffded8) at nn.c:196
+
+68	      fclose(logfile);
+69	    }
+70		
+71		
+72		if(file != NULL){	// isso aqui tava dando segfault
+73			fclose(file);
+74		}
+75		
+76	}
+77	
+
+Backtrace END
+Fliping array at pos: 483
+Memory content before bitflip:0x33
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffddd3 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 85
+value: "1971 12 15 12  6 DEBBY      18.3  72.8   48  708\n1973  6 28 18 15 WILLIAM    11.7 233.5  151  419\n1965  6 25  0 10 CHRIS      47.8 341.6  117   54\n1984  7 14  0 19 WILLIAM    48.8   9.6  126  806\n1963"...
+value address: 0x7fffffffdbf0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-12-09 17:04:44]
+Fault Injection Successful after 1.1224555969238281s
+[INFO -- 2018-12-09 17:04:44]
+event type: exit
+[INFO -- 2018-12-09 17:04:44]
+exit code: 0

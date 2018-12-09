@@ -1,0 +1,74 @@
+[INFO -- 2018-12-09 15:00:15]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 15:00:15]
+Initialization strings:
+[INFO -- 2018-12-09 15:00:15]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 15:00:15]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 15:00:15]
+initSignal:0
+[INFO -- 2018-12-09 15:00:15]
+endSignal:1
+[INFO -- 2018-12-09 15:00:15]
+faultModel:4
+[INFO -- 2018-12-09 15:00:15]
+Backtrace BEGIN:
+#0  0x00007ffff7df1f43 in __mmap64 (addr=0x7ffff720d000, len=8192, prot=prot@entry=3, flags=flags@entry=2066, fd=fd@entry=4, offset=102400) at ../sysdeps/unix/sysv/linux/mmap64.c:52
+#1  0x00007ffff7ddbe3c in _dl_map_segments (loader=0x7fffffffd080, has_holes=<optimized out>, maplength=<optimized out>, nloadcmds=2, loadcmds=<optimized out>, type=<optimized out>, header=<optimized out>, fd=<optimized out>, l=0x7ffff7fe2410) at ./dl-map-segments.h:94
+#2  _dl_map_object_from_fd (name=name@entry=0x7ffff780dabf "libpthread.so.0", origname=origname@entry=0x0, fd=<optimized out>, fbp=fbp@entry=0x7fffffffd3f0, realname=<optimized out>, loader=loader@entry=0x7ffff7fe14f0, l_type=<optimized out>, mode=<optimized out>, stack_endp=<optimized out>, nsid=<optimized out>) at dl-load.c:1126
+#3  0x00007ffff7dddffc in _dl_map_object (loader=0x7ffff7fe14f0, name=0x7ffff780dabf "libpthread.so.0", type=1, trace_mode=0, mode=<optimized out>, nsid=<optimized out>) at dl-load.c:2389
+#4  0x00007ffff7de3312 in openaux (a=a@entry=0x7fffffffdb90) at dl-deps.c:63
+#5  0x00007ffff7df0c6b in _dl_catch_exception (exception=exception@entry=0x7fffffffdb70, operate=operate@entry=0x7ffff7de32e0 <openaux>, args=args@entry=0x7fffffffdb90) at dl-error-skeleton.c:196
+#6  0x00007ffff7de3618 in _dl_map_object_deps (map=map@entry=0x7ffff7ffe170, preloads=<optimized out>, npreloads=npreloads@entry=0, trace_mode=trace_mode@entry=0, open_mode=open_mode@entry=0) at dl-deps.c:249
+#7  0x00007ffff7dd8ea6 in dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:1726
+#8  0x00007ffff7defdd0 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffdf00, dl_main=dl_main@entry=0x7ffff7dd7660 <dl_main>) at ../elf/dl-sysdep.c:253
+#9  0x00007ffff7dd7128 in _dl_start_final (arg=0x7fffffffdf00) at rtld.c:414
+#10 _dl_start (arg=0x7fffffffdf00) at rtld.c:521
+#11 0x00007ffff7dd6098 in _start () from /lib64/ld-linux-x86-64.so.2
+#12 0x0000000000000006 in ?? ()
+#13 0x00007fffffffe274 in ?? ()
+#14 0x00007fffffffe29f in ?? ()
+#15 0x00007fffffffe2d0 in ?? ()
+#16 0x00007fffffffe2d3 in ?? ()
+#17 0x00007fffffffe2d5 in ?? ()
+#18 0x00007fffffffe2d7 in ?? ()
+#19 0x0000000000000000 in ?? ()
+
+47	../sysdeps/unix/sysv/linux/mmap64.c: Arquivo ou diretório inexistente.
+
+Backtrace END
+Fliping value of field: exception
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: errstring
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffdb78
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x04
+frame name: _dl_catch_exception
+symbol name: c
+symbol filename: dl-error-skeleton.c
+symbol line: 185
+value: {exception = 0x7fffffffdb70, errcode = 0x7fffffffd7bc, env = {{__jmpbuf = {140737348066736, -1210056704, 1, 140737345804991, 140737488345360, 140737345797136, -1356857344, -17875239567360}, __mask_was_saved = 0, __saved_mask = {__val = {140737345804980, 140737488345360, 140737345797136, 18446744072358985728, 18446726198469984256, 1, 140737348114634, 140737488345360, 140737348106248, 18446744072365277184, 18446726198469984256, 72656416700116992, 39483211581358984, 8070595697853333700, 306540036701061314, 4623516979373277200}}}}}
+value address: 0x7fffffffd7c0
+Type: The type is a structure.
+Type sizeof: 216
+Field name: exception
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: errcode
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: env
+Field Type: The type is an array.
+Field Type sizeof: 200
+
+[INFO -- 2018-12-09 15:00:15]
+Fault Injection Successful after 0.32755613327026367s
+[INFO -- 2018-12-09 15:00:16]
+event type: exit
+[INFO -- 2018-12-09 15:00:16]
+exit code: 0

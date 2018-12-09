@@ -1,0 +1,53 @@
+[INFO -- 2018-12-09 18:39:38]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 18:39:38]
+Initialization strings:
+[INFO -- 2018-12-09 18:39:38]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 18:39:38]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 18:39:38]
+initSignal:0
+[INFO -- 2018-12-09 18:39:38]
+endSignal:1
+[INFO -- 2018-12-09 18:39:38]
+faultModel:3
+[EXCEPTION -- 2018-12-09 18:39:38]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-12-09 18:39:38]
+pythonException: invalid frame
+[INFO -- 2018-12-09 18:39:38]
+Backtrace BEGIN:
+#0  0x00007ffff78210d3 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff781fda9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00005555555555ed in main (argc=6, argv=0x7fffffffded8) at nn.c:196
+
+2284	in rtld.c
+
+Backtrace END
+Fliping array at pos: 337
+Memory content before bitflip:0x20
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffdd41 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 85
+value: "1985  9  9  6 23 JOYCE      34.1  16.8   39  617\n1974  5 16  6  9 TONY       41.5 283.8   71  749\n1971  2 11  0 19 GORDON     57.0 264.4   24  721\n1994  9 23 12 17 WILLIAM    47.5  18.8  106   54\n1972"...
+value address: 0x7fffffffdbf0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-12-09 18:39:38]
+Fault Injection Successful after 0.9045834541320801s
+[INFO -- 2018-12-09 18:39:40]
+event type: exit
+[INFO -- 2018-12-09 18:39:40]
+exit code: 0

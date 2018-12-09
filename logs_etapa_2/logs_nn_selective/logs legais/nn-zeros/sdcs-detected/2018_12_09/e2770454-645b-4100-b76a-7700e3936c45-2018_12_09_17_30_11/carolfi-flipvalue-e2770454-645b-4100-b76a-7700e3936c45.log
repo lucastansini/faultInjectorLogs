@@ -1,0 +1,53 @@
+[INFO -- 2018-12-09 17:30:08]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 17:30:08]
+Initialization strings:
+[INFO -- 2018-12-09 17:30:08]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 17:30:08]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 17:30:08]
+initSignal:0
+[INFO -- 2018-12-09 17:30:08]
+endSignal:1
+[INFO -- 2018-12-09 17:30:08]
+faultModel:3
+[EXCEPTION -- 2018-12-09 17:30:08]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-12-09 17:30:08]
+Backtrace BEGIN:
+#0  main (argc=6, argv=0x7fffffffded8) at nn.c:236
+
+231	                if( neighbors_dup[j].dist > max_dist ) {
+232	                    max_dist = neighbors_dup[j].dist;
+233	                    max_idx = j;
+234	                }
+235	            }
+236	            if( z_dup[i] < neighbors_dup[max_idx].dist ) {
+237	                sandbox[(i+1)*REC_LENGTH-1] = '\0';
+238	                strcpy(neighbors_dup[max_idx].entry, sandbox +i*REC_LENGTH);
+239	                neighbors_dup[max_idx].dist = z[i];
+240	            }
+
+Backtrace END
+Memory content before bitflip:0x000x000xa00x40
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffdb38
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main
+symbol name: target_lat_dup
+symbol filename: nn.c
+symbol line: 92
+value: 0
+value address: 0x7fffffffdb38
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 17:30:08]
+Fault Injection Successful after 0.6770946979522705s
+[INFO -- 2018-12-09 17:30:11]
+event type: exit
+[INFO -- 2018-12-09 17:30:11]
+exit code: 0

@@ -1,0 +1,52 @@
+[INFO -- 2018-12-09 17:12:41]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 17:12:41]
+Initialization strings:
+[INFO -- 2018-12-09 17:12:41]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 17:12:41]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 17:12:41]
+initSignal:0
+[INFO -- 2018-12-09 17:12:41]
+endSignal:1
+[INFO -- 2018-12-09 17:12:41]
+faultModel:2
+[EXCEPTION -- 2018-12-09 17:12:41]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 17:12:41]
+pythonException: invalid frame
+[INFO -- 2018-12-09 17:12:41]
+Backtrace BEGIN:
+#0  0x00007ffff7460494 in round_and_return (retval=retval@entry=0x7fffffffd648, exponent=5, negative=negative@entry=0, round_limb=round_limb@entry=12912720851596686131, round_bit=round_bit@entry=16, more_bits=1) at strtod_l.c:215
+#1  0x00007ffff74622fa in __GI_____strtod_l_internal (nptr=<optimized out>, endptr=<optimized out>, group=<optimized out>, loc=<optimized out>) at strtod_l.c:1541
+#2  0x0000555555555a71 in main._omp_fn.0 () at nn.c:199
+#3  0x00007ffff7815ecf in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x00005555555555ed in main (argc=6, argv=0x7fffffffded8) at nn.c:196
+
+210	strtod_l.c: Arquivo ou diretório inexistente.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: _flags
+Memory content before bitflip:0x880x240xad0xfb
+Fault Model: Random bit-flip
+base address to flip value: 0x555555759ee0
+address max offset: 4
+Memory content after  bitflip:0xae0x700xbb0x0d
+frame name: main
+symbol name: fp
+symbol filename: nn.c
+symbol line: 83
+value: 0x555555759ee0
+value address: 0x7fffffffdb40
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 17:12:41]
+Fault Injection Successful after 0.5919556617736816s
+[INFO -- 2018-12-09 17:12:41]
+event type: exit
+[INFO -- 2018-12-09 17:12:41]
+exit code: 0

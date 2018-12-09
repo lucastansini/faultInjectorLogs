@@ -1,0 +1,55 @@
+[INFO -- 2018-12-09 18:18:18]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 18:18:18]
+Initialization strings:
+[INFO -- 2018-12-09 18:18:18]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 18:18:18]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 18:18:18]
+initSignal:0
+[INFO -- 2018-12-09 18:18:18]
+endSignal:1
+[INFO -- 2018-12-09 18:18:18]
+faultModel:3
+[INFO -- 2018-12-09 18:18:18]
+Backtrace BEGIN:
+#0  malloc (n=14) at dl-minimal.c:50
+#1  <function called from gdb>
+#2  malloc (n=14) at dl-minimal.c:50
+#3  <function called from gdb>
+#4  malloc (n=14) at dl-minimal.c:50
+#5  <function called from gdb>
+#6  malloc (n=14) at dl-minimal.c:50
+#7  <function called from gdb>
+#8  clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:78
+#9  0x00007ffff6ffbec5 in create_thread (thread_ran=<synthetic pointer>, stackaddr=0x7ffff5ff0f40, stopped_start=<synthetic pointer>, attr=0x7ffff7a36600, pd=0x7ffff5ff1700) at ../sysdeps/unix/sysv/linux/createthread.c:100
+#10 __pthread_create_2_1 (newthread=<optimized out>, attr=<optimized out>, start_routine=<optimized out>, arg=0x7fffffffd920) at pthread_create.c:797
+#11 0x00007ffff781ef52 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#12 0x00007ffff7815eca in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#13 0x00005555555555ed in main (argc=6, argv=0x7fffffffded8) at nn.c:196
+
+45	in dl-minimal.c
+
+Backtrace END
+Memory content before bitflip:0x060x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffdafc
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main
+symbol name: argc
+symbol filename: nn.c
+symbol line: 82
+value: 0
+value address: 0x7fffffffdafc
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 18:18:18]
+Fault Injection Successful after 0.7777202129364014s
+[INFO -- 2018-12-09 18:18:20]
+event type: exit
+[INFO -- 2018-12-09 18:18:20]
+exit code: 0

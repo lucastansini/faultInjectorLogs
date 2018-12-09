@@ -1,0 +1,55 @@
+[INFO -- 2018-12-09 15:32:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 15:32:27]
+Initialization strings:
+[INFO -- 2018-12-09 15:32:27]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 15:32:27]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 15:32:27]
+initSignal:0
+[INFO -- 2018-12-09 15:32:27]
+endSignal:1
+[INFO -- 2018-12-09 15:32:27]
+faultModel:3
+[INFO -- 2018-12-09 15:32:27]
+Backtrace BEGIN:
+#0  0x00007ffff7df1e27 in __access (file=file@entry=0x7ffff7df8dd0 <preload_file> "/etc/ld.so.preload", type=type@entry=4) at ../sysdeps/unix/sysv/linux/access.c:27
+#1  0x00007ffff7dd8e5d in dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:1631
+#2  0x00007ffff7defdd0 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffdf00, dl_main=dl_main@entry=0x7ffff7dd7660 <dl_main>) at ../elf/dl-sysdep.c:253
+#3  0x00007ffff7dd7128 in _dl_start_final (arg=0x7fffffffdf00) at rtld.c:414
+#4  _dl_start (arg=0x7fffffffdf00) at rtld.c:521
+#5  0x00007ffff7dd6098 in _start () from /lib64/ld-linux-x86-64.so.2
+#6  0x0000000000000006 in ?? ()
+#7  0x00007fffffffe274 in ?? ()
+#8  0x00007fffffffe29f in ?? ()
+#9  0x00007fffffffe2d0 in ?? ()
+#10 0x00007fffffffe2d3 in ?? ()
+#11 0x00007fffffffe2d5 in ?? ()
+#12 0x00007fffffffe2d7 in ?? ()
+#13 0x0000000000000000 in ?? ()
+
+22	../sysdeps/unix/sysv/linux/access.c: Arquivo ou diretório inexistente.
+
+Backtrace END
+Memory content before bitflip:0xa00x4c0x550x550x550x550x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffde30
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: _dl_sysdep_start
+symbol name: user_entry
+symbol filename: ../elf/dl-sysdep.c
+symbol line: 91
+value: 0
+value address: 0x7fffffffde30
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 15:32:27]
+Fault Injection Successful after 0.6573712825775146s
+[INFO -- 2018-12-09 15:32:27]
+event type: exit
+[EXCEPTION -- 2018-12-09 15:32:27]
+exit code: no exit code available

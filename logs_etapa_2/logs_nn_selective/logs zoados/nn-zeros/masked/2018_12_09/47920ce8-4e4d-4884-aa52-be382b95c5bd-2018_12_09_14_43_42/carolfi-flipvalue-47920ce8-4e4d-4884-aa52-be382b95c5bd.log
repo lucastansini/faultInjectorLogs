@@ -1,0 +1,65 @@
+[INFO -- 2018-12-09 14:43:40]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 14:43:40]
+Initialization strings:
+[INFO -- 2018-12-09 14:43:40]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 14:43:40]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 14:43:40]
+initSignal:0
+[INFO -- 2018-12-09 14:43:40]
+endSignal:1
+[INFO -- 2018-12-09 14:43:40]
+faultModel:3
+[EXCEPTION -- 2018-12-09 14:43:40]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 14:43:40]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 14:43:40]
+pythonException: invalid frame
+[INFO -- 2018-12-09 14:43:40]
+Backtrace BEGIN:
+#0  0x00007ffff7820ee0 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff781f392 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00007ffff7815eca in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x00005555555555ed in main (argc=6, argv=0x7fffffffdf08) at nn.c:196
+
+68	      fclose(logfile);
+69	    }
+70		
+71		
+72		if(file != NULL){	// isso aqui tava dando segfault
+73			fclose(file);
+74		}
+75		
+76	}
+77	
+
+Backtrace END
+Fliping array at pos: 464
+Memory content before bitflip:0x45
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffddf0 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 85
+value: "1999  1 16  6 26 TONY       55.1  66.3   68  393\n1969  5  3  0 26 PATTY      66.4  63.2  134  537\n1983  6  7 18 23 GORDON     59.9 168.9  151  297\n1967  8 18  6 17 TONY       37.3 237.3  163  357\n1954"...
+value address: 0x7fffffffdc20
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-12-09 14:43:40]
+Fault Injection Successful after 0.7198445796966553s
+[INFO -- 2018-12-09 14:43:41]
+event type: exit
+[INFO -- 2018-12-09 14:43:41]
+exit code: 0

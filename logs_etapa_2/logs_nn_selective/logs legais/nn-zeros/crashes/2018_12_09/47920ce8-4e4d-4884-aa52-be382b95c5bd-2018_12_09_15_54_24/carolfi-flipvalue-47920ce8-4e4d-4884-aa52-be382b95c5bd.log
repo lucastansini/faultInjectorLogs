@@ -1,0 +1,57 @@
+[INFO -- 2018-12-09 15:54:24]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 15:54:24]
+Initialization strings:
+[INFO -- 2018-12-09 15:54:24]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 15:54:24]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 15:54:24]
+initSignal:0
+[INFO -- 2018-12-09 15:54:24]
+endSignal:1
+[INFO -- 2018-12-09 15:54:24]
+faultModel:3
+[INFO -- 2018-12-09 15:54:24]
+Backtrace BEGIN:
+#0  0x00007ffff7df1ff7 in mprotect () at ../sysdeps/unix/syscall-template.S:78
+#1  0x00007ffff7de1c09 in _dl_protect_relro (l=0x7ffff7fe2410) at dl-reloc.c:321
+#2  _dl_relocate_object (scope=<optimized out>, reloc_mode=<optimized out>, consider_profiling=<optimized out>, consider_profiling@entry=0) at dl-reloc.c:306
+#3  0x00007ffff7dd9307 in dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:2190
+#4  0x00007ffff7defdd0 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffdf00, dl_main=dl_main@entry=0x7ffff7dd7660 <dl_main>) at ../elf/dl-sysdep.c:253
+#5  0x00007ffff7dd7128 in _dl_start_final (arg=0x7fffffffdf00) at rtld.c:414
+#6  _dl_start (arg=0x7fffffffdf00) at rtld.c:521
+#7  0x00007ffff7dd6098 in _start () from /lib64/ld-linux-x86-64.so.2
+#8  0x0000000000000006 in ?? ()
+#9  0x00007fffffffe274 in ?? ()
+#10 0x00007fffffffe29f in ?? ()
+#11 0x00007fffffffe2d0 in ?? ()
+#12 0x00007fffffffe2d3 in ?? ()
+#13 0x00007fffffffe2d5 in ?? ()
+#14 0x00007fffffffe2d7 in ?? ()
+#15 0x0000000000000000 in ?? ()
+
+73	../sysdeps/unix/syscall-template.S: Arquivo ou diretório inexistente.
+
+Backtrace END
+Memory content before bitflip:0x480xc80x080x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7ffff7ffc728 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: _dl_start_final
+symbol name: load_time
+symbol filename: rtld.c
+symbol line: 307
+value: 0
+value address: 0x7ffff7ffc728 <load_time>
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 15:54:24]
+Fault Injection Successful after 0.4464383125305176s
+[INFO -- 2018-12-09 15:54:24]
+event type: exit
+[INFO -- 2018-12-09 15:54:24]
+exit code: 1

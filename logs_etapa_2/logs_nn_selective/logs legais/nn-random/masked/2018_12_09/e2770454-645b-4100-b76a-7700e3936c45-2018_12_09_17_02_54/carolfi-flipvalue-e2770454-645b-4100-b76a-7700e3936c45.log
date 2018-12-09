@@ -1,0 +1,67 @@
+[INFO -- 2018-12-09 17:02:52]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 17:02:52]
+Initialization strings:
+[INFO -- 2018-12-09 17:02:52]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 17:02:52]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 17:02:52]
+initSignal:0
+[INFO -- 2018-12-09 17:02:52]
+endSignal:1
+[INFO -- 2018-12-09 17:02:52]
+faultModel:2
+[EXCEPTION -- 2018-12-09 17:02:53]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-12-09 17:02:53]
+pythonException: invalid frame
+[INFO -- 2018-12-09 17:02:53]
+Backtrace BEGIN:
+#0  malloc (n=14) at dl-minimal.c:50
+#1  <function called from gdb>
+#2  malloc (n=14) at dl-minimal.c:50
+#3  <function called from gdb>
+#4  clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:78
+#5  0x00007ffff6ffbec5 in create_thread (thread_ran=<synthetic pointer>, stackaddr=0x7ffff5ff0f40, stopped_start=<synthetic pointer>, attr=0x7ffff7a36600, pd=0x7ffff5ff1700) at ../sysdeps/unix/sysv/linux/createthread.c:100
+#6  __pthread_create_2_1 (newthread=<optimized out>, attr=<optimized out>, start_routine=<optimized out>, arg=0x7fffffffd920) at pthread_create.c:797
+#7  0x00007ffff781ef52 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#8  0x00007ffff7815eca in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#9  0x00005555555555ed in main (argc=6, argv=0x7fffffffded8) at nn.c:196
+
+45	in dl-minimal.c
+
+Backtrace END
+Fliping value of field: prev
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: prev
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: next
+Fliping a bit of the pointer
+Memory content before bitflip:0xc00x390xff0xf60xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff67f29c0
+address max offset: 8
+Memory content after  bitflip:0xac0x730x160x100xe90x1a0x840x9d
+frame name: create_thread
+symbol name: stack_used
+symbol filename: allocatestack.c
+symbol line: 116
+value: {next = 0x7ffff5ff19c0, prev = 0x7ffff6ff39c0}
+value address: 0x7ffff720e2b0 <stack_used>
+Type: The type is a structure.
+Type sizeof: 16
+Field name: next
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: prev
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-09 17:02:53]
+Fault Injection Successful after 1.2246596813201904s
+[INFO -- 2018-12-09 17:02:53]
+event type: exit
+[INFO -- 2018-12-09 17:02:53]
+exit code: 0

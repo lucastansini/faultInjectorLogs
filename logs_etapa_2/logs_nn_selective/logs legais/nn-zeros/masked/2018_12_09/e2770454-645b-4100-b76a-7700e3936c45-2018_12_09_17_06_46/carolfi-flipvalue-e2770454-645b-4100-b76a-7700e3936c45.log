@@ -1,0 +1,60 @@
+[INFO -- 2018-12-09 17:06:45]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 17:06:45]
+Initialization strings:
+[INFO -- 2018-12-09 17:06:45]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 17:06:45]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 17:06:45]
+initSignal:0
+[INFO -- 2018-12-09 17:06:45]
+endSignal:1
+[INFO -- 2018-12-09 17:06:45]
+faultModel:3
+[EXCEPTION -- 2018-12-09 17:06:46]
+pythonException: invalid frame
+[INFO -- 2018-12-09 17:06:46]
+Backtrace BEGIN:
+#0  0x00007ffff782108a in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff781fda9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00005555555555ed in main (argc=6, argv=0x7fffffffded8) at nn.c:196
+
+68	      fclose(logfile);
+69	    }
+70		
+71		
+72		if(file != NULL){	// isso aqui tava dando segfault
+73			fclose(file);
+74		}
+75		
+76	}
+77	
+
+Backtrace END
+Fliping array at pos: 393
+Memory content before bitflip:0x39
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffdd79 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 85
+value: "2000  9 25 12  1 SANDY      37.9 349.0  160  305\n1988 12 22  0 16 BERYL      53.3 208.0  120  617\n1985  1 27 12 18 TONY       34.8  53.9   97  508\n1952  4 21  6 12 NADINE     51.4 288.4   65   29\n1979"...
+value address: 0x7fffffffdbf0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-12-09 17:06:46]
+Fault Injection Successful after 1.3201003074645996s
+[INFO -- 2018-12-09 17:06:46]
+event type: exit
+[INFO -- 2018-12-09 17:06:46]
+exit code: 0

@@ -1,0 +1,68 @@
+[INFO -- 2018-12-09 17:36:06]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 17:36:06]
+Initialization strings:
+[INFO -- 2018-12-09 17:36:06]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 17:36:06]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 17:36:06]
+initSignal:0
+[INFO -- 2018-12-09 17:36:06]
+endSignal:1
+[INFO -- 2018-12-09 17:36:06]
+faultModel:3
+[EXCEPTION -- 2018-12-09 17:36:06]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 17:36:06]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 17:36:06]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-12-09 17:36:06]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 17:36:06]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 17:36:06]
+pythonException: invalid frame
+[INFO -- 2018-12-09 17:36:06]
+Backtrace BEGIN:
+#0  malloc (n=14) at dl-minimal.c:50
+#1  <function called from gdb>
+#2  malloc (n=14) at dl-minimal.c:50
+#3  <function called from gdb>
+#4  clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:78
+#5  0x00007ffff6ffbec5 in create_thread (thread_ran=<synthetic pointer>, stackaddr=0x7ffff5ff0f40, stopped_start=<synthetic pointer>, attr=0x7ffff7a36600, pd=0x7ffff5ff1700) at ../sysdeps/unix/sysv/linux/createthread.c:100
+#6  __pthread_create_2_1 (newthread=<optimized out>, attr=<optimized out>, start_routine=<optimized out>, arg=0x7fffffffd920) at pthread_create.c:797
+#7  0x00007ffff781ef52 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#8  0x00007ffff7815eca in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#9  0x00005555555555ed in main (argc=6, argv=0x7fffffffded8) at nn.c:196
+
+45	in dl-minimal.c
+
+Backtrace END
+Fliping array at pos: 1
+Memory content before bitflip:0x010x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7ffff7008534 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: __pthread_create_2_1
+symbol name: _thread_db_list_t_next
+symbol filename: ../nptl_db/structs.def
+symbol line: 62
+value: {64, 0, 0}
+value address: 0x7ffff7008530 <_thread_db_pthread_key_struct_seq>
+Type: The type is an array.
+Type sizeof: 12
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 2)
+
+[INFO -- 2018-12-09 17:36:06]
+Fault Injection Successful after 0.722224235534668s
+[INFO -- 2018-12-09 17:36:08]
+event type: exit
+[INFO -- 2018-12-09 17:36:08]
+exit code: 0

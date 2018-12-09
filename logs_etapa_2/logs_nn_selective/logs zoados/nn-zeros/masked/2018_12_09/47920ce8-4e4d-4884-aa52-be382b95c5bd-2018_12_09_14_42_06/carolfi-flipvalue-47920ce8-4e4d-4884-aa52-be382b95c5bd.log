@@ -1,0 +1,69 @@
+[INFO -- 2018-12-09 14:42:05]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 14:42:05]
+Initialization strings:
+[INFO -- 2018-12-09 14:42:05]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 14:42:05]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 14:42:05]
+initSignal:0
+[INFO -- 2018-12-09 14:42:05]
+endSignal:1
+[INFO -- 2018-12-09 14:42:05]
+faultModel:3
+[EXCEPTION -- 2018-12-09 14:42:05]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[INFO -- 2018-12-09 14:42:05]
+Backtrace BEGIN:
+#0  0x00007ffff757d0c8 in determine_info (symbolp=0x0, mapp=0x7fffffffdbe0, info=0x7fffffffdbf0, match=0x7ffff7fe19e0, addr=140737342244544) at dl-addr.c:61
+#1  __GI__dl_addr (address=address@entry=0x7ffff74a86c0 <ptmalloc_init>, info=info@entry=0x7fffffffdbf0, mapp=mapp@entry=0x7fffffffdbe0, symbolp=symbolp@entry=0x0) at dl-addr.c:137
+#2  0x00007ffff74a8691 in ptmalloc_init () at arena.c:303
+#3  0x00007ffff74adc15 in ptmalloc_init () at hooks.c:33
+#4  malloc_hook_ini (sz=32816, caller=<optimized out>) at hooks.c:31
+#5  0x00007ffff74f69b6 in __alloc_dir (statp=0x7fffffffdc60, flags=0, close_fd=true, fd=4) at ../sysdeps/posix/opendir.c:216
+#6  opendir_tail (fd=4) at ../sysdeps/posix/opendir.c:136
+#7  __opendir (name=name@entry=0x7ffff75cc939 "/sys/devices/system/cpu") at ../sysdeps/posix/opendir.c:190
+#8  0x00007ffff7536462 in __GI___get_nprocs_conf () at ../sysdeps/unix/sysv/linux/getsysstats.c:242
+#9  0x00007ffff74fdd71 in posix_sysconf (name=83) at ../sysdeps/posix/sysconf.c:628
+#10 linux_sysconf (name=83) at ../sysdeps/unix/sysv/linux/x86/../sysconf.c:140
+#11 __GI___sysconf (name=83) at ../sysdeps/unix/sysv/linux/x86/sysconf.c:36
+#12 0x00007ffff7820a3f in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#13 0x00007ffff781006b in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#14 0x00007ffff7de5733 in call_init (env=0x7fffffffdf40, argv=0x7fffffffdf08, argc=6, l=<optimized out>) at dl-init.c:72
+#15 _dl_init (main_map=0x7ffff7ffe170, argc=6, argv=0x7fffffffdf08, env=0x7fffffffdf40) at dl-init.c:119
+#16 0x00007ffff7dd60ca in _dl_start_user () from /lib64/ld-linux-x86-64.so.2
+#17 0x0000000000000006 in ?? ()
+#18 0x00007fffffffe274 in ?? ()
+#19 0x00007fffffffe29f in ?? ()
+#20 0x00007fffffffe2d0 in ?? ()
+#21 0x00007fffffffe2d3 in ?? ()
+#22 0x00007fffffffe2d5 in ?? ()
+#23 0x00007fffffffe2d7 in ?? ()
+#24 0x0000000000000000 in ?? ()
+
+56	dl-addr.c: Arquivo ou diretório inexistente.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffdb78
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: determine_info
+symbol name: symbolp
+symbol filename: dl-addr.c
+symbol line: 27
+value: 0x0
+value address: 0x7fffffffdb78
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 14:42:05]
+Fault Injection Successful after 0.8251657485961914s
+[INFO -- 2018-12-09 14:42:06]
+event type: exit
+[INFO -- 2018-12-09 14:42:06]
+exit code: 0

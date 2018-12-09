@@ -1,0 +1,59 @@
+[INFO -- 2018-12-09 15:15:22]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 15:15:22]
+Initialization strings:
+[INFO -- 2018-12-09 15:15:22]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 15:15:22]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 15:15:22]
+initSignal:0
+[INFO -- 2018-12-09 15:15:22]
+endSignal:1
+[INFO -- 2018-12-09 15:15:22]
+faultModel:1
+[EXCEPTION -- 2018-12-09 15:15:22]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 15:15:22]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 15:15:22]
+pythonException: invalid frame
+[INFO -- 2018-12-09 15:15:22]
+Backtrace BEGIN:
+#0  0x00007ffff782108a in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff781fda9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00005555555555ed in main (argc=6, argv=0x7fffffffdf08) at nn.c:196
+
+68	      fclose(logfile);
+69	    }
+70		
+71		
+72		if(file != NULL){	// isso aqui tava dando segfault
+73			fclose(file);
+74		}
+75		
+76	}
+77	
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffdb58
+address max offset: 4
+Memory content after  bitflip:0x000x300x000x00
+frame name: main
+symbol name: tmp_long
+symbol filename: nn.c
+symbol line: 87
+value: 1.72191555e-41
+value address: 0x7fffffffdb58
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 15:15:22]
+Fault Injection Successful after 0.48639345169067383s
+[INFO -- 2018-12-09 15:15:22]
+event type: exit
+[INFO -- 2018-12-09 15:15:22]
+exit code: 0

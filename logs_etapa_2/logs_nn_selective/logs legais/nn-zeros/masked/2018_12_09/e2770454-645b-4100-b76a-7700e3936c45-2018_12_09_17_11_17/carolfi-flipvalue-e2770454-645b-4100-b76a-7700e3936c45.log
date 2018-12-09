@@ -1,0 +1,51 @@
+[INFO -- 2018-12-09 17:11:15]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 17:11:15]
+Initialization strings:
+[INFO -- 2018-12-09 17:11:15]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 17:11:15]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 17:11:15]
+initSignal:0
+[INFO -- 2018-12-09 17:11:15]
+endSignal:1
+[INFO -- 2018-12-09 17:11:15]
+faultModel:3
+[EXCEPTION -- 2018-12-09 17:11:16]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-12-09 17:11:16]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 17:11:16]
+pythonException: invalid frame
+[INFO -- 2018-12-09 17:11:16]
+Backtrace BEGIN:
+#0  0x00007ffff7821088 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff781fda9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00005555555555ed in main (argc=6, argv=0x7fffffffded8) at nn.c:196
+
+2284	in rtld.c
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x920x440x880x43
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575a140
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main
+symbol name: z_dup
+symbol filename: nn.c
+symbol line: 157
+value: 0x55555575a140
+value address: 0x7fffffffdb78
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 17:11:16]
+Fault Injection Successful after 1.7213060855865479s
+[INFO -- 2018-12-09 17:11:17]
+event type: exit
+[INFO -- 2018-12-09 17:11:17]
+exit code: 0

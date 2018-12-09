@@ -1,0 +1,50 @@
+[INFO -- 2018-12-09 18:41:19]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 18:41:19]
+Initialization strings:
+[INFO -- 2018-12-09 18:41:19]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 18:41:19]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 18:41:19]
+initSignal:0
+[INFO -- 2018-12-09 18:41:19]
+endSignal:1
+[INFO -- 2018-12-09 18:41:19]
+faultModel:4
+[INFO -- 2018-12-09 18:41:20]
+Backtrace BEGIN:
+#0  0x00007ffff745cff7 in __GI_strtod (nptr=0x7fffffffdc0b " 52.1 231.7  117  777\n2003 11 11  0 20 DEBBY      42.7 136.3   57  208\n1978 12 25 18 27 ISAAC      37.7 250.4  133  657\n1972  6  7 12 12 MICHAEL    59.6   5.8  143  412\n1969  7 10  0 18 DEBBY      61."..., endptr=0x0) at strtod.c:83
+#1  0x0000555555555a71 in main._omp_fn.0 () at nn.c:199
+#2  0x00007ffff7815ecf in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x00005555555555ed in main (argc=6, argv=0x7fffffffded8) at nn.c:196
+
+78	strtod.c: Arquivo ou diretório inexistente.
+
+Backtrace END
+Fliping array at pos: 25
+Memory content before bitflip:0x6e
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffdbc9 
+address max offset: 1
+Memory content after  bitflip:0x4e
+frame name: main
+symbol name: dbname
+symbol filename: nn.c
+symbol line: 85
+value: "/home/melkor/ETAPA2/dup_nN/nn-knl-files/cane4_0.db\000\367\377\177\000\000\200]\243\367\377\177\000"
+value address: 0x7fffffffdbb0
+Type: The type is an array.
+Type sizeof: 64
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 63)
+
+[INFO -- 2018-12-09 18:41:20]
+Fault Injection Successful after 1.187608242034912s
+[INFO -- 2018-12-09 18:41:21]
+event type: exit
+[INFO -- 2018-12-09 18:41:21]
+exit code: 0

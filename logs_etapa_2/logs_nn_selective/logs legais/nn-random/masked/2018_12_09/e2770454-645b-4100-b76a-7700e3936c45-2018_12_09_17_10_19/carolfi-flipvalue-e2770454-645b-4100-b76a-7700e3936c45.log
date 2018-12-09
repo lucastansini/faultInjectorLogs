@@ -1,0 +1,54 @@
+[INFO -- 2018-12-09 17:10:17]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 17:10:17]
+Initialization strings:
+[INFO -- 2018-12-09 17:10:17]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 17:10:17]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 17:10:17]
+initSignal:0
+[INFO -- 2018-12-09 17:10:17]
+endSignal:1
+[INFO -- 2018-12-09 17:10:17]
+faultModel:2
+[EXCEPTION -- 2018-12-09 17:10:17]
+pythonException: invalid frame
+[INFO -- 2018-12-09 17:10:17]
+Backtrace BEGIN:
+#0  clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:78
+#1  0x00007ffff6ffbec5 in create_thread (thread_ran=<synthetic pointer>, stackaddr=0x7ffff5ff0f40, stopped_start=<synthetic pointer>, attr=0x7ffff7a36600, pd=0x7ffff5ff1700) at ../sysdeps/unix/sysv/linux/createthread.c:100
+#2  __pthread_create_2_1 (newthread=<optimized out>, attr=<optimized out>, start_routine=<optimized out>, arg=0x7fffffffd920) at pthread_create.c:797
+#3  0x00007ffff781ef52 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#4  0x00007ffff7815eca in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#5  0x00005555555555ed in main (argc=6, argv=0x7fffffffded8) at nn.c:196
+
+73	../sysdeps/unix/sysv/linux/x86_64/clone.S: Arquivo ou diretório inexistente.
+
+Backtrace END
+Fliping array at pos: 0
+Memory content before bitflip:0x400x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff7008560 
+address max offset: 4
+Memory content after  bitflip:0xd10x8b0x430x4c
+frame name: create_thread
+symbol name: _thread_db_pthread_eventbuf_eventmask
+symbol filename: ../nptl_db/structs.def
+symbol line: 57
+value: {1279495121, 1, 1616}
+value address: 0x7ffff7008560 <_thread_db_pthread_eventbuf_eventmask>
+Type: The type is an array.
+Type sizeof: 12
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 2)
+
+[INFO -- 2018-12-09 17:10:17]
+Fault Injection Successful after 0.7937295436859131s
+[INFO -- 2018-12-09 17:10:19]
+event type: exit
+[INFO -- 2018-12-09 17:10:19]
+exit code: 0

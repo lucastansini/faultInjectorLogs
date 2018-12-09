@@ -1,0 +1,61 @@
+[INFO -- 2018-12-09 18:18:50]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 18:18:50]
+Initialization strings:
+[INFO -- 2018-12-09 18:18:50]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 18:18:50]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 18:18:50]
+initSignal:0
+[INFO -- 2018-12-09 18:18:50]
+endSignal:1
+[INFO -- 2018-12-09 18:18:50]
+faultModel:1
+[INFO -- 2018-12-09 18:18:50]
+Backtrace BEGIN:
+#0  memset () at ../sysdeps/x86_64/multiarch/memset-vec-unaligned-erms.S:186
+#1  0x00007ffff7ddbead in _dl_map_segments (loader=0x7fffffffd1d0, has_holes=<optimized out>, maplength=<optimized out>, nloadcmds=2, loadcmds=<optimized out>, type=<optimized out>, header=<optimized out>, fd=<optimized out>, l=0x7ffff7fe19e0) at ./dl-map-segments.h:131
+#2  _dl_map_object_from_fd (name=name@entry=0x555555554634 "libc.so.6", origname=origname@entry=0x0, fd=<optimized out>, fbp=fbp@entry=0x7fffffffd570, realname=<optimized out>, loader=loader@entry=0x7ffff7ffe170, l_type=<optimized out>, mode=<optimized out>, stack_endp=<optimized out>, nsid=<optimized out>) at dl-load.c:1126
+#3  0x00007ffff7dddffc in _dl_map_object (loader=0x7ffff7ffe170, name=0x555555554634 "libc.so.6", type=1, trace_mode=0, mode=<optimized out>, nsid=<optimized out>) at dl-load.c:2389
+#4  0x00007ffff7de3312 in openaux (a=a@entry=0x7fffffffdb60) at dl-deps.c:63
+#5  0x00007ffff7df0c6b in _dl_catch_exception (exception=exception@entry=0x7fffffffdb40, operate=operate@entry=0x7ffff7de32e0 <openaux>, args=args@entry=0x7fffffffdb60) at dl-error-skeleton.c:196
+#6  0x00007ffff7de3618 in _dl_map_object_deps (map=map@entry=0x7ffff7ffe170, preloads=<optimized out>, npreloads=npreloads@entry=0, trace_mode=trace_mode@entry=0, open_mode=open_mode@entry=0) at dl-deps.c:249
+#7  0x00007ffff7dd8ea6 in dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:1726
+#8  0x00007ffff7defdd0 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffded0, dl_main=dl_main@entry=0x7ffff7dd7660 <dl_main>) at ../elf/dl-sysdep.c:253
+#9  0x00007ffff7dd7128 in _dl_start_final (arg=0x7fffffffded0) at rtld.c:414
+#10 _dl_start (arg=0x7fffffffded0) at rtld.c:521
+#11 0x00007ffff7dd6098 in _start () from /lib64/ld-linux-x86-64.so.2
+#12 0x0000000000000006 in ?? ()
+#13 0x00007fffffffe251 in ?? ()
+#14 0x00007fffffffe27c in ?? ()
+#15 0x00007fffffffe2ad in ?? ()
+#16 0x00007fffffffe2b0 in ?? ()
+#17 0x00007fffffffe2b2 in ?? ()
+#18 0x00007fffffffe2b4 in ?? ()
+#19 0x0000000000000000 in ?? ()
+
+181	../sysdeps/x86_64/multiarch/memset-vec-unaligned-erms.S: Arquivo ou diretório inexistente.
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff7ffe000 
+address max offset: 8
+Memory content after  bitflip:0x900x000x000x000x000x000x000x00
+frame name: _dl_start_final
+symbol name: relocate_time
+symbol filename: rtld.c
+symbol line: 306
+value: 144
+value address: 0x7ffff7ffe000 <relocate_time>
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 18:18:50]
+Fault Injection Successful after 0.7143793106079102s
+[INFO -- 2018-12-09 18:18:52]
+event type: exit
+[INFO -- 2018-12-09 18:18:52]
+exit code: 0

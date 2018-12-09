@@ -1,0 +1,64 @@
+[INFO -- 2018-12-09 17:15:35]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 17:15:35]
+Initialization strings:
+[INFO -- 2018-12-09 17:15:35]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 17:15:35]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 17:15:35]
+initSignal:0
+[INFO -- 2018-12-09 17:15:35]
+endSignal:1
+[INFO -- 2018-12-09 17:15:35]
+faultModel:3
+[EXCEPTION -- 2018-12-09 17:15:35]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 17:15:35]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 17:15:35]
+pythonException: invalid frame
+[INFO -- 2018-12-09 17:15:35]
+Backtrace BEGIN:
+#0  0x00007ffff78210d3 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff781fda9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00005555555555ed in main (argc=6, argv=0x7fffffffded8) at nn.c:196
+
+68	      fclose(logfile);
+69	    }
+70		
+71		
+72		if(file != NULL){	// isso aqui tava dando segfault
+73			fclose(file);
+74		}
+75		
+76	}
+77	
+
+Backtrace END
+Fliping array at pos: 321
+Memory content before bitflip:0x20
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffdd31 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: main
+symbol name: sandbox
+symbol filename: nn.c
+symbol line: 85
+value: "1972  1 22 18 25 LESLIE     42.4 104.1   49   17\n1999  5 28  6  7 KIRK       57.0 204.6   64   44\n1993  6 26  6 28 GORDON     22.6  75.8   22  237\n1975  1  8  0 15 GORDON     50.8  89.2   97  224\n1978"...
+value address: 0x7fffffffdbf0
+Type: The type is an array.
+Type sizeof: 490
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 489)
+
+[INFO -- 2018-12-09 17:15:35]
+Fault Injection Successful after 0.9562969207763672s
+[INFO -- 2018-12-09 17:15:39]
+event type: exit
+[INFO -- 2018-12-09 17:15:39]
+exit code: 0

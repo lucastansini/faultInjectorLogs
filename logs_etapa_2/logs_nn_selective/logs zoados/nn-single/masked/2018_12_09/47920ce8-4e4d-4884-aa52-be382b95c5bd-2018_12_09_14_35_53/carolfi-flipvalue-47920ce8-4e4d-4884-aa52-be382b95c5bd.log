@@ -1,0 +1,53 @@
+[INFO -- 2018-12-09 14:35:51]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 14:35:51]
+Initialization strings:
+[INFO -- 2018-12-09 14:35:51]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 14:35:51]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 14:35:51]
+initSignal:0
+[INFO -- 2018-12-09 14:35:51]
+endSignal:1
+[INFO -- 2018-12-09 14:35:51]
+faultModel:1
+[INFO -- 2018-12-09 14:35:52]
+Backtrace BEGIN:
+#0  0x00007ffff78210d3 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff781fda9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x00005555555555ed in main (argc=6, argv=0x7fffffffdf08) at nn.c:196
+
+68	      fclose(logfile);
+69	    }
+70		
+71		
+72		if(file != NULL){	// isso aqui tava dando segfault
+73			fclose(file);
+74		}
+75		
+76	}
+77	
+
+Backtrace END
+Memory content before bitflip:0xc20x030x0f0x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffdb78
+address max offset: 8
+Memory content after  bitflip:0xc20x030x0f0x000x000x060x000x00
+frame name: main
+symbol name: rec_sum
+symbol filename: nn.c
+symbol line: 89
+value: 6597070750658
+value address: 0x7fffffffdb78
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 14:35:52]
+Fault Injection Successful after 1.1804962158203125s
+[INFO -- 2018-12-09 14:35:53]
+event type: exit
+[INFO -- 2018-12-09 14:35:53]
+exit code: 0

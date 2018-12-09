@@ -1,0 +1,62 @@
+[INFO -- 2018-12-09 18:37:20]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 18:37:20]
+Initialization strings:
+[INFO -- 2018-12-09 18:37:20]
+(1) file /home/melkor/ETAPA2/dup_nn/nn-knl-files/nn
+[INFO -- 2018-12-09 18:37:20]
+(2) set args /home/melkor/ETAPA2/dup_nn/nn-knl-files/filelist 20 5 5 /home/melkor/ETAPA2/dup_nn/nn-knl-files/out20_5_5
+[INFO -- 2018-12-09 18:37:20]
+initSignal:0
+[INFO -- 2018-12-09 18:37:20]
+endSignal:1
+[INFO -- 2018-12-09 18:37:20]
+faultModel:2
+[EXCEPTION -- 2018-12-09 18:37:21]
+gdbException: Tentativo de desreferenciar um ponteiro genérico.
+[EXCEPTION -- 2018-12-09 18:37:21]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 18:37:21]
+pythonException: invalid frame
+[EXCEPTION -- 2018-12-09 18:37:21]
+pythonException: invalid frame
+[INFO -- 2018-12-09 18:37:21]
+Backtrace BEGIN:
+#0  malloc (n=14) at dl-minimal.c:50
+#1  <function called from gdb>
+#2  clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:78
+#3  0x00007ffff6ffbec5 in create_thread (thread_ran=<synthetic pointer>, stackaddr=0x7ffff5ff0f40, stopped_start=<synthetic pointer>, attr=0x7ffff7a36600, pd=0x7ffff5ff1700) at ../sysdeps/unix/sysv/linux/createthread.c:100
+#4  __pthread_create_2_1 (newthread=<optimized out>, attr=<optimized out>, start_routine=<optimized out>, arg=0x7fffffffd920) at pthread_create.c:797
+#5  0x00007ffff781ef52 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#6  0x00007ffff7815eca in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#7  0x00005555555555ed in main (argc=6, argv=0x7fffffffded8) at nn.c:196
+
+45	dl-minimal.c: Arquivo ou diretório inexistente.
+
+Backtrace END
+Fliping value of field: event_bits
+Fliping array at pos: 0
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff7212360 
+address max offset: 4
+Memory content after  bitflip:0xcc0x380xd00xb9
+frame name: create_thread
+symbol name: __nptl_threads_events
+symbol filename: pthread_create.c
+symbol line: 46
+value: {event_bits = {3117430988, 0}}
+value address: 0x7ffff7212360 <__nptl_threads_events>
+Type: The type is a structure.
+Type sizeof: 8
+Field name: event_bits
+Field Type: The type is an array.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-09 18:37:21]
+Fault Injection Successful after 1.287299633026123s
+[INFO -- 2018-12-09 18:37:23]
+event type: exit
+[INFO -- 2018-12-09 18:37:23]
+exit code: 0

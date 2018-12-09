@@ -1,0 +1,104 @@
+Faults Injected:;5291
+
+Fault Effect;#Effect;PVF
+Masked;2359;0.44585144585144587
+SDCs;327;0.061803061803061804
+Crashes;2288;0.43243243243243246
+Hangs;317;0.05991305991305991
+
+FaultModels SDCs:
+FaultModel ;#SDCs;percentage
+Random bit-flip;97;29.66360856269113
+Zero bit-flip;92;28.134556574923547
+LSB bit-flip;75;22.93577981651376
+Double bit-flip;63;19.26605504587156
+
+FaultModels Crashes:
+FaultModel ;#Crashes;percentage
+LSB bit-flip;626;27.36013986013986
+Double bit-flip;567;24.78146853146853
+Random bit-flip;563;24.606643356643357
+Zero bit-flip;532;23.251748251748253
+
+FaultModels Hangs:
+FaultModel ;#Hangs;percentage
+Random bit-flip;91;28.706624605678233
+LSB bit-flip;90;28.391167192429023
+Double bit-flip;80;25.236593059936908
+Zero bit-flip;56;17.665615141955836
+
+Variables that caused SDCs:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+98.50746268656717;67;66;target_lat;nn.c;87
+83.33333333333334;78;65;target_lat_dup;nn.c;92
+92.64705882352942;68;63;target_long_dup;nn.c;92
+98.0392156862745;51;50;target_long;nn.c;87
+46.55172413793103;58;27;k;nn.c;84
+43.75;48;21;neighbors;nn.c;86
+30.158730158730158;63;19;neighbors_dup;nn.c;94
+12.857142857142856;70;9;z;nn.c;153
+5.0;60;3;rec_count;nn.c;84
+3.125;64;2;fp;nn.c;83
+0.4830917874396135;207;1;__libc_multiple_libcs;../elf/dl-sysdep.c;60
+0.5882352941176471;170;1;library_path;rtld.c;823
+
+Variables that caused Crash:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+100.0;212;212;user_entry;../elf/dl-sysdep.c;91
+86.97916666666666;192;167;_dl_skip_args;rtld.c;84
+66.49214659685863;191;127;__GI__dl_argv;rtld.c;83
+55.81395348837209;215;120;__GI___libc_enable_secure;../elf/dl-sysdep.c;58
+67.90123456790124;162;110;_dl_rtld_libname;rtld.c;301
+51.690821256038646;207;107;__libc_multiple_libcs;../elf/dl-sysdep.c;60
+59.64912280701754;171;102;relocate_time;rtld.c;306
+55.3072625698324;179;99;audit_list;rtld.c;142
+57.30994152046783;171;98;tls_init_tp_called;rtld.c;677
+55.81395348837209;172;96;_rtld_global_ro;rtld.c;259
+58.70967741935483;155;91;_rtld_global;rtld.c;231
+58.55263157894737;152;89;__pointer_chk_guard_local;rtld.c;96
+51.76470588235295;170;88;library_path;rtld.c;823
+49.714285714285715;175;87;audit_list_string;rtld.c;134
+57.333333333333336;150;86;start_time;rtld.c;308
+51.829268292682926;164;85;preloadlist;rtld.c;825
+52.22929936305732;157;82;any_debug;rtld.c;2322
+56.55172413793104;145;82;_dl_argc;rtld.c;82
+55.78231292517006;147;82;version_info;rtld.c;827
+50.641025641025635;156;79;load_time;rtld.c;307
+44.89795918367347;147;66;_dl_rtld_libname2;rtld.c;302
+53.06122448979592;49;26;file_size;rtld.c;874
+48.0;50;24;rtld_total_time;rtld.c;417
+44.89795918367347;49;22;__PRETTY_FUNCTION__;rtld.c;0
+50.0;40;20;preload_file;rtld.c;1630
+10.0;70;7;z;nn.c;153
+9.836065573770492;61;6;z_dup;nn.c;157
+12.5;48;6;neighbors;nn.c;86
+8.333333333333332;60;5;rec_count;nn.c;84
+8.620689655172415;58;5;k;nn.c;84
+6.451612903225806;62;4;k_dup;nn.c;93
+3.1746031746031744;63;2;neighbors_dup;nn.c;94
+4.166666666666666;48;2;flist;nn.c;83
+100.0;1;1;max_dirnamelen;dl-load.c;384
+100.0;1;1;ranges;dl-reloc.c;258
+100.0;1;1;end;do-rel.h;47
+1.5625;64;1;fp;nn.c;83
+
+Variables that caused Hang:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+98.38709677419355;62;61;gold_filename;nn.c;88
+67.1875;64;43;fp;nn.c;83
+50.0;62;31;k_dup;nn.c;93
+46.03174603174603;63;29;neighbors_dup;nn.c;94
+54.166666666666664;48;26;flist;nn.c;83
+44.827586206896555;58;26;k;nn.c;84
+40.98360655737705;61;25;z_dup;nn.c;157
+32.857142857142854;70;23;z;nn.c;153
+38.333333333333336;60;23;rec_count;nn.c;84
+39.58333333333333;48;19;neighbors;nn.c;86
+2.5806451612903225;155;4;_rtld_global;rtld.c;231
+1.9607843137254901;51;1;target_long;nn.c;87
+100.0;1;1;thread_arena;arena.c;74
+100.0;1;1;_IO_file_jumps_mmap;fileops.c;1480
+1.4925373134328357;67;1;target_lat;nn.c;87
+0.5847953216374269;171;1;relocate_time;rtld.c;306
+1.5873015873015872;63;1;rec_sum;nn.c;89
+1.6666666666666667;60;1;done_dup;nn.c;93
